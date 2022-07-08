@@ -1,6 +1,6 @@
 {
 // spider
-"spider":"https://www.qiaoji8.com/jar/custom_spider.jar",
+"spider":"https://github.com/heroaku/TVboxo/blob/main/Jar/qiaoji.jar",
 
 // 直播
 "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cDovLzl4aTRvLnRrL3N1Yi9teXR2LnR4dA=="]}]}],
