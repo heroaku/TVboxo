@@ -2,7 +2,7 @@
    "spider":"https://github.com/heroaku/TVboxo/blob/main/Jar/tvbox.jar",
 
    "lives":[
-      {"group":"redirect","channels":[{"name":"redirect","urls":["proxy://do=live&type=txt&ext=https://ghproxy.com/https://raw.githubusercontent.com/chuanbei32/tvbox/main/tvbox.txt"]}]}
+      {"group":"redirect","channels":[{"name":"redirect","urls":["proxy://do=live&type=txt&ext=https://raw.githubusercontent.com/chuanbei32/tvbox/main/tvbox.txt"]}]}
    ],
 
    "sites":[
