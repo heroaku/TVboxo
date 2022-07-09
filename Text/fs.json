@@ -9,7 +9,7 @@
 
 "lives": [{"group": "redirect","channels": [{"name": "redirect","urls": ["proxy://do=live&type=txt&ext=Y2xhbjovL1RWQm94L3R2L3RzLnR4dA=="]}]}],
 
-"spider":"https://github.com/franksun1211/TVBOX/blob/main/ts0709.jar?raw=true",
+"spider":"https://github.com/heroaku/TVboxo/blob/main/Jar/fs.jar?raw=true",
 
   "sites": [
     {
