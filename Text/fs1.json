@@ -33,7 +33,7 @@
     },
     {
       "key": "Ikan",
-      "name": "Ikan",
+      "name": "爱看(🐞)",
       "type": 3,
       "api": "csp_IKan",
       "searchable": 1,
@@ -51,7 +51,7 @@
     },
     {
       "key": "If101",
-      "name": "If101",
+      "name": "海外推荐",
       "type": 3,
       "api": "csp_If101",
       "searchable": 1,
@@ -60,7 +60,7 @@
     },
     {
       "key": "Olevod",
-      "name": "Olevod",
+      "name": "🦋欧乐影院-Exo"",
       "type": 3,
       "api": "csp_Olevod",
       "searchable": 1,
