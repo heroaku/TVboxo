@@ -17,7 +17,7 @@
 {"key": "Lib","name": "Libvio","type": 3,"api": "csp_Lib","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "Nfyun","name": "Nf云","type": 3,"api": "csp_Nfyun","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "9E03","name": "9E03","type": 3,"api": "csp_AppYsV2","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://vod.9e03.com/lvdou_api.php/v1.vod"},
-{"key": "555电影","name": "555电影(XB)","type": 3,"api": "csp_XBiubiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://raw.githubusercontent.com/heroaku/TVboxo/main/MaooXB/555dy.json"},
+{"key": "555电影","name": "555电影(XB)","type": 3,"api": "csp_XBiubiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXB/555dy.json"},
 {"key": "剧白白","name": "剧白白(XPF)","type": 3,"api": "csp_XPathMacFilter","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/franksun1211/TVBOX/raw/main/APP/MaooXP/jubaibai.json"},
 {"key": "Kuaikan","name": "快看","type": 3,"api": "csp_Kuaikan","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "zxzj","name": "在线之家","type": 3,"api": "csp_Zxzj","searchable": 1,"quickSearch": 1,"filterable": 1},
