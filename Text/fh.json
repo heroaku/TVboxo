@@ -5,6 +5,7 @@
 
   "sites": [
 {"key": "360","name": "360","type": 3,"api": "csp_SP360","searchable": 1,"quickSearch": 1,"filterable": 1},
+{"key":"csp_xpath_独播库","name":"独播库(XPF)(播放器要改成系统播放器)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://freed.yuanhsing.cf/TVBox/MaooXP/duboku.json"},
 {"key": "Kunyu77","name": "七七","type": 3,"api": "csp_Kunyu77","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "Kmys","name": "酷猫","type": 3,"api": "csp_Kmys","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "Ikan","name": "爱看(🐞)","type": 3,"api": "csp_IKan","searchable": 1,"quickSearch": 1,"filterable": 1},
@@ -27,7 +28,7 @@
 {"key": "AliPS","name": "盘搜","type": 3,"api": "csp_AliPS","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "27b06d5221a24199b15f2e573d847430"},
 {"key": "Gitcafe","name": "小纸条","type": 3,"api": "csp_Gitcafe","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "27b06d5221a24199b15f2e573d847430"},
 {"key": "push_agent","name": "推送","type": 3,"api": "csp_PushAgent","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "27b06d5221a24199b15f2e573d847430"}
-  ],
+ ],
 
   "flags": [
     ""
