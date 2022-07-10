@@ -59,7 +59,7 @@
     },
     {
       "key": "If101",
-      "name": "If101",
+      "name": "海外推荐",
       "type": 3,
       "api": "csp_If101",
       "searchable": 1,
@@ -130,6 +130,7 @@
       "filterable": 1,
       "ext": "https://vod.9e03.com/lvdou_api.php/v1.vod"
     },
+    {"key":"csp_Nbys","name":"📺泥巴(SP需翻墙)","type":3,"api":"csp_Nbys","searchable":1,"quickSearch":1,"filterable":1},
     {
       "key": "555电影",
       "name": "555电影(XB)",
