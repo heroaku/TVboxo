@@ -122,7 +122,6 @@
       "filterable": 1,
       "ext": "https://vod.9e03.com/lvdou_api.php/v1.vod"
     },
-        {"key":"csp_biubiu_在线之家","name":"📮在线之家(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/franksun1211/TVBOX/raw/main/APP/MaooXB/zxzj.json"},
     {
       "key": "555电影",
       "name": "555电影(XB)",
