@@ -1,7 +1,7 @@
 ﻿// 配置地址 --> clan://localhost/TVBox/0709.json
 
 {
-"spider":"clan://TVBox/0709.jar",
+"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/0709.jar",
 "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=Y2xhbjovL1RWQm94L3R2L2JjLnR4dA=="]}]}],
 "sites":[
 {"key":"csp_LiteApple","name":"🍎小苹果(SP)","type":3,"api":"csp_LiteApple","searchable":1,"quickSearch":1,"filterable": 1},
