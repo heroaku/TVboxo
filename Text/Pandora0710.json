@@ -510,5 +510,5 @@
     "cdnjs.hnfenxun.com",
     "cms.qdwght.com"
   ],
-  "spider": "clan://TVBox/Pandora0710.jar"
+  "spider": "https://github.com/heroaku/TVboxo/raw/main/Jar/fs.jar"
 }
