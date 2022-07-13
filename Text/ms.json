@@ -503,7 +503,7 @@
 {"group": "redirect","channels": [{"name": "redirect","urls": [
 "proxy://do=live&type=txt&ext=aHR0cDovLzl4aTRvLnRrL3N1Yi9teXR2LnR4dA=="
 ]}]}],
-"spider":"https://liu673cn.github.io/box/jar/spider2207.jar;md5;727C472F6F06E2958FF50FBD0C2AAE21",
+"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/ms.jar;md5;727C472F6F06E2958FF50FBD0C2AAE21",
 "flags":["youku","qq","iqiyi","qiyi","letv","sohu","tudou","pptv","mgtv","wasu","bilibili","renrenmi"],
 "ijk":[
 {"group":"软解码","options":[
