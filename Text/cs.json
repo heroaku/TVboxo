@@ -2,7 +2,7 @@
 {
 //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/cs.jar",
 //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/fs.jar",
-"spider":"https://github.com/heroaku/TVboxo/blob/main/Jar/qj0711.jar",
+"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/qj0711.jar",
 
 
 "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2ZyYW5rc3VuMTIxMS9UVkJPWC9tYWluL0FQUC90di90cy50eHQ="]}]}],
