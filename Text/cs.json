@@ -99,6 +99,7 @@
       "filterable": 1,
       "ext": "https://github.com/franksun1211/TVBOX/raw/main/APP/MaooXP/ttsp.json"
     },
+{"key":"csp_xpath_lezhutv","name":"🦋乐猪TV(XP)","type":3,"api":"csp_XPathMac","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/lezhutv.json"},
 {"key":"csp_xpath_kangbazi","name":"🦋扛把子影院(XP)","type":3,"api":"csp_XPath","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/franksun1211/TXT/raw/main/mao/JSON/kangbazi.json"},   
 {"key":"csp_appys_美剧虫","name":"🐌美剧虫(V1)","type":3,"api":"csp_AppYs","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://meijuchong.com/api.php/v1.vod"},
 {"key":"ASMR","name":"🈲ASMR(优)","type":1,"api":"http://www.asmr19.in/api.php/provide/vod/","searchable":1,"quickSearch":1},
