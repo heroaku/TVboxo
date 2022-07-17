@@ -1,6 +1,6 @@
 //配置地址 clan://localhost/TVBox/0712.json
 {
-"spider":" https://xzhg1234.github.io/sdfwedw/jar/0712.jar",
+"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/cszy.jar",
 
 "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=IGh0dHBzOi8veHpoZzEyMzQuZ2l0aHViLmlvL3NkZndlZHcvemhpYm8vYmMudHh0"]}]}],
 
