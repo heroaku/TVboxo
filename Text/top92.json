@@ -1,6 +1,6 @@
 {
   "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/top92.jar",
-  "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9odDA5NTY0LmdpdGh1Yi5pby9teXR2LnR4dA=="]}]}],
+  "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRodWIuY29tL2hlcm9ha3UvVFZib3hvL3Jhdy9tYWluL3R2L2JjLnR4dA=="]}]}],
 
   "sites":[
     {"key":"If101","name":"💿If101(墙外)","type":3,"api":"csp_If101","searchable":1,"quickSearch":1,"filterable":1}, 
