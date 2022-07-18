@@ -45,6 +45,7 @@
     {"key":"csp_biubiu_COKEMV","name":"🥒COKEMV(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/COKEMV.json"},
     {"key":"csp_biubiu_影视工厂","name":"🥒影视工厂(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/影视工厂.json"},
     {"key":"csp_biubiu_555电影","name":"🥒555电影(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/555dy.json"},
+    {"key": "csp_xpath_olevod","name":"🦋欧乐影院-Exo","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable": 1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/olevod.json"},
     {"key":"csp_biubiu_特狗影视","name":"🥒特狗影视(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/特狗影视.json"},
     {"key":"csp_biubiu_F7好看剧","name":"🥒F7好看剧(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/F7好看剧.json"},
     // {"key":"csp_biubiu_喜鹊视频","name":"🥒喜鹊视频(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/喜鹊视频.json"},
