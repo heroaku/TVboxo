@@ -5,7 +5,7 @@
   "sites":[
     {"key":"If101","name":"💿If101(墙外)","type":3,"api":"csp_If101","searchable":1,"quickSearch":1,"filterable":1}, 
     {"key":"csp_xpath_独播库","name":"独播库(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/duboku.json"},
-{"key":"csp_appysv2_M2_暖光影视","name":"暖光影视","type":3,"api":"csp_AppYsV2","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://app.bl210.com/api.php/v1.vod"},
+    {"key":"csp_appysv2_M2_暖光影视","name":"暖光影视","type":3,"api":"csp_AppYsV2","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://app.bl210.com/api.php/v1.vod"},
     {"key":"Gitcafe","name":"🦊小纸条","type":3,"api":"csp_GitCafe","searchable":1,"quickSearch":1,"filterable":1,"ext":"1f373a68733e4dafa5fa28dca9826b35"},
     {"key":"csp_SP360","name":"🎾360(SP)","type":3,"api":"csp_SP360","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"csp_Kuaikan","name":"🎈快看(SP)","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
