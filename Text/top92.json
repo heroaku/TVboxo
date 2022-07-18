@@ -24,8 +24,8 @@
     {"key": "Lib","name": "🐞Libvio","type": 3,"api": "csp_Lib","searchable": 0,"quickSearch": 1,"filterable": 1},
     {"key": "Nfyun","name": "🐞Nf云","type": 3,"api": "csp_Nfyun","searchable": 1,"quickSearch": 1,"filterable": 1},
     {"key":"csp_Bttoo","name": "🐞两个BT","type":3,"api":"csp_Bttoo","searchable":1,"quickSearch":1,"filterable":1}, 
-    // {"key":"csp_Nbys","name":"👑泥巴(墙外)","type":3,"api":"csp_Nbys","searchable":1,"quickSearch":1,"filterable":1},
-    // {"key":"If101","name":"💿If101(墙外)","type":3,"api":"csp_If101","searchable":1,"quickSearch":1,"filterable":1},    
+    {"key":"csp_Nbys","name":"👑泥巴(墙外)","type":3,"api":"csp_Nbys","searchable":1,"quickSearch":1,"filterable":1},
+    {"key":"If101","name":"💿If101(墙外)","type":3,"api":"csp_If101","searchable":1,"quickSearch":1,"filterable":1},    
     {"key":"csp_xpath_wmkk","name":"完美看看(XP)","type":3,"api":"csp_XPath","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/wanmeikk.json"},
     {"key":"AliPS","name":"🐱盘搜(仅搜索)","type":3,"api":"csp_AliPanSou","searchable":1,"quickSearch":1,"filterable":1,"ext":"1f373a68733e4dafa5fa28dca9826b35"},
     {"key":"FindZY","name":"🐱找资源(仅搜索)","type":3,"api":"csp_FindZY","searchable":1,"quickSearch":1,"filterable":1,"ext":"1f373a68733e4dafa5fa28dca9826b35"},
@@ -88,6 +88,8 @@
     {"key":"csp_biubiu_红领巾","name":"🥒红领巾(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/红领巾.json"},
     
     ## XPath系列
+    {"key": "csp_xpath_olevod","name":"🦋欧乐影院-Exo","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable": 1,
+      "ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/olevod.json"},
     {"key":"csp_xpath_zxzj2","name":"在线之家(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/zxzj2.json"},
     {"key":"csp_xpath_libv","name":"Libvio(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/libv.json"},
     {"key":"csp_xpath_cokemv","name":"Cokemv(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/cokemv.json"},
