@@ -1,6 +1,7 @@
 {
   "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/top92.jar",
-  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/cszy3.jar",
+  //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/cszy3.jar",
+  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/QWF.jar",
  
   "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRodWIuY29tL2hlcm9ha3UvVFZib3hvL3Jhdy9tYWluL3R2L2JjLnR4dA=="]}]}],
 
