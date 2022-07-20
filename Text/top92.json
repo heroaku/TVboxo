@@ -1,7 +1,7 @@
 {
-  //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/top92.jar",
+  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/top92.jar",
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/QWF2.jar",
-  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/top9.jar",
+  //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/top9.jar",
 
  
   "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRodWIuY29tL2hlcm9ha3UvVFZib3hvL3Jhdy9tYWluL3R2L2JjLnR4dA=="]}]}],
@@ -32,7 +32,7 @@
     {"key": "Nfyun","name": "🐞Nf云","type": 3,"api": "csp_Nfyun","searchable": 1,"quickSearch": 1,"filterable": 1},
     {"key":"csp_Bttoo","name": "🐞两个BT","type":3,"api":"csp_Bttoo","searchable":1,"quickSearch":1,"filterable":1}, 
     {"key":"csp_Nbys","name":"👑泥巴(墙外)","type":3,"api":"csp_Nbys","searchable":1,"quickSearch":1,"filterable":1},
-    {"key":"293视频","name":"🍋293视频","type":3,"api":"csp_SP293","searchable":1,"quickSearch":1,"filterable":1,"ext":""},
+    //{"key":"293视频","name":"🍋293视频","type":3,"api":"csp_SP293","searchable":1,"quickSearch":1,"filterable":1,"ext":""},
     //{"key":"293影院","name":"🍋293影院(需要token)","type":3,"api":"csp_YY293","searchable":1,"quickSearch":1,"filterable":1,"ext":"293token"},
     //{"key":"在线之家","name":"🍋在线之家","type":3,"api":"csp_Zxzj","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"在线之家","name":"🐞在线之家","type":3,"api":"csp_Zxzj","searchable":1,"quickSearch":1,"filterable":1},
@@ -50,7 +50,7 @@
     {"key": "csp_Blixq","name":"戏曲","type": 3,"api": "csp_Blixq","searchable": 1,"quickSearch": 1,"filterable": 1},
     {"key":"csp_Tkys","name":"Tkys(SP)","type":3,"api":"csp_Tkys","searchable":1,"quickSearch":1,"filterable":1},
     {"key": "csp_xpath_ttsp","name": "🦋天天视频", "type": 3, "api": "csp_XPathMacFilter", "searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXP/ttsp.json"},
-{"key":"csp_xpath_jbb","name":"🎁剧白白(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/jubaibai.json"},
+    {"key":"csp_xpath_jbb","name":"🎁剧白白(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/jubaibai.json"},
     {"key":"csp_biubiu_厂长资源-蓝光","name":"🥒厂长资源-蓝光(XB)","type":3,"api":"csp_XBiubiu","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/厂长资源-蓝光.json"},
     {"key":"csp_biubiu_在线之家","name":"🥒在线之家(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/在线之家.json"},
     {"key":"csp_biubiu_骚火电影","name":"🥒骚火电影(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/骚火电影.json"},
