@@ -40,7 +40,7 @@
     {"key":"csp_DY1990","name":"🐞1990电影","type":3,"api":"csp_DY1990","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"csp_Tkys","name":"🐞天空影视","type": 3,"api": "csp_Tkys","searchable": 1,"quickSearch": 1,"filterable": 1},
 
-    {"key":"csp_biubiu_小宝影院","name":"🥒小宝影院(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E5%B0%8F%E5%AE%9D%E5%BD%B1%E9%99%A2.json"},
+    {"key":"csp_biubiu_小宝影院","name":"🥒小宝影院(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E5%B0%8F%E5%AE%9D%E5%BD%B1%E9%99%A2.json"},
     {"key":"csp_xb_miao","name":"追喵(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/zjmiao.json"},  
     {"key":"csp_xpath_lezhutv","name":"乐猪TV(XPMac)","type":3,"api":"csp_XPathMac","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/lezhutv.json"},
     //{"key":"csp_appys_美剧虫","name":"美剧虫(V1)","type":3,"api":"csp_AppYs","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://meijuchong.com/api.php/v1.vod"},
