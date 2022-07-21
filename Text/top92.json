@@ -32,7 +32,7 @@
     {"key": "Nfyun","name": "🐞Nf云","type": 3,"api": "csp_Nfyun","searchable": 1,"quickSearch": 1,"filterable": 1},
     {"key":"csp_Bttoo","name": "🐞两个BT","type":3,"api":"csp_Bttoo","searchable":1,"quickSearch":1,"filterable":1}, 
     {"key":"csp_Nbys","name":"👑泥巴(墙外)","type":3,"api":"csp_Nbys","searchable":1,"quickSearch":1,"filterable":1},
-    //{"key":"293视频","name":"🍋293视频","type":3,"api":"csp_SP293","searchable":1,"quickSearch":1,"filterable":1,"ext":""},
+    {"key":"293视频","name":"🍋293视频","type":3,"api":"csp_SP293","searchable":1,"quickSearch":1,"filterable":1,"ext":""},
     //{"key":"293影院","name":"🍋293影院(需要token)","type":3,"api":"csp_YY293","searchable":1,"quickSearch":1,"filterable":1,"ext":"293token"},
     //{"key":"在线之家","name":"🍋在线之家","type":3,"api":"csp_Zxzj","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"在线之家","name":"🐞在线之家","type":3,"api":"csp_Zxzj","searchable":1,"quickSearch":1,"filterable":1},
