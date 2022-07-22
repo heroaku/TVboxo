@@ -29,7 +29,7 @@
     {"key":"csp_xpath_4ku","name":"一只鱼(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/4kyu.json"},
     {"key":"csp_biubiu_zbk1","name":"真不卡(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/真不卡影院(不支持搜索).json"},
     //{"key":"csp_biubiu_zbk4","name":"真不卡(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/zhenbuka4.json"},
-    {"key":"csp_biubiu_dadagui","name":"达达龟(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/达达龟.json"},
+    //{"key":"csp_biubiu_dadagui","name":"达达龟(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/达达龟.json"},
     {"key":"csp_biubiu_瓜皮TV","name":"🍉瓜皮TV(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E7%93%9C%E7%9A%AETV.json"},
     //
     //{"key":"csp_77","name":"🐞酷云七七","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
