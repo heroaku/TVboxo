@@ -18,6 +18,8 @@
     {"key":"csp_xpath_akmj","name":"爱看美剧(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/akmeiju.json"},
     {"key":"csp_xpath_bttwoo","name":"两个BT(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/bttwoo.json"},
     {"key":"csp_xpath_chongtmtv","name":"冲TV(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/chongtmtv.json"},
+    {"key":"csp_biubiu_zbk1","name":"真不卡(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/真不卡影院(不支持搜索).json"},
+    {"key":"csp_biubiu_zbk4","name":"真不卡(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/zhenbuka4.json"},
     //{"key":"csp_xpath_bidiys","name":"哔嘀影视(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/bidi.json"},
     //{"key":"csp_xpath_bidys","name":"哔嘀影视(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/biditd.json"},
     {"key":"csp_xpath_bdys","name":"哔嘀影视2(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/bidiys2.json"},
