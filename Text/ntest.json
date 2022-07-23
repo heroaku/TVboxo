@@ -54,6 +54,7 @@
     {"key":"旋风","name":"旋风","type":1,"api":"http://appimg.ssxmall.cn/api.php/provide/vod/","playUrl":"json:https://svip.iepig.com:4443/api/?key=SicQs2pG0Cw7BnWV9a&url=", "searchable": 1, "quickSearch": 1, "filterable": 1},
     {"key":"9E03","name": "9E03","type": 3,"api": "csp_AppYsV2","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://vod.9e03.com/lvdou_api.php/v1.vod"},
     {"key":"csp_biubiu_555","name":"555电影(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/555.json"},
+    {"key":"csp_xpath_ddg","name":"🥈达达龟(XP)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://home.jundie.top:81/Cat/MaooXP/dadagui.json"},
     {"key":"csp_xpath_ddg","name":"达达龟(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/dadagui.json"},
     {"key":"csp_xpath_jbb","name":"剧白白(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/jubaibai.json"},
     {"key":"csp_xpath_lranc","name":"天天影视(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/lranc.json"},
