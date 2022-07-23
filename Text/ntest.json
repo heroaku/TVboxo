@@ -15,10 +15,14 @@
     {"key":"csp_Tkys","name":"🐞天空影视","type": 3,"api": "csp_Tkys","searchable": 1,"quickSearch": 1,"filterable": 1},
     {"key":"csp_Nbys","name":"🐞泥巴(墙外)","type": 3,"api": "csp_Nbys","searchable": 1,"quickSearch": 1,"filterable": 1},
     //{"key":"csp_Nbys","name":"🐞泥巴(墙外)","type": 3,"api": "csp_Nbys","searchable": 1,"quickSearch": 1,"filterable": 1},
+    
     //custom spider jar
     {"key": "小宝影院","name": "🐞小宝影院", "type": 3,"api": "csp_Xiaoh","searchable": 1,"quickSearch": 1,"filterable": 1,"plugin":"https://gitea.com/Pandora2277/TV/raw/branch/main/custom_spider.jar"},
     {"key": "Olevod","name": "🐞Olevod","type": 3,"api": "csp_Olevod","searchable": 1,"quickSearch": 1,"filterable": 1,"plugin":"https://gitea.com/Pandora2277/TV/raw/branch/main/custom_spider.jar"},
+    {  "key": "小熊",   "name": "小熊TV",  "type": 3,  "api": "csp_Xxys",  "searchable": 1,  "quickSearch": 1,   "filterable": 1,"plugin":"https://gitea.com/Pandora2277/TV/raw/branch/main/custom_spider.jar" }
+    {  "key": "9E03",  "name": "9E03",  "type": 3,  "api": "csp_AppYsV2", "searchable": 1,  "quickSearch": 1,  "filterable": 1,  "ext": "https://vod.9e03.com/lvdou_api.php/v1.vod"},
     // custom spider jar end
+    
     {"key":"360_spider","name":"🐞360影视","api":"csp_SP360","type":3,"filterable":1,"quickSearch":1,"searchable":1,"ext":""},
     {"key":"csp_IKan","name":"🐞爱看","type": 3,"api": "csp_IKan","searchable": 1,"quickSearch": 1,"filterable": 1},
     {"key":"快看","name":"🐞快看","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},  
