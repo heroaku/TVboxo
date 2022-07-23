@@ -20,7 +20,8 @@
     {"key": "小宝影院","name": "🐞小宝影院", "type": 3,"api": "csp_Xiaoh","searchable": 1,"quickSearch": 1,"filterable": 1,"plugin":"https://github.com/heroaku/TVboxo/raw/main/Jar/box.jar"},
     {"key": "Olevod","name": "🐞Olevod","type": 3,"api": "csp_Olevod","searchable": 1,"quickSearch": 1,"filterable": 1,"plugin":"https://github.com/heroaku/TVboxo/raw/main/Jar/box.jar"},
     {"key": "小熊", "name": "🐞小熊TV", "type": 3, "api": "csp_Xxys", "searchable": 1, "quickSearch": 1, "filterable": 1,"plugin":"https://github.com/heroaku/TVboxo/raw/main/Jar/box.jar"},
-    //- box jar 
+    //- box jar
+    {"key":"追剧喵","name":"🐞追剧喵","type":3,"api":"csp_ZJMiao","searchable":1,"quickSearch":1,"filterable":1},
     
     {"key":"360_spider","name":"🐞360影视","api":"csp_SP360","type":3,"filterable":1,"quickSearch":1,"searchable":1,"ext":""},
     {"key":"csp_IKan","name":"🐞爱看","type": 3,"api": "csp_IKan","searchable": 1,"quickSearch": 1,"filterable": 1},
