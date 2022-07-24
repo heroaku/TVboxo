@@ -32,7 +32,7 @@
   "dtDesc": "/div[@class='product-excerpt' and contains(text(),'剧情简介')]/span/text()",
   "dtFromNode": "/nil",
   "dtUrlNode": "/nil",
-  "playUrl": "https://www.dandanzan10.top/url.php",
+  "playUrl": "https://www.dandanzan10.top/{playUrl}.html",
   "searchUrl": "https://www.dandanzan10.top/so/{wd}-{wd}--.html",
   "scVodNode": "//div[@class='lists-content']/ul/li",
   "scVodName": "/h2/a/text()",
