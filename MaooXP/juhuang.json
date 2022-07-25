@@ -23,7 +23,7 @@
     "homeVodImg": "//div[@class='module-item-pic']//@data-src",
     "homeVodImgR": "",
     "homeVodMark": "/div[@class='module-item-text']/text()",
-    "cateUrl": "https://juhuang.tv/type/{cateId}_type_{catePg}.html",
+    "cateUrl": "https://juhuang.tv/type/{cateId}_type.html",
     "cateVodNode": "//div[@class='module-item']",
     "cateVodName": "//div[@class='module-item-pic']/a/@title",
     "cateVodId": "///div[@class='module-item-pic']/a/@href",
