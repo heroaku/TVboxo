@@ -294,7 +294,10 @@
      {"name":"腾讯直解","type":0,"url":"https://vip.52jiexi.top/?url="},
      {"name":"523","type":0,"url":"https://go.yh0523.cn/y.cy?url="},
      {"name":"1717","type":0,"url":"https://www.1717yun.com/1717yun/?url="},
-     //{"name":"1717云","type":0,"url":"https://www.1717yun.com/jiexi/?url="},
+     {"name":"1717云","type":0,"url":"https://www.1717yun.com/jiexi/?url="},
+     {"name":"4K解析","type":0,"url":"https://jx.4kdv.com/?url="},
+     {"name":"BL解析","type":0,"url":"https://vip.bljiex.com/?v="},
+     {"name":"CHok","type":0,"url":"https://www.gai4.com/?url="},
     //
     {"name":"秒解","type":1,"url":"https://play.fuqizhishi.com/maotv/API.php?appkey=QQ172598364&url="},
     {"name":"旋风","type":1,"url":"https://svip.iepig.com:4443/api/?key=SicQs2pG0Cw7BnWV9a&url=","ext":{"flag":["xfyun"]}},
