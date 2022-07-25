@@ -345,6 +345,8 @@
     {"name":"欢雨","type":1,"url":"http://www.youhuifuligou.com/json/?id=7&url=","ext":{"flag":["qq","腾讯","qiyi","爱奇艺","奇艺","youku","优酷","letv","乐视","xigua","西瓜"]}},
     {"name":"LTRX","type":1,"url":"https://svip.spchat.top/api/?type=ys&key=bKemW41JnxmQb4l67h&url=","ext":{"flag":["rx"]}},
     //
+    {"name":"ok1","type":0,"url":"https://okjx.cc/?url="},
+    {"name":"ok2","type":0,"url":"https://api.okjx.cc:3389/jx.php?url="},
     {"name":"zui","type":0,"url":"https://jx.zui.cm/?url=","ext":{"flag":["renrenmi"]}},
     {"name":"nfjx","type":1,"url":"https://www.nfjx.xyz/home/api?type=ys&uid=5767995&key=ijkmovxDEHIJPQRW69&url="},
     {"name":"fuqi","type":1,"url":"https://play.fuqizhishi.com/maotv/API.php?appkey=QQ172598364&url="},
