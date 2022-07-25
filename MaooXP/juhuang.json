@@ -8,13 +8,13 @@
     "dcShow2Vip": {},
     "dcPlayUrl": "true",
     "cateManual": {
-        "电影": "1",
-        "剧集": "2",
-        "韩剧": "13",
-        "日剧": "15",
-        "美剧": "16",
-        "动漫": "4",
-        "纪录片": "21"
+        "电影": "1_type",
+        "剧集": "2_type",
+        "韩剧": "13_type",
+        "日剧": "15_type",
+        "美剧": "16_type",
+        "动漫": "4_type",
+        "纪录片": "21_type"
     },
     "homeVodNode": "//div[@class='module-item']",
     "homeVodName": "//div[@class='module-item-pic']/a/@title",
