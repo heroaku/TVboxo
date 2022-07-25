@@ -292,7 +292,7 @@
     {"name":"Json轮询","type":2,"url":"Sequence"},
     //
      //{"name":"腾讯直解","type":0,"url":"https://vip.52jiexi.top/?url="},
-     //{"name":"523","type":0,"url":"https://go.yh0523.cn/y.cy?url="},
+     {"name":"523","type":0,"url":"https://go.yh0523.cn/y.cy?url="},
      //{"name":"1717","type":0,"url":"https://www.1717yun.com/1717yun/?url="},
      //{"name":"1717云","type":0,"url":"https://www.1717yun.com/jiexi/?url="},
     //
