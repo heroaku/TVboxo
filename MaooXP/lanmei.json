@@ -1,7 +1,7 @@
 {
   "author": "Tangsan99999",
   "ua": "",
-  "homeUrl": "https://lanmeiguojiang.com/index.php",
+  "homeUrl": "https://lanmeiguojiang.com/",
   "dcVipFlag": "true",
   "pCfgJs": "https://lanmeiguojiang.com/static/js/playerconfig.js",
   "pCfgJsR": "[\\W|\\S|.]*?MacPlayerConfig.player_list[\\W|\\S|.]*?=([\\W|\\S|.]*?),MacPlayerConfig.downer_list",
