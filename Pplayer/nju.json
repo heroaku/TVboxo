@@ -51,6 +51,7 @@
 
      ## XPath系列
     //
+     {"key":"csp_xpath_hhys","name":"火火影视(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/huohuo99.json"},
      {"key":"csp_xpath_dym8","name":"电影谜8(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/dym8.json"},
      {"key":"csp_xpath_dzdy","name":"钉子电影(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/dingzidy.json"},
      {"key":"csp_xpath_dynn","name":"电影牛(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/dianyingn.json"},
