@@ -6,7 +6,7 @@
 
   "sites":[
    //test
-    {"key":"csp_xpath_dytest","name":"电影(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/hdmoli.json"},
+    {"key":"csp_xpath_hdmoli","name":"HDmoli(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/hdmoli.json"},
    //
     {"key":"If101","name":"🐞If101(墙外)","type":3,"api":"csp_If101","searchable":1,"quickSearch":1,"filterable":1}, 
     {"key":"csp_xpath_独播库","name":"独播库(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/duboku.json"},
