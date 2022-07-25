@@ -2,12 +2,18 @@
     "author": "vx:bktx123",
     "ua": "",
     "homeUrl": "https://www.dandanzan10.top/",
-    "cateManual": { 
-       "电影": "dianying"
+    //仅电影能看
+    "cateNode": "//div[@class='nav']/ul/li/a[@href!='/']",
+    "cateName": "/text()",
+    "cateId": "/@href",
+    "cateIdR": "/(\\S+)/",
+    //
+    "cateManual": {},
+        //"电影": "dianying"
         //"电视剧": "dianshiju",
         //"综艺": "zongyi",
         //"动漫": "dongman"
-        },
+      
   // Home Summary ====================================================
     "homeVodNode": "//div[contains(@class,'lists')]/ul/li/a",
     "homeVodName": "/img/@alt",
