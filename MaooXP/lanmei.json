@@ -7,6 +7,15 @@
   "pCfgJsR": "[\\W|\\S|.]*?MacPlayerConfig.player_list[\\W|\\S|.]*?=([\\W|\\S|.]*?),MacPlayerConfig.downer_list",
   "dcShow2Vip": {},
   "dcPlayUrl": "true",
+  //
+      "cateManual": {
+      "剧集": "2",
+      "电影": "1",
+      "动漫": "3",
+      "综艺": "4",
+      "记录": "23",
+     },
+  //
   "cateNode": "//ul[@class='stui-header__menu']/li/a[contains(@href, 'type') and not(contains(@href,'24'))]",
   "cateName": "/text()",
   "cateId": "/@href",
@@ -19,7 +28,7 @@
   "homeVodImg": "/@data-original",
   "homeVodImgR": "\\S+(http\\S+)",
   "homeVodMark": "/span[@class='pic-text text-right']/b/text()",
-  "cateUrl": "https://lanmeiguojiang.com/index.php/vod/show/area/{area}/by/{by}/id/{cateId}/page/{catePg}/year/{year}.html",
+  "cateUrl": "https://lanmeiguojiang.com/type/{cateId}.html",
   "cateVodNode": "//div[@class='stui-vodlist__box']/a",
   "cateVodName": "/@title",
   "cateVodId": "/@href",
