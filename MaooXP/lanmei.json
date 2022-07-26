@@ -2,12 +2,18 @@
   "author": "Tangsan99999",
   "ua": "",
   "homeUrl": "https://lanmeiguojiang.com/",
-  //"dcVipFlag": "true",
-  //"pCfgJs": "https://lanmeiguojiang.com/static/js/playerconfig.js",
-  //"pCfgJsR": "[\\W|\\S|.]*?MacPlayerConfig.player_list[\\W|\\S|.]*?=([\\W|\\S|.]*?),MacPlayerConfig.downer_list",
-  //"dcShow2Vip": {},
-  //"dcPlayUrl": "true",
-  //
+  "dcVipFlag": "true",
+  "pCfgJs": "https://lanmeiguojiang.com/static/js/playerconfig.js",
+  "pCfgJsR": "[\\W|\\S|.]*?MacPlayerConfig.player_list[\\W|\\S|.]*?=([\\W|\\S|.]*?),MacPlayerConfig.downer_list",
+  "dcShow2Vip": {},
+  "dcPlayUrl": "true",
+  
+
+  
+  //"cateNode": "//ul[@class='stui-header__menu']/li/a[contains(@href, 'type') and not(contains(@href,'24'))]",
+  //"cateName": "/text()",
+  //"cateId": "/@href",
+  //"cateIdR": "/vod/type/id/(\\w+).html",
       "cateManual": {
       "剧集": "2",
       "电影": "1",
@@ -15,12 +21,6 @@
       "综艺": "4",
       "记录": "23",
      },
-  //
-  "cateNode": "//ul[@class='stui-header__menu']/li/a[contains(@href, 'type') and not(contains(@href,'24'))]",
-  "cateName": "/text()",
-  "cateId": "/@href",
-  "cateIdR": "/vod/type/id/(\\w+).html",
-  "cateManual": {},
   "homeVodNode": "//div[@class='stui-vodlist__box']/a",
   "homeVodName": "/@title",
   "homeVodId": "/@href",
