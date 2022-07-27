@@ -5,7 +5,7 @@
 
   "sites":[
     //
-    {"key":"Ekan_spider","name":"Ekan","api":"csp_Ekan","type":3,"filterable":1,"quickSearch":1,"searchable":1},
+    {"key":"Ekan_spider","name":"Ekan","api":"csp_Ekan","type":3,"filterable":1,"quickSearch":1,"searchable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar"},
     //
     {"key":"If101","name":"🐞If101(墙外)","type":3,"api":"csp_If101","searchable":1,"quickSearch":1,"filterable":1}, 
     {"key":"csp_xpath_独播库","name":"独播库(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/duboku.json"},
