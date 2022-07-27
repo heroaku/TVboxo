@@ -9,7 +9,11 @@
     "电影": "1",
     "连续剧": "2",
     "综艺": "3",
-    "动漫": "4"
+    "动漫": "4",
+    "国产剧": "13",
+    "港台剧": "14",
+    "欧美剧": "15",
+    "海外剧": "16"
   },
   "homeVodNode": "//div[contains(@class, 'module-items')]/div[contains(@class, 'module-item')]",
   "homeVodName": "/div[contains(@class, 'module-item-titlebox')]/a/@title",
@@ -17,7 +21,7 @@
   "homeVodIdR": "/index.php/vod/detail/id/(\\w+)",
   "homeVodImg": "/div[contains(@class, 'module-item-cover')]/div[contains(@class, 'module-item-pic')]/img/@data-src",
   "homeVodMark": "/div[contains(@class,'module-item-text')]/text()",
-  "cateUrl": "https://newfii.com/index.php/vod/type/id/{cateId}/page/{catePg}.html",
+  "cateUrl": "https://newfii.com/vodtype/{cateId}.html",
   "cateVodNode": "//div[@class='module-items']//div[@class='module-item-pic']",
   "cateVodName": "/a/@title",
   "cateVodId": "/a/@href",
