@@ -28,7 +28,7 @@
   "cateVodIdR": "/index.php/vod/detail/id/(\\w+)",
   "cateVodImg": "/img/@data-src",
   "cateVodMark": "",
-  "dtUrl": "https://newfii.com/index.php/vod/detail/id/{vid}.html",
+  "dtUrl": "https://newfii.com/voddetail/id/{vid}.html",
   "dtNode": "//div[contains(@class, 'box view-heading')]",
   "dtName": "/div[@class='video-info']/div[@class='video-info-header']/h1/text()",
   "dtNameR": "",
