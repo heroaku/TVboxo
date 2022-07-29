@@ -1,6 +1,10 @@
 {
   "classes": [
     {
+      "type_name": "音乐",
+      "type_id": "音乐"
+    },    
+    {
       "type_name": "搞笑",
       "type_id": "搞笑"
     },
