@@ -1,11 +1,11 @@
 { 
-  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91c.jar",
+  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91.jar",
  
   
   "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRodWIuY29tL2hlcm9ha3UvVFZib3hvL3Jhdy9tYWluL3R2L2JjLnR4dA=="]}]}],
 
   "sites":[
-    {"key": "Lezhu_spider","name": "乐猪影视","api":"csp_Lezhu","type":3,"filterable":1,"quickSearch":1,"searchable":1,"ext":""},
+    {"key": "Lezhu_spider","name": "乐猪影视","api":"csp_Lezhu","type":3,"filterable":1,"quickSearch":1,"searchable":1,"ext":"","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91c.jar"},
     {"key":"If101","name":"🐞If101(墙外)","type":3,"api":"csp_If101","searchable":1,"quickSearch":1,"filterable":1}, 
     {"key":"csp_xpath_独播库","name":"独播库(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/duboku.json"},
     {"key":"唐人街","name":"唐人街","type":0,"api":"https://www.tangrenjie.tv/api.php/provide/vod/at/xml","searchable":1,"quickSearch":0,"filterable":[]},  
