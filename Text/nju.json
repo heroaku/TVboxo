@@ -165,7 +165,7 @@
     {"key":"csp_XBiubiu_baoxian","name":"💦宝仙HD(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/baoxian.json"},
     {"key":"csp_XBiubiu_jiumengys","name":"💦旧梦影视(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E6%97%A7%E6%A2%A6%E5%BD%B1%E8%A7%86.json"},
     {"key":"csp_XBiubiu_milaiyingshi","name":"💦米来影视(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E7%B1%B3%E6%9D%A5%E5%BD%B1%E8%A7%86.json"},
-    //{"key":"csp_XBiubiu_1080KKK","name":"1080KKK(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/1080Kkk.json"},
+    {"key":"csp_XBiubiu_1080KKK","name":"💦1080KKK(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/1080Kkk.json"},
     {"key": "csp_biubiu_蓝莓影视","name": "💦蓝莓影视","type": 3,"api": "csp_XBiubiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://github.com/heroaku/TVboxo/blob/main/MaooXB/lanmei.json"},
     {"key":"csp_biubiu_蓝莓影视","name":"💦蓝莓影视(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E8%93%9D%E8%8E%93%E5%BD%B1%E8%A7%86.json"},  
     {"key":"csp_biubiu_naifeiyins","name":"💦NF云视频(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/nf.json"},
