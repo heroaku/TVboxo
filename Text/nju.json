@@ -172,7 +172,7 @@
     //
     {"key": "csp_biubiu_蓝莓影视","name": "💦蓝莓影视","type": 3,"api": "csp_XBiubiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://github.com/heroaku/TVboxo/blob/main/MaooXB/lanmei.json"},
     {"key":"csp_biubiu_蓝莓影视","name":"💦蓝莓影视(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E8%93%9D%E8%8E%93%E5%BD%B1%E8%A7%86.json"},  
-    {"key":"csp_biubiu_naifeiyins","name":"💦NF云视频(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/nf.json"},
+    //{"key":"csp_biubiu_naifeiyins","name":"💦NF云视频(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/nf.json"},
     {"key":"csp_biubiu_小宝影院","name":"💦小宝影院(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E5%B0%8F%E5%AE%9D%E5%BD%B1%E9%99%A2.json"},
     {"key":"csp_biubiu_瓜皮TV","name":"💦瓜皮TV(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E7%93%9C%E7%9A%AETV.json"},
     {"key":"csp_biubiu_zbk1","name":"💦真不卡(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/真不卡影院(不支持搜索).json"},
