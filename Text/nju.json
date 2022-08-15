@@ -93,6 +93,7 @@
 	{"key":"csp_xpath_xxys520","name":" 🌾小熊影视(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/xxys520.json"},
 	{"key":"csp_xpath_喵乐","name":" 🌾喵乐(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/%E5%96%B5%E4%B9%90.json"},
         {"key":"csp_xpath_555dy","name":" 🌾555电影","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/555dy.json"},
+        {"key":"csp_xpath_555dy1","name":" 🌾555电影Ⅱ","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/555dy(1).json"},
         {"key":"csp_xpath_蚂蚁影视","name":" 🌾蚂蚁影视","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/%E8%9A%82%E8%9A%81%E5%BD%B1%E8%A7%86.json"},
          //{"key": "csp_chinady", "name": "🔍中国电影(XPF)","type": 3,"api": "csp_XPathMacFilter","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXP/chinady.json"}, 
         {"key":"csp_xpath_348z","name":" 🌾348电影(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/348z.json"},
