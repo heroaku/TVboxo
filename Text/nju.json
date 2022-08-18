@@ -21,7 +21,7 @@
     {"key":"在线之家","name":"🐞在线之家","type":3,"api":"csp_Zxzj","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"csp_Tkys","name":"🐞天空影视","type": 3,"api": "csp_Tkys","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91.jar"},
     {"key":"csp_Nbys","name":"🐞泥巴(墙外)","type": 3,"api": "csp_Nbys","searchable": 1,"quickSearch": 1,"filterable": 1},
-    {"key":"Ekan_spider","name":"🐞Ekan","api":"csp_Ekan","type":3,"filterable":1,"quickSearch":1,"searchable":1},
+    {"key":"Ekan_spider","name":"🐞Ekan","api":"csp_Ekan","type":3,"filterable":1,"quickSearch":1,"searchable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91.jar"},
 
     //{"key": "神马影院","name": "🐴神马（SP）","type": 3,"api": "csp_Smdyy","searchable":1,"quickSearch": 1,"filterable": 1,  "jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar;md5;7eacb357cf27abce92ed497367221e5a" },
     {"key":"3EDY","name":"🐞3EDY(EXO/外网)","type":3,"api":"csp_EEEDY","searchable":1,"quickSearch":1,"filterable":1},
