@@ -54,7 +54,7 @@
     //{"key": "push_agent","name":"推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext":"1f373a68733e4dafa5fa28dca9826b35"},
     {"key":"csp_Mjxq","name":"🐞美剧星球","type": 3,"api": "csp_Mjxq","searchable": 1,"quickSearch": 1,"filterable": 1},
     //{"key":"Nfyun","name":"🐞Nf云","type":3,"api":"csp_Nfyun","searchable":1,"quickSearch":1,"filterable":1},
-    {"key":"csp_Wmkk","name":"🐞完美看看","api":"csp_Wmkk","type":3,"filterable":1,"quickSearch":1,"searchable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91.jar"},
+    {"key":"csp_Wmkk","name":"🐞完美看看","api":"csp_Wmkk","type":3,"filterable":1,"quickSearch":1,"searchable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar"},
     {"key": "csp_Kmys","name": "🐞酷猫影视","type": 3,"api": "csp_Kmys","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar"},
     {"key": "小宝影院","name": "🐞小宝影院", "type": 3,"api": "csp_Xiaoh","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91e.jar;md5;381a02b64a5bd9853369369c335b8018"},
     {"key": "Olevod","name": "🐞Olevod","type": 3,"api": "csp_Olevod","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar"},
