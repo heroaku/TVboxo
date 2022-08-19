@@ -39,8 +39,8 @@
     {"key": "csp_Yisou","name":"🐞易搜盘(SP)","type":3,"api":"csp_Yisou","searchable":1,"quickSearch":1,"filterable":0,"ext":"3a49cf29cf20410997247c6eb4509be9"},
     {"key": "csp_Gitcafe","name":"🐞阿里纸条(SP)","type":3,"api":"csp_Gitcafe","searchable":1,"quickSearch":1,"filterable":0,"ext":"3a49cf29cf20410997247c6eb4509be9"},  
     {"key": "csp_AliPS","name":"🐞阿里喵搜(SP)","type":3,"api":"csp_AliPS","searchable":1,"quickSearch":1,"filterable":0,"ext":"3a49cf29cf20410997247c6eb4509be9"},
-    //{"key":"Zhaozy","name":"🐞找资源(SP)","type":3,"api":"csp_Zhaozy","searchable":1,"quickSearch":1,"filterable":1,"ext":"3a49cf29cf20410997247c6eb4509be9"},
-    //{"key":"push_agent","name":"🎲推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext":"3a49cf29cf20410997247c6eb4509be9"},
+    {"key":"Zhaozy","name":"🐞找资源(SP)","type":3,"api":"csp_Zhaozy","searchable":1,"quickSearch":1,"filterable":1,"ext":"3a49cf29cf20410997247c6eb4509be9"},
+    {"key":"push_agent","name":"🎲推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext":"3a49cf29cf20410997247c6eb4509be9"},
 
     //{"key":"Gitcafe","name":"🐞小纸条","type":3,"api":"csp_GitCafe","searchable":1,"quickSearch":1,"filterable":1,"ext":"27b06d5221a24199b15f2e573d847430","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alipan.jar;md5;aa7587220ff66f25b923a8cfa43f5713"},
     {"key":"csp_GitCafe","name":"🐞小纸条(云盘)","type":3,"api":"csp_Gitcafe","searchable":1,"quickSearch":1,"filterable":1,"ext": "d470330e11ef4b7baf28ece31b27b113","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alipan.jar;md5;aa7587220ff66f25b923a8cfa43f5713"},
@@ -54,8 +54,8 @@
     //{"key": "push_agent","name":"推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext":"ad3c78559a494bde814f1a6c8c40db51"},
     //{"key": "push_agent","name":"推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext":"1f373a68733e4dafa5fa28dca9826b35"},
        
-    {"key":"csp_Zhaozy","name":"找资源(云盘)","type":3,"api":"csp_Zhaozy","searchable":1,"quickSearch":1,"filterable":0,"ext": "d470330e11ef4b7baf28ece31b27b113","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alipan.jar;md5;aa7587220ff66f25b923a8cfa43f5713"},
-    {"key":"push_agent","name":"推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext": "d470330e11ef4b7baf28ece31b27b113","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alipan.jar;md5;aa7587220ff66f25b923a8cfa43f5713"},
+    //{"key":"csp_Zhaozy","name":"找资源(云盘)","type":3,"api":"csp_Zhaozy","searchable":1,"quickSearch":1,"filterable":0,"ext": "d470330e11ef4b7baf28ece31b27b113","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alipan.jar;md5;aa7587220ff66f25b923a8cfa43f5713"},
+    //{"key":"push_agent","name":"推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext": "d470330e11ef4b7baf28ece31b27b113","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alipan.jar;md5;aa7587220ff66f25b923a8cfa43f5713"},
     
     {"key":"csp_Mjxq","name":"🐞美剧星球","type": 3,"api": "csp_Mjxq","searchable": 1,"quickSearch": 1,"filterable": 1},
     //{"key":"Nfyun","name":"🐞Nf云","type":3,"api":"csp_Nfyun","searchable":1,"quickSearch":1,"filterable":1},
