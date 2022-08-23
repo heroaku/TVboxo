@@ -1,6 +1,6 @@
 { 
   "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar;md5;A5ED2B58063A1915FF1FE0B83DBEF99D",
-  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91g.jar;md5;381A02B64A5BD9853369369C335B8018",
+  //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91g.jar;md5;381A02B64A5BD9853369369C335B8018",
  
   
   "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRodWIuY29tL2hlcm9ha3UvVFZib3hvL3Jhdy9tYWluL3R2L2JjLnR4dA=="]}]}],
