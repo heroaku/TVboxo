@@ -355,6 +355,18 @@
     {"key":"海外电影","name":"海外电影(聚)","type":1,"api":"https://www.200121.com/api.php/provide/vod/","searchable":1,"quickSearch":1}
   ],
 
+"drives":[
+{"name":"Puppet studio","plugin":"alist","server":"https://www.kugutsu.ml","userName":"","password":"","type":"plugin"},
+{"name":"99T","plugin":"alist","server":"https://drive.9t.ee","userName":"","password":"","type":"plugin"},
+{"name":"一只魚","plugin":"alist","server":"https://alist.youte.ml/","userName":"","password":"","type":"plugin"},
+{"name":"姬路白雪","plugin":"alist","server":"https://pan.jlbx.xyz/","userName":"","password":"","type":"plugin"},
+{"name":"嗨翻","plugin":"alist","server":"https://pan.hikerfans.com/","userName":"","password":"","type":"plugin"},
+{"name":"非盘","plugin":"alist","server":"http://www.feifwp.top/","userName":"","password":"","type":"plugin"},
+{"name":"听闻","plugin":"alist","server":"https://wangpan.sangxuesheng.com/","userName":"","password":"","type":"plugin"},
+{"name":"晴园","server":"https://alist.52qy.repl.co/dav/","userName":"qingyuan","password":"qingyuan","type":"webdav"},
+{"name":"晴園","plugin":"alist","server":"https://alist.52qy.repl.co/","userName":"","password":"","type":"plugin"}
+],
+
   "parses":[
     {"name":"解析聚合","type":3,"url":"Demo"},
     {"name":"Json并发","type":2,"url":"Parallel"},
