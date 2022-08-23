@@ -3,9 +3,6 @@
   "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
   "homeUrl": "https://auete.com",
   "cateManual": {
-    "Netflix影视": "Netflix/movies",
-    "谍战剧集推荐": "diezhan/index",
-    "豆瓣TOP250": "Top250/movie",
     "电影": "Movie/index",
     "电视剧": "Tv/index",
     "综艺": "Zy/index",
