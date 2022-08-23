@@ -113,7 +113,8 @@
      ## XPath系列
  
 	{"key":"csp_xpath_cokemv","name":" 🌾Cokemv(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/cokemv.json"},
-	{"key":"csp_xpath_ddg","name":" 🌾达达龟(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/dadagui.json"},
+	{"key":"csp_xpath_Auete","name":" 🌾AUETE(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/auete.json"},
+        {"key":"csp_xpath_ddg","name":" 🌾达达龟(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/dadagui.json"},
 	{"key":"csp_xpath_Gimy","name":" 🌾GIMY影视(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":0,"quickSearch":0,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/Gimy.json"},
 	{"key":"csp_xpath_jbb","name":" 🌾剧白白(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/jubaibai.json"},
 	{"key":"csp_xpath_lranc","name":" 🌾天天影视(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/lranc.json"},
