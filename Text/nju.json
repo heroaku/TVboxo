@@ -74,10 +74,10 @@
     // {"key":"csp_Buka","name":"🐞真不卡","type":3,"api":"csp_Buka","searchable":0,"quickSearch":1,"filterable":1},
     {"key":"csp_DiDuan","name":"🐞低端影视","api":"csp_DiDuan","type":3,"searchable":0,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar"}, 
 	  
-    {"key": "Bili","name": "🐞哔哩哔哩","type": 3,"api": "csp_BBB","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/Bili.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/bili.jar;md5;c5c337bb2793598e9aa5953898fbb087"},
+    {"key": "Bili","name": "🐞哔哩哔哩","type": 3,"api": "csp_BBB","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/Bili.json"},
     {"key": "Bili2","name": "🐞哔哩哔哩ZY","type": 3,"api": "csp_BBB","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/Bili2.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar"},
     {"key": "csp_BBB"          ,"name":"🅱️哔哩自定义","type": 3,"api": "csp_Bili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"https://github.com/heroaku/TVboxo/raw/main/Bili/bilirch.json"},
-    {"key": "少儿","name": "🅱少儿教育","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/sejy.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/bili.jar;md5;c5c337bb2793598e9aa5953898fbb087"},
+    //{"key": "少儿","name": "🅱少儿教育","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/sejy.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/bili.jar;md5;c5c337bb2793598e9aa5953898fbb087"},
     {"key": "学堂","name": "🅱学堂教育","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/xt.json"},
     {"key": "美食","name": "🅱美食乐欢天😂","type": 3,"api": "csp_Bili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"https://github.com/heroaku/TVboxo/raw/main/Bili/cook.json"},
     {"key": "棋牌","name": "🅱棋牌老头乐","type": 3,"api": "csp_Bili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/我爱棋.txt"},
