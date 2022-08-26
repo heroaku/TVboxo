@@ -142,6 +142,7 @@
         {"key":"csp_xpath_蚂蚁影视","name":" 🌾蚂蚁影视","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/%E8%9A%82%E8%9A%81%E5%BD%B1%E8%A7%86.json"},
         {"key":"csp_xpath_dianyinniu","name":" 🌾电影牛(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/dyn.json"},
         {"key": "csp_xpath_gongrenys","name": " 🌾工人影视(聚)️","type": 3,"api": "csp_XPathMacFilter","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXP/gongreng.json"},
+        {"key": "csp_xpath_旧梦影视","name": " 🌾旧梦影视(XPF)️","type": 3,"api": "csp_XPathFilter","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXP/%E6%97%A7%E6%A2%A6%E5%BD%B1%E8%A7%86.json"},
 
   //{"key": "csp_chinady", "name": "🔍中国电影(XPF)","type": 3,"api": "csp_XPathMacFilter","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXP/chinady.json"}, 
         {"key":"csp_xpath_348z","name":" 🌾348电影(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/348z.json"},
