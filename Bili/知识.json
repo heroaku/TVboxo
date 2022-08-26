@@ -66,55 +66,9 @@
       "type_name": "八段锦",
       "type_id": "八段锦"
     },
-    {
-      "type_name": "斗地主",
-      "type_id": "斗地主"
-    },
-    {
-      "type_name": "炸金花",
-      "type_id": "炸金花"
-    },
-    
-    {
-      "type_name": "梭哈",
-      "type_id": "梭哈"
-    },
 
-    
-      
-     {
-      "type_name": "80分",
-      "type_id": "80分升级棋牌"
-    },
-     {
-      "type_name": "拱猪",
-      "type_id": "拱猪"
-    },
     {
-      "type_name": "锄大地",
-      "type_id": "锄大地棋牌"
-    },
-    {
-      "type_name": "跑胡子",
-      "type_id": "跑胡子"
-    },
-    {
-      "type_name": "三打一",
-      "type_id": "三打一棋牌"
-    },
-    {
-      "type_name": "干瞪眼",
-      "type_id": "干瞪眼"
-    },
-    {
-      "type_name": "双扣",
-      "type_id": "双扣"
-    }, {
-      "type_name": "打滚子",
-      "type_id": "打滚子棋牌"
-    },
-    {
-      "type_name": "远离赌博，创造美好家庭",
+      "type_name": "多多学习，创造美好家庭",
       "type_id": ""
     }
     
@@ -219,7 +173,7 @@
 ],
 
 
-"国际象棋": [
+"安卓逆向": [
 {"key": "order","name": "排序","value": [
 {"n": "综合排序","v": "0"},
 {"n": "最多点击","v": "click"},
@@ -239,7 +193,7 @@
 }
 ],
 
-"象棋": [
+"中医基础": [
 {"key": "order","name": "排序","value": [
 {"n": "综合排序","v": "0"},
 {"n": "最多点击","v": "click"},
