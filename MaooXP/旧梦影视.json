@@ -1,0 +1,1286 @@
+﻿{
+  "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
+  "homeUrl": "http://150.158.130.238:4433",
+  "dcVipFlag": "true",
+  "pCfgJs": "http://150.158.130.238:4433/static/js/playerconfig.js",
+  "pCfgJsR": "[\\W|\\S|.]*?MacPlayerConfig.player_list[\\W|\\S|.]*?=([\\W|\\S|.]*?),MacPlayerConfig.downer_list",
+  "dcShow2Vip": {},
+  "dcPlayUrl": "true",
+  
+  "cateManual": {
+          "电影": "1",           
+          "电视剧": "2",
+          "动漫": "3",
+          "B站": "4",
+          "综艺": "6"
+},
+
+  "homeVodNode": "//div[@class='module']/div[contains(@class,'module-main')]/div[contains(@class,'module-items')]/a",
+  "homeVodName": "/@title",
+  "homeVodId": "/@href",
+  "homeVodIdR": "/index.php/vod/detail/id/(\\w+).html",
+  "homeVodImg": "/div/div[@class='module-item-pic']/img/@data-original",
+  "homeVodMark": "/div/div[@class='module-item-note']/text()",
+
+  "cateUrl": "http://150.158.130.238:4433/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/lang/{lang}/letter/{letter}/page/{catePg}/year/{year}.html",
+  "cateVodNode": "//div[@class='module']/div[contains(@class,'module-page')]/div[contains(@class,'module-items')]/a",
+  "cateVodName": "/@title",
+  "cateVodId": "/@href",
+  "cateVodIdR": "/index.php/vod/detail/id/(\\w+).html",
+  "cateVodImg": "/div/div[@class='module-item-pic']/img/@data-original",
+  "cateVodMark": "/div/div[@class='module-item-note']/text()",
+
+  "dtUrl": "http://150.158.130.238:4433/index.php/vod/detail/id/{vid}.html",
+  "dtNode": "//div[@class='module-main']",
+  "dtName": "//div[@class='module-info-heading']/h1/text()",
+  "dtNameR": "",
+  "dtImg": "//div[@class='module-item-pic']/img/@data-original",
+  "dtImgR": "\\S+(http\\S+)",
+  "dtCate": "//div[@class='module-info-tag']/div[3]/a/text()",
+  "dtCateR": "",
+  "dtArea": "//div[@class='module-info-tag']/div[2]/a/text()",
+  "dtAreaR": "",
+  "dtDirector": "//span[contains(text(), '导演')]/following-sibling::div/a/text()",
+  "dtDirectorR": "",
+  "dtActor": "//span[contains(text(), '主演')]/following-sibling::div/a/text()",
+  "dtActorR": "",
+  "dtYear": "//div[@class='module-info-tag']/div[1]/a/text()",
+  "dtYearR": "",
+  "dtMark": "//div[@class='module-info-items']/div[5]/div/text()",
+  "dtMarkR": "",
+  "dtDesc": "//div[contains(@class, '-introduction-')]/p/text()",
+  "dtDescR": "",
+
+  "dtFromNode": "//div[@id='y-playList']/div/span",
+  "dtFromName": "/text()",
+  "dtUrlNode": "//div[@id='panel1']",
+  "dtUrlSubNode": "/div/div/a",
+  "dtUrlId": "/@href",
+  "dtUrlIdR": "/index.php/vod/play/id/(\\S+).html",
+  "dtUrlName": "/span/text()",
+  "playUrl": "http://150.158.130.238:4433/index.php/vod/play/id/{playUrl}.html",
+
+  "searchUrl": "http://150.158.130.238:4433/index.php/ajax/suggest?mid=1&wd={wd}&limit=10",
+  "scVodNode": "json:list",
+  "scVodName": "name",
+  "scVodId": "id",
+  "scVodIdR": "",
+  "scVodImg": "pic",
+  "scVodMark": "",
+
+"filter":{
+          "1":[
+                { 
+                   "key": "cateId",
+                   "name": "类型",
+                   "value": [
+                              {
+                                "n": "全部",
+                                "v": ""
+                              },
+                              {
+                                "n": "动作",
+                                "v": "7"
+                              },
+                              {
+                                "n": "喜剧",
+                                "v": "8"
+                              },
+                              {
+                                "n": "爱情",
+                                "v": "9"
+                              },
+                              {
+                                "n": "科幻",
+                                "v": "10"
+                              },
+                              {
+                                "n": "恐怖",
+                                "v": "11"
+                              },
+                              {
+                                "n": "剧情",
+                                "v": "12"
+                              },
+                              {
+                                "n": "战争",
+                                "v": "13"
+                              },
+                              {
+                                "n": "惊悚",
+                                "v": "14"
+                               },
+                              {
+                                "n": "犯罪",
+                                "v": "15"
+                              },
+                              {
+                                "n": "冒险",
+                                "v": "16"
+                              },
+                              {
+                                "n": "悬疑",
+                                "v": "17"
+                              },
+                              {
+                                "n": "武侠",
+                                "v": "21"
+                              },
+                              {
+                                "n": "奇幻",
+                                "v": "22"
+                              },
+                              {
+                                "n": "纪录",
+                                "v": "23"
+                              },
+                              {
+                                "n": "4K",
+                                "v": "30"
+                              }
+                            ]
+                },
+                {
+                   "key": "class",
+                   "name": "剧情",
+                   "value": [
+                              { 
+                                "n": "全部",
+                                "v": ""
+                              },   
+                              {
+                                "n": "喜剧",
+                                "v": "喜剧"
+                              },
+                              {
+                                "n": "爱情",
+                                "v": "爱情"
+                              },
+                              {
+                                "n": "恐怖",
+                                "v": "恐怖"
+                              },
+                              {
+                                "n": "动作",
+                                "v": "动作"
+                              },
+                              {
+                                "n": "科幻",
+                                "v": "科幻"
+                              },
+                              {
+                                "n": "剧情",
+                                "v": "剧情"
+                              },
+                              {
+                                "n": "战争",
+                                "v": "战争"
+                              },
+                              {
+                                "n": "犯罪",
+                                "v": "犯罪"
+                              },
+                              {
+                                "n": "奇幻",
+                                "v": "奇幻"
+                              },
+                              {
+                                "n": "武侠",
+                                "v": "武侠"
+                              },
+                              {
+                                "n": "冒险",
+                                "v": "冒险"
+                              },
+                              {
+                                "n": "恐怖",
+                                "v": "恐怖"
+                              },
+                              {
+                                "n": "悬疑",
+                                "v": "悬疑"
+                              },
+                              {
+                                "n": "惊悚",
+                                "v": "惊悚"
+                              },
+                              {
+                                "n": "古装",
+                                "v": "古装"
+                              },
+                              {
+                                "n": "历史",
+                                "v": "历史"
+                              },
+                              {
+                                "n": "运动",
+                                "v": "运动"
+                              },
+                              {
+                                "n": "网络",
+                                "v": "网络"
+                              },
+                              {
+                                "n": "4K",
+                                "v": "4K"
+                               }
+                            ]
+                },
+                {  
+                   "key": "area",
+                   "name": "地区",
+                   "value": [
+                              {
+                                "n": "全部",
+                                "v": "" 
+                              },
+                              {
+                                "n": "大陆",
+                                "v": "大陆"
+                               },
+                              {
+                                "n": "香港",
+                                "v": "香港"
+                              },
+                              {
+                                "n": "台湾",
+                                "v": "台湾"
+                              },
+                              {
+                                "n": "美国",
+                                "v": "美国"
+                              },
+                              {
+                                "n": "法国",
+                                "v": "法国"
+                              },
+                              {
+                                "n": "英国",
+                                "v": "英国"
+                              },
+                              {
+                                "n": "日本",
+                                "v": "日本"
+                              },
+                              {
+                                "n": "韩国",
+                                "v": "韩国"
+                              },
+                              {
+                                "n": "德国",
+                                "v": "德国"
+                              },
+                              {
+                                "n": "泰国",
+                                "v": "泰国"
+                              },
+                              {
+                                "n": "印度",
+                                "v" :"印度"
+                              },
+                              {
+                                "n": "意大利",
+                                "v": "意大利"
+                              },
+                              {
+                                "n": "西班牙",
+                                "v": "西班牙"
+                              },
+                              {
+                                "n": "加拿大",
+                                "v": "加拿大"
+                              },
+                              {
+                                "n": "其他",
+                                "v": "其他"
+                              }
+                            ]
+                },
+                {
+                   "key": "lang",
+                   "name": "语言",
+                   "value": [
+                              {
+                                "n": "全部",
+                                "v": ""
+                              },
+                              {
+                                "n": "国语",
+                                "v": "国语"
+                              },
+                              {
+                                "n": "英语",
+                                "v": "英语"
+                              },
+                              {
+                                "n": "粤语",
+                                "v": "粤语"
+                              },
+                              {
+                                "n": "闽南语",
+                                "v": "闽南语"
+                              },
+                              {
+                                "n": "韩语",
+                                "v": "韩语"                   
+                              },
+                              {
+                                "n": "日语",
+                                "v": "日语"
+                              },
+                              {
+                                "n": "法语",
+                                "v": "法语"
+                              },
+                              {
+                                "n": "德语",
+                                "v": "德语"
+                              },
+                              {
+                                "n": "其它",
+                                "v": "其它"
+                              }
+                            ]
+                },
+                {  
+                   "key": "year",
+                   "name": "年份",
+                   "value": [
+                              {
+                                "n": "全部",
+                                "v": ""
+                              },
+                              {
+                                "n": "2022",
+                                "v": "2022"
+                              },
+                              {
+                                "n": "2021",
+                                "v": "2021"
+                              },
+                              {
+                                "n": "2019",
+                                "v": "2019"
+                              },
+                              {
+                                "n": "2018",
+                                "v": "2018"
+                              },
+                              {
+                                "n": "2017",
+                                "v": "2017"
+                              },
+                              {
+                                "n": "2016",
+                                "v": "2016"
+                              },
+                              {
+                                "n": "2015",
+                                "v": "2015"
+                              },
+                              {
+                                "n": "2014",
+                                "v": "2014"
+                              },
+                              {
+                                "n": "2013",
+                                "v": "2013"
+                              },
+                              {
+                                "n": "2012",
+                                "v": "2012"
+                              },
+                              {
+                                "n": "2011",
+                                "v": "2011"
+                              },
+                              {
+                                "n": "2010", 
+                                "v": "2010"
+                              }
+                            ]
+                },
+                {
+                   "key": "letter",
+                   "name": "字母",
+                   "value": [ 
+                              {
+                                "n": "字母",
+                                "v": ""
+                              },
+                              {
+                                "n": "A",
+                                "v": "A"
+                              },
+                              {
+                                "n": "B",
+                                "v": "B"
+                              },
+                              {
+                                "n": "C",
+                                "v": "C"
+                              },
+                              {
+                                "n": "D",
+                                "v": "D"
+                              },
+                              {
+                                "n": "E",
+                                "v": "E"
+                              },
+                              {
+                                "n": "F",
+                                "v": "F"
+                              },
+                              {
+                                "n": "G",
+                                "v": "G"
+                              },
+                              {
+                                "n": "H",
+                                "v": "H"
+                              },
+                              {
+                                "n": "I",
+                                "v": "I"
+                              },
+                              {
+                                "n": "J",
+                                "v": "J"
+                              },
+                              {
+                                "n": "K",
+                                "v": "K"
+                              },
+                              {
+                                "n": "L",
+                                "v": "L"
+                              },
+                              {
+                                "n": "M",
+                                "v": "M"
+                              },
+                              {
+                                "n": "N",
+                                "v": "N"
+                              },
+                              {
+                                "n": "O",
+                                "v": "O"
+                              },
+                              {
+                                "n": "P",
+                                "v": "P"
+                              },
+                              {
+                                "n": "Q",
+                                "v": "Q"
+                              },
+                              {
+                                "n": "R",
+                                "v": "R"
+                              },
+                              {
+                                "n": "S",
+                                "v": "S"
+                              },
+                              {
+                                "n": "T",
+                                "v": "T"
+                              },
+                              {
+                                "n": "U",
+                                "v": "U"
+                              },
+                              {
+                                "n": "V",
+                                "v": "V"
+                              },
+                              {
+                                "n": "W",
+                                "v": "W"
+                              },
+                              {
+                                "n": "X",
+                                "v": "X"
+                              },
+                              {
+                                "n": "Y",
+                                "v": "Y"
+                              },
+                              {
+                                "n": "Z",
+                                "v": "Z"
+                              },
+                              {
+                                "n": "0-9",
+                                "v": "0-9"
+                              }
+                            ]
+                },
+                { 
+                   "key": "by",
+                   "name": "排序",
+                   "value": [
+                              {
+                                "n": "时间排序",
+                                "v": "time"
+                              },
+                              {
+                                "n": "人气排序",
+                                "v": "hits"
+                              },
+                              {
+                                "n": "评分排序",
+                                "v": "score"
+                              }
+                            ]
+                }
+              ]
+       }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
