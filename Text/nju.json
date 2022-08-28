@@ -239,7 +239,7 @@
 {"key":"csp_QXBiubiu_小强迷","name":"小强迷(QXB)","type":3,"api":"csp_QXBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/QXBiu/小强迷.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91i.jar"},
 {"key":"csp_QXBiubiu_歪片星球","name":"歪片星球(QXB)️","type":3,"api":"csp_QXBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/QXBiu/歪片星球.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91i.jar"},
 {"key":"csp_QXBiubiu_蚂蚁4K","name":"蚂蚁4K(QXB)️","type":3,"api":"csp_QXBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/QXBiu/蚂蚁4K.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91i.jar"},
-{"key":"csp_QXBiubiu_80S磁力","name":"80S磁力(需要外置MX播放器QXB)","type":3,"api":"csp_QXBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/QXBiu/80S磁力.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91i.jar"},
+//{"key":"csp_QXBiubiu_80S磁力","name":"80S磁力(需要外置MX播放器QXB)","type":3,"api":"csp_QXBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/QXBiu/80S磁力.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91i.jar"},
 
 
 //{"key":"XYQB规则","name":"↓〔XYQB新规则指引〕↓","type":0,"api":"","searchable":0,"quickSearch":0,"filterable":0},
