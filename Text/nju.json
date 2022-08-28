@@ -138,7 +138,20 @@
     {"key":"csp_XYQBiu_短视频","name":"分享短视频(YXQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/分享短视频.json"},
     //{"key":"csp_xpath_88kanqiu","name":" 🌾88看球〔XP〕","type":3,"api":"csp_XPath","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/88kanqiu.json"},
     //{"key": "csp_xpath_jrskan","name": " 🌾JRKAN直播〔XPF〕","type": 3,"api": "csp_XPathFilter","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXP/jrskan.json"},
-     ## XPath系列
+    // Alist
+     {"key": "csp_Alist1","name": "🚩Alist Hikerfans","type": 3,"api": "csp_Alist","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://pan.hikerfans.com","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91j.jar"},
+     {"key": "csp_Alist2","name": "🚩Alist 9t","type": 3,"api": "csp_Alist","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://drive.9t.ee","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91j.jar"},
+     {"key": "csp_Alist3","name": "🚩Alist Youte","type": 3,"api": "csp_Alist","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://alist.youte.ml","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91j.jar"},
+     {"key": "csp_Alist4","name": "🚩Alist Sangxuesheng","type": 3,"api": "csp_Alist","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://wangpan.sangxuesheng.com","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91j.jar"},
+     {"key": "csp_Alist5","name": "🚩Alist 142856","type": 3,"api": "csp_Alist","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://pan.142856.xyz","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91j.jar"},
+     {"key": "csp_Alist6","name": "🚩Alist kugutsu","type": 3,"api": "csp_Alist","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://www.kugutsu.ml","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91j.jar"},
+     {"key": "csp_Alist7","name": "🚩Alist Jlbx","type": 3,"api": "csp_Alist","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://pan.jlbx.xyz/","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91j.jar"},
+     {"key": "csp_Alist8","name": "🚩Alist Feifwp","type": 3,"api": "csp_Alist","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "http://www.feifwp.top/","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91j.jar"},
+     {"key": "csp_Alist9","name": "🚩Alist 52qy","type": 3,"api": "csp_Alist","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://alist.52qy.repl.co/","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91j.jar"},
+
+	  
+	  
+	  ## XPath系列
  
 	{"key":"csp_xpath_cokemv","name":" 🌾Cokemv(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/cokemv.json"},
 	//{"key":"csp_xpath_Auete","name":" 🌾AUETE(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/auete.json"},
