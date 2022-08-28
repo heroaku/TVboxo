@@ -1,9 +1,5 @@
 {
   "classes": [
-   // {
-      "type_name": "吾爱评测整理",
-      "type_id": "吾爱评测"
-    },
         {
       "type_name": "测评",
       "type_id": "测评"
