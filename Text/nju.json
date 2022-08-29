@@ -242,11 +242,15 @@
 //{"key":"XYQB规则","name":"↓〔XYQB新规则指引〕↓","type":0,"api":"","searchable":0,"quickSearch":0,"filterable":0},
 
 
-{"key":"csp_XYQBiu_剧荒","name":"剧荒影院(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/剧荒.json"},
-{"key":"csp_XYQBiu_555影视","name":"555影视(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/555影视.json"},
-{"key":"csp_XYQBiu_影视工厂","name":"影视工厂(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/影视工厂.json"},
+{"key":"csp_XYQBiu_剧荒","name":" ♨剧荒影院(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/剧荒.json"},
+{"key":"csp_XYQBiu_555影视","name":" ♨555影视(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/555影视.json"},
+{"key":"csp_XYQBiu_影视工厂","name":" ♨影视工厂(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/影视工厂.json"},
+{"key":"csp_XYQBiu_wnys","name":" ❇万能影视(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/万能影视.json"},
+{"key":"csp_XYQBiu_lyys","name":" ❇凌云影视(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/凌云影视.json"},
+{"key":"csp_XYQBiu_yqsp","name":" ❇云雀视频(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/云雀视频.json"},
+{"key":"csp_XYQBiu_e9","name":" ❇e9视频(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/e9视频.json"},
 
-{"key":"csp_XYQBiu_虎牙直播","name":"虎牙直播(YXQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/虎牙代理直链.json"},
+{"key":"csp_XYQBiu_虎牙直播","name":" ♨虎牙直播(YXQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/虎牙代理直链.json"},
 
     
 
