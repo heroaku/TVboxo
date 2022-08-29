@@ -5,6 +5,7 @@
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91g.jar;md5;381A02B64A5BD9853369369C335B8018",
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91h.jar;md5;BD05DF7AFF8664BCDB7097B7D04A7FA9",
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/bili.jar;md5;c5c337bb2793598e9aa5953898fbb087",
+  //,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alipan.jar;md5;aa7587220ff66f25b923a8cfa43f5713"
  
   
   "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRodWIuY29tL2hlcm9ha3UvVFZib3hvL3Jhdy9tYWluL3R2L2JjLnR4dA=="]}]}],
@@ -22,7 +23,7 @@
     {"key":"csp_Nbys","name":"🐞泥巴(墙外)","type": 3,"api": "csp_Nbys","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar;md5;A5ED2B58063A1915FF1FE0B83DBEF99D"},
     {"key":"293","name":"🐞293视频","type":3,"api":"csp_SP293","searchable":1,"quickSearch":1,"filterable":1,"ext":""},
     {"key":"csp_Auete","name":"🐞Auete影院","type":3,"api":"csp_Auete","searchable":1,"quickSearch":1,"filterable":1},
-    {"key":"csp_Cokemv","name":"🐞Cokemv影院","type":3,"api":"csp_Cokemv","searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91f.jar"},
+    {"key":"csp_Cokemv","name":"🐞Cokemv影院","type":3,"api":"csp_Cokemv","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"在线之家","name":"🐞在线之家","type":3,"api":"csp_Zxzj","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"csp_Tkys","name":"🐞天空影视","type": 3,"api": "csp_Tkys","searchable": 1,"quickSearch": 1,"filterable": 1},
     {"key":"csp_CZSPP","name":"🐞厂长资源","type":3,"api":"csp_Czsapp","searchable":1,"quickSearch":1,"filterable":1},
@@ -42,7 +43,7 @@
     {"key":"小苹果","name":"🐞小苹果","type":3,"api":"csp_LiteApple","searchable":1,"quickSearch":1,"filterable":1},
     {"key": "在线直播（SP）","name": "在线直播（SP）","type": 3,"api": "csp_Yj1211","searchable": 1,"quickSearch": 1,"filterable": 1},
     {"key": "csp_Yisou","name":"🐞易搜盘(SP)","type":3,"api":"csp_Yisou","searchable":1,"quickSearch":1,"filterable":0,"ext":"3a49cf29cf20410997247c6eb4509be9"},
-    {"key": "csp_Gitcafe","name":"🐞阿里纸条(SP)","type":3,"api":"csp_Gitcafe","searchable":1,"quickSearch":1,"filterable":0,"ext":"3a49cf29cf20410997247c6eb4509be9","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91h.jar;md5;BD05DF7AFF8664BCDB7097B7D04A7FA9"},  
+    {"key": "csp_Gitcafe","name":"🐞阿里纸条(SP)","type":3,"api":"csp_Gitcafe","searchable":1,"quickSearch":1,"filterable":0,"ext":"3a49cf29cf20410997247c6eb4509be9"},  
     {"key": "csp_AliPS","name":"🐞阿里喵搜(SP)","type":3,"api":"csp_AliPS","searchable":1,"quickSearch":1,"filterable":0,"ext":"3a49cf29cf20410997247c6eb4509be9"},
     //{"key":"Zhaozy","name":"🐞找资源(SP)","type":3,"api":"csp_Zhaozy","searchable":1,"quickSearch":1,"filterable":1,"ext":"3a49cf29cf20410997247c6eb4509be9"},
     //{"key":"push_agent","name":"🎲推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext":"3a49cf29cf20410997247c6eb4509be9"},
@@ -60,8 +61,8 @@
     //{"key": "push_agent","name":"推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext":"ad3c78559a494bde814f1a6c8c40db51"},
     //{"key": "push_agent","name":"推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext":"1f373a68733e4dafa5fa28dca9826b35"},
        
-    {"key":"csp_Zhaozy","name":"找资源(云盘)","type":3,"api":"csp_Zhaozy","searchable":1,"quickSearch":1,"filterable":0,"ext": "d470330e11ef4b7baf28ece31b27b113","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alipan.jar;md5;aa7587220ff66f25b923a8cfa43f5713"},
-    {"key":"push_agent","name":"推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext": "d470330e11ef4b7baf28ece31b27b113","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alipan.jar;md5;aa7587220ff66f25b923a8cfa43f5713"},
+    {"key":"csp_Zhaozy","name":"找资源(云盘)","type":3,"api":"csp_Zhaozy","searchable":1,"quickSearch":1,"filterable":0,"ext": "d470330e11ef4b7baf28ece31b27b113"},
+    {"key":"push_agent","name":"推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext": "d470330e11ef4b7baf28ece31b27b113"},
     
     {"key":"csp_Mjxq","name":"🐞美剧星球","type": 3,"api": "csp_Mjxq","searchable": 1,"quickSearch": 1,"filterable": 1},
     //{"key":"Nfyun","name":"🐞Nf云","type":3,"api":"csp_Nfyun","searchable":1,"quickSearch":1,"filterable":1},
@@ -77,7 +78,7 @@
     {"key":"csp_DiDuan","name":"🐞低端影视","api":"csp_Ddrk","type":3,"searchable":0,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91e.jar"}, 
 	  
     {"key": "Bili","name": "🐞哔哩哔哩","type": 3,"api": "csp_BBB","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/Bili.json"},
-    //{"key": "Bili2","name": "🐞哔哩哔哩ZY","type": 3,"api": "csp_BBB","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/Bili2.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar"},
+    {"key": "Bili2","name": "🐞哔哩哔哩ZY","type": 3,"api": "csp_BBB","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/Bili2.json"},
     //
     {"key": "Bili","name": "🅱️哔哩套餐","type": 3,"api": "csp_Bili","searchale": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/哔哩.json"},
     {"key": "知识","name": " 💡知识","type": 3,"api": "csp_Bili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/知识.json"},
