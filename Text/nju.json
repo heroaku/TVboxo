@@ -91,7 +91,7 @@
     {"key": "游戏电竞","name": "🎮游戏电竞","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/电竞.json"},
     {"key": "棋牌","name": " 🅱️棋牌娱乐","type": 3,"api": "csp_Bili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/棋牌.json"},
    
-	  {"key": "MV","name": "🌈歌曲MV","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/歌曲MV.json"},
+    {"key": "MV","name": "🌈歌曲MV","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/歌曲MV.json"},
     //
     {"key": "csp_BBB"          ,"name":"🅱️哔哩自定义","type": 3,"api": "csp_Bili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext":"https://github.com/heroaku/TVboxo/raw/main/Bili/bilirch.json"},
     {"key": "少儿","name": "🅰️少儿合集","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/少儿教育.json"},
@@ -137,8 +137,8 @@
     //{"key":"csp_xpath_88kanqiu","name":" 🌾88看球〔XP〕","type":3,"api":"csp_XPath","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/88kanqiu.json"},
     //{"key": "csp_xpath_jrskan","name": " 🌾JRKAN直播〔XPF〕","type": 3,"api": "csp_XPathFilter","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXP/jrskan.json"},
     //alist
-    {"key":"csp_Alist2","name":"🅿️Alist合集(SP)","type":3,"api":"csp_Alist","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/Bili/Alist.json","jar":"https://github.com/heroaku/TVboxo/blob/main/Jar/alist.jar"},
-
+    {"key":"csp_Alist2","name":"🅿️Alist合集(SP)","type":3,"api":"csp_Alist","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/Bili/Alist.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alist.jar"},
+    {"key":"csp_Alist3","name":"🅿️Alist合集2(SP)","type":3,"api":"csp_Alist","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://gitea.com/Mike906/jar/raw/branch/main/Alist.json","jar":"http://www.rtwl.ltd/down.php/2f19c527b9a335fb1415c5f9686515c8.jar"},
 
 
 	  
