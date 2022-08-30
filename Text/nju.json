@@ -138,8 +138,7 @@
     //{"key": "csp_xpath_jrskan","name": " 🌾JRKAN直播〔XPF〕","type": 3,"api": "csp_XPathFilter","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXP/jrskan.json"},
     //alist
     {"key":"csp_Alist2","name":"🅿️Alist合集(SP)","type":3,"api":"csp_Alist","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/Bili/Alist.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/alist.jar"},
-    {"key":"csp_Alist3","name":"🅿️Alist合集2(SP)","type":3,"api":"csp_Alist","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://gitea.com/Mike906/jar/raw/branch/main/Alist.json","jar":"http://www.rtwl.ltd/down.php/2f19c527b9a335fb1415c5f9686515c8.jar"},
-
+   
 
 	  
 	  
