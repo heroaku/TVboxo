@@ -22,7 +22,7 @@
     {"key":"csp_xpath_gimy2","name":" 🌾GIMY(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXP/Gimy2.json"},
     {"key":"csp_appysv2_M2_暖光影视","name":"暖光影视","type":3,"api":"csp_AppYsV2","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://app.bl210.com/api.php/v1.vod"},
     {"key":"csp_Nbys","name":"🐞泥巴(墙外)","type": 3,"api": "csp_Nbys","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar;md5;A5ED2B58063A1915FF1FE0B83DBEF99D"},
-    {"key": "图图（SP）","name": "🐞图图（SP）","type": 3,"api": "csp_AppTT","searchable": 1,"quickSearch": 1,"filterable": 1},
+    {"key": "图图（SP）","name": "🐞图图（SP）","type": 3,"api": "csp_AppTT","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91b.jar"},
     {"key":"293","name":"🐞293视频","type":3,"api":"csp_SP293","searchable":1,"quickSearch":1,"filterable":1,"ext":""},
     {"key":"csp_Auete","name":"🐞Auete影院","type":3,"api":"csp_Auete","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"csp_Cokemv","name":"🐞Cokemv影院","type":3,"api":"csp_Cokemv","searchable":1,"quickSearch":1,"filterable":1},
