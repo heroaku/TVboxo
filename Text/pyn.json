@@ -49,7 +49,7 @@
     {"key": "剧荒TV（SP）","name": "🐞剧荒影视(SP)","type": 3,"api": "csp_Juhuang","searchable": 1,"quickSearch": 1,"filterable": 1},
     //{"key": "小宝影院","name": "🐞小宝影院", "type": 3,"api": "csp_Xiaoh","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91e.jar;md5;381a02b64a5bd9853369369c335b8018"},
     //{"key":"csp_77","name":"🐞酷云七七","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
-    {"key":"mtv_pc_酷云七七","name":"🐞酷云七七","type":3,"api":"csp_Kunyu77"       ,"searchable":1,"quickSearch":1,"filterable":1,"jar":"https://gitcode.net/MiaoTV/box/-/raw/master/Jar/资源包2.jpg;md5;2F19C527B9A335FB1415C5F9686515C8"},
+    {"key":"mtv_pc_酷云七七","name":"🐞酷云七七","type":3,"api":"csp_Kunyu77"       ,"searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/ky77.jar;md5;2F19C527B9A335FB1415C5F9686515C8"},
 
     //{"key": "神马影院","name": "🐴神马（SP）","type": 3,"api": "csp_Smdyy","searchable":1,"quickSearch": 1,"filterable": 1,  "jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar;md5;7eacb357cf27abce92ed497367221e5a" },
     {"key":"3EDY","name":"🐞3EDY(EXO/外网)","type":3,"api":"csp_EEEDY","searchable":1,"quickSearch":1,"filterable":1},
