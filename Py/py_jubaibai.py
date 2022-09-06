@@ -53,7 +53,7 @@ class Spider(Spider):  # 元类 默认的元类 type
 		return result
 	def categoryContent(self,tid,pg,filter,extend):
 		result = {}
-		url = 'https://www.jubaibai.cc/type/{0}.html'.format(tid,pg)
+		url = 'https://www.jubaibai.cc/type/{0}.html'.format(tid)
 		rsp = self.fetch(url)
 		root = self.html(rsp.text)
 		aList = root.xpath("//div[contains(@class,'mi_cont')]//ul/li")
