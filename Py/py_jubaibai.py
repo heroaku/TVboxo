@@ -37,7 +37,7 @@ class Spider(Spider):  # 元类 默认的元类 type
 		videos = []
 		for a in aList:
 			name = a.xpath('./@title')[0]
-			pic = a.xpath('./a/img/@data-original')[0]
+			pic = a.xpath('./@data-original')[0]
 			mark = a.xpath(".//span[contains(@class,'pic-text text-right')]/b/text()")[0]
 			sid = a.xpath("./@href")[0]
 			sid = self.regStr(sid,"/vod/(\\w+).html")
