@@ -56,7 +56,7 @@ class Spider(Spider):  # 元类 默认的元类 type
 		url = 'https://www.jubaibai.cc/type/{0}.html'.format(tid)
 		rsp = self.fetch(url)
 		root = self.html(rsp.text)
-		aList = root.xpath("//div[contains(@class,'mi_cont')]//ul/li")
+		aList = root.xpath("//body")
 		videos = []
 		for a in aList:
 			name = a.xpath('./a/img/@alt')[0]
