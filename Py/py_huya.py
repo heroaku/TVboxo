@@ -18,7 +18,6 @@ class Spider(Spider):
 		result = {}
 		cateManual = {
 			"一起看": "一起看",
-			"博通": "博通",
 			"三国杀": "三国杀",
 			"网游竞技": "网游竞技"
 		}
