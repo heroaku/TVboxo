@@ -37,14 +37,14 @@ class Spider(Spider):  # 元类 默认的元类 type
 	def homeVideoContent(self):
 		rsp = self.fetch("https://555dy1.com/",headers=self.header)
 		root = self.html(rsp.text)
-		aList = root.xpath("//div[@class='module-items module-poster-items-base ']/a")
+		aList = root.xpath("//div[@class='module-items  module-poster-items-base ']")
 		videos = []
 		for a in aList:
-			name = a.xpath("./@title")[0]
-			pic = a.xpath("//div[@class='module-item-pic']/img/@data-original")[0]
-			mark = a.xpath("//div[@class='module-item-note']/text()")[0]
+			name = a.xpath("/a/@title")[0]
+			pic = a.xpath("/a//@data-original")[0]
+			mark = a.xpath("/a//div[@class='module-item-note']/text()")[0]
 			sid = a.xpath("./@href")[0]
-			sid = self.regStr(sid,"/voddetail/(\\S+).html")
+			sid = self.regStr(sid,"/voddetail(\\S+).html")
 			videos.append({
 				"vod_id":sid,
 				"vod_name":name,
