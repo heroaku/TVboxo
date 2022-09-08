@@ -33,7 +33,7 @@ class Spider(Spider):  # 元类 默认的元类 type
 	def homeVideoContent(self):
 		rsp = self.fetch("https://www.jubaibai.cc/")
 		root = self.html(rsp.text)
-		aList = root.xpath("//ul[contains(@class,'stui-vodlist')]/li/div/a")
+		aList = root.xpath("//div[@class='stui-pannel__bd']//ul[1]//li[3]")
 		videos = []
 		for a in aList:
 			name = a.xpath('./@title')[0]
