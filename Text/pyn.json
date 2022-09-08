@@ -29,7 +29,8 @@
     {"key": "py_zhaozy","name": " 🦂找资源","type": 3,"api": "py_zhaozy","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_zhaozy.py"},
     {"key": "py_pansou","name": " 🦂盘搜","type": 3,"api": "py_pansou","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_pansou.py"},
     {"key": "push_agent","name": " 🦂阿里","type": 3,"api": "py_ali","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_ali.py"},
-    {"key": "py_jubaibai","name": " 🦂剧白白","type": 3,"api": "py_yydshd","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_yydshd.py"}, 
+    {"key": "py_yydshd","name": " 🦂哔嘀影视","type": 3,"api": "py_yydshd","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_yydshd.py"}, 
+    {"key": "py_555dy","name": " 🦂555影视","type": 3,"api": "py_555dy","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_555dy.py"}, 
     {"key": "py_huya","name": "🔥虎牙","type": 3,"api": "py_huya","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_huya.py"},
     {"key": "py_douyu","name": "🔥斗鱼","type": 3,"api": "py_douyu","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_douyu.py"},
 	  
