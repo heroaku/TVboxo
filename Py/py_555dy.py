@@ -35,7 +35,7 @@ class Spider(Spider):  # 元类 默认的元类 type
 			result['filters'] = self.config['filter']
 		return result
 	def homeVideoContent(self):
-		rsp = self.fetch("https://555dy1.com/",headers=self.header)
+		rsp = self.fetch("https://555dy1.com/")
 		root = self.html(rsp.text)
 		aList = root.xpath("//div[@class='module-items module-poster-items-base ']/a")
 		videos = []
