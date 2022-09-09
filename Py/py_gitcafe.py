@@ -21,7 +21,7 @@ class Spider(Spider):
 	def homeContent(self,filter):
 		result = {}
 		cateManual = {
-			"华语电视": "hyds",
+			"华语电视": "#hyds",
 			"日韩电视": "rhds",
 			"欧美电视": "omds",
 			"其他电视": "qtds",
