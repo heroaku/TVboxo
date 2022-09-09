@@ -326,7 +326,7 @@ class Spider(Spider):  # 元类 默认的元类 type
 
 	def getToken(self,shareId,sharePwd):
 		self.localTime = int(time.time())
-		shareToken = 'ad3c78559a494bde814f1a6c8c40db51'
+		shareToken = ''
 		if shareId in self.shareTokenMap:
 			shareToken = self.shareTokenMap[shareId]
 			# todo
