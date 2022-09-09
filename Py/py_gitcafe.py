@@ -125,7 +125,7 @@ class Spider(Spider):
 	def playerContent(self,flag,id,vipFlags):
 		return self.ali.playerContent(flag,id,vipFlags)
 	homeData = {}
-	baseUrl = 'https://gitcafe.net'
+	baseUrl = 'https://u.gitcafe.net'
 	config = {
 		"player": {},
 		"filter": {}
