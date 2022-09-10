@@ -21,7 +21,7 @@ class Spider(Spider):
 	def homeContent(self,filter):
 		result = {}
 		cateManual = {
-			"华语电视": "#hyds",
+			"华语电视": "hyds",
 			"日韩电视": "rhds",
 			"欧美电视": "omds",
 			"其他电视": "qtds",
@@ -132,7 +132,7 @@ class Spider(Spider):
 	}
 	header = {
 		"User-Agent": "Mozilla/5.0 (Linux; Android 12; V2049A Build/SP1A.210812.003; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.129 Mobile Safari/537.36",
-        "Referer": "https://u.gitcafe.net/"
+        "Referer": "https://u.gitcafe.net/#"
 	}
 	def localProxy(self,param):
 		return [200, "video/MP2T", action, ""]
