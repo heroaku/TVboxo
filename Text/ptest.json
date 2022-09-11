@@ -1,7 +1,8 @@
 { 
 
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar;md5;1C1482FF646CC40E1F924EBE320822BC",
-  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91c1.jar",
+  //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91c1.jar",
+  "spider":"https://gitea.com/00700/tomato/raw/branch/main/spider/911.jar;md5;12730AC72524422555A034DC8DEE8B57",
 
  
   
@@ -55,6 +56,7 @@
     {"key": "py_douyu","name": "🔥斗鱼","type": 3,"api": "py_douyu","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_douyu.py"},
 	  
     //spider java
+    {"key":"csp_Bd","name":"影视┃哔嘀影视","type":3,"api":"csp_Bdys01","searchable":1,"quickSearch":1,"filterable":1},
     {"key": "Lezhu_spider","name": "🐞乐猪影视","api":"csp_Lezhu","type":3,"filterable":1,"quickSearch":1,"searchable":1,"ext":""},
     {"key":"If101","name":"🐞If101(墙外)","type":3,"api":"csp_If101","searchable":1,"quickSearch":1,"filterable":1}, 
     {"key":"if101资源","name":" 🍁If101(海外推荐)","type":0,"api":"https://demo.if101.tv/api.php/provide/vod/at/xml","searchable":1,"quickSearch":0,"filterable":0},
