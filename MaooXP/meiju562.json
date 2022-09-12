@@ -7,7 +7,7 @@
   "pCfgJsR": "[\\W|\\S|.]*?MacPlayerConfig.player_list[\\W|\\S|.]*?=([\\W|\\S|.]*?),MacPlayerConfig.downer_list",
   "dcShow2Vip": {},
   "dcPlayUrl": "true",
-  "cateNode": "//ul[contains(@class, 'nav-menu-items')]/li/a[contains(@href, 'vodtype')]",
+  "cateNode": "//*[@id="index-main"]/div/div[1]/div[2]/div/div",
   "cateName": "/@title",
   "cateId": "/@href",
   "cateIdR": "/vodtype/(\\d+).html",
