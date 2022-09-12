@@ -12,8 +12,8 @@
   "cateId": "/@href",
   "cateIdR": "/vodtype/(\\d+).html",
   "cateManual": {
-    "电影": "1",
-    "电视剧": "2",
+    "电影": "dianying",
+    "电视剧": "lianxuju",
     "综艺": "5",
     "动漫": "4",
     "纪录片": "3",
