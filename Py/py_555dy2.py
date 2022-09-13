@@ -42,10 +42,10 @@ class Spider(Spider):  # 元类 默认的元类 type
 		vodList = root.xpath("//div[@class='module-items module-poster-items-base ']/a")
 		videos = []
 		for vod in vodList:
-			name = vod.xpath("./@title")[0]
-			pic = vod.xpath(".//div[@class='module-item-pic']/img/@data-original")[0]
-			mark = vod.xpath(".//div[@class='module-item-note']/text()")[0]
-			sid = vod.xpath("./@href")[0]
+			name = vod.xpath("/@title")[0]
+			pic = vod.xpath("//div[@class='module-item-pic']/img/@data-original")[0]
+			mark = vod.xpath("//div[@class='module-item-note']/text()")[0]
+			sid = vod.xpath("/@href")[0]
 			sid = self.regStr(sid,"/voddetail/(\\S+).html")
 			videos.append({
 				"vod_id":sid,
@@ -69,16 +69,16 @@ class Spider(Spider):  # 元类 默认的元类 type
 			if fp in extend.keys():
 				params[idx] = extend[fp]
 		suffix = '-'.join(params)
-		url = 'https://www.voflix.com/show/{0}.html'.format(suffix)
+		url = 'https://555dy1.com/vodtype/{0}.html'.format(suffix)
 
 		rsp = self.fetch(url,headers=self.header)
 		root = self.html(rsp.text)
-		vodList = root.xpath("//div[contains(@class, 'module-items')]/a")
+		vodList = root.xpath("//div[@class='module-items module-poster-items-base ']/a")
 		videos = []
 		for vod in vodList:
 			name = vod.xpath("./@title")[0]
-			pic = vod.xpath(".//img/@data-original")[0]
-			mark = vod.xpath(".//div[contains(@class,'module-item-note')]/text()")[0]
+			pic = vod.xpath(".//div[@class='module-item-pic']/img/@data-original")[0]
+			mark = vod.xpath(".//div[@class='module-item-note']/text()")[0]
 			sid = vod.xpath("./@href")[0]
 			sid = self.regStr(sid,"/detail/(\\S+).html")
 			videos.append({
@@ -95,12 +95,12 @@ class Spider(Spider):  # 元类 默认的元类 type
 		return result
 	def detailContent(self,array):
 		tid = array[0]
-		url = 'https://www.voflix.com/detail/{0}.html'.format(tid)
+		url = 'https://555dy1.com//voddetail/{0}.html'.format(tid)
 		rsp = self.fetch(url,headers=self.header)
 		root = self.html(rsp.text)
 		node = root.xpath("//div[@class='main']")[0]
-		title = node.xpath(".//div[@class='module-info-heading']/h1/text()")[0]
-		pic = root.xpath(".//div[@class='module-item-pic']/img/@data-original")[0]
+		title = node.xpath(".//div[@class='module-info-main']/div[@class='module-info-heading']/h1/text()")[0]
+		pic = root.xpath(".//div[@class='module-info-poster']//div[@class='module-item-pic']/img/@data-original")[0]
 		vod = {
 			"vod_id":tid,
 			"vod_name":title,
