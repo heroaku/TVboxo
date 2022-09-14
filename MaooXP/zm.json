@@ -1,0 +1,103 @@
+{
+
+    "author":"",
+
+    "ua": "",
+
+    "homeUrl": "https://zjmiao.com/",
+
+    "dcVipFlag": "true",
+
+    "dcPlayUrl": "true",
+
+    "dcShow2Vip": {},
+
+    "pCfgJs": "https://zjmiao.com/static/js/playerconfig.js",
+
+    "pCfgJsR": "[\\W|\\S|.]*?MacPlayerConfig.player_list[\\W|\\S|.]*?=([\\W|\\S|.]*?),MacPlayerConfig.downer_list",
+
+    "cateManual": {
+
+      "电影": "1",
+
+      "连续剧": "13",
+
+      "动漫": "3",
+
+      "综艺": "39"
+
+    },
+
+
+
+  // Category Details ================================================
+
+    "dtUrl": "https://zjmiao.com/index.php/vod/detail/id/{vid}.html",
+
+    "dtNode": "//body",
+
+    "dtName": "//div[@class='s-top-right']/div[@class='s-top-info-title cf wow fadeInDownBig']/h1/text()",
+
+    "dtNameR": "",
+
+    "dtImg": "//div[@class='l wow fadeInLeft']/div[@class='s-cover box']/a/img/@src",
+
+    "dtImgR": "\\S+(http\\S+)",
+
+    "dtCate": "//div[@class='s-top-info-detail cf fyy wow lightSpeedIn']/p[@class='item item-director']/span[contains(text(), '类型：')]/following-sibling::a/text()",
+
+    "dtYear": "//div[@class='s-top-info-detail cf fyy wow lightSpeedIn']/p[@class='item item-actor']/span[contains(text(), '年代：')]/following-sibling::a/text()",
+
+    "dtArea": "//div[@class='s-top-info-detail cf fyy wow lightSpeedIn']/p[@class='item']/span[contains(text(), '地区：')]/following-sibling::a/text()",
+
+    "dtActor": "//div[@class='s-top-info-detail cf fyy wow lightSpeedIn']/p[@class='item-desc js-open-wrap hidden'][1]/a/text()",
+
+    "dtDirector": "//div[@class='s-top-info-detail cf fyy wow lightSpeedIn']/p[@class='item-desc js-open-wrap hidden'][2]/a/text()",
+
+    "dtDesc": "//div[@class='desc_txt cf ec-palytcji cor3']/span/text()",
+
+  
+
+  // Playlist ========================================================
+
+    "dtFromNode": "//div[@class='play_source_tab b-t swiper-container1']/div[@class='cf swiper-wrapper']/a",
+
+    "dtFromName": "/text()",
+
+    "dtUrlNode": "//div[@class='playlist_notfull']/ul",
+
+    "dtUrlSubNode": "/li/a",
+
+    "dtUrlId": "/@href",
+
+    "dtUrlIdR": "/(\\S+).html",
+
+    "dtUrlName": "/text()",
+
+    "dtUrlNameR": "",
+
+    "playUrl": "https://zjmiao.com/{playUrl}.html",
+
+    "playUa": "",
+
+  
+
+  // Search Results ==================================================
+
+    "searchUrl": "https://zjmiao.com/index.php/ajax/suggest?mid=1&wd={wd}&limit=10",
+
+    "scVodNode": "json:list",
+
+    "scVodName": "name",
+
+    "scVodId": "id",
+
+    "scVodIdR": "",
+
+    "scVodImg": "pic",
+
+    "scVodMark": ""
+
+}
+
+
