@@ -42,10 +42,10 @@ class Spider(Spider):  # 元类 默认的元类 type
 		vodList = root.xpath("//div[@class='module-items module-poster-items-base ']/a")
 		videos = []
 		for vod in vodList:
-			name = vod.xpath("/@title")[0]
-			pic = vod.xpath("//div[@class='module-item-pic']/img/@data-original")[0]
-			mark = vod.xpath("//div[@class='module-item-note']/text()")[0]
-			sid = vod.xpath("/@href")[0]
+			name = vod.xpath("./@title")[0]
+			pic = vod.xpath(".//div[@class='module-item-pic']/img/@data-original")[0]
+			mark = vod.xpath(".//div[@class='module-item-note']/text()")[0]
+			sid = vod.xpath("./@href")[0]
 			sid = self.regStr(sid,"/voddetail/(\\S+).html")
 			videos.append({
 				"vod_id":sid,
