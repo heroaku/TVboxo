@@ -26,7 +26,7 @@
 	{"key":"dr_LIBVIO","name":" 🎑LIBVIO(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=LIBVIO","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_vip影院","name":" 🎑vip影院(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=vip影院","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_万能影视","name":" 🎑万能影视(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=万能影视","searchable": 1,"quickSearch": 1,"filterable": 0},
-	{"key":"dr_养端","name":" 🎑养端(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=养端","searchable": 0,"quickSearch": 0,"filterable": 0},
+	//{"key":"dr_养端","name":" 🎑养端(道长) 🔞","type":1,"api":"http://cms.nokia.press/vod?rule=养端","searchable": 0,"quickSearch": 0,"filterable": 0},
 	{"key":"dr_剧白白","name":" 🎑剧白白(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=剧白白","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_喵喵","name":" 🎑喵喵(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=喵喵","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_在线之家","name":" 🎑在线之家(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=在线之家","searchable": 1,"quickSearch": 1,"filterable": 0},
