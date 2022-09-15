@@ -1,9 +1,9 @@
 {
     "author": "",
     "ua": "",
-    "homeUrl": "https://555dy1.com/",
+    "homeUrl": "https://www.f7hkj.cc/",
     "dcVipFlag": "true",
-    "pCfgJs": "https://555dy1.com/static/js/playerconfig.js",
+    "pCfgJs": "https://www.f7hkj.cc/static/js/playerconfig.js",
    "pCfgJsR": "MacPlayerConfig.player_list=([\\w\\W]*?),MacPlayerConfig.downer_list=",
     "dcShow2Vip": {},
     "dcPlayUrl": "true",
@@ -12,9 +12,10 @@
         "剧集": "2", 
         "综艺": "3",     
             
-        "动漫": "4"
+        "动漫": "4",
+	"Bilibili": "20"    
     },
-    "homeVodNode": "//div[@class='module-items module-poster-items-base ']/a",
+    "homeVodNode": "//a[contains(@class,'module-poster-item module-item')]",
     "homeVodName": "/@title",
     "homeVodId": "/@href",
     "homeVodIdR": "/voddetail/(\\S+).html",
