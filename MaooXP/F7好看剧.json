@@ -15,7 +15,7 @@
         "动漫": "4",
 	"Bilibili": "20"    
     },
-    "homeVodNode": "a[class*='module-poster-item module-item']",
+    "homeVodNode": "//div[@class='module-main tab-list active']//a",
     "homeVodName": "/@title",
     "homeVodId": "/@href",
     "homeVodIdR": "/voddetail/(\\S+).html",
@@ -23,7 +23,7 @@
     "homeVodImgR": "",
     "homeVodMark": "//div[@class='module-item-note']/text()",
    "cateUrl": "https://www.f7hkj.cc/vodtype/{cateId}-{area}-{by}-{class}-----{catePg}---{year}.html",
-    "cateVodNode": "a[class*='module-poster-item module-item']",
+    "cateVodNode": "//div[@class='module-main tab-list active']//a",
     "cateVodName": "/@title",
     "cateVodId": "/@href",
     "cateVodIdR": "/voddetail/(\\S+).html",
