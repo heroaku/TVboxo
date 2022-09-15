@@ -320,6 +320,8 @@
     {"key":"csp_XBiubiu_600dvd","name":"💦600影视(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/600dvd.json"},
     {"key":"csp_xb_miao","name":"💦追喵(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/zjmiao.json"},  
     {"key":"csp_xb_kanpian","name":"💦看片网(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E7%9C%8B%E7%89%87%E7%BD%91.json"},
+    {"key":"csp_biubiu_F7好看","name":"💦F7好看剧(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXB/F7%E5%A5%BD%E7%9C%8B%E5%89%A7.json"},
+
     //{"key":"csp_biubiu_电影盒子","name":"🥒电影盒子(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E7%94%B5%E5%BD%B1%E7%9B%92%E5%AD%90.json"},
     //
     {"key":"csp_XBiubiu_baoxian","name":"💦宝仙HD(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/baoxian.json"},
