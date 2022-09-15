@@ -23,7 +23,7 @@
     "homeVodImgR": "",
     "homeVodMark": "//div[@class='module-item-note']/text()",
    "cateUrl": "https://www.f7hkj.cc/vodtype/{cateId}-{area}-{by}-{class}-----{catePg}---{year}.html",
-    "cateVodNode": "//div[@class='module-items scroll-box']/a",
+    "cateVodNode": "//div[@class='module-items module-poster-items-base']/a",
     "cateVodName": "/@title",
     "cateVodId": "/@href",
     "cateVodIdR": "/voddetail/(\\S+).html",
