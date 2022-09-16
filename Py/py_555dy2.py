@@ -8,7 +8,7 @@ import urllib.parse
 
 class Spider(Spider):  # 元类 默认的元类 type
     def getName(self):
-        return "创艺影视"
+        return "555影视"
 
     def init(self, extend=""):
         print("============{0}============".format(extend))
@@ -17,11 +17,10 @@ class Spider(Spider):  # 元类 默认的元类 type
     def homeContent(self, filter):
         result = {}
         cateManual = {
-            "电影": "1",
-            "剧集": "2",
-            "动漫": "4",
-            "综艺": "3",
-            "纪录片": "30"
+			"电影": "1",
+			"剧集": "2",
+			"综艺": "3",
+			"动漫": "4"
         }
         classes = []
         for k in cateManual:
@@ -44,16 +43,16 @@ class Spider(Spider):  # 元类 默认的元类 type
     def categoryContent(self, tid, pg, filter, extend):
         result = {}
         header = {"User-Agent": "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36"}
-        url = 'https://www.30dian.cn/vodtype/{0}-{1}.html'.format(tid, pg)
+        url = 'https://555dy1.com/vodtype/{0}-{1}.html'.format(tid, pg)
         rsp = self.fetch(url,headers=header)
         root = self.html(self.cleanText(rsp.text))
-        aList = root.xpath("//div[@class='myui-panel myui-panel-bg clearfix']/div/div/ul/li")
+        aList = root.xpath("//div[@class='module-items module-poster-items-base ']/a"")
         videos = []
         for a in aList:
-            name = a.xpath('./div/a/@title')[0]
-            pic = a.xpath('./div/a/@data-original')[0]
-            mark = a.xpath("./div/a/span/span[@class='tag']/text()")[0]
-            sid = a.xpath("./div/a/@href")[0].replace("/", "").replace("voddetail", "").replace(".html", "")
+            name = a.xpath('./@title')[0]
+            pic = a.xpath('.//div[@class='module-item-pic']/img/@data-original"')[0]
+            mark = a.xpath(".//div[@class='module-item-note']/text()")[0]
+            sid = a.xpath("./@href")[0].replace("/", "").replace("voddetail", "").replace(".html", "")
             videos.append({
                 "vod_id": sid,
                 "vod_name": name,
@@ -69,7 +68,7 @@ class Spider(Spider):  # 元类 默认的元类 type
 
     def detailContent(self, array):
         tid = array[0]
-        url = 'https://www.30dian.cn/voddetail/{0}.html'.format(tid)
+        url = 'https://555dy1.com/vodtype/{0}.html'.format(tid)
         header = {"User-Agent": "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36"}
         rsp = self.fetch(url,headers=header)
         root = self.html(self.cleanText(rsp.text))
