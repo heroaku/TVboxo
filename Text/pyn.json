@@ -40,6 +40,12 @@
 	{"key":"dr_蓝光影院","name":" 🎑蓝光影院(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=蓝光影院","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_蓝莓影视","name":" 🎑蓝莓影视(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=蓝莓影视","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_鸭奈飞","name":" 🎑鸭奈飞(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=鸭奈飞","searchable": 1,"quickSearch": 1,"filterable": 0},
+	{"key":"dr_人人影视","name":"🕋人人影视","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=人人影视","searchable":1,"quickSearch":1,"filterable":0},
+        {"key":"dr_兔小贝","name":"🕋兔小贝","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=兔小贝","searchable":1,"quickSearch":1,"filterable":0},
+        {"key":"dr_追剧喵","name":"🕋追剧喵","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=追剧喵","searchable":1,"quickSearch":1,"filterable":0},
+        {"key":"dr_AnFuns","name":"🕋AnFuns","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=AnFuns","searchable":1,"quickSearch":1,"filterable":0},
+        {"key":"dr_库马伊","name":"🕋库马伊","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=库马伊","searchable":1,"quickSearch":1,"filterable":0},
+        {"key":"dr_小强迷","name":"🕋小强迷","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=小强迷","searchable":1,"quickSearch":1,"filterable":0},
 	  //{  "key": "t4public", "name":" 🎑公共", "type": 4, "api":"https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=10",  "searchable": 1, "quickSearch": 1, "filterable": 0},
     //{"key": "T4备用","name": " 🎑备用","type": 4,"api": "https://t4.run.goorm.io/vod?sites=all&ali_token=3a49cf29cf20410997247c6eb4509be9&timeout=10","searchable": 1,"quickSearch": 1,"filterable": 1},  
     //PY爬蟲
@@ -64,7 +70,7 @@
     {"key": "py_push_agent","name": " 🦂阿里","type": 3,"api": "py_ali","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://github.com/heroaku/PyramidStore/raw/main/plugin/py_ali.py"},
     //{"key": "py_jubaibai","name": " 🦂剧白白","type": 3,"api": "py_jubaibai","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_jubaibai.py"}, 
     //{"key": "py_555dy","name": " 🦂555影视","type": 3,"api": "py_555dy","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_555dy.py"}, 
-    {"key": "py_555dy2","name": " 🦂555影视(test)","type": 3,"api": "py_555dy2","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_555dy2.py"}, 
+    //{"key": "py_555dy2","name": " 🦂555影视(test)","type": 3,"api": "py_555dy2","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_555dy2.py"}, 
     {"key": "py_huya","name": "🔥虎牙","type": 3,"api": "py_huya","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_huya.py"},
     {"key": "py_douyu","name": "🔥斗鱼","type": 3,"api": "py_douyu","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_douyu.py"},
 	  
