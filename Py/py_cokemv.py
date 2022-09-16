@@ -4,6 +4,8 @@ import sys
 sys.path.append('..') 
 from base.spider import Spider
 import json
+import requests
+import base64
 
 class Spider(Spider):  # 元类 默认的元类 type
 	def getName(self):
@@ -63,7 +65,6 @@ class Spider(Spider):  # 元类 默认的元类 type
 			urlParams[int(key)] = extend[key]
 		params = '-'.join(urlParams)
 		url = 'https://cokemv.me/vodshow/{0}.html'.format(params)
-		print(url)
 		rsp = self.fetch(url)
 		root = self.html(rsp.text)
 		aList = root.xpath("//div[contains(@class, 'module-items')]/a")
@@ -94,18 +95,25 @@ class Spider(Spider):  # 元类 默认的元类 type
 		root = self.html(rsp.text)
 		divContent = root.xpath("//div[@class='module-info-main']")[0]
 		title = divContent.xpath('.//h1/text()')[0]
+		year = divContent.xpath('.//div/div/div[1]/a/text()')[0]
+		area = divContent.xpath('.//div/div/div[2]/a/text()')[0]
+		typ = divContent.xpath('.//div/div/div[3]/a/text()')
+		type = ', '.join(typ)
+		dir = divContent.xpath(".//div[@class='module-info-items']/div[2]/div[1]/a/text()")[0]
+		act = divContent.xpath(".//div[@class='module-info-items']/div[4]/div/a/text()")
+		actor = ', '.join(act)
 		pic = root.xpath(".//div[@class='module-poster-bg']//img/@data-original")[0]
 		detail = root.xpath(".//div[@class='module-info-introduction-content']/p/text()")[0]
 		vod = {
 			"vod_id":tid,
 			"vod_name":title,
 			"vod_pic":pic,
-			"type_name":"",
-			"vod_year":"",
-			"vod_area":"",
+			"type_name":type,
+			"vod_year":year,
+			"vod_area":area,
 			"vod_remarks":"",
-			"vod_actor":"",
-			"vod_director":"",
+			"vod_actor":actor,
+			"vod_director":dir,
 			"vod_content":detail
 		}
 
@@ -142,22 +150,43 @@ class Spider(Spider):  # 元类 默认的元类 type
 		}
 		return result
 
-	def searchContent(self,key,quick):
-		url = 'http://freezdytv.tk/api/search.php?key=free&wd={0}'.format(key)
-		rsp = self.fetch(url)
-		ja = json.loads(rsp.text)
-		result = {}
-		jArray = []
-		for j in ja:
-			if j['from'] == 'ckmv':
-				jArray.append({
-					"vod_id": j['vid'],
-					"vod_name": j['title'],
-					"vod_pic": j['img'],
-					"vod_remarks": ""
-				})
+	def verifyCode(self, url):
+		retry = 5
+		header = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"}
+		while retry:
+			try:
+				session = requests.session()
+				img = session.get('https://cokemv.me/index.php/verify/index.html?', headers=header).content
+				code = session.post('https://api.nn.ci/ocr/b64/text', data=base64.b64encode(img).decode()).text
+				res = session.post(url=f"https://cokemv.me/index.php/ajax/verify_check?type=search&verify={code}", headers=header).json()
+				if res["msg"] == "ok":
+					return session
+			except Exception as e:
+				print(e)
+			finally:
+				retry = retry - 1
+
+	def searchContent(self, key, quick):
+		url = 'https://cokemv.me/vodsearch/-------------.html?wd={0}'.format(key)
+		session = self.verifyCode(url)
+		rsp = session.get(url)
+		root = self.html(rsp.text)
+		vodList = root.xpath("//div[@class='module-card-item module-item']/a[@class='module-card-item-poster']")
+		videos = []
+		for vod in vodList:
+			name = vod.xpath(".//img/@alt")[0]
+			pic = vod.xpath(".//img/@data-original")[0]
+			mark = vod.xpath(".//div[@class='module-item-note']/text()")[0]
+			sid = vod.xpath("./@href")[0]
+			sid = self.regStr(sid,"/voddetail/(\\S+).html")
+			videos.append({
+				"vod_id":sid,
+				"vod_name":name,
+				"vod_pic":pic,
+				"vod_remarks":mark
+			})
 		result = {
-			'list':jArray
+			'list':videos
 		}
 		return result
 

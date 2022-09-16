@@ -76,7 +76,11 @@ class Spider(Spider):  # 元类 默认的元类 type
         divContent = root.xpath("//div[@class='col-lg-wide-75 col-md-wide-7 col-xs-1 padding-0']")[0]
         title = divContent.xpath(".//div[@class='myui-content__detail']/h1/text()")[0]
         pic = divContent.xpath(".//div[@class='myui-content__thumb']/a/img/@data-original")[0]
-        detail = divContent.xpath(".//div[@class='col-pd text-collapse content']/span[@class='data']/text()")[0]
+        det = divContent.xpath(".//div[@class='col-pd text-collapse content']/span[@class='data']")[0]
+        if det.text is None:
+            detail = det.xpath(".//p/text()")[0]
+        else:
+            detail = det.text
         vod = {
             "vod_id": tid,
             "vod_name": title,
@@ -92,7 +96,8 @@ class Spider(Spider):  # 元类 默认的元类 type
         infoArray = divContent.xpath(".//div[@class='myui-content__detail']/p[contains(@class,'data')]")
         for info in infoArray:
             content = info.xpath('string(.)')
-            if content.startswith('分类'):
+            flag = "分类" in content
+            if flag == True:
                 infon = content.replace("\t","").replace("\n","").strip().split('\r')
                 for inf in infon:
                     if inf.startswith('分类'):
@@ -102,11 +107,11 @@ class Spider(Spider):  # 元类 默认的元类 type
                     if inf.startswith('年份'):
                         vod['vod_year'] = inf.replace("年份：", "")
             if content.startswith('主演'):
-                vod['vod_actor'] = content.replace("\xa0", "/").replace("主演：", "")
+                vod['vod_actor'] = content.replace("\xa0", "/").replace("主演：", "").strip('/')
             if content.startswith('更新'):
-                vod['vod_actor'] = content.replace("更新：", "")
+                vod['vod_remarks'] = content.replace("更新：", "")
             if content.startswith('导演'):
-                vod['vod_director'] = content.replace("\xa0", "").replace("导演：", "")
+                vod['vod_director'] = content.replace("\xa0", "").replace("导演：", "").strip('/')
 
         vod_play_from = '$$$'
         playFrom = []
@@ -121,11 +126,16 @@ class Spider(Spider):  # 元类 默认的元类 type
         for vl in vodList:
             vodItems = []
             aList = vl.xpath('./ul/li/a')
-            for tA in aList:
-                href = tA.xpath('./@href')[0]
-                name = tA.xpath("./text()")[0].replace(" ", "")
-                tId = self.regStr(href, '/vodplay/(\\S+).html')
+            if len(aList) <= 0:
+                name = '无法找到播放源'
+                tId = '00000'
                 vodItems.append(name + "$" + tId)
+            else:
+                for tA in aList:
+                    href = tA.xpath('./@href')[0]
+                    name = tA.xpath("./text()")[0].replace(" ", "")
+                    tId = self.regStr(href, '/vodplay/(\\S+).html')
+                    vodItems.append(name + "$" + tId)
             joinStr = '#'
             joinStr = joinStr.join(vodItems)
             playList.append(joinStr)
@@ -141,13 +151,36 @@ class Spider(Spider):  # 元类 默认的元类 type
         return result
 
     def searchContent(self, key, quick):
-        result = {}
+        url = 'https://www.30dian.cn/vodsearch/-------------.html?wd={0}'.format(key)
+        header = {
+            "User-Agent": "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36"}
+        rsp = self.fetch(url, headers=header)
+        root = self.html(self.cleanText(rsp.text))
+        aList = root.xpath("//ul[contains(@class,'myui-vodlist__media clearfix')]/li")
+        videos = []
+        for a in aList:
+            name = a.xpath(".//div[@class='detail']/h4/a/text()")[0]
+            pic = a.xpath(".//a[contains(@class,'myui-vodlist__thumb')]//@data-original")[0]
+            mark = a.xpath(".//span[@class='tag']/text()")[0]
+            sid = a.xpath(".//div[@class='detail']/h4/a/@href")[0]
+            sid = self.regStr(sid,'/voddetail/(\\S+).html')
+            videos.append({
+                "vod_id": sid,
+                "vod_name": name,
+                "vod_pic": pic,
+                "vod_remarks": mark
+            })
+        result = {
+            'list': videos
+        }
         return result
 
     def playerContent(self, flag, id, vipFlags):
         result = {}
         header = {
             "User-Agent": "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36"}
+        if id == '00000':
+            return {}
         url = 'https://www.30dian.cn/vodplay/{0}.html'.format(id)
         rsp = self.fetch(url,headers=header)
         root = self.html(self.cleanText(rsp.text))

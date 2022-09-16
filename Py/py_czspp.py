@@ -1,13 +1,10 @@
 # coding=utf-8
 # !/usr/bin/python
 import sys
-
 sys.path.append('..')
 from base.spider import Spider
-import json
 import base64
 from Crypto.Cipher import AES
-
 
 class Spider(Spider):  # 元类 默认的元类 type
     def getName(self):
@@ -40,7 +37,7 @@ class Spider(Spider):  # 元类 默认的元类 type
 
     def homeVideoContent(self):
         rsp = self.fetch("https://czspp.com")
-        root = self.html(rsp.text)
+        root = self.html(self.cleanText(rsp.text))
         aList = root.xpath("//div[@class='mi_btcon']//ul/li")
         videos = []
         for a in aList:
@@ -64,7 +61,7 @@ class Spider(Spider):  # 元类 默认的元类 type
         result = {}
         url = 'https://czspp.com/{0}/page/{1}'.format(tid, pg)
         rsp = self.fetch(url)
-        root = self.html(rsp.text)
+        root = self.html(self.cleanText(rsp.text))
         aList = root.xpath("//div[contains(@class,'mi_cont')]//ul/li")
         videos = []
         for a in aList:
@@ -79,7 +76,6 @@ class Spider(Spider):  # 元类 默认的元类 type
                 "vod_pic": pic,
                 "vod_remarks": mark
             })
-
         result['list'] = videos
         result['page'] = pg
         result['pagecount'] = 9999
@@ -91,13 +87,11 @@ class Spider(Spider):  # 元类 默认的元类 type
         tid = array[0]
         url = 'https://czspp.com/movie/{0}.html'.format(tid)
         rsp = self.fetch(url)
-        root = self.html(rsp.text)
+        root = self.html(self.cleanText(rsp.text))
         node = root.xpath("//div[@class='dyxingq']")[0]
-
         pic = node.xpath(".//div[@class='dyimg fl']/img/@src")[0]
         title = node.xpath('.//h1/text()')[0]
         detail = root.xpath(".//div[@class='yp_context']//p/text()")[0]
-
         vod = {
             "vod_id": tid,
             "vod_name": title,
@@ -110,27 +104,38 @@ class Spider(Spider):  # 元类 默认的元类 type
             "vod_director": "",
             "vod_content": detail
         }
-
         infoArray = node.xpath(".//ul[@class='moviedteail_list']/li")
         for info in infoArray:
             content = info.xpath('string(.)')
             if content.startswith('类型'):
-                vod['type_name'] = content.replace("类型：", "")
+                tpyen = ''
+                for inf in info:
+                    tn = inf.text
+                    tpyen = tpyen +'/'+'{0}'.format(tn)
+                    vod['type_name'] = tpyen.strip('/')
             if content.startswith('地区'):
-                vod['vod_area'] = content.replace("地区：", "")
+                tpyeare = ''
+                for inf in info:
+                    tn = inf.text
+                    tpyeare = tpyeare +'/'+'{0}'.format(tn)
+                    vod['vod_area'] = tpyeare.strip('/')
             if content.startswith('豆瓣'):
                 vod['vod_remarks'] = content
             if content.startswith('主演'):
-                vod['vod_actor'] = content.replace("主演：", "")
+                tpyeact = ''
+                for inf in info:
+                    tn = inf.text
+                    tpyeact = tpyeact +'/'+'{0}'.format(tn)
+                    vod['vod_actor'] = tpyeact.strip('/')
             if content.startswith('导演'):
-                vod['vod_director'] = content.replace("导演：", "")
-        # if content.startswith('剧情'):
-        # 	vod['vod_content'] = content
-
+                tpyedire = ''
+                for inf in info:
+                    tn = inf.text
+                    tpyedire  = tpyedire  +'/'+'{0}'.format(tn)
+                    vod['vod_director'] = tpyedire .strip('/')
         vod_play_from = '$$$'
         playFrom = ['厂长']
         vod_play_from = vod_play_from.join(playFrom)
-
         vod_play_url = '$$$'
         playList = []
         vodList = root.xpath("//div[@class='paly_list_btn']")
@@ -149,7 +154,6 @@ class Spider(Spider):  # 元类 默认的元类 type
 
         vod['vod_play_from'] = vod_play_from
         vod['vod_play_url'] = vod_play_url
-
         result = {
             'list': [
                 vod
@@ -158,11 +162,9 @@ class Spider(Spider):  # 元类 默认的元类 type
         return result
 
     def searchContent(self, key, quick):
-        result = {}
         url = 'https://czspp.com/xssearch?q={0}'.format(key)
-        # getHeader()
         rsp = self.fetch(url)
-        root = self.html(rsp.text)
+        root = self.html(self.cleanText(rsp.text))
         vodList = root.xpath("//div[contains(@class,'mi_ne_kd')]/ul/li/a")
         videos = []
         for vod in vodList:
@@ -185,7 +187,6 @@ class Spider(Spider):  # 元类 默认的元类 type
             'list': videos
         }
         return result
-
     config = {
         "player": {},
         "filter": {}
@@ -193,7 +194,6 @@ class Spider(Spider):  # 元类 默认的元类 type
     header = {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
     }
-
     def parseCBC(self, enc, key, iv):
         keyBytes = key.encode("utf-8")
         ivBytes = iv.encode("utf-8")
@@ -231,7 +231,7 @@ class Spider(Spider):  # 元类 默认的元类 type
         return result
 
     def loadVtt(self, url):
-        print(url)
+        pass
 
     def isVideoFormat(self, url):
         pass
