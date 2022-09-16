@@ -59,9 +59,8 @@ class Spider(Spider):  # 元类 默认的元类 type
 		return result
 	def categoryContent(self,tid,pg,filter,extend):
 		result = {}
-		 header = {"User-Agent": "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36"}
 		if 'id' not in extend.keys():
-			extend['id'] = tid
+		extend['id'] = tid
 		extend['page'] = pg
 		filterParams = ["id", "area", "by", "class", "", "", "", "", "page", "", "", "year"]
 		params = ["", "", "", "", "", "", "", "", "", "", "", ""]
