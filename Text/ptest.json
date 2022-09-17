@@ -22,6 +22,7 @@
     //{"key": "低端","name": " 🎑低端","type": 4,"api": "http://vod.kooo.eu.org/t4/vip110002","searchable": 1,"quickSearch": 1,"filterable": 1},
     //{"key": "柠檬","name": " 🎑柠檬","type": 4,"api": "https://vod.kooo.eu.org/t4/vip11a0c4","searchable": 1,"quickSearch": 1,"filterable": 1},
     //{"key": "80S","name": " 🎑80S","type": 4,"api": "https://vod.kooo.eu.org/t4/vip11cx08","searchable": 1,"quickSearch": 1,"filterable": 1},
+	{"key":"dr_喵喵1","name":" 🎑喵喵1(道长)","type":1,"api":"http://127.0.0.1:5705/vod?rule=%E5%96%B5%E5%96%B5","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_555影视","name":" 🎑555影视(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=555影视","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_cokemv","name":" 🎑cokemv(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=cokemv","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_LIBVIO","name":" 🎑LIBVIO(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=LIBVIO","searchable": 1,"quickSearch": 1,"filterable": 0},
