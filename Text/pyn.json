@@ -29,7 +29,8 @@
 	{"key":"dr_蓝光影院","name":" 🎑蓝光影院(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=蓝光影院","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_蓝莓影视","name":" 🎑蓝莓影视(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=蓝莓影视","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_鸭奈飞","name":" 🎑鸭奈飞(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=鸭奈飞","searchable": 1,"quickSearch": 1,"filterable": 0},
-	{"key":"dr_007影视","name":" 🎑007影视(道长)","type":1,"api":"http://catvod.fun:5705/vod?rule=007影视","searchable":1,"quickSearch":1,"filterable":0},
+	{"key":"dr_007影视","name":" 🍂007影视(道长)","type":1,"api":"http://catvod.fun:5705/vod?rule=007影视","searchable":1,"quickSearch":1,"filterable":0},
+        {"key": "dr_大米星球","name": " 🌼大米星球","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=大米星球","searchable": 2,"quickSearch": 0,"filterable": 0},
 	{"key":"dr_菜狗","name":"🕋菜狗","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=菜狗","searchable":1,"quickSearch":1,"filterable":0},
         {"key":"dr_兔小贝","name":"🕋兔小贝","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=兔小贝","searchable":1,"quickSearch":1,"filterable":0},
         {"key":"dr_追剧喵","name":"🕋追剧喵","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=追剧喵","searchable":1,"quickSearch":1,"filterable":0},
@@ -39,6 +40,7 @@
 	{"key":"dr_l0l","name":"🕋l0l","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=l0l","searchable":1,"quickSearch":1,"filterable":0},
 	{"key":"dr_AnFuns","name":"🕋AnFuns","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=AnFuns","searchable":1,"quickSearch":1,"filterable":0},
         {"key":"dr_库马伊","name":"🕋库马伊","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=库马伊","searchable":1,"quickSearch":1,"filterable":0},
+  
     //{  "key": "t4public", "name":" 🎑公共", "type": 4, "api":"https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=10",  "searchable": 1, "quickSearch": 1, "filterable": 0},
     //{"key": "T4备用","name": " 🎑备用","type": 4,"api": "https://t4.run.goorm.io/vod?sites=all&ali_token=3a49cf29cf20410997247c6eb4509be9&timeout=10","searchable": 1,"quickSearch": 1,"filterable": 1},  
 
