@@ -1,0 +1,1814 @@
+📽0904,#genre#
+一代宗師,https://v4.cdtlas.com/20211215/Iff7R3PC/index.m3u8
+一代宗師,https://vip.lz-cdn2.com/20220528/7739_46a377b4/index.m3u8
+壯志淩雲2：獨行俠,https://m3u.if101.tv/xm3u8/3cd4073d8090aa70651feeac5c08a7e5161a81f4148759d22394199a3a5bdca99921f11e97d0da21.m3u8
+侏羅紀世界3,https://m3u.if101.tv/xm3u8/d4e4e600aaa34b3323f4450ef97497809b4c35b8adee033819ce0d7d45d6adb99921f11e97d0da21.m3u8
+美國隊長2,https://m3u.if101.tv/xm3u8/587b21a948a95084ab045014554daa29dc326e8515398475d5f26c2cb27c0e7d9921f11e97d0da21.m3u8
+美國隊長3,https://m3u.if101.tv/xm3u8/c9bbb0a40ac2bc19b4aeb00c141279fde1b0918b1f293b65b5bfa065256096af9921f11e97d0da21.m3u8
+神奇女俠,https://m3u.if101.tv/xm3u8/4cd3a3847b0e6a910d545fc1be1f26653aa5e2e34fb658a2d40446c03146e9cc9921f11e97d0da21.m3u8
+神奇女俠1984,https://m3u.if101.tv/xm3u8/d0639313b3f6a39c3c0106b1f6684ce31b216a942461ecf3bb4effb6da7babd69921f11e97d0da21.m3u8
+蜘蛛人：英雄無歸,https://m3u.if101.tv/xm3u8/0dd27a86c5d66a7bb2f29b3c770c2bced71c2da61557e69e1ec8ae1dafc0048b9921f11e97d0da21.m3u8
+奇異博士,https://m3u.if101.tv/xm3u8/b95d11b9e7acb507e8f1866a711b785ca243164fb3e72d00ad94f7143fe205bb9921f11e97d0da21.m3u8
+奇異博士2,https://m3u.if101.tv/xm3u8/25b4fe67d66eea73ed936c1e16264a889b6db2eb09ea6520fe0b0067c4d77bee9921f11e97d0da21.m3u8
+奇異博士2,https://m3u.if101.tv/xm3u8/5a652d9eb4d72f08cb72f3d7bcf76ec109075bcdcb925f4c77dad3e100a23aaa9921f11e97d0da21.m3u8
+降臨,https://mix.tzyigou.cn/20211112/S9DNjA9E/index.m3u8
+降臨,https://m3u.if101.tv/xm3u8/1a30adf4a21ddb65d3228640b13feb585833f939ae19354502e0a7cdc396b1129921f11e97d0da21.m3u8
+降臨,https://vod1.kczybf.com/20220308/GRtiEyJ6/index.m3u8
+星際穿越,https://vod1.bdkzh.com/20220515/TvjIZ7nl/index.m3u8
+星際穿越,https://m3u.if101.tv/xm3u8/ced7303cf4cd66aa52b740279893b4015ee4c4605eb7884d3ea6bce8e624a22b9921f11e97d0da21.m3u8
+
+##
+
+
+🏀0911運動,#genre#
+CCTV5,http://shbu.live.bestvcdn.com.cn:8080/live/program/live/cctv5hd/4000000/mnf.m3u8
+CCTV5,http://140.207.241.3:8080/live/program/live/cctv5hd/4000000/mnf.m3u8
+CCTV5,http://123.6.9.146/live/jz-cctv-5/live.m3u8
+CCTV5,http://newvideo.dangtutv.cn:8278/CCTVsports/playlist.m3u8
+CCTV5,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=ABCDEFGH&programid=4200000064?fmt=ts2hls
+CCTV5,http://140.207.241.3:8080/live/program/live/cctv5/1300000/d1.m3u8
+CCTV5,http://117.148.129.8/PLTV/88888888/224/3221233115/index.m3u8
+CCTV5,http://117.148.129.9/PLTV/88888888/224/3221231510/index.m3u8
+
+CCTV5+,http://shbu.live.bestvcdn.com.cn:8080/live/program/live/cctv5phd/2300000/mnf.m3u8
+CCTV5+,http://140.207.241.3:8080/live/program/live/cctv5phd/4000000/mnf.m3u8
+CCTV5+,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=ABCDEFGH&programid=4200000246
+CCTV5+,http://111.20.33.70/PLTV/88888893/224/3221226221/index.m3u8
+CCTV5+,http://111.20.33.93/TVOD/88888893/224/3221226221/index.m3u8
+
+Eleven+,rtmp://59.124.75.138/sat/md051
+
+Eleven1,http://50.7.220.74:8278/golfchannel_twn/playlist.m3u8?tid=m43df9270caf7&ct=18335&tsum=3bcc02e810e7073b86bb40d392e95f23
+Eleven1,rtmp://59.124.75.150/sat/tv731
+Eleven1,rtmp://59.124.75.138/sat/tv731
+Eleven1,rtmp://59.124.75.138:1935/sat/tv731
+Eleven1,p2p://fccs.word-tv.com:9906/625854d4000964b10fb57b7382610c8d
+Eleven1,p2p://54.39.16.152:9906/625854d4000964b10fb57b7382610c8d
+
+Eleven2,rtmp://59.124.75.150/sat/tv741
+Eleven2,rtmp://59.124.75.138:1935/sat/tv741
+Eleven2,rtmp://59.124.75.138/sat/tv741
+Eleven2,rtmp://59.124.75.138/sat/md041
+Eleven2,http://61.221.81.93:8078/hls/26/80/esport2.m3u8
+Eleven2,p2p://54.39.16.152:9906/6258550f0001c6880fb65ff87e0ebc13
+Eleven2,p2p://fccs.word-tv.com:9906/6258550f0001c6880fb65ff87e0ebc13
+
+
+Eleven3,http://62.28.71.186:45678/http/192.168.150.137:7137/eleven3
+Eleven3,http://62.28.71.186:45678/http/192.168.150.137:7137/eleven2
+Eleven3,http://62.28.71.186:45678/http/192.168.150.137:7137/eleven1
+
+
+MOMO綜合,http://59.125.122.90:18576/http/192.168.1.9:8081/hls/68/810/ch01.m3u8
+MOMO綜合,http://61.219.170.95:18576/.m3u8
+MOMO綜合,http://61.219.170.95:18576/http/192.168.1.9:8081/hls/76/818/momo_max.m3u8
+MOMO綜合,p2p://fccs.word-tv.com:9906/62580818000c773d0e89bddcd1b0c221
+
+博斯高球1,http://50.7.220.74:8278/bosigolf1_twn/playlist.m3u8?tid=MD5D3832704238327042&ct=18393&tsum=cbf3bf749c9b0bf4828ab19efff1c5b0
+博斯高球1,p2p://fccs.word-tv.com:9906/62596d9e000e5b6c13fe51c8c1ca116c
+博斯高球1,p2p://54.39.16.152:9906/62596d9e000e5b6c13fe51c8c1ca116c
+
+博斯高球2,p2p://fccs.word-tv.com:9906/6259b7ea000cad1415208a3ab972be5a
+博斯高球2,p2p://54.39.16.152:9906/6259b7ea000cad1415208a3ab972be5a
+
+博斯無限,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-longturn10&nid=51
+
+博斯運動1,rtmp://59.124.75.150/sat/md031
+博斯運動1,rtmp://59.124.75.138/sat/md031
+博斯運動1,p2p://fccs.word-tv.com:9906/6260e5500006db331736dc200a9d70bc
+博斯運動1,p2p://54.39.16.152:9906/6260e5500006db331736dc200a9d70bc
+博斯運動1,rtmp://59.124.75.150/sat/md021
+博斯運動1,rtmp://59.124.75.150/sat/md041
+博斯運動1,rtmp://59.124.75.138/sat/md021
+
+
+博斯運動2,http://50.7.220.74:8278/bosisport2_twn/playlist.m3u8?tid=mb50f39eebf51&ct=18335&tsum=4f8960c36a3e7f2b069d574293809283
+博斯運動2,p2p://fccs.word-tv.com:9906/6261364f000a426f187341173b92f79b
+博斯運動2,p2p://54.39.16.152:9906/6261364f000a426f187341173b92f79b
+
+博斯網球,http://50.7.220.74:8278/bositennis_twn/playlist.m3u8?tid=m60f4fd9da4d1&ct=18335&tsum=4d026bfb332da29886aa772f2e149edb
+博斯網球,rtmp://59.124.75.150/sat/md051
+博斯網球,p2p://fccs.word-tv.com:9906/6259b8080009f08a1520feb706074e92
+博斯網球,p2p://54.39.16.152:9906/6259b8080009f08a1520feb706074e92
+
+博斯魅力,p2p://fccs.word-tv.com:9906/6260e5df0005c49317390a70b64c7b9b
+博斯魅力,p2p://54.39.16.152:9906/6260e5df0005c49317390a70b64c7b9b
+
+愛爾達體育1,p2p://fccs.word-tv.com:9906/62596cd0000349b813fb2a4367d31141
+愛爾達體育1,p2p://54.39.16.152:9906/62596cd0000349b813fb2a4367d31141
+愛爾達體育1,rtmp://59.124.75.150/sat/md011
+愛爾達體育1,rtmp://59.124.75.138/sat/md011
+
+愛爾達體育2,p2p://fccs.word-tv.com:9906/62596cee000e512213fba2460c39ef10
+愛爾達體育2,p2p://54.39.16.152:9906/62596cee000e512213fba2460c39ef10
+
+愛爾達體育3,p2p://fccs.word-tv.com:9906/62596d0a0009c5b313fc0e7cd12205f2
+愛爾達體育3,p2p://54.39.16.152:9906/62596d0a0009c5b313fc0e7cd12205f2
+
+緯來體育,rtmp://59.124.75.150/sat/tv721
+緯來體育,rtmp://59.124.75.138/sat/tv721
+緯來體育,p2p://fccs.word-tv.com:9906/62541bbd000ba7f6097abfe357f9c565
+緯來體育,p2p://fccs.word-tv.com:9906/62dbbd45000a0aa0137fb226e5d4fbce
+緯來體育,p2p://54.39.16.152:9906/62541bbd000ba7f6097abfe357f9c565
+
+##
+
+
+📶SatSport,#genre#
+MD1,rtmp://59.124.75.138/sat/md011
+MD2,rtmp://59.124.75.138/sat/md021
+MD3,rtmp://59.124.75.138/sat/md031
+MD4,rtmp://59.124.75.138/sat/md041
+MD5,rtmp://59.124.75.138/sat/md051
+MD6,rtmp://59.124.75.138/sat/md061
+MD7,rtmp://59.124.75.138/sat/md071
+MD8,rtmp://59.124.75.138/sat/md081
+MD9,rtmp://59.124.75.138/sat/md091
+MD1,rtmp://59.124.75.150/sat/md011
+MD2,rtmp://59.124.75.150/sat/md021
+MD3,rtmp://59.124.75.150/sat/md031
+MD4,rtmp://59.124.75.150/sat/md041
+MD5,rtmp://59.124.75.150/sat/md051
+MD6,rtmp://59.124.75.150/sat/md061
+MD7,rtmp://59.124.75.150/sat/md071
+MD8,rtmp://59.124.75.150/sat/md081
+MD9,rtmp://59.124.75.150/sat/md091
+
+##
+
+
+📰0909新聞,#genre#
+TVBS-Asia,http://38.64.72.148:80/hls/modn/list/4005/chunklist0.m3u8
+TVBS-Asia,http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
+TVBS新聞,http://38.64.72.148:80/hls/modn/list/4006/chunklist0.m3u8
+TVBS新聞,http://38.64.72.148:80/hls/modn/list/4006/chunklist1.m3u8
+TVBS新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=55tvbs
+TVBS新聞,http://50.7.220.74:8278/tvbs_n/playlist.m3u8?tid=MC3C9358473393584733&ct=19193&tsum=38970ab977b9e318cbead37db4134eb8
+TVBS新聞,p2p://fccs.word-tv.com:9906/62bc5630000d8b431230ce1e9b2441a1
+TVBS新聞,p2p://54.39.16.152:9906/6254121e00022e5c0955285ee55f9ec4
+TVBS新聞HD,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live072&nid=129
+TVBS新聞HD,rtmp://59.124.75.150/sat/tv551
+TVBS新聞HD,rtmp://59.124.75.138/sat/tv551
+TVBS新聞HD,p2p://54.39.16.152:9906/62541264000b8c2809563c340355f46f
+TVBS新聞HD,p2p://fccs.word-tv.com:9906/62541264000b8c2809563c340355f46f
+TVBS精采,p2p://fccs.word-tv.com:9906/6259b507000647d0151541dfdfa4429f
+TVBS精采,p2p://54.39.16.152:9906/6259b507000647d0151541dfdfa4429f
+TVBS歡樂,rtmp://59.124.75.150/sat/tv421
+TVBS歡樂,rtmp://59.124.75.138/sat/tv421
+TVBS歡樂,p2p://fccs.word-tv.com:9906/62585f330007fbe70fddfe2f12feb8b6
+TVBS歡樂,p2p://54.39.16.152:9906/62585f330007fbe70fddfe2f12feb8b6
+大愛,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live007&nid=209
+大愛,https://pulltv1.wanfudaluye.com/live/tv1.m3u8
+大愛,p2p://fccs.word-tv.com:9906/6257e958000647f20e119e47becddbf1
+大愛,p2p://54.39.16.152:9906/6257e958000647f20e119e47becddbf1
+大愛2,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live106&nid=230
+大愛2,https://pulltv2.wanfudaluye.com/live/tv2.m3u8
+中天亞洲,http://50.7.220.74:8278/ctiasia_twn/playlist.m3u8?tid=MFFF9983745599837455&ct=19193&tsum=ee61e179a8c619a076c515514d68e24e
+中天亞洲,p2p://fccs.word-tv.com:9906/626610e20008d9cf11656e24ac45db0e
+中天亞洲,p2p://54.39.16.152:9906/626610e20008d9cf11656e24ac45db0e
+中天娛樂,p2p://fccs.word-tv.com:9906/62585ecd000adfc10fdc707c21a26424
+中天娛樂,p2p://54.39.16.152:9906/62585ecd000adfc10fdc707c21a26424
+中天新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=ztxw
+中天新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv009&nid=30
+中天新聞,https://ytb.arp220.us/jmsytb.m3u8?c=5
+中天新聞,p2p://54.39.16.152:9906/625af85e0000d79c001149459e0c9b4f
+中天新聞,p2p://fccs.word-tv.com:9906/625af85e0000d79c001149459e0c9b4f
+中天綜合,p2p://fccs.word-tv.com:9906/62585815000447950fc2300ce37be3da
+中天綜合,p2p://54.39.16.152:9906/62585815000447950fc2300ce37be3da
+中視,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv040&nid=4
+中視,rtmp://59.124.75.138/sat/tv091
+中視,rtmp://59.124.75.150/sat/tv091
+中視,p2p://54.39.16.152:9906/6257e968000a66d90e11ddd52825327a
+中視,p2p://fccs.word-tv.com:9906/6257e968000a66d90e11ddd52825327a
+中視菁采,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv064&nid=123
+中視菁采,p2p://fccs.word-tv.com:9906/6269290b000463f70377555ece4c7fca
+中視菁采,p2p://54.39.16.152:9906/6269290b000463f70377555ece4c7fca
+中視新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv074&nid=33
+中視新聞,http://50.7.220.74:8278/ca73a13c37/playlist.m3u8?tid=mee3f06f682eb&ct=18335&tsum=7491cceca17c1e2af05824583855f8bd
+中視新聞,http://50.7.220.74:8278/zhongshinews_twn/playlist.m3u8?tid=MAAA4459856044598560&ct=19193&tsum=1b7bdea69c00cd48e31f13442c75c376
+中視新聞,https://ytb.arp220.us/jmsytb.m3u8?c=9
+中視新聞,p2p://54.39.16.152:9906/626928b800072a99037611dc7cf5b636
+中視新聞,p2p://fccs.word-tv.com:9906/626928b800072a99037611dc7cf5b636
+中視經典,http://50.7.220.74:8278/zhongshi_twn/playlist.m3u8?tid=14379667&ct=17988&tsum=de63d02f44741580b5070077d1949841
+中視經典,p2p://fccs.word-tv.com:9906/626928e3000ce0de0376bb4ad8c2f741
+中視經典,p2p://54.39.16.152:9906/626928e3000ce0de0376bb4ad8c2f741
+公視,p2p://fccs.word-tv.com:9906/6257e9950008c4a20e128d3209b54839
+公視,p2p://54.39.16.152:9906/6257e9950008c4a20e128d3209b54839
+公視3,p2p://fccs.word-tv.com:9906/62692af700080a87037ed82d98f82f9d
+公視3,p2p://54.39.16.152:9906/62692af700080a87037ed82d98f82f9d
+公視台語,p2p://fccs.word-tv.com:9906/6257e9a400000c300e12c58f9b595b1e
+公視台語,p2p://54.39.16.152:9906/6257e9a400000c300e12c58f9b595b1e
+公視戲劇,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv042&nid=7
+台視,http://60.251.59.180:8501/.m3u8
+台視,rtmp://59.124.75.138/sat/tv071
+台視,rtmp://59.124.75.150/sat/tv071
+台視,p2p://54.39.16.152:9906/6257e8850006de950e0e6636ac2abe87
+台視,p2p://fccs.word-tv.com:9906/6257e8850006de950e0e6636ac2abe87
+台視財經,p2p://fccs.word-tv.com:9906/626928870002ef3e0375515fa02e33ba
+台視財經,p2p://54.39.16.152:9906/626928870002ef3e0375515fa02e33ba
+台視新聞,http://38.64.72.148:80/hls/modn/list/4013/chunklist0.m3u8
+台視新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=tsxw
+台視新聞,http://38.64.72.148:80/hls/modn/list/4013/chunklist1.m3u8
+台視新聞,p2p://54.39.16.152:9906/6269285d000bc5c40374af92643669c3
+台視新聞,p2p://fccs.word-tv.com:9906/6269285d000bc5c40374af92643669c3
+台視綜合,p2p://fccs.word-tv.com:9906/626929ef0001a650037acf4bc1fd630b
+台視綜合,p2p://54.39.16.152:9906/626929ef0001a650037acf4bc1fd630b
+民視,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv002&nid=3
+民視,http://50.7.220.74:8278/ftvhd_taiwan/playlist.m3u8?tid=m15b424641a89&ct=18335&tsum=ba82cdbfb8253c45a13df5354e6d0dbc
+民視,http://50.7.220.74:8278/ftvhd_taiwan/playlist.m3u8?tid=15141291&ct=17990&tsum=ab93fcdf581cc3f483e1ceede13312ce
+民視,http://50.7.220.74:8278/ftvhd_taiwan/playlist.m3u8?tid=MF8F2804739628047396&ct=19193&tsum=73a49379fed74f8fc39359fcf589a9d8
+民視,rtmp://59.124.75.138/sat/tv051
+民視,http://seb.sason.top/ptv/ftv.php?id=ms
+民視,p2p://54.39.16.152:9906/62582da100098ec20f1c5c4698b437cf
+民視,p2p://fccs.word-tv.com:9906/62582da100098ec20f1c5c4698b437cf
+民視,p2p://fccs.word-tv.com:9906/62df5a780000887707dbedd0ce643763
+民視1,p2p://fccs.word-tv.com:9906/626927db000004640372b0c04cca9ca3
+民視1,p2p://54.39.16.152:9906/626927db000004640372b0c04cca9ca3
+民視新聞,http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
+民視新聞,http://38.64.72.148:80/hls/modn/list/4012/chunklist1.m3u8
+民視新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=msxw
+民視新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-ftv13&nid=31
+民視新聞,http://61.219.170.95:18563/.m3u8
+民視新聞,https://ytb.arp220.us/jmsytb.m3u8?c=7
+民視新聞,p2p://54.39.16.152:9906/625411d700086db70954149f159813c6
+民視新聞,p2p://fccs.word-tv.com:9906/625411d700086db70954149f159813c6
+民視臺灣,p2p://fccs.word-tv.com:9906/62692823000550c80373cb5be6f7e438
+民視臺灣,p2p://54.39.16.152:9906/62692823000550c80373cb5be6f7e438
+年代MUCH,http://61.219.170.95:18558/.m3u8
+年代MUCH,http://61.219.170.95:18558/http/192.168.1.9:8081/hls/72/814/ch45.m3u8
+年代MUCH,http://59.125.122.90:18558/http/192.168.1.9:8066/hls/210/10010/ch00.m3u8
+年代MUCH,p2p://fccs.word-tv.com:9906/625858aa000f2ee50fc478de23b3e0dd
+年代MUCH,p2p://54.39.16.152:9906/625858aa000f2ee50fc478de23b3e0dd
+年代新聞,p2p://fccs.word-tv.com:9906/62540c45000225da093e50b45b457d41
+年代新聞,p2p://54.39.16.152:9906/62540c45000225da093e50b45b457d41
+東森 LIVE,http://50.7.220.74:8278/ettvnews/playlist.m3u8?tid=ME5E8863997888639978&ct=19193&tsum=6b0236441f10a7195fb35fe7997db68c
+東森 LIVE,http://50.7.220.74:8278/ettvnews/playlist.m3u8?tid=m208c21bf386611408694&ct=17874&tsum=d1b4de373c886cd8015974fa8c5d6d12
+東森美洲,http://38.64.72.148:80/hls/modn/list/2026/chunklist0.m3u8
+東森美洲,http://38.64.72.148:80/hls/modn/list/2026/chunklist1.m3u8
+東森美洲2,http://38.64.72.148:80/hls/modn/list/2015/chunklist0.m3u8
+東森美洲2,http://38.64.72.148:80/hls/modn/list/2015/chunklist1.m3u8
+東森美洲3,http://38.64.72.148:80/hls/modn/list/2021/chunklist0.m3u8
+東森財經,http://for40255.sytes.net:8099/tv/iptv/live.php?id=dscjxw
+東森財經,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live019&nid=211
+東森財經,http://50.7.220.74:8278/ettvcaijing_twn/playlist.m3u8?tid=m999b5a0f7fca17599138&ct=17874&tsum=345085d2d6d4401fdb3da968dfee5a54
+東森財經,rtmp://59.124.75.150/sat/tv571
+東森財經,rtmp://59.124.75.138/sat/tv571
+東森財經,p2p://fccs.word-tv.com:9906/6254128d000e830c0956dd1ea31d7f59
+東森財經,p2p://54.39.16.152:9906/6254128d000e830c0956dd1ea31d7f59
+東森超視,http://59.125.122.90:18555/http/192.168.1.9:8078/hls/24/80/ch04.m3u8
+東森超視,http://61.219.170.95:18555/.m3u8
+東森超視,http://61.219.170.95:18555/http/192.168.1.9:8081/hls/64/806/ch14.m3u8
+東森超視,p2p://fccs.word-tv.com:9906/625854810005f8350fb4365bf7cd8f4e
+東森超視,p2p://54.39.16.152:9906/625854810005f8350fb4365bf7cd8f4e
+東森超視34.5,http://38.64.72.148:80/hls/modn/list/2018/chunklist0.m3u8
+東森超視34.5,http://38.64.72.148:80/hls/modn/list/2018/chunklist1.m3u8
+東森新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live114&nid=234
+東森新聞,http://61.219.170.95:18512/.m3u8
+東森新聞,p2p://54.39.16.152:9906/62540c77000699df093f1528c8c4d48a
+東森新聞,p2p://fccs.word-tv.com:9906/62540c77000699df093f1528c8c4d48a
+東森綜合 ,http://50.7.220.74:8278/ettvzhonghe/playlist.m3u8?tid=m65c4e525f24617101171&ct=17874&tsum=663db593cfeefc92ce4b5d7461988f3f
+非凡商業,p2p://fccs.word-tv.com:9906/626911890006d792031b822fdf86a38a
+非凡商業,p2p://54.39.16.152:9906/626911890006d792031b822fdf86a38a
+非凡新聞,p2p://fccs.word-tv.com:9906/6257f613000f40140e435b0b41c847c0
+非凡新聞,p2p://54.39.16.152:9906/6257f613000f40140e435b0b41c847c0
+壹新聞,http://stream.nexttv.com.tw/n001/hd/live.m3u8
+壹新聞,http://stream.nexttv.com.tw/n001/playlist.m3u8
+壹新聞,p2p://54.39.16.152:9906/62541b7c0007f8c30979c109c2ede6a3
+華視,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv041&nid=6
+華視,http://60.251.59.180:8503/http/60.251.39.91:8081/hls/72/814/ch48.m3u8
+華視,rtmp://59.124.75.138/sat/tv111
+華視,p2p://54.39.16.152:9906/6257e98b000307180e1264aad3095adb
+華視,p2p://fccs.word-tv.com:9906/6257e98b000307180e1264aad3095adb
+華視新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=hsxw
+華視新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv052&nid=34
+華視新聞,https://ytb.arp220.us/jmsytb.m3u8?c=4
+華視新聞,p2p://fccs.word-tv.com:9906/62692acf000c5e7a037e3d0919397c0a
+華視新聞,p2p://54.39.16.152:9906/62692acf000c5e7a037e3d0919397c0a
+華視體育文化教育,p2p://fccs.word-tv.com:9906/62692aad0004ff59037db656efdee736
+華視體育文化教育,p2p://54.39.16.152:9906/62692aad0004ff59037db656efdee736
+寰宇財經,p2p://fccs.word-tv.com:9906/626179de00005255197b252361cec9d5
+寰宇財經,p2p://54.39.16.152:9906/626179de00005255197b252361cec9d5
+寰宇新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=hyxw
+寰宇新聞,https://raw.githubusercontent.com/etag2000/IPTV/YTlive/hyxw.m3u8
+寰宇新聞,http://61.219.170.95:18569/.m3u8
+寰宇新聞,https://ytb.arp220.us/jmsytb.m3u8?c=6
+寰宇新聞,p2p://fccs.word-tv.com:9906/6257feca0002d9980e6562b6716c1c5a
+寰宇新聞,p2p://54.39.16.152:9906/6257feca0002d9980e6562b6716c1c5a
+寰宇新聞臺灣,p2p://fccs.word-tv.com:9906/6258370a000e53840f411fa6b1f19ad7
+寰宇新聞臺灣,p2p://fccs.word-tv.com:9906/62dbd3b70005e62613d75e66a1fcb160
+寰宇新聞臺灣,p2p://54.39.16.152:9906/6258370a000e53840f411fa6b1f19ad7
+寰宇綜合,p2p://fccs.word-tv.com:9906/62617a13000860ad197bf63b948c0cc6
+寰宇綜合,p2p://54.39.16.152:9906/62617a13000860ad197bf63b948c0cc6
+
+##
+
+
+📶4gTV,#genre#
+Arirang,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv079&nid=189
+DW德國之聲,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live071&nid=226
+ELTA生活旅遊,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live120&nid=237
+ELTV生活英語,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-longturn20&nid=106
+LUXE TV,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live121&nid=175
+SBN全球財經,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live060&nid=224
+TVBS-Asia,http://38.64.72.148:80/hls/modn/list/4005/chunklist0.m3u8
+TVBS-Asia,http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
+TVBS新聞,http://38.64.72.148/hls/modn/list/4006/chunklist0.m3u8?blog.ntnas.top
+TVBS新聞,http://38.64.72.148:80/hls/modn/list/4006/chunklist0.m3u8
+TVBS新聞,http://38.64.72.148:80/hls/modn/list/4006/chunklist0.m3u8?blog.ntnas.top
+TVBS新聞,http://38.64.72.148:80/hls/modn/list/4006/chunklist1.m3u8
+TVBS新聞,http://38.64.72.148:80/hls/modn/list/4006/chunklist1.m3u8?blog.ntnas.top
+TVBS新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=55tvbs
+TVBS新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live072&nid=129
+VOA美國之音,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-ftv03&nid=86
+三立iNEWS,http://for40255.sytes.net:8099/tv/iptv/live.php?id=slxw
+三立iNEWS,http://for40255.sytes.net:8099/tv/iptv/live.php?id=slxwinews
+三立iNEWS,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live089&nid=229
+三立綜合,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live207&nid=169
+大愛,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live007&nid=209
+大愛2,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live106&nid=230
+中天美食旅遊,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live123&nid=251
+中天新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=ztxw
+中天新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv009&nid=30
+中視,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv040&nid=4
+中視菁采,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv064&nid=123
+中視新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv074&nid=33
+公视,http://50.7.220.74:8278/ctv_taiwan/playlist.m3u8?tid=13765524&ct=17990&tsum=03eb77c1c186944b97737f14e95076c0
+公視戲劇,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv042&nid=7
+台視新聞,http://38.64.72.148:80/hls/modn/list/4013/chunklist0.m3u8
+台視新聞,http://38.64.72.148:80/hls/modn/list/4013/chunklist0.m3u8?blog.ntnas.top
+台視新聞,http://38.64.72.148:80/hls/modn/list/4013/chunklist1.m3u8
+台視新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=tsxw
+民視,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv002&nid=3
+民視1,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv003&nid=1
+民視旅遊,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-ftv07&nid=61
+民視新聞,http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
+民視新聞,http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8?blog.ntnas.top
+民視新聞,http://38.64.72.148:80/hls/modn/list/4012/chunklist1.m3u8
+民視新聞,http://38.64.72.148:80/hls/modn/list/4012/chunklist1.m3u8?blog.ntnas.top
+民視新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=msxw
+民視新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-ftv13&nid=31
+民視綜藝,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv004&nid=16
+民視臺灣,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv001&nid=2
+民視影劇,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-ftv09&nid=24
+亞洲旅遊,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-longturn17&nid=250
+東森 LIVE,http://for40255.sytes.net:8099/tv/iptv/live.php?id=dsxw
+東森美洲,http://38.64.72.148:80/hls/modn/list/2026/chunklist0.m3u8
+東森美洲,http://38.64.72.148:80/hls/modn/list/2026/chunklist1.m3u8
+東森美洲2,http://38.64.72.148:80/hls/modn/list/2015/chunklist0.m3u8
+東森美洲2,http://38.64.72.148:80/hls/modn/list/2015/chunklist1.m3u8
+東森美洲3,http://38.64.72.148:80/hls/modn/list/2021/chunklist0.m3u8
+東森財經,http://for40255.sytes.net:8099/tv/iptv/live.php?id=dscjxw
+東森財經,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live019&nid=211
+東森超視34.5,http://38.64.72.148:80/hls/modn/list/2018/chunklist0.m3u8
+東森超視34.5,http://38.64.72.148:80/hls/modn/list/2018/chunklist1.m3u8
+東森新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live114&nid=234
+東森衛視,http://38.64.72.148/hls/modn/list/2024/chunklist0.m3u8
+客家電視,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv043&nid=107
+時尚運動X,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv014&nid=69
+博斯無限,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-longturn10&nid=51
+華視,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv041&nid=6
+華視新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=hsxw
+華視新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv052&nid=34
+華語綜藝,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live006&nid=245
+華語戲劇,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live005&nid=244
+靖天戲劇,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv058&nid=116
+滾動人文紀實,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live012&nid=249
+寰宇新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=hyxw
+鏡新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv075&nid=268
+
+##
+
+
+📶SatTV,#genre#
+Eleven1,rtmp://59.124.75.138/sat/tv731
+Eleven1,rtmp://59.124.75.150/sat/tv731
+Eleven2,rtmp://59.124.75.138/sat/tv741
+Eleven2,rtmp://59.124.75.150/sat/tv741
+MOMO,rtmp://59.124.75.138/sat/tv761
+MOMO,rtmp://59.124.75.150/sat/tv761
+TVBS新聞HD,rtmp://59.124.75.138/sat/tv551
+TVBS新聞HD,rtmp://59.124.75.150/sat/tv551
+TVBS歡樂,rtmp://59.124.75.138/sat/tv421
+TVBS歡樂,rtmp://59.124.75.150/sat/tv421
+中視,rtmp://59.124.75.138/sat/tv091
+中視,rtmp://59.124.75.150/sat/tv091
+台視,rtmp://59.124.75.138/sat/tv071
+台視,rtmp://59.124.75.150/sat/tv071
+民視,rtmp://59.124.75.138/sat/tv051
+民視,rtmp://59.124.75.150/sat/tv051
+東森財經,rtmp://59.124.75.138/sat/tv571
+東森財經,rtmp://59.124.75.150/sat/tv571
+東森超視,rtmp://59.124.75.138/sat/tv521
+東森超視,rtmp://59.124.75.150/sat/tv521
+華視,rtmp://59.124.75.138/sat/tv111
+華視,rtmp://59.124.75.150/sat/tv111
+緯來日本,rtmp://59.124.75.138/sat/tv771
+緯來日本,rtmp://59.124.75.150/sat/tv771
+緯來育樂,rtmp://59.124.75.138/sat/tv701
+緯來育樂,rtmp://59.124.75.150/sat/tv701
+緯來體育,rtmp://59.124.75.138/sat/tv721
+緯來體育,rtmp://59.124.75.150/sat/tv721
+
+##
+
+
+📶NLTV,#genre#
+Discovery,http://50.7.220.74:8278/ba86fcd935/playlist.m3u8?tid=m1b458a366fcb&ct=18335&tsum=6ee1498a5e37d8bd1e3f62954629ed4f
+Discovery,http://50.7.220.74:8278/discoverych_twn/playlist.m3u8?tid=MA3A2844188928441889&ct=18393&tsum=5b966ba17918ab0d7dd4c462d1b0b811
+Discovery,http://50.7.220.74:8278/discoveryhd_twn/playlist.m3u8?tid=MB0B1462900214629002&ct=18393&tsum=ce9990e01102bf91728bdbbb549b04a7
+Eleven1,http://50.7.220.74:8278/golfchannel_twn/playlist.m3u8?tid=m43df9270caf7&ct=18335&tsum=3bcc02e810e7073b86bb40d392e95f23
+EYE TV旅遊,http://50.7.220.74:8278/eyetvtravel_twn/playlist.m3u8?tid=m3e96290c929116279255&ct=17874&tsum=7c060d25738e52e57372f408b9ccd0bc
+EYE TV戲劇,http://50.7.220.74:8278/eyetvxiju_twn/playlist.m3u8?tid=m379e8846d31b14432367&ct=17874&tsum=2c4c2acd16a5a5e00797ad6f4c4cb586
+Hollywood HD,http://50.7.220.74:8278/hollywoodmovies_twn/playlist.m3u8?tid=m39bfcd99239617992917&ct=17874&tsum=774ffa7546c934dc27e743c5bbb454d3
+Hollywood HD,http://50.7.220.74:8278/hollywoodmovies_twn/playlist.m3u8?tid=MA8A4005638840056388&ct=18392&tsum=a1f1517d4ea64fd01267905f21d83859
+Hollywood HD,http://50.7.220.74:8278/hollywoodmovies_twn/playlist.m3u8?tid=MD8D9429794794297947&ct=19193&tsum=fbe097bcbe37adad90e8bef964cac161
+TVBS新聞,http://50.7.220.74:8278/tvbs_n/playlist.m3u8?tid=MC3C9358473393584733&ct=19193&tsum=38970ab977b9e318cbead37db4134eb8
+ViuTV,http://50.7.220.74:8278/9ae6d37d9a/playlist.m3u8?tid=m7728dbb8abe7&ct=18336&tsum=6b7f957f06b7cfabd928653808a52514
+中天亞洲,http://50.7.220.74:8278/ctiasia_twn/playlist.m3u8?tid=MFFF9983745599837455&ct=19193&tsum=ee61e179a8c619a076c515514d68e24e
+中視新聞,http://50.7.220.74:8278/ca73a13c37/playlist.m3u8?tid=mee3f06f682eb&ct=18335&tsum=7491cceca17c1e2af05824583855f8bd
+中視新聞,http://50.7.220.74:8278/zhongshinews_twn/playlist.m3u8?tid=MAAA4459856044598560&ct=19193&tsum=1b7bdea69c00cd48e31f13442c75c376
+中視經典,http://50.7.220.74:8278/zhongshi_twn/playlist.m3u8?tid=14379667&ct=17988&tsum=de63d02f44741580b5070077d1949841
+公视,http://50.7.220.74:8278/ctv_taiwan/playlist.m3u8?tid=13765524&ct=17990&tsum=03eb77c1c186944b97737f14e95076c0
+民視,http://50.7.220.74:8278/ftvhd_taiwan/playlist.m3u8?tid=15141291&ct=17990&tsum=ab93fcdf581cc3f483e1ceede13312ce
+民視,http://50.7.220.74:8278/ftvhd_taiwan/playlist.m3u8?tid=m15b424641a89&ct=18335&tsum=ba82cdbfb8253c45a13df5354e6d0dbc
+民視,http://50.7.220.74:8278/ftvhd_taiwan/playlist.m3u8?tid=MF8F2804739628047396&ct=19193&tsum=73a49379fed74f8fc39359fcf589a9d8
+東森 LIVE,http://50.7.220.74:8278/ettvnews/playlist.m3u8?tid=m208c21bf386611408694&ct=17874&tsum=d1b4de373c886cd8015974fa8c5d6d12
+東森 LIVE,http://50.7.220.74:8278/ettvnews/playlist.m3u8?tid=ME5E8863997888639978&ct=19193&tsum=6b0236441f10a7195fb35fe7997db68c
+東森財經,http://50.7.220.74:8278/ettvcaijing_twn/playlist.m3u8?tid=m999b5a0f7fca17599138&ct=17874&tsum=345085d2d6d4401fdb3da968dfee5a54
+東森電影,http://50.7.220.74:8278/ettvmovie/playlist.m3u8?tid=md2ba4c243ed411481253&ct=17874&tsum=4637ffbc3260e78931b566300e618313
+東森電影,http://50.7.220.74:8278/ettvmovie/playlist.m3u8?tid=MEDE1688528216885282&ct=19193&tsum=843fbd698e260c1fcda128dce85ead3b
+東森綜合 ,http://50.7.220.74:8278/ettvzhonghe/playlist.m3u8?tid=m65c4e525f24617101171&ct=17874&tsum=663db593cfeefc92ce4b5d7461988f3f
+東森戲劇,http://50.7.220.74:8278/ettvdrama/playlist.m3u8?tid=m921dcb630ebe17354109&ct=17874&tsum=695370160923af940d1a90d44c262acc
+星空衛視,http://50.7.220.74:8278/xingwei_movie/playlist.m3u8?tid=ma80888ed462f18082236&ct=17874&tsum=2824e7b9d4ec19ce7b4f8f69d23d7ceb
+時尚頻道,http://50.7.220.74:8278/fashiontv_twn/playlist.m3u8?tid=MABA6457047364570473&ct=18393&tsum=82840dc94ca1ecca47ac4c26d3ee4afc
+博斯高球1,http://50.7.220.74:8278/bosigolf1_twn/playlist.m3u8?tid=MD5D3832704238327042&ct=18393&tsum=cbf3bf749c9b0bf4828ab19efff1c5b0
+博斯運動2,http://50.7.220.74:8278/bosisport2_twn/playlist.m3u8?tid=mb50f39eebf51&ct=18335&tsum=4f8960c36a3e7f2b069d574293809283
+博斯網球,http://50.7.220.74:8278/bositennis_twn/playlist.m3u8?tid=m60f4fd9da4d1&ct=18335&tsum=4d026bfb332da29886aa772f2e149edb
+鳳凰衛視,http://50.7.220.74:8278/phoenixtv_hd/playlist.m3u8?tid=m18f421b0e58b&ct=18336&tsum=8e0cca627477cbd534c9cef5e2c17c1c
+緯來電影,http://50.7.220.74:8278/videolandmovie/playlist.m3u8?tid=ma2dac66da407&ct=18335&tsum=9a5a39559f64a71081ef9b3a85f2886c
+
+##
+
+
+🇹🇼0904台灣,#genre#
+TVBS HD,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live072&nid=129
+TVBS-Asia,http://38.64.72.148:80/hls/modn/list/4005/chunklist0.m3u8
+TVBS-Asia,http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
+TVBS新聞,http://38.64.72.148:80/hls/modn/list/4006/chunklist0.m3u8
+TVBS新聞,http://38.64.72.148:80/hls/modn/list/4006/chunklist1.m3u8
+TVBS新聞,http://50.7.220.74:8278/tvbs_n/playlist.m3u8?tid=MC3C9358473393584733&ct=19193&tsum=38970ab977b9e318cbead37db4134eb8
+TVBS新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=55tvbs
+AXN,http://59.125.122.90:18548/http/192.168.1.9:8081/hls/68/810/ch01.m3u8
+AXN,http://61.219.170.95:18548/.m3u8
+AXN,http://61.219.170.95:18548/http/192.168.1.9:8081/hls/71/813/ch43.m3u8
+Discovery,http://50.7.220.74:8278/ba86fcd935/playlist.m3u8?tid=m1b458a366fcb&ct=18335&tsum=6ee1498a5e37d8bd1e3f62954629ed4f
+Discovery,http://50.7.220.74:8278/discoverych_twn/playlist.m3u8?tid=MA3A2844188928441889&ct=18393&tsum=5b966ba17918ab0d7dd4c462d1b0b811
+Discovery,http://50.7.220.74:8278/discoveryhd_twn/playlist.m3u8?tid=MB0B1462900214629002&ct=18393&tsum=ce9990e01102bf91728bdbbb549b04a7
+Discovery,http://61.219.170.95:18500/.m3u8
+Discovery,https://livecdn.fptplay.net/hda2/discovery_vhls.smil/chunklist_b5000000.m3u8
+Discovery Asia,http://123.253.32.125:9995/livestream/api/v1/long?channel_id=c20056
+Discovery Asia,http://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/25137bd7c4494128bf0cba271974928f/1200.m3u8
+Discovery Asia,https://livecdn.fptplay.net/hda2/discoveryasia_vhls.smil/chunklist_b5000000.m3u8
+ELEVEN1,http://50.7.220.74:8278/golfchannel_twn/playlist.m3u8?tid=m43df9270caf7&ct=18335&tsum=3bcc02e810e7073b86bb40d392e95f23
+ELEVEN2,http://61.221.81.93:8078/hls/26/80/esport2.m3u8
+ELEVEN3,http://62.28.71.186:45678/http/192.168.150.137:7137/eleven3
+ELTA生活旅遊,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live120&nid=237
+ELTV生活英語,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-longturn20&nid=106
+EYE TV旅遊,http://50.7.220.74:8278/eyetvtravel_twn/playlist.m3u8?tid=m3e96290c929116279255&ct=17874&tsum=7c060d25738e52e57372f408b9ccd0bc
+EYE TV戲劇,http://50.7.220.74:8278/eyetvxiju_twn/playlist.m3u8?tid=m379e8846d31b14432367&ct=17874&tsum=2c4c2acd16a5a5e00797ad6f4c4cb586
+HBO HITS,http://123.253.32.125:9995/livestream/api/v1/long?channel_id=c10053
+HBO 英文,http://vips-livecdn.fptplay.net/hda1/hbo_vhls.smil/chunklist_b5000000.m3u8?bycoca
+HBO2,http://hpull.kktv8.com/livekktv/128600025/playlist.m3u8
+Hollywood HD,http://50.7.220.74:8278/hollywoodmovies_twn/playlist.m3u8?tid=m39bfcd99239617992917&ct=17874&tsum=774ffa7546c934dc27e743c5bbb454d3
+Hollywood HD,http://50.7.220.74:8278/hollywoodmovies_twn/playlist.m3u8?tid=MA8A4005638840056388&ct=18392&tsum=a1f1517d4ea64fd01267905f21d83859
+Hollywood HD,http://50.7.220.74:8278/hollywoodmovies_twn/playlist.m3u8?tid=MD8D9429794794297947&ct=19193&tsum=fbe097bcbe37adad90e8bef964cac161
+imodeTV,https://juyunlive.juyun.tv/live/24950198.m3u8
+LUXE TV,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live121&nid=175
+MOMO,http://59.125.122.90:18576/http/192.168.1.9:8081/hls/68/810/ch01.m3u8
+MOMO,http://61.219.170.95:18576/.m3u8
+MOMO,http://61.219.170.95:18576/http/192.168.1.9:8081/hls/76/818/momo_max.m3u8
+NOW,http://livetv.dnsfor.me:80/channel.4.m3u8
+NOW,https://api.leonardpark.dev/live/now/331
+SBN全球財經,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live060&nid=224
+VOA美國之音,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-ftv03&nid=86
+人間衛視,http://61.216.67.119:1935/bltvhd/bltv1/chunklist_w1266569526.m3u
+八大第一,http://59.125.122.90:18539/http/192.168.1.9:8066/hls/210/10010/ch00.m3u8
+八大第一,http://59.125.122.90:18539/http/192.168.1.9:8078/hls/24/80/ch04.m3u8
+八大第一,http://59.125.122.90:18539/http/192.168.1.9:8081/hls/68/810/ch01.m3u8
+八大第一,http://59.125.122.90:18539/http/192.168.1.9:8081/hls/76/818/ch08.m3u8
+八大第一,http://61.219.170.95:18539/.m3u8
+八大第一,http://61.219.170.95:18539/http/192.168.1.9:8081/hls/66/808/ch22.m3u8
+八大綜合,http://59.125.122.90:18517/http/192.168.1.9:8066/hls/210/10010/ch00.m3u8
+八大綜合,http://59.125.122.90:18517/http/192.168.1.9:8078/hls/24/80/ch04.m3u8
+八大綜合,http://59.125.122.90:18517/http/192.168.1.9:8081/hls/68/810/ch01.m3u8
+八大綜合,http://59.125.122.90:18517/http/192.168.1.9:8081/hls/76/818/ch08.m3u8
+八大綜合 ,http://61.219.170.95:18517/.m3u8
+三立iNEWS,http://for40255.sytes.net:8099/tv/iptv/live.php?id=slxw
+三立iNEWS,http://for40255.sytes.net:8099/tv/iptv/live.php?id=slxwinews
+三立iNEWS,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live089&nid=229
+三立新聞,http://60.251.59.180:8506/ch18.m3u8
+三立綜合,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live207&nid=169
+大愛,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live007&nid=209
+大愛1,https://pulltv1.wanfudaluye.com/live/tv1.m3u8
+大愛2,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live106&nid=230
+大愛2,https://pulltv2.wanfudaluye.com/live/tv2.m3u8
+中天亞洲,http://50.7.220.74:8278/ctiasia_twn/playlist.m3u8?tid=MFFF9983745599837455&ct=19193&tsum=ee61e179a8c619a076c515514d68e24e
+中天美食旅遊,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live123&nid=251
+中天娛樂,http://59.125.122.90:18521/http/192.168.1.9:8078/hls/24/80/ch04.m3u8
+中天娛樂,http://59.125.122.90:18521/http/192.168.1.9:8081/hls/68/810/ch01.m3u8
+中天娛樂,http://61.219.170.95:18513/.m3u8
+中天娛樂,http://61.219.170.95:18521/.m3u8
+中天新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=ztxw
+中天新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv009&nid=30
+中天新聞,https://ytb.arp220.us/jmsytb.m3u8?c=5
+中視 HD,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv040&nid=4
+中視菁采,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv064&nid=123
+中視新聞,http://50.7.220.74:8278/ca73a13c37/playlist.m3u8?tid=mee3f06f682eb&ct=18335&tsum=7491cceca17c1e2af05824583855f8bd
+中視新聞,http://50.7.220.74:8278/zhongshinews_twn/playlist.m3u8?tid=MAAA4459856044598560&ct=19193&tsum=1b7bdea69c00cd48e31f13442c75c376
+中視新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv074&nid=33
+中視新聞,https://ytb.arp220.us/jmsytb.m3u8?c=9
+中視經典,http://50.7.220.74:8278/zhongshi_twn/playlist.m3u8?tid=14379667&ct=17988&tsum=de63d02f44741580b5070077d1949841
+公視戲劇,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv042&nid=7
+民視,http://50.7.220.74:8278/ftvhd_taiwan/playlist.m3u8?tid=15141291&ct=17990&tsum=ab93fcdf581cc3f483e1ceede13312ce
+民視,http://50.7.220.74:8278/ftvhd_taiwan/playlist.m3u8?tid=m15b424641a89&ct=18335&tsum=ba82cdbfb8253c45a13df5354e6d0dbc
+民視,http://50.7.220.74:8278/ftvhd_taiwan/playlist.m3u8?tid=MF8F2804739628047396&ct=19193&tsum=73a49379fed74f8fc39359fcf589a9d8
+民視,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv002&nid=3
+民視,http://seb.sason.top/ptv/ftv.php?id=ms
+民視1,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv003&nid=1
+民視1,http://seb.sason.top/ptv/ftv.php?id=dy
+民視旅遊,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-ftv07&nid=61
+民視旅遊,http://seb.sason.top/ptv/ftv.php?id=ly
+民視新聞,http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
+民視新聞,http://38.64.72.148:80/hls/modn/list/4012/chunklist1.m3u8
+民視新聞,http://61.219.170.95:18563/.m3u8
+民視新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=msxw
+民視新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-ftv13&nid=31
+民視新聞,https://ytb.arp220.us/jmsytb.m3u8?c=7
+民視綜藝,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv004&nid=16
+民視綜藝,http://seb.sason.top/ptv/ftv.php?id=zy
+民視臺灣,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv001&nid=2
+民視臺灣,http://seb.sason.top/ptv/ftv.php?id=tw
+民視影劇,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-ftv09&nid=24
+民視影劇,http://seb.sason.top/ptv/ftv.php?id=yj
+年代MUCH,http://59.125.122.90:18558/http/192.168.1.9:8066/hls/210/10010/ch00.m3u8
+年代MUCH,http://61.219.170.95:18558/.m3u8
+年代MUCH,http://61.219.170.95:18558/http/192.168.1.9:8081/hls/72/814/ch45.m3u8
+亞洲旅遊,http://59.125.122.90:18568/http/192.168.1.9:8078/hls/24/80/ch04.m3u8
+亞洲旅遊,http://61.219.170.95:18568/.m3u8
+亞洲旅遊,http://61.219.170.95:18568/http/192.168.1.9:8081/hls/76/818/ch61.m3u8
+亞洲旅遊,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-longturn17&nid=250
+東風37,http://59.125.122.90:18560/http/192.168.1.9:8066/hls/210/10010/ch00.m3u8
+東風37,http://61.219.170.95:18560/.m3u8
+東森 LIVE,http://50.7.220.74:8278/ettvnews/playlist.m3u8?tid=m208c21bf386611408694&ct=17874&tsum=d1b4de373c886cd8015974fa8c5d6d12
+東森 LIVE,http://50.7.220.74:8278/ettvnews/playlist.m3u8?tid=ME5E8863997888639978&ct=19193&tsum=6b0236441f10a7195fb35fe7997db68c
+東森 LIVE,http://for40255.sytes.net:8099/tv/iptv/live.php?id=dsxw
+東森洋片,http://113.64.147.7:808/hls/59/index.m3u8
+東森洋片,http://120.84.96.69:808/hls/33/index.m3u8
+東森美洲,http://38.64.72.148:80/hls/modn/list/2015/chunklist0.m3u8
+東森美洲,http://38.64.72.148:80/hls/modn/list/2015/chunklist1.m3u8
+東森美洲,http://38.64.72.148:80/hls/modn/list/2026/chunklist0.m3u8
+東森美洲,http://38.64.72.148:80/hls/modn/list/2026/chunklist1.m3u8
+東森財經,http://50.7.220.74:8278/ettvcaijing_twn/playlist.m3u8?tid=m999b5a0f7fca17599138&ct=17874&tsum=345085d2d6d4401fdb3da968dfee5a54
+東森財經,http://for40255.sytes.net:8099/tv/iptv/live.php?id=dscjxw
+東森財經,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live019&nid=211
+東森財經美洲,http://38.64.72.148:80/hls/modn/list/2021/chunklist0.m3u8
+東森超視,http://59.125.122.90:18555/http/192.168.1.9:8078/hls/24/80/ch04.m3u8
+東森超視,http://61.219.170.95:18555/.m3u8
+東森超視,http://61.219.170.95:18555/http/192.168.1.9:8081/hls/64/806/ch14.m3u8
+東森超視34.5,http://38.64.72.148:80/hls/modn/list/2018/chunklist0.m3u8
+東森超視34.5,http://38.64.72.148:80/hls/modn/list/2018/chunklist1.m3u8
+東森新聞,http://61.219.170.95:18512/.m3u8
+東森新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live114&nid=234
+東森電影,http://113.64.147.7:808/hls/58/index.m3u8
+東森電影,http://120.84.96.69:808/hls/32/index.m3u8
+東森電影,http://50.7.220.74:8278/ettvmovie/playlist.m3u8?tid=md2ba4c243ed411481253&ct=17874&tsum=4637ffbc3260e78931b566300e618313
+東森電影,http://50.7.220.74:8278/ettvmovie/playlist.m3u8?tid=MEDE1688528216885282&ct=19193&tsum=843fbd698e260c1fcda128dce85ead3b
+東森綜合 ,http://50.7.220.74:8278/ettvzhonghe/playlist.m3u8?tid=m65c4e525f24617101171&ct=17874&tsum=663db593cfeefc92ce4b5d7461988f3f
+東森衛視,http://38.64.72.148/hls/modn/list/2024/chunklist0.m3u8
+東森戲劇,http://50.7.220.74:8278/ettvdrama/playlist.m3u8?tid=m921dcb630ebe17354109&ct=17874&tsum=695370160923af940d1a90d44c262acc
+客家電視,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv043&nid=107
+星空衛視,http://50.7.220.74:8278/xingwei_movie/playlist.m3u8?tid=ma80888ed462f18082236&ct=17874&tsum=2824e7b9d4ec19ce7b4f8f69d23d7ceb
+原民台 ,http://streamipcf.akamaized.net/live/_definst_/live_720/chunklist_b1500.m3u8
+原民台 ,http://streamipcf.akamaized.net/live/_definst_/smil:live.smil/chunklist_b3000.m3u8?cuac=guest&cref=http%3A%2F%2Ftitv.ipcf.org.tw%2F
+原民台 ,http://streamipcf.akamaized.net/live/_definst_/smil:liveabr.smil/playlist.m3u8
+博斯高球1,http://50.7.220.74:8278/bosigolf1_twn/playlist.m3u8?tid=MD5D3832704238327042&ct=18393&tsum=cbf3bf749c9b0bf4828ab19efff1c5b0
+博斯無限,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=litv-longturn10&nid=51
+博斯運動2,http://50.7.220.74:8278/bosisport2_twn/playlist.m3u8?tid=mb50f39eebf51&ct=18335&tsum=4f8960c36a3e7f2b069d574293809283
+博斯網球,http://50.7.220.74:8278/bositennis_twn/playlist.m3u8?tid=m60f4fd9da4d1&ct=18335&tsum=4d026bfb332da29886aa772f2e149edb
+壹新聞 HD,http://60.251.59.180:8501/.m3u8
+壹新聞 HD,http://stream.nexttv.com.tw/n001/hd/live.m3u8
+壹新聞 HD,http://stream.nexttv.com.tw/n001/playlist.m3u8
+華視,http://60.251.59.180:8503/http/60.251.39.91:8081/hls/72/814/ch48.m3u8
+華視,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv041&nid=6
+華視新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=hsxw
+華視新聞,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv052&nid=34
+華視新聞,https://ytb.arp220.us/jmsytb.m3u8?c=4
+華語綜藝,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live006&nid=245
+華語戲劇,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live005&nid=244
+靖天戲劇,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv058&nid=116
+滾動人文紀實,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live012&nid=249
+臺視新聞,http://38.64.72.148:80/hls/modn/list/4013/chunklist0.m3u8
+臺視新聞,http://38.64.72.148:80/hls/modn/list/4013/chunklist1.m3u8
+臺視新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=tsxw
+臺視新聞,https://ytb.arp220.us/jmsytb.m3u8?c=8
+緯來育樂,http://59.125.122.90:18541/http/192.168.1.9:8078/hls/24/80/ch04.m3u8
+緯來育樂,http://61.219.170.95:18541/.m3u8
+緯來育樂,http://61.219.170.95:18541/http/192.168.1.9:8081/hls/68/810/ch01.m3u8
+緯來育樂,http://61.219.170.95:18541/http/192.168.1.9:8081/hls/68/810/ch02.m3u8
+緯來育樂,http://61.219.170.95:18541/http/192.168.1.9:8081/hls/68/810/ch03.m3u8
+緯來育樂,http://61.219.170.95:18541/playlist.m3u8
+緯來電影,http://50.7.220.74:8278/videolandmovie/playlist.m3u8?tid=ma2dac66da407&ct=18335&tsum=9a5a39559f64a71081ef9b3a85f2886c
+緯來戲劇 ,http://61.219.170.95:18557/.m3u8
+緯來戲劇 ,http://61.219.170.95:18557/http/192.168.1.9:8081/hls/69/811/ch33.m3u8
+衛視中文,http://59.125.122.90:18522/http/192.168.1.9:8081/hls/76/818/ch08.m3u8
+衛視中文,http://61.219.170.95:18522/.m3u8
+衛視中文,http://61.219.170.95:18522/http/192.168.1.9:8081/hls/62/804/ch05.m3u8
+衛視電影,http://59.125.122.90:18529/http/192.168.1.9:8078/hls/24/80/ch04.m3u8
+衛視電影,http://61.219.170.95:18529/.m3u8
+衛視電影,http://61.219.170.95:18529/http/192.168.1.9:8081/hls/62/804/ch07.m3u8
+寰宇新聞,http://61.219.170.95:18569/.m3u8
+寰宇新聞,http://for40255.sytes.net:8099/tv/iptv/live.php?id=hyxw
+寰宇新聞,https://ytb.arp220.us/jmsytb.m3u8?c=6
+龍華日韓,http://61.219.170.95:18508/.m3u8
+龍華日韓,http://61.219.170.95:18508/http/192.168.1.9:8088/hls/15/80/foxsports2.m3u8
+龍華偶像,http://59.125.122.90:18573/http/192.168.1.9:8066/hls/210/10010/ch00.m3u8
+龍華偶像,http://61.219.170.95:18573/.m3u8
+龍華偶像,http://61.219.170.95:18573/http/192.168.1.9:8066/hls/210/10012/cstv12.m3u8
+龍華電影,http://59.125.122.90:18574/http/192.168.1.9:8066/hls/210/10010/ch00.m3u8
+龍華電影,http://61.219.170.95:18574/.m3u8
+龍華電影,http://61.219.170.95:18574/http/192.168.1.9:8066/hls/210/10014/cstv14.m3u8
+鏡新聞------------------,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv075&nid=268
+
+
+ELEVEN1,rtmp://59.124.75.138/sat/tv731
+ELEVEN2,rtmp://59.124.75.138/sat/md021
+ELEVEN2,rtmp://59.124.75.138/sat/tv741
+ELTA1,rtmp://59.124.75.138/sat/md051
+ELTA2,rtmp://59.124.75.138/sat/md011
+ELTA3,rtmp://59.124.75.138/sat/md041
+MOMO,rtmp://59.124.75.138/sat/tv761
+TVBS HD,rtmp://59.124.75.150/sat/tv551
+TVBS新聞,rtmp://59.124.75.138/sat/tv551
+TVBS歡樂,rtmp://59.124.75.138/sat/tv421
+TVBS歡樂,rtmp://59.124.75.150/sat/tv421
+中視,rtmp://59.124.75.138/sat/tv091
+中視,rtmp://59.124.75.150/sat/tv091
+民視,rtmp://59.124.75.138/sat/tv051
+東森財經,rtmp://59.124.75.138/sat/tv571
+東森超視,rtmp://59.124.75.138/sat/tv521
+華視,rtmp://59.124.75.138/sat/tv111
+臺視,rtmp://59.124.75.138/sat/tv071
+臺視,rtmp://59.124.75.150/sat/tv071
+緯來日本,rtmp://59.124.75.138/sat/tv771
+緯來育樂,rtmp://59.124.75.138/sat/tv701
+緯來體育,rtmp://59.124.75.138/sat/tv721
+
+
+CCTV5,http://117.148.129.8/PLTV/88888888/224/3221233115/index.m3u8
+CCTV5,http://117.148.129.9/PLTV/88888888/224/3221231510/index.m3u8
+CCTV5,http://123.6.9.146/live/jz-cctv-5/live.m3u8
+CCTV5,http://140.207.241.3:8080/live/program/live/cctv5/1300000/d1.m3u8
+CCTV5,http://140.207.241.3:8080/live/program/live/cctv5hd/4000000/mnf.m3u8
+CCTV5,http://newvideo.dangtutv.cn:8278/CCTVsports/playlist.m3u8
+CCTV5,http://shbu.live.bestvcdn.com.cn:8080/live/program/live/cctv5hd/4000000/mnf.m3u8
+CCTV5,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=ABCDEFGH&programid=4200000064?fmt=ts2hls
+CCTV5+,http://111.20.33.70/PLTV/88888893/224/3221226221/index.m3u8
+CCTV5+,http://111.20.33.93/TVOD/88888893/224/3221226221/index.m3u8
+CCTV5+,http://140.207.241.3:8080/live/program/live/cctv5phd/4000000/mnf.m3u8
+CCTV5+,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R5F2408FEU3198804BK78052214IE73560DFP2BF4M340CE68V0Z339CBW1626D4D261E46FEA&playtoken=ABCDEFGH&programid=4200000246
+CCTV5+,http://shbu.live.bestvcdn.com.cn:8080/live/program/live/cctv5phd/2300000/mnf.m3u8
+
+##
+
+
+📻Radio,#genre#
+AsiaFM 亞洲天空台,http://funradio.cn:8000/funradio
+AsiaFM 亞洲音樂台,http://asiafm.hk:8000/asiafm
+AsiaFM 亞洲經典台,http://goldfm.cn:8000/goldfm
+Big B Radio-中文流行,http://cpop.bigbradio.net/s
+Big B Radio-日語流行,http://jpop.bigbradio.net/s
+Big B Radio-洲流行,http://apop.bigbradio.net/s
+Big B Radio-韓語流行,http://kpop.bigbradio.net/s
+New Pop Hits,http://rfcmedia.streamguys1.com/newpophitspremium.mp3
+News98新聞台,http://stream.rcs.revma.com/55tyxsy4qtzuv
+News98新聞台,http://n08.rcs.revma.com/55tyxsy4qtzuv?rj-ttl=5&rj-tok=AAABexIiGVkA-wjPtoygVgeNGQ
+VOA美國之音,http://voa-11.akacast.akamaistream.net/7/317/322023/v1/ibb.akacast.akamaistream.net/voa-11.mp3
+VOA美國之音,http://stream.radiojar.com/7thwu53r92quv
+中廣流行網,http://stream.rcs.revma.com/aw9uqyxy2tzuv
+中廣音樂網,http://stream.rcs.revma.com/ks4vsmg3qtzuv
+中廣新聞網,http://stream.rcs.revma.com/78fm9wyy2tzuv
+天籟之音 Hi-Fi Radio,http://play-radio-stream3.hndt.com/now/JxkyN5mR/playlist.m3u8
+天籟之音-國風,http://play-radio-stream3.hndt.com/now/UzPxbRaT/playlist.m3u8
+天籟古典,http://stream3.hndt.com/now/MdOpB4zP/playlist.m3u8
+心靈音樂館,http://play-radio-stream3.hndt.com/now/AFqvb0VX/playlist.m3u8
+古典音樂台,http://play.redefine.ltd/Stream2/FM1058-2.m3u8
+亞洲經典音樂台,http://live.xmcdn.com:80/live/1005/64.m3u8
+飛碟電臺,http://stream.rcs.revma.com/em90w4aeewzuv
+格萊美音樂台,http://stream3.hndt.com/now/yorSd1X2/playlist.m3u8
+高清音樂台,http://live.xmcdn.com:80/live/1427/64.m3u8
+動感音樂台,http://stream3.hndt.com/now/ufjjbZxV/playlist.m3u8
+清晨音樂台,http://live.xmcdn.com:80/live/1011/64.m3u8
+經典FM,http://stream3.hndt.com/now/C5NvUpwy/playlist.m3u8
+臺北廣播電臺AM1134,https://stream.ginnet.cloud/live0130lo-yfyo/_definst_/am/playlist.m3u8
+臺北廣播電臺FM93.1,https://stream.ginnet.cloud/live0130lo-yfyo/_definst_/fm/playlist.m3u8
+臺灣古典音樂台,http://59.120.88.155:8000/live.mp3
+
+##
+
+
+📺0906台港澳,#genre#
+amc最愛電影,p2p://fccs.word-tv.com:9906/62674eb900041ef4163efcc6b4c8cd0b
+AXN,p2p://fccs.word-tv.com:9906/6258d52d000490df11aad5dfc8e0641c
+BBC Earth,p2p://fccs.word-tv.com:9906/62612d0100000350184ee5c7d2e06684
+BBC Lifestyle,p2p://fccs.word-tv.com:9906/62612d25000c2e05184f7584a93f9e5e
+Boomerang,p2p://fccs.word-tv.com:9906/62584d670009313f0f98799e2354015b
+CinemaWorld,p2p://fccs.word-tv.com:9906/626750ba0002f9431646d0630173b458
+CINEMAX,p2p://fccs.word-tv.com:9906/6258d81f000a40aa11b658a3fe101246
+CN卡通,p2p://fccs.word-tv.com:9906/62584e2d00015cde0f9b7d0de69c85e4
+Discovery Asia,p2p://fccs.word-tv.com:9906/6258ebd80002c54f12036161f9ac3eb0
+DreamWorks,p2p://fccs.word-tv.com:9906/6259b527000085d61515bd669d7ec89a
+Eleven1,p2p://fccs.word-tv.com:9906/625854d4000964b10fb57b7382610c8d
+Eleven1,p2p://54.39.16.152:9906/625854d4000964b10fb57b7382610c8d
+Eleven2,p2p://54.39.16.152:9906/6258550f0001c6880fb65ff87e0ebc13
+Eleven2,p2p://fccs.word-tv.com:9906/6258550f0001c6880fb65ff87e0ebc13
+ETtoday綜合,p2p://fccs.word-tv.com:9906/6258604e000c87130fe250d0bb957895
+EVE健康,p2p://fccs.word-tv.com:9906/6258ec270004be301204967a3d33f14a
+EVE健康,p2p://54.39.16.152:9906/6258ec270004be301204967a3d33f14a
+EYE TV旅遊,p2p://fccs.word-tv.com:9906/62595e910009221e13c385aa08f4d222
+EYE TV旅遊,p2p://54.39.16.152:9906/62595e910009221e13c385aa08f4d222
+EYE TV戲劇,p2p://54.39.16.152:9906/625960940003b62a13cb5fff85627bd1
+HBO HD,p2p://fccs.word-tv.com:9906/6268100d000c1b5d19322ef22ed23efc
+HBO HITS,p2p://fccs.word-tv.com:9906/6258e224000020c111dd7994321ef7ec
+HBO原創,p2p://fccs.word-tv.com:9906/6259b8f1000b9a0015248d4cabbe753c
+HBO家庭,p2p://fccs.word-tv.com:9906/6258e2990005537411df43f0702258cf
+HISTORY 2,p2p://fccs.word-tv.com:9906/62612b2d000c46021847c4cb0d2536d1
+J2,p2p://fccs.word-tv.com:9906/6258eae70008a93811ffb57b47682072
+J2,p2p://54.39.16.152:9906/6258eae70008a93811ffb57b47682072
+J5無線財經新聞,p2p://fccs.word-tv.com:9906/62595c1a000d108b13b9e5d4f3816d5e 
+J5無線財經新聞,p2p://fccs.word-tv.com:9906/62595c1a000d108b13b9e5d4f3816d5e
+JET,p2p://fccs.word-tv.com:9906/625860030000abdc0fe128cf548f1def
+JET,p2p://54.39.16.152:9906/625860030000abdc0fe128cf548f1def
+KLT-靖天國際,p2p://fccs.word-tv.com:9906/62618c820009926c19c3f821ebec02ee
+KLT-靖天國際,p2p://54.39.16.152:9906/62618c820009926c19c3f821ebec02ee
+LOVE NATURE,p2p://fccs.word-tv.com:9906/6260e5a4000e4c4817382627a71c329e
+LUXE TV Channel,p2p://fccs.word-tv.com:9906/6259b55f000cba8815169b462e40e185
+medici-arts,p2p://fccs.word-tv.com:9906/6260e56600092796173732a63095dc7a
+mezzo live,p2p://fccs.word-tv.com:9906/6259b5420005dbab1516283bb17231c9
+MOMO綜合,p2p://fccs.word-tv.com:9906/62580818000c773d0e89bddcd1b0c221
+MOMO親子,p2p://fccs.word-tv.com:9906/62584e6b000b41810f9c71c51bf958ec
+MTV,p2p://fccs.word-tv.com:9906/6258e40a000dc72411e4e7829de2c8b5
+RHK31,p2p://fccs.word-tv.com:9906/62b98dad0001c89807518b63233fc2e4
+RHK31,p2p://54.39.16.152:9906/62595a6e000b3da213b35d7c1c92697f
+RHK32,p2p://fccs.word-tv.com:9906/62b98df6000aa94b0752aad18d7e36ce
+RHK32,p2p://54.39.16.152:9906/62595a8a0007901013b3c9eb93df46aa
+STAR MOVIES,p2p://fccs.word-tv.com:9906/6258d58f000430fa11ac54962a5c2d42
+STAR Word,p2p://fccs.word-tv.com:9906/6258dcea0002765e11c90f9d2d7fac5d
+TLC旅遊 ,p2p://fccs.word-tv.com:9906/62584cd60007230e0f9642af98aa2879
+Travel Channel,p2p://fccs.word-tv.com:9906/626141950004f9a5189f492c02913ec0
+TVBS HD,p2p://54.39.16.152:9906/62541264000b8c2809563c340355f46f
+TVBS HD,p2p://fccs.word-tv.com:9906/62541264000b8c2809563c340355f46f
+TVBS新聞,p2p://fccs.word-tv.com:9906/62bc5630000d8b431230ce1e9b2441a1
+TVBS新聞,p2p://54.39.16.152:9906/6254121e00022e5c0955285ee55f9ec4
+TVBS精采,p2p://fccs.word-tv.com:9906/6259b507000647d0151541dfdfa4429f
+TVBS精采,p2p://54.39.16.152:9906/6259b507000647d0151541dfdfa4429f
+TVBS歡樂,p2p://fccs.word-tv.com:9906/62585f330007fbe70fddfe2f12feb8b6
+TVBS歡樂,p2p://54.39.16.152:9906/62585f330007fbe70fddfe2f12feb8b6
+TVB星河高清頻道,p2p://fccs.word-tv.com:9906/6258eb4900053d031201336ba06ccbdc
+TVB星河頻道,p2p://54.39.16.152:9906/6258eb4900053d031201336ba06ccbdc
+tvN,p2p://fccs.word-tv.com:9906/6260e5b8000664c11738724174984fec
+VIU SIX,p2p://fccs.word-tv.com:9906/627160d00008ced7098cbc29e23c5e0c 
+VIU SIX,p2p://fccs.word-tv.com:9906/627160d00008ced7098cbc29e23c5e0c
+VIU SIX,p2p://54.39.16.152:9906/627160d00008ced7098cbc29e23c5e0c
+Viu TV,p2p://54.39.16.152:9906/62716383000252be099745b8d64c4cfa
+Warner TV　,p2p://fccs.word-tv.com:9906/6260fa2e000ad4fb17886054ef6e4e06
+Z頻道,p2p://fccs.word-tv.com:9906/6258e492000691dc11e6f8eac01761d4
+人間衛視,p2p://54.39.16.152:9906/62582fff0009dab60f259b89f7464d63
+人間衛視  ,p2p://fccs.word-tv.com:9906/62582fff0009dab60f259b89f7464d63
+八大娛樂,p2p://fccs.word-tv.com:9906/6258e45a000845a611e61e9a50bc5e3e
+八大娛樂,p2p://54.39.16.152:9906/6258e45a000845a611e61e9a50bc5e3e
+八大第一,p2p://54.39.16.152:9906/6258517d000953940fa86f978caa56ae
+八大第一 ,p2p://fccs.word-tv.com:9906/6258517d000953940fa86f978caa56ae
+八大綜合,p2p://54.39.16.152:9906/625851bd000e8a2d0fa96aec6397d1ea
+八大綜合 ,p2p://fccs.word-tv.com:9906/625851bd000e8a2d0fa96aec6397d1ea
+八大戲劇,p2p://fccs.word-tv.com:9906/6258594f0004c9c40fc6fabdb0e81edf
+八大戲劇,p2p://54.39.16.152:9906/6258594f0004c9c40fc6fabdb0e81edf
+三立財經,p2p://fccs.word-tv.com:9906/62614b9c0008ec3518c675877b79b6ea
+三立財經,p2p://54.39.16.152:9906/62614b9c0008ec3518c675877b79b6ea
+三立都會,p2p://fccs.word-tv.com:9906/62585240000566d20fab684d64808ca0
+三立都會,p2p://54.39.16.152:9906/62585240000566d20fab684d64808ca0
+三立新聞,p2p://fccs.word-tv.com:9906/62dbcd58000a9a1c13be7c8205b126bd
+三立新聞,p2p://54.39.16.152:9906/625411f9000c761609549a782b245a4c
+三立綜合,p2p://fccs.word-tv.com:9906/6259b57f0003ca05151715fc95200be0
+三立綜合,p2p://54.39.16.152:9906/6259b57f0003ca05151715fc95200be0
+三立臺灣,p2p://fccs.word-tv.com:9906/625851fa000d44170faa58e136d727dc
+三立臺灣,p2p://54.39.16.152:9906/625851fa000d44170faa58e136d727dc
+三立戲劇,p2p://fccs.word-tv.com:9906/6259b5a1000d5db415179d3f530f1044
+三立戲劇,p2p://54.39.16.152:9906/6259b5a1000d5db415179d3f530f1044
+大愛,p2p://fccs.word-tv.com:9906/6257e958000647f20e119e47becddbf1
+大愛,p2p://54.39.16.152:9906/6257e958000647f20e119e47becddbf1
+中天亞洲,p2p://fccs.word-tv.com:9906/626610e20008d9cf11656e24ac45db0e
+中天亞洲,p2p://54.39.16.152:9906/626610e20008d9cf11656e24ac45db0e
+中天娛樂,p2p://fccs.word-tv.com:9906/62585ecd000adfc10fdc707c21a26424
+中天娛樂,p2p://54.39.16.152:9906/62585ecd000adfc10fdc707c21a26424
+中天新聞,p2p://54.39.16.152:9906/625af85e0000d79c001149459e0c9b4f
+中天新聞,p2p://fccs.word-tv.com:9906/625af85e0000d79c001149459e0c9b4f
+中天綜合,p2p://fccs.word-tv.com:9906/62585815000447950fc2300ce37be3da
+中天綜合,p2p://54.39.16.152:9906/62585815000447950fc2300ce37be3da
+中視HD,p2p://54.39.16.152:9906/6257e968000a66d90e11ddd52825327a
+中視HD,p2p://fccs.word-tv.com:9906/6257e968000a66d90e11ddd52825327a
+中視菁采,p2p://fccs.word-tv.com:9906/6269290b000463f70377555ece4c7fca
+中視菁采,p2p://54.39.16.152:9906/6269290b000463f70377555ece4c7fca
+中視新聞,p2p://54.39.16.152:9906/626928b800072a99037611dc7cf5b636
+中視新聞,p2p://fccs.word-tv.com:9906/626928b800072a99037611dc7cf5b636
+中視經典,p2p://fccs.word-tv.com:9906/626928e3000ce0de0376bb4ad8c2f741
+中視經典,p2p://54.39.16.152:9906/626928e3000ce0de0376bb4ad8c2f741
+互動新聞,p2p://fccs.word-tv.com:9906/6258ea7a0006d8b111fe0b3c369d9e17
+互動新聞,p2p://54.39.16.152:9906/6258ea7a0006d8b111fe0b3c369d9e17
+公視,p2p://fccs.word-tv.com:9906/6257e9950008c4a20e128d3209b54839
+公視,p2p://54.39.16.152:9906/6257e9950008c4a20e128d3209b54839
+公視3,p2p://fccs.word-tv.com:9906/62692af700080a87037ed82d98f82f9d
+公視3,p2p://54.39.16.152:9906/62692af700080a87037ed82d98f82f9d
+公視台語,p2p://fccs.word-tv.com:9906/6257e9a400000c300e12c58f9b595b1e
+公視台語,p2p://54.39.16.152:9906/6257e9a400000c300e12c58f9b595b1e
+天映經典電影,p2p://fccs.word-tv.com:9906/6260fa83000c7b8e1789acc84075d31b
+古典音樂,p2p://fccs.word-tv.com:9906/6260fd970004b7061795b0eb2df29131
+民視 HD,p2p://54.39.16.152:9906/62582da100098ec20f1c5c4698b437cf
+民視 HD,p2p://fccs.word-tv.com:9906/62582da100098ec20f1c5c4698b437cf
+民視 HD,p2p://fccs.word-tv.com:9906/62df5a780000887707dbedd0ce643763
+民視1,p2p://fccs.word-tv.com:9906/626927db000004640372b0c04cca9ca3
+民視1,p2p://54.39.16.152:9906/626927db000004640372b0c04cca9ca3
+民視新聞,p2p://54.39.16.152:9906/625411d700086db70954149f159813c6
+民視新聞,p2p://fccs.word-tv.com:9906/625411d700086db70954149f159813c6
+民視臺灣,p2p://fccs.word-tv.com:9906/62692823000550c80373cb5be6f7e438
+民視臺灣,p2p://54.39.16.152:9906/62692823000550c80373cb5be6f7e438
+生命電視,p2p://fccs.word-tv.com:9906/6258e612000a9c7511ecd5f381cd413f
+生命電視,p2p://54.39.16.152:9906/6258e612000a9c7511ecd5f381cd413f
+全大,p2p://fccs.word-tv.com:9906/62614c730008668f18c9bd3d40261639
+全大,p2p://54.39.16.152:9906/62614c730008668f18c9bd3d40261639
+好消息,p2p://fccs.word-tv.com:9906/62584be3000a4ec30f928e473488ad44
+好消息,p2p://54.39.16.152:9906/62584be3000a4ec30f928e473488ad44
+好萊塢電影,p2p://fccs.word-tv.com:9906/6256bd25000a0a02097cf805932004af
+年代MUCH,p2p://fccs.word-tv.com:9906/625858aa000f2ee50fc478de23b3e0dd
+年代MUCH,p2p://54.39.16.152:9906/625858aa000f2ee50fc478de23b3e0dd
+年代新聞,p2p://fccs.word-tv.com:9906/62540c45000225da093e50b45b457d41
+年代新聞,p2p://54.39.16.152:9906/62540c45000225da093e50b45b457d41
+有線18,p2p://fccs.word-tv.com:9906/626bc57e0002fcc70daa763a17885784 
+有線18,p2p://fccs.word-tv.com:9906/626bc57e0002fcc70daa763a17885784
+有線18,p2p://54.39.16.152:9906/626bc57e0002fcc70daa763a17885784
+有線603,p2p://54.39.16.152:9906/626bc5c00008e69a0dab798eb8ae558d
+有線603,p2p://fccs.word-tv.com:9906/626bc5c00008e69a0dab798eb8ae558d 
+有線603,p2p://fccs.word-tv.com:9906/626bc5c00008e69a0dab798eb8ae558d
+有線財經信息,p2p://54.39.16.152:9906/626bc59f000aad820daaf91ae564e9c6
+有線財經資訊,p2p://fccs.word-tv.com:9906/626bc59f000aad820daaf91ae564e9c6 
+有線財經資訊,p2p://fccs.word-tv.com:9906/626bc59f000aad820daaf91ae564e9c6
+有線綜合娛樂,p2p://fccs.word-tv.com:9906/626bc60b000392d40dac9d2923dd262b 
+有線綜合娛樂,p2p://fccs.word-tv.com:9906/626bc60b000392d40dac9d2923dd262b
+有線綜合娛樂,p2p://54.39.16.152:9906/626bc60b000392d40dac9d2923dd262b
+有線衛視電影,p2p://fccs.word-tv.com:9906/626bd4820001292c0de51d63fb84af95
+有線衛視電影,p2p://54.39.16.152:9906/626bd4820001292c0de51d63fb84af95
+亞洲旅遊,p2p://fccs.word-tv.com:9906/62595eed0008772713c4ecde7515ec18
+亞洲旅遊,p2p://fccs.word-tv.com:9906/6260e4ab0008152e173457e810b3184d
+幸福空間居家,p2p://fccs.word-tv.com:9906/6260e5930002f4ee1737e0d8c16e8abc
+明珠台,p2p://fccs.word-tv.com:9906/6258eaca00006a3411ff4217b567e90f
+明珠台,p2p://54.39.16.152:9906/6258eaca00006a3411ff4217b567e90f
+東風衛視,p2p://fccs.word-tv.com:9906/6258585d0007329c0fc34a0b3c4be606
+東風衛視,p2p://54.39.16.152:9906/6258585d0007329c0fc34a0b3c4be606
+東森幼幼,p2p://fccs.word-tv.com:9906/62584f92000033490fa0ef49c819efa3
+東森幼幼,p2p://54.39.16.152:9906/62584f92000033490fa0ef49c819efa3
+東森洋片,p2p://fccs.word-tv.com:9906/62541d6200021780098129f8ea5d0f93
+東森洋片,p2p://54.39.16.152:9906/62541d6200021780098129f8ea5d0f93
+東森財經,p2p://fccs.word-tv.com:9906/6254128d000e830c0956dd1ea31d7f59
+東森財經,p2p://54.39.16.152:9906/6254128d000e830c0956dd1ea31d7f59
+東森超視,p2p://fccs.word-tv.com:9906/625854810005f8350fb4365bf7cd8f4e
+東森超視,p2p://54.39.16.152:9906/625854810005f8350fb4365bf7cd8f4e
+東森新聞,p2p://54.39.16.152:9906/62540c77000699df093f1528c8c4d48a
+東森新聞,p2p://fccs.word-tv.com:9906/62540c77000699df093f1528c8c4d48a
+東森電影,p2p://fccs.word-tv.com:9906/62541ccb0008d232097eddd9e4082c99
+東森電影,p2p://54.39.16.152:9906/62541ccb0008d232097eddd9e4082c99
+東森綜合,p2p://54.39.16.152:9906/6258543f000be6350fb3360fed87de8b
+東森綜合 ,p2p://fccs.word-tv.com:9906/6258543f000be6350fb3360fed87de8b
+東森戲劇,p2p://fccs.word-tv.com:9906/625420c30002ef15098e5d177b7f38b1
+東森戲劇,p2p://54.39.16.152:9906/625420c30002ef15098e5d177b7f38b1
+采昌影劇,p2p://fccs.word-tv.com:9906/62d7d647000e88970441631c444875bf
+非凡商業,p2p://fccs.word-tv.com:9906/626911890006d792031b822fdf86a38a
+非凡商業,p2p://54.39.16.152:9906/626911890006d792031b822fdf86a38a
+非凡新聞,p2p://fccs.word-tv.com:9906/6257f613000f40140e435b0b41c847c0
+非凡新聞,p2p://54.39.16.152:9906/6257f613000f40140e435b0b41c847c0
+信大,p2p://fccs.word-tv.com:9906/62614ca00005778f18ca6c44cdea2031
+信大,p2p://54.39.16.152:9906/62614ca00005778f18ca6c44cdea2031
+信吉,p2p://fccs.word-tv.com:9906/6258e362000ea49c11e2577b5ee3ce53
+信吉,p2p://54.39.16.152:9906/6258e362000ea49c11e2577b5ee3ce53
+客家電視,p2p://54.39.16.152:9906/6257e9d70000ce760e138cf889fb92c2
+客家電視臺,p2p://fccs.word-tv.com:9906/6257e9d70000ce760e138cf889fb92c2
+星衛HD電影,p2p://fccs.word-tv.com:9906/62613c0200051f95188982fec2ef3ed5
+星衛HD電影,p2p://54.39.16.152:9906/62613c0200051f95188982fec2ef3ed5
+星衛娛樂,p2p://fccs.word-tv.com:9906/6259b4eb0005f6251514d46a93c04eb3
+星衛娛樂,p2p://54.39.16.152:9906/6259b4eb0005f6251514d46a93c04eb3
+美亞電影,p2p://fccs.word-tv.com:9906/62613d420000a1a0188e63d84b81b11c
+美食星球頻道,p2p://fccs.word-tv.com:9906/626139fa00036cff1881934f1fc1ae06
+香港有線新聞,p2p://fccs.word-tv.com:9906/6258e930000d447111f903d1236f6fc8
+香港有線新聞,p2p://54.39.16.152:9906/6258e930000d447111f903d1236f6fc8
+香港有線電影,p2p://fccs.word-tv.com:9906/626bc5e5000b44cb0dac0ab18c230b75 
+香港有線電影,p2p://fccs.word-tv.com:9906/626bc5e5000b44cb0dac0ab18c230b75
+香港有線電影,p2p://54.39.16.152:9906/626bc5e5000b44cb0dac0ab18c230b75
+香港衛視,http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8
+原民台,p2p://fccs.word-tv.com:9906/6257e9ca0002ec200e135abbe97ac8ab
+原民台,p2p://54.39.16.152:9906/6257e9ca0002ec200e135abbe97ac8ab
+時尚頻道,p2p://fccs.word-tv.com:9906/6258e626000f104a11ed2537d42ef8a8
+時尚頻道,p2p://54.39.16.152:9906/6258e626000f104a11ed2537d42ef8a8
+狼谷娛樂,p2p://fccs.word-tv.com:9906/6258f82b00089b8f12338718bf84237d
+高點綜合,p2p://fccs.word-tv.com:9906/62585fb8000970600fe0061669e3aba4
+高點綜合,p2p://54.39.16.152:9906/62585fb8000970600fe0061669e3aba4
+動物星球,p2p://fccs.word-tv.com:9906/62541d9c0009282c09820e57f2a59d11
+國家地理野生頻道,p2p://fccs.word-tv.com:9906/6258eb6f0008bb551201c8c015a4226c
+國家地理國際頻道,p2p://fccs.word-tv.com:9906/62541d810002b7c00981a33911a2eb57
+國興衛視,p2p://fccs.word-tv.com:9906/6258dc9e0003580511c7e6f78e3b1759
+國興衛視,p2p://54.39.16.152:9906/6258dc9e0003580511c7e6f78e3b1759
+探索科學,p2p://fccs.word-tv.com:9906/6258ebf3000576221203cb8904668102
+探索動力,p2p://fccs.word-tv.com:9906/6258ec18000964b412045d13a4eb316e
+探索頻道,p2p://fccs.word-tv.com:9906/62541db9000483b809827e6fdf85c22c
+博斯高球1,p2p://fccs.word-tv.com:9906/62596d9e000e5b6c13fe51c8c1ca116c
+博斯高球1,p2p://54.39.16.152:9906/62596d9e000e5b6c13fe51c8c1ca116c
+博斯高球2,p2p://fccs.word-tv.com:9906/6259b7ea000cad1415208a3ab972be5a
+博斯高球2,p2p://54.39.16.152:9906/6259b7ea000cad1415208a3ab972be5a
+博斯運動1,p2p://fccs.word-tv.com:9906/6260e5500006db331736dc200a9d70bc
+博斯運動1,p2p://54.39.16.152:9906/6260e5500006db331736dc200a9d70bc
+博斯運動2,p2p://fccs.word-tv.com:9906/6261364f000a426f187341173b92f79b
+博斯運動2,p2p://54.39.16.152:9906/6261364f000a426f187341173b92f79b
+博斯網球,p2p://fccs.word-tv.com:9906/6259b8080009f08a1520feb706074e92
+博斯網球,p2p://54.39.16.152:9906/6259b8080009f08a1520feb706074e92
+博斯魅力,p2p://fccs.word-tv.com:9906/6260e5df0005c49317390a70b64c7b9b
+博斯魅力,p2p://54.39.16.152:9906/6260e5df0005c49317390a70b64c7b9b
+壹新聞,p2p://54.39.16.152:9906/62541b7c0007f8c30979c109c2ede6a3
+壹電視,p2p://fccs.word-tv.com:9906/62541b7c0007f8c30979c109c2ede6a3
+壹電影,p2p://fccs.word-tv.com:9906/62674e97000a6a59163e799316c3d943
+壹電影,p2p://54.39.16.152:9906/62674e97000a6a59163e799316c3d943
+晴天日本,p2p://fccs.word-tv.com:9906/6260e53d0006302e173691bcb1337e0a
+無線財經新聞,p2p://54.39.16.152:9906/62595c1a000d108b13b9e5d4f3816d5e
+華視HD,p2p://54.39.16.152:9906/6257e98b000307180e1264aad3095adb
+華視HD,p2p://fccs.word-tv.com:9906/6257e98b000307180e1264aad3095adb
+華視資訊,p2p://fccs.word-tv.com:9906/62692acf000c5e7a037e3d0919397c0a
+華視資訊,p2p://54.39.16.152:9906/62692acf000c5e7a037e3d0919397c0a
+華視體育文化教育,p2p://fccs.word-tv.com:9906/62692aad0004ff59037db656efdee736
+華視體育文化教育,p2p://54.39.16.152:9906/62692aad0004ff59037db656efdee736
+華藏衛星,p2p://fccs.word-tv.com:9906/6258e84a000a4dcb11f5809f32a54f53
+華藏衛視,p2p://54.39.16.152:9906/6258e84a000a4dcb11f5809f32a54f53
+愛爾達綜合,p2p://fccs.word-tv.com:9906/62595f88000e134a13c74bc62a907482
+愛爾達綜合,p2p://54.39.16.152:9906/62595f88000e134a13c74bc62a907482
+愛爾達影劇,p2p://fccs.word-tv.com:9906/62595fe00007a82a13c8a1e18c1171c7
+愛爾達影劇,p2p://54.39.16.152:9906/62595fe00007a82a13c8a1e18c1171c7
+愛爾達體育1,p2p://fccs.word-tv.com:9906/62596cd0000349b813fb2a4367d31141
+愛爾達體育1,p2p://54.39.16.152:9906/62596cd0000349b813fb2a4367d31141
+愛爾達體育2,p2p://fccs.word-tv.com:9906/62596cee000e512213fba2460c39ef10
+愛爾達體育2,p2p://54.39.16.152:9906/62596cee000e512213fba2460c39ef10
+愛爾達體育3,p2p://fccs.word-tv.com:9906/62596d0a0009c5b313fc0e7cd12205f2
+愛爾達體育3,p2p://54.39.16.152:9906/62596d0a0009c5b313fc0e7cd12205f2
+新加坡新聞,p2p://fccs.word-tv.com:9906/6261934a0007e00f19de74f21e2709b
+罪案偵緝頻道,p2p://fccs.word-tv.com:9906/62612fc9000147ae1859c35a8e800dbf
+靖天日本,p2p://54.39.16.152:9906/6260e53d0006302e173691bcb1337e0a
+靖天卡通,p2p://fccs.word-tv.com:9906/62618c1e000132fa19c26f5d328c9a20
+靖天卡通,p2p://54.39.16.152:9906/62618c1e000132fa19c26f5d328c9a20
+靖天映畫,p2p://fccs.word-tv.com:9906/62d7d7de000c430e0447985fcb4c96e2
+靖天資訊,p2p://fccs.word-tv.com:9906/62680bf30004db8219222787aaffbf79
+靖天資訊,p2p://54.39.16.152:9906/62680bf30004db8219222787aaffbf79
+靖天綜合,p2p://fccs.word-tv.com:9906/62d7e0810008edd30469543d517e58cf
+靖天戲劇,p2p://fccs.word-tv.com:9906/62d7dd4200024e12045ca473ea3b8d8e
+靖洋卡通,p2p://fccs.word-tv.com:9906/6260e5f00006cfff17394d1df9bdf95d
+靖洋卡通,p2p://54.39.16.152:9906/6260e5f00006cfff17394d1df9bdf95d
+靖洋戲劇,p2p://fccs.word-tv.com:9906/6260e602000b292d1739948a4e6140fe
+靖洋戲劇,p2p://54.39.16.152:9906/6260e602000b292d1739948a4e6140fe
+翡翠台,p2p://fccs.word-tv.com:9906/6258ea0e00051f8e11fc64eb04aee473
+翡翠台,p2p://fccs.word-tv.com:9906/62d69c28000d0fc119896ef02f8afd00
+翡翠台,p2p://54.39.16.152:9906/6258ea0e00051f8e11fc64eb04aee473
+台視,p2p://54.39.16.152:9906/6257e8850006de950e0e6636ac2abe87
+台視,p2p://fccs.word-tv.com:9906/6257e8850006de950e0e6636ac2abe87
+台視財經,p2p://fccs.word-tv.com:9906/626928870002ef3e0375515fa02e33ba
+台視財經,p2p://54.39.16.152:9906/626928870002ef3e0375515fa02e33ba
+台視新聞,p2p://54.39.16.152:9906/6269285d000bc5c40374af92643669c3
+台視新聞,p2p://fccs.word-tv.com:9906/6269285d000bc5c40374af92643669c3
+台視綜合,p2p://fccs.word-tv.com:9906/626929ef0001a650037acf4bc1fd630b
+台視綜合,p2p://54.39.16.152:9906/626929ef0001a650037acf4bc1fd630b
+鳳凰中文,p2p://fccs.word-tv.com:9906/6258288b0006f4a60f087dab170cf23e
+鳳凰中文,p2p://54.39.16.152:9906/6258281d0002e1400f06cef0fc77e330
+鳳凰中文,http://play-live.ifeng.com/live/06OLEGEGM4G.m3u8
+鳳凰中文,http://111.59.189.40:8445/tsfile/live/1020_1.m3u8?zgangd
+鳳凰中文,http://124.238.99.44:808/hls/348/index.m3u8
+鳳凰中文,https://playtv-live.ifeng.com/live/06OLEGEGM4G_tv1.m3u8
+鳳凰香港,p2p://fccs.word-tv.com:9906/62582991000071710f0c7b707491d2e9
+鳳凰香港,p2p://54.39.16.152:9906/62582991000071710f0c7b707491d2e9
+鳳凰香港,http://183.207.249.34/PLTV/3/224/3221226975/index.m3u8
+鳳凰資訊,p2p://fccs.word-tv.com:9906/6258281d0002e1400f06cef0fc77e330
+鳳凰資訊,p2p://54.39.16.152:9906/6258288b0006f4a60f087dab170cf23e
+鳳凰資訊,http://play-live.ifeng.com/live/06OLEEWQKN4.m3u8
+鳳凰資訊,http://playtv-live.ifeng.com/live/06OLEEWQKN4.m3u8
+影迷數位紀實,p2p://fccs.word-tv.com:9906/62674e25000e7546163cbd4c2de58212
+影迷數位電影,p2p://fccs.word-tv.com:9906/626a074600072a2c06db6c8c9af16e70
+緯來日本,p2p://fccs.word-tv.com:9906/62637c010003ce15074fddf26f0135da
+緯來日本,p2p://54.39.16.152:9906/62637c010003ce15074fddf26f0135da
+緯來育樂,p2p://fccs.word-tv.com:9906/6256bd41000a7a7c097d6582fe044cc4
+緯來育樂,p2p://54.39.16.152:9906/6256bd41000a7a7c097d6582fe044cc4
+緯來電影,p2p://fccs.word-tv.com:9906/625b8f93000ccb45025ff35db29f96fd
+緯來電影,p2p://54.39.16.152:9906/625b8f93000ccb45025ff35db29f96fd
+緯來綜合,p2p://54.39.16.152:9906/62584fd10006d72b0fa1e71495ef5024
+緯來綜合 ,p2p://fccs.word-tv.com:9906/62584fd10006d72b0fa1e71495ef5024
+緯來戲劇,p2p://fccs.word-tv.com:9906/62585f76000e7ba90fdf0591eb84257b
+緯來戲劇,p2p://54.39.16.152:9906/62585f76000e7ba90fdf0591eb84257b
+緯來體育,p2p://fccs.word-tv.com:9906/62541bbd000ba7f6097abfe357f9c565
+緯來體育,p2p://fccs.word-tv.com:9906/62dbbd45000a0aa0137fb226e5d4fbce
+緯來體育,p2p://54.39.16.152:9906/62541bbd000ba7f6097abfe357f9c565
+衛視中文,p2p://54.39.16.152:9906/625853fa000f1f080fb2295a047a36dc
+衛視中文,p2p://fccs.word-tv.com:9906/625853fa000f1f080fb2295a047a36dc
+衛視中文,http://61.219.170.95:18522/http/192.168.1.9:8081/hls/62/804/ch05.m3u8
+衛視電影,p2p://fccs.word-tv.com:9906/6256bd0a000359ee097c8cd7ea2af582
+衛視電影,p2p://54.39.16.152:9906/6256bd0a000359ee097c8cd7ea2af582
+寰宇財經,p2p://fccs.word-tv.com:9906/626179de00005255197b252361cec9d5
+寰宇財經,p2p://54.39.16.152:9906/626179de00005255197b252361cec9d5
+寰宇新聞,p2p://fccs.word-tv.com:9906/6257feca0002d9980e6562b6716c1c5a
+寰宇新聞,p2p://54.39.16.152:9906/6257feca0002d9980e6562b6716c1c5a
+寰宇新聞臺灣,p2p://fccs.word-tv.com:9906/6258370a000e53840f411fa6b1f19ad7
+寰宇新聞臺灣,p2p://fccs.word-tv.com:9906/62dbd3b70005e62613d75e66a1fcb160
+寰宇新聞臺灣,p2p://54.39.16.152:9906/6258370a000e53840f411fa6b1f19ad7
+寰宇綜合,p2p://fccs.word-tv.com:9906/62617a13000860ad197bf63b948c0cc6
+寰宇綜合,p2p://54.39.16.152:9906/62617a13000860ad197bf63b948c0cc6
+歷史頻道,p2p://fccs.word-tv.com:9906/6261294500077fb31840515220a0a636
+澳門蓮花,p2p://fccs.word-tv.com:9906/6258e686000e215f11ee9bf962767123
+澳門蓮花,p2p://54.39.16.152:9906/6258e686000e215f11ee9bf962767123
+龍祥電影,p2p://fccs.word-tv.com:9906/62619be5000cf11a1a0013b604555db1
+龍華洋片,p2p://54.39.16.152:9906/62613bc2000a344018888a4b2452f6fd
+龍華偶像,p2p://fccs.word-tv.com:9906/6260e4e9000627b41735499a8a2abd33
+龍華偶像,p2p://54.39.16.152:9906/6260e4e9000627b41735499a8a2abd33
+龍華經典,p2p://fccs.word-tv.com:9906/62618a40000060f919bb23f73fed9563
+龍華經典,p2p://54.39.16.152:9906/62618a40000060f919bb23f73fed9563
+龍華影劇,p2p://fccs.word-tv.com:9906/6260e4fc0003a35a1735932d66a9b4e5
+龍華影劇,p2p://54.39.16.152:9906/6260e4fc0003a35a1735932d66a9b4e5
+龍華戲劇,p2p://fccs.word-tv.com:9906/6260e4c0000811ed1734a9ef0f8923c2
+龍華戲劇,p2p://54.39.16.152:9906/6260e4c0000811ed1734a9ef0f8923c2
+韓國娛樂,p2p://fccs.word-tv.com:9906/6260fa95000d4aba1789f34d5039df1a
+霹靂臺灣,p2p://54.39.16.152:9906/625835a900047b550f3bba39e271ea6f
+霹靂臺灣,p2p://fccs.word-tv.com:9906/625835a900047b550f3bba39e271ea6f
+
+##
+
+
+🌏亞洲,#genre#
+時尚運動X,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv014&nid=69
+時尚頻道,http://50.7.220.74:8278/fashiontv_twn/playlist.m3u8?tid=MABA6457047364570473&ct=18393&tsum=82840dc94ca1ecca47ac4c26d3ee4afc
+Animax,http://livecdn.fptplay.net/hda3/animaxport_2000.stream/chunklist.m3u8
+Animax,https://livecdn.fptplay.net/hda3/animaxport_2000.stream/chunklist.m3u8
+Animax,https://livecdn.fptplay.net/hda3/animaxport_hls.smil/playlist.m3u8
+Arirang,http://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/.m3u8
+Arirang,http://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch/master.m3u8
+Arirang,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-4gtv079&nid=189
+Arirang,https://amdlive-ch01-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8
+Arirang,http://amdlive.ctnd.com.edgesuite.net/arirang_3ch/smil:arirang_3ch.smil/.m3u8
+Channel A (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/ChannelA.m3u8
+Channel olleh tv (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/ChannelOllehTV.m3u8
+CJ OnStyle (540p),https://live-ch1.cjonstyle.net/cjmalllive/stream2/playlist.m3u8
+CJ OnStyle Plus (540p),https://live-ch2.cjonstyle.net/cjosplus/live2/playlist.m3u8
+CJB청주방송 (SBS Cheongju) (540p) [Not 24/7],http://1.222.207.80:1935/live/cjbtv/playlist.m3u8
+CNA International (1080p),https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8
+CNN,https://cnn-cnninternational-1-gb.samsung.wurl.com/manifest/playlist_1280x720_3000k.m3u8
+DW德國之聲,http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live071&nid=226
+EBS Live,https://euc-live.fl.freecaster.net/live/eucom/ebs.m3u8
+EBS 兒童頻道,http://ebsonair.ebs.co.kr/plus3familypc/familypc1m/playlist.m3u8
+EBS 兒童頻道,http://ebsonairios.ebs.co.kr/ebsutablet500k/_definst_/tablet500k/chunklist_w1965791004.m3u8
+EBS 兒童頻道,https://apichvod19.seezntv.com/OTM/10650_H.m3u8?AdaptiveType=HLS&SessionID=3438d7e9-3e70-43b1-9fe6-b8290cd25403
+EBS1,http://ebsonair.ebs.co.kr/ebs1familypc/familypc1m/playlist.m3u8
+EBS1,http://ebsonairios.ebs.co.kr/plus1tablet500k/tablet500k/plus1tablet500k.index.m3u8
+EBS1,http://ebsonairios.ebs.co.kr/groundwavetablet500k/tablet500k/groundwavetablet500k.m3u8
+EBS1,http://ebsonair.ebs.co.kr/plus1familypc/familypc1m/playlist.m3u8
+EBS2,http://ebsonair.ebs.co.kr/ebs2familypc/familypc1m/playlist.m3u8
+EBS2,http://ebsonairios.ebs.co.kr/plus2tablet500k/tablet500k/plus2tablet500k.index.m3u8
+EBS2,http://ebsonairios.ebs.co.kr/ebs2tablet500k/tablet500k/ebs2tablet500k.index.m3u8
+EBS2,http://ebsonair.ebs.co.kr/plus2familypc/familypc1m/playlist.m3u8
+GS My Shop (1080p),https://gstv-myshop.gsshop.com/myshop_hd/myshop_hd.stream/playlist.m3u8
+GugakTV 국악방송 (1080p),http://mgugaklive.nowcdn.co.kr/gugakvideo/gugakvideo.stream/playlist.m3u8
+Gugbang TV (1080p) [Not 24/7],http://mediaworks.dema.mil.kr:1935/live_edge/cudo.sdp/playlist.m3u8
+K League 1 (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/KLeague1.m3u8
+K League 2 (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/KLeague2.m3u8
+K League 3 (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/KLeague3.m3u8
+K-Baduk (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/KBaduk.m3u8
+KBC 광주방송 (SBS Gwangju) (1080p),http://119.200.131.11:1935/KBCTV/tv/playlist.m3u8
+KBS Drama,http://ye23.vip/z7z8/2021/kbs2020.php?id=5
+KBS Joy,http://ye23.vip/z7z8/2021/kbs2020.php?id=6
+KBS LiveCam DokDo (540p),http://kbs-dokdo.gscdn.com/dokdo_300/dokdo_300.stream/playlist.m3u8
+KBS N Life,http://ye23.vip/z7z8/2021/kbs2020.php?id=7
+KBS News,http://free.fullspeed.tv/iptv-query?streaming-ip=https://www.youtube.com/c/newskbs/live
+KBS World,http://livecdn.fptplay.net/sdb/kbs_hls.smil/playlist.m3u8
+KBS World,https://kbsworld-ott.akamaized.net/hls/live/2002341/kbsworld/master.m3u8
+KBS World,https://livecdn.fptplay.net/sdb/kbs_2000.stream/chunklist_b2500000.m3u8
+KBS World,https://livecdn.fptplay.net/sdb/kbs_hls.smil/chunklist.m3u8
+KBS World,https://livecdn.fptplay.net/sdb/kbs_hls.smil/chunklist_b2500000.m3u8
+KBS World,https://livecdn.fptplay.net/sdb/kbs_hls.smil/playlist.m3u8
+KBS World,https://livecdn.fptplay.net:443/sdb/kbs_hls.smil/playlist.m3u8
+KBS World,https://vips-livecdn.fptplay.net/hda3/kbs_4000.stream/chunklist.m3u8
+KBS World,https://vips-livecdn.fptplay.net/hda3/kbs_vhls.smil/chunklist_b5000000.m3u8
+Korea Economy TV (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/KoreaEconomyTV.m3u8
+Korea TV,https://hlive.ktv.go.kr/live/klive_h.stream/playlist.m3u8
+Korean Song Channel,http://live.kytv.co.kr:8080/hls/stream.m3u8
+KShopping,https://fhs8036.bd-61.ktcdn.co.kr/klive/smil:klive.smil/playlist.m3u8
+MBC (1080p),http://123.254.72.24:1935/tvlive/livestream2/playlist.m3u8
+MBC 濟州,https://wowza.jejumbc.com/live/tv_jejumbc/playlist.m3u8
+MBN (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/MBN.m3u8
+MTN,http://183.110.27.87/mtnlive/_definst_/720/chunklist.m3u8
+NBS 農業廣播,https://media.joycorp.co.kr:4443/live/live_720p/playlist.m3u8
+NHK General TV (540p) [Not 24/7],https://nhk2.mov3.co/hls/nhk.m3u8
+NHK World Japan,http://nhkw-zh-hlscomp.akamaized.net/8thz5iufork8wjip/playlist.m3u8
+NHK world Japan,https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index_4M.m3u8
+NHK World Japan,https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_1M.m3u8
+NHK World Japan,https://nhkworld.webcdn.stream.ne.jp/www11/nhkworld-tv/sycc-live/zh/playlist.m3u8
+NHK World Japan (1080p),https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index.m3u8
+NHK 華語,https://nhkw-zh-hlscomp.akamaized.net/8thz5iufork8wjip/playlist.m3u8
+NHK 華語,https://nhkw-zh-hlscomp.akamaized.net/ixxemlzk1vqvy44o/playlist.m3u8
+Professional Baseball 1 (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/ProfessionalBaseball1.m3u8
+Professional Baseball 2 (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/ProfessionalBaseball2.m3u8
+Professional Baseball 3 (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/ProfessionalBaseball3.m3u8
+Professional Baseball 4 (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/ProfessionalBaseball4.m3u8
+Professional Baseball 5 (1080p) [Not 24/7],https://allanf181.github.io/adaptive-streams/streams/kr/ProfessionalBaseball5.m3u8
+QVC Japan,http://cdn-live1.qvc.jp/iPhone/800/800.m3u8
+QVC Japan,https://cdn-live1.qvc.jp/iPhone/1501/1501.m3u8
+RTHK32,http://teslagram.com/live/channel_32.m3u8
+RTHK32,https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8?WithCaption
+SBS 清州放送,http://1.222.207.80:1935/live/cjbtv/chunklist_w1357270949.m3u8
+Sexy K-Pop,https://srv1.zcast.com.br/kpoptv/kpoptv/.m3u8
+Sexy K-Pop,https://srv1.zcast.com.br/kpoptv/kpoptv/playlist.m3u8
+Shop Channel,http://stream1.shopch.jp/HLS/out1/prog_index.m3u8
+Shop Channel,http://stream1.shopch.jp/HLS/out2/prog_index.m3u8
+Shop Channel,http://stream1.shopch.jp/HLS/out3/prog_index.m3u8
+Shop Channel,http://stream1.shopch.jp/HLS/out4/prog_index.m3u8
+Shop Channel,https://stream3.shopch.jp/HLS/master.m3u8
+TBC 大邱,http://221.157.125.239:1935/live/psike/playlist.m3u8
+TBS News,http://58.234.158.60:1935/catvlive/myStream/playlist.m3u8
+TBS News,http://free.fullspeed.tv/iptv-query?streaming-ip=https://www.youtube.com/watch?v=H3D90-436C4
+The K-POP,https://git.io/JgYAE
+TJB SBS 綜藝,http://1.245.74.5:1935/live/tv/.m3u8
+Tokyo MX1,https://movie.mcas.jp/mcas/mx_live_2/master.m3u8
+Tokyo MX1,https://movie.mcas.jp/mcas/smil:mx1_prod.smil/master.m3u8
+Tokyo MX1,https://movie.mcas.jp/mcas/mx1_2/master.m3u8
+Tokyo MX2,https://movie.mcas.jp/mcas/smil:mx2_prod.smil/master.m3u8
+Tokyo MX2,https://movie.mcas.jp/mcas/mx2_2/master.m3u8
+TRT World (720p) [Not 24/7],https://tv-trtworld.live.trt.com.tr/master.m3u8
+TVB J1,https://bcovlive-a.akamaihd.net/f23dfe49b06b45d8878b55b4b6909595/us-west-2/5324042807001/4a3bca5b047b4564b18bb12dfa26ba62/playlist_ssaiM.m3u8
+TVB J2,https://j3.lhlh.app/mv.m3u8
+TVB 明珠臺,http://qwas.eatuo.com:9901/tsfile/live/1014_1.m3u8
+ViuTV,http://50.7.220.74:8278/9ae6d37d9a/playlist.m3u8?tid=m7728dbb8abe7&ct=18336&tsum=6b7f957f06b7cfabd928653808a52514
+ViuTV,https://cdn.hklive.tv/xxxx/99/index.m3u8
+ViuTV6,https://cdn.hklive.tv/xxxx/96/index.m3u8
+Weather Channel (ウェザーニュース) (BS | WNI) (720p),http://movie.mcas.jp/mcas/wn1_2/master.m3u8
+Weather News,https://movie.mcas.jp/mcas/smil:wn1.smil/chunklist_b1800000.m3u8
+Weather News,https://movie.mcas.jp/mcas/wn1_2/master.m3u8
+Weather News,https://movie.mcas.jp/mcas/smil:wn1.smil/master.m3u8
+경상MBC (MBC Gyeongnam Changwon) (1080p),https://624a79c87201d.streamlock.net/MBCTV/TV1.stream/playlist.m3u8
+日本職業摔跤(NJPW),https://aka-amd-njpwworld-hls-enlive.akamaized.net/hls/video/njpw_en/njpw_en_channel01_3/playlist_DVR.m3u8
+全天新聞,https://n24-cdn-live.ntv.co.jp/ch01/index.m3u8
+亞洲ATV,https://juyunlive.juyun.tv/live/24950198.m3u8
+대구 MBC (MBC Daegu) (480p) [Not 24/7],https://5ee1ec6f32118.streamlock.net/live/livetv/playlist.m3u8
+대전MBC (MBC Daejeon) (720p) [Not 24/7],https://ns1.tjmbc.co.kr/live/myStream.sdp/playlist.m3u8
+香港開電視,http://media.fantv.hk/m3u8/archive/channel2.m3u8
+香港開電視,http://media.fantv.hk/m3u8/archive/channel2.m3u8?WithCaption
+香港開電視,http://media.fantv.hk/m3u8/archive/channel2_stream1.m3u8
+香港衛視文旅,https://myun-hw-s3.myun.tv/melj80jz/lxx27bol/1551285536499984128.m3u8
+時尚頻道,http://juyunlive.juyun.tv/live/24950198.m3u8
+新加坡-CNA,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3u8
+新加坡-CNA,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8
+群馬電視臺,https://movie.mcas.jp/switcher/smil:mcas8.smil/chunklist_b1800000.m3u8
+翡翠臺,http://qwas.eatuo.com:9901/tsfile/live/1013_1.m3u8
+鳳凰中文,http://playtv-live.ifeng.com/live/06OLEGEGM4G.m3u8
+鳳凰中文,http://playtv-live.ifeng.com/live/06OLEGEGM4G_tv1.m3u8
+鳳凰中文,http://playtv-live.ifeng.com:80/live/06OLEGEGM4G.m3u8
+鳳凰中文,http://playtv-live.ifeng.com:80/live/06OLEGEGM4G_tv1.m3u8
+鳳凰中文,https://playtv-live.ifeng.com/live/06OLEGEGM4G.m3u8?WithCaption
+鳳凰中文,https://playtv-live.ifeng.com/live/06OLEGEGM4G_tv1.m3u8?WithCaption
+鳳凰資訊,http://playtv-live.ifeng.com/live/06OLEEWQKN4.m3u8
+鳳凰資訊,http://playtv-live.ifeng.com/live/06OLEEWQKN4_tv2.m3u8
+鳳凰資訊,http://playtv-live.ifeng.com:80/live/06OLEEWQKN4_tv2.m3u8
+鳳凰資訊,https://playtv-live.ifeng.com/live/06OLEEWQKN4.m3u8?WithCaption
+鳳凰資訊,https://playtv-live.ifeng.com/live/06OLEEWQKN4_tv1.m3u8?WithCaption
+鳳凰電影,http://111.59.189.40:8445/tsfile/live/1022_1.m3u8
+鳳凰衛視,http://50.7.220.74:8278/phoenixtv_hd/playlist.m3u8?tid=m18f421b0e58b&ct=18336&tsum=8e0cca627477cbd534c9cef5e2c17c1c
+목포 MBC Mokpo (720p),http://vod.mpmbc.co.kr:1935/live/encoder-tv/playlist.m3u8
+澳亞衛視,https://live.mastvnet.com/lsdream/lY44pmm/2000/live.m3u8?WithCaption
+澳門蓮花,http://anren.live/HK/BiIOU11uLA.m3u8
+澳門蓮花,http://nettvpro.live/hls/lotustv.php
+澳視1臺-澳門,http://103.233.191.133:1935/ch1/ch1.live/playlist.m3u8
+澳視1臺-澳門,http://103.233.191.134:1935/ch1/ch1.live/playlist.m3u8
+澳視1臺-澳門,http://61.244.22.4/ch1/ch1.live/playelist.m3u8
+澳視1臺-澳門,http://live4.tdm.com.mo/ch1/_definst_//ch1.live/playlist.m3u8?WithCaption
+澳視2臺-葡文,http://103.233.191.132:1935/ch2/ch2.live/playlist.m3u8
+澳視2臺-葡文,http://103.233.191.133:1935/ch2/ch2.live/playlist.m3u8
+澳視2臺-葡文,http://103.233.191.134:1935/ch2/ch2.live/playlist.m3u8
+澳視3臺-衛視,http://103.233.191.132:1935/ch3/ch3.live/playlist.m3u8
+澳視3臺-衛視,http://103.233.191.133:1935/ch3/ch3.live/playlist.m3u8
+澳視3臺-衛視,http://103.233.191.134:1935/ch3/ch3.live/playlist.m3u8
+澳視3臺-衛視,http://61.244.22.4/ch3/ch3.live/chunklist_w1228316132.m3u8
+澳視3臺-衛視,http://61.244.22.4/ch3/ch3.live/index.m3u8
+澳視3臺-衛視,http://61.244.22.4/ch3/ch3.live/playelist.m3u8
+澳視3臺-衛視,http://live4.tdm.com.mo/ch3/_definst_/ch3.live/playlist.m3u8?WithCaption
+澳視4臺-體育,http://103.233.191.132:1935/ch4/sport_ch4.live/playlist.m3u8
+澳視5臺-資訊,http://103.233.191.133:1935/ch5/info_ch5.live/playlist.m3u8
+澳視5臺-資訊,http://103.233.191.134:1935/ch5/info_ch5.live/playlist.m3u8
+澳視6臺-綜藝,http://103.233.191.132:1935/ch6/hd_ch6.live/playlist.m3u8
+澳視6臺-綜藝,http://103.233.191.133:1935/ch6/hd_ch6.live/playlist.m3u8
+澳視6臺-綜藝,http://103.233.191.134:1935/ch6/hd_ch6.live/playlist.m3u8
+부산MBC (MBC Busan) (360p),http://stream.bsmbc.com/livetv/BusanMBC_TV_onairstream/playlist.m3u8
+耀才財經,http://202.69.67.66:443/webcast/bshdlive-pc/playlist.m3u8
+耀才財經,http://202.69.67.66:443/webcast/bshdlive-pc/playlist.m3u8?wowzasessionid=64000
+여수MBC (MBC Yeosu) (720p) [Not 24/7],https://5c3639aa99149.streamlock.net/live_TV/tv/playlist.m3u8
+울산MBC (MBC Ulsan) (540p),https://5ddfd163bd00d.streamlock.net/nHDTV/nHDTV/playlist.m3u8
+춘천MBC (MBC Chuncheon) (1080p) [Not 24/7],https://stream.chmbc.co.kr/live/TV/playlist.m3u8
+충북MBC (MBC Chungbuk) (720p),http://211.33.246.4:32954/cj_live/myStream.sdp/playlist.m3u8
+
+##
+
+
+🏗測試,#genre#
+﻿翡翠台(备),P2p://ns2.hellotvvod.com:9906/61ab74d2000c56d914e7a7702f0c341f  
+18台,P2p://ns2.hellotvvod.com:9906/b3e96a03b026456da5baa7c944044b26
+Al Jazeera English,P2p://ns2.hellotvvod.com:9906/b212e4c6f9e24b78be1a1a24df4eeae9
+amc最愛電影,mitv://fccs.word-tv.com:9906/62674eb900041ef4163efcc6b4c8cd0b
+AMC最愛電影,P2p://ns2.hellotvvod.com:9906/3a81ac3bdfab4342b58d9ecfbb69ac21
+Animax,P2p://ns2.hellotvvod.com:9906/7fea5926cf4049e1b84a73834d0e88e0
+AXN,http://218.32.47.179:18558/.m3u8
+AXN,http://218.32.47.179:18558/http/192.168.1.9:8081/hls/71/813/ch43.m3u8
+AXN,mitv://fccs.word-tv.com:9906/6258d52d000490df11aad5dfc8e0641c
+AXN,P2p://ns2.hellotvvod.com:9906/846585b8fc4e43f1a11294f10a6d6e4e
+BabyTV,http://218.32.47.179:18514/http/192.168.1.9:8078/hls/35/80/babytv.m3u8
+BabyTV,http://218.32.47.179:18514/.m3u8
+BBC Earth,mitv://fccs.word-tv.com:9906/62612d0100000350184ee5c7d2e06684
+BBC Earth,P2p://ns2.hellotvvod.com:9906/102677975c0345de95c79b1af3db7908
+BBC Lifestyle,mitv://fccs.word-tv.com:9906/62612d25000c2e05184f7584a93f9e5e
+BBC World News,mitv://fccs.word-tv.com:9906/6257e7ef0003fddd0e0c1b89963d6947
+BBC World News,P2p://ns2.hellotvvod.com:9906/f15dda4822324bb4b9395840390e8e46
+Bloomberg News,http://218.32.47.179:8551/http/192.168.1.9:8078/hls/43/80/bloomber.m3u8
+Bloomberg News,mitv://fccs.word-tv.com:9906/626191ed0001b05319d92015e4a6cb61
+Boomerang,P2p://ns2.hellotvvod.com:9906/7159f32158a948bd88826275eef9314b
+Boomerang,mitv://fccs.word-tv.com:9906/62584d670009313f0f98799e2354015b
+CatchPlay電影台,P2p://ns2.hellotvvod.com:9906/14458e1447fe4cba8caf28d8cbb2a93e
+CinemaWorld,mitv://fccs.word-tv.com:9906/626750ba0002f9431646d0630173b458
+CinemaWorld,P2p://ns2.hellotvvod.com:9906/01a6be572b6f44248f6c83ad24eb33cc
+CINEMAX,http://218.32.47.179:18559/.m3u8
+CINEMAX,P2p://ns2.hellotvvod.com:9906/417622ab2be34897bf89e4646367e39f
+CINEMAX ,mitv://fccs.word-tv.com:9906/6258d81f000a40aa11b658a3fe101246
+CINEMAX FHD,http://218.32.47.179:18559/http/192.168.1.9:8081/hls/71/813/ch42.m3u8
+CLASSICA 古典樂,P2p://ns2.hellotvvod.com:9906/aeac7c084671404dbc6e043a0381f93a
+CMusic,P2p://ns2.hellotvvod.com:9906/c0715384eae843d18b73076f320bcb51
+CNBC,P2p://ns2.hellotvvod.com:9906/82885eb8d6c4422dbcde6d916126b454
+CNBC Asia Channel,mitv://fccs.word-tv.com:9906/626854f2000c5c52003ad5c1393ee879
+CNN Internationa,mitv://fccs.word-tv.com:9906/62582a520008e9c70f0f6f8479cb96d1
+CN卡通 ,mitv://fccs.word-tv.com:9906/62584e2d00015cde0f9b7d0de69c85e4
+CN卡通頻道,P2p://ns2.hellotvvod.com:9906/53b1291e95a74375a095acd16f4abdac
+Discovery Asia,mitv://fccs.word-tv.com:9906/6258ebd80002c54f12036161f9ac3eb0
+Discovery Asia,P2p://ns2.hellotvvod.com:9906/868e99e9de3649dfa17544c9fc37eb31
+Discovery科學頻道,P2p://ns2.hellotvvod.com:9906/a4a9e9e04eda47a987b823bdafd59741
+DMAX,P2p://ns2.hellotvvod.com:9906/9b2c80d3632b4c4cb6b56e88376a83b2
+DreamWorks,mitv://fccs.word-tv.com:9906/6259b527000085d61515bd669d7ec89a
+DW-TV,mitv://fccs.word-tv.com:9906/626191960005358319d7cd241ef843c4
+Eleven Sports 1,mitv://fccs.word-tv.com:9906/625854d4000964b10fb57b7382610c8d
+Eleven Sports 2 ,mitv://fccs.word-tv.com:9906/6258550f0001c6880fb65ff87e0ebc13
+ELEVEN體育1台,P2p://ns2.hellotvvod.com:9906/56f78b012ab5497cbcf96efa56d599ab
+ELEVEN體育2台,P2p://ns2.hellotvvod.com:9906/0279c2b296554da1bbd9cb36ab349a5c
+ELTV生活英語台,P2p://ns2.hellotvvod.com:9906/a30e2124fdf3409c874140b9ce0194cb
+ETtoday綜合台,mitv://fccs.word-tv.com:9906/6258604e000c87130fe250d0bb957895
+ETtoday綜合台,P2p://ns2.hellotvvod.com:9906/fdaa40feb8e74d73bfe9151a861a7037
+EVE,P2p://ns2.hellotvvod.com:9906/c32b6fa511cb459398328b5e82ac46e3
+EVE健康,mitv://fccs.word-tv.com:9906/6258ec270004be301204967a3d33f14a
+EYE TV旅遊台,mitv://fccs.word-tv.com:9906/62595e910009221e13c385aa08f4d222
+EYE TV旅遊台,P2p://ns2.hellotvvod.com:9906/892a16579495463e835576d4aba45cab
+EYE TV戲劇台,P2p://ns2.hellotvvod.com:9906/b04459a7095546568c1d81c31b48b60e
+EYE TV戲劇台　,mitv://fccs.word-tv.com:9906/625960940003b62a13cb5fff85627bd1
+FOOD美食,mitv://fccs.word-tv.com:9906/62612f36000389e4185785b669c4f5bf
+FOX,P2p://ns2.hellotvvod.com:9906/7f349a12f16d4296944370bf4bd9b2f0
+France 24,mitv://fccs.word-tv.com:9906/62618b8d0007241819c03a7a7bfe8708
+Hands Up,P2p://ns2.hellotvvod.com:9906/89827f07e68d49428e89f93c9ed5fcd9
+HBO,P2p://ns2.hellotvvod.com:9906/807504211493478280d6865f83552e64
+HBO Family,P2p://ns2.hellotvvod.com:9906/75f0e9bffa9a40d088e8a1894b3ae616
+HBO HD,mitv://fccs.word-tv.com:9906/6268100d000c1b5d19322ef22ed23efc
+HBO HITS,mitv://fccs.word-tv.com:9906/6258e224000020c111dd7994321ef7ec
+HBO原创,P2p://ns2.hellotvvod.com:9906/ee2412c76a5f4ac193774ce515d7f202
+HBO原创,mitv://fccs.word-tv.com:9906/6259b8f1000b9a0015248d4cabbe753c
+HBO家庭,mitv://fccs.word-tv.com:9906/6258e2990005537411df43f0702258cf
+HBO強檔巨獻,P2p://ns2.hellotvvod.com:9906/c5ec4112a1f64cf380e14e8a32a614dc
+HGTV居家樂活頻道,mitv://fccs.word-tv.com:9906/626197e30008e06719f06adc8c2c9e9a
+HGTV居家樂活頻道,P2p://ns2.hellotvvod.com:9906/97998ba196964eab9686d9d5b82ed634
+HISTORY 2,mitv://fccs.word-tv.com:9906/62612b2d000c46021847c4cb0d2536d1
+HISTORY 2,P2p://ns2.hellotvvod.com:9906/5300fbcc0f0e4e67ab3f4b0318c0baae
+HITS,P2p://ns2.hellotvvod.com:9906/0872358ecd494c9387d6ac21297672f1
+HKC 18,P2p://ns2.hellotvvod.com:9906/ad2956c5b96849e380956ea799d9e0e3
+HKC 603,P2p://ns2.hellotvvod.com:9906/7578b1ded83342989378a3ba601eed92
+HKC Sports Plus 1,P2p://ns2.hellotvvod.com:9906/5b084b1132b949eab6a7073a8c46ed29
+HKC电影台,P2p://ns2.hellotvvod.com:9906/8d4da6656cb3478cac17534067cdb533
+HKC新闻台,P2p://ns2.hellotvvod.com:9906/d483d802d9af42fd98bdf2417d578a01
+HKC體育台,P2p://ns2.hellotvvod.com:9906/9c4d711e5554413188be57421e813d3f
+HKC综合娱乐台,P2p://ns2.hellotvvod.com:9906/14ba29350bf5475ea70500b8634fbd13
+HKC财经资讯台,P2p://ns2.hellotvvod.com:9906/2ced1b583be548c0a44ec66a10014c2f
+i-Fun動漫台,P2p://ns2.hellotvvod.com:9906/12430e05b0e240b69fb1c35f795b64f
+J2,mitv://fccs.word-tv.com:9906/6258eae70008a93811ffb57b47682072
+J2,P2p://ns2.hellotvvod.com:9906/ddec778e9454402586d4c1b68f25a3ef
+J5無線財經新聞,mitv://fccs.word-tv.com:9906/62595c1a000d108b13b9e5d4f3816d5e
+JET 綜合台 ,mitv://fccs.word-tv.com:9906/625860030000abdc0fe128cf548f1def
+KLT-靖天國際台,mitv://fccs.word-tv.com:9906/62618c820009926c19c3f821ebec02ee
+KLT-靖天國際台,P2p://ns2.hellotvvod.com:9906/6dc496054577491f8abbfef561587ea5
+LOVE NATURE,mitv://fccs.word-tv.com:9906/6260e5a4000e4c4817382627a71c329e
+Love Nature,P2p://ns2.hellotvvod.com:9906/47d058f989264180ad813000e6191966
+LUXE TV Channel,mitv://fccs.word-tv.com:9906/6259b55f000cba8815169b462e40e185
+medici-arts,mitv://fccs.word-tv.com:9906/6260e56600092796173732a63095dc7a
+Mezzo Live,mitv://fccs.word-tv.com:9906/6259b5420005dbab1516283bb17231c9
+Mezzo Live,P2p://ns2.hellotvvod.com:9906/5e7a1ec593824974804d18c536c7026a
+MOMO綜合台,mitv://fccs.word-tv.com:9906/62580818000c773d0e89bddcd1b0c221
+MOMO親子台,P2p://ns2.hellotvvod.com:9906/47857819b1ca4487b782925e9b241826
+MOMO親子台 ,mitv://fccs.word-tv.com:9906/62584e6b000b41810f9c71c51bf958ec
+MTV,mitv://fccs.word-tv.com:9906/6258e40a000dc72411e4e7829de2c8b5
+MTV,P2p://ns2.hellotvvod.com:9906/b5ed8ba44332423684b029138c744636
+MTV Live,P2p://ns2.hellotvvod.com:9906/cdb5d79fed82406fae476fa897f94a8c
+MUCH TV,http://218.32.47.179:18529/http/192.168.1.9:8081/hls/72/814/ch45.m3u8
+NHK word,mitv://fccs.word-tv.com:9906/626193dc00042c1e19e0ae50e7db21fc
+NHK新聞資訊台,P2p://ns2.hellotvvod.com:9906/58a6024b916d488089e682ee3e7ebbfb
+Nice TV靖天歡樂台,P2p://ns2.hellotvvod.com:9906/7d6e33747bca4fb2b9a797f70bc458d2
+Nick Jr.,P2p://ns2.hellotvvod.com:9906/e93eba3a709341f897871451c36d9f0e
+now直播台,P2p://ns2.hellotvvod.com:9906/25b6936fdf9846acbc47058150c0ad38
+now新闻台,P2p://ns2.hellotvvod.com:9906/2e1aecab067d416fbb7f42186a7bbc3c
+OUTDOOR,P2p://ns2.hellotvvod.com:9906/11070b7b618947e0807eba459065a5bb
+RHK31,mitv://fccs.word-tv.com:9906/62595a6e000b3da213b35d7c1c92697f
+RHK32,mitv://fccs.word-tv.com:9906/62595a8a0007901013b3c9eb93df46aa
+ROCK Extreme,P2p://ns2.hellotvvod.com:9906/712698dff3b449b2bf6c0b357597e61d
+STAR MOVIES,mitv://fccs.word-tv.com:9906/6258d58f000430fa11ac54962a5c2d42
+Star Movies HD,P2p://ns2.hellotvvod.com:9906/bb688b3cf95143d180e412e7c3f466a7
+STAR Word,mitv://fccs.word-tv.com:9906/6258dcea0002765e11c90f9d2d7fac5d
+Thrill,P2p://ns2.hellotvvod.com:9906/cb40f6b156a947638ab47bf7ee97dd97
+TLC旅遊 ,mitv://fccs.word-tv.com:9906/62584cd60007230e0f9642af98aa2879
+TLC旅遊生活,P2p://ns2.hellotvvod.com:9906/be4be1a902d549c6b93af0cbba5826b9
+TRACE Sport Stars,P2p://ns2.hellotvvod.com:9906/f2f0990672dd45339acc1bcc2c169d80
+Travel Channel,mitv://fccs.word-tv.com:9906/626141950004f9a5189f492c02913ec0
+TV5 Monde,mitv://fccs.word-tv.com:9906/62619385000ca19e19df5ca2f9eb4def
+TVBS,P2p://ns2.hellotvvod.com:9906/dfa682f7f08c4b388bf5329a6d352e9e
+TVBS HD,mitv://fccs.word-tv.com:9906/62541264000b8c2809563c340355f46f
+TVBS新聞,mitv://fccs.word-tv.com:9906/6254121e00022e5c0955285ee55f9ec4
+TVBS新聞,P2p://ns2.hellotvvod.com:9906/a46fb523d9c04254953ea68f0223b513
+TVBS精采台,mitv://fccs.word-tv.com:9906/6259b507000647d0151541dfdfa4429f
+TVBS精采台,P2p://ns2.hellotvvod.com:9906/4cd00f68055f471b860a0edc3d3a8390
+TVBS歡樂台,mitv://fccs.word-tv.com:9906/62585f330007fbe70fddfe2f12feb8b6
+TVBS歡樂台,P2p://ns2.hellotvvod.com:9906/e0e8c82a679c49c3a124f3a73b2965ab
+TVB经典台,P2p://ns2.hellotvvod.com:9906/6c82a743dec540f29d95129ed3c90647
+TVB星河(粤),P2p://ns2.hellotvvod.com:9906/9d44d9c4102c4f5bb1b6733718e5fe08
+TVB星河高清頻道,mitv://fccs.word-tv.com:9906/6258eb4900053d031201336ba06ccbdc
+TVB娱乐新闻台,P2p://ns2.hellotvvod.com:9906/6b2555a831bc43c2882e0d2632603480
+tvN,mitv://fccs.word-tv.com:9906/6260e5b8000664c11738724174984fec
+ViuTVsix,mitv://fccs.word-tv.com:9906/627160d00008ced7098cbc29e23c5e0c
+ViuTV,mitv://fccs.word-tv.com:9906/62716383000252be099745b8d64c4cfa
+ViuTV,P2p://ns2.hellotvvod.com:9906/53304b6dfffb4d4783bf0a018ae7de7c
+ViuTVsix,P2p://ns2.hellotvvod.com:9906/b95906f9807a4a6e9e8995440d6deeef
+Warner TV　,mitv://fccs.word-tv.com:9906/6260fa2e000ad4fb17886054ef6e4e06
+Z頻道,mitv://fccs.word-tv.com:9906/6258e492000691dc11e6f8eac01761d4
+Z頻道,P2p://ns2.hellotvvod.com:9906/3a3e760703fe4c6d9dd3d4e3cd0ae87b
+人間衛視,http://218.32.47.179:8506/http/192.168.1.9:8081/hls/69/811/ch36.m3u8
+人間衛視,P2p://ns2.hellotvvod.com:9906/440a155e05d849beba4ced78210b8e70
+人間衛視 ,mitv://fccs.word-tv.com:9906/62582fff0009dab60f259b89f7464d63
+八大娛樂,mitv://fccs.word-tv.com:9906/6258e45a000845a611e61e9a50bc5e3e
+八大娛樂,P2p://ns2.hellotvvod.com:9906/cadf611647f94a6595305baa947f6264
+八大第一 ,mitv://fccs.word-tv.com:9906/6258517d000953940fa86f978caa56ae
+八大第一 ,P2p://ns2.hellotvvod.com:9906/6fb3644604d143beae1fa530791d5d87
+八大綜合 ,mitv://fccs.word-tv.com:9906/625851bd000e8a2d0fa96aec6397d1ea
+八大綜合 ,http://218.32.47.179:18520/http/192.168.1.9:8081/hls/66/808/ch21.m3u8
+八大綜合 ,http://218.32.47.179:18520/.m3u8
+八大綜合 ,P2p://ns2.hellotvvod.com:9906/1a4ba7fe00e447aa807a4af55bf360b7
+八大優頻道,P2p://ns2.hellotvvod.com:9906/d0db4f51af5849248fa1520391daa2f5
+八大戲劇,mitv://fccs.word-tv.com:9906/6258594f0004c9c40fc6fabdb0e81edf
+八大戲劇,http://218.32.47.179:18531/http/192.168.1.9:8081/hls/66/808/ch23.m3u8
+八大戲劇,http://218.32.47.179:18531/.m3u8
+八大戲劇,P2p://ns2.hellotvvod.com:9906/ee1c766f5309492382044f658b576899
+三立iNEWS,P2p://ns2.hellotvvod.com:9906/8044cd6adaa14a969ee691d58c8eabb9
+三立台湾,mitv://fccs.word-tv.com:9906/625851fa000d44170faa58e136d727dc
+三立財經,mitv://fccs.word-tv.com:9906/62614b9c0008ec3518c675877b79b6ea
+三立都會,mitv://fccs.word-tv.com:9906/62585240000566d20fab684d64808ca0
+三立都會,P2p://ns2.hellotvvod.com:9906/75d92f9df62e4c268f4d28bed2aa9d2e
+三立新聞,mitv://fccs.word-tv.com:9906/625411f9000c761609549a782b245a4c
+三立新聞,P2p://ns2.hellotvvod.com:9906/fceb797446e94ac18dd4791a5d12b440
+三立綜合,mitv://fccs.word-tv.com:9906/6259b57f0003ca05151715fc95200be0
+三立綜合,P2p://ns2.hellotvvod.com:9906/8d3cfdce6fcc4534b31f754d24212dcf
+三立臺灣台,P2p://ns2.hellotvvod.com:9906/8dd16c84358c462fa4ba3f24f29f7b41
+三立戲劇,mitv://fccs.word-tv.com:9906/6259b5a1000d5db415179d3f530f1044
+三立戲劇,P2p://ns2.hellotvvod.com:9906/113d38a80d2249c3b06efcec46281c18
+大愛,P2p://ns2.hellotvvod.com:9906/c56587dd9acc4e21bd53ce62da243a56
+大愛 ,mitv://fccs.word-tv.com:9906/6257e958000647f20e119e47becddbf1
+大愛2台,P2p://ns2.hellotvvod.com:9906/33799718b3df426d8cc3e363314e708a
+大愛電視,http://218.32.47.179:8507/http/192.168.1.9:8081/hls/73/815/ch52.m3u8
+中天亞洲,mitv://fccs.word-tv.com:9906/626610e20008d9cf11656e24ac45db0e
+中天娛樂,http://218.32.47.179:18527/.m3u8
+中天娛樂,mitv://fccs.word-tv.com:9906/62585ecd000adfc10fdc707c21a26424
+中天娛樂,http://218.32.47.179:18527/http/192.168.1.9:8081/hls/67/809/ch26.m3u8
+中天娛樂,P2p://ns2.hellotvvod.com:9906/8d36b7a80cb14f65956db83faf108572
+中天新聞,mitv://fccs.word-tv.com:9906/625af85e0000d79c001149459e0c9b4f
+中天新聞,P2p://ns2.hellotvvod.com:9906/50693eebb9ff4383be2444c8d4f00eb9
+中天綜合,http://218.32.47.179:18526/.m3u8
+中天綜合 ,mitv://fccs.word-tv.com:9906/62585815000447950fc2300ce37be3da
+中天綜合 ,http://218.32.47.179:18526/http/192.168.1.9:8081/hls/67/809/ch25.m3u8
+中天綜合 ,P2p://ns2.hellotvvod.com:9906/fe0a54eee624418f8300555899261df5
+中視,P2p://ns2.hellotvvod.com:9906/eac4e472ed134219af8fa4bba04f8a5c
+中視,mitv://fccs.word-tv.com:9906/6257e968000a66d90e11ddd52825327a
+中視菁采,mitv://fccs.word-tv.com:9906/6269290b000463f70377555ece4c7fca
+中視菁采,P2p://ns2.hellotvvod.com:9906/d6752e25d9f44020a971d0645942fb21
+中視新聞台,mitv://fccs.word-tv.com:9906/626928b800072a99037611dc7cf5b636
+中視新聞台,P2p://ns2.hellotvvod.com:9906/35d5951c36b74b808f1c2415b2335f89
+中視經典,mitv://fccs.word-tv.com:9906/626928e3000ce0de0376bb4ad8c2f741
+中視經典,P2p://ns2.hellotvvod.com:9906/6424cd1787da4af09add30805b7b4c9c
+互動新聞,mitv://fccs.word-tv.com:9906/6258ea7a0006d8b111fe0b3c369d9e17
+公視,http://218.32.47.179:18505/.m3u8
+公視,http://218.32.47.179:18505/http/192.168.1.9:8081/hls/73/815/ch50.m3u8
+公視,mitv://fccs.word-tv.com:9906/6257e9950008c4a20e128d3209b54839
+公視,P2p://ns2.hellotvvod.com:9906/d3cf6d6a347341e0906106855e6f2b6a
+公視3,mitv://fccs.word-tv.com:9906/62692af700080a87037ed82d98f82f9d
+公視3台,P2p://ns2.hellotvvod.com:9906/e341e83fd7a94aa58e554d22b41cb9fb
+公視台語台,mitv://fccs.word-tv.com:9906/6257e9a400000c300e12c58f9b595b1e
+凤凰中文,http://111.59.189.40:8445/tsfile/live/1020_1.m3u8?zgangd
+凤凰中文,http://play-live.ifeng.com/live/06OLEGEGM4G.m3u8
+凤凰中文,https://playtv-live.ifeng.com/live/06OLEGEGM4G_tv1.m3u8
+凤凰中文,P2p://ns2.hellotvvod.com:9906/59a5da2ec0db4af28d50df6122e2f2e2
+凤凰电影台,P2p://ns2.hellotvvod.com:9906/d4c33084745649c7be82be967458a227
+凤凰香港台,P2p://ns2.hellotvvod.com:9906/57ca26c9e4514b10be53a05af6e1eedc
+凤凰资讯,http://play-live.ifeng.com/live/06OLEEWQKN4.m3u8
+凤凰资讯,http://playtv-live.ifeng.com/live/06OLEEWQKN4.m3u8
+凤凰资讯,P2p://ns2.hellotvvod.com:9906/d353ff579ae44023ae1078e24cbefc21
+天映經典電影,mitv://fccs.word-tv.com:9906/6260fa83000c7b8e1789acc84075d31b
+无线新闻台,P2p://ns2.hellotvvod.com:9906/22237d29ad494cc6aa5482c9bff7afdf
+无线新闻台,P2p://ns2.hellotvvod.com:9906/d0c60aa2e2124ec585f3920ee76b6108
+无线财经·资讯台,P2p://ns2.hellotvvod.com:9906/47ff889fdf994643b428e4c24c6b3f14
+功夫台,P2p://ns2.hellotvvod.com:9906/c0e41258758d46b28acb510d7ddd27c5
+古典音樂台CLASSICA HD,mitv://fccs.word-tv.com:9906/6260fd970004b7061795b0eb2df29131
+台視,P2p://ns2.hellotvvod.com:9906/5afa39dd453d4b46bd2f46beef034298
+台視,mitv://fccs.word-tv.com:9906/6257e8850006de950e0e6636ac2abe87
+台視財經,mitv://fccs.word-tv.com:9906/626928870002ef3e0375515fa02e33ba
+台視財經,P2p://ns2.hellotvvod.com:9906/6e809a59861d4a648adbe1161aa09320
+台視新聞台,mitv://fccs.word-tv.com:9906/6269285d000bc5c40374af92643669c3
+台視新聞台,P2p://ns2.hellotvvod.com:9906/1109090677cf4568b5d281acaffb16bb
+台視綜合,mitv://fccs.word-tv.com:9906/626929ef0001a650037acf4bc1fd630b
+尼克兒童頻道,P2p://ns2.hellotvvod.com:9906/690725fb0e6b4e90a48552833334072c
+民視,P2p://ns2.hellotvvod.com:9906/5121c7a5b7844be693683f5210c45cf4
+民視,mitv://fccs.word-tv.com:9906/62582da100098ec20f1c5c4698b437cf
+民視台灣台,mitv://fccs.word-tv.com:9906/62692823000550c80373cb5be6f7e438
+民視第一台,mitv://fccs.word-tv.com:9906/626927db000004640372b0c04cca9ca3
+民視第一台,P2p://ns2.hellotvvod.com:9906/459310074f24461f96f3f3645940efa5
+民視新聞,mitv://fccs.word-tv.com:9906/625411d700086db70954149f159813c6
+民視新聞,P2p://ns2.hellotvvod.com:9906/8319151b9c264204847bef34613abca4
+民視台灣台,P2p://ns2.hellotvvod.com:9906/f62f61e2ae964bdd81b30d345b4f59b4
+生命電視臺,mitv://fccs.word-tv.com:9906/6258e612000a9c7511ecd5f381cd413f
+亚洲剧台,P2p://ns2.hellotvvod.com:9906/45b138268e5b41ec80165118d6eba2e4
+全大,mitv://fccs.word-tv.com:9906/62614c730008668f18c9bd3d40261639
+好消息,mitv://fccs.word-tv.com:9906/62584be3000a4ec30f928e473488ad44
+好消息,P2p://ns2.hellotvvod.com:9906/6e78e521ebe249f58863c60dbcb03137
+好消息2台,P2p://ns2.hellotvvod.com:9906/de0e2f35a9b44d6fa78db27aa9ff29c4
+好消息頻道,http://218.32.47.179:8508/http/192.168.1.9:8081/hls/74/816/ch53.m3u8
+好萊塢電影,mitv://fccs.word-tv.com:9906/6256bd25000a0a02097cf805932004af
+好萊塢電影台,P2p://ns2.hellotvvod.com:9906/db5f81637e2a4420a2a59dfc7bacc634
+年代MUCH,mitv://fccs.word-tv.com:9906/625858aa000f2ee50fc478de23b3e0dd
+年代新聞,mitv://fccs.word-tv.com:9906/62540c45000225da093e50b45b457d41
+年代新聞,P2p://ns2.hellotvvod.com:9906/81409ed6900d4fa183a5069d9e19f808
+有線18台,mitv://fccs.word-tv.com:9906/626bc57e0002fcc70daa763a17885784
+有線18台,rtmp://59.124.75.138/sat/hk041
+有線603高清,mitv://fccs.word-tv.com:9906/626bc5c00008e69a0dab798eb8ae558d
+有線財經資訊,mitv://fccs.word-tv.com:9906/626bc59f000aad820daaf91ae564e9c6
+有線綜合娛樂,mitv://fccs.word-tv.com:9906/626bc60b000392d40dac9d2923dd262b
+有線衛視電影台,mitv://fccs.word-tv.com:9906/626bd4820001292c0de51d63fb84af95
+佛衛慈悲台,P2p://ns2.hellotvvod.com:9906/8db0c52a0e47461d92e91add0f64b8df
+阳光卫视,P2p://ns2.hellotvvod.com:9906/fcc4aa36b5ed433f99cab9a859111c85
+亞洲美食頻道,P2p://ns2.hellotvvod.com:9906/686ff298f4fe493fb994ff5f1dd28606
+亞洲旅遊,http://218.32.47.179:18513/http/192.168.1.9:8081/hls/76/818/ch61.m3u8
+亞洲旅遊,http://218.32.47.179:18513/.m3u8
+亞洲旅遊,mitv://fccs.word-tv.com:9906/62595eed0008772713c4ecde7515ec18
+亞洲旅遊,mitv://fccs.word-tv.com:9906/6260e4ab0008152e173457e810b3184d
+亞洲旅遊,P2p://ns2.hellotvvod.com:9906/5ea1fce19a6d408f821e48ae5b121060
+幸福空間居家台,mitv://fccs.word-tv.com:9906/6260e5930002f4ee1737e0d8c16e8abc
+明珠台,mitv://fccs.word-tv.com:9906/6258eaca00006a3411ff4217b567e90f
+明珠台,P2p://ns2.hellotvvod.com:9906/9d78b84c273e4922948f4e5926615afa
+東風37,http://218.32.47.179:18528/.m3u8
+東風衛視,http://218.32.47.179:18528/http/192.168.1.9:8081/hls/68/810/ch31.m3u8
+東風衛視,mitv://fccs.word-tv.com:9906/6258585d0007329c0fc34a0b3c4be606
+東森幼幼台,mitv://fccs.word-tv.com:9906/62584f92000033490fa0ef49c819efa3
+東森幼幼台,P2p://ns2.hellotvvod.com:9906/c2b6515c32914110bfe2a9ac962855ff
+東森洋片,mitv://fccs.word-tv.com:9906/62541d6200021780098129f8ea5d0f93
+東森洋片,P2p://ns2.hellotvvod.com:9906/e20a0cbb07184f19a1bc0456a1ec590d
+東森財經,mitv://fccs.word-tv.com:9906/6254128d000e830c0956dd1ea31d7f59
+東森財經,P2p://ns2.hellotvvod.com:9906/08140d28f7634f31b26776b01ff2013a
+東森超視,mitv://fccs.word-tv.com:9906/625854810005f8350fb4365bf7cd8f4e
+東森新聞,mitv://fccs.word-tv.com:9906/62540c77000699df093f1528c8c4d48a
+東森新聞,P2p://ns2.hellotvvod.com:9906/365659c74e1049d1a907c5118405d2aa
+東森電影,mitv://fccs.word-tv.com:9906/62541ccb0008d232097eddd9e4082c99
+東森電影,P2p://ns2.hellotvvod.com:9906/134260b0c79e47599e7be383a16273a2
+東森綜合,http://218.32.47.179:18524/.m3u8
+東森綜合 ,mitv://fccs.word-tv.com:9906/6258543f000be6350fb3360fed87de8b
+東森綜合 ,http://218.32.47.179:18524/http/192.168.1.9:8081/hls/63/805/ch12.m3u8
+東森綜合 ,P2p://ns2.hellotvvod.com:9906/a9abe20e2b854129b007851902abed58
+東森戲劇,mitv://fccs.word-tv.com:9906/625420c30002ef15098e5d177b7f38b1
+東森戲劇,P2p://ns2.hellotvvod.com:9906/b9b2a3108cd748a48c69fde74cdac00e
+采昌影劇台,P2p://ns2.hellotvvod.com:9906/3417b99db54f40d09a101b8237856256
+非凡商業,mitv://fccs.word-tv.com:9906/626911890006d792031b822fdf86a38a
+非凡商業,P2p://ns2.hellotvvod.com:9906/1c03339edfb04248ad2e1643d153e30c
+非凡新聞台,mitv://fccs.word-tv.com:9906/6257f613000f40140e435b0b41c847c0
+非凡新聞台,P2p://ns2.hellotvvod.com:9906/f673cb32c63148eda241ca48287abc1a
+信大,mitv://fccs.word-tv.com:9906/62614ca00005778f18ca6c44cdea2031
+信吉,mitv://fccs.word-tv.com:9906/6258e362000ea49c11e2577b5ee3ce53
+客家電視台 ,mitv://fccs.word-tv.com:9906/6257e9d70000ce760e138cf889fb92c2
+客家電視台 ,P2p://ns2.hellotvvod.com:9906/d3a0c1c54534420b84a11ead76b98643
+星衛HD電影台,mitv://fccs.word-tv.com:9906/62613c0200051f95188982fec2ef3ed5
+星衛HD電影台,P2p://ns2.hellotvvod.com:9906/bbcd47b994844586b0f7b72faf990b55
+星衛娛樂台,mitv://fccs.word-tv.com:9906/6259b4eb0005f6251514d46a93c04eb3
+星衛娛樂台,P2p://ns2.hellotvvod.com:9906/55b5324c53d34311ab2a05972ba6e3ab
+美亚电影台(粤语),P2p://ns2.hellotvvod.com:9906/8d0b03ab36dd4972acfde9d503fa3bb7
+美亞電影台,mitv://fccs.word-tv.com:9906/62613d420000a1a0188e63d84b81b11c
+美亞電影台,P2p://ns2.hellotvvod.com:9906/769f9d046e694b69897fe122f840ccc2
+美食星球,P2p://ns2.hellotvvod.com:9906/8fe2a55796694b7bbc88b1276d02ad5f
+美食星球,mitv://fccs.word-tv.com:9906/626139fa00036cff1881934f1fc1ae06
+面包台,https://video.bread-tv.com:8091/hls-live24/online/index.m3u8
+香港开电视,P2p://ns2.hellotvvod.com:9906/eb21cf56a30f4166b3ecf56c3b8d3928
+香港开电视,http://98.142.138.122:1630/live/hkopentv.m3u8
+香港有線新聞,mitv://fccs.word-tv.com:9906/6258e930000d447111f903d1236f6fc8
+香港有線電影,mitv://fccs.word-tv.com:9906/626bc5e5000b44cb0dac0ab18c230b75
+原民台 ,mitv://fccs.word-tv.com:9906/6257e9ca0002ec200e135abbe97ac8ab
+原民台 ,P2p://ns2.hellotvvod.com:9906/5c461d90b5364322bb637b1d5a01ae21
+時尚頻道,mitv://fccs.word-tv.com:9906/6258e626000f104a11ed2537d42ef8a8
+時尚頻道,P2p://ns2.hellotvvod.com:9906/81fe039c991f427fbb7d15442ca20e45
+狼谷娛樂,mitv://fccs.word-tv.com:9906/6258f82b00089b8f12338718bf84237d
+高點綜合 ,mitv://fccs.word-tv.com:9906/62585fb8000970600fe0061669e3aba4
+高點綜合 ,P2p://ns2.hellotvvod.com:9906/0a3182c862934257b7fba2ac82615cae
+動物星球,http://218.32.47.179:18512/.m3u8
+動物星球,http://218.32.47.179:18512/http/192.168.1.9:8081/hls/70/812/ch37.m3u8
+動物星球,mitv://fccs.word-tv.com:9906/62541d9c0009282c09820e57f2a59d11
+動物星球,P2p://ns2.hellotvvod.com:9906/178c72a35f3547c3a4171ba78f1c8bf8
+國家地理,http://218.32.47.179:18509/.m3u8
+國家地理,http://218.32.47.179:18509/http/192.168.1.9:8081/hls/61/803/ch01.m3u8
+國家地理高畫質野生頻道,mitv://fccs.word-tv.com:9906/6258eb6f0008bb551201c8c015a4226c
+國家地理高畫質野生頻道,P2p://ns2.hellotvvod.com:9906/69d2d5850b684f57b842ddd59aafcfec
+國家地理國際頻道,mitv://fccs.word-tv.com:9906/62541d810002b7c00981a33911a2eb57
+國家地理,P2p://ns2.hellotvvod.com:9906/9cdb6b80467049cba24913f10806ae9d
+國會頻道1,P2p://ns2.hellotvvod.com:9906/11cb0236db8a4e69981abc852ffd327d
+國會頻道2,P2p://ns2.hellotvvod.com:9906/9c1ab3a3a92043a199363b60f900f36b
+國興衛視,mitv://fccs.word-tv.com:9906/6258dc9e0003580511c7e6f78e3b1759
+國興衛視,P2p://ns2.hellotvvod.com:9906/0ba561f1683a4f6186f44529cadf31f7
+探索科學高清頻道,mitv://fccs.word-tv.com:9906/6258ebf3000576221203cb8904668102
+探索動力,mitv://fccs.word-tv.com:9906/6258ec18000964b412045d13a4eb316e
+探索頻道,mitv://fccs.word-tv.com:9906/62541db9000483b809827e6fdf85c22c
+探索頻道,P2p://ns2.hellotvvod.com:9906/887e2d57a7de4d238eac9c0b5cdfddb7
+博斯高球,P2p://ns2.hellotvvod.com:9906/5e3b0d88a87c4c94bf68600579bb1cd7
+博斯高球一台,mitv://fccs.word-tv.com:9906/62596d9e000e5b6c13fe51c8c1ca116c
+博斯高球二台,mitv://fccs.word-tv.com:9906/6259b7ea000cad1415208a3ab972be5a
+博斯高球二台,P2p://ns2.hellotvvod.com:9906/b0de75dbd96b4ad0b7cbd2667fd9e1b7
+博斯無限二台,P2p://ns2.hellotvvod.com:9906/ed0b79681eec449194e53757c39300e1
+博斯無限台,P2p://ns2.hellotvvod.com:9906/63a4f6b20a99421eac4ae67489c169b3
+博斯運動,P2p://ns2.hellotvvod.com:9906/ee130ba577b7455586651e52aa7e4568
+博斯運動一台,mitv://fccs.word-tv.com:9906/6260e5500006db331736dc200a9d70bc
+博斯運動二台,mitv://fccs.word-tv.com:9906/6261364f000a426f187341173b92f79b
+博斯運動二台,P2p://ns2.hellotvvod.com:9906/6c3ddad9b24c4473ad8215de4cc4a27b
+博斯網球台,mitv://fccs.word-tv.com:9906/6259b8080009f08a1520feb706074e92
+博斯網球台,P2p://ns2.hellotvvod.com:9906/78668530367e4149bc4c5d7698fade2a
+博斯魅力網,mitv://fccs.word-tv.com:9906/6260e5df0005c49317390a70b64c7b9b
+博斯魅力網,P2p://ns2.hellotvvod.com:9906/ff4b056721b54a8785577eda31fcbb4b
+壹新聞,mitv://fccs.word-tv.com:9906/62541b7c0007f8c30979c109c2ede6a3
+壹電視新聞台,P2p://ns2.hellotvvod.com:9906/9f03df5968aa4ddc82b9bf79071971c0
+壹電視電影台,P2p://ns2.hellotvvod.com:9906/773dfbc2517d4720bd4433868831b947
+壹電視綜合,P2p://ns2.hellotvvod.com:9906/ff26c811191646e8adea971401dddfd0
+壹電影台,mitv://fccs.word-tv.com:9906/62674e97000a6a59163e799316c3d943
+晴天日本,mitv://fccs.word-tv.com:9906/6260e53d0006302e173691bcb1337e0a
+智林體育台,P2p://ns2.hellotvvod.com:9906/1245f2d45ae34a6bb9b900b1e3082e01
+港台电视32,P2p://ns2.hellotvvod.com:9906/c55986c653ee4da685bb42ab4dd9b707
+港台电視31,P2p://ns2.hellotvvod.com:9906/a59213b8845c451c8c3787d3d4a70d99
+粤语片台,P2p://ns2.hellotvvod.com:9906/7c667a5341bc455ea4ec71a67101b43e
+華視,http://218.32.47.179:18503/.m3u8
+華視,P2p://ns2.hellotvvod.com:9906/e9e72e3509be4724b73d523875d3eee0
+華視,http://218.32.47.179:18503/http/192.168.1.9:8081/hls/72/814/ch48.m3u8
+華視,mitv://fccs.word-tv.com:9906/6257e98b000307180e1264aad3095adb
+華視新聞,P2p://ns2.hellotvvod.com:9906/4d9b6eef2ca342bc821df84c53fbee86
+華視新聞,http://218.32.47.179:8538/http/192.168.1.9:8081/hls/61/803/ch03.m3u8
+華視新聞,mitv://fccs.word-tv.com:9906/62692acf000c5e7a037e3d0919397c0a
+華視體育文化教育,mitv://fccs.word-tv.com:9906/62692aad0004ff59037db656efdee736
+華藏衛星電視臺,mitv://fccs.word-tv.com:9906/6258e84a000a4dcb11f5809f32a54f53
+超視,P2p://ns2.hellotvvod.com:9906/67f8d866aaf14a948aee2f833f08491f
+愛爾達綜合,mitv://fccs.word-tv.com:9906/62595f88000e134a13c74bc62a907482
+愛爾達影劇台,mitv://fccs.word-tv.com:9906/62595fe00007a82a13c8a1e18c1171c7
+愛爾達體育1台,mitv://fccs.word-tv.com:9906/62596cd0000349b813fb2a4367d31141
+愛爾達體育1台,P2p://ns2.hellotvvod.com:9906/69ed397ecfcb451eb9863d0d6db9ff9f
+愛爾達體育2台,mitv://fccs.word-tv.com:9906/62596cee000e512213fba2460c39ef10
+愛爾達體育2台,P2p://ns2.hellotvvod.com:9906/7ca7e29a2cf9416dab836618c65c0634
+愛爾達體育3台,mitv://fccs.word-tv.com:9906/62596d0a0009c5b313fc0e7cd12205f2
+愛爾達體育3台,P2p://ns2.hellotvvod.com:9906/89efb8b1822d4708b6c1d1e8f5b9e1a3
+新加坡新聞,mitv://fccs.word-tv.com:9906/6261934a0007e00f19de74f21e2709b4
+罪案偵緝頻道,mitv://fccs.word-tv.com:9906/62612fc9000147ae1859c35a8e800dbf
+罪案偵緝頻道,P2p://ns2.hellotvvod.com:9906/271753ebc1704bf992d5cc18e41c77bc
+達文西頻道,P2p://ns2.hellotvvod.com:9906/2d612a0555594012873d6d29f437df07
+靖天日本台,P2p://ns2.hellotvvod.com:9906/3e48fa8e54bd4b3c89b5499ec86ba0e1
+靖天卡通台,mitv://fccs.word-tv.com:9906/62618c1e000132fa19c26f5d328c9a20
+靖天卡通台,P2p://ns2.hellotvvod.com:9906/a48e3d5ec84f409a8f59da6932118f2a
+靖天育樂台,P2p://ns2.hellotvvod.com:9906/fc988afc33d4482caf2809206d4e5b75
+靖天映畫,P2p://ns2.hellotvvod.com:9906/c7a6d3a11d8b4796af147ff81d17fab7
+靖天資訊,mitv://fccs.word-tv.com:9906/62680bf30004db8219222787aaffbf79
+靖天資訊台,P2p://ns2.hellotvvod.com:9906/c4100c32eddc4334bade11264db3e839
+靖天電影台,P2p://ns2.hellotvvod.com:9906/dd15aa7963f7413ba1b62832678d4f6b
+靖天綜合台,P2p://ns2.hellotvvod.com:9906/f6265649e7cc4ae08496ee0d0d7aff47
+靖天戲劇台,P2p://ns2.hellotvvod.com:9906/efad5c2210d44f2585b5bf41eeb63f7e
+靖洋卡通Nice Bingo,P2p://ns2.hellotvvod.com:9906/086be7830f0b493190d43f62b5321708
+靖洋卡通Nice Bingo,mitv://fccs.word-tv.com:9906/6260e5f00006cfff17394d1df9bdf95d
+靖洋戲劇台,mitv://fccs.word-tv.com:9906/6260e602000b292d1739948a4e6140fe
+靖洋戲劇台,P2p://ns2.hellotvvod.com:9906/7bb8df7a38714104bd0679791febf6d1
+綜合台,http://218.32.47.179:8579/http/60.249.81.21:8088/hls/76/818/momo_max.m3u8
+翡翠台,mitv://fccs.word-tv.com:9906/6258ea0e00051f8e11fc64eb04aee473
+翡翠台,P2p://ns2.hellotvvod.com:9906/cd153f19aecd4a63942e98048c14a40f
+鳳凰中文,mitv://fccs.word-tv.com:9906/6258281d0002e1400f06cef0fc77e330
+鳳凰香港,mitv://fccs.word-tv.com:9906/62582991000071710f0c7b707491d2e9
+鳳凰資訊,mitv://fccs.word-tv.com:9906/6258288b0006f4a60f087dab170cf23e
+影迷數位紀實台,mitv://fccs.word-tv.com:9906/62674e25000e7546163cbd4c2de58212
+影迷數位電影台,mitv://fccs.word-tv.com:9906/626a074600072a2c06db6c8c9af16e70
+緯來日本,mitv://fccs.word-tv.com:9906/62637c010003ce15074fddf26f0135da
+緯來日本,P2p://ns2.hellotvvod.com:9906/94fe25b5e4a9497482ce4ef5cee1ff54
+緯來育樂,http://218.32.47.179:18562/.m3u8
+緯來育樂,mitv://fccs.word-tv.com:9906/6256bd41000a7a7c097d6582fe044cc4
+緯來育樂,http://218.32.47.179:18562/http/192.168.1.9:8081/hls/68/810/ch30.m3u8
+緯來育樂,P2p://ns2.hellotvvod.com:9906/6f4c7d47aa9d457792fb0f51c48fd966
+緯來電影 ,mitv://fccs.word-tv.com:9906/625b8f93000ccb45025ff35db29f96fd
+緯來電影 ,P2p://ns2.hellotvvod.com:9906/666e92af6da048e387f28b8e8a1c41f9
+緯來精采,P2p://ns2.hellotvvod.com:9906/87ce12d475d1475f957809353621994c
+緯來綜合,http://218.32.47.179:18518/.m3u8
+緯來綜合 ,mitv://fccs.word-tv.com:9906/62584fd10006d72b0fa1e71495ef5024
+緯來綜合 ,http://218.32.47.179:18518/http/192.168.1.9:8081/hls/68/810/ch32.m3u8
+緯來綜合 ,P2p://ns2.hellotvvod.com:9906/ed6e65e04b874768aa4b0325efc2e7fc
+緯來戲劇,http://218.32.47.179:18533/.m3u8
+緯來戲劇,http://218.32.47.179:18533/http/192.168.1.9:8081/hls/69/811/ch33.m3u8
+緯來戲劇 ,mitv://fccs.word-tv.com:9906/62585f76000e7ba90fdf0591eb84257b
+緯來戲劇 ,P2p://ns2.hellotvvod.com:9906/b810e88c6c5645339e5284435cbbf088
+緯來體育,http://218.32.47.179:18563/.m3u8
+緯來體育,mitv://fccs.word-tv.com:9906/62541bbd000ba7f6097abfe357f9c565
+緯來體育,http://218.32.47.179:18563/http/192.168.1.9:8081/hls/67/809/ch28.m3u8
+緯來體育,P2p://ns2.hellotvvod.com:9906/075079fbad33416e963d959bcf29b28e
+衛視中文台 ,mitv://fccs.word-tv.com:9906/625853fa000f1f080fb2295a047a36dc
+衛視電影台,http://218.32.47.179:18553/http/192.168.1.9:8081/hls/62/804/ch07.m3u8
+衛視電影台,http://218.32.47.179:18553/.m3u8
+衛視電影台,mitv://fccs.word-tv.com:9906/6256bd0a000359ee097c8cd7ea2af582
+衛視電影台,P2p://ns2.hellotvvod.com:9906/8d22d953e4184dbfb3753b093f401769
+寰宇財經台,mitv://fccs.word-tv.com:9906/626179de00005255197b252361cec9d5
+寰宇新聞,mitv://fccs.word-tv.com:9906/6257feca0002d9980e6562b6716c1c5a
+寰宇新聞,P2p://ns2.hellotvvod.com:9906/3ea68d897c5f4d6caeb039de56bfe7bf
+寰宇新聞台灣台,mitv://fccs.word-tv.com:9906/6258370a000e53840f411fa6b1f19ad7
+寰宇新聞台灣台,P2p://ns2.hellotvvod.com:9906/9b27b09378424d1a985f6ff508f0f418
+寰宇綜合,mitv://fccs.word-tv.com:9906/62617a13000860ad197bf63b948c0cc6
+歷史頻道,mitv://fccs.word-tv.com:9906/6261294500077fb31840515220a0a636
+歷史頻道,P2p://ns2.hellotvvod.com:9906/909c658bec464260ac57be2614791d6e
+澳门-MACAU,P2p://ns2.hellotvvod.com:9906/48d8aaf61eaf4d73a984dbbd83b75a6b
+澳门莲花,P2p://ns2.hellotvvod.com:9906/7c686f295e1a4a2d9ef1454f3c5eede2
+澳门莲花,mitv://fccs.word-tv.com:9906/6258e686000e215f11ee9bf962767123
+龍祥電影,P2p://ns2.hellotvvod.com:9906/31e1369076a547a18020ea74cb9d6423
+龍祥電影,mitv://fccs.word-tv.com:9906/62619be5000cf11a1a0013b604555db1
+龍華日韓劇,http://218.32.47.179:8535/http/192.168.1.9:8088/hls/15/80/foxsports2.m3u8
+龍華洋片,mitv://fccs.word-tv.com:9906/62613bc2000a344018888a4b2452f6fd
+龍華偶像,http://218.32.47.179:8536/http/192.168.1.9:8066/hls/210/10012/cstv12.m3u8
+龍華偶像,mitv://fccs.word-tv.com:9906/6260e4e9000627b41735499a8a2abd33
+龍華偶像,P2p://ns2.hellotvvod.com:9906/7feeb26c2a0c48b3a476dd5767cf5f37
+龍華經典,mitv://fccs.word-tv.com:9906/62618a40000060f919bb23f73fed9563
+龍華電影,http://218.32.47.179:18556/.m3u8
+龍華電影,P2p://ns2.hellotvvod.com:9906/15cdff3503e6462d9ad358ad3054da60
+龍華影劇,mitv://fccs.word-tv.com:9906/6260e4fc0003a35a1735932d66a9b4e5
+龍華戲劇,mitv://fccs.word-tv.com:9906/6260e4c0000811ed1734a9ef0f8923c2
+龍華戲劇,P2p://ns2.hellotvvod.com:9906/e2cbbafba9994def88a7a79f8639e07f
+龍華戲劇台,http://218.32.47.179:8534/http/192.168.1.9:8066/hls/210/10010/cstv10.m3u8
+韓國娛樂台KMTV,mitv://fccs.word-tv.com:9906/6260fa95000d4aba1789f34d5039df1a
+爆谷台,P2p://ns2.hellotvvod.com:9906/6395badcaaf3436fa85e8bb8589397bd
+爆谷星影台,P2p://ns2.hellotvvod.com:9906/56409dc29b314cdf91eb09135ed8cb9e
+霹靂台灣台 ,mitv://fccs.word-tv.com:9906/625835a900047b550f3bba39e271ea6f
+霹靂台灣台 ,P2p://ns2.hellotvvod.com:9906/aeb2463b30e1424ebbe6dc3a74d85e01
+
+##
+
+
+🧲玩轉原力_666666,#genre#
+感谢祭,https://siwazywcdn2.com:5278/zhongwenzimu/LmePT34f/index.m3u8
+感谢祭,https://siwazywcdn2.com:5278/zhongwenzimu/BpDhA5SX/index.m3u8
+感谢祭,https://siwazywcdn2.com:5278/zhongwenzimu/94xcQ38r/index.m3u8
+感谢祭,https://siwazywcdn2.com:5278/koubao/ArO0ZKyh/index.m3u8
+感谢祭,https://siwazywcdn2.com:5278/zhongwenzimu/1et0icd2/index.m3u8
+感谢祭,https://siwazywcdn2.com:5278/zhongwenzimu/Qge2P3qk/index.m3u8
+感谢祭,https://siwazywcdn2.com:5278/zhongwenzimu/Ydug5DxQ/index.m3u8
+感谢祭,https://siwazywcdn2.com:5278/zhongwenzimu/3Cl64rKR/index.m3u8
+感谢祭,https://play2.laoyacdn.com/20220816/U0QB5Y0I/index.m3u8
+
+楪カレン,https://play.cmbofang1.com/20220715/17D4qvDe/index.m3u8
+楪カレン,https://siwazywcdn2.com:5278/zhongwenzimu/C16jHm9M/index.m3u8
+楪カレン,https://siwazywcdn2.com:5278/zhongwenzimu/c9aSvVZI/index.m3u8
+楪カレン,https://siwazywcdn2.com:5278/zhongwenzimu/T6P8Rckw/index.m3u8
+楪カレン,https://siwazywcdn2.com:5278/zhongwenzimu/3xtCZeFz/index.m3u8
+楪カレン,https://siwazywcdn2.com:5278/zhongwenzimu/KEWhvonk/index.m3u8
+楪カレン,https://xiusebf1.com/20220306/4L7Ks39H/index.m3u8
+楪カレン,https://xiusebf2.com/20220801/ChFjSOBw/index.m3u8
+楪カレン,https://play.cmbofang1.com/20220808/NXLHwzSi/index.m3u8
+楪カレン,https://play.cmbofang1.com/20220412/2u9hDrOU/index.m3u8
+
+桃乃木かな,https://siwazywcdn2.com:5278/zhongwenzimu/mSbszYv1/index.m3u8
+桃乃木かな,https://siwazywcdn2.com:5278/ribenyouma/5vT1L3c6/index.m3u8
+桃乃木かな,https://siwazywcdn2.com:5278/zhongwenzimu/rN9jgfdG/index.m3u8
+桃乃木かな,https://siwazywcdn2.com:5278/ribenyouma/p2tSAgHV/index.m3u8
+桃乃木かな,https://siwazywcdn2.com:5278/zhongwenzimu/hrXPg0Ol/index.m3u8
+桃乃木かな,https://siwazywcdn2.com:5278/zhongwenzimu/zrCXxeZP/index.m3u8
+桃乃木かな,https://siwazywcdn2.com:5278/zhongwenzimu/WCh34sbn/index.m3u8
+桃乃木かな,https://siwazywcdn2.com:5278/zhongwenzimu/cZQDGuKE/index.m3u8
+桃乃木かな,https://siwazywcdn2.com:5278/zhongwenzimu/FUr8CV3S/index.m3u8
+桃乃木かな,https://siwazywcdn2.com:5278/zhongwenzimu/MNOT4Uwd/index.m3u8
+桃乃木かな,https://play.cmbofang.com/20211013/lOJY75IY/index.m3u8
+桃乃木かな,https://play.cmbofang.com/20211013/QOSfOSqY/index.m3u8
+桃乃木かな,https://v.kdou5.com/20220421/WtCxLUTa/index.m3u8
+桃乃木かな,https://v.kdou5.com/20210922/uMLTm2sL/index.m3u8
+桃乃木かな,https://v.kdou5.com/20210922/xadVRIYg/index.m3u8
+橋本ありな,https://siwazywcdn2.com:5278/ribenwuma/8JsUV2IF/index.m3u8
+
+橋本ありな,https://xiusebf1.com/20220228/hje20diQ/index.m3u8
+橋本ありな,https://xiusebf1.com/20220228/59Il69XR/index.m3u8
+橋本ありな,https://vod3.xiusebf3.com/20220319/miiPPfRc/index.m3u8
+橋本ありな,https://xiusebf1.com/20220216/pyF3LOHG/index.m3u8
+橋本ありな,https://vod3.xiusebf3.com/20220319/bKVfiq5f/index.m3u8
+橋本ありな,https://cdn-bo1.mangguo-youku.com:5278/20210519/EZQ0i2V7/index.m3u8
+橋本ありな,https://bf1.semaobf1.com/20220529/5158CE1149DEBC26/hls/1500k/index.m3u8
+橋本ありな,https://cdn2.shayubf.com/20200303/fiEneQrm/index.m3u8
+橋本ありな,https://cdn2.shayubf.com/20200226/LSQhQkj8/index.m3u8
+橋本ありな,https://video1.rhsj520.com/nyrm3/snis/6/snis-970/1500kb/hls/index.m3u8
+橋本ありな,https://video1.rhsj520.com/nyrm3/snis/6/snis-992/index.m3u8
+橋本ありな,https://video1.rhsj520.com/nyrm3/snis/2/ssni-348/1500kb/hls/index.m3u8
+
+苍井空,https://play2.laoyacdn.com/20220624/MRDS8OEy/index.m3u8
+苍井空,https://vod3.xiusebf3.com/20220315/THeWC1Fb/index.m3u8
+苍井空,https://vip5.3sybf.com/20210502/DaigjTSe/index.m3u8
+麻生希,https://vip2.bfbfhao.com/20220222/B8yvtu3O/index.m3u8
+
+麻生希,https://vip3.lbbf9.com/20220218/qAXAl9BH/index.m3u8
+麻生希,https://siwazywcdn2.com:5278/ribenwuma/9wqblgi1/index.m3u8
+麻生希,https://siwazywcdn2.com:5278/ribenwuma/Ue4kbjOa/index.m3u8
+麻生希,https://siwazywcdn2.com:5278/ribenwuma/YSTJz7Dx/index.m3u8
+麻生希,https://siwazywcdn2.com:5278/ribenwuma/TzOBYkGV/index.m3u8
+麻生希,https://siwazywcdn2.com:5278/ribenwuma/uwqSel7h/index.m3u8
+麻生希,https://cdn.sewozyplay.com/20220403/MlBnJYG5/index.m3u8
+麻生希,https://cdn.sewozyplay.com/20220510/4yFnwjza/index.m3u8
+麻生希,https://cdn.sewozyplay.com/20220512/afykCASv/index.m3u8
+麻生希,https://cdn.zhiyuanhongda.com/20220402/uWsAROJD/index.m3u8
+
+纱仓,https://cdn1.sewozyplay.com/20220621/ypovQLwt/index.m3u8
+纱仓,https://play2.laoyacdn.com/20220728/6aQLjY5k/index.m3u8
+纱仓,https://pt1.putaozy.info/20220603/7E7C0EDBAFCF8E4C/hls/1500k/index.m3u8
+
+小仓奈奈,https://video1.rhsj520.com/nyrm3/nvyou/0510/XV-966/1500kb/hls/index.m3u8
+小仓奈奈,https://video1.rhsj520.com/nyrm3/nvyou/0510/XV-973/1500kb/hls/index.m3u8
+小仓奈奈,https://videocdnbaidu.rhsj520.com/rbny/20180915/xcnn/XV-946/index.m3u8
+小仓奈奈,https://videocdnbaidu.rhsj520.com/rbny/20180915/xcnn/XV-940/index.m3u8
+小仓奈奈,https://videocdnbaidu.rhsj520.com/rbny/20180915/xcnn/XV-881/index.m3u8
+小仓奈奈,https://videocdnbaidu.rhsj520.com/rbny/20180915/xcnn/XV-1134/index.m3u8
+
+片桐えりりか,https://xiusebf1.com/20211020/VgaFWkxn/index.m3u8
+片桐えりりか,https://vod3.xiusebf3.com/20220312/fmuReCUf/index.m3u8
+片桐えりりか,https://xiusebf1.com/20211020/DtrGV3aW/index.m3u8
+片桐えりりか,https://bf1.semaobf1.com/20220429/8AA0A47606AC60EB/hls/2000k/index.m3u8
+片桐えりりか,https://play1.laoyacdn.com/20220419/Xl2ido3h/index.m3u8
+片桐えりりか,https://play1.laoyacdn.com/20220419/VFFcVw9l/index.m3u8
+片桐えりりか,https://play1.laoyacdn.com/20220407/EKXCEHit/index.m3u8
+片桐えりりか,https://play1.laoyacdn.com/20220405/bMRrgD3V/index.m3u8
+片桐えりりか,https://pt1.putaozy.info/20220608/8AA0A47606AC60EB/hls/2000k/index.m3u8 
+片桐えりりか,https://pt1.putaozy.info/20220806/54F76A420C76F842/hls/1000k/index.m3u8
+片桐えりりか,https://v.didivod.com/20220817/vjOcbzJ5/index.m3u8
+
+上原亚衣,https://v.didivod.com/20220715/kVw2VQKy/index.m3u8
+上原亚衣,https://cdn.yinwoplay.com/20220705/wGtmfW54/index.m3u8
+上原亚衣,https://vod1.ttbfp2.com/20210822/hVWMxztT/index.m3u8
+上原亚衣,https://vod1.ttbfp2.com/20210817/a3SImI23/index.m3u8
+上原亚衣,https://vod1.ttbfp2.com/20210822/ZEODhqOk/index.m3u8
+上原亚衣,https://cdn-bo2.mangguo-youku.com:5278/20210901/kYyBFZQv/index.m3u8
+上原亚衣,https://cdn-bo2.mangguo-youku.com:5278/20210901/5SBdLOzt/index.m3u8
+上原亚衣,https://cdn-bo2.mangguo-youku.com:5278/20210901/mRQe633H/index.m3u8
+上原亚衣,https://cdn-bo2.mangguo-youku.com:5278/20210901/tmhG2uyW/index.m3u8
+上原亚衣,https://a.ak-kk.com/20220616/ahxLhAgM/index.m3u8
+上原亚衣,https://a.ak-kk.com/20220612/JSeeS8Up/index.m3u8
+
+武藤兰,https://play.523bofang2.com/20211007/kTLM5Xvs/index.m3u8
+
+丝袜,https://siwazywcdn2.com:5278/zhongwenzimu/3AmaC0Mx/index.m3u8
+丝袜,https://siwazywcdn2.com:5278/zhongwenzimu/5IyOmQhe/index.m3u8
+丝袜,https://siwazywcdn2.com:5278/zhongwenzimu/o0mylNWU/index.m3u8
+丝袜,https://siwazywcdn2.com:5278/zhongwenzimu/klA8zBsE/index.m3u8
+丝袜,https://siwazywcdn2.com:5278/ribenyouma/403gbqUp/index.m3u8
+丝袜,https://siwazywcdn2.com:5278/zhongwenzimu/OHQ7sCEu/index.m3u8
+丝袜,https://siwazywcdn2.com:5278/zhongwenzimu/9Hki1FDj/index.m3u8
+丝袜,https://siwazywcdn2.com:5278/ribenyouma/i0GdtT5g/index.m3u8
+丝袜,https://siwazywcdn2.com:5278/zhongwenzimu/4PjZfJcz/index.m3u8
+丝袜,https://siwazywcdn2.com:5278/zhongwenzimu/gSG8reTk/index.m3u8
+丝袜,https://siwazywcdn2.com:5278/zhongwenzimu/dW32KNcY/index.m3u8
+秀色,https://xiusebf1.com/20220216/IRkgai1Y/index.m3u8
+秀色,https://xiusebf1.com/20220211/ELrNKwWf/index.m3u8
+秀色,https://xiusebf2.com/20220720/Rt4Vfl5k/index.m3u8
+色猫,https://bf1.semaobf1.com/20211001/A722A2375751C62A/hls/2000k/index.m3u8
+色猫,https://bf1.semaobf1.com/20220803/2E0DA3A27CAB1759/hls/1500k/index.m3u8
+老鸭,https://play2.laoyacdn.com/20220901/r1qogmtI/index.m3u8
+老鸭,https://play1.laoyacdn.com/20220308/HOgMxJkq/index.m3u8
+酷豆,https://v.kdou5.com/20210923/9Nc7vS5P/index.m3u8
+酷豆,https://v.kdou5.com/20210923/DA5Vf9xX/index.m3u8
+色窩,https://cdn1.sewozyplay.com/20220902/COYqXAJf/index.m3u8
+色窩,https://cdn1.sewozyplay.com/20220901/Mny936Ds/index.m3u8
+葡萄,https://pt1.putaozy.info/20220902/133ED3898BB23A4A/hls/1000k/index.m3u8
+葡萄,https://pt1.putaozy.info/20220902/DB13273EFFB4E37D/hls/1000k/index.m3u8
+葡萄,https://pt1.putaozy.info/20220902/12F64411D7314A11/hls/1000k/index.m3u8
+
+##
+
+
+🏁End,#genre#
+TVBS新聞[1920*1080],http://for40255.sytes.net:8099/tv/iptv/live_4gtv.php?vid=4gtv-live072&nid=129
+##
