@@ -14,7 +14,7 @@
     {"key":"csp_Alist2","name":"🅿️Alist合集(SP)","type":3,"api":"csp_Alist","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/Bili/Alist.json"},
     {"key":"csp_QXBiubiu_555电影","name":" 🌻555电影(QXB)","type":3,"api":"csp_QXBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/QXBiu/555电影.json"},
     {"key":"csp_XYQBiu_短视频","name":"分享短视频(YXQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/分享短视频.json"},
-        {"key":"dr_drpy","name":" 🎑豆瓣(drpy)","type":1,"api":"https://drpy.heroaku.repl.co/vod?rule=drpy","searchable": 1,"quickSearch": 1,"filterable": 1},
+        //{"key":"dr_drpy","name":" 🎑豆瓣(drpy)","type":1,"api":"https://drpy.heroaku.repl.co/vod?rule=drpy","searchable": 1,"quickSearch": 1,"filterable": 1},
 	{"key":"dr_555影视","name":" 🎑555影视(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=555影视","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_cokemv","name":" 🎑cokemv(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=cokemv","searchable": 1,"quickSearch": 1,"filterable": 0},
 	{"key":"dr_LIBVIO","name":" 🎑LIBVIO(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=LIBVIO","searchable": 1,"quickSearch": 1,"filterable": 0},
