@@ -1,7 +1,8 @@
 { 
 
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar;md5;1C1482FF646CC40E1F924EBE320822BC",
-  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91c1.jar",
+  //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91c1.jar",
+  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/0922.jar",
 
  
   
@@ -85,7 +86,7 @@
     {"key":"csp_appysv2_M2_暖光影视","name":"暖光影视","type":3,"api":"csp_AppYsV2","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://app.bl210.com/api.php/v1.vod"},
     {"key":"csp_Nbys","name":"🐞泥巴(墙外)","type": 3,"api": "csp_Nbys","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar;md5;A5ED2B58063A1915FF1FE0B83DBEF99D"},
     {"key": "图图（SP）","name": "🐞图图（SP）","type": 3,"api": "csp_AppTT","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91b.jar"},
-    {"key":"293","name":"🐞293视频","type":3,"api":"csp_SP293","searchable":1,"quickSearch":1,"filterable":1,"ext":""},
+    //{"key":"293","name":"🐞293视频","type":3,"api":"csp_SP293","searchable":1,"quickSearch":1,"filterable":1,"ext":""},
     {"key":"csp_Auete","name":"🐞Auete影院","type":3,"api":"csp_Auete","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"csp_Cokemv","name":"🐞Cokemv影院","type":3,"api":"csp_Cokemv","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"在线之家","name":"🐞在线之家","type":3,"api":"csp_Zxzj","searchable":1,"quickSearch":1,"filterable":1},
@@ -94,7 +95,7 @@
     //{"key":"Ekan_spider","name":"🐞Ekan","api":"csp_Ekan","type":3,"filterable":1,"quickSearch":1,"searchable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar"},
     {"key":"csp_Dy555","name":"🐞五五五(SP)","type":3,"api":"csp_Dy555","searchable":1,"quickSearch":1,"filterable":1},
     {"key": "剧荒TV（SP）","name": "🐞剧荒影视(SP)","type": 3,"api": "csp_Juhuang","searchable": 1,"quickSearch": 1,"filterable": 1},
-    //{"key": "小宝影院","name": "🐞小宝影院", "type": 3,"api": "csp_Xiaoh","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91e.jar;md5;381a02b64a5bd9853369369c335b8018"},
+    {"key": "小宝影院","name": "🐞小宝影院", "type": 3,"api": "csp_Xiaoh","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91e.jar;md5;381a02b64a5bd9853369369c335b8018"},
     //{"key":"csp_77","name":"🐞酷云七七","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"mtv_pc_酷云七七","name":"🐞酷云七七","type":3,"api":"csp_Kunyu77"       ,"searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/ky77.jar;md5;2F19C527B9A335FB1415C5F9686515C8"},
 
