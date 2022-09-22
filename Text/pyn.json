@@ -95,7 +95,7 @@
     //{"key":"Ekan_spider","name":"🐞Ekan","api":"csp_Ekan","type":3,"filterable":1,"quickSearch":1,"searchable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar"},
     {"key":"csp_Dy555","name":"🐞五五五(SP)","type":3,"api":"csp_Dy555","searchable":1,"quickSearch":1,"filterable":1},
     {"key": "剧荒TV（SP）","name": "🐞剧荒影视(SP)","type": 3,"api": "csp_Juhuang","searchable": 1,"quickSearch": 1,"filterable": 1},
-    {"key": "小宝影院","name": "🐞小宝影院", "type": 3,"api": "csp_Xiaoh","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91e.jar;md5;381a02b64a5bd9853369369c335b8018"},
+    //{"key": "小宝影院","name": "🐞小宝影院", "type": 3,"api": "csp_Xiaoh","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91e.jar;md5;381a02b64a5bd9853369369c335b8018"},
     //{"key":"csp_77","name":"🐞酷云七七","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"mtv_pc_酷云七七","name":"🐞酷云七七","type":3,"api":"csp_Kunyu77"       ,"searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/ky77.jar;md5;2F19C527B9A335FB1415C5F9686515C8"},
 
@@ -104,7 +104,7 @@
     {"key":"KanSJ_spider","name":"🐞看视界","api":"csp_KanSJ","type":3,"filterable":1,"quickSearch":1,"searchable":1,"ext":""},
     {"key":"追剧喵","name":"🐞追剧喵","type":3,"api":"csp_ZJMiao","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"360_spider","name":"🐞360影视","api":"csp_SP360","type":3,"filterable":1,"quickSearch":1,"searchable":1,"ext":""},
-    {"key":"csp_IKan","name":"🐞爱看","type": 3,"api": "csp_IKan","searchable": 1,"quickSearch": 1,"filterable": 1},
+    //{"key":"csp_IKan","name":"🐞爱看","type": 3,"api": "csp_IKan","searchable": 1,"quickSearch": 1,"filterable": 1},
     {"key":"快看","name":"🐞快看","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},  
     {"key":"csp_Bttoo","name":"🐞两个BT","type": 3,"api": "csp_Bttoo","searchable": 1,"quickSearch": 1,"filterable": 1},  
     {"key":"小苹果","name":"🐞小苹果","type":3,"api":"csp_LiteApple","searchable":1,"quickSearch":1,"filterable":1},
