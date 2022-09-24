@@ -25,8 +25,8 @@ class Spider(Spider):  # 元类 默认的元类 type
     def homeContent(self, filter):
         result = {}
         cateManual = {
-                  "菊花盘": "https://pan.142856.xyz/OneDrive",
-                  "🔮嗨翻":"https://pan.hikerfans.com",
+          "菊花盘": "https://pan.142856.xyz/OneDrive",
+          "🔮嗨翻":"https://pan.hikerfans.com",
 		  "🦀9T(Adult)":"https://drive.9t.ee",
 		  "🐱梓澪の妙妙屋":"https://xn--i0v44m.xyz",
 		  "🚆资源小站":"https://pan.142856.xyz",
@@ -113,6 +113,7 @@ class Spider(Spider):  # 元类 默认的元类 type
             jo = json.loads(rsp.text)
             vodList = jo['data']['content']
         videos = []
+        cid = ''
         for vod in vodList:
             if ver == 2:
                 img = vod['thumbnail']
@@ -128,20 +129,9 @@ class Spider(Spider):  # 元类 默认的元类 type
             if vod['type'] == 1:
                 tag = "folder"
                 remark = "文件夹"
+                cid = baseurl + aid + vod['name']
+            #计算文件大小
             else:
-                vname = re.findall(r"(.*)\.", vod['name'])[0]
-                vtpye = vod['name'].replace(vname,"")
-                if vtpye == '.mkv' or vtpye == '.mp4':
-                    vstr = re.findall(r"\'name\': \'(.*?)\'", str(vodList))
-                    if len(vstr) == 2:
-                        suball = vstr
-                    else:
-                        suball = difflib.get_close_matches(vname, vstr, len(vodList), cutoff=0.8)
-                    for sub in suball:
-                        stype1 = sub.endswith(".ass")
-                        stype2 = sub.endswith(".srt")
-                        if stype1 is True or stype2 is True:
-                            subt = '@@@'+aid + sub
                 size = vod['size']
                 if size > 1024 * 1024 * 1024 * 1024.0:
                     fs = "TB"
@@ -160,13 +150,53 @@ class Spider(Spider):  # 元类 默认的元类 type
                     sz = round(size / (1024.0), 2)
                 tag = "file"
                 remark = str(sz) + fs
-            ifsubt = 'subt' in locals().keys()
-            if ifsubt is False:
-                aid = baseurl + aid + vod['name']
-            else:
-                aid = baseurl + aid + vod['name'] + subt
+                # 开始爬视频与字幕
+                srtvodList = str(vodList)
+                foldernum = srtvodList.count('\'type\': 1')
+                filename = len(vodList) - foldernum
+                if filename < 60:
+                    if 'mp4' in vod['name'] or 'mkv' in vod['name'] or 'TS' in vod['name'] or 'flv' in vod[
+                        'name'] or 'rmvb' in vod['name'] or 'mp3' in vod['name'] or 'flac' in vod['name'] or 'wav' in \
+                            vod['name'] or 'wma' in vod['name'] or 'wma' in vod['name']:
+                        cid = ''
+                        for temvod in vodList:
+                            if 'mp4' in temvod['name'] or 'mkv' in temvod['name'] or 'TS' in temvod['name'] or 'flv' in \
+                                    temvod['name'] or 'rmvb' in temvod['name'] or 'mp3' in temvod['name'] or 'flac' in \
+                                    temvod['name'] or 'wav' in temvod['name'] or 'wma' in temvod['name'] or 'wma' in \
+                                    temvod['name']:
+                                vurl = baseurl + aid + temvod['name']
+                                # 开始爬字幕
+                                subname = re.findall(r"(.*)\.", temvod['name'])[0]
+                                substr = re.findall(r"\'name\': \'(.*?)\'", str(vodList))
+                                if len(substr) == 2:
+                                    suball = substr
+                                else:
+                                    suball = difflib.get_close_matches(subname, substr, len(vodList), cutoff=0.8)
+                                for sub in suball:
+                                    if sub.endswith(".ass") or sub.endswith(".srt"):
+                                        subt = '@@@' + baseurl + aid + sub
+                                ifsubt = 'subt' in locals().keys()
+                                if ifsubt is False:
+                                    cid = cid + '{0}${1}#'.format(temvod['name'], vurl)
+                                else:
+                                    cid = cid + '{0}${1}{2}#'.format(temvod['name'], vurl, subt)
+                            else:
+                                cid = cid
+                    if cid == '':
+                        cid = baseurl + aid + vod['name']
+                else:
+                    subname = re.findall(r"(.*)\.", vod['name'])[0]
+                    substr = re.findall(r"\'name\': \'(.*?)\'", str(vodList))
+                    if subname + '.ass' in substr:
+                        subt = '@@@' + baseurl + aid + subname + '.ass'
+                        cid = baseurl + aid + vod['name'] + subt
+                    elif  subname + '.srt' in substr:
+                        subt = '@@@' + baseurl + aid + subname + '.srt'
+                        cid = baseurl + aid + vod['name'] + subt
+                    else:
+                        cid = baseurl + aid + vod['name']
             videos.append({
-                "vod_id":  aid,
+                "vod_id":  cid,
                 "vod_name": vod['name'],
                 "vod_pic": img,
                 "vod_tag": tag,
@@ -181,97 +211,26 @@ class Spider(Spider):  # 元类 默认的元类 type
 
     def detailContent(self, array):
         id = array[0]
-        ifsub = '@@@' in id
-        if ifsub is True:
-            ids = id.split('@@@')
-            vurl = ids[0]
+        if '$' in id:
+            ids = id.split('$')[1].split('#')[0].split('@@@')
+            url = ids[0]
         else:
-            vurl = id
+            url = id
         if self.ver == '' or self.baseurl == '':
-            self.getVersion(vurl)
-        ver = self.ver
+            self.getVersion(url)
         baseurl = self.baseurl
-        if ifsub is True:
-            ids = id.split('@@@')
-            fileName = ids[0].replace(baseurl, "")
-            sfileName = ids[1].replace(baseurl, "")
+        if '$' in id:
+            vid = re.findall(r"(.*)/", url.replace(baseurl, ""))[0].replace(baseurl, "")
         else:
-            fileName = id.replace(baseurl, "")
-        param = {
-            "path": '/' + fileName,
-            "password": "",
-            "page_num": 1,
-            "page_size": 100
-        }
-        if ver == 2:
-            rsp = self.postJson(baseurl + 'api/public/path', param)
-            jo = json.loads(rsp.text)
-            vodList = jo['data']['files'][0]
-            if ifsub is True:
-                sparam = {
-                    "path": '/' + ids[1],
-                    "password": "",
-                    "page_num": 1,
-                    "page_size": 100
-                }
-                srsp = self.postJson(baseurl + 'api/public/path', sparam)
-                sjo = json.loads(srsp.text)
-                sList = sjo['data']['files'][0]
-                surl = sList['url']
-                if surl.startswith('http') is False:
-                    head = re.findall(r"h.*?:", baseurl)[0]
-                    surl = head + sList['url']
-                urlsfileName = urllib.parse.quote(sfileName)
-                surl = surl.replace(sfileName, urlsfileName)
-                sub = '@@@' + surl
-        elif ver == 3:
-            rsp = self.postJson(baseurl + 'api/fs/get', param)
-            jo = json.loads(rsp.text)
-            vodList = jo['data']
-            if ifsub is True:
-                sparam = {
-                    "path": '/' + ids[1],
-                    "password": "",
-                    "page_num": 1,
-                    "page_size": 100
-                }
-                srsp = self.postJson(baseurl + 'api/fs/get', sparam)
-                sjo = json.loads(srsp.text)
-                sList = sjo['data']
-                surl = sList['raw_url']
-                if sList['raw_url'].startswith('http') is False:
-                    head = re.findall(r"h.*?:", baseurl)[0]
-                    surl = head + sList['url']
-                urlsfileName = urllib.parse.quote(sfileName)
-                surl = surl.replace(sfileName, urlsfileName)
-                sub = '@@@' + surl
-        if ver == 2:
-            url = vodList['url']
-            pic = vodList['thumbnail']
-        elif ver == 3:
-            url = vodList['raw_url']
-            pic = vodList['thumb']
-        if ifsub is True:
-            purl = url + sub
-        else:
-            purl = url
-        if purl.startswith('http') is False:
-            head = re.findall(r"h.*?:", baseurl)[0]
-            purl = head + purl
-        urlfileName = urllib.parse.quote(fileName)
-        purl = purl.replace(fileName, urlfileName)
-        vId = fileName
-        name = vodList['name']
-        tag = "file"
-        if vodList['type'] == 1:
-            tag = "folder"
+            vid = url.replace(re.findall(r".*/", url)[0], "")
+            id = vid + '$' + id
         vod = {
-            "vod_id": vId,
-            "vod_name": name,
-            "vod_pic": pic,
-            "vod_tag": tag,
+            "vod_id": vid,
+            "vod_name": vid,
+            "vod_pic": '',
+            "vod_tag": '',
             "vod_play_from": "播放",
-            "vod_play_url": name + '$' + purl
+            "vod_play_url": id
         }
         result = {
             'list': [
@@ -291,13 +250,88 @@ class Spider(Spider):  # 元类 默认的元类 type
         ifsub = '@@@' in id
         if ifsub is True:
             ids = id.split('@@@')
-            url = ids[0]
-            result['subt'] = ids[1]
+            if self.ver == '' or self.baseurl == '':
+                self.getVersion(ids[1])
+            ver = self.ver
+            baseurl = self.baseurl
+            fileName = ids[1].replace(baseurl, "")
+            vfileName = ids[0].replace(baseurl, "")
+            param = {
+                "path": '/' + fileName,
+                "password": "",
+                "page_num": 1,
+                "page_size": 100
+            }
+            vparam = {
+                "path": '/' + vfileName,
+                "password": "",
+                "page_num": 1,
+                "page_size": 100
+            }
+            if ver == 2:
+                rsp = self.postJson(baseurl + 'api/public/path', param)
+                jo = json.loads(rsp.text)
+                vodList = jo['data']['files'][0]
+                subturl = vodList['url']
+                vrsp = self.postJson(baseurl + 'api/public/path', vparam)
+                vjo = json.loads(vrsp.text)
+                vList = vjo['data']['files'][0]
+                url = vList['url']
+            elif ver == 3:
+                rsp = self.postJson(baseurl + 'api/fs/get', param)
+                jo = json.loads(rsp.text)
+                vodList = jo['data']
+                subturl = vodList['raw_url']
+                vrsp = self.postJson(baseurl + 'api/fs/get', vparam)
+                vjo = json.loads(vrsp.text)
+                vList = vjo['data']
+                url = vList['raw_url']
+            if subturl.startswith('http') is False:
+                head = re.findall(r"h.*?:", baseurl)[0]
+                subturl = head + subturl
+            if url.startswith('http') is False:
+                head = re.findall(r"h.*?:", baseurl)[0]
+                url = head + url
+            urlfileName = urllib.parse.quote(fileName)
+            subturl = subturl.replace(fileName, urlfileName)
+            urlvfileName = urllib.parse.quote(vfileName)
+            url = url.replace(vfileName, urlvfileName)
+            result['subt'] = subturl
         else:
-            url = id
+            if self.ver == '' or self.baseurl == '':
+                self.getVersion(id)
+            ver = self.ver
+            baseurl = self.baseurl
+            vfileName = id.replace(baseurl, "")
+            vparam = {
+                "path": '/' + vfileName,
+                "password": "",
+                "page_num": 1,
+                "page_size": 100
+            }
+            if ver == 2:
+                vrsp = self.postJson(baseurl + 'api/public/path', vparam)
+                vjo = json.loads(vrsp.text)
+                vList = vjo['data']['files'][0]
+                driver = vList['driver']
+                url = vList['url']
+            elif ver == 3:
+                vrsp = self.postJson(baseurl + 'api/fs/get', vparam)
+                vjo = json.loads(vrsp.text)
+                vList = vjo['data']
+                url = vList['raw_url']
+                driver = vList['provider']
+            if url.startswith('http') is False:
+                head = re.findall(r"h.*?:", baseurl)[0]
+                url = head + url
+            urlvfileName = urllib.parse.quote(vfileName)
+            url = url.replace(vfileName, urlvfileName)
+            if driver == 'Baidu.Disk':
+                result["header"] = {"User-Agent": "pan.baidu.com"}
         result["parse"] = 0
         result["playUrl"] = ''
         result["url"] = url
+
         return result
 
     config = {
