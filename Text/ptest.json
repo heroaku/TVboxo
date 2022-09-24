@@ -16,7 +16,7 @@
     {"key":"csp_XYQBiu_短视频","name":"分享短视频(YXQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/分享短视频.json"},
         {"key":"dr_drpy","name":" 🎑豆瓣(drpy)","type":1,"api":"http://drpy-dfcvt.run-us-west2.goorm.io/vod?rule=drpy","searchable": 1,"quickSearch": 1,"filterable": 0},
 
-	{"key":"dr_酷云77r","name":" 🍂酷云77","type":1,"api":"https://drpy.heroaku.repl.co/vod?rule=%E9%85%B7%E4%BA%9177","searchable":1,"quickSearch":1,"filterable":0},
+	{"key":"dr_酷云77r","name":" 🍂玄天","type":1,"api":"https://drpy.heroaku.repl.co/vod?rule=%E7%8E%84%E5%A4%A9","searchable":1,"quickSearch":1,"filterable":0},
 	 //{"key":"dr_007影视g","name":" 🍂007影视(道长g)","type":1,"api":"http://drpy-dfcvt.run-us-west2.goorm.io/vod?rule=007影视","searchable":1,"quickSearch":1,"filterable":0},
 	  
 	{"key":"dr_555影视","name":" 🎑555影视(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=555影视","searchable": 1,"quickSearch": 1,"filterable": 0},
