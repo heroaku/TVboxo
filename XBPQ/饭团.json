@@ -2,7 +2,7 @@
 {  //饭团影视 
 "免嗅":"1",
 "播放数组":"class=\"stui-play__list&&</div>",
-"分类url":"https://www.fantuanhd.com/show/id-{cateId}/page/{catePg}.html",
+"分类url":"https://www.fantuanhd.com/type/id-{cateId}/page/{catePg}.html",
 
 
 
