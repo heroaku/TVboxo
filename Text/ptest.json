@@ -54,8 +54,9 @@
     {"key":"csp_XBPQ皮皮泡影视","name":"皮皮泡影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/皮皮泡影视.json"}, 
     {"key":"csp_XBPQ真不卡","name":"真不卡〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/真不卡.json"},    
     {"key":"csp_XBPQCokemv","name":"Cokemv〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/Cokemv.json"},  
-	  {"key":"csp_XBPQ测试影视","name":"测试影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/M-LTV/T-V/raw/cc0f85cc3ca3335a7138d880d30b58551580254c/rule/XBPQ/花猫TV.json"},   
-    // drpy
+	  {"key":"csp_XBPQ花猫TV","name":"花猫TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/花猫TV.json"},   
+  	  {"key":"csp_XBPQ测试影视","name":"测试影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/M-LTV/T-V/raw/cc0f85cc3ca3335a7138d880d30b58551580254c/rule/XBPQ/饭团.json"},   
+	  // drpy
 	{"key": "dr_007影视","name": " 🎑007影视(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=007影视","searchable": 2,"quickSearch": 0,"filterable": 0},
 	{"key": "dr_1080P","name": " 🎑1080P(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=1080P","searchable": 2,"quickSearch": 0,"filterable": 0},
 	{"key": "dr_360影视","name": " 🎑360影视(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=360影视","searchable": 2,"quickSearch": 0,"filterable": 0},
