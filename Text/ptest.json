@@ -57,7 +57,7 @@
     {"key":"csp_XBPQ花猫TV","name":"花猫TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/花猫TV.json"},   
     {"key":"csp_XBPQ饭团","name":"饭团〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/饭团.json"},   
     {"key":"csp_XBPQ六度TV","name":"六度TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/六度TV.json"},
-    //{"key":"csp_XBPQ剧迷","name":"剧迷〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/gimy.json"},
+    {"key":"csp_XBPQ剧迷","name":"剧迷〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/gimy_test.json"},
 	  
     // drpy
 	{"key": "dr_007影视","name": " 🎑007影视(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=007影视","searchable": 2,"quickSearch": 0,"filterable": 0},
