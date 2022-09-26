@@ -61,7 +61,7 @@
    {"key":"csp_xBPQ_胖虎","name":"🐯胖虎影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/胖虎影视.json"},
    {"key":"csp_xBPQ_干饭影视","name":"🍚干饭影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%B9%B2%E9%A5%AD%E5%BD%B1%E8%A7%86.json"},	  
    {"key":"csp_XBPQ_宝仙HD","name":"宝仙HD〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/宝仙HD.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/0926.jar"},	  
-	  
+   {"key":"csp_xBPQ_番茄影视","name":"🍅番茄影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%95%AA%E8%8C%84%E5%BD%B1%E8%A7%86.json"},	  
 
 	  
 	  
