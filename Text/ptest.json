@@ -55,7 +55,7 @@
    // {"key":"csp_XBPQ真不卡","name":"真不卡〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/真不卡.json"},    
     //{"key":"csp_XBPQCokemv","name":"Cokemv〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/Cokemv.json"},  
     //{"key":"csp_XBPQ花猫TV","name":"花猫TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/花猫TV.json"},   
-    {"key":"csp_XBPQ饭团","name":"饭团〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/xx03253/xxu/raw/387cc73f92a704c69212bf81a0c378f787ac4fbe/XBPQ/%E9%A5%AD%E5%9B%A2%E5%BD%B1%E8%A7%86.json"},   
+    {"key":"csp_XBPQ饭团","name":"饭团〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/xx03253/xxu/raw/387cc73f92a704c69212bf81a0c378f787ac4fbe/XBPQ/voflixHD.json"},   
    // {"key":"csp_XBPQ六度TV","name":"六度TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/六度TV.json"},
     //{"key":"csp_XBPQ剧迷","name":"剧迷〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/gimy_test.json"},
  
