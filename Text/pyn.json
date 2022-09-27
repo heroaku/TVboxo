@@ -2,7 +2,7 @@
 
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar;md5;1C1482FF646CC40E1F924EBE320822BC",
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91c1.jar",
-  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/0922.jar",
+  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/0925.jar",
 
  
   
@@ -45,17 +45,32 @@
     {"key": "py_douyu","name": "🔥斗鱼","type": 3,"api": "py_douyu","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_douyu.py"},
     
     //XBPQ
-    {"key":"csp_XBPQ极品影视","name":"极品影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/极品影视.json"},
-    {"key":"csp_XBPQ黑洞影视","name":"黑洞影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/黑洞影视.json"},	  
-    {"key":"csp_XBPQ555影视","name":"555影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/555电影.json"},
-    {"key":"csp_XBPQ爱酷影视","name":"爱酷影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/爱酷影视.json"}, 
-    {"key":"csp_XBPQ皮皮泡影视","name":"皮皮泡影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/皮皮泡影视.json"}, 
-    {"key":"csp_XBPQ真不卡","name":"真不卡〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/真不卡.json"},    
-    {"key":"csp_XBPQCokemv","name":"Cokemv〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/Cokemv.json"},  
-    {"key":"csp_XBPQ花猫TV","name":"花猫TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/花猫TV.json"},   
-    {"key":"csp_XBPQ饭团","name":"饭团〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/饭团.json"},   
-    {"key":"csp_XBPQ六度TV","name":"六度TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/六度TV.json"},
-  
+	  
+   {"key":"csp_XBPQ极品影视","name":"极品影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/极品影视.json"},
+   {"key":"csp_XBPQ黑洞影视","name":"黑洞影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/黑洞影视.json"},	  
+   {"key":"csp_XBPQ555影视","name":"555影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/555电影.json"},
+   {"key":"csp_XBPQ爱酷影视","name":"爱酷影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/爱酷影视.json"}, 
+   {"key":"csp_XBPQ皮皮泡影视","name":"皮皮泡影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/皮皮泡影视.json"}, 
+   {"key":"csp_XBPQ真不卡","name":"真不卡〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/真不卡.json"},    
+   {"key":"csp_XBPQCokemv","name":"Cokemv〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/Cokemv.json"},  
+   {"key":"csp_XBPQ花猫TV","name":"花猫TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/花猫TV.json"},   
+    //{"key":"csp_XBPQ饭团","name":"饭团〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%9C%A8%E7%BA%BF%E4%B9%8B%E5%AE%B6.json"},   
+   {"key":"csp_XBPQ六度TV","name":"六度TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/六度TV.json"},
+   //{"key":"csp_XBPQ剧迷","name":"剧迷〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/gimy_test.json"},
+   {"key":"csp_xBPQ_胖虎","name":"🐯胖虎影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/胖虎影视.json"},
+   {"key":"csp_xBPQ_干饭影视","name":"🍚干饭影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%B9%B2%E9%A5%AD%E5%BD%B1%E8%A7%86.json"},	  
+   {"key":"csp_XBPQ_宝仙HD","name":"宝仙HD〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/宝仙HD.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/0926.jar"},	  
+   {"key":"csp_xBPQ_番茄影视","name":"🍅番茄影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%95%AA%E8%8C%84%E5%BD%B1%E8%A7%86.json"},	  
+   {"key":"csp_xBPQ_大米星球","name":"️🌏大米星球 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%A4%A7%E7%B1%B3%E6%98%9F%E7%90%83.json"},
+   {"key":"csp_xBPQ_巨人影院","name":"👣巨人影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%B7%A8%E4%BA%BA%E5%BD%B1%E8%A7%86.json"},	  
+   {"key":"csp_xBPQ_app","name":"🍬app影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/app%E5%BD%B1%E8%A7%86.json"},	  
+   {"key":"csp_xBPQ_师兄影院","name":"🧥大师兄影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%A4%A7%E5%B8%88%E5%85%84%E5%BD%B1%E8%A7%86.json"},
+   {"key":"csp_xBPQ_嗷呜视频","name":"🦁嗷呜视频 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%97%B7%E5%91%9C%E8%A7%86%E9%A2%91.json"},	  
+   {"key":"csp_xBPQ_看戏影视","name":"👘看戏影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%9C%8B%E6%88%8F%E5%BD%B1%E8%A7%86.json"},
+   {"key":"csp_xBPQ_瓜皮TV","name":"🍉瓜皮TV xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%93%9C%E7%9A%AETV.json"},
+   {"key":"csp_xBPQ_热播酷","name":"💽热播酷 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%83%AD%E6%92%AD%E9%85%B7.json"},
+	  
+	
     // drpy
 	{"key": "dr_007影视","name": " 🎑007影视(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=007影视","searchable": 2,"quickSearch": 0,"filterable": 0},
 	{"key": "dr_1080P","name": " 🎑1080P(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=1080P","searchable": 2,"quickSearch": 0,"filterable": 0},
