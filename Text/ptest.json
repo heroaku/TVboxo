@@ -58,7 +58,7 @@
    {"key":"csp_XBPQ花猫TV","name":"花猫TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/花猫TV.json"},   
     //{"key":"csp_XBPQ饭团","name":"饭团〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%9C%A8%E7%BA%BF%E4%B9%8B%E5%AE%B6.json"},   
    {"key":"csp_XBPQ六度TV","name":"六度TV〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/六度TV.json"},
-    //{"key":"csp_XBPQ剧迷","name":"剧迷〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/gimy_test.json"},
+   {"key":"csp_XBPQ剧迷","name":"剧迷〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/gimy_test.json"},
    {"key":"csp_xBPQ_胖虎","name":"🐯胖虎影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/胖虎影视.json"},
    {"key":"csp_xBPQ_干饭影视","name":"🍚干饭影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%B9%B2%E9%A5%AD%E5%BD%B1%E8%A7%86.json"},	  
    {"key":"csp_XBPQ_宝仙HD","name":"宝仙HD〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/宝仙HD.json","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/0926.jar"},	  
@@ -70,7 +70,8 @@
    {"key":"csp_xBPQ_嗷呜视频","name":"🦁嗷呜视频 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%97%B7%E5%91%9C%E8%A7%86%E9%A2%91.json"},	  
    {"key":"csp_xBPQ_看戏影视","name":"👘看戏影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%9C%8B%E6%88%8F%E5%BD%B1%E8%A7%86.json"},
    {"key":"csp_xBPQ_瓜皮TV","name":"🍉瓜皮TV xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%93%9C%E7%9A%AETV.json"},
-
+   {"key":"csp_xBPQ_热播酷","name":"💽热播酷 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%83%AD%E6%92%AD%E9%85%B7.json"},
+	  
 	  
     // drpy
 	{"key": "dr_007影视","name": " 🎑007影视(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=007影视","searchable": 2,"quickSearch": 0,"filterable": 0},
