@@ -1,0 +1,13 @@
+{
+"免嗅":"1",
+"主演": "主演：&&</div>",
+"导演": "导演：&&</a>",
+"简介": "module-info-introduction-content\"&&</div>",
+"副标题":"class=\"module-item-note\">&&</div>",
+"播放标题":"span>&&<",
+"播放数组":"class=\"module-play-list-content&&</div>",
+"线路数组": "class=\"module-tab-item tab-item&&</div>",
+"线路标题": "<span>&&</span>",
+"分类":"电影$1#电视剧$2#综艺$3#动漫$4#少儿$20#纪录片$21",
+"分类url":"https://guapitv.xyz/list-{cateId}/page/{catePg}---{year}.html"
+}
