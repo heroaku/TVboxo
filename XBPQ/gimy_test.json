@@ -69,7 +69,7 @@
 //"导演": "导演：&&</p",
 //"主演": "主演：&&</p",
 //"播放标题":">&&",
-//"播放数组":"class=\"myui-content__list sort-list scrollbar clearfix&&</ul>",
+"播放数组":"class=\"myui-content__list&&</div>",
 "分类":"电视剧$tvseries#电影$movies#动漫$anime#综艺$tv_show",
 "分类url":"https://gimytv.com/genre/{cateId}-{area}-{year}-{catePg}/by/{by}.html"
 "年份":"2000-2022",
