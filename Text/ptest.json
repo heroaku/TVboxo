@@ -67,6 +67,7 @@
    {"key":"csp_xBPQ_app","name":"🍬app影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/app%E5%BD%B1%E8%A7%86.json"},	  
    {"key":"csp_xBPQ_师兄影院","name":"🧥大师兄影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%A4%A7%E5%B8%88%E5%85%84%E5%BD%B1%E8%A7%86.json"},
    {"key":"csp_xBPQ_嗷呜视频","name":"🦁嗷呜视频 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%97%B7%E5%91%9C%E8%A7%86%E9%A2%91.json"},	  
+   {"key":"csp_xBPQ_看戏影视","name":"👘看戏影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%9C%8B%E6%88%8F%E5%BD%B1%E8%A7%86.json"},
 	  
     // drpy
 	{"key": "dr_007影视","name": " 🎑007影视(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=007影视","searchable": 2,"quickSearch": 0,"filterable": 0},
