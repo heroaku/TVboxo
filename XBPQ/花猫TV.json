@@ -1,5 +1,3 @@
-{   //花猫TV
-"播放数组":"class=\"stui-content__playlist&&</div>",
-//"线路数组": "class=\"stui-pannel clearfix&&</div>",
-"分类url":"http://www.huamaotv.com/type/{cateId}-{catePg}.html"
-}
+{"副标题":"class=\"pic-text\">&&</span>","线路数组": "/span><h3 class=\"title&&/h3>","线路标题": ">&&<","播放标题":">&&<","播放数组":"class=\"stui-content__playlist&&</div>","分类url":"http://www.huamaotv.com/type/{cateId}-{catePg}.html"}
+
+//{   //花猫TV"播放数组":"class=\"stui-content__playlist&&</div>",//"线路数组": "class=\"stui-pannel clearfix&&</div>","分类url":"http://www.huamaotv.com/type/{cateId}-{catePg}.html"}
