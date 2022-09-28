@@ -238,9 +238,16 @@
 	  
 	  
     //Xbui
-    {"key": "csp_xb_ysgc","name": "影视工厂(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.ysgc.fun/vodtype/{cateId}-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/0927.jar"},
-    { "key": "csp_xb_35ju", "name": "星空影院(R)", "type": 3, "api": "csp_XBiu", "searchable": 1, "quickSearch": 1, "filterable": 0, "ext": "https://m.7caa.com/list/{cateId}-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/0927.jar"},
-    {"key": "csp_xb_lgyy","name": "蓝光影院(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://lgyy.tv/vodshow/{cateId}--------{catePg}---.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/0927.jar"},
+        {"key": "csp_xb_ysgc","name": " 💠影视工厂(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.ysgc.fun/vodtype/{cateId}-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu .jar"},
+        { "key": "csp_xb_35ju", "name": " 💠星空影院(R)", "type": 3, "api": "csp_XBiu", "searchable": 1, "quickSearch": 1, "filterable": 0, "ext": "https://m.7caa.com/list/{cateId}-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+        {"key": "csp_xb_lgyy","name": " 💠蓝光影院(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://lgyy.tv/vodshow/{cateId}--------{catePg}---.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+	{"key": "csp_xb_aiku","name": " 💠爱酷影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.zhanlangbu.com/index.php/vod/type/id/{cateId}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+	{"key": "csp_xb_luozhu","name": " 💠乐猪(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "http://www.lezhutv.com/list/{cateId}_{catePg}__time_____.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+	{"key": "csp_xb_shm","name": " 💠神马影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.smdyy.cc/show/{cateId}-{area}--{class}-----{catePg}---{year}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+	{"key": "csp_xb_qsp","name": " 💠氢视频(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "http://h1080p.com/index.php/vod/show/by/{by}/id/{cateId}/page/{catePg}/year/{year}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+	{"key": "csp_xb_fg","name": " 💠疯狗影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://m.fenggoudy3.com/list-select-id-{cateId}-type--area--year--star--state--order-addtime-p-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+	{"key": "csp_xb_huix","name": " 💠回响(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "http://hxys.tv/vodshow/{cateId}-{area}-------{catePg}---{year}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+	{"key": "csp_xb_aikan ","name": " 💠爱看影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://ikan6.vip/vodshow/{cateId}--------{catePg}---","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
 	  
 	  
     {"key":"csp_QQ","name":"🐧腾讯(SP)","type": 3,"api":"csp_QQ","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91e.jar"},
