@@ -3,7 +3,7 @@
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar;md5;1C1482FF646CC40E1F924EBE320822BC",
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91c1.jar",
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91h.jar",
-  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/0925.jar",
+  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/0928.jar",
 
  
   
@@ -71,7 +71,17 @@
    {"key":"csp_xBPQ_看戏影视","name":"👘看戏影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%9C%8B%E6%88%8F%E5%BD%B1%E8%A7%86.json"},
    {"key":"csp_xBPQ_瓜皮TV","name":"🍉瓜皮TV xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%93%9C%E7%9A%AETV.json"},
    {"key":"csp_xBPQ_热播酷","name":"💽热播酷 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%83%AD%E6%92%AD%E9%85%B7.json"},
+
+	  //xbiu
 	  
+{"key": "csp_xb_lgyy","name": " 💠蓝光影院(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://lgyy.tv/vodshow/{cateId}--------{catePg}---.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+{"key": "csp_xb_aiku","name": " 💠爱酷影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.zhanlangbu.com/index.php/vod/type/id/{cateId}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+{"key": "csp_xb_luozhu","name": " 💠乐猪(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "http://www.lezhutv.com/list/{cateId}_{catePg}__time_____.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+{"key": "csp_xb_shm","name": " 💠神马影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.smdyy.cc/show/{cateId}-{area}--{class}-----{catePg}---{year}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+{"key": "csp_xb_qsp","name": " 💠氢视频(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "http://h1080p.com/index.php/vod/show/by/{by}/id/{cateId}/page/{catePg}/year/{year}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+{"key": "csp_xb_fg","name": " 💠疯狗影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://m.fenggoudy3.com/list-select-id-{cateId}-type--area--year--star--state--order-addtime-p-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+{"key": "csp_xb_huix","name": " 💠回响(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "http://hxys.tv/vodshow/{cateId}-{area}-------{catePg}---{year}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
+{"key": "csp_xb_aikan ","name": " 💠爱看影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://ikan6.vip/vodshow/{cateId}--------{catePg}---","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},	  
 	  
     // drpy
 	{"key": "dr_007影视","name": " 🎑007影视(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=007影视","searchable": 2,"quickSearch": 0,"filterable": 0},
