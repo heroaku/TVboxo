@@ -8,7 +8,8 @@
 //"播放标题":">&&",
 "播放数组":"class=\"myui-content__list&&</div>",
 "分类":"电视剧$tvseries#电影$movies#动漫$anime#综艺$tv_show",
-"分类url":"https://gimytv.com/genre/{cateId}-{area}-{year}-{catePg}/by/{by}.html"
+//"分类url":"https://gimytv.com/genre/{cateId}-{area}-{year}-{catePg}/by/{by}.html"
+"分类url":"https://gimytv.com/genre/{cateId}-{area}-{year}-{catePg}.html"
 "年份":"2000-2022",
 "筛选":"0"
 }
