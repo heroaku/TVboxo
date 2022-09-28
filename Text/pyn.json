@@ -88,6 +88,7 @@
 	{"key": "dr_酷云77","name": " 🎑酷云77(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=酷云77","searchable": 2,"quickSearch": 0,"filterable": 1},
 	{"key": "dr_猫了个咪","name": " 🎑猫了个咪(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=猫了个咪","searchable": 0,"quickSearch": 0,"filterable": 0},
 	{"key": "dr_百忙无果","name": " 🎑百忙无果(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=百忙无果","searchable": 2,"quickSearch": 0,"filterable": 1},
+	{"key": "dr_真不卡","name": " 🎑真不卡(道长)","type": 1,"api": "https://drpy.justmiss.repl.co/vod?rule=真不卡","searchable": 2,"quickSearch": 0,"filterable": 1},
 	//{"key":"dr_鸭奈飞","name":" 🎑鸭奈飞(道长)","type":1,"api":"http://cms.nokia.press/vod?rule=鸭奈飞","searchable": 1,"quickSearch": 1,"filterable": 0},
 	//{"key":"dr_鸭奈飞y","name":" 🍂鸭奈飞(道长)","type":1,"api":"http://catvod.fun:5705/vod?rule=鸭奈飞","searchable": 1,"quickSearch": 1,"filterable": 0},
 	//{"key":"dr_兔小贝","name":"🕋兔小贝","type":1,"api":"https://drpy.aqingyuan.repl.co/vod?rule=兔小贝","searchable":1,"quickSearch":1,"filterable":0},
