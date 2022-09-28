@@ -1,6 +1,6 @@
 { 
 
-  //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar;md5;1C1482FF646CC40E1F924EBE320822BC",
+
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91c1.jar",
   "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/0925.jar",
 
@@ -72,7 +72,7 @@
     //{"key":"csp_77","name":"🐞酷云七七","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"mtv_pc_酷云七七","name":"🐞酷云七七","type":3,"api":"csp_Kunyu77"       ,"searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/ky77.jar;md5;2F19C527B9A335FB1415C5F9686515C8"},
 
-    //{"key": "神马影院","name": "🐴神马（SP）","type": 3,"api": "csp_Smdyy","searchable":1,"quickSearch": 1,"filterable": 1,  "jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar;md5;7eacb357cf27abce92ed497367221e5a" },
+ 
     {"key":"3EDY","name":"🐞3EDY(EXO/外网)","type":3,"api":"csp_EEEDY","searchable":1,"quickSearch":1,"filterable":1},
     {"key":"KanSJ_spider","name":"🐞看视界","api":"csp_KanSJ","type":3,"filterable":1,"quickSearch":1,"searchable":1,"ext":""},
     {"key":"追剧喵","name":"🐞追剧喵","type":3,"api":"csp_ZJMiao","searchable":1,"quickSearch":1,"filterable":1},
@@ -151,11 +151,6 @@
     {"key": "棋牌","name": "🅱棋牌老头乐","type": 3,"api": "csp_Bili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/我爱棋.txt"},
     {"key": "球类","name": "🅱体育扛把子球类🙄","type": 3,"api": "csp_Bili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/我爱球.txt"},
 
-    //{"key":"csp_appys_美剧虫","name":"🐞美剧虫(V1)","type":3,"api":"csp_AppYs","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://meijuchong.com/api.php/v1.vod"},
-    //{"key": "csp_Bliyc","name":"🅱演唱会","type": 3,"api": "csp_Bliyc","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar"},
-    //{"key": "csp_Blixs","name":"🅱相声小品","type": 3,"api": "csp_Blixs","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar"},
-    //{"key": "csp_Blidw","name":"🅱动物世界","type": 3,"api": "csp_Blidw","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar"},
-    //{"key": "csp_Blixq","name":"🅱戏曲","type": 3,"api": "csp_Blixq","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar"},
     
     //XBPQ
 	  
