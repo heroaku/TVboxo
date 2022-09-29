@@ -9,7 +9,7 @@
 "线路数组": "playlist-mobile playlist layout-box clearfix&&</div>",
 "线路标题": "<li>&&</li>",
 "播放数组":"class=\"playlist-mobile playlist layout-box clearfix&&</div>",
-"分类":"电视剧$2#陆剧$13#动漫$30#综艺$29",
+//"分类":"电视剧$2#陆剧$13#动漫$30#综艺$29",
 //"分类url":"https://gimytv.com/genre/{cateId}-{area}-{year}-{catePg}/by/{by}.html"
 "分类url":"https://www.gimy.co/type/{cateId}-{area}----------{year}.html"
 "年份":"2000-2022",
