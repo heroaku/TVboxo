@@ -6,7 +6,9 @@
 //"导演": "导演：&&</p",
 //"主演": "主演：&&</p",
 //"播放标题":">&&",
-"播放数组":"class=\"myui-content__list&&</div>",
+"线路数组": "class=\"myui-panel__head bottom-line active clearfix&&</div>",
+"线路标题": "<h3>&&</h3>",
+"播放数组":"class=\"myui-panel_bd clearfix&&</div>",
 "分类":"电视剧$tvseries#电影$movies#动漫$anime#综艺$tv_show",
 //"分类url":"https://gimytv.com/genre/{cateId}-{area}-{year}-{catePg}/by/{by}.html"
 "分类url":"https://gimytv.com/genre/{cateId}-{area}-{year}-{catePg}/by/time.html"
