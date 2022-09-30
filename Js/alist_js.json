@@ -1,7 +1,3 @@
-[{
-   name:'Ã×ÆæÃîÃîÎİ',
-   server:'https://anime.mqmmw.ga',
-   startPage:'/',   
-   showAll: false , 
-   params:{ }
-}] 
+[
+{name:'ç±³å¥‡å¦™å¦™å±‹',server:'https://anime.mqmmw.ga',startPage:'/',showAll: false , params:{ }}
+] 
