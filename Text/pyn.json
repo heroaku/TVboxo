@@ -186,7 +186,10 @@
    {"key":"csp_xBPQ_瓜皮TV","name":" 🍂瓜皮TV xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%93%9C%E7%9A%AETV.json"},
    {"key":"csp_xBPQ_热播酷","name":" 🍂热播酷 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E7%83%AD%E6%92%AD%E9%85%B7.json"},
    {"key":"csp_xBPQ_1080在线","name":" 🍂1080在线 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/1080%E5%9C%A8%E7%BA%BF.json"},	  
-
+   {"key":"csp_xBPQ_蓝光影院","name":" 🍂蓝光影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/蓝光影院.json"},
+   {"key":"csp_xBPQ_RENPE","name":" 🍂RENPE xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/RENPE.json"},
+   {"key":"csp_xBPQ_双十电影","name":" 🍂双十电影 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/双十电影.json"},
+   {"key":"csp_xBPQ_神马影院","name":" 🍂神马影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/神马影院.json"},
 	  	  
 	  
 	  
