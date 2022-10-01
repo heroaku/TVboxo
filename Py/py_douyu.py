@@ -17,7 +17,7 @@ class Spider(Spider):
 	def homeContent(self,filter):
 		result = {}
 		cateManual = {
-			"真的很博通": "LlOdEbz9LAnR",
+			"真的很博通": "222931",
 			"热门游戏": "热门游戏",
 			"主机游戏": "主机游戏",
 			"原创IP": "原创IP"
