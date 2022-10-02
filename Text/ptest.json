@@ -87,6 +87,8 @@
    {"key":"csp_xBPQ_双十电影","name":" 🍂双十电影 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/双十电影.json"},
    {"key":"csp_xBPQ_神马影院","name":" 🍂神马影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/神马影院.json"},
    {"key":"csp_xBPQ_唐人街影院","name":" 🍂唐人街影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/唐人街.json"},
+   {"key": "csp_xbpq_子子影视","name": "👫子子影视(XBPQ)","type": 3,"api": "csp_xBPQ","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://gitee.com/alanchaotang/TangTV/raw/master/XBPQ/%E5%AD%90%E5%AD%90%E5%BD%B1%E8%A7%86.json"},
+   {"key": "csp_xbpq_剧迷影视","name": "👫子剧迷影视(XBPQ)","type": 3,"api": "csp_xBPQ","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://gitee.com/alanchaotang/TangTV/raw/master/XBPQ/%E5%89%A7%E8%BF%B7%E5%BD%B1%E8%A7%86(xBPQ).json"},
 	  
 	  
 	  //xbiu
