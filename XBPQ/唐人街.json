@@ -18,7 +18,7 @@
   "线路数组": "<div class=\"play_source&&</div>",
   "线路标题": "<b>&&</b>",
   //"播放数组":"<ul class=\"stui-content&&</ul>"
-  "播放数组":"<ul class=\"content_playlist list_scroll clearfix\">&&</ul>"
+  "播放数组":"<ul class=\"content_playlist\">&&</ul>"
   
 
 }
