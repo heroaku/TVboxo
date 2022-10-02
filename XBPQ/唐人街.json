@@ -16,7 +16,7 @@
   "简介": "<p class=\"col-pd\">&&</span>",
   
   "线路数组": "<div class=\"play_source_tab&&</div>",
-  "线路标题": "class=\"title\">&&</h3>",
+  "线路标题": "<b>&&</b>",
   
   "播放数组": "<ul class=\"stui-content&&</ul>"
   
