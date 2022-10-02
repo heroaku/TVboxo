@@ -18,7 +18,7 @@
   "线路数组": "class=\"play_source_tab list_scroll&&</div>",
   "线路标题": "<span>&&</span>",
   
-  "播放数组": "<ul class=\"content_playlist&&</ul>"
+  "播放数组": "class=\"playlist_full&&</div>"
   
 
 }
