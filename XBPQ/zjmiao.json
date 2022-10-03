@@ -16,7 +16,7 @@
   //"主演": "主演：&&</div>",
   //"简介": "list\"><span>&&</span>",
   
-  "线路数组": "class=\"module-tab-item&&</div>",
+  "线路数组": "class=\"module-tab-items&&</div>",
   "线路标题": "<span>&&</small>",
   
   "播放数组": "class=\"module-list&&</div>",
