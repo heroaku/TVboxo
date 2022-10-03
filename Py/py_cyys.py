@@ -5,6 +5,8 @@ import re
 sys.path.append('..')
 from base.spider import Spider
 import urllib.parse
+import base64
+from Crypto.Cipher import AES
 
 class Spider(Spider):  # 元类 默认的元类 type
     def getName(self):
@@ -119,7 +121,6 @@ class Spider(Spider):  # 元类 默认的元类 type
         for v in vodHeader:
             playFrom.append(v.replace(" ", ""))
         vod_play_from = vod_play_from.join(playFrom)
-
         vod_play_url = '$$$'
         playList = []
         vodList = divContent.xpath(".//div[contains(@id,'playlist')]")
@@ -174,6 +175,13 @@ class Spider(Spider):  # 元类 默认的元类 type
             'list': videos
         }
         return result
+    def parseCBC(self, enc, key, iv):
+        keyBytes = key.encode("utf-8")
+        ivBytes = iv.encode("utf-8")
+        cipher = AES.new(keyBytes, AES.MODE_CBC, ivBytes)
+        msg = cipher.decrypt(enc)
+        paddingLen = msg[len(msg) - 1]
+        return msg[0:-paddingLen]
 
     def playerContent(self, flag, id, vipFlags):
         result = {}
@@ -186,11 +194,25 @@ class Spider(Spider):  # 元类 默认的元类 type
         root = self.html(self.cleanText(rsp.text))
         scripts = root.xpath("//div[@class='embed-responsive clearfix']/script[@type='text/javascript']/text()")[0]
         ukey = re.findall(r"url(.*)url_next", scripts)[0].replace('"', "").replace(',', "").replace(':', "")
+        pf = re.findall(r'\"from\":\"(.*?)\"', scripts)[0]
         purl = urllib.parse.unquote(ukey)
         if purl.startswith('http'):
             purl = purl
+            if pf == 'wjm3u8':
+                prsp = self.fetch(purl, headers=header)
+                purle = prsp.text.strip('\n').split('\n')[-1]
+                purls = re.findall(r"http.*://.*?/", purl)[0].strip('/')
+                purl = purls + purle
         else:
-            purl = 'https://vip.30dian.cn/?url=' + purl
+            scrurl = 'https://vip.30dian.cn/?url={0}'.format(purl)
+            script = self.fetch(scrurl,headers=header)
+            html = script.text
+            pat = 'var le_token = \\"([\\d\\w]+)\\"'
+            cpat = 'getVideoInfo\\(\\"(.*)\\"\\)'
+            content = self.regStr(html, cpat)
+            iv = self.regStr(html, pat)
+            key = 'A42EAC0C2B408472'
+            purl = self.parseCBC(base64.b64decode(content), key, iv).decode()
         result["parse"] = 0
         result["playUrl"] = ''
         result["url"] = purl
