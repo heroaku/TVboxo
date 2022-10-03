@@ -12,9 +12,9 @@
   
   "搜索后缀":"/vod/search/",
   
-  "导演": "导演：&&</div>",
-  "主演": "主演：&&</div>",
-  "简介": "list\"><span>&&</span>",
+  //"导演": "导演：&&</div>",
+  //"主演": "主演：&&</div>",
+  //"简介": "list\"><span>&&</span>",
   
   "线路数组": "class=\"module-tab-items-box&&</div>",
   "线路标题": "<span>&&</span>",
