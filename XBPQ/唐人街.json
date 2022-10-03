@@ -15,10 +15,10 @@
   //"主演": "主演：&&</p>",
   //"简介": "<p class=\"col-pd\">&&</span>",
   
-  "线路数组": "<div class=\"play_source&&</div>",
+  "线路数组": "class=\"play_source&&</div>",
   "线路标题": "<b>&&</small>",
   //"播放数组":"<ul class=\"stui-content&&</ul>"
-  "播放数组":"<ul class=\"vodlist&&</ul>"
+  "播放数组":"class=\"vodlist&&</ul>"
   
 
 }
