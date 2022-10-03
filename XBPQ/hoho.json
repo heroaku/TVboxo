@@ -21,6 +21,7 @@
     "动漫": "4",
     "纪录片": "20"
     },
+"分类url":"https://www.hoho.tv/vod/show/{cateId}/area/{area}/class/{class}/year/{year}.html",
   
 // Home Summary =====================================================
   "homeVodNode": "//div[@class='module-item-cover']",
