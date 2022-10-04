@@ -5,7 +5,7 @@
 //"副标题":"class=\"pic-text text-center\">&&</span>",
 //"导演": "导演：&&</p",
 //"主演": "主演：&&</p",
-"简介": "class=\"video-info-item video-info-content vod_content&&</div>",
+"简介": "class=\"vod_content\">&&</div>",
 //"播放标题":">&&",
 //"线路数组": "class=\"module-tab-item&&</div>",
 //"线路标题": "<span>&&</small>",
