@@ -23,7 +23,7 @@
     },
 //"分类url":"https://www.hoho.tv/vod/show/{cateId}/area/{area}/class/{class}/year/{year}/by/{by}/page/{catePg}.html",
 "分类url":"https://www.hohovod.com/vod/show/{cateId}/area/{area}/by/{by}/class/{class}/lang/{lang}/year/{year}.html",  
-"线路数组": "class=\"module-tab-item&&</div>",
+"线路数组": "class=\"module-tab-item tab-item&&</div>",
 "线路标题": "<span>&&</small>",
 "播放数组":"class=\"scroll-content\">&&</div>",
 // Home Summary =====================================================
