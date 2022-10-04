@@ -9,7 +9,7 @@
 //"播放标题":">&&",
 "线路数组": "class=\"module-tab-item tab-item&&</div>",
 "线路标题": "<span>&&</small>",
-"播放数组":"class=\"module-blocklist&&</div>",
+"播放数组":"class=\"module-blocklist scroll-box scroll-box-y&&</div>",
 //"分类":"电影$1#电视剧$2#纪录片$20#动漫$4#综艺$3#国产剧$13#港台剧$14#欧美剧$16#日韩剧$15",
 "分类": {"电影": "1",	"电视剧": "2","国产剧": "13","港台剧": "14","欧美剧": "16","日韩剧": "15","综艺": "3","动漫": "4","纪录片": "20"},
 //"分类url":"https://www.hoho.tv/vod/show/{cateId}/area/{area}/class/{class}/year/{year}.html",
