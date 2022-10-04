@@ -21,8 +21,8 @@
     "动漫": "4",
     "纪录片": "20"
     },
-//"分类url":"https://www.hoho.tv/vod/show/{cateId}/area/{area}/class/{class}/year/{year}/by/{by}/page/{catePg}.html",
-"分类url":"https://www.hohovod.com/vod/show/{cateId}/area/{area}/by/{by}/class/{class}/lang/{lang}/year/{year}.html",  
+"分类url":"https://www.hoho.tv/vod/show/{cateId}/area/{area}/class/{class}/year/{year}/by/{by}/page/{catePg}.html",
+//"分类url":"https://www.hohovod.com/vod/show/{cateId}/area/{area}/by/{by}/class/{class}/lang/{lang}/year/{year}.html",  
 // Home Summary =====================================================
   "homeVodNode": "//div[@class='module-item-cover']",
   "homeVodName": "/div[@class='module-item-pic']/a/@title",
@@ -33,7 +33,7 @@
   "homeVodMark": "//div[@class='module-item-caption']/span/text()",
   
 // Category Summary =================================================
-  "cateUrl": "https://www.hoho.tv/vod/show/{cateId}/area/{area}/class/{class}/year/{year}/by/{by}/page/{catePg}.html",
+//"cateUrl": "https://www.hoho.tv/vod/show/{cateId}/area/{area}/class/{class}/year/{year}/by/{by}/page/{catePg}.html",
   "cateVodNode": "//div[@class='module-item-cover']",
   "cateVodName": "/div[@class='module-item-pic']/a/@title",
   "cateVodId": "/div[@class='module-item-pic']/a/@href",
