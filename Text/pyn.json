@@ -191,8 +191,11 @@
    {"key":"csp_xBPQ_神马影院","name":" 🍂神马影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/神马影院.json"},
    {"key":"csp_xBPQ_追剧猫","name":" 🍂追剧猫 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/zjmiao.json"},	  	  
    {"key":"csp_xBPQ_剧迷","name":" 🍂剧迷 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/gimy.json"},	  
+   {"key":"csp_xBPQ_hoho","name":" 🍂HoHo影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/hoho.json"},	  
+   
 	  
-    //Xbui
+	  
+	  //Xbui
         {"key": "csp_xb_ysgc","name": " 💠影视工厂(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.ysgc.fun/vodtype/{cateId}-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu .jar"},
         { "key": "csp_xb_35ju", "name": " 💠星空影院(R)", "type": 3, "api": "csp_XBiu", "searchable": 1, "quickSearch": 1, "filterable": 0, "ext": "https://m.7caa.com/list/{cateId}-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
         {"key": "csp_xb_lgyy","name": " 💠蓝光影院(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://lgyy.tv/vodshow/{cateId}--------{catePg}---.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
