@@ -17,7 +17,7 @@
   "简介": "<p class=\"col-pd\">&&</span>",
   
   "线路数组": "class=\"stui-pannel__head&&</div>",
-  "线路标题": "<h3>&&</h3>",
+  "线路标题": "class=\"title\">&&</h3>",
   
   "播放数组": "<ul class=\"stui-content&&</ul>",
   
