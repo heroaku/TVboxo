@@ -10,7 +10,7 @@
   "cateName": "/span/text()",
   "cateId": "/@href",
   "cateIdR": "/vod/type/id/(\\S+).html",
- // "cateManual": {"电影": "1",	"电视剧": "2","国产剧": "13","港台剧": "14","欧美剧": "16","日韩剧": "15","综艺": "3","动漫": "4","纪录片": "20"},
+  "cateManual": {"电影": "1",	"电视剧": "2","国产剧": "13","港台剧": "14","欧美剧": "16","日韩剧": "15","综艺": "3","动漫": "4","纪录片": "20"},
 "简介": "class=\"video-info-item video-info-content vod_content&&</div>",
 //"分类url":"https://www.hoho.tv/vod/show/{cateId}/area/{area}/class/{class}/year/{year}/by/{by}/page/{catePg}.html",
 "主页url": "https://www.hoho.tv",
