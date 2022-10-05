@@ -7,7 +7,7 @@
   //"线路标题": "<span>&&</span>",
   
   
-  "播放数组":"<ul class=\"playlist_full&&</ul>",
+  //"播放数组":"<ul class=\"playlist_full&&</ul>",
   //"播放数组":"class=\"playlist_full&&</ul>",  
  // "播放数组": "<div class=\"paly_list_btn\">&&</div>",
   //"播放列表": "<a&&/a>",
