@@ -90,7 +90,7 @@
    {"key":"csp_xBPQ_追剧猫","name":" 🍂追剧猫 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/zjmiao.json"},
    {"key":"csp_xBPQ_剧迷","name":" 🍂剧迷 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/gimy.json"},	  	  
    {"key":"csp_xBPQ_唐人街","name":" 🍂唐人街 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/唐人街.json"},	  	
-	  
+   {"key":"csp_xBPQ_F7好看剧","name":" 🍂F7好看剧 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/F7好看剧.json"},	  
 	  
 	  
 	  //xbiu
