@@ -1,6 +1,6 @@
 {
   "线路数组": "class=\"play_source_tab&&</div>",
-  "线路列表": "<a&&/a>",
+  //"线路列表": "<a&&/a>",
   "线路标题": "<b>&&</small>",
   //"播放数组":"<ul class=\"playlist_full&&</ul>",
   "播放数组":"class=\"playlist_full&&</ul>",
