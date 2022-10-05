@@ -1,6 +1,15 @@
 {
     "ua": "",
     "homeUrl": "https://348z.com",
+    
+//"免嗅":"1",
+//"副标题":"class=\"pic-text text-right\">&&</span>",
+"线路标题": ">&&</a>",
+"线路数组": "class=\"channelname swiper-slide&&</a>",
+//"播放标题":"span>&&<",
+"播放数组":"class=\"content_playlist&&</ul>",
+"分类url":"https://348z.com/vodshow/area/{area}/id/{cateId}/page/{catePg}/year/{year}.html"，
+
     "dcVipFlag": "true",
     "pCfgJs": "https://348z.com/static/js/playerconfig.js",
     "pCfgJsR": "[\\W|\\S|.]*?MacPlayerConfig.player_list[\\W|\\S|.]*?=([\\W|\\S|.]*?),MacPlayerConfig.downer_list",
