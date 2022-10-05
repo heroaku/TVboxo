@@ -43,6 +43,10 @@
     {"key": "py_gitcafe","name": " 🐦小纸条","type": 3,"api": "py_gitcafe","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_gitcafe.py"},
     {"key": "py_cyys","name": " 🐦创意影视","type": 3,"api": "py_cyys","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_cyys.py"},
     {"key": "py_push_agent","name": " 🐦阿里","type": 3,"api": "py_ali","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_ali.py"},
+    {"key": "py_ddys","name": " 🐦低端影视","type": 3,"api": "py_ddys","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_ddys.py"},
+    {"key": "py_libvio","name": " 🐦Libvio","type": 3,"api": "py_libvio","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_libvio.py"},
+    {"key": "py_qie","name": " 🐦TX体育","type": 3,"api": "py_qie","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_qie.py"},
+    {"key": "py_jrskbs","name": " 🐦JRS直播","type": 3,"api": "py_jrskbs","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_jrskbs.py"},
     {"key": "py_huya","name": "🔥虎牙","type": 3,"api": "py_huya","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_huya.py"},
     {"key": "py_douyu","name": "🔥斗鱼","type": 3,"api": "py_douyu","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_douyu.py"},
     
