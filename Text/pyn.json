@@ -194,6 +194,7 @@
    {"key":"csp_xBPQ_追剧猫","name":" 🍂追剧猫 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/zjmiao.json"},	  	  
    {"key":"csp_xBPQ_剧迷","name":" 🍂剧迷 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/gimy.json"},	  
    {"key":"csp_xBPQ_hoho","name":" 🍂HoHo影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/hoho.json"},	  
+   {"key":"csp_xBPQ_F7好看剧","name":" 🍂F7好看剧 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/F7好看剧.json"},
    {"key":"csp_xBPQ_达达龟","name":" 🍂达达龟 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/ddgui.json"},	  	  
    {"key":"csp_xBPQ_饭团2","name":" 🍂饭团 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/fantuanTV.json"},	  	
    {"key":"csp_xBPQ_厂长资源","name":" 🍂厂长资源 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/厂长资源.json"},	  
