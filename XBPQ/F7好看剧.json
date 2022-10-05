@@ -27,13 +27,14 @@
   "分类url": "https://www.f7hkj.cc/vodshow/{cateId}-{area}-{by}-{class}--------{year}.html",
 //"cateUrl": "https://www.f7hkj.cc/vodshow/{cateId}-{area}-{by}-{class}-----{catePg}---{year}.html",
 //   "cateUrl": "https://www.f7hkj.cc/vodtype/{cateId}.html",
-  "线路数组": "<div class=\"mi_paly_box\">&&</div>",
-  "线路标题": "<span>&&</span>",
-  
-  "播放数组": "<div class=\"paly_list_btn\">&&</div>",
+  "线路数组": "<div class=\"module-tab-item\">&&</div>",
+  "线路标题": "<span>&&</small>",
+  "播放数组": "<div class=\"module-play-list-content\">&&</div>",
   "播放列表": "<a&&/a>",
   "播放标题": ">&&<",
-  "播放链接": "czspp.com&&\"",
+  "播放链接": "f7hkj.cc&&\"",
+  
+	
     "cateVodNode": "//div[@class='module-items module-poster-items-base']/a",
     "cateVodName": "/@title",
     "cateVodId": "/@href",
