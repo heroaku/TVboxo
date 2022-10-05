@@ -48,9 +48,8 @@
     {"key": "py_cyys","name": " 🦂创意影视","type": 3,"api": "py_cyys","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_cyys.py"},
     {"key": "py_alist","name": " 🦂Alist","type": 3,"api": "py_alist","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_alist.py"},
     {"key": "py_push_agent","name": " 🦂阿里","type": 3,"api": "py_ali","searchable": 0,"quickSearch": 0,"filterable": 0,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_ali.py"},
-    {"key": "py_ddys","name": " 🐦低端影视","type": 3,"api": "py_ddys","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_ddys.py"},
     {"key": "py_libvio","name": " 🐦Libvio","type": 3,"api": "py_libvio","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_libvio.py"},
-    {"key": "py_qie","name": " 🐦TX体育","type": 3,"api": "py_qie","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_qie.py"},
+    {"key": "py_qie","name": " 🐦QE体育","type": 3,"api": "py_qie","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_qie.py"},
     {"key": "py_jrskbs","name": " 🐦JRS直播","type": 3,"api": "py_jrskbs","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_jrskbs.py"},
 
     //{"key": "py_jubaibai","name": " 🦂剧白白","type": 3,"api": "py_jubaibai","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_jubaibai.py"}, 
