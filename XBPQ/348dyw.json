@@ -19,6 +19,7 @@
   "homeVodImgR": "\\S+(http\\S+)",
   "homeVodMark": "//span[contains(@class,'pack-prb')]/text()",
   "cateUrl": "https://xkys.tv/vodshow/{cateId}--------{catePg}---.html",
+  "分类url":"https://xkys.tv/vodshow/{cateId}-----------.html",
   "cateVodNode": "//div[contains(@class,'pack-ykpack')]/div/a[contains(@class,'aplus-exp')]",
   "cateVodName": "/@title",
   "cateVodId": "/@href",
