@@ -19,7 +19,7 @@
   "线路数组": "class=\"stui-pannel__head&&</div>",
   "线路标题": "class=\"title\">&&</h3>",
   
-  "播放数组": "<ul class=\"stui-content&&</ul>",
+  "播放数组": "<ul class=\"stui-content__playlist&&</ul>",
   
   "筛选": {
 "1":[
