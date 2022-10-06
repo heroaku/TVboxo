@@ -100,6 +100,7 @@
    {"key":"csp_xBPQ_饭团2","name":" 🍂饭团 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/fantuanTV.json"},	  	
    {"key":"csp_xBPQ_厂长资源","name":" 🍂厂长资源 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/厂长资源.json"},
    {"key":"csp_xBPQ_小小影视","name":" 🍂小小影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/xfeiji.json.json"},
+   {"key":"csp_xBPQ_天天影视","name":" 🍂天天影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/ttsp.json"},
 	  
    {"key":"csp_xBPQ_test测试","name":" 🍂测试 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/test.json"},
 	  
