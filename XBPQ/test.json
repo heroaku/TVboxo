@@ -1,6 +1,6 @@
 {
-// "线路标题": "<h3>&&</h3>",
 "线路数组": "class=\"nav nav-tabs&&</ul>",
+"线路标题": ">&&</a>",
 //"播放标题":"span>&&<",
 "播放数组":"class=\"myui-content__list&&</ul>",
 "分类url":"https://xfeiji.com/vodshow/{cateId}--------{catePg}---.html",
