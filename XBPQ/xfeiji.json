@@ -1,4 +1,11 @@
 {
+"线路数组": "data-toggle=\"tab&&</li>",
+"线路标题": ">&&</a>",
+//"播放标题":"span>&&<",
+"简介": "简介：&&</li>",
+"播放数组":"class=\"myui-content__list&&</ul>",
+"分类url":"https://xfeiji.com/vodshow/{cateId}--------{catePg}---.html",
+  
   "ua": "",
   "homeUrl": "https://xfeiji.com",
   "dcVipFlag": "true",
