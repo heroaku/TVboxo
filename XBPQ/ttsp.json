@@ -1,4 +1,9 @@
-{
+{   
+"简介": "class=\"desc hidden_xs&&</li>",
+"播放数组":"class=\"content_playlist&&</ul>",
+"分类url":"https://www.ttsp.tv/vodshow/{cateId}-{area}-------{catePg}---{year}.html",
+    
+    
     "author":"takagen99",
     "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
     "homeUrl": "https://www.ttsp.tv/",
