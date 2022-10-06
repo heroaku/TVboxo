@@ -3,7 +3,7 @@
   "ua": "",
   "homeUrl": "https://netflix.mom/",
   "dcPlayUrl": "true",
-  "cateManual": {"电影": "1","电视剧": "2", "综艺": "3","动漫": "4","4K": "34"},
+  "cateManual": {"电影": "dianying","电视剧": "lianxuju", "综艺": "zongyi","动漫": "dongman"},
   "homeVodNode": "//div[@class=('module-item-cover')]",
   "homeVodName": "//div[@class=('module-item-pic')]/a/@title",
   "homeVodNameR": "",
