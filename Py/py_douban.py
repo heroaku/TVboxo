@@ -82,7 +82,7 @@ class Spider(Spider):  # 元类 默认的元类 type
 			urlpath = f"/{tid}/recommend"
 			getdata = "items"
 
-		url = host_url + urlpath + apikey + '&sort=' + sort + '&tags=' + tags + '&start=' + pg
+		url = host_url + urlpath + apikey + '&sort=' + sort + '&tags=' + tags + '&start=' + str((int(pg) - 1) * 30)
 		rsp = self.fetch(url,headers=self.header)
 		jo = json.loads(rsp.text)
 		jolist = jo[getdata]
