@@ -13,7 +13,7 @@
   "sites":[
     {"key": "T4a","name": " 🎑T4聚合","type": 4,"api": "https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=5","searchable": 1,"quickSearch": 1,"filterable": 1},
     {"key": "douban-JS","name": "豆瓣[JS]","type": 3,"api": "https://github.com/pluto-player/updates/raw/main/android/plugins/js/douban.js"},
-    {"key":"AnFuns(DR)","type":3,"api":"https://gitcode.net/qq_32394351/dr_py/-/raw/master/libs/drpy.js","ext":"https://gitcode.net/qq_32394351/dr_py/-/raw/master/js/AnFuns.js"},
+    {"key":"AnFuns(DR)","name": "acfun[JS]","type":3,"api":"https://gitcode.net/qq_32394351/dr_py/-/raw/master/libs/drpy.js","ext":"https://gitcode.net/qq_32394351/dr_py/-/raw/master/js/AnFuns.js"},
     {"key": "drpy_JS","name": "drpy[JS]","type": 3,"api": "https://github.com/pluto-player/updates/raw/main/android/plugins/js/drpy.min.js"},
     {"key":"Alist_js","name":"Alist(JS)","type":3,"api":"https://github.com/heroaku/TVboxo/raw/main/Js/alist.js","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/Js/alist_js.json"},
     {"key":"csp_Alist2","name":"🅿️Alist合集(SP)","type":3,"api":"csp_Alist","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/Bili/Alist.json"},
