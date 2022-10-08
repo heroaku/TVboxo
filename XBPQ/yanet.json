@@ -1,9 +1,18 @@
 {
+  "分类url":"https://netflix.mom/vodshow/{cateId}-{area}-{by}-{class}-{lang}----{catePg}---{year}.html",
+  "分类": {"电影": "dianying","电视剧": "lianxuju", "综艺": "zongyi","动漫": "dongman"},
+
+  "线路数组": "class=\"module-tab-item &&</div>",
+  "线路标题": "<span>&&</small>",
+  "播放数组":"class=\"module-play-list-content&&</div>",
+  "播放标题":"span>&&<",
+  
+  
   "author":"Tangsan99999",
   "ua": "",
   "homeUrl": "https://netflix.mom/",
   "dcPlayUrl": "true",
-  "cateManual": {"电影": "1","电视剧": "2", "综艺": "3","动漫": "4","4K": "34"},
+  "cateManual": {"电影": "dianying","电视剧": "lianxuju", "综艺": "zongyi","动漫": "dongman"},
   "homeVodNode": "//div[@class=('module-item-cover')]",
   "homeVodName": "//div[@class=('module-item-pic')]/a/@title",
   "homeVodNameR": "",
@@ -58,7 +67,7 @@
   "scVodImgR": "(http\\S+)",
   "scVodMark": "//div[@class='module-item-caption']/span/text()",
   "filter":{
-    "1":[
+    "dianying":[
       {
         "key": "cateId",
         "name": "类型",
@@ -202,7 +211,7 @@
         ]}
     ],
 
-    "2":[
+    "lianxuju":[
       {
         "key": "cateId",
         "name": "类型",
@@ -316,7 +325,7 @@
           {"n": "评分排序","v": "score"}
         ]}
     ],
-    "3":[
+    "zongyi":[
 
       {
         "key": "class",
@@ -409,7 +418,7 @@
           {"n": "评分排序","v": "score"}
         ]}
     ],
-    "4":[
+    "dongman":[
       {
         "key": "cateId",
         "name": "类型",
@@ -537,3 +546,4 @@
 
   }
 }
+
