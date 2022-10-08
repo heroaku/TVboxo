@@ -1,6 +1,6 @@
 {  
   "分类url":"https://newfii.com/vodshow/{cateId}-{area}-{by}-{class}-{lang}----{catePg}---{year}.html",
-  "分类": {"电影": "1","电视剧": "2", "综艺": "3","动漫": "4"},
+  "分类": "电影$1#连续剧$2#综艺$4#动漫$3",
   "线路数组": "class=\"module-tab-item &&</div>",
   "线路标题": "<span>&&</small>",
   //"播放数组":"class=\"scroll-content\"&&</div>",
