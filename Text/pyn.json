@@ -24,6 +24,7 @@
     {"key": " py_bilimd","name": " 🐦哔哩影视","type": 3,"api": "py_bilimd","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_bilimd.py"},
     {"key": " py_中医药","name": " 🐦中医药","type": 3,"api": "py_中医药","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_中医药.py"},
     {"key": " py_中国文化","name": " 🐦中国文化","type": 3,"api": "py_中国文化","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_中国文化.py"},
+    {"key": " py_yixi","name": " 🐦一席","type": 3,"api": "py_yixi","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_yixi.py"},
     {"key": " py_3qu","name": " 🐦快播影视","type": 3,"api": "py_3qu","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_3qu.py"},
     {"key": " py_kunyu77","name": " 🐦酷云77","type": 3,"api": "py_kunyu77","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_kunyu77.py"},
     {"key":"py_lezhu","name":" 🐦乐猪影视 py","type":3,"api":"py_lezhu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/Py/py_lezhu.py"},
