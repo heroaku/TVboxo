@@ -205,6 +205,8 @@
    {"key":"csp_xBPQ_抓饭体育","name":" 🍂抓饭体育 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/抓饭体育.json"},
    {"key":"csp_xBPQ_万能影视","name":" 🍂万能影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/wanneng.json"},
    {"key":"csp_xBPQ_鸭奈飞","name":" 🍂鸭奈飞 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/yanet.json"},	  
+   {"key":"csp_xBPQ_奈落影院","name":" 🍂奈落影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/nlyy.json"},
+
 	  
 	  //Xbui
         {"key": "csp_xb_ysgc","name": " 💠影视工厂(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.ysgc.fun/vodtype/{cateId}-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu .jar"},
