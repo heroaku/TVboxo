@@ -30,11 +30,11 @@
 {"key": "芒果TV(DR)","name": "芒果TV[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/百忙无果.js"},
 {"key": "爱奇艺(DR)","name": "爱奇艺[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/奇珍异兽.js"},
 {"key": "优酷(DR)","name": "优酷[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/优酷.js"},
-{"key": "搜狗(DR)","name": "搜狗(DR)","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/菜狗.js"},
-{"key": "LIBVIO(DR)","name": "LIBVIO(DR)","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/LIBVIO.js"},
-{"key": "鸭奈飞(DR)","name": "鸭奈飞(DR)","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/鸭奈飞.js"},
-{"key": "蓝光影院(DR)","name": "蓝光影院(DR)","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/蓝光影院.js"},
-{"key": "万能影视(DR)","name": "万能影视(DR)","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/万能影视.js"},
+{"key": "搜狗(DR)","name": "搜狗[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/菜狗.js"},
+{"key": "LIBVIO(DR)","name": "LIBVIO[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/LIBVIO.js"},
+{"key": "鸭奈飞(DR)","name": "鸭奈飞[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/鸭奈飞.js"},
+{"key": "蓝光影院(DR)","name": "蓝光影院[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/蓝光影院.js"},
+{"key": "万能影视(DR)","name": "万能影视[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/万能影视.js"},
 	  
 	  
 	  
@@ -59,6 +59,7 @@
     {"key": " py_bilimd","name": " 🦂哔哩影视","type": 3,"api": "py_bilimd","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_bilimd.py"},
     {"key": " py_中医药","name": " 🦂中医药","type": 3,"api": "py_中医药","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_中医药.py"},
     {"key": " py_中国文化","name": " 🦂中国文化","type": 3,"api": "py_中国文化","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_中国文化.py"},
+    {"key": " py_yixi","name": " 🦂一席人文","type": 3,"api": "py_yixi","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_yixi.py"},
     {"key": " py_3qu","name": " 🦂快播影视","type": 3,"api": "py_3qu","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_3qu.py"},
     {"key": "py_zxzj","name": " 🦂在线之家","type": 3,"api": "py_zxzj","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_zxzj.py"},
     {"key":"py_lezhu","name":"🐷乐猪影视 py","type":3,"api":"py_lezhu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/Py/py_lezhu.py"},
