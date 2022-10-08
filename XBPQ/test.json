@@ -67,7 +67,7 @@
   "scVodImgR": "(http\\S+)",
   "scVodMark": "//div[@class='module-item-caption']/span/text()",
   "filter":{
-    "1":[
+    "dianying":[
       {
         "key": "cateId",
         "name": "类型",
@@ -211,7 +211,7 @@
         ]}
     ],
 
-    "2":[
+    "lianxuju":[
       {
         "key": "cateId",
         "name": "类型",
@@ -325,7 +325,7 @@
           {"n": "评分排序","v": "score"}
         ]}
     ],
-    "3":[
+    "zongyi":[
 
       {
         "key": "class",
@@ -418,7 +418,7 @@
           {"n": "评分排序","v": "score"}
         ]}
     ],
-    "4":[
+    "dongman":[
       {
         "key": "cateId",
         "name": "类型",
