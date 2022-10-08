@@ -7,8 +7,9 @@
   "User": "空",
   "shouye": "1",
   "分类url":"https://www.23wm.net/vodshow/id/{cateId}.html",
+  "分类":"电视剧$2#陆剧$13#电影$1#动漫$30#综艺$29#纪录片$22",
 
- "fenlei": "电影$/vodshow/id/1/page/#剧集$/vodshow/id/2/page/#综艺$/vodshow/id/3/page/#纪录片$/vodshow/id/20/page/#动漫$/vodshow/id/4/page/#亲子动漫$/vodshow/class/亲子/id/4/page/#益智动漫$/vodshow/class/益智/id/4/page/#国产剧$/vodshow/id/13/page/#港台剧$/vodshow/id/14/page/#日韩剧$/vodshow/id/15/page/#欧美剧$/vodshow/id/16/page/#泰国剧$/vodshow/id/25/page/#哔哩(剧)$/vodshow/id/39/page/#海外剧$/vodshow/id/51/page/#国产动漫$/vodshow/area/国产/id/4/page/#日本动漫$/vodshow/area/日本/id/4/page/#欧美动漫$/vodshow/area/欧美/id/4/page/#其他动漫$/vodshow/area/其他/id/4/page/#喜剧片$/vodshow/id/7/page/#爱情片$/vodshow/id/8/page/#科幻片$/vodshow/id/9/page/#恐怖片$/vodshow/id/10/page/#剧情片$/vodshow/id/11/page/#战争片$/vodshow/id/12/page/#动作片$/vodshow/id/6/page/#奇幻片$/vodshow/id/52/page/#犯罪片$/vodshow/id/53/page/#悬疑片$/vodshow/id/58/page/#冒险片$/vodshow/id/59/page/",
+ //"fenlei": "电影$/vodshow/id/1/page/#剧集$/vodshow/id/2/page/#综艺$/vodshow/id/3/page/#纪录片$/vodshow/id/20/page/#动漫$/vodshow/id/4/page/#亲子动漫$/vodshow/class/亲子/id/4/page/#益智动漫$/vodshow/class/益智/id/4/page/#国产剧$/vodshow/id/13/page/#港台剧$/vodshow/id/14/page/#日韩剧$/vodshow/id/15/page/#欧美剧$/vodshow/id/16/page/#泰国剧$/vodshow/id/25/page/#哔哩(剧)$/vodshow/id/39/page/#海外剧$/vodshow/id/51/page/#国产动漫$/vodshow/area/国产/id/4/page/#日本动漫$/vodshow/area/日本/id/4/page/#欧美动漫$/vodshow/area/欧美/id/4/page/#其他动漫$/vodshow/area/其他/id/4/page/#喜剧片$/vodshow/id/7/page/#爱情片$/vodshow/id/8/page/#科幻片$/vodshow/id/9/page/#恐怖片$/vodshow/id/10/page/#剧情片$/vodshow/id/11/page/#战争片$/vodshow/id/12/page/#动作片$/vodshow/id/6/page/#奇幻片$/vodshow/id/52/page/#犯罪片$/vodshow/id/53/page/#悬疑片$/vodshow/id/58/page/#冒险片$/vodshow/id/59/page/",
   "houzhui": "---.html",
 
   "shifouercijiequ": "0",
