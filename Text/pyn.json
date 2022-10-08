@@ -202,6 +202,7 @@
    {"key":"csp_xBPQ_厂长资源","name":" 🍂厂长资源 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/厂长资源.json"},	  
    {"key":"csp_xBPQ_小小影视","name":" 🍂小小影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/xfeiji.json"},   
    {"key":"csp_xBPQ_天天影视","name":" 🍂天天影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/ttsp.json"},
+   {"key":"csp_xBPQ_抓饭体育","name":" 🍂抓饭体育 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/抓饭体育.json"},
 	  
 	  
 	  //Xbui
