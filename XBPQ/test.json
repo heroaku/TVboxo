@@ -4,8 +4,8 @@
   "分类": {"电影": "1","电视剧": "2", "综艺": "4","动漫": "3"},
   "线路数组": "class=\"module-tab-item &&</div>",
   "线路标题": "<span>&&</small>",
-  "播放数组":"class=\"scroll-content\"&&</div>",
-  "播放标题":"span>&&<",
+  //"播放数组":"class=\"scroll-content\"&&</div>",
+  //"播放标题":"span>&&<",
   
   "author": "20220625",
   "name": "奈落影院",
