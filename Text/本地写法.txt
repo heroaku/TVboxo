@@ -1,0 +1,13 @@
+# takagen99 & q215613905 TVBox的本地设定(同原猫影视设定)
+1.设定>配置用路径 需多加localhost
+clan://localhost/TVBox/pluto.json
+2.json的api或ext路径设定 则不用另外再加localhost
+"api":"clan://TVBox/libs/drpy.js"
+clan://TVBox/js/真不卡.js
+
+# pluto的本地设定
+file:///storage/emulated/0/TVBox/pluto.json
+
+# FM影视的本地设定 (通用 二择一)
+clan://TVBox/pluto.json
+file://TVBox/pluto.json
