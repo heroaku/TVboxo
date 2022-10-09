@@ -2,7 +2,7 @@
   "分类": "电影$1#连续剧$2#综艺$3#动漫$4#蓝光$37",
   "分类url":"https://www.zaixiandianying8.com/vodshow/{cateId}-{area}-{by}-{class}-{lang}----{catePg}---{year}.html",
   "线路数组": "data-toggle=\"tab &&</a></li>",
-  //"线路标题": "<span>&&</small>",
+  "线路标题": ">&&</a>",
   "播放数组":"class=\"myui-content__list &&</ul>",
   
   "author": "春风",
