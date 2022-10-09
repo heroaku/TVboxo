@@ -3,7 +3,7 @@
   "分类url":"https://www.zaixiandianying8.com/vodshow/{cateId}-{area}-{by}-{class}-{lang}----{catePg}---{year}.html",
   //"线路数组": "data-toggle=\"tab&&</a>",
   //"线路标题": ">&&</a>",
-  "简介": "class=\"data&&</span>",
+  "简介": "class=\"ddata hidden-xs&&</p>",
   "播放数组":"class=\"myui-content__list &&</ul>",
   
   "author": "春风",
