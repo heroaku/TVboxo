@@ -13,7 +13,7 @@
   "sites":[
     {"key": "T4a","name": " 🎑T4聚合","type": 4,"api": "https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=5","searchable": 1,"quickSearch": 1,"filterable": 1},
  
-  //js pluto player
+  //js J版
 
 {"key": "drpy_js_360影视","name": "360影视[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/360影视.js"},
 {"key": "drpy_js_555影视","name": "555影视[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/555影视.js"},
@@ -59,6 +59,8 @@
 {"key": "drpy_js_真不卡","name": "真不卡[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/真不卡.js"},
 {"key": "drpy_js_追剧喵","name": "追剧喵[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/追剧喵.js"},	  
 	  
+
+  //js pluto player
 	  
 {"key": "酷云77(DR)","name": "酷云77[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/酷云77.js"},
 {"key": "drpy_js_555影视","name": "555影视[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.js","ext": "https://gitcode.net/qq_32394351/dr_py/-/raw/master/js/555影视.js"},
