@@ -1,7 +1,7 @@
 {
   "分类": "电影$1#连续剧$2#综艺$3#动漫$4",
   //"分类url":"https://xkys.tv/vodshow/{cateId}-{area}-{by}-{class}-{lang}----{catePg}---{year}.html",
-   "分类url": "http://xkys123.com/vodshow/{cateId}--------{catePg}---.html",
+   "分类url": "http://xkys123.com/vodshow/{cateId}-{area}-{by}-{class}-{lang}----{catePg}---{year}.html",
   //"线路数组": "class=\"module-tab-item &&</div>",
   //"线路标题": "<span>&&</small>",
   //"简介": "简介</span>&&</p>",
@@ -12,7 +12,7 @@
 		"url": "https://xkys123.com/",  // 本站备用网址xkys1.com、xkys2.com、xkys.tv、xkysmv.com、xkyso.com、xkys.ee 牢记不失联
 		"tihuan": "51.la",
 		"User": "空",
-		"fenlei": "电视剧$/vodshow/2--------#电影$/vodshow/1--------#综艺$/vodshow/3--------#动漫$/vodshow/4--------#国产剧$/vodshow/13--------#港台剧$/vodshow/14--------#日韩剧$/vodshow/15--------#欧美剧$/vodshow/16--------#记录片$/vodshow/21--------",
+		//"fenlei": "电视剧$/vodshow/2--------#电影$/vodshow/1--------#综艺$/vodshow/3--------#动漫$/vodshow/4--------#国产剧$/vodshow/13--------#港台剧$/vodshow/14--------#日韩剧$/vodshow/15--------#欧美剧$/vodshow/16--------#记录片$/vodshow/21--------",
 		"houzhui": "---.html",
 		"shifouercijiequ": "0",
 		"jiequqian": "空",
