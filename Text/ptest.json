@@ -15,7 +15,7 @@
  
   //js pluto player
  {"key": "酷云77(DR)","name": "酷云77[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/酷云77.js"},
-{"key": "555影视(DR)","name": "555影视[JS]","type": 3,"api": "https://ghproxy.com/https://raw.githubusercontent.com/ShadowDemon1997/CatVodSpiderJS/main/drpy.js","ext": "https://gitcode.net/qq_32394351/dr_py/-/raw/master/js/555影视.js"},
+{"key": "555影视(DR)","name": "555影视[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/drpy/libs/drpy.js","ext": "https://gitcode.net/qq_32394351/dr_py/-/raw/master/js/555影视.js"},
 {"key": "追剧喵(DR)","name": "追剧喵[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/追剧喵.js"},
 {"key": "牛马TV(DR)","name": "牛马TV[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/牛马TV.js"},
 {"key": "玄天(DR)","name": "玄天[JS]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/玄天.js"},
