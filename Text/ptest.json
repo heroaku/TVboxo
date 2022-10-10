@@ -18,7 +18,7 @@
    {"key": "drpy_js_test","name": " 🎑js测试[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/jstest.js"},	  
     {"key": " py_test","name": " 🐦py测试","type": 3,"api": "py_bilibili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_test.py"},	  
  
-{"key":"欧乐影院(VPN)","name":"欧乐影院(VPN)","type":1,"api":"https://www.olevod.tv/api.php/provide/vod/","playUrl":"","searchable":1,"quickSearch":1},	  
+
 	  
 	  //js J版
 
