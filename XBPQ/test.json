@@ -5,7 +5,7 @@
    // "线路数组": "class=\"module-tab-item &&</div>",
    // "线路标题": "<span>&&</small>",
   
-    "播放数组": "class=\"content_playlist &&</ul>",
+   // "播放数组": "class=\"content_playlist &&</ul>",
   
   "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
   "homeUrl": "https://olevod.tv",
@@ -26,7 +26,7 @@
   "homeVodImg": "/@data-original",
   "homeVodImgR": "\\S+(http\\S+)",
   "homeVodMark": "/span[contains(@class,'text_dy') and contains(@class,'style')]/text()",
-  "cateUrl": "https://olevod.tv/index.php/vod/type/id/{cateId}/page/{catePg}.html",
+  //"cateUrl": "https://olevod.tv/index.php/vod/type/id/{cateId}/page/{catePg}.html",
   "cateVodNode": "//ul[contains(@class,'vodlist vodlist_wi list_v12 clearfix')]//li//a[contains(@class,'vodlist_thumb')]",
   "cateVodName": "/@title",
   "cateVodId": "/@href",
