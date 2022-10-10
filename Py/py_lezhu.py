@@ -48,7 +48,7 @@ class Spider(Spider):  # 元类 默认的元类 type
     def homeVideoContent(self):
         rsp = self.fetch("http://www.lezhutv.com/", headers=self.header)
         root = self.html(rsp.text)
-        vodList = root.xpath("//div[@class='tbox2']/ul[@class='tbox_m2']/li[@class='vbox']/a")
+        vodList = root.xpath("//div[@class='tbox2 ']/ul[@class='tbox_m2']/li[@class='vbox']/a")
 
         videos = []
         for vod in vodList:
