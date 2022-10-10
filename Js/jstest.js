@@ -1,7 +1,6 @@
-muban.首图2.二级.tabs = '.nav-tabs.dpplay&&li';
-var rule = Object.assign(muban.首图2,{
-    title:'欧乐',
-    host:'https://olevod.tv/index.php',
-    url:'/vod/show/id/fyclass/page/fypage.html',
-    searchUrl:'vod/search/wd/**.html',
+var rule = Object.assign(muban.vfed,{
+title:'欧乐影院',
+host:'https://olevod.tv',
+url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
 });
