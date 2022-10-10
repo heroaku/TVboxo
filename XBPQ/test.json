@@ -1,6 +1,7 @@
 { 
     "分类": "电影$1#剧集$2#综艺$3#动漫$4",
-    "分类链接": "https://olevod.tv/index.php/vod/show/area/{area}/by/{by}/id/{cateId}/page/{catePg}/year/{year}.html",
+    //"分类链接": "https://olevod.tv/index.php/vod/show/area/{area}/by/{by}/id/{cateId}/page/{catePg}/year/{year}.html",
+     "分类链接": "https://olevod.tv/index.php/vod/show/id/{cateId}.html",
     
    // "线路数组": "class=\"module-tab-item &&</div>",
    // "线路标题": "<span>&&</small>",
