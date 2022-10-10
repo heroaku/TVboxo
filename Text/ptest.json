@@ -13,6 +13,9 @@
   "sites":[
     {"key": "T4a","name": " 🎑T4聚合","type": 4,"api": "https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=5","searchable": 1,"quickSearch": 1,"filterable": 1},
  
+   {"key":"csp_xBPQ_test测试","name":" 🍂测试 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/test.json"},
+   {"key": "drpy_js_test","name": " 🎑js测试[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/jstest.js"},	  
+    {"key": " py_test","name": " 🐦py测试","type": 3,"api": "py_bilibili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_test.py"},	  
   //js J版
 
 {"key": "drpy_js_360影视","name": " 🎑360影视[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/360影视.js"},
@@ -190,8 +193,10 @@
    {"key":"csp_xBPQ_奈落影院","name":" 🍂奈落影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/nlyy.json"},
    {"key":"csp_xBPQ_在线影视","name":" 🍂在线影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/zaixiandianying8.json"},
    {"key":"csp_xBPQ_1080TV","name":" 🍂1080TV xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/1080TV.json"},	  
+   {"key":"csp_xBPQ_乐猪","name":" 🍂乐猪 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/lezhu.json"},
 	  
-   {"key":"csp_xBPQ_test测试","name":" 🍂测试 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/test.json"},
+	  
+
 	  
 	  
 	  //xbiu
