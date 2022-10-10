@@ -210,7 +210,7 @@
    {"key":"csp_xBPQ_在线影视","name":" 🍂在线影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/zaixiandianying8.json"},
    {"key":"csp_xBPQ_1080TV","name":" 🍂1080TV xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/1080TV.json"},
    {"key":"csp_xBPQ_乐猪","name":" 🍂乐猪 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/lezhu.json"},
-	  
+   {"key":"csp_xBPQ_小强迷","name":" 🍂小强迷 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/xiaoqm.json"},	  
 	  
 	  
 	  //js J版
