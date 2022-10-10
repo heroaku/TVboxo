@@ -1,7 +1,8 @@
 {
-    "分类": "电影$1#剧集$2#综艺$3#动漫$4#动漫$6",
+    "分类": "电影$20#剧集$21#综艺$22#动漫$23#动漫$24",
     //"分类链接": "https://1080p.tv/vodshow/{cateId}-{area}-{by}-{class}-----{catePg}---{year}/",
-    "分类链接": "https://www.nivod.tv/filter.html?x=1&channelId={cateId}&showTypeId={class}",
+    "分类链接": "https://www.mudvod1.tv/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/year/{year}.html",
+    //https://www.mudvod1.tv/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/year/{year}.html
     
     //"线路数组": "class=\"module-tab-item &&</div>",
     //"线路标题": "<span>&&</small>",
