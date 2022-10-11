@@ -8,7 +8,7 @@
 
     "分类": "电影$1#剧集$2#综艺$3#动漫$4",
     "分类链接": "https://shangjihuoke.com/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
-    
+   //"cateUrl": "https://shangjihuoke.com/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
     
     "dcVipFlag": "true",
 
