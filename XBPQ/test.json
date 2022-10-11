@@ -6,6 +6,10 @@
 
     "homeUrl": "https://shangjihuoke.com/",
 
+    "分类": "电影$1#剧集$2#综艺$3#动漫$4",
+    "分类链接": "https://shangjihuoke.com/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
+    
+    
     "dcVipFlag": "true",
 
     "dcPlayUrl": "true",
@@ -16,17 +20,7 @@
 
     "pCfgJsR": "[\\W|\\S|.]*?MacPlayerConfig.player_list[\\W|\\S|.]*?=([\\W|\\S|.]*?),MacPlayerConfig.downer_list",
 
-    "cateManual": {
-
-      "电影": "1",
-
-      "连续剧": "13",
-
-      "动漫": "3",
-
-      "综艺": "39"
-
-    },
+    
 
   
 
@@ -48,7 +42,7 @@
 
   // Category Summary ================================================
 
-    "cateUrl": "https://shangjihuoke.com/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
+    //"cateUrl": "https://shangjihuoke.com/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
 
     "cateVodNode": "//a[@class='module-poster-item module-item']",
 
