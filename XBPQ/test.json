@@ -1,7 +1,7 @@
 { 
-  "线路数组": "class=\"stui-vodlist__head\">&&</div>",
-  "线路标题": "<h3>&&</h3>",
-  "播放数组": "class=\"stui-content__playlist &&</ul>",
+  "线路数组": "class=\"py-tabs\">&&</ul>",
+  "线路标题": "<li>&&</li>",
+  "播放数组": "class=\"player ckp &&</ul>",
   
 "name": "pk影院",   //填网站名称
   "tihuan": "cnzz.com", 
