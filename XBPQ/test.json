@@ -1,129 +1,69 @@
 {
+  "name": "chok8电影",
+  "url": "https://www.chok8.com/",
+  "shouye": "1",
 
-    "author":"takagen随风起舞",
+  //"fenlei": "电影$/vodtype/dianying-#电视剧$/vodtype/lianxuju-#国产剧$/vodtype/guochanju-#欧美剧$/vodtype/oumeiju-#科幻片$/vodtype/kehuanpian-#恐怖片$/vodtype/kongbupian-#剧情片$/vodtype/juqingpian-#战争片$/vodtype/zhanzhengpian-#动作片$/vodtype/dongzuopian-#喜剧片$vodtype/xijupian-#爱情片$/vodtype/xijupian-#犯罪片$/vodtype/fanzuipian-#港台剧$/vodtype/gangtaiju-#日韩剧$/vodtype/rihanju-#欧美剧$vodtype/16-#动画片$/vodtype/dongman-#综艺$/vodtype/zongyi-#记录片$/vodtype/jilupian-",
+  "fenlei": "电影$/vodshow/dianying--------#连续剧$/vodshow/lianxuju--------#综艺$/vodshow/zongyi--------#动漫$/vodshow/dongman--------#记录片$/vodshow/jilupian--------#国产剧$/vodshow/guochanju--------#日韩剧$/vodshow/rihanju--------#欧美剧$/vodshow/oumeiju--------#港台剧$/vodshow/gangtaiju--------#动作片$/vodshow/dongzuopian--------#喜剧片$/vodshow/xijupian--------#爱情片$/vodshow/aiqingpian--------#科幻片$/vodshow/kehuanpian--------#恐怖片$/vodshow/kongbupian--------#剧情片$/vodshow/juqingpian--------#战争片$/vodshow/zhanzhengpian--------#犯罪片$/vodshow/fanzuipian--------",
+  "houzhui": "---.html",
 
-    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
+  "shifouercijiequ": "0",
+  "jiequqian": "空",
+  "jiequhou": "空",
+  "jiequshuzuqian": "lazyload\"",
+  "jiequshuzuhou": "</a>",
+  "tupianqian": "data-original=\"",
+  "tupianhou": "\"",
+  "biaotiqian": "title=\"",
+  "biaotihou": "\"",
+  "lianjieqian": "href=\"",
+  "lianjiehou": "\"",
 
-    "homeUrl": "https://shangjihuoke.com/",
+  //新版Biubiu参数：副标题 (不需要的话，就不填写或者删除副标题2个字段也可以。)
+  "fubiaotiqian": "text-right\">",
+  "fubiaotihou": "</span",
 
-    "分类": "电影$1#剧集$2#综艺$3#动漫$4",
-    "分类链接": "https://shangjihuoke.com/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
-   //"cateUrl": "https://shangjihuoke.com/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
-    
-    "dcVipFlag": "true",
+  "sousuoqian": "/index.php/ajax/suggest?mid=1&wd=",
+  "sousuohou": "&limit=500",
+  "sousuohouzhui": "/voddetail/",
+  "ssmoshi": "0",
+  "sousuoshifouercijiequ": "0",
+  "jspic": "pic",
+  "jsname": "name",
+  "jsid": "id",
+  "ssjiequqian": "空",
+  "ssjiequhou": "空",
+  "ssjiequshuzuqian": "空",
+  "ssjiequshuzuhou": "空",
+  "sstupianqian": "空",
+  "sstupianhou": "空",
+  "ssbiaotiqian": "空",
+  "ssbiaotihou": "空",
+  "sslianjieqian": "空",
+  "sslianjiehou": "空",
 
-    "dcPlayUrl": "true",
+  "bfshifouercijiequ": "0",
+  "bfjiequqian": "空",
+  "bfjiequhou": "空",
+  "bfjiequshuzuqian": "class=\"stui-content__playlist",
+  "bfjiequshuzuhou": "</ul>",
 
-    "dcShow2Vip": {},
+  "zhuangtaiqian": "更新：</span>",
+  "zhuangtaihou": "</p>",
+  "daoyanqian": "导演：</span>",
+  "daoyanhou": "</p>",
+  "zhuyanqian": "主演：</span>",
+  "zhuyanhou": "</p>",
+  "juqingqian": "简介：</span>",
+  "juqinghou": "</span",
 
-    "pCfgJs": "https://shangjihuoke.com/static/js/playerconfig.js",
-
-    "pCfgJsR": "[\\W|\\S|.]*?MacPlayerConfig.player_list[\\W|\\S|.]*?=([\\W|\\S|.]*?),MacPlayerConfig.downer_list",
-
-    
-
-  
-
-  // Home Summary ====================================================
-
-    "homeVodNode": "//a[@class='module-poster-item module-item']",
-
-    "homeVodName": "/@title",
-
-    "homeVodId": "/@href",
-
-    "homeVodIdR": "/(\\w+).html",
-
-    "homeVodImg": "//img[@class='lazy lazyload']/@data-original",
-
-    "homeVodMark": "//div[@class='module-item-note']/text()",
-
-  
-
-  // Category Summary ================================================
-
-    //"cateUrl": "https://shangjihuoke.com/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
-
-    "cateVodNode": "//a[@class='module-poster-item module-item']",
-
-    "cateVodName": "/@title",
-
-    "cateVodId": "/@href",
-
-    "cateVodIdR": "/(\\w+).html",
-
-    "cateVodImg": "//img[@class='lazy lazyload']/@data-original",
-
-    "cateVodMark": "//div[@class='module-item-note']/text()",
-
-  
-
-  // Category Details ================================================
-
-    "dtUrl": "https://shangjihuoke.com/index.php/vod/detail/id/{vid}.html",
-
-    "dtNode": "//div[@class='module module-info']",
-
-    "dtName": "//div[@class='module-info-main']/div[@class='module-info-heading']/h1/text()",
-
-    "dtNameR": "",
-
-    "dtImg": "//div[@class='module-info-poster']//div[@class='module-item-pic']/img/@data-original",
-
-    "dtImgR": "\\S+(http\\S+)",
-
-    "dtCate": "/div[@class='module-info-main']/div[@class='module-info-heading']/div[@class='module-info-tag']/div[@class='module-info-tag-link'][3]/a",
-
-    "dtYear": "//div[@class='module-info-main']/div[@class='module-info-heading']/div[@class='module-info-tag']/div[@class='module-info-tag-link'][1]/a",
-
-    "dtArea": "//div[@class='module-info-main']/div[@class='module-info-heading']/div[@class='module-info-tag']/div[@class='module-info-tag-link'][2]/a",
-
-    "dtActor": "//div[@class='module-info-items']//span[contains(@class,'module-info-item-title') and contains(text(), '主演：')]/following-sibling::div/a/text()",
-
-    "dtDirector": "//div[@class='module-info-items']//span[contains(@class,'module-info-item-title') and contains(text(), '导演：')]/following-sibling::div/a/text()",
-
-    "dtDesc": "//div[@class='module-info-introduction-content']/p/text()",
-
-  
-
-  // Playlist ========================================================
-
-    "dtFromNode": "//div[contains(@class, 'module-tab-items-box')]/div[contains(@class, 'module-tab-item')]/span",
-
-    "dtFromName": "/text()",
-
-    "dtUrlNode": "//div[contains(@class, 'module-play-list-content')]",
-
-    "dtUrlSubNode": "/a",
-
-    "dtUrlId": "/@href",
-
-    "dtUrlIdR": "/(\\S+).html",
-
-    "dtUrlName": "/span/text()",
-
-    "dtUrlNameR": "",
-
-    "playUrl": "https://shangjihuoke.com/{playUrl}.html",
-
-    "playUa": "",
-
-  
-
-  // Search Results ==================================================
-
-    "searchUrl": "https://shangjihuoke.com/index.php/ajax/suggest?mid=1&wd={wd}&limit=10",
-
-    "scVodNode": "json:list",
-
-    "scVodName": "name",
-
-    "scVodId": "id",
-
-    "scVodIdR": "",
-
-    "scVodImg": "pic",
-
-    "scVodMark": ""
-
+  "bfyshifouercijiequ": "0",
+  "bfyjiequqian": "空",
+  "bfyjiequhou": "空",
+  "bfyjiequshuzuqian": "<a",
+  "bfyjiequshuzuhou": "/a>",
+  "bfbiaotiqian": ">",
+  "bfbiaotihou": "<",
+  "bflianjieqian": "href=\"",
+  "bflianjiehou": "\""
 }
