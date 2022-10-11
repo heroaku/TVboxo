@@ -258,6 +258,7 @@
 
     ## XB系列
 
+    {"key":"csp_biubiu_片库影院","name":"💦片库影院(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXB/pk.json"},
     {"key":"csp_biubiu_夜空蓝光","name":"💦夜空蓝光(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext": "https://github.com/heroaku/TVboxo/raw/main/MaooXB/%E5%A4%9C%E7%A9%BA%E8%93%9D%E5%85%89.json"},
     {"key":"csp_XBiubiu_foxcup","name":"💦茶杯狐(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/upfox.json"},
     {"key":"AB影院","name":"💦AB影院","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/MaooXB/AB%E5%BD%B1%E9%99%A2.json"},
