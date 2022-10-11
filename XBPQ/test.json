@@ -48,7 +48,7 @@
 
   // Category Summary ================================================
 
-    "cateUrl": "https://www.ml1080.com/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
+    "cateUrl": "https://shangjihuoke.com/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
 
     "cateVodNode": "//a[@class='module-poster-item module-item']",
 
