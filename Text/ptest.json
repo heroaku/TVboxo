@@ -200,7 +200,9 @@
    {"key":"csp_xBPQ_乐猪","name":" 🍂乐猪 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/lezhu.json"},
    {"key":"csp_xBPQ_小强迷","name":" 🍂小强迷 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/xiaoqm.json"},
    {"key":"csp_xBPQ_锐行影院","name":" 🍂锐行影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/ruixingjs.json"},
-	  
+   {"key":"csp_xBPQ_电影先生","name":" 🍂电影先生 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/电影先生.json"},
+   {"key":"csp_xBPQ_七小时影院","name":" 🍂七小时影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/七小时影院.json"},
+		  
 	  
 
 	  
