@@ -211,7 +211,10 @@
    {"key":"csp_xBPQ_1080TV","name":" 🍂1080TV xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/1080TV.json"},
    {"key":"csp_xBPQ_乐猪","name":" 🍂乐猪 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/lezhu.json"},
    {"key":"csp_xBPQ_小强迷","name":" 🍂小强迷 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/xiaoqm.json"},	  
-	  
+   {"key":"csp_xBPQ_锐行影院","name":" 🍂锐行影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/ruixingjs.json"},
+   {"key":"csp_xBPQ_电影先生","name":" 🍂电影先生 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/电影先生.json"},
+   {"key":"csp_xBPQ_七小时影院","name":" 🍂七小时影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/七小时影院.json"},
+		  
 	  
 	  //js J版
 
@@ -271,7 +274,7 @@
 	{"key": "csp_xb_fg","name": " 💠疯狗影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://m.fenggoudy3.com/list-select-id-{cateId}-type--area--year--star--state--order-addtime-p-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
 	{"key": "csp_xb_huix","name": " 💠回响(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "http://hxys.tv/vodshow/{cateId}-{area}-------{catePg}---{year}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
 	{"key": "csp_xb_aikan ","name": " 💠爱看影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://ikan6.vip/vodshow/{cateId}--------{catePg}---","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},
-	  
+	{"key": "csp_xb_olevod ","name": " 💠欧乐影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.olevod.com/index.php/vod/show/id/{cateId}/page/{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu.jar"},  
 
 	  
     {"key":"csp_QQ","name":"🐧腾讯(SP)","type": 3,"api":"csp_QQ","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91e.jar"},
