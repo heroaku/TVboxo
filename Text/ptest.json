@@ -17,7 +17,7 @@
    {"key":"csp_xBPQ_test测试","name":" 🍂测试 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/test.json"},
    {"key": "drpy_js_test","name": " 🎑js测试[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/jstest.js"},	  
     {"key": " py_test","name": " 🐦py测试","type": 3,"api": "py_bilibili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_test.py"},	  
- {"key":"csp_XBiubiubiubiu_pk影视","name":"pk影视","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/wokaotianshi123/52tvmovie/raw/770692e3eb8dc541ac9ffdb47c541549cb3f8cb1/tvbox/pk.json"},
+
 
 	  
 	  //js J版
