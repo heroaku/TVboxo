@@ -16,7 +16,8 @@
   //"主演": "主演：&&</p>",
   //"简介": "<p class=\"col-pd\">&&</span>",
   
-  "线路数组": "class=\"stui-pannel__head&&</div>",
+  //"线路数组": "class=\"stui-pannel__head&&</div>",
+  "线路数组": "class=\"title&&</h3>",
   "线路标题": "class=\"title&&</h3>",
   
   "播放数组": "class=\"stui-content__playlist&&</ul>",
