@@ -1,11 +1,12 @@
 {
   "站名": "双十电影",
-  "主页url": "https://www.1010dianying.com",
+  "主页url": "https://www.1010dy3.com",
   
-  "分类": "电影$1#电视剧$2#动漫$4#综艺$3",
+  "分类": "电影$1#电视剧$2#综艺$3#动漫$4",
   
   //"分类url": "https://www.1010dy3.com/show/{cateId}{area}{by}{class}{year}/page/{catePg}",
-  "分类url": "https://www.1010dianying.com/vodshow1237/{cateId}-{area}-{by}-{class}-{lang}-------{year}/",
+  "分类url": "https://www.1010dy3.com/show/{cateId}/area/{area}/by/{by}/class/{class}/year/{year}/",
+  //"分类url": "https://www.1010dianying.com/vodshow1237/{cateId}-{area}-{by}-{class}-{lang}-------{year}/",
   
   //"副标题": "text-right\">&&</span>",
   
