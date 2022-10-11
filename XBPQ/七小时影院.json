@@ -13,8 +13,9 @@
 "链接后缀": "-1-1.html",
 
 "简介": "content\">&&</div",
-
-"线路数组":"tab\"&&/a>",
+  
+"线路数组": "rel=\"nofollow&&</a>",
+//"线路数组":"tab\"&&/a>",
 "播放数组":"id=\"playlist&&</ul",
 
 "搜索url":"https://www.qxsyy.com/index.php/ajax/suggest?mid=1&wd={wd}",
