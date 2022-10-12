@@ -44,7 +44,7 @@
   "bfshifouercijiequ": "0",
   "bfjiequqian": "空",
   "bfjiequhou": "空",
-  "bfjiequshuzuqian": "class=\"module-play-list\"", //播放截取的列表数组的前关键词
+  "bfjiequshuzuqian": "class=\"playlist clearfix\"", //播放截取的列表数组的前关键词
   "bfjiequshuzuhou": "</div>", //播放截取的列表数组的后关键词
 
   //"zhuangtaiqian": "备注：</span>", //状态前关键词 (电影、综艺)
@@ -59,9 +59,9 @@
   "juqingqian": "introduction-content\"><p>", //剧情前关键词
   "juqinghou": "</p>", //剧情后关键词
 
-  "bfyshifouercijiequ": "0", //截取的播放列表数组是否需要二次截取，0不需要，1需要
-  "bfyjiequqian": "空", //不需要二次截取就填空
-  "bfyjiequhou": "空", //不需要二次截取就填空
+  "bfyshifouercijiequ": "1", //截取的播放列表数组是否需要二次截取，0不需要，1需要
+  "bfyjiequqian": "<ul>", //不需要二次截取就填空
+  "bfyjiequhou": "</ul>", //不需要二次截取就填空
   "bfyjiequshuzuqian": "<a", //播放剧集数组前关键词
   "bfyjiequshuzuhou": "/a>", //播放剧集数组后关键词
   "bfbiaotiqian": "span>", //播放剧集标题前关键词
