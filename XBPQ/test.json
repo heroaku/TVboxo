@@ -1,22 +1,21 @@
 //写法思路来自biubiu影院，海阔视界，xpath筛选。
 {
+    "分类": "电影$1#剧集$2#综艺$3#动漫$4",
+    "分类链接": "https://www.23wm.net/vodshow/area/{area}/id/{cateId}/page/{catePg}/year/{year}.html",
+    
+    //"线路数组": "class=\"module-tab-item &&</div>",
+    //"线路标题": "<span>&&</small>",
+  
+    //"播放数组": "class=\"module-play-list-content&&</div>",
+    
     //规则名
     "title": "",
     //作者
     "author": "认真の雪",
     //请求UA
-    "UserAgent":"",
-    //分类链接起始页码,禁止负数于合含小数点。
-    "firstpage": "1",
-    "homeContent":"1",
-    //分类链接,{cateId}是分类，{catePg}是页码,第一页没有页码的可以这样写 第二页链接[firstPage=第一页的链接]
-    "class_url": "https://www.23wm.net/vodshow/area/{area}/id/{cateId}/page/{catePg}/year/{year}.html",
-    //分类名
-    "class_name": "电影&剧集&综艺&动漫&纪录",
-    //分类名替换词，替换词中有英文&的用两个中文＆＆代替
-    "class_value": "1&2&3&4&20",
+
     //筛选数据，json格式，参考xpath的筛选写法
-    "filterdata":{
+    "筛选":{
             "1": [
             {
                 "key": "cateId",
