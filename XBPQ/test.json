@@ -1,4 +1,12 @@
 {
+   //"线路数组": "<dl>&&</dl>",
+  //"线路标题": "<dt>&&</dt>",
+  "播放数组": "class=\"playlist &&</div>",
+  "播放数组二次截取": ">&&</ul>",
+  
+  "分类url": "https://www.nunuyy3.org/{cateId}/{class}-{area}-{year}-{catePg}-{by}.html",
+ //https://www.nunuyy3.org/{cateId}/{class}-{area}-{year}-{catePg}-{by}.html
+"分类": "电影$dianying#电视剧$dianshiju#综艺$zongyi#动漫$dongman",
   "author": "",
   "name": "努努影院",
   "url": "https://www.nunuyy3.org", 
