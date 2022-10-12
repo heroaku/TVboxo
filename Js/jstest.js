@@ -1,7 +1,7 @@
-var rule = Object.assign(muban.mxpro,{
-title:'段友影视',
-host:'http://xqmi.top',
-url:'/index.php/vod/show/id/fyclass/page/fypage.html',
-searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
-class_parse:'.navbar-items li:gt(2):lt(8);a&&Text;a&&href;.*/(.*?).html',
+muban.首图2.二级.tabs = '.nav-tabs.dpplay&&li';
+var rule = Object.assign(muban.首图2,{
+    title:'007影视',
+    host:'https://www.007ts.me',
+    url:'/channel/fyclass-fypage.html',
+    searchUrl:'/search/**----------fypage---.html',
 });
