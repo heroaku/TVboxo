@@ -1,48 +1,71 @@
-{ 
- //"线路数组": "<dl>&&</dl>",
-  //"线路标题": "<dt>&&</dt>",
-  "播放数组": "class=\"module-play-list\"&&</div>",
+{
+  "author": "",
+  "name": "努努影院",
+  "url": "https://www.nunuyy2.org", 
+  "tihuan": "cnzz.com", 
+  "User": "空", 
+  "shouye": "1",
 
-  
-  
-  //"站名": "电影先生",
-"主页url": "https://www.nunuyy3.org",
-//"ua": "手机",
-//"热门推荐": "1",
-//"起始页": "1",
-//"数组": "<div class=\"module-item-cover\">&&/div></div>",
-//"图片": "data-src=\"&&\"",
-//"标题": "title=\"&&\"",
-//"副标题": "<div class=\"module-item-text\">&&<",
-//"链接": "href=\"&&\"",
-//"线路数组": "ta-dropdown-value=\"&&</div>",
-//"线路标题": "\">&&</span>",
-//"状态": "上映：&&</div>",
-//"导演": "导演：&&</div",
-//"主演": "主演：&&</div",
-//"简介": "剧情：&&</div>",
-//"播放数组": "class=\"scroll-content\">&&</div>",
-//"播放列表": "<a&&/a>",
-//"播放标题": ">&&</span>",
-//"播放链接": "href=\"&&\"",
-//"免嗅": "1",
-//"嗅探词":".m3u8",
-//"过滤词":"",
-//"搜索url": "http://dyxs11.com/search-{wd}-------------/",
-//"搜索模式": "1",
-//"搜索二次截取": "",
-//"搜索数组": "module-search-item\">&&<h3",
-//"搜索图片": "data-src=\"&&\"",
-//"搜索标题": "title=\"&&\"",
-//"搜索链接": "href=\"&&\"",
-"分类url": "https://www.nunuyy3.org/{cateId}/{class}-{area}-{year}-{catePg}-{by}.html",
- //https://www.nunuyy3.org/{cateId}/{class}-{area}-{year}-{catePg}-{by}.html
-"分类": "电影$dianying#电视剧$dianshiju#综艺$zongyi#动漫$dongman",
-//"类型": "1--动作片$6#喜剧片$7#爱情片$8#科幻片$9#恐怖片$10#剧情片$11#战争片$12||2--国产剧$13#港台剧$14#日韩剧$15#欧美剧$16",
-//"剧情": "dianying--动作$动作#喜剧$喜剧#爱情$爱情#科幻$科幻#剧情$剧情#悬疑$悬疑#惊悚$惊悚#恐怖$恐怖#犯罪$犯罪#武侠$武侠#冒险$冒险#灾难$灾难#奇幻$奇幻#警匪$警匪#战争$战争#动画$动画#西部$西部#青春偶像$青春偶像#古装$古装#历史$历史#运动$运动#都市$都市#情景$情景#记录$记录#同性$同性#音乐$音乐#歌舞$歌舞#传记$传记#其他$其他||dianshiju--动作$动作#喜剧$喜剧#爱情$爱情#科幻$科幻#剧情$剧情#悬疑$悬疑#惊悚$惊悚#恐怖$恐怖#犯罪$犯罪#武侠$武侠#冒险$冒险#灾难$灾难#奇幻$奇幻#警匪$警匪#战争$战争#动画$动画#西部$西部#青春偶像$青春偶像#古装$古装#历史$历史#运动$运动#都市$都市#情景$情景#记录$记录#同性$同性#音乐$音乐#歌舞$歌舞#传记$传记#其他$其他",
-//"地区": "替换[大陆$大陆>>中国大陆$中国大陆||香港$香港>>中国香港$中国香港||台湾$台湾>>中国台湾$中国台湾]",
-"年份": "2005-2022",
-//"排序": "时间排序$time#人气排序$hits#评分排序$score",
-"筛选": "1"
+  "fenlei": "电影$/vodshow/1--------#连续剧$/vodshow/2--------#综艺$/vodshow/3--------#动漫$/vodshow/4--------", 
+  "houzhui": "---/", 
 
-}
+  "shifouercijiequ": "1", //截取的列表数组是否需要二次截取，0不需要，1需要
+  "jiequqian": "class=\"module-items", //不需要二次截取就填空
+  "jiequhou": "class=\"fixedGroup", //不需要二次截取就填空
+  "jiequshuzuqian": "<a", //截取的列表数组的前关键词,截取的关键词有 " 的用 \ 进行转义
+  "jiequshuzuhou": "alt=\"", //截取的列表数组的后关键词,截取的关键词有 " 的用 \ 进行转义
+  "tupianqian": "data-original=\"", //列表中资源的图片前关键词,截取的关键词有 " 的用 \ 进行转义
+  "tupianhou": "\"", //列表中资源的图片后关键词,截取的关键词有 " 的用 \ 进行转义
+  "biaotiqian": "title=\"", //列表中资源的标题前关键词,截取的关键词有 " 的用 \ 进行转义
+  "biaotihou": "\"", //列表中资源的标题后关键词,截取的关键词有 " 的用 \ 进行转义
+  "lianjieqian": "href=\"", //列表中资源的详情页跳转链接前关键词,截取的关键词有 " 的用 \ 进行转义
+  "lianjiehou": "\"", //列表中资源的详情页跳转链接后关键词,截取的关键词有 " 的用 \ 进行转义
+
+  //搜索部分基本不用动，现在网站基本都是苹果CMS，所有搜索是固定的。
+  "sousuoqian": "/index.php/ajax/suggest?mid=1&wd=",
+  "sousuohou": "&limit=500",
+  "sousuohouzhui": "/voddetail/", //搜索页影片跳转详情页的中间标识链接部分
+  "ssmoshi": "0",
+  "sousuoshifouercijiequ": "0",
+  "jspic": "pic",
+  "jsname": "name",
+  "jsid": "id",
+  "ssjiequqian": "空",
+  "ssjiequhou": "空",
+  "ssjiequshuzuqian": "空",
+  "ssjiequshuzuhou": "空",
+  "sstupianqian": "空",
+  "sstupianhou": "空",
+  "ssbiaotiqian": "空",
+  "ssbiaotihou": "空",
+  "sslianjieqian": "空",
+  "sslianjiehou": "空",
+
+  "bfshifouercijiequ": "0",
+  "bfjiequqian": "空",
+  "bfjiequhou": "空",
+  "bfjiequshuzuqian": "class=\"module-play-list\"", //播放截取的列表数组的前关键词
+  "bfjiequshuzuhou": "</div>", //播放截取的列表数组的后关键词
+
+  //"zhuangtaiqian": "备注：</span>", //状态前关键词 (电影、综艺)
+  //"zhuangtaiqian": "连载：</span>", //状态前关键词 (动漫)
+  //"zhuangtaiqian": "集数：</span>", //状态前关键词 (连续剧)
+  "zhuangtaiqian": "更新：</span>", //状态前关键词 (全部)
+  "zhuangtaihou": "</div>", //状态后关键词
+  "daoyanqian": "导演：</span>", //导演前关键词
+  "daoyanhou": "</div>", //导演态后关键词
+  "zhuyanqian": "主演：</span>", //主演前关键词
+  "zhuyanhou": "</div>", //主演后关键词
+  "juqingqian": "introduction-content\"><p>", //剧情前关键词
+  "juqinghou": "</p>", //剧情后关键词
+
+  "bfyshifouercijiequ": "0", //截取的播放列表数组是否需要二次截取，0不需要，1需要
+  "bfyjiequqian": "空", //不需要二次截取就填空
+  "bfyjiequhou": "空", //不需要二次截取就填空
+  "bfyjiequshuzuqian": "<a", //播放剧集数组前关键词
+  "bfyjiequshuzuhou": "/a>", //播放剧集数组后关键词
+  "bfbiaotiqian": "span>", //播放剧集标题前关键词
+  "bfbiaotihou": "</span", //状播放剧集标题后关键词
+  "bflianjieqian": "href=\"", //播放剧集链接前关键词
+  "bflianjiehou": "\""
+} //播放剧集链接后关键词
