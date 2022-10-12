@@ -20,7 +20,7 @@
 {"key":"csp_biubiu_test","name":"💦xb测试(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext": "https://github.com/wokaotianshi123/0929tv_box/raw/bb4b7f06ed212f1c2ca1c3f4dc1a0f61904a754e/tvbox/23w.json"},
 {"key": "csp_xb_test ","name": " 💠测试(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.23wm.net/vodshow/id/{cateId}/page/{catePg}.html"},
 {"key":"csp_xpath_测试","name":" 🌾测试(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/wokaotianshi123/0929tv_box/raw/bb4b7f06ed212f1c2ca1c3f4dc1a0f61904a754e/tvbox/23w.json"},
-{"key":"csp_XYQBiu_测试","name":" 🌌测试(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/23ys.json"},	  
+//{"key":"csp_XYQBiu_测试","name":" 🌌测试(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/23ys.json"},	  
 	
  
  //js J版
