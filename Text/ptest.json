@@ -219,7 +219,7 @@
 {"key": "csp_xb_huix","name": " 💠回响(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "http://hxys.tv/vodshow/{cateId}-{area}-------{catePg}---{year}.html"},
 {"key": "csp_xb_aikan ","name": " 💠爱看影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://ikan6.vip/vodshow/{cateId}--------{catePg}---"},
 {"key": "csp_xb_olevod ","name": " 💠欧乐影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.olevod.com/index.php/vod/show/id/{cateId}/page/{catePg}.html"},
-
+{"key": "csp_xb_23影视","name": " 💠23影视(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.23wm.net/vodshow/id/{cateId}/page/{catePg}.html"},
 	  
 		  
 	  
