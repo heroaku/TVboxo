@@ -1,8 +1,8 @@
 { 
  //"线路数组": "<dl>&&</dl>",
   //"线路标题": "<dt>&&</dt>",
-  "播放数组": "class=\"playlist &&</div>",
-  //"播放列表": "class=\"playlist &&</div>",
+  "播放数组": "class=\"module-play-list\"&&</div>",
+
   
   
   //"站名": "电影先生",
