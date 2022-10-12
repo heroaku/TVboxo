@@ -17,7 +17,7 @@
    {"key":"csp_xBPQ_test测试","name":" 🍂测试 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/test.json"},
    {"key": "drpy_js_test","name": " 🎑js测试[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/jstest.js"},	  
     {"key": " py_test","name": " 🐦py测试","type": 3,"api": "py_bilibili","searchable": 0,"quickSearch": 0,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_test.py"},	  
-{"key":"csp_biubiu_片库影院","name":"💦片库影院(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext": "https://github.com/MAYDAYxxx/MAYDAYxxx.github.io/raw/30ff703d948d463ffaddf432b27357c736260259/TVBox/MaooXB/%E5%8A%AA%E5%8A%AA%E5%BD%B1%E9%99%A2.json"},
+{"key":"csp_biubiu_努努影院","name":"💦努努影院(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext": "https://github.com/MAYDAYxxx/MAYDAYxxx.github.io/raw/30ff703d948d463ffaddf432b27357c736260259/TVBox/MaooXB/%E5%8A%AA%E5%8A%AA%E5%BD%B1%E9%99%A2.json"},
 
 	  
 	  //js J版
