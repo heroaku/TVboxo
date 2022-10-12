@@ -5,8 +5,8 @@
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91c1.jar",
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91h.jar",
   //"spider":"https://神器每日推送.tk/jar",
-  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/0928.jar",
-  //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/09221.jar",
+  //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/0928.jar",
+  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/1012.jar",
  
   
   "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRodWIuY29tL2hlcm9ha3UvVFZib3hvL3Jhdy9tYWluL3R2L2JjLnR4dA=="]}]}],
