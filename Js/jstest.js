@@ -1,5 +1,5 @@
 var rule = {
-    title:'麦豆',
+    title:'麦豆com',
     host:'https://www.mdoutv.com',
     // homeUrl:'/',
     url:'/movie_bt_series/fyclass/page/fypage',
@@ -11,9 +11,9 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    //class_parse:'.follow-align&&ul&&li;a&&Text;a&&href;movie_bt_series/(.*?)',
-	class_name:'国产&港台&欧美&韩剧&日剧&泰剧&剧集&电影&动漫&综艺',
-	class_url:'guocanju&gangtai&en&hanju&riju&taiju&tv&movie&ac&zongyi',
+    class_parse:'.submenu_mi&&li;a&&Text;a&&href;.*/(.*)',
+	//class_name:'国产&港台&欧美&韩剧&日剧&泰剧&剧集&电影&动漫&综艺',
+	//class_url:'guocanju&gangtai&en&hanju&riju&taiju&tv&movie&ac&zongyi',
 	cate_exclude:'留言|幸运码|更多播放线路|蚂蚁导航|迷历史',
     play_parse:true,
     lazy:'',
