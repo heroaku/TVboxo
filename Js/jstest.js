@@ -9,7 +9,7 @@ var rule={
     filterable:0,
     headers:{'User-Agent':'MOBILE_UA',},
     //class_parse:'.navbar-items&&ul li:gt(0):lt(8);a&&Text;a&&href',
-    //class_name:'电影&电视剧&综艺&动漫&纪录片&4K专区',
+    class_name:'电影&电视剧&综艺&动漫&纪录片&4K专区',
     class_url:'1&2&3&4&35&40',
  play_parse:true,
     lazy:'',
