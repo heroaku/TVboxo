@@ -1,27 +1,26 @@
 var rule = {
-    title:'剧荒',
-    host:'https://www.juhuang.tv',    
+    title:'麦豆',
+    host:'https://www.mdoutv.com',
     // homeUrl:'/',
-    url:'/type/fyclass_type_fypage.html',
-    searchUrl:'/s/**/fypage.html',
-    searchable:1,
-    quickSearch:1,
-    headers:{
-        'User-Agent':'UC_UA'
+    url:'/movie_bt_series/fyclass/page/fypage',
+    searchUrl:'/search/**/page/fypage',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
     },
-    timeout:5000,
-	class_name:'电视剧&电影&综艺&动漫',//静态分类名称拼接
-	class_url:'2&1&3&4',//静态分类标识拼接
-    //class_parse:'.drop-content-items li:gt(0):lt(7);.grid-item-name&&Text;a&&href',
+    //class_parse:'.follow-align&&ul&&li;a&&Text;a&&href;movie_bt_series/(.*?)',
+	class_name:'国产&港台&欧美&韩剧&日剧&泰剧&剧集&电影&动漫&综艺',
+	class_url:'guocanju&gangtai&en&hanju&riju&taiju&tv&movie&ac&zongyi',
+	cate_exclude:'留言|幸运码|更多播放线路|蚂蚁导航|迷历史',
     play_parse:true,
     lazy:'',
-    limit:5,
-    推荐:'#movie-list-body;.movie-list-item;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
+    limit:6,
+    推荐:'body&&.mi_btcon;ul&&li;img&&alt;img&&data-original;.jidi&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-   
-   一级:'.module-item-pic&&a;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-    
-	
-	二级:{"title":"h1.movie-title&&Text;.data:eq(1)&&Text","img":".poster img&&src","desc":".cr3.starLink&&Text","content":".detailsTxt&&Text","tabs":".play_source_tab a","lists":".content_playlist:eq(#id) a"},
-    搜索:'.vod-search-list;.movie-title&&Text;.Lazy&&data-original;.getop&&Text;a&&href;.getop:eq(-1)&&Text',
+    一级:'.mrb&&ul&&li;img&&alt;img&&data-original;.jidi&&Text;a&&href',
+    二级:{"title":"h1&&Text;.moviedteail_list&&li:eq(2)&&Text;","img":".dyxingq&&img&&src","desc":".moviedteail_list&&li:eq(3)&&Text;.moviedteail_list&&li:eq(4)&&Text","content":".yp_context&&Text","tabs":".fr&&a","lists":".paly_list_btn:eq(#id) a"},
+    搜索:'.search_list&&ul&&li;h3&&Text;img&&data-original;.hdinfo&&span&&Text;a&&href',
 }
