@@ -37,6 +37,24 @@ var mubanDict = { // 模板字典
     二级:{"title":"h1&&Text;.module-info-tag&&Text","img":".lazyload&&data-original","desc":".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text","content":".module-info-introduction&&Text","tabs":".module-tab-item","lists":".module-play-list:eq(#id) a"},
     搜索:'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',
 },
+mxone5:{
+title:'',
+host:'',
+url:'/show/fyclass--------fypage---.html',
+searchUrl:'/search/**----------fypage---.html',
+searchable:2,//是否启用全局搜索,
+quickSearch:0,//是否启用快速搜索,
+filterable:0,//是否启用分类筛选,
+class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
+play_parse:true,
+lazy:'',
+limit:6,
+推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+double:true, // 推荐内容是否双层定位
+一级:'.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text","content":".vod_content&&Text","tabs":".module-tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
+搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
+},
 首图:{
     title:'',
     host:'',
@@ -151,7 +169,30 @@ vfed:{
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
 },
-
+短视:{
+    title:'',
+    host:'',
+    // homeUrl:'/',
+    url:'/channel/fyclass-fypage.html',
+    searchUrl:'/search.html?wd=**',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
+    },
+    class_parse:'.menu_bottom ul li;a&&Text;a&&href;.*/(.*?).html',
+    cate_exclude:'解析|动态',
+    play_parse:true,
+    lazy:'',
+    limit:6,
+    推荐:'.indexShowBox;ul&&li;a&&title;img&&data-src;.s1&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.pic-list&&li;a&&title;img&&data-src;.s1&&Text;a&&href',
+    二级:{"title":"h1&&Text;.content-rt&&p:eq(0)&&Text","img":".img&&img&&data-src","desc":".content-rt&&p:eq(1)&&Text;.content-rt&&p:eq(2)&&Text;.content-rt&&p:eq(3)&&Text;.content-rt&&p:eq(4)&&Text;.content-rt&&p:eq(5)&&Text","content":".zkjj_a&&Text","tabs":".py-tabs&&option","lists":".player:eq(#id) li"},
+    搜索:'.sr_lists&&ul&&li;h3&&Text;img&&data-src;.int&&p:eq(0)&&Text;a&&href',
+}
 
 };
 var muban = JSON.parse(JSON.stringify(mubanDict));
