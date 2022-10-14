@@ -215,6 +215,7 @@
    {"key":"csp_xBPQ_锐行影院","name":" 🍂锐行影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/ruixingjs.json"},
    {"key":"csp_xBPQ_电影先生","name":" 🍂电影先生 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/电影先生.json"},
    {"key":"csp_xBPQ_七小时影院","name":" 🍂七小时影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/七小时影院.json"},
+   {"key":"csp_xBPQ_在线之家","name":" 🍂在线之家 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/在线之家.json"},		  
 		  
 	  
 	  //js J版
@@ -262,6 +263,26 @@
 {"key": "drpy_js_在线之家","name": " 🎑在线之家[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/在线之家.js"},
 {"key": "drpy_js_真不卡","name": " 🎑真不卡[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/真不卡.js"},
 {"key": "drpy_js_追剧喵","name": " 🎑追剧喵[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/追剧喵.js"},
+	{"key": "drpy_js_秋霞","name": " 🎑秋霞影院[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/秋霞.js"}, 
+	{"key": "drpy_js_MXONE","name": " 🎑MXONE喵[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/MXONE喵.js"},
+	{"key": "drpy_js_Nike影视","name": " 🎑Nike影视[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/Nike影视.js"},
+	{"key": "drpy_js_TV云播","name": " 🎑TV云播[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/TV云播.js"},
+	{"key": "drpy_js_爱看电影","name": " 🎑爱看电影[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/爱看电影.js"},
+	{"key": "drpy_js_爱看影视","name": " 🎑爱看影视[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/爱看影视.js"},
+	{"key": "drpy_js_大师兄影视","name": " 🎑大师兄影视[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/大师兄影视.js"},
+	{"key": "drpy_js_豆瓣","name": " 🎑豆瓣[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/豆瓣.js"},
+	{"key": "drpy_js_剧荒","name": " 🎑剧荒[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/剧荒.js"},
+	{"key": "drpy_js_剧迷","name": " 🎑剧迷[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/剧迷.js"},
+	{"key": "drpy_js_看了么","name": " 🎑看了么[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/看了么.js"},
+	{"key": "drpy_js_快云影院","name": " 🎑快云影院[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/快云影院.js"},
+	{"key": "drpy_js_乐猪TV","name": " 🎑乐猪TV[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/乐猪TV.js"},
+	{"key": "drpy_js_两个BT","name": " 🎑两个BT[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/两个BT.js"},
+	{"key": "drpy_js_胖虎影视","name": " 🎑胖虎影视[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/胖虎影视.js"},
+	{"key": "drpy_js_皮皮泡","name": " 🎑皮皮泡[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/皮皮泡.js"},
+	{"key": "drpy_js_特狗影视","name": " 🎑特狗影视[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/特狗影视.js"},
+	{"key": "drpy_js_腾云驾雾","name": " 🎑腾云驾雾[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/腾云驾雾.js"},
+	{"key": "drpy_js_天空影视","name": " 🎑天空影视[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/天空影视.js"},
+	{"key": "drpy_js_吸瓜","name": " 🎑吸瓜影院[DRPY]","type": 3,"api": "https://github.com/heroaku/CatVodSpiderJS/raw/main/drpy.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/吸瓜.js"}, 
 	  
 	  
 	  //Xbui
