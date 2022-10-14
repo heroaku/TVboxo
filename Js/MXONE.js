@@ -3,7 +3,5 @@ var rule = Object.assign(muban.mxpro,{
     host:'https://www.jpys.me',
     url:'vodshow/fyclass--------fypage---.html',
     searchUrl:'/vodsearch/**----------fypage---.html/',
-    class_name:'电影&电视剧&动漫&综艺',
-    class_url:'1&2&3&4',
-	class_parse:'',
+class_parse:'.navbar-items li:gt(2):lt(8);a&&Text;a&&href;/(\\d+).html',
 });
