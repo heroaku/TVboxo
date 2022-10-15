@@ -1,24 +1,23 @@
 var rule={
-    title:'69美剧',
-    host:'https://www.69mj.com',
-    // homeUrl:'/',
-    url:'/index.php/vod/show/by/time/id/fyclass/page/fypage/year/2022.html',
-    searchUrl:'/index.php/vod/search.html?wd=**',
+    title:'小宝影院',
+    host:'https://xiaoheimi.net/',
+    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
-    quickSearch:1,//是否启用快速搜索,
+    quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
-        'User-Agent':'MOBILE_UA',
-        // "Cookie": "searchneed=ok"
+    headers:{
+        'User-Agent':'UC_UA',
     },
-    class_parse:'.nav-menu-items&&li;a&&Text;a&&href;/(\\d+).html',
+    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
+    class_parse:'.myui-header__menu&&li;a&&Text;a&&href;.*/(.*?).html',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'.module-list;&&.module-item;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
+    推荐:'ul.fed-list-info.fed-part-rows;li;a.fed-list-title&&Text;a&&data-original;.fed-list-remarks&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.module&&.module-item;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
-    二级:{"title":"h1&&Text;.tag-link&&span&&Text","img":".lazyload&&data-src","desc":".scroll-box:eq(0)&&Text;.scroll-box:eq(1)&&Text;.scroll-box:eq(2)&&Text;.scroll-box:eq(3)&&Text","content":".vod_content&&Text","tabs":".module-tab-content&&div","lists":".sort-item:eq(#id) a"},
-    搜索:'.module&&.module-search-item;h3&&Text;.lazyload&&data-src;.video-serial&&Text;a&&href',
+    一级:'.fed-list-info&&li;a.fed-list-title&&Text;a&&data-original;.fed-list-remarks&&Text;a&&href',
+    二级:{"title":"h1.fed-part-eone&&Text;.fed-deta-content&&.fed-part-rows&&li&&Text","img":".fed-list-info&&a&&data-original","desc":".fed-deta-content&&.fed-part-rows&&li:eq(1)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(2)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(3)&&Text","content":".fed-part-esan&&Text","tabs":".fed-drop-boxs&&.fed-part-rows&&li","lists":".fed-play-item:eq(#id)&&ul:eq(1)&&li"},
+    搜索:'.fed-deta-info;h1&&Text;.lazyload&&data-original;.fed-list-remarks&&Text;a&&href;.fed-deta-content&&Text',
 }
 
