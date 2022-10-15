@@ -1,6 +1,6 @@
 var rule={
-    title:'小宝影院',
-    host:'https://xiaoheimi.net/',
+    title:'小宝影视',
+    host:'https://xiaobao.tv',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
