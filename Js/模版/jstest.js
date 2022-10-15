@@ -10,7 +10,7 @@ var rule={
         'User-Agent':'UC_UA',
     },
     // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-    class_parse:'.top_nav&&ul li:gt(0):lt(25);a&&Text;a&&href;.*/(.*?).html',
+    class_parse:'.top_nav clearfix&&ul li:gt(0):lt(25);a&&Text;a&&href;.*/(.*?).html',
     play_parse:true,
     lazy:'',
     limit:6,
