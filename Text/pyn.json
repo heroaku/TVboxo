@@ -282,8 +282,9 @@
 	{"key": "drpy_js_天空影视","name": " 🎑天空影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/天空影视.js"},
 	{"key": "drpy_js_AGE动漫","name": " 🎑AGE动漫[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/AGE动漫.js"}, 
 	{"key": "drpy_js_RP影视","name": " 🎑RP影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/RP影视.js"}, 	  
-	  
+	{"key": "drpy_js_独播库","name": " 🎑独播库[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/独播库.js"}, 
 
+	  
 	  
 	  //Xbui
         {"key": "csp_xb_ysgc","name": " 💠影视工厂(R)","type": 3,"api": "csp_XBiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://www.ysgc.fun/vodtype/{cateId}-{catePg}.html","jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/XBiu .jar"},
