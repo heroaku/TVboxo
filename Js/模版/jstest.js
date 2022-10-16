@@ -1,24 +1,25 @@
-var rule={
-    title:'唐人街影视',
-    host:'https://www.tangrenjie.tv',
-    url:'/vod/show/id/fyclass/page/fypage.html',
-    searchUrl:'/vod/search/page/fypage/wd/**.html',
+var rule = {
+    title:'电影先生',
+    host:'http://dyxs20.com',
+    // homeUrl:'/',
+    url:'/pianku-fyclass--------fypage---/',
+    searchUrl:'/search-**-----------fypage--/',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    headers:{
-        'User-Agent':'UC_UA',
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
     },
-    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-    //class_parse:'.top_nav&&ul li:gt(0):lt(25);a&&Text;a&&href;.*/(.*?).html',
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'1&2&3&4',
+    //class_name:'电影&电视剧&动漫&综艺',
+	//class_url:'dianying&dianshiju&dongman&zongyi',
+    class_parse:'.swiper&&ul&&li;a&&Text;a&&href;/v/(.*)/',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'ul.vodlist.vodlist_wi;li;a&&title;a&&data-original;.pic_text.text_right&&Text;a&&href',
+    推荐:'.module-items;.module-item&&.module-item-cover;img&&alt;img&&data-src;.module-item-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'li.vodlist_item;a&&title;a&&data-original;.pic_text.text_right&&Text;a&&href',
-    二级:{"title":"h2&&Text;.content_detail.content_min.fl .data_style&&Text","img":".content_thumb .vodlist_thumb&&data-original","desc":".content_detail.content_min.fl li:eq(0)&&Text;.content_detail.content_min.fl li:eq(2)&&Text;.content_detail.content_min.fl li:eq(3)&&Text","content":".content&&Text","tabs":".play_source_tab:eq(0) a","lists":".content_playlist:eq(#id) li"},
-    搜索:'body .searchlist_item;a&&title;.vodlist_thumb&&data-original;.pic_text.text_right&&Text;a&&href;.vodlist_sub&&Text',
+    一级:'.module-items;img&&alt;img&&data-src;.module-item-text&&Text;a&&href',
+    二级:{"title":"h1&&Text;.video-info-main&&spann:eq(0)&&Text;.video-info-main&&span:eq(2)&&Text","img":".mobile-play&&img&&data-src","desc":".video-info-main&&span:eq(3)&&Text;.video-info-main&&span:eq(5)&&Text;.video-info-main&&span:eq(7)&&Text","content":".video-info-content&&Text","tabs":".module-tab-content&&span","lists":".sort-item:eq(#id) a"},
+    搜索:'.module-items;h3&&Text;img&&data-src;a&&Text;a&&href',
 }
