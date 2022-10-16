@@ -69,6 +69,10 @@
 //"主演": "主演：&&</p",
 //"播放标题":">&&",
 //"播放数组":"class=\"myui-content__list sort-list scrollbar clearfix&&</ul>",
+      "线路数组": "class=\"nav nav-btn clearfix&&</ul>",
+    "线路标题": ">&&</a>",
+  
+    "播放数组": "class=\"myui-content__list &&</ul>",
 "分类":"电影$20#电视剧$21#综艺$22#动漫$23#记录片$32",
 "分类url":"https://www.juhi.cc/vodshow/{cateId}-{area}-{by}------{catePg}---{year}/"
 "年份":"2000-2022",
