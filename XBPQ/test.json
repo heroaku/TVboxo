@@ -74,7 +74,7 @@
   
     "播放数组": "class=\"myui-content__list &&</ul>",
 "分类":"电影$20#电视剧$21#综艺$22#动漫$23#记录片$32",
-"分类url":"https://www.juhi.cc/vodshow/{cateId}-{area}-{by}------{catePg}---{year}/"
+"分类url":"https://www.juhi.cc/vodshow/{cateId}-{area}-{by}------{catePg}---{year}/",
 "年份":"2000-2022",
 "筛选":"0"
 }
