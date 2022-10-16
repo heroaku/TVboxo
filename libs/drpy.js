@@ -373,6 +373,8 @@ function getCryptoJS(){
 
 let VODS = [];// 一级或者搜索需要的数据列表
 let VOD = {};// 二级的单个数据
+let TABS = [];// 二级的自定义线路列表 如: TABS=['道长在线','道长在线2']
+let LISTS = [];// 二级的自定义选集播放列表 如: LISTS=[['第1集$http://1.mp4','第2集$http://2.mp4'],['第3集$http://1.mp4','第4集$http://2.mp4']]
 globalThis.encodeUrl = urlencode;
 globalThis.urlencode = urlencode;
 
@@ -879,7 +881,9 @@ function request(url,obj,ocr_flag){
         obj.headers = headers;
     }
     if(rule.encoding&&rule.encoding!=='utf-8'&&!ocr_flag){
-        obj.headers["Content-Type"] = 'text/html; charset='+rule.encoding;
+        if(!obj.headers.hasOwnProperty('Content-Type')){ // 手动指定了就不管
+            obj.headers["Content-Type"] = 'text/html; charset='+rule.encoding;
+        }
     }
     if(typeof(obj.headers.body)!='undefined'&&obj.headers.body&&typeof (obj.headers.body)==='string'){
         let data = {};
@@ -1494,18 +1498,28 @@ function detailParse(detailObj){
         
 // console.log(2);
         if(p.tabs){
-            let p_tab = p.tabs.split(';')[0];
-            console.log(p_tab);
-            let vHeader = _pdfa(html, p_tab);
-
-            console.log(vHeader.length);
-            for(let v of vHeader){
-                let v_title = _pdfh(v,'body&&Text').trim();
-                console.log(v_title);
-                if(tab_exclude&& (new RegExp(tab_exclude)).test(v_title)){
-                    continue;
+            if(p.tabs.startsWith('js:')){
+                print('开始执行tabs代码:'+p.tabs);
+                if(html&&typeof (html)!=='string'){
+                    html = html.rr(html.ele).toString();
                 }
-                playFrom.push(v_title);
+                var input = MY_URL;
+                eval(p.tabs.replace('js:',''));
+                playFrom = TABS;
+            }else{
+                let p_tab = p.tabs.split(';')[0];
+                console.log(p_tab);
+                let vHeader = _pdfa(html, p_tab);
+
+                console.log(vHeader.length);
+                for(let v of vHeader){
+                    let v_title = _pdfh(v,'body&&Text').trim();
+                    console.log(v_title);
+                    if(tab_exclude&& (new RegExp(tab_exclude)).test(v_title)){
+                        continue;
+                    }
+                    playFrom.push(v_title);
+                }
             }
             console.log(JSON.stringify(playFrom));
         }else{
@@ -1517,35 +1531,46 @@ function detailParse(detailObj){
         let vod_play_url = '$$$';
         let vod_tab_list = [];
         if(p.lists){
-            for(let i=0;i<playFrom.length;i++){
-                let tab_name = playFrom[i];
-                let tab_ext =  p.tabs.split(';').length > 1 ? p.tabs.split(';')[1] : '';
-                let p1 = p.lists.replaceAll('#idv', tab_name).replaceAll('#id', i);
-                tab_ext = tab_ext.replaceAll('#idv', tab_name).replaceAll('#id', i);
-                console.log(p1);
-                // console.log(html);
-                let vodList = [];
-                try {
-                    vodList =  _pdfa(html, p1);
-                    console.log('len(vodList):'+vodList.length);
-                }catch (e) {
-                    // console.log(e.message);
+            if(p.lists.startsWith('js:')){
+                print('开始执行lists代码:'+p.lists);
+                if(html&&typeof (html)!=='string'){
+                    html = html.rr(html.ele).toString();
                 }
-                let new_vod_list = [];
-                let tabName = tab_ext?_pdfh(html, tab_ext):tab_name;
-                console.log(tabName);
-                // console.log('cheerio解析Text');
-                vodList.forEach(it=>{
-                    // 请注意,这里要固定pdfh解析body&&Text,不需要下划线,没写错
-                    // new_vod_list.push(pdfh(it,'body&&Text')+'$'+_pd(it,'a&&href',MY_URL));
-                    // new_vod_list.push(cheerio.load(it).text()+'$'+_pd(it,'a&&href',MY_URL));
-                    new_vod_list.push(_pdfh(it, 'body&&Text').trim() + '$' + _pd(it, 'a&&href', MY_URL));
-                });
-                let vlist = new_vod_list.join('#');
-                vod_tab_list.push(vlist);
+                var input = MY_URL;
+                eval(p.lists.replace('js:',''));
+                vod_play_url = LISTS.map(it=>it.join('#')).join(vod_play_url);
+            }else{
+                for(let i=0;i<playFrom.length;i++){
+                    let tab_name = playFrom[i];
+                    let tab_ext =  p.tabs.split(';').length > 1 ? p.tabs.split(';')[1] : '';
+                    let p1 = p.lists.replaceAll('#idv', tab_name).replaceAll('#id', i);
+                    tab_ext = tab_ext.replaceAll('#idv', tab_name).replaceAll('#id', i);
+                    console.log(p1);
+                    // console.log(html);
+                    let vodList = [];
+                    try {
+                        vodList =  _pdfa(html, p1);
+                        console.log('len(vodList):'+vodList.length);
+                    }catch (e) {
+                        // console.log(e.message);
+                    }
+                    let new_vod_list = [];
+                    let tabName = tab_ext?_pdfh(html, tab_ext):tab_name;
+                    console.log(tabName);
+                    // console.log('cheerio解析Text');
+                    vodList.forEach(it=>{
+                        // 请注意,这里要固定pdfh解析body&&Text,不需要下划线,没写错
+                        // new_vod_list.push(pdfh(it,'body&&Text')+'$'+_pd(it,'a&&href',MY_URL));
+                        // new_vod_list.push(cheerio.load(it).text()+'$'+_pd(it,'a&&href',MY_URL));
+                        new_vod_list.push(_pdfh(it, 'body&&Text').trim() + '$' + _pd(it, 'a&&href', MY_URL));
+                    });
+                    let vlist = new_vod_list.join('#');
+                    vod_tab_list.push(vlist);
+                }
+                vod_play_url = vod_tab_list.join(vod_play_url);
             }
         }
-        vod.vod_play_url = vod_tab_list.join(vod_play_url);
+        vod.vod_play_url = vod_play_url;
     }
     // print(vod);
     return JSON.stringify({
