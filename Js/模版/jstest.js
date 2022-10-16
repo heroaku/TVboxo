@@ -1,5 +1,5 @@
 var rule = {
-    title:'电影先生',
+    title:'剧嗨影视',
     host:'https://www.juhi.cc',
     // homeUrl:'/',
     url:'/vodshow/fyclass--------fypage---/',
@@ -11,8 +11,8 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    //class_name:'电影&电视剧&动漫&综艺',
-	//class_url:'dianying&dianshiju&dongman&zongyi',
+    //class_name:'电影&电视剧&动漫&综艺&记录片',
+    //class_url:'dianying&dianshiju&dongman&zongyi',
     class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
     play_parse:true,
     lazy:'',
