@@ -21,5 +21,5 @@ var rule = {
     double:true, // 推荐内容是否双层定位
     一级:'.module-poster-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
     二级:{"title":"h1&&Text;.module-info-content&&.module-info-item:eq(6)&&.module-info-item-content&&Text","img":".ls-is-cached.lazy.lazyload&&data-original","desc":".module-info-content .module-info-item:eq(-2)&&Text;.module-info-content .module-info-item:eq(-2)&&Text;.module-info-content .module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(4)&&.module-info-item-content&&Text","content":".show-desc&&Text","tabs":".module-tab-items-box:eq(0)&&.module-tab-item","lists":".module-play-list-content:eq(0) a"},
-    搜索:'.module-items .module-search-item;h3&&Text;img&&data-src;.video-serial&&Text;a.video-serial&&href',
+    搜索:'.module-card-item.module-item;.module-card-item-title&&Text;img&&data-original;.module-item-note&&Text;a.play-btn-o&&href',
 }
