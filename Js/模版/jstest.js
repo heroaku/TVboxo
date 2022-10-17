@@ -1,10 +1,10 @@
 
 var rule = {
-    title:'起飞影院',
-    host:'http://www.qfitv.com',
+    title:'海兔影院',
+    host:'https://www.haitu.tv',
     // homeUrl:'/',
-    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
+    url:'/vod/show/id/fyclass/page/fypage.html',
+    searchUrl:'/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -12,14 +12,15 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&综艺&动漫&纪录片',
-    class_url:'1&2&3&4&55',
+    class_parse:'.nav-menu-items&&li;a&&title;a&&href;/(\\d+).html',
+    //class_name:'电影&电视剧&综艺&动漫&纪录片',
+    //class_url:'1&2&3&4&55',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'.module-items;.module-poster-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    推荐:'.module-items;.module-item-cover&&.module-item-pic;a&&title;.lazyloaded&&data-src;.item-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.module-poster-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    二级:{"title":"h1&&Text;.module-info-content&&.module-info-item:eq(4)&&.module-info-item-content&&Text","img":".ls-is-cached.lazy.lazyload&&data-original","desc":".module-info-content&&.module-info-item:eq(5)&&Text;.module-info-content&&.module-info-item:eq(4)&&Text;.text-muted:eq(-1)&&Text;.text-muted:eq(-1)&&Text","content":".show-desc&&Text","tabs":".module-tab-items-box:eq(0)&&.module-tab-item","lists":".module-play-list-content:eq(0) a"},
-    搜索:'.module-card-item.module-item;.module-card-item-title&&Text;img&&data-original;.module-item-note&&Text;a.play-btn-o&&href',
+    一级:'.module-list&&.module-item-pic;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
+    二级:{"title":"h1.page-title&&Text;.video-info-aux&&Text","img":".lazyload&&data-src","content":".content.vod_content&&Text","tabs":".module-tab-item.tab-item","lists":".module-blocklist.scroll-box:eq(#id) a"},
+    
 }
