@@ -197,6 +197,8 @@
 	{"key": "drpy_js_低端影视","name": " 🎑低端影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/ddys.js"},
 	{"key": "drpy_js_KUBO影视","name": " 🎑KUBO影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/KUBO影视.js"},  	    
 	{"key": "drpy_js_追剧啦","name": " 🎑追剧啦[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/追剧啦.js"},  
+	{"key": "drpy_js_TV蜂","name": " 🎑TV蜂[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/TV蜂.js"},  
+	  
 	  
 	  
 	  
