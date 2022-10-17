@@ -20,6 +20,6 @@ var rule = {
     推荐:'.module-items;.module-poster-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.module-poster-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    二级:{"title":"h1&&Text;.module-info-content&&.module-info-item:eq(4)&&.module-info-item-content&&Text","img":".ls-is-cached.lazy.lazyload&&data-original","desc":".module-info-content&&.module-info-item:eq(5)&&.module-info-item-content&&Text;.module-info-content&&.module-info-item:eq(4)&&.module-info-item-content&&Text;.text-muted:eq(-1)&&Text;.text-muted:eq(-1)&&Text","content":".show-desc&&Text","tabs":".module-tab-items-box:eq(0)&&.module-tab-item","lists":".module-play-list-content:eq(0) a"},
+    二级:{"title":"h1&&Text;.module-info-content&&.module-info-item:eq(4)&&.module-info-item-content&&Text","img":".ls-is-cached.lazy.lazyload&&data-original","desc":".module-info-content&&.module-info-item:eq(5)&&Text;.module-info-content&&.module-info-item:eq(4)&&Text;.text-muted:eq(-1)&&Text;.text-muted:eq(-1)&&Text","content":".show-desc&&Text","tabs":".module-tab-items-box:eq(0)&&.module-tab-item","lists":".module-play-list-content:eq(0) a"},
     搜索:'.module-card-item.module-item;.module-card-item-title&&Text;img&&data-original;.module-item-note&&Text;a.play-btn-o&&href',
 }
