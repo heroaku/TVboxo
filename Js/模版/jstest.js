@@ -1,9 +1,9 @@
-var rule = {
-    title:'TV蜂',
-    host:'https://www.tvfeng.net',
+var rule={
+    title:'if101',
+    host:'https://www.oulevod.tv',
     // homeUrl:'/',
-    url:'/tvfenshow/fyclass--------fypage---.html',
-    searchUrl:'/tvfensearch/**----------fypage---.html',
+    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+    searchUrl:'/index.php/vod/search.html?wd=**',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -11,15 +11,14 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'1&2&3&4',
-    //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
+    class_parse:'.conch-nav&&ul&&li;a&&Text;a&&href;./(\\d+).html',
+    cate_exclude:'',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+    推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-    二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":".video-info-items:eq(0)&&Text;.video-info-items:eq(3)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(1)&&Text","content":".vod_content&&Text","tabs":".module-tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
-    搜索:'.module-items .module-search-item;h3&&Text;img&&data-src;.video-serial&&Text;a&&href',
+    一级:'.hl-vod-list&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(0)&&Text","img":".hl-lazy&&data-original","desc":".hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(1)&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(2)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-wrap","lists":".hl-plays-list:eq(#id) li"},
+    搜索:'.hl-list-wrap&&ul&&li;h3&&Text;.hl-lazy&&data-original;.hl-item-title:eq(0)&&Text;a&&href',
 }
