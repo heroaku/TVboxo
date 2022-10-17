@@ -1055,6 +1055,19 @@ function homeParse(homeObj) {
 }
 
 /**
+ * 推荐和搜索单字段继承一级
+ * @param p 推荐或搜索的解析分割;列表
+ * @param pn 自身列表序号
+ * @param pp  一级解析分割;列表
+ * @param ppn 继承一级序号
+ * @returns {*}
+ */
+function getPP(p, pn, pp, ppn){
+    let ps = p[pn] === '*' && pp.length > ppn ?pp[ppn]:p[pn]
+    return ps
+}
+
+/**
  *  首页推荐列表解析
  * @param homeVodObj
  * @returns {string}
@@ -1074,6 +1087,7 @@ function homeVodParse(homeVodObj){
         return '{}'
     }
     p = p.trim();
+    let pp = rule.一级.split(';');
     if(p.startsWith('js:')){
         const TYPE = 'home';
         var input = MY_URL;
@@ -1087,12 +1101,13 @@ function homeVodParse(homeVodObj){
         } else if (homeVodObj.double && p.length < 6) {
             return '{}'
         }
-        let _ps = parseTags.getParse(p[0]);
+        let p0 = getPP(p,0,pp,0)
+        let _ps = parseTags.getParse(p0);
         _pdfa = _ps.pdfa;
         _pdfh = _ps.pdfh;
         _pd = _ps.pd;
-        let is_json = p[0].startsWith('json:');
-        p[0] = p[0].replace(/^(jsp:|json:|jq:)/,'');
+        let is_json = p0.startsWith('json:');
+        p0 = p0.replace(/^(jsp:|json:|jq:)/,'');
         // print(p[0]);
         let html = homeHtmlCache || getHtml(MY_URL);
         homeHtmlCache = undefined;
@@ -1103,7 +1118,7 @@ function homeVodParse(homeVodObj){
         try {
             console.log('double:' + homeVodObj.double);
             if (homeVodObj.double) {
-                let items = _pdfa(html, p[0]);
+                let items = _pdfa(html, p0);
                 // console.log(items.length);
                 for (let item of items) {
                     // console.log(p[1]);
@@ -1111,22 +1126,36 @@ function homeVodParse(homeVodObj){
                     // console.log(items2.length);
                     for (let item2 of items2) {
                         try {
-                            let title = _pdfh(item2, p[2]);
+                            let p2 = getPP(p,2,pp,1);
+                            let title = _pdfh(item2, p2);
                             let img = '';
                             try {
-                                img = _pd(item2, p[3])
-                            } catch (e) {
-                            }
-                            let desc = _pdfh(item2, p[4]);
+                                let p3 = getPP(p,3,pp,2);
+                                img = _pd(item2, p3);
+                            } catch (e) {}
+                            let desc = '';
+                            try {
+                                let p4 = getPP(p,4,pp,3);
+                                desc = _pdfh(item2, p4);
+                            }catch (e) {}
+                            let p5 = getPP(p,5,pp,4);
                             let links = [];
-                            for (let p5 of p[5].split('+')) {
-                                let link = !homeVodObj.detailUrl ? _pd(item2, p5, MY_URL) : _pdfh(item2, p5);
+                            for (let _p5 of p5.split('+')) {
+                                let link = !homeVodObj.detailUrl ? _pd(item2, _p5, MY_URL) : _pdfh(item2, _p5);
                                 links.push(link);
+                            }
+                            let content;
+                            if(p.length > 6 && p[6]){
+                                let p6 = getPP(p,6,pp,5);
+                                content = _pdfh(item2, p6);
+                            } else{
+                                content = '';
                             }
                             let vod = {
                                 vod_name: title,
                                 vod_pic: img,
                                 vod_remarks: desc,
+                                vod_content: content,
                                 vod_id: links.join('$')
                             };
                             // print(vod);
@@ -1142,26 +1171,39 @@ function homeVodParse(homeVodObj){
 
 
             } else {
-                let items = _pdfa(html, p[0]);
+                let items = _pdfa(html, p0);
                 for (let item of items) {
                     try {
-                        let title = _pdfh(item, p[1]);
+                        let p1 = getPP(p,1,pp,1);
+                        let title = _pdfh(item, p1);
                         let img = '';
                         try {
-                            img = _pd(item, p[2], MY_URL);
-                        } catch (e) {
-
-                        }
-                        let desc = _pdfh(item, p[3]);
+                            let p2 = getPP(p,2,pp,2);
+                            img = _pd(item, p2, MY_URL);
+                        } catch (e) {}
+                        let desc = '';
+                        try {
+                            let p3 = getPP(p,3,pp,3);
+                            desc = _pdfh(item, p3);
+                        }catch (e) {}
+                        let p4 = getPP(p,4,pp,4);
                         let links = [];
-                        for (let p5 of p[4].split('+')) {
-                            let link = !homeVodObj.detailUrl ? _pd(item, p5, MY_URL) : _pdfh(item, p5);
+                        for (let _p5 of p4.split('+')) {
+                            let link = !homeVodObj.detailUrl ? _pd(item, _p5, MY_URL) : _pdfh(item, _p5);
                             links.push(link);
+                        }
+                        let content;
+                        if(p.length > 5 && p[5]){
+                            let p5 = getPP(p,5,pp,5);
+                            content = _pdfh(item, p5);
+                        }else{
+                            content = ''
                         }
                         let vod = {
                             vod_name: title,
                             vod_pic: img,
                             vod_remarks: desc,
+                            vod_content: content,
                             vod_id: links.join('$')
                         };
                         d.push(vod);
@@ -1232,6 +1274,8 @@ function categoryParse(cateObj) {
     }
     if(cateObj.pg === 1 && url.includes('[')&&url.includes(']')){
         url = url.split('[')[1].split(']')[0];
+    }else if(cateObj.pg > 1 && url.includes('[')&&url.includes(']')){
+        url = url.split('[')[0];
     }
     MY_URL = url;
     // setItem('MY_URL',MY_URL);
@@ -1308,6 +1352,7 @@ function searchParse(searchObj) {
         return '{}'
     }
     p = p.trim();
+    let pp = rule.一级.split(';');
     let url = searchObj.searchUrl.replaceAll('**', searchObj.wd).replaceAll('fypage', searchObj.pg);
     MY_URL = url;
     console.log(MY_URL);
@@ -1325,12 +1370,13 @@ function searchParse(searchObj) {
         if (p.length < 5) {
             return '{}'
         }
-        let _ps = parseTags.getParse(p[0]);
+        let p0 = getPP(p,0,pp,0);
+        let _ps = parseTags.getParse(p0);
         _pdfa = _ps.pdfa;
         _pdfh = _ps.pdfh;
         _pd = _ps.pd;
-        let is_json = p[0].startsWith('json:');
-        p[0] = p[0].replace(/^(jsp:|json:|jq:)/,'');
+        let is_json = p0.startsWith('json:');
+        p0 = p0.replace(/^(jsp:|json:|jq:)/,'');
         try {
             let html = getHtml(MY_URL);
             if (html) {
@@ -1352,22 +1398,30 @@ function searchParse(searchObj) {
                 if(is_json){
                     html = dealJson(html);
                 }
-                let list = _pdfa(html, p[0]);
+                let list = _pdfa(html, p0);
                 list.forEach(it => {
-                    let links = p[4].split('+').map(p4=>{
-                        return !rule.detailUrl?_pd(it, p4,MY_URL):_pdfh(it, p4)
+                    let p1 = getPP(p, 1, pp, 1);
+                    let p2 = getPP(p, 2, pp, 2);
+                    let p3 = getPP(p, 3, pp, 3);
+                    let p4 = getPP(p, 4, pp, 4);
+                    let links = p4.split('+').map(_p4=>{
+                        return !rule.detailUrl?_pd(it, _p4,MY_URL):_pdfh(it, _p4)
                     });
-
                     let link = links.join('$');
+                    let content;
+                    if(p.length > 5 && p[5]){
+                        let p5 = getPP(p,5,pp,5);
+                        content = _pdfh(item, p5);
+                    }else{
+                        content = '';
+                    }
                     let ob = {
                         'vod_id': link,
-                        'vod_name': _pdfh(it, p[1]).replace(/\n|\t/g,'').trim(),
-                        'vod_pic': _pd(it, p[2],MY_URL),
-                        'vod_remarks': _pdfh(it, p[3]).replace(/\n|\t/g,'').trim(),
+                        'vod_name': _pdfh(it, p1).replace(/\n|\t/g,'').trim(),
+                        'vod_pic': _pd(it, p2,MY_URL),
+                        'vod_remarks': _pdfh(it, p3).replace(/\n|\t/g,'').trim(),
+                        'vod_content': content.replace(/\n|\t/g,'').trim(),
                     };
-                    if (p.length > 5 && p[5]) {
-                        ob.vod_content = _pdfh(it, p[5]);
-                    }
                     d.push(ob);
                 });
 
@@ -1375,7 +1429,6 @@ function searchParse(searchObj) {
         } catch (e) {
             return '{}'
         }
-
     }
     return JSON.stringify({
         'page': parseInt(searchObj.pg),
