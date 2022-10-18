@@ -64,7 +64,8 @@ const TAB_EXCLUDE = '猜你|喜欢|APP|下载|剧情|热播';
 const OCR_RETRY = 3;//ocr验证重试次数
 // const OCR_API = 'http://dm.mudery.com:10000';//ocr在线识别接口
 // const OCR_API = 'http://192.168.3.239:5705/parse/ocr';//ocr在线识别接口
-const OCR_API = 'http://cms.nokia.press/parse/ocr';//ocr在线识别接口
+// const OCR_API = 'http://cms.nokia.press/parse/ocr';//ocr在线识别接口
+const OCR_API = 'http://cms.nokia.press:5706/parse/ocr';//ocr在线识别接口
 if(typeof(MY_URL)==='undefined'){
     var MY_URL; // 全局注入变量,pd函数需要
 }
@@ -1356,6 +1357,7 @@ function searchParse(searchObj) {
     let url = searchObj.searchUrl.replaceAll('**', searchObj.wd).replaceAll('fypage', searchObj.pg);
     MY_URL = url;
     console.log(MY_URL);
+    // log(searchObj.搜索);
     // setItem('MY_URL',MY_URL);
     if(p.startsWith('js:')){
         const TYPE = 'search';
@@ -1377,6 +1379,7 @@ function searchParse(searchObj) {
         _pd = _ps.pd;
         let is_json = p0.startsWith('json:');
         p0 = p0.replace(/^(jsp:|json:|jq:)/,'');
+        // print('1381 p0:'+p0);
         try {
             let html = getHtml(MY_URL);
             if (html) {
@@ -1411,7 +1414,7 @@ function searchParse(searchObj) {
                     let content;
                     if(p.length > 5 && p[5]){
                         let p5 = getPP(p,5,pp,5);
-                        content = _pdfh(item, p5);
+                        content = _pdfh(it, p5);
                     }else{
                         content = '';
                     }
@@ -1427,6 +1430,7 @@ function searchParse(searchObj) {
 
             }
         } catch (e) {
+            print('搜索发生错误:'+e.message);
             return '{}'
         }
     }
@@ -1705,9 +1709,6 @@ function playParse(playObj){
         let muban = eval(globalThis.mubanJs);
         if (typeof ext == 'object'){
             rule = ext;
-            if (rule.template) {
-                rule = Object.assign(muban[rule.template], rule);
-            }
         } else if (typeof ext == 'string') {
             if (ext.startsWith('http')) {
                 let js = request(ext,{'method':'GET'});
@@ -1715,9 +1716,13 @@ function playParse(playObj){
                     eval(js.replace('var rule', 'rule'));
                 }
                 }
-            } else {
-                eval(ext.replace('var rule', 'rule'));
-            }
+        } else {
+            eval(ext.replace('var rule', 'rule'));
+        }
+        if (rule.模板 && muban.hasOwnProperty(rule.模板)) {
+            print('继承模板:'+rule.模板);
+            rule = Object.assign(muban[rule.模板], rule);
+        }
         /** 处理一下 rule规则关键字段没传递的情况 **/
         let rule_cate_excludes = (rule.cate_exclude||'').split('|').filter(it=>it.trim());
         let rule_tab_excludes = (rule.tab_exclude||'').split('|').filter(it=>it.trim());
