@@ -1,9 +1,9 @@
 
 var rule = {
-    title:'海兔影院',
-    host:'https://www.haitu.tv',
+    title:'HoHo影视',
+    host:'https://www.hoho.tv',
     // homeUrl:'/',
-    url:'/vod/show/id/fyclass/page/fypage.html',
+    url:'/vod/show/fyclass/page/fypage.html',
     searchUrl:'/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
@@ -12,9 +12,9 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_parse:'.nav-menu-items&&li;a&&title;a&&href;/(\\d+).html',
-    //class_name:'电影&电视剧&综艺&动漫&纪录片',
-    //class_url:'1&2&3&4&55',
+    //class_parse:'.nav-menu-items&&li;a&&title;a&&href;/(\\d+).html',
+    class_name:'电影&电视剧&综艺&动漫&纪录片',
+    class_url:'1&2&3&4&20',
     play_parse:true,
     lazy:'',
     limit:6,
