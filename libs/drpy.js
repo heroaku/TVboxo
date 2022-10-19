@@ -628,24 +628,33 @@ const parseTags = {
         },
         pdfa(html, parse) {
             if (!parse || !parse.trim()) {
+                print('!parse');
                 return [];
             }
             let eleFind = typeof html === 'object';
+            // print('parse前:'+parse);
             if (parse.indexOf('&&') > -1) {
                 let sp = parse.split('&&');
                 for (let i in sp) {
                     if (!SELECT_REGEX_A.test(sp[i]) && i < sp.length - 1) {
-                        sp[i] = sp[i] + ':eq(0)';
+                        if(sp[i]!=='body'){
+                            // sp[i] = sp[i] + ':eq(0)';
+                            sp[i] = sp[i] + ':first';
+                        }
                     }
                 }
                 parse = sp.join(' ');
             }
+            // print('parse后:'+parse);
             const $ = eleFind ? html.rr : cheerio.load(html);
             let ret = eleFind ? ($(html.ele).is(parse) ? html.ele : $(html.ele).find(parse)) : $(parse);
             let result = [];
+            // print('outerHTML:');
+            // print($(ret[0]).prop("outerHTML"));
             if (ret) {
                 ret.each(function (idx, ele) {
                     result.push({ rr: $, ele: ele });
+                    // result.push({ rr: $, ele: $(ele).prop("outerHTML")}); // 性能贼差
                 });
             }
             return result;
@@ -740,7 +749,10 @@ function verifyCode(url){
             let hhtml = request(yzm_url,{withHeaders:true,toBase64:true},true);
             let json = JSON.parse(hhtml);
             if(!cookie){
-                cookie = json['set-cookie']?json['set-cookie'].split(';')[0]:'';
+                // print(json);
+                let setCk = Object.keys(json).find(it=>it.toLowerCase()==='set-cookie');
+                // cookie = json['set-cookie']?json['set-cookie'].split(';')[0]:'';
+                cookie = setCk?json[setCk].split(';')[0]:'';
             }
             // console.log(hhtml);
             console.log('cookie:'+cookie);
@@ -1079,7 +1091,9 @@ function homeVodParse(homeVodObj){
     MY_URL = homeVodObj.homeUrl;
     // setItem('MY_URL',MY_URL);
     console.log(MY_URL);
+    let t1 = (new Date()).getTime();
     let p = homeVodObj.推荐;
+    print('p:'+p);
     if(p==='*' && rule.一级){
         p = rule.一级;
         homeVodObj.double = false;
@@ -1221,6 +1235,8 @@ function homeVodParse(homeVodObj){
 
         }
     }
+    let t2 = (new Date()).getTime();
+    console.log('加载首页推荐耗时:'+(t2-t1)+'毫秒');
     // console.log(JSON.stringify(d));
     return JSON.stringify({
         list:d
@@ -1252,6 +1268,21 @@ function categoryParse(cateObj) {
         }
         // console.log('filter:'+cateObj.filter);
         let fl = cateObj.filter?cateObj.extend:{};
+        // 自动合并 不同分类对应的默认筛选
+        if(rule.filter_def && typeof(rule.filter_def)==='object'){
+            try {
+                if(Object.keys(rule.filter_def).length>0 && rule.filter_def.hasOwnProperty(cateObj.tid)){
+                    let self_fl_def = rule.filter_def[cateObj.tid];
+                    if(self_fl_def && typeof(self_fl_def)==='object'){
+                        // 引用传递转值传递,避免污染self变量
+                        let fl_def = JSON.parse(JSON.stringify(self_fl_def));
+                        fl = Object.assign(fl_def,fl);
+                    }
+                }
+            }catch (e) {
+                print('合并不同分类对应的默认筛选出错:'+e.message);
+            }
+        }
         let new_url;
         new_url = cheerio.jinja2(url,{fl:fl});
         // console.log('jinjia2执行后的new_url类型为:'+typeof(new_url));
@@ -1802,6 +1833,7 @@ function home(filter) {
  * @returns {string}
  */
 function homeVod(params) {
+    console.log("homeVod");
     let homeVodObj = {
         推荐:rule.推荐,
         double:rule.double,
