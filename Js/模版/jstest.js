@@ -1,6 +1,6 @@
 
 var rule = {
-    title:'HoHo影视',
+    title:'多瑙影视',
     host:'https://www.duonaovod.com',
     // homeUrl:'/',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
