@@ -1,7 +1,6 @@
-
 var rule = {
-    title:'多瑙影视',
-    host:'https://www.duonaovod.com',
+    title:'起飞影院',
+    host:'http://www.qfitv.com',
     // homeUrl:'/',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
@@ -12,17 +11,14 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-    //class_parse:'.top_nav&&ul li:gt(0):lt(25);a&&Text;a&&href;.*/(.*?).html',
     class_name:'电影&电视剧&综艺&动漫&纪录片',
-    class_url:'1&2&3&4&20',
+    class_url:'1&2&3&4&55',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'ul.vodlist.vodlist_wi;li;a&&title;a&&data-original;.pic_text.text_right&&Text;a&&href',
+    推荐:'.module-items;.module-poster-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'li.vodlist_item;a&&title;a&&data-original;.pic_text.text_right&&Text;a&&href',
-    二级:{"title":"h2&&Text;.text-muted:eq(-1)&&Text","img":".content_thumb .vodlist_thumb&&data-original","desc":".content_detail.content_min.fl li:eq(-1)&&Text;.content_detail.content_min.fl li:eq(-1)&&Text;.content_detail.content_min.fl&&ul&&li:eq(0)&&Text;.content_detail.content_min.fl&&ul&&li:eq(2)&&Text;.content_detail.content_min.fl&&ul&&li:eq(3)&&Text","content":".content&&Text","tabs":".play_source_tab:eq(0) a","lists":".content_playlist:eq(#id) li"},
-    搜索:'body .searchlist_item;a&&title;.vodlist_thumb.lazyload&&data-original;.pic_text.text_right&&Text;a&&href',
+    一级:'.module-poster-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    二级:{"title":"h1&&Text;.module-info-tag-link:eq(2)&&Text","img":".ls-is-cached.lazy.lazyload&&data-original","desc":".module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(3)&&.module-info-item-content&&Text;.module-info-content&&.module-info-item:eq(4)&&.module-info-item-content&&Text","content":".module-info-introduction-content&&Text","tabs":".module-tab-items-box:eq(0)&&.module-tab-item","lists":".module-play-list-content:eq(0) a"},
+    搜索:'.module-card-item.module-item;.module-card-item-title&&Text;img&&data-original;.module-item-note&&Text;a.play-btn-o&&href',
 }
-
