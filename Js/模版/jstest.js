@@ -1,6 +1,6 @@
 var rule = {
-    title:'起飞影院',
-    host:'http://www.qfitv.com',
+    title:'映迷影院',
+    host:'https://www.inmi.app',
     // homeUrl:'/',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
@@ -11,8 +11,8 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&综艺&动漫&纪录片',
-    class_url:'1&2&3&4&55',
+    class_name:'电影&电视剧&综艺&动漫',
+    class_url:'20&21&24&23',
     play_parse:true,
     lazy:'',
     limit:6,
