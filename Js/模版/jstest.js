@@ -17,7 +17,7 @@ var rule={
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'.module-items.scroll-box&&a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    推荐:'.module-items.module-poster-items-base&&a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
 double:true, // 推荐内容是否双层定位
 一级:'.module&&a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
 二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text","content":".vod_content&&Text","tabs":".module-tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
