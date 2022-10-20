@@ -10,4 +10,4 @@ class_name:'电影&剧集&动漫',//静态分类名称拼接
 class_url:'index1&index2&index41',//静态分类标识拼接
 class_parse:'',
 一级:'.myui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-});
+};
