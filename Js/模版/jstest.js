@@ -1,6 +1,6 @@
 var rule={
-    title:'追剧达人',
-    host:'http://zjdr.tv',
+    title:'188看',
+    host:'https://188kan.com',
     url:'/vodshow/id/fyclass/page/fypage.html',
     //searchUrl:'/vod/search/page/fypage/wd/**.html',
     //class_parse:'.navbar-items li:gt(1):lt(6);a&&Text;a&&href;.*/(.*?).html',
@@ -9,8 +9,8 @@ var rule={
     quickSearch:1,
     filterable:0,
     headers:{'User-Agent':'MOBILE_UA', },
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'1&2&3&4',
+    class_name:'电影&电视剧&综艺&动漫&纪录片',
+    class_url:'1&2&3&4&5',
     推荐:'.tab-list.active;a.module-poster-item.module-item;.module-poster-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'body a.module-poster-item.module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
