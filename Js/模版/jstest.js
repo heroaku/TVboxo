@@ -1,6 +1,6 @@
 var rule={
-title:'新视觉影视',
-host:'https://www.dy6080.vip',
+title:'霹雳影视',
+host:'https://plyingshi.com',
 url:'/vodshow/fyclass--------fypage---.html',
 searchUrl:'/vodsearch/**----------fypage---.html',
 searchable:2,//是否启用全局搜索,
