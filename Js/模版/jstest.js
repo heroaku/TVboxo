@@ -1,5 +1,5 @@
 var rule={
-    title:'188看',
+    title:'小白菜电影',
     host:'https://www.xbcdy.com',
     url:'/vodshow/fyclass--------fypage---.html',
     //searchUrl:'/vod/search/page/fypage/wd/**.html',
