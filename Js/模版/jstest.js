@@ -1,9 +1,9 @@
 var rule={
-    title:'视中心影视',
-    host:'https://www.ksksy.com',
+    title:'188影视',
+    host:'https://188kan.com',
     // homeUrl:'/',
     url:'/vodshow/fyclass--------fypage---.html',
-    searchUrl:'/vodsearch/page/fypage/wd/**.html',
+    searchUrl:'/vod-search-page-fypage-wd-**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
