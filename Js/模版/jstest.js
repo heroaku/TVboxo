@@ -1,8 +1,8 @@
 var rule={
-    title:'看看电影',
-    host:'https://www.kkdy.live',
-    url:'/vod-type-id-fyclass-page-fypage.html',
-    searchUrl:'/vod-search-page-fypage-wd-**.html',
+    title:'追剧达人',
+    host:'http://zjdr.tv',
+    url:'/vodshow/id/fyclass/page/fypage.html',
+    searchUrl:'/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -16,9 +16,9 @@ var rule={
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'ul.myui-vodlist.clearfix;li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    double:true, // 推荐内容是否双层定位
-    一级:'.myui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":".myui-content__detail .title&&Text;.myui-content__detail p:eq(-2)&&Text","img":".myui-content__thumb .lazyload&&data-original","desc":".myui-content__detail p:eq(0)&&Text;.myui-content__detail p:eq(1)&&Text;.myui-content__detail p:eq(2)&&Text","content":".content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
-    搜索:'#searchList li;a&&title;.lazyload&&data-original;.pic_text.text_right&&Text;a&&href;.text-muted:eq(-1)&&Text',
+    推荐:'.module-main.tab-list&&.module-items.module-poster-items-base&&a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+   double:true, // 推荐内容是否双层定位
+   一级:'.module&&a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+   二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text","content":".vod_content&&Text","tabs":".module-tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
+   搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
 }
