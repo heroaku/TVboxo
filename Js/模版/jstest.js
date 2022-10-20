@@ -11,14 +11,15 @@ var rule={
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_parse:'.nav&&ul&&li;a&&title;a&&href;.*/(.*?).html',
-    cate_exclude:'原站',
+    //class_parse:'.nav&&ul&&li;a&&title;a&&href;.*/(.*?).html',
+    class_name:'电影&电视剧&综艺&动漫',
+    class_url:'1&2&3&4',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'module-items.scroll-box a;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+    推荐:'.module-items.scroll-box a;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
 double:true, // 推荐内容是否双层定位
-一级:'.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+一级:'.module-items.scroll-box a;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
 二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text","content":".vod_content&&Text","tabs":".module-tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
 搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
 }
