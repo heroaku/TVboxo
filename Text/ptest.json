@@ -118,7 +118,9 @@
         {"key": "drpy_js_看看电影","name": " 🎑看看电影[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/看看电影.js"},
         {"key": "drpy_js_新视觉影视","name": " 🎑新视觉影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/新视觉影视.js"},
         {"key": "drpy_js_霹雳影视","name": " 🎑霹雳影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/霹雳影视.js"},
+        {"key": "drpy_js_冲TV","name": " 🎑冲TV[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/冲TV.js"},
 
+	  
 	  
 	  
 	  
