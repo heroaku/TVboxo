@@ -1,9 +1,9 @@
 var rule={
-    title:'四个圈影视',
-    host:'https://pg.fenwe078.cf/',
+    title:'视中心影视',
+    host:'https://www.ksksy.com',
     // homeUrl:'/',
-    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
+    url:'/vodshow/fyclass--------fypage---.html',
+    searchUrl:'/vodsearch/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
