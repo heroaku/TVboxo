@@ -14,6 +14,7 @@ import 'https://gitcode.net/qq_32394351/dr_py/-/raw/master/libs/drT.js';
 function init_test(){
     // console.log(typeof(CryptoJS));
     console.log("init_test_start");
+    console.log("当前版本号:"+VERSION);
     console.log(RKEY);
     console.log(JSON.stringify(rule));
     // console.log('123456的md5值是:'+md5('123456'));
@@ -32,6 +33,7 @@ function init_test(){
 }
 
 let rule = {};
+const VERSION = '3.9.14beta1';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -956,7 +958,11 @@ print = function (data){
             console.log('print:'+e.message)
         }
     }
-    console.log(data);
+    if(typeof(data)!=='string'){
+        console.log(typeof(data)+':'+data.length);
+    }else{
+        console.log(data);
+    }
 }
 log = print;
 /**
@@ -1428,7 +1434,7 @@ function searchParse(searchObj) {
         _pd = _ps.pd;
         let is_json = p0.startsWith('json:');
         p0 = p0.replace(/^(jsp:|json:|jq:)/,'');
-        print('1381 p0:'+p0);
+        // print('1381 p0:'+p0);
         try {
             let html = getHtml(MY_URL);
             if (html) {
@@ -1454,8 +1460,8 @@ function searchParse(searchObj) {
                 console.log(JSON.stringify(html));
                 console.log(html);
                 let list = _pdfa(html, p0);
-                print(list.length);
-                print(list);
+                // print(list.length);
+                // print(list);
                 list.forEach(it => {
                     let p1 = getPP(p, 1, pp, 1);
                     let p2 = getPP(p, 2, pp, 2);
@@ -1755,6 +1761,30 @@ function playParse(playObj){
     }else{
         lazy_play =  common_play;
     }
+    if(Array.isArray(rule.play_json) && rule.play_json.length >0){ // 数组情况判断长度大于0
+        let web_url = lazy_play.url;
+        for(let pjson of rule.play_json){
+            if(pjson.re && (pjson.re==='*'||web_url.match(new RegExp(pjson.re)))){
+                if(pjson.json && typeof(pjson.json)==='object'){
+                    let base_json = pjson.json;
+                    lazy_play = Object.assign(lazy_play,base_json);
+                    break;
+                }
+            }
+        }
+    }else if(rule.play_json && !Array.isArray(rule.play_json)){ // 其他情况 非[] 判断true/false
+        let base_json = {
+            jx:1,
+            parse:1,
+        };
+        lazy_play = Object.assign(lazy_play,base_json);
+    }else if(!rule.play_json){ // 不解析传0
+        let base_json = {
+            jx:0,
+            parse:1,
+        };
+        lazy_play = Object.assign(lazy_play,base_json);
+    }
     console.log(JSON.stringify(lazy_play));
     return JSON.stringify(lazy_play);
 }
@@ -1817,6 +1847,7 @@ function playParse(playObj){
 
         rule.timeout = rule.timeout||5000;
         rule.encoding = rule.编码||rule.encoding||'utf-8';
+        rule.play_json = rule.hasOwnProperty('play_json')?rule.play_json:[];
         if(rule.headers && typeof(rule.headers) === 'object'){
             try {
                 let header_keys = Object.keys(rule.headers);
