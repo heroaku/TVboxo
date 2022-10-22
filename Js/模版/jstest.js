@@ -21,6 +21,6 @@ var rule = {
     推荐:'.videoul&&li;.pone.videoul-title&&Text;img&&lay-src;.pone.videoul-tips1&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.videoul.classification-ul&&li;.pone.videoul-title&&Text;img&&lay-src;.pone.videoul-tips1&&Text;a&&href',
-    二级:{"title":".pageHead-text&&Text;.video-info-aux&&Text","img":"img&&lay-src","desc":".video-info-items:eq(-2)&&Text;.video-info-items:eq(-2)&&Text;.video-info-items:eq(-2)&&Text;.video-info-items:eq(0)&&.video-info-item.video-info-actor&&Text;.video-info-items:eq(1)&&.video-info-item.video-info-actor&&Text","content":".vod-info-text&&Text","tabs":".play-zu-ul li","lists":".play-ji-ul li:eq(#id) a"},
+    二级:{"title":".pageHead-text&&Text;.video-info-aux&&Text","img":"img&&lay-src","desc":".video-info-items:eq(-2)&&Text;.video-info-items:eq(-2)&&Text;.video-info-items:eq(-2)&&Text;.video-info-items:eq(0)&&.video-info-item.video-info-actor&&Text;.video-info-items:eq(1)&&.video-info-item.video-info-actor&&Text","content":".vod-info-text&&Text","tabs":".play-zu-ul li","lists":".play-ji-ul:eq(#id) li"},
     搜索:'.module-search-item;h3&&Text;img&&data-src;.module-item-text&&Text;a&&href',   
 }
