@@ -1,8 +1,8 @@
 var rule={
     title:'188看',
     host:'https://188kan.com',
-    url:'/vodshow/id/fyclass/page/fypage.html',
-    //searchUrl:'/vod/search/page/fypage/wd/**.html',
+    url:'/vod-show-id-fyclass-page-fypage.html',
+    searchUrl:'/vod-search-page-fypage-wd-**.html',
     //class_parse:'.navbar-items li:gt(1):lt(6);a&&Text;a&&href;.*/(.*?).html',
 
     searchable:2,
