@@ -1,10 +1,8 @@
 var rule={
-    title:'小白菜电影',
+    title:'我爱电影',
     host:'https://www.5imv.cc',
-    url:'/vodshow/fyclass--------fypage---.html',
-    https://www.5imv.cc/vodtype/tv-1/
-    //searchUrl:'/vodsearch/page/fypage/wd/**.html',
-    https://www.5imv.cc/vodsearch/page/2/wd/ai/
+    url:'/vodtype/fyclass-fypage/',
+    searchUrl:'/vodsearch/page/fypage/wd/**/',
     //class_parse:'.navbar-items li:gt(1):lt(6);a&&Text;a&&href;.*/(.*?).html',
 
     searchable:2,
@@ -12,7 +10,7 @@ var rule={
     filterable:0,
     headers:{'User-Agent':'MOBILE_UA', },
     class_name:'电影&电视剧&综艺&动漫',
-    class_url:'dianying&dianshiju&zongyi&dongman',
+    class_url:'movie&tv&variety&comic',
     推荐:'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'body .stui-vodlist__box;a&&title;.lazyload&&data-original;;a&&href',
