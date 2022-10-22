@@ -1,26 +1,22 @@
-var rule = {
-    title:'海兔影院',
-    host:'https://www.haitu.tv',
-    // homeUrl:'/',
-    url:'/vod/show/id/fyclass/page/fypage.html',
-    searchUrl:'/vod/search/page/fypage/wd/**.html',
+var rule={
+    title:'小宝影院',
+    host:'https://xiaoheimi.net',
+    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
-        'User-Agent':'MOBILE_UA',
-        // "Cookie": "searchneed=ok"
+    headers:{
+        'User-Agent':'UC_UA',
     },
-    class_parse:'.nav-menu-items&&li;a&&title;a&&href;/(\\d+).html',
-    //class_name:'电影&电视剧&综艺&动漫&纪录片',
-    //class_url:'1&2&3&4&55',
+    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
+    class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
     play_parse:true,
     lazy:'',
     limit:6,
-    //推荐:'.module-item;.module-item-cover&&.module-item-pic;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
-    推荐:'.module-items;.module-item;.module-item-cover&&.module-item-pic&&a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
+    推荐:'ul.myui-vodlist.clearfix;li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.module-list&&.module-item;.module-item-pic&&a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
-    二级:{"title":"h1.page-title&&Text;.video-info-aux&&Text","img":".lazyload&&data-src","desc":".video-info-items:eq(0)&&Text;.video-info-items:eq(-2)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(0)&&Text","content":".video-info-item.video-info-content.vod_content&&Text","tabs":".module-tab-item.tab-item","lists":".module-blocklist.scroll-box:eq(#id) a"},
-    搜索:'.module-search-item;h3&&Text;img&&data-src;.module-item-text&&Text;a&&href',   
+    一级:'.myui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    二级:{"title":".myui-content__detail .title&&Text;.myui-content__detail p:eq(-2)&&Text","img":".myui-content__thumb .lazyload&&data-original","desc":".myui-content__detail p:eq(-2)&&Text;.myui-content__detail p:eq(-1)&&Text;.myui-content__detail p:eq(-2)&&Text;.myui-content__detail p:eq(3)&&Text;.myui-content__detail p:eq(4)&&Text","content":".content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
+    搜索:'#searchList li;a&&title;.lazyload&&data-original;.pic_text.text_right&&Text;a&&href;.text-muted:eq(-1)&&Text',
 }
