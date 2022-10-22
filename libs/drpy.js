@@ -33,7 +33,7 @@ function init_test(){
 }
 
 let rule = {};
-const VERSION = '3.9.14beta1';
+const VERSION = '3.9.15beta1';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -83,7 +83,7 @@ var _pdfh;
 var _pdfa;
 var _pd;
 // const DOM_CHECK_ATTR = ['url', 'src', 'href', 'data-original', 'data-src'];
-const DOM_CHECK_ATTR = /(url|src|href|data-original|data-src)$/;
+const DOM_CHECK_ATTR = /(url|src|href|-original|-src|-play|-url)$/;
 const SELECT_REGEX = /:eq|:lt|:gt|#/g;
 const SELECT_REGEX_A = /:eq|:lt|:gt/g;
 
@@ -1190,12 +1190,16 @@ function homeVodParse(homeVodObj){
                             } else{
                                 content = '';
                             }
+                            let vid = links.join('$');
+                            if(rule.二级==='*'){
+                                vid = vid+'@@'+title+'@@'+img;
+                            }
                             let vod = {
                                 vod_name: title,
                                 vod_pic: img,
                                 vod_remarks: desc,
                                 vod_content: content,
-                                vod_id: links.join('$')
+                                vod_id: vid
                             };
                             // print(vod);
                             d.push(vod);
@@ -1238,12 +1242,16 @@ function homeVodParse(homeVodObj){
                         }else{
                             content = ''
                         }
+                        let vid = links.join('$');
+                        if(rule.二级==='*'){
+                            vid = vid+'@@'+title+'@@'+img;
+                        }
                         let vod = {
                             vod_name: title,
                             vod_pic: img,
                             vod_remarks: desc,
                             vod_content: content,
-                            vod_id: links.join('$')
+                            vod_id: vid
                         };
                         d.push(vod);
 
@@ -1370,10 +1378,17 @@ function categoryParse(cateObj) {
                     });
                     let link = links.join('$');
                     let vod_id = rule.detailUrl?MY_CATE+'$'+link:link;
+
+                    let vod_name = _pdfh(it, p[1]).replace(/\n|\t/g,'').trim();
+                    let vod_pic = _pd(it, p[2],MY_URL);
+
+                    if(rule.二级==='*'){
+                        vod_id = vod_id+'@@'+vod_name+'@@'+vod_pic;
+                    }
                     d.push({
                         'vod_id': vod_id,
-                        'vod_name': _pdfh(it, p[1]).replace(/\n|\t/g,'').trim(),
-                        'vod_pic': _pd(it, p[2],MY_URL),
+                        'vod_name': vod_name,
+                        'vod_pic': vod_pic,
                         'vod_remarks': _pdfh(it, p[3]).replace(/\n|\t/g,'').trim(),
                     });
                 });
@@ -1478,10 +1493,16 @@ function searchParse(searchObj) {
                     }else{
                         content = '';
                     }
+                    let vod_id = link;
+                    let vod_name = _pdfh(it, p1).replace(/\n|\t/g,'').trim();
+                    let vod_pic = _pd(it, p2,MY_URL);
+                    if(rule.二级==='*'){
+                        vod_id = vod_id+'@@'+vod_name+'@@'+vod_pic;
+                    }
                     let ob = {
-                        'vod_id': link,
-                        'vod_name': _pdfh(it, p1).replace(/\n|\t/g,'').trim(),
-                        'vod_pic': _pd(it, p2,MY_URL),
+                        'vod_id': vod_id,
+                        'vod_name': vod_name,
+                        'vod_pic': vod_pic,
                         'vod_remarks': _pdfh(it, p3).replace(/\n|\t/g,'').trim(),
                         'vod_content': content.replace(/\n|\t/g,'').trim(),
                     };
@@ -1510,11 +1531,22 @@ function searchParse(searchObj) {
  */
 function detailParse(detailObj){
     fetch_params = JSON.parse(JSON.stringify(rule_fetch_params));
+    let orId = detailObj.orId;
+    let vod_name = '片名';
+    let vod_pic = '';
+    let vod_id = orId;
+    if(rule.二级==='*'){
+        // vod_id = orId.split('@@')[0]; // 千万不能分割
+        let extra = orId.split('@@');
+        vod_name = extra.length>1?extra[1]:vod_name;
+        vod_pic = extra.length>2?extra[2]:vod_pic;
+    }
+    // print(vod_pic);
     let vod = {
-        vod_id: detailObj.orId, //"id",
-        vod_name: "片名",
-        vod_pic: "",
-        type_name: "剧情",
+        vod_id: vod_id, //"id",
+        vod_name: vod_name,
+        vod_pic: vod_pic,
+        type_name: "类型",
         vod_year: "年份",
         vod_area: "地区",
         vod_remarks: "更新信息",
@@ -1536,7 +1568,7 @@ function detailParse(detailObj){
         vod.vod_remarks = detailUrl;
         vod.vod_actor = '没有二级,只有一级链接直接嗅探播放';
         vod.vod_content = MY_URL;
-        vod.vod_play_url = '嗅探播放$' + MY_URL;
+        vod.vod_play_url = '嗅探播放$' + MY_URL.split('@@')[0];
     }else if(typeof(p)==='string'&&p.trim().startsWith('js:')){
         const TYPE = 'detail';
         var input = MY_URL;
@@ -1619,7 +1651,9 @@ function detailParse(detailObj){
             if(p.tabs.startsWith('js:')){
                 print('开始执行tabs代码:'+p.tabs);
                 if(html&&typeof (html)!=='string'){
-                    html = html.rr(html.ele).toString();
+                    try { // 假装是jq的对象拿来转换一下字符串,try为了防止json的情况报错
+                        html = html.rr(html.ele).toString();
+                    }catch (e) {}
                 }
                 var input = MY_URL;
                 eval(p.tabs.replace('js:',''));
@@ -1653,9 +1687,13 @@ function detailParse(detailObj){
             if(p.lists.startsWith('js:')){
                 print('开始执行lists代码:'+p.lists);
                 if(html&&typeof (html)!=='string'){
-                    html = html.rr(html.ele).toString();
+                    // 假装是jq的对象拿来转换一下字符串,try为了防止json的情况报错
+                    try {
+                        html = html.rr(html.ele).toString();
+                    }catch (e) {}
                 }
                 var input = MY_URL;
+                var play_url = '';
                 eval(p.lists.replace('js:',''));
                 vod_play_url = LISTS.map(it=>it.join('#')).join(vod_play_url);
             }else{
@@ -1700,7 +1738,7 @@ function detailParse(detailObj){
         vod.vod_play_url = vod_play_url;
     }
     if(!vod.vod_id){
-        vod.vod_id = detailObj.orId;
+        vod.vod_id = vod_id;
     }
     // print(vod);
     return JSON.stringify({
@@ -1761,12 +1799,16 @@ function playParse(playObj){
     }else{
         lazy_play =  common_play;
     }
+    // print('play_json:'+typeof(rule.play_json));
+    // console.log(Array.isArray(rule.play_json));
     if(Array.isArray(rule.play_json) && rule.play_json.length >0){ // 数组情况判断长度大于0
         let web_url = lazy_play.url;
         for(let pjson of rule.play_json){
             if(pjson.re && (pjson.re==='*'||web_url.match(new RegExp(pjson.re)))){
                 if(pjson.json && typeof(pjson.json)==='object'){
                     let base_json = pjson.json;
+                    // print('开始合并:');
+                    // print(base_json);
                     lazy_play = Object.assign(lazy_play,base_json);
                     break;
                 }
@@ -1945,7 +1987,7 @@ function detail(vod_url) {
         fyclass = tmp[0];
         vod_url = tmp[1];
     }
-    let detailUrl = vod_url;
+    let detailUrl = vod_url.split('@@')[0];
     let url;
     if(!detailUrl.startsWith('http')&&!detailUrl.includes('/')){
         url = rule.detailUrl.replaceAll('fyid', detailUrl).replaceAll('fyclass',fyclass);
