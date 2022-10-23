@@ -124,7 +124,7 @@
 	{"key": "drpy_js_爱看电影","name": " 🎑爱看电影[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/爱看电影.js"},
 	{"key": "drpy_js_爱看影视","name": " 🎑爱看影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/爱看影视.js"},
 	{"key": "drpy_js_皮皮泡","name": " 🎑皮皮泡[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/皮皮泡.js"},
-	{"key": "drpy_js_天空影视","name": " 🎑天空影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/天空影视.js"},
+	//{"key": "drpy_js_天空影视","name": " 🎑天空影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/天空影视.js"},
 
 
 	//{"key": "drpy_js_小猫咪","name": " 🎑小猫咪[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/小猫咪.js"},
