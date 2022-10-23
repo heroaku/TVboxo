@@ -126,6 +126,7 @@
         {"key": "drpy_js_趣享星趣","name": " 🎑趣享星趣[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/趣享星趣.js"},
 	{"key": "drpy_js_我爱电影网","name": " 🎑我爱电影网[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/我爱电影网.js"},  
 	{"key": "drpy_js_欧乐影院","name": " 🎑欧乐影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/欧乐影院.js"}, 
+        {"key": "drpy_js_子子影视","name": " 🎑子子影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/子子影视.js"}, 
 
 	  
 	  
