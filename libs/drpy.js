@@ -33,7 +33,7 @@ function init_test(){
 }
 
 let rule = {};
-const VERSION = '3.9.15beta1';
+const VERSION = '3.9.16';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -976,6 +976,7 @@ function checkHtml(html,url,obj){
     if(/\?btwaf=/.test(html)){
         let btwaf = html.match(/btwaf(.*?)"/)[1];
         url = url.split('#')[0]+'?btwaf'+btwaf;
+        print('宝塔验证访问链接:'+url);
         html = request(url,obj);
     }
     return html
@@ -1270,6 +1271,13 @@ function homeVodParse(homeVodObj){
     let t2 = (new Date()).getTime();
     console.log('加载首页推荐耗时:'+(t2-t1)+'毫秒');
     // console.log(JSON.stringify(d));
+    if(rule.图片来源){
+        d.forEach(it=>{
+            if(it.vod_pic&&it.vod_pic.startsWith('http')){
+                it.vod_pic = it.vod_pic + rule.图片来源;
+            }
+        });
+    }
     return JSON.stringify({
         list:d
     })
@@ -1397,6 +1405,13 @@ function categoryParse(cateObj) {
             console.log(e.message);
         }
     }
+    if(rule.图片来源){
+        d.forEach(it=>{
+            if(it.vod_pic&&it.vod_pic.startsWith('http')){
+                it.vod_pic = it.vod_pic + rule.图片来源;
+            }
+        });
+    }
     // print(d);
     return d.length<1?'{}':JSON.stringify({
         'page': parseInt(cateObj.pg),
@@ -1515,6 +1530,14 @@ function searchParse(searchObj) {
             return '{}'
         }
     }
+    if(rule.图片来源){
+        d.forEach(it=>{
+            if(it.vod_pic&&it.vod_pic.startsWith('http')){
+                it.vod_pic = it.vod_pic + rule.图片来源;
+            }
+        });
+    }
+    // print(d);
     return JSON.stringify({
         'page': parseInt(searchObj.pg),
         'pagecount': 10,
@@ -1737,6 +1760,9 @@ function detailParse(detailObj){
         }
         vod.vod_play_url = vod_play_url;
     }
+    if(rule.图片来源 && vod.vod_pic && vod.vod_pic.startsWith('http')){
+        vod.vod_pic = vod.vod_pic + rule.图片来源;
+    }
     if(!vod.vod_id){
         vod.vod_id = vod_id;
     }
@@ -1889,6 +1915,7 @@ function playParse(playObj){
 
         rule.timeout = rule.timeout||5000;
         rule.encoding = rule.编码||rule.encoding||'utf-8';
+        rule.图片来源 = rule.图片来源||'';
         rule.play_json = rule.hasOwnProperty('play_json')?rule.play_json:[];
         if(rule.headers && typeof(rule.headers) === 'object'){
             try {
