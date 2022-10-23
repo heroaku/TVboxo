@@ -1,23 +1,12 @@
-var rule={
-    title:'子子影视',
-    host:'https://www.ziziys.com',
-    // homeUrl:'/',
-    url:'/list/fyclass/page/fypage.html',
-    searchUrl:'/vsearch/--.html?wd=**',
-    searchable:2,//是否启用全局搜索,
-    quickSearch:0,//是否启用快速搜索,
-    filterable:0,//是否启用分类筛选,
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
-        'User-Agent':'MOBILE_UA',
-        // "Cookie": "searchneed=ok"
-    },
-    class_name:'电影&动漫&国产剧&美剧&日韩剧',
-    class_url:'1&3&13&14&15',
-    lazy:'',
-    limit:6,
-    推荐:'.module-item;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
-    double:true, // 推荐内容是否双层定位
-    一级:'.module-item;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
-    二级:{"title":"h1&&Text;.video-info-header&&Text","img":".lazyload&&data-src","desc":".video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text","content":".vod_content&&Text","tabs":".module-tab-item","lists":".sort-item:eq(#id) a"},
-    搜索:'.module-items;.lazyload&&alt;.lazyload&&data-src;.tag-link&&Text;*',
-}
+var rule = Object.assign(muban.vfed,{
+title:'兰花影院',
+host:'https://www.lanhua.tv/',
+'User-Agent':'MOBILE_UA',
+class_parse:'ul.top_nav&&li;a&&Text;a&&href;./(\\d+).html',
+cate_exclude:'午夜影院|VIP蓝光影院|电视直播',
+推荐:'.cbox_list;ul&&li;a&&title;.lazyload&&data-original;.text_dy&&Text;a&&href',
+double:true, // 推荐内容是否双层定位
+一级:'.vodlist&&li;a&&title;.lazyload&&data-original;.text_dy&&Text;a&&href',
+二级:{"title":".hd_tit&&Text;.content_min&&ul&&li&&Text","img":".lazyload&&data-original","desc":";;;.content_min&&ul&&li:eq(2) a&&Text;.content_min&&ul&&li:eq(3) a&&Text","content":".context&&span&&Text","tabs":".play_source_tab&&.active","lists":".content_playlist:eq(#id) li"},
+搜索:'.vodlist&&li;*;*;*;*',
+});
