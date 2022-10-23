@@ -121,9 +121,9 @@
 	{"key": "drpy_js_牛马TV","name": " 🎑牛马TV[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/牛马TV.js"},
 	{"key": "drpy_js_夜空","name": " 🎑夜空[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/夜空.js"},
 	{"key": "drpy_js_影视工厂","name": " 🎑影视工厂[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/影视工厂.js"},
-	{"key": "drpy_js_TV云播","name": " 🎑TV云播[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/TV云播.js"},
-	{"key": "drpy_js_爱看电影","name": " 🎑爱看电影[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/爱看电影.js"},
-	{"key": "drpy_js_爱看影视","name": " 🎑爱看影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/爱看影视.js"},
+	//{"key": "drpy_js_TV云播","name": " 🎑TV云播[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/TV云播.js"},
+	//{"key": "drpy_js_爱看电影","name": " 🎑爱看电影[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/爱看电影.js"},
+	//{"key": "drpy_js_爱看影视","name": " 🎑爱看影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/爱看影视.js"},
 	//{"key": "drpy_js_天空影视","name": " 🎑天空影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/天空影视.js"},
 
 
