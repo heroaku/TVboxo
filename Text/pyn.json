@@ -11,23 +11,21 @@
 
   "sites":[
     {"key": "py_douban","name": " 🐦豆瓣影视","type": 3,"api": "py_douban","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_douban.py"},
-   {"key": "T4a","name": " 🎑T4聚合","type": 4,"api": "https://t4.secan.icu/vod?sites=all&ali_token=a60a9387a6124e47ac78c726a02dba6d&timeout=5","searchable": 1,"quickSearch": 1,"filterable": 1},
-  
-    //{  "key": "t4public", "name":" 🎑公共", "type": 4, "api":"https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=10",  "searchable": 1, "quickSearch": 1, "filterable": 0},
-    //{"key": "T4备用","name": " 🎑备用","type": 4,"api": "https://t4.run.goorm.io/vod?sites=all&ali_token=3a49cf29cf20410997247c6eb4509be9&timeout=10","searchable": 1,"quickSearch": 1,"filterable": 1},  
+
     {"key":"If101","name":"🐞If101(墙外)","type":3,"api":"csp_If101","searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar;md5;A5ED2B58063A1915FF1FE0B83DBEF99D"}, 
     {"key":"csp_Nbys","name":"🐞泥巴(墙外)","type": 3,"api": "csp_Nbys","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar;md5;A5ED2B58063A1915FF1FE0B83DBEF99D"},    
 	  
 	  
     //js J版
 	{"key": "drpy_js_小宝影院","name": " 🎑小宝影院 🚪[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/小宝影院.js"},
+	{"key": "drpy_js_多瑙影视","name": " 🎑多瑙影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/多瑙影视.js"},
 	{"key": "drpy_js_唐人街影视","name": " 🎑唐人街影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/唐人街影视.js"},
 	{"key": "drpy_js_TV蜂","name": " 🎑TV蜂[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/TV蜂.js"},  
 	{"key": "drpy_js_if101","name": " 🎑If101 🚪[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/if101.js"},    
+	{"key": "drpy_js_欧乐影院","name": " 🎑欧乐影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/欧乐影院.js"}, 
 	{"key": "drpy_js_起飞影院","name": " 🎑起飞影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/起飞影院.js"},    
 	{"key": "drpy_js_海兔影院","name": " 🎑海兔影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/海兔影院.js"},   
 	{"key": "drpy_js_HoHo影视","name": " 🎑HoHo影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/HoHo影视.js"},  
-	{"key": "drpy_js_多瑙影视","name": " 🎑多瑙影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/多瑙影视.js"},
 	{"key": "drpy_js_映迷影院","name": " 🎑映迷影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/映迷影院.js"},
 	{"key": "drpy_js_Voflix","name": " 🎑Voflix[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/Voflix.js"},
 	{"key": "drpy_js_独播库","name": " 🎑独播库[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/独播库.js"},
@@ -36,7 +34,6 @@
 	{"key": "drpy_js_冲TV","name": " 🎑冲TV[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/冲TV.js"},
 	{"key": "drpy_js_追剧达人","name": " 🎑追剧达人[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/追剧达人.js"},
 	{"key": "drpy_js_188看","name": " 🎑188看[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/188看.js"},
-	{"key": "drpy_js_欧乐影院","name": " 🎑欧乐影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/欧乐影院.js"}, 
 	{"key": "drpy_js_1080P","name": " 🎑1080P[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/1080P.js"},
 	{"key": "drpy_js_007影视","name": " 🎑007影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/007影视.js"},
 	{"key": "drpy_js_cokemv","name": " 🎑cokemv[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/cokemv.js"},
@@ -157,7 +154,10 @@
    {"key":"csp_xBPQ_七小时影院","name":" 🍂七小时影院 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/七小时影院.json"},
    {"key":"csp_xBPQ_在线之家","name":" 🍂在线之家 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/在线之家.json"},		  
 	  
-	  
+   {"key": "T4a","name": " 🎑T4聚合","type": 4,"api": "https://t4.secan.icu/vod?sites=all&ali_token=a60a9387a6124e47ac78c726a02dba6d&timeout=5","searchable": 1,"quickSearch": 1,"filterable": 1},
+  
+    //{  "key": "t4public", "name":" 🎑公共", "type": 4, "api":"https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=10",  "searchable": 1, "quickSearch": 1, "filterable": 0},
+    //{"key": "T4备用","name": " 🎑备用","type": 4,"api": "https://t4.run.goorm.io/vod?sites=all&ali_token=3a49cf29cf20410997247c6eb4509be9&timeout=10","searchable": 1,"quickSearch": 1,"filterable": 1},  	  
 	  
 	  //PY爬蟲
     
