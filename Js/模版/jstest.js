@@ -7,6 +7,7 @@ var rule={
 		quickSearch:0,//是否启用快速搜索,
 		filterable:0,//是否启用分类筛选,
 		class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
+	        cate_exclude:'演员',
 		play_parse:true,
 		lazy:'',
 		limit:6,
