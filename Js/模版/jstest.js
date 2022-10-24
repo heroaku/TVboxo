@@ -1,6 +1,6 @@
 var rule={
-		title:'NY影院',
-		host:'https://www.nycvod.com',
+		title:'豆芽影院',
+		host:'https://www.imdy.tv',
 		url:'/vodshow/fyclass--------fypage---.html',
  		searchUrl:'/vodsearch/**----------fypage---.html',
 		searchable:2,//是否启用全局搜索,
