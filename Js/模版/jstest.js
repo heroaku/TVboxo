@@ -3,6 +3,7 @@ title:'艾旦影视',
 host:'https://www.lovedan.net',
 url:'/vodshow/fyclass--------fypage---.html',
 searchUrl:'/vodsearch/**----------fypage---.html',
+cate_exclude: '福利图片',
 });
 
 
