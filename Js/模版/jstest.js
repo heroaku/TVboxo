@@ -1,6 +1,6 @@
 muban.首图.二级.重定向='js:let url = jsp.pd(html,".myui-content__operate&&a&&href");log("重定向到:"+url);html = request(url)';
-muban.首图.二级.tabs='.t-ul&&li';
-muban.首图.二级.lists='.stui-content__playlist:eq(#id)&&li';
+muban.首图.二级.tabs='.myui-screens__list&&ul&&li';
+muban.首图.二级.lists='.myui-content__list:eq(#id)&&li';
 
 var rule = Object.assign(muban.首图,{
 title:'七小时影院',
