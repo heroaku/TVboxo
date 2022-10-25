@@ -23,7 +23,7 @@
    {"key":"csp_xpath_测试","name":" 🌾测试(XPF)","type":3,"api":"csp_XPathMacFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/Js/%E6%A8%A1%E7%89%88/xpthtest.json"},
    {"key":"csp_XYQBiu_测试","name":" 🌌测试(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/23ys.json"},	  
    {"key":"csp_测试","name":"🐞测试","type":3,"api":"csp_Xiaoh","searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/1018.jar"}, 
- 
+   //{"key" : "drpy_js_蜻蜓FM","name" : "蜻蜓FM[DRPY]","type" : 3,"api" : "./lib/drpy.min.js","ext" : "./js/蜻蜓FM.js","playerType":"2"},
 	  
    {"key": "T4a","name": " 🎑T4聚合","type": 4,"api": "https://t4.secan.icu/vod?sites=all&ali_token=a60a9387a6124e47ac78c726a02dba6d&timeout=5","searchable": 1,"quickSearch": 1,"filterable": 1},
    //{  "key": "t4public", "name":" 🎑公共", "type": 4, "api":"https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=10",  "searchable": 1, "quickSearch": 1, "filterable": 0},
