@@ -9,4 +9,5 @@ title:'七小时影院',
 host:'https://www.qxsyy.com',
 url:'/type/fyclass-fypage.html',
 searchUrl:'/search/**----------fypage---.html',
+class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
 });
