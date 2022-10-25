@@ -8,5 +8,5 @@ host:'https://www.qxsyy.com',
 url:'/type/fyclass-fypage.html',
 searchUrl:'/search/**----------fypage---.html',
 class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
-搜索:'#searchList li;.myui-vodlist__thumb&&title;.lazyload&&data-original;.text-muted:eq(-1)&&Text;a&&href;.text-muted:eq(-1)&&Text',
+搜索:'#searchList li;.myui-vodlist__thumb&&title;.lazyload&&data-original;;a&&href;.text-muted:eq(-1)&&Text',
 });
