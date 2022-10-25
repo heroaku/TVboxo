@@ -1,4 +1,4 @@
-muban.首图.二级.重定向='js:let url = jsp.pd(html,".playbtn&&a&&href");log("重定向到:"+url);html = request(url)';
+muban.首图.二级.重定向='js:let url = jsp.pd(html,".myui-content__operate&&a&&href");log("重定向到:"+url);html = request(url)';
 muban.首图.二级.tabs='.t-ul&&li';
 muban.首图.二级.lists='.stui-content__playlist:eq(#id)&&li';
 
