@@ -588,8 +588,11 @@ const parseTags = {
                 sp.splice(sp.length - 1);
                 if (sp.length > 1) {
                     for (let i in sp) {
-                        if (!SELECT_REGEX.test(sp[i])) {
-                            sp[i] = sp[i] + ':eq(0)';
+                        //Javascript自定义Array.prototype干扰for-in循环
+                        if(sp.hasOwnProperty(i)){
+                            if (!SELECT_REGEX.test(sp[i])) {
+                                sp[i] = sp[i] + ':eq(0)';
+                            }
                         }
                     }
                 } else {
@@ -639,10 +642,12 @@ const parseTags = {
             if (parse.indexOf('&&') > -1) {
                 let sp = parse.split('&&');
                 for (let i in sp) {
-                    if (!SELECT_REGEX_A.test(sp[i]) && i < sp.length - 1) {
-                        if(sp[i]!=='body'){
-                            // sp[i] = sp[i] + ':eq(0)';
-                            sp[i] = sp[i] + ':first';
+                    if(sp.hasOwnProperty(i)){
+                        if (!SELECT_REGEX_A.test(sp[i]) && i < sp.length - 1) {
+                            if(sp[i]!=='body'){
+                                // sp[i] = sp[i] + ':eq(0)';
+                                sp[i] = sp[i] + ':first';
+                            }
                         }
                     }
                 }
@@ -1709,16 +1714,31 @@ function detailParse(detailObj){
         if(p.lists){
             if(p.lists.startsWith('js:')){
                 print('开始执行lists代码:'+p.lists);
-                if(html&&typeof (html)!=='string'){
-                    // 假装是jq的对象拿来转换一下字符串,try为了防止json的情况报错
-                    try {
-                        html = html.rr(html.ele).toString();
-                    }catch (e) {}
+                try {
+                    if(html&&typeof (html)!=='string'){
+                        // 假装是jq的对象拿来转换一下字符串,try为了防止json的情况报错
+                        try {
+                            html = html.rr(html.ele).toString();
+                        }catch (e) {}
+                    }
+                    var input = MY_URL;
+                    var play_url = '';
+                    eval(p.lists.replace('js:',''));
+                    for(let i in LISTS){
+                        if(LISTS.hasOwnProperty(i)){
+                            // print(i);
+                            try {
+                                LISTS[i] = LISTS[i].map(it=>it.split('$').slice(0,2).join('$'));
+                            }catch (e) {
+                                print('格式化LISTS发生错误:'+e.message);
+                            }
+                        }
+                    }
+                    vod_play_url = LISTS.map(it=>it.join('#')).join(vod_play_url);
+                }catch (e) {
+                    print('js执行lists: 发生错误:'+e.message);
                 }
-                var input = MY_URL;
-                var play_url = '';
-                eval(p.lists.replace('js:',''));
-                vod_play_url = LISTS.map(it=>it.join('#')).join(vod_play_url);
+
             }else{
                 let list_text = p.list_text||'body&&Text';
                 let list_url = p.list_url||'a&&href';
@@ -1803,6 +1823,7 @@ function playParse(playObj){
     let common_play = {
         parse:1,
         url:input,
+        // url:urlencode(input),
         jx:tellIsJx(input)
     };
     let lazy_play;
