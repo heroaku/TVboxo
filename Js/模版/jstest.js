@@ -1,13 +1,16 @@
 
-muban.首图.二级.重定向='js:let url = jsp.pd(html,".myui-content__operate&&a&&href");log("重定向到:"+url);html = request(url)';
-muban.首图.二级.tabs='.myui-screens__list&&ul&&li';
-muban.首图.二级.lists='.myui-content__list:eq(#id)&&li';
-
-var rule = Object.assign(muban.首图,{
-title:'七小时影院',
-host:'https://www.qxsyy.com',
-url:'/type/fyclass-fypage.html',
-searchUrl:'/search/**----------fypage---.html',
-class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
-搜索:'#searchList li;.myui-vodlist__thumb&&title;.lazyload&&data-original;.text-muted:eq(-1)&&Text;a&&href;.text-muted:eq(-1)&&Text',
+var rule = Object.assign(muban.vfed,{
+title:'欧乐影院',
+host:'https://www.olevod.com',
+'User-Agent':'MOBILE_UA',
+//"playerType":2,  0 系统  1 ljk  2 exo
+playerType:2,
+  
+class_parse:'ul.top_nav&&li;a&&Text;a&&href;./(\\d+).html',
+cate_exclude:'午夜影院|VIP蓝光影院|电视直播',
+推荐:'.cbox_list;ul&&li;a&&title;.lazyload&&data-original;.text_dy&&Text;a&&href',
+double:true, // 推荐内容是否双层定位
+一级:'.vodlist&&li;a&&title;.lazyload&&data-original;.text_dy&&Text;a&&href',
+二级:{"title":".hd_tit&&Text;.content_min&&ul&&li&&Text","img":".lazyload&&data-original","desc":";;;.content_min&&ul&&li:eq(2) a&&Text;.content_min&&ul&&li:eq(3) a&&Text","content":".context&&span&&Text","tabs":".play_source_tab&&.active","lists":".content_playlist:eq(#id) li"},
+搜索:'.vodlist&&li;*;*;*;*',
 });
