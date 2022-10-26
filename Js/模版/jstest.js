@@ -1,6 +1,6 @@
 var rule = {
-    title:'大猪蹄子',
-    host:'http://www.dazhutizi.net',
+    title:'云雀视频',
+    host:'https://v.yunque.vip',
     // homeUrl:'/',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl:'/vod/search/page/fypage/wd/**.html',
