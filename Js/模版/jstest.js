@@ -1,9 +1,9 @@
 var rule = {
-    title:'云雀视频',
-    host:'https://v.yunque.vip',
+    title:'新安影院',
+    host:'https://www.xinan.tv',
     // homeUrl:'/',
-    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl:'/vod/search/page/fypage/wd/**.html',
+    url:'/fl/id/fyclass/page/fypage.html',
+    searchUrl:'/ss/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
