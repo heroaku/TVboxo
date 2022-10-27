@@ -32,8 +32,28 @@ function init_test(){
     console.log("init_test_end");
 }
 
+/**
+ * 执行预处理代码
+ */
+function pre(){
+    if(typeof(rule.预处理) === 'string' && rule.预处理 && rule.预处理.trim()){
+        let code = rule.预处理.trim();
+        console.log("执行预处理代码:"+code);
+        if(code.startsWith('js:')){
+            code = code.replace('js:','');
+        }
+        try {
+            // code里可以进行get 或者 post请求cookie并改变rule.headers 里的cookie
+            //  直接操作 rule_fetch_params 这个变量 .headers.Cookie
+            eval(code);
+        }catch (e) {
+            console.log('预处理执行失败:'+e.message);
+        }
+    }
+}
+
 let rule = {};
-const VERSION = '3.9.16';
+const VERSION = '3.9.18';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -1958,6 +1978,7 @@ function playParse(playObj){
         rule_fetch_params  = {'headers': rule.headers||false, 'timeout': rule.timeout, 'encoding': rule.encoding};
         oheaders = rule.headers||{};
         RKEY = typeof(key)!=='undefined'&&key?key:'drpy_' + (rule.title || rule.host);
+        pre(); // 预处理
         init_test();
     }catch (e) {
         console.log('init_test发生错误:'+e.message);
