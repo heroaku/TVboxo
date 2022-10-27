@@ -12,8 +12,8 @@ var rule = {
         // "Cookie": "searchneed=ok"
     },
     //class_parse:'.nav-menu-items&&li;a&&title;a&&href;/(\\d+).html',
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'1&2&3&4',
+    class_name:'电影&电视剧&综艺&动漫&国产剧&港剧&日剧&欧美剧&台剧&泰剧&越南剧&韩剧&海外剧',
+    class_url:'1&2&3&4&13&14&15&16&20&21&22&23&30',
     play_parse:true,
     lazy:'',
     limit:6,
