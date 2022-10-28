@@ -1,6 +1,6 @@
 var rule = {
-    title:'云雀视频',
-    host:'https://v.yunque.vip',
+    title:'美视网',
+    host:'http://www.mgtv.fun',
     // homeUrl:'/',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl:'/vod/search/page/fypage/wd/**.html',
