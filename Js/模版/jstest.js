@@ -1,22 +1,24 @@
-var rule={
-    title:'楚门影院',
-    host:'https://www.chumenys.com',
-    url:'/vodtype/fyclass-fypage.html',
+var rule = {
+    title:'天天视频',
+    host:'http://www.ttsp.tv',
+    // homeUrl:'/',
+    url:'/vodshow/fyclass--------fypage---.html',
     searchUrl:'/vodsearch/**----------fypage---.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    headers:{
-        'User-Agent':'UC_UA',
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
     },
-    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-    class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
+    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&港台剧&日韩剧&欧美剧&海外剧',
+    class_url:'1&2&3&4&20&13&14&15&16&31',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'ul.myui-vodlist.clearfix;li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    推荐:'ul.vodlist.vodlist_wi;li;a&&title;a&&data-original;.pic_text.text_right&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.myui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":".myui-content__detail .title&&Text;.text-muted:eq(-1)&&Text","img":".myui-content__thumb .lazyload&&data-original","desc":".text-muted:eq(-1)&&Text;.text-muted:eq(-1)&&Text;.myui-content__detail p:eq(1)&&Text;.myui-content__detail p:eq(3)&&Text;.myui-content__detail p:eq(4)&&Text","content":".content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
-    搜索:'#searchList li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href;.text-muted:eq(-1)&&Text',
+    一级:'li.vodlist_item;a&&title;a&&data-original;.pic_text.text_right&&Text;a&&href',
+    二级:{"title":"h2&&Text;.text-muted:eq(-1)&&Text","img":".content_thumb .vodlist_thumb&&data-original","desc":".content_detail.content_min.fl li:eq(-1)&&Text;.content_detail.content_min.fl li:eq(-1)&&Text;.content_detail.content_min.fl&&ul&&li:eq(0)&&Text;.content_detail.content_min.fl&&ul&&li:eq(2)&&Text;.content_detail.content_min.fl&&ul&&li:eq(3)&&Text","content":".content&&Text","tabs":".play_source_tab:eq(0) a","lists":".content_playlist:eq(#id) li"},
+    搜索:'body .searchlist_item;a&&title;.vodlist_thumb.lazyload&&data-original;.pic_text.text_right&&Text;a&&href',
 }
