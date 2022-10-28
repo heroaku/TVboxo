@@ -11,8 +11,8 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&综艺&动漫&纪录片',
-    class_url:'1&2&3&4&55',
+    class_name:'电影&电视剧&综艺&动漫&纪录片&喜剧片&爱情片&同性片&剧情片&国产剧&欧美剧&泰剧',
+    class_url:'1&2&3&4&55&7&8&23&11&13&16&33',
     play_parse:true,
     lazy:'',
     limit:6,
