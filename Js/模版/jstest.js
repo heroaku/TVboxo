@@ -1,6 +1,6 @@
 
 var rule = {
-    title:'干饭影视',
+    title:'在线之家',
     host:'https://www.zx189.com',
     // homeUrl:'/',
     url:'/vodtype/fyclass-fypage.html',
