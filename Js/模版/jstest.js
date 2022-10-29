@@ -1,5 +1,5 @@
 var rule={
-    title:'小宝影院',
+    title:'片库网',
     host:'http://www.piankumi.cc',
     url:'/show/fyclass--------fypage---.html',
     searchUrl:'/search/**----------fypage---.html',
