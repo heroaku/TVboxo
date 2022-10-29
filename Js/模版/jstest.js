@@ -15,7 +15,7 @@ var rule={
     //class_parse:'..hl-nav-wrap&&ul&&li;a&&Text;a&&href;.*/(.*?)/',
     //cate_exclude:'',
     class_name:'电视剧&电影&综艺&动漫',
-    class_url:'dianshiju&dianying&zongyi&dongman',
+    class_url:'lianxuju&dianying&zongyi&dongman',
     play_parse:true,
     lazy:'',
     limit:6,
