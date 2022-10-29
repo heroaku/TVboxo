@@ -20,9 +20,9 @@ var rule = {
     // lazy:'js:cacheUrl=d.getParse(input);if(cacheUrl){input=cacheUrl}else{try{let html=fetch(input,{headers:d.headers,timeout:d.timeout,encoding:d.encoding});let ret=html.match(/var player_(.*?)=(.*?)</)[2];let url=JSON.parse(ret).url;if(url.length>10){real_url="https://player.buyaotou.xyz/?url="+url;d.saveParse(input,real_url);input=real_url}}catch(e){print("网络请求发生错误:"+e.message)}}',
     lazy:'js:cacheUrl=getParse(input);if(cacheUrl){input=cacheUrl}else{try{let html=fetch(input,fetch_params);let ret=html.match(/var player_(.*?)=(.*?)</)[2];let url=JSON.parse(ret).url;if(url.length>10){real_url="https://player.buyaotou.xyz/?url="+url;saveParse(input,real_url);input=real_url}}catch(e){print("网络请求发生错误:"+e.message)}}',
     limit:5,
-    推荐:'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;;a&&href',
+    推荐:'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text.text-right&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'body .stui-vodlist__box;a&&title;.lazyload&&data-original;;a&&href',
+    一级:'body .stui-vodlist__box;a&&title;.lazyload&&data-original;.pic-text.text-right&&Text;a&&href',
     二级:{"title":"h1.title&&Text;.stui-content__detail p:eq(1)&&Text","img":".lazyload&&data-original","desc":".stui-content__detail p:eq(-3)&&Text;.stui-content__detail p:eq(-2)&&Text","content":".stui-content__detail p.detail&&Text","tabs":".stui-pannel__head ul li","lists":".stui-content__playlist:eq(#id) li"},
     // 搜索:'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',
 }
