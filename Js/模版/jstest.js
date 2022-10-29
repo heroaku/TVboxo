@@ -1,27 +1,22 @@
-
 var rule={
-    title:'南瓜影院',
-    host:'https://www.xxc.la',
-    // homeUrl:'/',
-    url:'/vodshow/fyclass--------fypage---/',
-    searchUrl:'/vodsearch/**----------fypage---/',
+    title:'小宝影院',
+    host:'http://www.piankumi.cc',
+    url:'/show/fyclass--------fypage---.html',
+    searchUrl:'/search/**----------fypage---.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
-        'User-Agent':'MOBILE_UA',
-        // "Cookie": "searchneed=ok"
+    headers:{
+        'User-Agent':'UC_UA',
     },
-    //class_parse:'..hl-nav-wrap&&ul&&li;a&&Text;a&&href;.*/(.*?)/',
-    //cate_exclude:'',
-    class_name:'电视剧&电影&综艺&动漫',
-    class_url:'lianxuju&dianying&zongyi&dongman',
+    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
+    class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    推荐:'ul.myui-vodlist.clearfix;li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.hl-vod-list&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(0)&&Text","img":".hl-lazy&&data-original","desc":".hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(1)&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(2)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-from a","lists":".hl-plays-list:eq(#id) li"},
-    搜索:'.hl-list-wrap&&ul&&li;.hl-item-thumb&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    一级:'.myui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    二级:{"title":".myui-content__detail .title&&Text;.text-muted:eq(-1)&&Text","img":".myui-content__thumb .lazyload&&data-original","desc":".text-muted:eq(-1)&&Text;.text-muted:eq(-1)&&Text;.myui-content__detail p:eq(1)&&Text;.myui-content__detail p:eq(3)&&Text;.myui-content__detail p:eq(4)&&Text","content":".content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
+    搜索:'#searchList li;a&&title;.lazyload&&data-original;.myui-vodlist__thumb&&span:eq(3)&&Text;a&&href;.text-muted:eq(-1)&&Text',
 }
