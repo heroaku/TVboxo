@@ -12,7 +12,7 @@ var rule={
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_parse:'.conch-nav&&ul&&li;a&&Text;a&&href;./(\\d+).html',
+    class_parse:'..hl-nav-wrap&&ul&&li;a&&Text;a&&href;.*/(.*?)/',
     cate_exclude:'',
     play_parse:true,
     lazy:'',
