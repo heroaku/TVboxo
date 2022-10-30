@@ -122,6 +122,7 @@
 	{"key": "drpy_js_AGE动漫","name": " 🎑AGE动漫[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/AGE动漫.js"}, 
 	{"key": "drpy_js_七小时影院","name": " 🎑七小时影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/七小时影院.js"},
 	{"key": "drpy_js_影渣渣","name": " 🎑影渣渣[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/影渣渣.js"},
+	{"key": "drpy_js_9U电影","name": " 🎑9U电影[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/9U电影.js"},
 	{"key": "drpy_js_555影视","name": " 🎑555影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/555影视.js"},
 	//
 	{"key": "drpy_js_vip影院","name": " 🎑vip影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/vip影院.js"},
