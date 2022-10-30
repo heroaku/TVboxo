@@ -9,7 +9,7 @@ var rule={
 		//class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
 	        //cate_exclude:'演员',
 	        class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&港台剧&日韩剧&欧美剧',
-                class_url:'1&2&3&4&34&13&16&14&15',
+                class_url:'1&2&35&3&34&13&16&14&15',
 		play_parse:true,
 		lazy:'',
 		limit:6,
