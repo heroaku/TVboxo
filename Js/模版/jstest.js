@@ -1,5 +1,5 @@
 var rule={
-		title:'NY影院',
+		title:'9U电影',
 		host:'https://www.9udy.com',
 		url:'/index.php/vod/show/id/fyclass/page/fypage.html',
  		searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
@@ -8,8 +8,8 @@ var rule={
 		filterable:0,//是否启用分类筛选,
 		//class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
 	        //cate_exclude:'演员',
-	        class_name:'电影&电视剧&综艺&动漫&纪录片&竞技体育&国产剧&港台剧&日韩剧&欧美剧&新马泰&其他',
-                class_url:'1&2&26&32&23&40&13&15&14&16&24&25',
+	        class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&港台剧&日韩剧&欧美剧&其他',
+                class_url:'1&2&3&4&28&13&14&15&16&24&30',
 		play_parse:true,
 		lazy:'',
 		limit:6,
