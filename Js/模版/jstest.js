@@ -11,7 +11,7 @@ var rule={
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_parse:'.navbar-items li:gt(2):lt(8);a&&Text;a&&href;/(\\d+).html',
+    class_parse:'.navbar-items li:gt(2):lt(8);a&&Text;a&&href;.*/(.*?).html',
     play_parse:true,
     lazy:'',
     limit:6,
