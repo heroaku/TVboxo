@@ -17,5 +17,5 @@ var rule={
 		double:true, // 推荐内容是否双层定位
 		一级:'.module-items .module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
 		二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":".video-info-items:eq(-2)&&Text;.video-info-items:eq(-1)&&Text;.video-info-items:eq(-2)&&Text;.video-info-items:eq(1)&&.video-info-item&&Text;.video-info-items:eq(-2)&&.video-info-item&&Text","content":".zkjj_a&&Text","tabs":".module-tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
-		搜索:'.module-items .module-search-item;h3&&Text;*;.module-item-note&&Text;*',
+		搜索:'.module-card-item-poster;h3&&Text;*;.module-item-note&&Text;*',
 }
