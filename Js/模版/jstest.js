@@ -15,7 +15,7 @@ var rule={
     },
     //class_parse:'.conch-nav&&ul&&li;a&&Text;a&&href;./(\\d+).html',
     //cate_exclude:'',
-    class_name:'电视剧&电影&综艺&动漫&记录片&国产剧&港台剧&日韩剧&欧美剧&海外剧',
+    class_name:'电影&电视剧&综艺&动漫&记录片&国产剧&港台剧&日韩剧&欧美剧&海外剧',
     class_url:'1&2&3&4&21&13&14&15&16&22',
     play_parse:true,
     lazy:'',
