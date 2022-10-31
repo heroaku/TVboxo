@@ -1,7 +1,6 @@
 var rule = {
     title:'追剧啦',
-    //host:'https://www.zhuiju.la',
-    host:'https://www.mibaotv.com/',
+    host:'https://www.zhuiju.la',
     // homeUrl:'/',
     url:'/vodshow/fyclass--------fypage---.html',
     searchUrl:'/vodsearch/**----------fypage---.html',
