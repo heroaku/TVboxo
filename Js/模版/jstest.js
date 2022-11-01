@@ -1,8 +1,8 @@
 var rule={
-    title:'追剧影视',
-    host:'https://www.a2mu.com',
-    url:'/t/fyclass-fypage.html',
-    searchUrl:'/search/page/fypage/wd/**.html',
+    title:'西瓜影视',
+    host:'https://www.ledlmw.com',
+    url:'/sx-fyclass-fypage.html',
+    searchUrl:'/baidu**/page/fypage.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
