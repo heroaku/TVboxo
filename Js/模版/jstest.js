@@ -17,6 +17,6 @@ var rule={
     推荐:'ul.myui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.myui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":".myui-content__detail .title&&Text;.t-muted:eq(-1)&&Text","img":".lazyload&&data-original","desc":".text-muted:eq(-1)&&Text;.text-muted:eq(-5)&&Text;.myui-content__detail p:eq(4)&&Text;.myui-content__detail p:eq(5)&&Text;.myui-content__detail p:eq(6)&&Text","content":".content&&Text","tabs":".nav-tabs li","lists":".myui-content__list:eq(#id) li"},
+    二级:{"title":".myui-content__detail .title&&Text;.t-muted:eq(-1)&&Text","img":".lazyload&&data-original","desc":".text-muted:eq(-1)&&Text;.text-muted:eq(-5)&&Text;.myui-content__detail p:eq(-4)&&Text;.myui-content__detail p:eq(5)&&Text;.myui-content__detail p:eq(6)&&Text","content":".content&&Text","tabs":".nav-tabs li","lists":".myui-content__list:eq(#id) li"},
     搜索:'.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text',
 }
