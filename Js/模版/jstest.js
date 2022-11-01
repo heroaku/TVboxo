@@ -11,6 +11,7 @@ var rule={
     },
     // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
     class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
+    cate_exclude: '明星',
     play_parse:true,
     lazy:'',
     limit:6,
