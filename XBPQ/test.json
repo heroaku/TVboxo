@@ -1,67 +1,100 @@
 {
-"站名": "NO视频",
-"主页url": "https://www.novipnoad.com",
-"请求头": "",
-"头部集合": "User-Agent$Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1#Referer$https://www.novipnoad.com",
-"热门推荐": "1",
-"起始页": "1",
-"直接播放": "0",
-"倒序播放": "0",
-"图片代理": "0",
-"二次截取": "",
-"数组": "class=item-thumbnail&&item-info hidden",
-"图片": "data-original=&& alt>",
-"标题": "title=&&>",
-"副标题": "",
-"链接": "href=&& target=",
-"链接前缀": "",
-
-"线路二次截取": "",
-"线路数组": "",
-"线路标题": "",
-"线路链接": "",
-
-"状态": "Category: &&</div>",
-"导演": "导演:&&<br>",
-"主演": "Tags: &&</div>",
-"简介": "<p>&&</p>[替换:\\#*;>>空]",
-
-"播放二次截取": "",
-"播放数组": "<body&&</body>[替换:pkey:>></i>本集</a>#{vid:\">>{vid:\"\\&url=#play(\'>>{vid:\"\\&url=#\',this.innerHTML)>>空#</a><a>></a>}]",
-"列表二次截取": "",
-"播放列表": "{vi&&}",
-"播放标题": "</i>&&</a>",
-"播放链接": "d:\"&&\"",
-"播放链接前缀": "pkey:&&\"}[替换:\">>https://player.novipnoad.com/v1/?pkey=]",
-"播放链接后缀": "og:url\" content=\"&&\"[替换:https://www.novipnoad.com>>\\&ref=]",
-"免嗅": "0",
-"嗅探词":".m3u8#sharepoint.com#ctyunapi.cn#mp4",
-"过滤词":"baidu.com",
-"播放请求头": "User-Agent$Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1#Referer$https://www.novipnoad.com",
-
-"搜索url": "https://www.novipnoad.com/?s={wd}",
-"搜索模式": "1",
-"搜索二次截取": "",
-"搜索数组": "class=item-thumbnail&&</div>",
-"搜索图片": "data-original=&& alt>",
-"搜索标题": "title=&&>",
-"搜索链接": "href=&& title=",
-"搜索链接前缀": "",
-
-"分类url": "https://www.novipnoad.com/{cateId}/page/{catePg}/",
-"分类": "剧集$tv#港剧$tv/hongkong#台剧$tv/taiwan#欧美剧$tv/western#韩剧$tv/korea#日剧$tv/japan#泰剧$tv/thailand#土耳其剧$tv/turkey#电影$movie#动画$anime#综艺$shows#音乐$music#短片$short#其他$other",
-"分类二次截取": "",
-"分类数组": "",
-"分类标题": "",
-"分类ID": "",
-"类型": "",
-"剧情": "",
-
-"地区": "",
-
-"年份": "",
-
-"排序": "",
-
-"筛选": ""
+    "title": "动视影视",
+    "author": "香雅情",
+    "UserAgent":"Mozilla/5.0 (Linux; Android 11; Mi 10 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.152 Mobile Safari/537.36",
+    "Referer":"",
+    "homeContent": "1",
+    "firstpage": "1",
+    "class_url": "http://www.5207.top/index.php/vod/show/id/{cateId}/page/{catePg}.html",
+    "class_name": "电影&电视剧&动漫&综艺",
+    "class_value": "1&2&3&4",
+    "filterdata": {},
+      //分类是否二次截取
+    "cat_YN_twice": "1",
+    "cat_twice_pre": "排序<i class=\"icon-arrow",
+    "cat_twice_suf": "title=\"尾页",
+      //分类数组截取前
+    "cat_arr_pre": "<a",
+      //分类数组截取后
+    "cat_arr_suf": "/a>",
+       //分类截取片单图片，截取前缀&&截取后缀
+    "cat_pic": "data-original=\"&&\"",
+        //分类截取片单标题，截取前缀&&截取后缀
+    "cat_title": "alt=\"&&\"",
+      //分类截取片单副标题，截取前缀&&截取后缀
+    "cat_subtitle": "item-note\">&&</div>",
+    //分类截取片单链接，截取前缀&&截取后缀
+    "cat_url": "href=\"&&\"",
+        //分类片单链接补前缀
+    "cat_prefix": "http://www.5207.top",
+       //分类片单链接补后缀
+    "cat_suffix": "",
+    "search_url": "http://www.5207.top/index.php/vod/search/wd/{wd}.html",
+    "search_mode": "0",
+    "jsonpic": "pic",
+    "jsonname": "name",
+    "jsonid": "id",
+    "jsonstitle":"",
+    "sea_YN_twice": "",
+    "sea_twice_pre": "",
+    "sea_twice_suf": "",
+    "sea_arr_pre": "",
+    "sea_arr_suf": "",
+    "sea_pic": "",
+    "sea_title": "",
+    "sea_url": "",
+    "search_prefix": "http://www.5207.top/voddetail/",
+    "search_suffix": ".html",
+    "sea_subtitle": "",
+    
+    "force_play": "0",
+    "play_prefix": "空",
+    "play_suffix": "空",
+    "play_header": "空",
+    
+    "proj_actor": "主演：</span>&&</div>",
+    "proj_plot": "introduction-content\">&&/p>",
+      //线路截取区域，如果不需要请把tab_title或tab_arr_pre置空或者全部不要填。
+    //线路是否二次截取
+"tab_YN_twice": "0",
+    "tab_twice_pre": "",
+    "tab_twice_suf": "",
+    //线路截取数组前
+    "tab_arr_pre": "播放列表</span",
+    "tab_arr_suf": "</div>",
+     //线路标题，截取前缀&&截取后缀
+    "tab_title": "<span>&&</span>",
+    
+    "list_YN_twice": "0",
+    "list_twice_pre": "空",
+    "list_twice_suf": "空",
+      //列表数组截取前，必须
+    "list_arr_pre": "<div class=\"module-play-list-content",
+      //列表数组截取后，必须
+    "list_arr_suf": "</div>",
+    "epi_YN_twice": "0",
+    "epi_twice_pre": "空",
+    "epi_twice_suf": "空",
+        //集数数组截取前，必须
+    "epi_arr_pre": "<a",
+      //集数数组截取后，必须
+    "epi_arr_suf": "</a>",
+        //集数标题，截取前缀&&截取后缀
+    "epi_title": "<span>&&</span>",
+    //集数链接，截取前缀&&截取后缀
+    "epi_url": "href=\"&&\"",
+      //集数链接补前缀
+    "epiurl_prefix": "http://www.5207.top",
+    "epiurl_suffix": "",
+    
+    //下面几个参数请勿乱用。否则可能会有副作用。
+    //分析网页源码中有<script type="text/javascript">var player_aaaa={"flag":"play","encrypt这种源码的链接解析
+    //如果网页源码里没有这种请设置为0
+    "Anal_MacPlayer":"0",
+    //是否开启手动嗅探，只对网页嗅探有效，0否，1是
+    "ManualSniffer":"0",
+    //手动嗅探视频链接关键字，每个用#隔开
+    "VideoFormat":".mp4#.m3u8#.flv",
+    //手动嗅探视频链接过滤关键词,每个用#隔开
+    "VideoFilter":".html#=http"
 }
