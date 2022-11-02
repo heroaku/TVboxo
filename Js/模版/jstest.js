@@ -1,5 +1,5 @@
 var rule = {
-    title:'影渣渣',
+    title:'溪谷影视',
     host:'https://www.xigutv.com',
     // homeUrl:'/',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
