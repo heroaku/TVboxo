@@ -3,7 +3,7 @@ var rule = {
     host:'https://www.xigutv.com',
     // homeUrl:'/',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl:'/vodsearch/**----------fypage---.html',
+    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
