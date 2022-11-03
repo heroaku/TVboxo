@@ -3,7 +3,7 @@ var rule = {
     host:'https://waipian8.com',
     // homeUrl:'/',
     url:'/show-fyclass--------fypage---/',
-    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
+    searchUrl:'/search-**----------fypage---/',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
