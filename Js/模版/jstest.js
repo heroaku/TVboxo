@@ -1,7 +1,6 @@
 var rule={
     title:'欧帝影院',
     host:'https://www.odivod.com',
-    // host:'https://zaoii.com',
     // homeUrl:'/',
     url:'/vodshow/fyclass--------fypage---/',
     searchUrl:'/vodsearch/**----------fypage---/',
@@ -14,8 +13,8 @@ var rule={
     },
     //class_parse:'.conch-nav&&ul&&li;a&&Text;a&&href;./(\\d+).html',
     //cate_exclude:'',
-    class_name:'电影&电视剧&综艺&动漫&记录片&国产剧&港台剧&日韩剧&欧美剧&海外剧',
-    class_url:'1&2&3&4&21&13&14&15&16&22',
+    class_name:'电影&电视剧&综艺&动漫&记录片&喜剧片&爱情片&同性片&国产剧&香港剧&台湾剧&韩国剧&日本剧&欧美剧&泰国剧&新马剧&其他剧',
+    class_url:'1&2&3&4&25&7&8&69&74&13&75&76&77&78&79&80&81',
     play_parse:true,
     lazy:'',
     limit:6,
