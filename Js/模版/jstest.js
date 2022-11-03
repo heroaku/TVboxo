@@ -1,5 +1,5 @@
 var rule = {
-    title:'溪谷影视',
+    title:'歪片星球',
     host:'https://waipian8.com',
     // homeUrl:'/',
     url:'/show-fyclass--------fypage---/',
