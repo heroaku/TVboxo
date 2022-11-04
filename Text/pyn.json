@@ -12,14 +12,12 @@
   "sites":[
     {"key": "py_douban","name": " 🐦豆瓣影视","type": 3,"api": "py_douban","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Py/py_douban.py"},
 
-
-
-    {"key":"csp_Nbys","name":"🛫泥视频┃墙外","type":3,"api":"csp_Nbys","searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/vob.jar"},
     {"key":"csp_If101","name":"🛫If101┃墙外","type":3,"api":"csp_If101","searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/vob.jar"},
     {"key":"csp_trj","name":"🛫唐人街┃墙外","type": 3,"api":"csp_Tangrenjie","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/vob.jar"},
     {"key":"csp_Xiaoh","name":"🛫小 宝┃墙外","type":3,"api":"csp_Xiaoh","searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/vob.jar"},  
     {"key":"csp_Zjdr","name":"👓追剧达人┃SP","type":3,"api":"csp_Zjdr","searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/vob.jar"},
-        //{"key":"csp_Nbys","name":"🐞泥巴(墙外)","type": 3,"api": "csp_Nbys","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar;md5;A5ED2B58063A1915FF1FE0B83DBEF99D"},    
+    {"key":"csp_Nbys","name":"🛫泥视频┃墙外","type":3,"api":"csp_Nbys","searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/vob.jar"},
+    //{"key":"csp_Nbys","name":"🐞泥巴(墙外)","type": 3,"api": "csp_Nbys","searchable": 1,"quickSearch": 1,"filterable": 1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/91d.jar;md5;A5ED2B58063A1915FF1FE0B83DBEF99D"},    
 	  
     //js J版
 	{"key": "drpy_js_小宝影院","name": " 🎑小宝影院 🚪[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.ym.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/小宝影院.js"},
