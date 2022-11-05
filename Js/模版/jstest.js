@@ -14,6 +14,6 @@ var rule={
 		推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
 		double:true, // 推荐内容是否双层定位
 		一级:'.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-		二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":".video-info-items:eq(-2)&&Text;.video-info-items:eq(-1)&&Text;.video-info-items:eq(-2)&&Text;.video-info-items:eq(1)&&.video-info-item&&Text;.video-info-items:eq(0)&&.video-info-item&&Text","content":".zkjj_a&&Text","tabs":".module-tab-content&&.module-tab-item.tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
+		二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":".video-info-items:eq(-2)&&Text;.video-info-items:eq(-1)&&Text;.video-info-items:eq(-2)&&Text;.video-info-items:eq(1)&&.video-info-item&&Text;.video-info-items:eq(0)&&.video-info-item&&Text","content":".zkjj_a&&Text","tabs":".module-tab-content&&.tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
 		搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
 }
