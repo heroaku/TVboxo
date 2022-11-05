@@ -1,5 +1,5 @@
 var rule = {
-    title:'歪片星球',
+    title:'落攻阁影视',
     host:'https://www.mfxs0.cn',
     // homeUrl:'/',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
@@ -12,8 +12,8 @@ var rule = {
         // "Cookie": "searchneed=ok"
     },
     //class_parse:'.nav-menu-items&&li;a&&title;a&&href;/(\\d+).html',
-    class_name:'电影&电视剧&综艺&动漫&纪录片',
-    class_url:'1&2&3&4&jilupian',
+    class_name:'电影&电视剧&综艺&动漫',
+    class_url:'1&2&3&4',
     play_parse:true,
     lazy:'',
     limit:6,
