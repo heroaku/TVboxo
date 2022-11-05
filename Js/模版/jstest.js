@@ -1,5 +1,5 @@
 var rule={
-		title:'新视觉影视',
+		title:'浮生半日',
 		host:'https://movie.fush8.com',
 		url:'/vodshow/fyclass--------fypage---.html',
 		searchUrl:'/vodsearch/**----------fypage---.html',
