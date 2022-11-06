@@ -7,8 +7,8 @@
 {
 
 //"spider":"./vob;md5;5f8fc214f8bda7598a1c4387f7062f2e",
-//"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/vob.jar",
-	"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/cs.jar",
+"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/vob.jar;md5;5f8fc214f8bda7598a1c4387f7062f2e",
+//"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/cs.jar",
 "wallpaper":"https://壁纸.神器每日推送.tk",
 "lives": [{"group": "redirect","channels": [{"name": "live","urls": ["proxy://do=live&type=txt&ext=aHR0cHM6Ly94bi0tbTdyNDEyYWR2YjkyajIxc3Q2NWEudGsvbGl2ZS50eHQ="]}]}],
 
