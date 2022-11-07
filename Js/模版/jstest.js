@@ -1,5 +1,5 @@
 var rule={
-		title:'9U电影',
+		title:'爱壹帆',
 		host:'https://www.iyf1.tv',
 		url:'/index.php/vod/show/id/fyclass/page/fypage.html',
  		searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
