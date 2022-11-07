@@ -13,8 +13,8 @@ var rule={
         // "Cookie": "searchneed=ok"
     },
     //class_parse:'.navbar-items li:gt(2):lt(8);a&&Text;a&&href;.*/(.*?).html',
-    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&港台剧&日韩剧&欧美剧',
-    class_url:'1&2&3&4&62&13&16&14&15',
+    class_name:'电影&电视剧&综艺&动漫',
+    class_url:'1&2&3&4',
     play_parse:true,
     lazy:'',
     limit:6,
