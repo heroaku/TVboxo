@@ -25,7 +25,7 @@
    {"key":"csp_XYQBiu_测试","name":" 🌌测试(XYQ)","type":3,"api":"csp_XYQBiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XYQBiu/test.json"},	  
    {"key":"csp_测试","name":"🐞测试","type":3,"api":"csp_Xiaoh","searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/1018.jar"}, 
    {"key":"haiwaicaiji","name":" 🍁海外看影视","type":0,"api":"https://haiwaikan.com/api.php/provide/vod/at/xml","searchable":1,"quickSearch":0,"filterable":0},
-   {"key":"csp_appysv2_M2_haiwai影视","name":"haiwaikan影视","type":3,"api":"csp_AppYsV2","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://api.haiwaikan.com/v1/vod?ac=list"},
+   {"key":"csp_appysv2_M2_haiwai影视","name":"淘片影视","type":0,"api":"https://taopianapi.com/home/cjapi/as/mc/vod/xml","searchable":1,"quickSearch":0,"filterable":0},
 
    //{"key" : "drpy_js_蜻蜓FM","name" : "蜻蜓FM[DRPY]","type" : 3,"api" : "./lib/drpy.min.js","ext" : "./js/蜻蜓FM.js","playerType":"2"},
    //{"key": "bilizy","name": "🅰️bilizy","type": 3,"api": "csp_Bili","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "https://github.com/heroaku/TVboxo/raw/main/Bili/bilizy.json"},
