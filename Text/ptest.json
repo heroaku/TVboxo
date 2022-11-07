@@ -3,7 +3,7 @@
 
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91a.jar;md5;1C1482FF646CC40E1F924EBE320822BC",
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/1008.jar",
-  "spider":"https://github.com/heroaku/TVboxo/raw/main/jar/cs.jar;md5;ca07e741640debc3777bb9a227cfb884",
+  "spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/cs.jar;md5;ca07e741640debc3777bb9a227cfb884",
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/91h.jar",
   //"spider":"https://神器每日推送.tk/jar",
   //"spider":"https://github.com/heroaku/TVboxo/raw/main/Jar/0928.jar",
@@ -72,6 +72,7 @@
 	{"key": "drpy_js_浮生半日","name": " 🎑浮生半日[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/浮生半日.js"},
 	{"key": "drpy_js_007影视","name": " 🎑007影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/007影视.js"},
 	{"key": "drpy_js_cokemv","name": " 🎑cokemv[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/cokemv.js"},
+	{"key": "drpy_js_BD影视","name": " 🎑BD影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/BD影视.js"},
 	{"key": "drpy_js_l0l","name": " 🎑l0l[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/l0l.js"},
 	{"key": "drpy_js_我爱跟剧","name": " 🎑我爱跟剧[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/我爱跟剧.js"},
 	{"key": "drpy_js_大猪蹄子","name": " 🎑大猪蹄子[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/大猪蹄子.js"},
