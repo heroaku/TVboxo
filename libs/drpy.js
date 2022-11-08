@@ -53,7 +53,7 @@ function pre(){
 }
 
 let rule = {};
-const VERSION = '3.9.20beta2';
+const VERSION = '3.9.20beta7';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -931,7 +931,7 @@ function request(url,obj,ocr_flag){
         obj.headers = headers;
     }
     if(rule.encoding&&rule.encoding!=='utf-8'&&!ocr_flag){
-        if(!obj.headers.hasOwnProperty('Content-Type')){ // 手动指定了就不管
+        if(!obj.headers.hasOwnProperty('Content-Type')&&!obj.headers.hasOwnProperty('content-type')){ // 手动指定了就不管
             obj.headers["Content-Type"] = 'text/html; charset='+rule.encoding;
         }
     }
@@ -1638,26 +1638,28 @@ function detailParse(detailObj){
             html = getHtml(MY_URL);
         }
         print(`二级${MY_URL}仅获取源码耗时:${(new Date()).getTime()-tt1}毫秒`);
-        let _impJQP = true;
+        let _impJQP = false;
         let _ps;
         if(p.is_json){
             print('二级是json');
             _ps = parseTags.json;
             html = dealJson(html);
-            _impJQP = false;
         }else if(p.is_jsp){
             print('二级是jsp');
             _ps = parseTags.jsp;
-            _impJQP = false;
         }else if(p.is_jq){
             print('二级是jq');
             _ps = parseTags.jq;
         }else{
             print('二级默认jq');
             _ps = parseTags.jq;
+            // print('二级默认jsp');
             // _ps = parseTags.jsp;
         }
-        if (_impJQP) { // jquery解析提前load(html)
+        if(_ps === parseTags.jq){ // jquery解析提前load(html)
+            _impJQP = true;
+        }
+        if (_impJQP) {
             let ttt1 = (new Date()).getTime();
             let c$ = cheerio.load(html);
             // print(`二级${MY_URL}仅c$源码耗时:${(new Date()).getTime()-ttt1}毫秒`);
@@ -1719,7 +1721,7 @@ function detailParse(detailObj){
         if(p.tabs){
             if(p.tabs.startsWith('js:')){
                 print('开始执行tabs代码:'+p.tabs);
-                if(html&&typeof (html)!=='string'){
+                if(html&&_impJQP&&typeof (html)!=='string'){
                     try { // 假装是jq的对象拿来转换一下字符串,try为了防止json的情况报错
                         html = html.rr(html.ele).toString();
                     }catch (e) {}
@@ -1756,7 +1758,7 @@ function detailParse(detailObj){
             if(p.lists.startsWith('js:')){
                 print('开始执行lists代码:'+p.lists);
                 try {
-                    if(html&&typeof (html)!=='string'){
+                    if(html&&_impJQP&&typeof (html)!=='string'){
                         // 假装是jq的对象拿来转换一下字符串,try为了防止json的情况报错
                         try {
                             html = html.rr(html.ele).toString();
@@ -1792,6 +1794,7 @@ function detailParse(detailObj){
                     let tab_ext =  p.tabs.split(';').length > 1 && !is_tab_js ? p.tabs.split(';')[1] : '';
                     let p1 = p.lists.replaceAll('#idv', tab_name).replaceAll('#id', i);
                     tab_ext = tab_ext.replaceAll('#idv', tab_name).replaceAll('#id', i);
+                    // 测试jsp提速
                     // p1 = p1.replace(':eq(0)',',0').replace(' ','&&');
                     // console.log(p1);
                     // console.log(html);
