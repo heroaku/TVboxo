@@ -2,7 +2,7 @@ var rule={
     title:'金曼影视',
     host:'https://www.jinmantv.com',
     // homeUrl:'/',
-    url: '/index.php/vod/show/area/filter/id/fyclass/page/fypage.html',
+    url: '/index.php/vod/show/filter/id/fyclass/page/fypage.html',
     //url: '/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
