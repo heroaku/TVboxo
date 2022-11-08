@@ -6,7 +6,7 @@ var rule={
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
-    //filterable:1,//是否启用分类筛选,
+    filterable:0,//是否启用分类筛选,
     headers:{//网站的请求头,完整支持所有的,常带ua和cookies
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
