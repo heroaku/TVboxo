@@ -1,5 +1,7 @@
 var rule={
     title:'兰花影院',
+    //host:'https://www.lanhuatv.com',
+    //host:'https://www.malustv.com',
     //host:'https://cucutube.com',
     host:'https://www.lanhua.tv',
     url:'/vodshow/fyclass--------fypage---.html',
