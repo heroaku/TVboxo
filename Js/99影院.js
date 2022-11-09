@@ -9,8 +9,9 @@ var rule={
     headers:{
         'User-Agent':'UC_UA',
     },
-    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-    class_parse:'.myui-header__menu&&li;a&&Text;a&&href;.*/(.*?).html',
+    //class_parse:'.myui-header__menu&&li;a&&Text;a&&href;.*/(.*?).html',
+    class_name:'电影&电视剧&综艺&动漫&国产剧&香港剧&韩国剧&日本剧&欧美剧&泰国剧',
+    class_url:'movie&drama&variety&anime&china&hkg&kr&jp&usa&tailan',
     play_parse:true,
     lazy:'',
     limit:6,
