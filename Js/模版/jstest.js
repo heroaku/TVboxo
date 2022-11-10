@@ -1,6 +1,7 @@
 var rule = {
     title:'drpy',
     host:'https://frodo.douban.com',
+    apidoc:'https://www.doubanapi.com',
     homeUrl:'',
     searchUrl:'',
     searchable:1,
@@ -13,7 +14,7 @@ var rule = {
             "Host": "frodo.douban.com",
             "Connection": "Keep-Alive",
             "Referer": "https://servicewechat.com/wx2f9b06c1de1ccfca/84/page-frame.html",
-            "content-type": "application/json",
+            //"content-type": "application/json",
             "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 MicroMessenger/7.0.9.501 NetType/WIFI MiniProgramEnv/Windows WindowsWechat"
     },
     timeout:5000,
