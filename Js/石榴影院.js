@@ -18,9 +18,9 @@ var rule={
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'.media-list-1;ul&&li;a&&title;.hl-lazy&&data-original;.tag&&Text;a&&href',
+    推荐:'.media-list-1;ul&&li;a&&title;img&&src;.tag&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.media-list-2&&ul&&li;a&&title;img&&src;.tag&&Text;a&&href',
-    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".play-box-mobile h2","lists":".play-list&&.item-box&&li a"},
+    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".video-desc-single&&Text","tabs":".play-box-mobile h2","lists":".play-list&&.item-box&&li a"},
     搜索:'.hl-list-wrap&&ul&&li;.hl-item-thumb&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
 }
