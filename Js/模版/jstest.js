@@ -1,4 +1,7 @@
-var rule={
+muban.首图2.二级.重定向='js:let url = jsp.pd(html,".leo-detail-media&&.leo-dis-ib&&href");log("重定向到:"+url);html = request(url)';
+
+
+var rule = Object.assign(muban.首图2,{
     title:'23影视',
     host:'https://222.186.150.32',
     // host:'https://zaoii.com',
@@ -24,4 +27,4 @@ var rule={
     一级:'li.leo-video-item;a&&title;img&&data-original;.leo-video-remark&&Text;a&&href',
     二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":"ul.swiper-wrapper&&li","lists":".leo-over-hd:eq(#id)&&.leo-play-num li"},
     搜索:'.leo-detail-wrap;h1&&Text;img&&data-original;.leo-video-remark&&Text;.leo-dis-ib&&href',
-}
+});
