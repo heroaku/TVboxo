@@ -1,13 +1,9 @@
-muban.首图2.二级.重定向='js:let url = jsp.pd(html,".leo-detail-media&&.leo-dis-ib&&href");log("重定向到:"+url);html = request(url)';
-muban.首图2.二级.tabs='ul.swiper-wrapper&&li';
-muban.首图2.二级.lists='.leo-over-hd:eq(#id)&&.leo-play-num&&li a';
-var rule = Object.assign(muban.首图2,{
-    title:'23影视',
-    host:'https://222.186.150.32',
-    // host:'https://zaoii.com',
+var rule = {
+    title:'大中国影视',
+    host:'https://www.malustv.com',
     // homeUrl:'/',
-    url:'/vodshow/id/fyclass/page/fypage.html',
-    searchUrl:'/vodsearch/page/fypage/wd/**.html',
+    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -15,16 +11,15 @@ var rule = Object.assign(muban.首图2,{
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    //class_parse:'.conch-nav&&ul&&li;a&&Text;a&&href;./(\\d+).html',
-    //cate_exclude:'',
-    class_name:'电影&电视剧&综艺&动漫&记录片&国产剧&港台剧&日韩剧&欧美剧&海外剧',
-    class_url:'1&2&3&4&21&13&14&15&16&22',
+    class_name:'电影&电视剧&综艺&动漫',
+    class_url:'1&2&3&4',
+    //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'body&&.hl-list-wrap;ul&&li;a&&title;img&&data-original;.leo-video-remark&&Text;a&&href',
+    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'li.leo-video-item;a&&title;img&&data-original;.leo-video-remark&&Text;a&&href',
-    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":"ul.swiper-wrapper&&li","lists":".leo-over-hd:eq(#id)&&.leo-play-num&&li a"},
-    搜索:'.leo-detail-wrap;h1&&Text;img&&data-original;.leo-video-remark&&Text;.leo-dis-ib&&href',
-});
+    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    二级:{"title":".hl-item-thumb.hl-lazy&&title;.hl-full-box&&ul li:eq(6)&&Text","img":".hl-item-thumb.hl-lazy&&data-original","desc":".hl-full-box&&ul&&li:eq(-1)&&Text;.hl-full-box&&ul&&li:eq(-2)&&Text;.hl-full-box&&ul&&li:eq(-3)&&Text;.hl-full-box&&ul&&li:eq(2)&&Text;.hl-full-box&&ul&&li:eq(3)&&Text","content":".hl-col-xs-12.blurb&&Text","tabs":".hl-plays-from:eq(0) a","lists":".hl-plays-list:eq(#id) li"},
+    搜索:'.hl-item-div;a&&title;.hl-item-thumb&&data-original;.hl-lc-1&&Text;a&&href;.text-muted:eq(-1)&&Text',
+}
