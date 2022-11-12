@@ -6,7 +6,8 @@
   "分类": "电影&剧集&综艺&动漫&记录",
   "分类值": "1&2&3&4&20",
   
-  "分类url": "https://222.186.150.32/vodshow{area}{class}/id/{cateId}/page/{catePg}{year}.html",
+  "分类url": "https://222.186.150.32/vodshow/area/{area}/id/{cateId}/page/{catePg}/year/{year}.html",
+
   
   "数组": "pack-ykpack\">&&pack-subtitle",
   "标题": "<a class=\"channelname\"*>&&</a>",
