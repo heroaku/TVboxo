@@ -1,6 +1,4 @@
 muban.首图2.二级.重定向='js:let url = jsp.pd(html,".leo-detail-media&&.leo-dis-ib&&href");log("重定向到:"+url);html = request(url)';
-
-
 var rule = Object.assign(muban.首图2,{
     title:'23影视',
     host:'https://222.186.150.32',
