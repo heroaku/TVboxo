@@ -1,5 +1,5 @@
 var rule = {
-    title:'大中国影视',
+    title:'大中影视',
     host:'https://www.malustv.com',
     // homeUrl:'/',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
