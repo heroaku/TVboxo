@@ -226,6 +226,7 @@
    {"key":"csp_XBPQ极品影视","name":" 🍂极品影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/极品影视.json"},
    {"key":"csp_XBPQ黑洞影视","name":" 🍂黑洞影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/黑洞影视.json"},	  
    {"key":"csp_XBPQ影视工厂","name":" 🍂影视工厂〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/%E5%BD%B1%E8%A7%86%E5%B7%A5%E5%8E%82.json"},	  
+   {"key":"csp_xBPQ_23影视","name":" 🍂23影视 xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/23影视.json"},
    {"key":"csp_xBPQ_Fositv","name":" 🍂Fositv xBPQ","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/Fositv.json"},
    {"key":"csp_XBPQHDIK影视","name":" 🍂HDIK影视〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/HDIK影视.json"},
    {"key":"csp_XBPQLIBVIO","name":" 🍂LIBVIO〔XBPQ〕","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/LIBVIO.json"},	  
