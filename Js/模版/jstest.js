@@ -12,7 +12,7 @@ var rule={
         // "Cookie": "searchneed=ok"
     },
     class_name:'电影&剧集&综艺&动漫&纪录',
-    class_url:'dianying&juji&zhongyi&dongman&jilu',
+    class_url:'1&2&3&4&21',
     lazy:'',
     limit:6,
     推荐:'.vodlist;.pack-ykpack;a&&title;.bj.eclazy&&data-original;.pack-prb&&Text;a&&href',
