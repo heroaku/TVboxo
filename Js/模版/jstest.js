@@ -1,5 +1,5 @@
 var rule = {
-    title:'大中影视',
+    title:'在线之家',
     host:'https://zxzjmtv.com',
     // homeUrl:'/',
     url:'/vsph/fyclassavbvcdcddvvfypageddv.html',
@@ -11,8 +11,8 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&综艺&动漫&剧情片&动画电影&同性片&喜剧片',
-    class_url:'2&1&4&3&30&32&33&34',
+    class_name:'电影&电视剧&综艺&动漫&剧情片&动画电影&同性片&喜剧片&国产剧&欧美剧&韩剧&日剧&港剧&台剧&泰剧&新马剧&其他剧',
+    class_url:'2&1&4&3&30&32&33&34&20&21&22&23&24&25&26&27&28',
     //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
     play_parse:true,
     lazy:'',
