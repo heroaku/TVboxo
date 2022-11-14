@@ -1,8 +1,8 @@
 var rule = {
     title:'大中影视',
-    host:'https://www.malustv.com',
+    host:'https://zxzjmtv.com',
     // homeUrl:'/',
-    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+    url:'/vsph/fyclassavbvcdcddvvfypageddv.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
