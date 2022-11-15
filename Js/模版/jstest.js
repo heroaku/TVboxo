@@ -12,7 +12,7 @@ var rule={
         // "Cookie": "searchneed=ok"
     },
     class_name:'电影&剧集&综艺&动漫&纪录',
-    class_url:'dianying&lianxuju&3&4&21',
+    class_url:'dianying&lianxuju&zongyi&dongman&jilupian',
     lazy:'',
     limit:6,
     推荐:'.mo-cols-lays;ul.mo-cols-rows li;.mo-situ-name&&Text;a&&data-original;.mo-situ-rema&&Text;a&&href',
