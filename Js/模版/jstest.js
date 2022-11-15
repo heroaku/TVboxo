@@ -1,5 +1,5 @@
 var rule={
-    title:'追剧兔',
+    title:'天天影视',
     host:'http://www.b7yy.cc',
     // homeUrl:'/',
     url:'/yy6090-show/fyclass/page/fypage.html',
