@@ -1,9 +1,9 @@
 var rule = {
-    title:'蚂蚁影视',
-    host:'https://www.4kvcd.com',
+    title:'麻花影视',
+    host:'https://www.mhyyy.com',
     // homeUrl:'/',
-    url:'/fyclass/index_fypage_______.html',
-    searchUrl:'/index.php?s=vod-search-wd-**-p-fypage.html',
+    url:'/show/fyclass/page/fypage.html',
+    searchUrl:'/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -12,7 +12,7 @@ var rule = {
         // "Cookie": "searchneed=ok"
     },
     class_name:'电影&电视剧&综艺&动漫&纪录片&国产&香港&台湾&韩国&日本&欧美&海外',
-    class_url:'mov&tv&fun&cartoon&jilupian&guocanju&xianggangju&taiwanju&hanguoju&ribenju&oumeiju&haiwaiju',
+    class_url:'mhdy&mhds&fun&cartoon&jilupian&guocanju&xianggangju&taiwanju&hanguoju&ribenju&oumeiju&haiwaiju',
     play_parse:true,
     lazy:'',
     limit:6,
