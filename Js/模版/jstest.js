@@ -19,6 +19,6 @@ var rule = {
     推荐:'.movie-list-body;.movie-list-item;.movie-title&&Text;.movie-post-lazyload&&data-original;.module-item-note&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.movie-list-body&&.movie-list-item;.movie-title&&Text;.movie-post-lazyload&&data-original;.module-item-note&&Text;a&&href',
-    二级:{"title":"h1&&Text;.module-info-tag-link:eq(2)&&Text","img":".poster&&img&&src","desc":".module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-2)&&Text;.title-block&&.starLink&&Text;.module-info-content&&.module-info-item:eq(2)&&.module-info-item-content&&Text","content":".detailsTxt&&Text","tabs":".swiper-wrapper&&a","lists":".play_list_box:eq(#id)&&.content_playlist li"},
+    二级:{"title":"h1&&Text;.cr3&&Text","img":".poster&&img&&src","desc":".module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-2)&&Text;.scroll-content&&Text;.title-block&&.starLink&&Text;.module-info-content&&.module-info-item:eq(2)&&.module-info-item-content&&Text","content":".detailsTxt&&Text","tabs":".swiper-wrapper&&a","lists":".play_list_box:eq(#id)&&.content_playlist li"},
     搜索:'.movie-list-body&&.movie-search-list;.movie-title&&Text;.movie-post-lazyload&&data-original;.module-item-note&&Text;a&&href',
 }
