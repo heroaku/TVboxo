@@ -1,5 +1,5 @@
 var rule = {
-    title:'KOK影视',
+    title:'乐鱼影视',
     host:'https://www.leyupro.com',
     // homeUrl:'/',
     url:'/lys/fyclass/page/fypage.html',
