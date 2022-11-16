@@ -1,9 +1,9 @@
 var rule = {
-    title:'麻花影视',
-    host:'https://www.mhyyy.com',
+    title:'乐动影视',
+    host:'https://www.ledongtv.com',
     // homeUrl:'/',
-    url:'/show/fyclass/page/fypage.html',
-    searchUrl:'/search/page/fypage/wd/**.html',
+    url:'/lds/fyclass/page/fypage.html',
+    searchUrl:'/ldso/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -12,7 +12,7 @@ var rule = {
         // "Cookie": "searchneed=ok"
     },
     class_name:'电影&电视剧&综艺&动漫',
-    class_url:'mhdy&mhds&mhzy&mhdm',
+    class_url:'ldMovie&ldTv&ldVariety&ldCartoon',
     play_parse:true,
     lazy:'',
     limit:6,
