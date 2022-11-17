@@ -1,6 +1,6 @@
 
 var rule={
-title:'来看点播',
+title:'猫影汇',
 host:'https://www.miaoyinghui.com',
 url:'/vodshow/fyclass--------fypage---.html',
 searchUrl:'/vodsearch/**----------fypage---.html',
