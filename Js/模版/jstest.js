@@ -11,8 +11,8 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&综艺&动漫&纪录片',
-    class_url:'kokdy&kokds&kokzy&kokdm&kokjl',
+    class_name:'电影&电视剧&综艺&动漫&国产剧&港台剧&日韩剧&欧美剧',
+    class_url:'1&2&3&4&13&14&15&16',
     play_parse:true,
     lazy:'',
     limit:6,
