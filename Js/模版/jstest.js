@@ -1,21 +1,24 @@
-
-var rule={
-title:'猫影汇',
-host:'https://www.miaoyinghui.com',
-url:'/vodshow/fyclass--------fypage---.html',
-searchUrl:'/vodsearch/**----------fypage---.html',
-searchable:2,
-quickSearch:0,
-filterable:0,
-headers:{'User-Agent':'MOBILE_UA', },
-class_name:'电影&电视剧&综艺&动漫',
-class_url:'1&2&3&4',
-play_parse:true,
-lazy:'',
-limit:6,
-推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-caption.right&&Text;a&&href',
-double:true, // 推荐内容是否双层定位
-一级:'.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-二级:{"title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text","img":".module-item-pic&&img&&data-src","desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text","content":".video-info-content&&Text","tabs":".module-tab-content&& span","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
-搜索:'.module-search-item;a&&title;img&&data-src;.module-item-caption.right&&Text;a&&href',
+var rule = {
+    title:'超前点播',
+    host:'https://bzhanyy.com',
+    // homeUrl:'/',
+    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
+    },
+    class_name:'电影&电视剧&综艺&动漫&纪录片',
+    class_url:'kokdy&kokds&kokzy&kokdm&kokjl',
+    play_parse:true,
+    lazy:'',
+    limit:6,
+    推荐:'.movie-list-body;.movie-list-item;.movie-title&&Text;.movie-post-lazyload&&data-original;.module-item-note&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.movie-list-body&&.movie-list-item;.movie-title&&Text;.movie-post-lazyload&&data-original;.module-item-note&&Text;a&&href',
+    二级:{"title":"h1&&Text;.cr3&&Text","img":".poster&&img&&src","desc":".module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-2)&&Text;.scroll-content&&Text;.title-block&&.starLink&&Text;.module-info-content&&.module-info-item:eq(2)&&.module-info-item-content&&Text","content":".detailsTxt&&Text","tabs":".swiper-wrapper&&a","lists":".play_list_box:eq(#id)&&.content_playlist li"},
+    搜索:'.movie-list-body&&.movie-search-list;.movie-title&&Text;.movie-post-lazyload&&data-original;.module-item-note&&Text;a&&href',
 }
