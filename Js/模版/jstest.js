@@ -1,5 +1,5 @@
 var rule={
-    title:'99影院',
+    title:'爱猫影院',
     host:'https://www.moviend.com',
     url:'/lists/fyclass/fypage.html',
     searchUrl:'/search.html?key=**&submit=',
