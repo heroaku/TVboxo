@@ -31,7 +31,7 @@ function pre(){
 }
 
 let rule = {};
-const VERSION = 'drpy2 3.9.20beta7';
+const VERSION = 'drpy2 3.9.21 20221117';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -85,6 +85,8 @@ var _pdfa;
 var _pd;
 // const DOM_CHECK_ATTR = ['url', 'src', 'href', 'data-original', 'data-src'];
 const DOM_CHECK_ATTR = /(url|src|href|-original|-src|-play|-url)$/;
+const NOADD_INDEX = /:eq|:lt|:gt|:first|:last|^body$|^#/;  // 不自动加eq下标索引
+const URLJOIN_ATTR = /(url|src|href|-original|-src|-play|-url)$/;  // 需要自动urljoin的属性
 const SELECT_REGEX = /:eq|:lt|:gt|#/g;
 const SELECT_REGEX_A = /:eq|:lt|:gt/g;
 
@@ -423,20 +425,7 @@ var urljoin2 = urljoin;
 const defaultParser = {
     pdfh:pdfh,
     pdfa:pdfa,
-    pd(html,parse,uri){
-        let ret = this.pdfh(html,parse);
-        if(typeof(uri)==='undefined'||!uri){
-            uri = '';
-        }
-        if(DOM_CHECK_ATTR.test(parse)){
-            if(/http/.test(ret)){
-                ret = ret.substr(ret.indexOf('http'));
-            }else{
-                ret = urljoin(MY_URL,ret)
-            }
-        }
-        return ret
-    },
+    pd:pd,
 };
 
 
@@ -570,89 +559,32 @@ const parseTags = {
         },
     },
     jq:{
-        pdfh(html, parse, base_url) {
-            if (!parse || !parse.trim()) {
+        pdfh(html, parse) {
+            if (!html||!parse || !parse.trim()) {
                 return ''
             }
             parse = parse.trim();
-            let option = '';
-            // print('pdfh parse前:'+parse);
-            if (parse.startsWith('body&&')) {
-                parse = parse.substr(6);
-            }
-            if (parse.includes('&&')) {
-                let sp = parse.split('&&');
-                option = sp[sp.length - 1];
-                sp.splice(sp.length - 1);
-                sp.forEach((it,idex)=>{
-                    if (!SELECT_REGEX.test(it)) {
-                        sp[idex] = it+':eq(0)';
-                    }
-                });
-                parse = sp.join(' ').trim();
-            }
-            if(parse === 'Text'){
-                parse = 'body';
-                option = 'Text';
-            }else if(parse === 'Html'){
-                parse = 'body';
-                option = 'Html';
-            }
-            // print('pdfh parse后:'+parse+',option:'+option);
-            let result = defaultParser.pdfh(html,parse + " " + option);
-            // let result='';
-            // try {
-            //     result = defaultParser.pdfh(html,parse + " " + option);
-            // }catch (e) {
-            //     print('xxxxxxxxxxx');
-            //     print('pdfh发生了错误');
-            // }
-            if(option&&/style/.test(option.toLowerCase())&&/url\(/.test(result)){
-                try {
-                    result =  result.match(/url\((.*?)\)/)[1];
-                    // print(result);
-                }catch (e) {}
-            }
-            if (result && base_url && option && DOM_CHECK_ATTR.test(option)) {
-                if (/http/.test(result)) {
-                    result = result.substr(result.indexOf('http'));
-                } else {
-                    result = urljoin(base_url, result)
-                }
-                // print(result);
-            }
+            let result = defaultParser.pdfh(html,parse);
+            // print(`pdfh解析${parse}=>${result}`);
             return result;
         },
         pdfa(html, parse) {
-            if (!parse || !parse.trim()) {
-                print('!parse');
+            if (!html||!parse || !parse.trim()) {
                 return [];
             }
             parse = parse.trim();
-            // print('pdfa=>parse前:'+parse);
-            if (parse.startsWith('body&&')) {
-                parse = parse.substr(6);
-            }
-            if (parse.includes('&&')) {
-                let sp = parse.split('&&');
-                sp.forEach((it,idex)=>{
-                    if (!SELECT_REGEX_A.test(it) && idex < sp.length - 1) {
-                        sp[idex] = it+':eq(0)';
-                    }
-                });
-                parse = sp.join(' ').trim();
-            }
-            // if(!/&&| /.test(parse)){ // 自动补body就是jsoup的无稽之谈
-            //     parse = 'body '+parse;
-            // }
-            // print('pdfa=>parse后:'+parse);
             let result = defaultParser.pdfa(html,parse);
             // print(result);
             print(`pdfa解析${parse}=>${result.length}`);
             return result;
         },
-        pd(html,parse,uri){
-            return parseTags.jq.pdfh(html, parse, MY_URL);
+        pd(html,parse,base_url){
+            if (!html||!parse || !parse.trim()) {
+                return ''
+            }
+            parse = parse.trim();
+            base_url = base_url||MY_URL;
+            return defaultParser.pd(html, parse, base_url);
         },
     },
     getParse(p0){//非js开头的情况自动获取解析标签
@@ -1477,9 +1409,9 @@ function searchParse(searchObj) {
                 if(is_json){
                     // console.log(html);
                     html = dealJson(html);
+                    // console.log(JSON.stringify(html));
                 }
-                console.log(JSON.stringify(html));
-                console.log(html);
+                // console.log(html);
                 let list = _pdfa(html, p0);
                 // print(list.length);
                 // print(list);
