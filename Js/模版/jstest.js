@@ -1,24 +1,23 @@
-var rule = {
-    title:'乐鱼影视',
-    host:'https://www.leyupro.com',
-    // homeUrl:'/',
-    url:'/lys/fyclass/page/fypage.html',
-    searchUrl:'/lyso/page/fypage/wd/**.html',
+var rule={
+    title:'99影院',
+    host:'https://www.moviend.com',
+    url:'/lists/fyclass/fypage.html',
+    searchUrl:'/search.html?key=**&submit=',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
-        'User-Agent':'MOBILE_UA',
-        // "Cookie": "searchneed=ok"
+    headers:{
+        'User-Agent':'UC_UA',
     },
-    class_name:'电影&电视剧&综艺&动漫&纪录片',
-    class_url:'lyMovie&lyTv&lyVariety&lyCartoon&lydocumentary',
+    //class_parse:'.myui-header__menu&&li;a&&Text;a&&href;.*/(.*?).html',
+    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&港台剧&日韩剧&欧美剧&其他剧',
+    class_url:'1&2&3&4&16&20&21&22&23&24',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'.listwap;.gcol;a&&title;.inlist&&data-original;.module-item-note&&Text;a&&href',
+    推荐:'ul.myui-vodlist.clearfix;li;a&&title;a&&data-original;.pic-tag.text-right&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.gcol;a&&title;.inlist&&data-original;.module-item-note&&Text;a&&href',
-    二级:{"title":"h1&&Text;.detailinfo&&p:eq(7)&&Text","img":".detailpic&&img&&src","desc":".module-info-content&&.module-info-item:eq(-2)&&Text;.detailinfo&&p:eq(-8)&&Text;.detailinfo&&p:eq(5)&&Text;.album-title&&Text;.detailinfo&&p:eq(1)&&Text","content":".tjuqing&&Text","tabs":".yunplay&&.downtitle&&ul li","lists":".videolist:eq(#id) a"},
-    搜索:'.search;a&&title;img&&src;.list&&Text;a&&href',
+    一级:'.myui-vodlist li;a&&title;a&&data-original;.text-right&&Text;a&&href',
+    二级:{"title":".myui-content__detail .title&&Text;.text-muted:eq(-1)&&Text","img":".myui-content__thumb .lazyload&&data-original","desc":".text-muted:eq(-1)&&Text;.text-muted:eq(-1)&&Text;.myui-content__detail p:eq(1)&&Text;.myui-content__detail p:eq(3)&&Text;.myui-content__detail p:eq(4)&&Text","content":".content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
+    搜索:'#searchList li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href;.text-muted:eq(-1)&&Text',
 }
