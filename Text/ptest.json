@@ -65,6 +65,7 @@
 	{"key": "drpy_js_99影院","name": " 🎑99影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/99影院.js"},
 	{"key": "drpy_js_视中心影视","name": " 🎑视中心影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/视中心影视.js"},
 	{"key": "drpy_js_艾旦影视","name": " 🎑艾旦影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/艾旦影视.js"},
+	{"key": "drpy_js_艾斯影院","name": " 🎑艾斯影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/艾斯影院.js"},
 	{"key": "drpy_js_冲TV","name": " 🎑冲TV[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/冲TV.js"},
 	{"key": "drpy_js_追剧达人","name": " 🎑追剧达人[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/追剧达人.js"},
 	{"key": "drpy_js_欧乐影院","name": " 🎑欧乐影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","playerType":2,"ext": "https://github.com/heroaku/TVboxo/raw/main/Js/欧乐影院.js"}, 
