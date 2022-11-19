@@ -1,13 +1,8 @@
 {
   "分类": "电影$1#连续剧$2#综艺$3#动漫$4",
   "分类url":"http://yy.sryy.fun/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/lang/{lang}/year/{year}.html",
-  //http://yy.sryy.fun/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/lang/{lang}/year/{year}.html
-  //"线路数组": "data-toggle=\"tab&&</a>",
   "线路数组": "<a href=\"#playlist&&</li>",
-  //"线路标题": ">&&</a>",
-  //"线路数组": "class=\"nav nav-tabs &&</ul>",
   "线路标题": ">&&</a>",
-  //"简介": "剧情简介</span>&&</p>",
   "简介": "display: none;\">&&</span>",
   "播放数组":"class=\"myui-content__list &&</ul>",
   
