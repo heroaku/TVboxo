@@ -2,7 +2,7 @@ var rule={
     title:'厂长资源',
     host:'https://m.guazitv9.com',
     //https://m.guazitv9.com/video/list?channel_id=2&tag=0
-    url:'/video/list?channel_id=fyclass',
+    url:'/video/list?channel_id=fyclass&data-page=fypage',
     searchUrl:'/xssearch?q=**&f=_all&p=fypage',
     searchable:2,//是否启用全局搜索,
     quickSearch:1,//是否启用快速搜索,
