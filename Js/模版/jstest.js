@@ -1,6 +1,6 @@
 var rule={
-    title:'瓜子TV',
-    host:'https://m.guazitv9.com',
+    title:'如意视频',
+    host:'https://m.rysp.tv',
     //https://m.guazitv9.com/video/list?channel_id=2&tag=0
     url:'/video/list?channel_id=fyclass&data-page=fypage',
     searchUrl:'/xssearch?q=**&f=_all&p=fypage',
