@@ -1,8 +1,7 @@
 var rule={
     title:'厂长资源',
-    host:'https://www.guazitv.tv',
-    //https://www.guazitv.tv/video/list?channel_id=fyclass&tag=0
-     //host:'WWW.CZZY.TV',
+    host:'https://m.guazitv9.com',
+    //https://m.guazitv9.com/video/list?channel_id=2&tag=0
     url:'/video/list?channel_id=fyclass&tag=0',
     searchUrl:'/xssearch?q=**&f=_all&p=fypage',
     searchable:2,//是否启用全局搜索,
