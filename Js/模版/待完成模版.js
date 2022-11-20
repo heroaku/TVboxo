@@ -1,7 +1,8 @@
-//1. 翻页有问题 2 只有pluto player可以嗅探得出 和瓜子同模版
+//1. 翻页有问题 2 只有pluto player可以嗅探得出 和瓜子同模版 3 有插入广告
 var rule={
     title:'如意视频',
     host:'https://m.rysp.tv',
+    //https://m.guazitv9.com/video/list?channel_id=2&tag=0
     //https://m.rysp.tv/video/list?channel_id=2
     //https://rysp.tv/video/search-result?keyword=ai
     url:'/video/list?channel_id=fyclass&tag=0&data-page=fypage',
