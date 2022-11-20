@@ -1,9 +1,9 @@
 
 var rule={
     title:'瓜子TV',
-    host:'https://m.guazitv9.com',
-    //https://m.guazitv9.com/video/list?channel_id=2&tag=0
-    url:'/video/list?channel_id=fyclass&data-page=fypage',
+    host:'https://m.rysp.tv',
+    //https://m.rysp.tv/video/list?channel_id=2
+    url:'/video/list?channel_id=fyclass&tag=0&data-page=fypage',
     searchUrl:'/xssearch?q=**&f=_all&p=fypage',
     searchable:2,//是否启用全局搜索,
     quickSearch:1,//是否启用快速搜索,
