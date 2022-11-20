@@ -1,8 +1,9 @@
-
+//1. 翻页有问题 2 只有pluto player可以嗅探得出 和瓜子同模版
 var rule={
-    title:'瓜子TV',
+    title:'如意视频',
     host:'https://m.rysp.tv',
     //https://m.rysp.tv/video/list?channel_id=2
+    //https://rysp.tv/video/search-result?keyword=ai
     url:'/video/list?channel_id=fyclass&tag=0&data-page=fypage',
     searchUrl:'/xssearch?q=**&f=_all&p=fypage',
     searchable:2,//是否启用全局搜索,
