@@ -16,6 +16,6 @@ var rule={
     推荐:'dd;h5&&Text;img&&originalsrc;p.mark&&Text;a&&href',
     double:false,
     一级:'dd;h5&&Text;img&&originalsrc;.mark&&Text;a&&href',
-    二级:{"title":"h1&&Text;.moviedteail_list li&&a&&Text","img":"div.dyimg img&&src","desc":".moviedteail_list li:eq(3) a&&Text;.moviedteail_list li:eq(2) a&&Text;.moviedteail_list li:eq(1) a&&Text;.moviedteail_list li:eq(7) a&&Text;.moviedteail_list li:eq(5) a&&Text","content":".pop-intro-detail&&Text","tabs":".mi_paly_box&&span","lists":".video-detail-series-bottom.pop-content-list&&ul:eq(#id) li"},
+    二级:{"title":"h1&&Text;.moviedteail_list li&&a&&Text","img":"div.dyimg img&&src","desc":".moviedteail_list li:eq(3) a&&Text;.moviedteail_list li:eq(2) a&&Text;.moviedteail_list li:eq(1) a&&Text;.moviedteail_list li:eq(7) a&&Text;.moviedteail_list li:eq(5) a&&Text","content":".pop-intro-detail&&Text","tabs":".pop-intro.video-pop-source&&ul li","lists":".video-detail-series-bottom.pop-content-list&&ul:eq(#id) li"},
     搜索:'.search_list&&ul&&li;*;*;*;*',
 }
