@@ -9,7 +9,7 @@ var rule={
     //class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
     //cate_exclude:'演员',
     class_name:'电影&电视剧&综艺&动漫&纪录片&竞技体育&国产剧&港台剧&日韩剧&欧美剧&新马泰&其他',
-    class_url:'1&2&26&32&23&40&13&15&14&16&24&25',  
+    class_url:'1&2&3&4&29&5&30&16&18&47&14&13',  
     推荐:'.module-poster-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
     一级:'.module-poster-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
     //二级:{"title":"h1&&Text;","img":".lazyload&&data-original","desc":";;.module-info-item:eq(4) p&&Text;.module-info-item:eq(3) div&&Text;.module-info-item:eq(1) a&&Text","content":".show-desc&&Text","tabs":'#y-playList&&span',"lists":".module-play-list:eq(#id) a"},     
