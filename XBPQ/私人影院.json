@@ -1,6 +1,6 @@
 {
   "分类": "电影$1#连续剧$2#综艺$3#动漫$4",
-  "分类url":"http://yy.sryy.fun/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/lang/{lang}/year/{year}.html",
+  "分类url":"http://yy.sryy.fun/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/lang/{lang}/page/{catePg}/year/{year}.html",
   "线路数组": "<a href=\"#playlist&&</li>",
   "线路标题": ">&&</a>",
   "简介": "display: none;\">&&</span>",
