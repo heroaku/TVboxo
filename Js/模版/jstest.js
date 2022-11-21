@@ -1,21 +1,23 @@
 var rule={
-    title:'如意视频',
-    host:'https://m.rysp.tv',
-    //https://m.guazitv9.com/video/list?channel_id=2&tag=0
-    url:'/video/list?channel_id=fyclass&data-page=fypage',
-    searchUrl:'/xssearch?q=**&f=_all&p=fypage',
+    title:'追剧兔',
+    host:'https://www.348z.com',
+    // homeUrl:'/',
+    url:'/vodshow/id/fyclass/page/fypage.html',
+    searchUrl:'/vodsearch/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
-    quickSearch:1,//是否启用快速搜索,
+    quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    headers:{'User-Agent':'UC_UA', },
-    play_parse:true,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'PC_UA',
+        // "Cookie": "searchneed=ok"
+    },
+    class_name:'电影&剧集&综艺&动漫&纪录',
+    class_url:'1&2&3&4&20',
     lazy:'',
     limit:6,
-    class_name:'电影&电视剧&综艺&动漫&纪录片&世界杯',
-    class_url:'1&2&3&4&32&33',
-    推荐:'dd;h5&&Text;img&&originalsrc;p.mark&&Text;a&&href',
-    double:false,
-    一级:'dd;h5&&Text;img&&originalsrc;.mark&&Text;a&&href',
-    二级:{"title":"h1&&Text;.moviedteail_list li&&a&&Text","img":"div.dyimg img&&src","desc":".moviedteail_list li:eq(3) a&&Text;.moviedteail_list li:eq(2) a&&Text;.moviedteail_list li:eq(1) a&&Text;.moviedteail_list li:eq(7) a&&Text;.moviedteail_list li:eq(5) a&&Text","content":".pop-intro-detail&&Text","tabs":".pop-intro.video-pop-source&&ul li","lists":".video-detail-series-bottom.pop-content-list&&ul:eq(#id)&&li a"},
-    搜索:'.search_list&&ul&&li;*;*;*;*',
+    推荐:'.vodlist;.pack-ykpack;a&&title;.bj.eclazy&&data-original;.pack-prb&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.pack-ykpack;a&&title;.bj.eclazy&&data-original;.pack-prb&&Text;a&&href',
+    二级:{"title":"h1&&title;.s-top-info-title&&Text","img":".g-playicon.s-cover-img&&img&&src","desc":".data:eq(0)&&Text;.data:eq(1)&&Text;.data:eq(2)&&Text;.data:eq(3)&&Text","content":".item-desc&&Text","tabs":".channelname.swiper-slide","lists":".content_playlist:eq(#id) a"},
+    搜索:'.pack-packcover.returl.list-top-b;a&&title;.bj.eclazy&&data-original;.pack-prb&&Text;a&&href',
 }
