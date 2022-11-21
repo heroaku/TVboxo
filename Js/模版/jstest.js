@@ -1,5 +1,5 @@
 var rule={
-    title:'追剧兔',
+    title:'348电影网',
     host:'https://www.348z.com',
     // homeUrl:'/',
     url:'/vodshow/id/fyclass/page/fypage.html',
