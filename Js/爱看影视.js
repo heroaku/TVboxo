@@ -1,8 +1,3 @@
-var rule = Object.assign(muban.mxpro,{
-
-	class_parse:'',
-});
-
 var rule={
     title:'爱看影视',
     host:'https://ikan6.vip',
