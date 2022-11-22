@@ -6,3 +6,4 @@ var rule = Object.assign(muban.海螺3,{
     url:'/type/fyclass-fypage.html',
     searchUrl:'/search/page/fypage/wd/**.html',
 });
+//网站检测 无法访问
