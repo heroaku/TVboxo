@@ -19,6 +19,7 @@ var rule={
    一级:'.lists-content:eq(1)&&ul&&li;img&&alt;.thumb&&src;.note&&Text;a&&href',
 
     double:true, // 推荐内容是否双层定位
+   //二级:{"title":"h1&&Text;.product-excerpt:eq(2)&&Text","img":".thumb&&src","desc":";;.product-excerpt:eq(3)&&Text;.product-excerpt:eq(1)&&Text;.product-excerpt:eq(0)&&Text","content":".product-excerpt:eq(5)&&Text","tabs":".playlists dl dt","lists":".play-div-oa:eq(#id) li"},
    二级:{"title":"h1&&Text;.product-excerpt:eq(2)&&Text","img":".thumb&&src","desc":";;.product-excerpt:eq(3)&&Text;.product-excerpt:eq(1)&&Text;.product-excerpt:eq(0)&&Text","content":".product-excerpt:eq(5)&&Text","tabs":".playlists dl dt","lists":".play-div-oa:eq(#id) li"},
-   搜索:'.lists-content&&ul&&li;*;*;*;*',
+    搜索:'.lists-content&&ul&&li;*;*;*;*',
 }
