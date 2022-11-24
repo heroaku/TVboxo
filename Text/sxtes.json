@@ -50,7 +50,7 @@
 	{"key": "drpy_js_555影视","name": " 🎑555影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/out/555影视.js"},
 	{"key": "drpy_js_小猫咪","name": " 🎑小猫咪[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/out/小猫咪.js"},
 	{"key": "drpy_js_猫了个咪","name": " 🎑猫了个咪[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/out/猫了个咪.js"}, 
-    
+        {"key": "drpy_js_厂长资源","name": " 🎑厂长资源[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/out/厂长资源.js"},
 	  
     //{  "key": "t4public", "name":" 🎑公共", "type": 4, "api":"https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=10",  "searchable": 1, "quickSearch": 1, "filterable": 0},
     //{"key": "T4备用","name": " 🎑备用","type": 4,"api": "https://t4.run.goorm.io/vod?sites=all&ali_token=3a49cf29cf20410997247c6eb4509be9&timeout=10","searchable": 1,"quickSearch": 1,"filterable": 1},  
