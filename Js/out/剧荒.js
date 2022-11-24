@@ -1,3 +1,4 @@
+//翻页不能为1
 var rule = {
     title:'剧荒',
     host:'https://www.juhuang.tv',    
