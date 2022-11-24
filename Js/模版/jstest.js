@@ -1,21 +1,23 @@
-var rule = {
-    title:'剧荒',
-    host:'https://www.juhuang.tv',    
+var rule={
+    title:'追剧兔',
+    host:'https://www.zjtu.cc',
     // homeUrl:'/',
-    url:'/type/fyclass_type.html',
-    searchUrl:'https://so.juhuang.tv/?s=**',
-    searchable:2,
-    quickSearch:0,
-    filterable:0,
-    headers:{'User-Agent':'MOBILE_UA', },
-    class_name:'电视剧&电影&综艺&动漫',//静态分类名称拼接
-    class_url:'2&1&3&4',//静态分类标识拼接
-    play_parse:true,
+    url:'/vodshow/fyclass--------fypage---.html',
+    searchUrl:'/vodsearch/**----------fypage---.html',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'PC_UA',
+        // "Cookie": "searchneed=ok"
+    },
+    class_name:'电影&剧集&综艺&动漫&纪录',
+    class_url:'1&2&3&4&21',
     lazy:'',
     limit:6,
-    推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+    推荐:'.vodlist;.pack-ykpack;a&&title;.bj.eclazy&&data-original;.pack-prb&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-    二级:{"title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text","img":".module-item-pic&&img&&data-src","desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text","content":".video-info-content&&Text","tabs":".module-tab-title","lists":".module-blocklist&&.sort-item a"},
-    搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
+    一级:'.pack-ykpack;a&&title;.bj.eclazy&&data-original;.pack-prb&&Text;a&&href',
+    二级:{"title":"h1&&title;.s-top-info-title&&Text","img":".g-playicon.s-cover-img&&img&&src","desc":".data:eq(0)&&Text;.data:eq(1)&&Text;.data:eq(2)&&Text;.data:eq(3)&&Text","content":".item-desc&&Text","tabs":".channelname.swiper-slide","lists":".play_list_box:eq(#id)&&.content_playlist li"},
+    搜索:'.pack-packcover.returl.list-top-b;a&&title;.bj.eclazy&&data-original;.pack-prb&&Text;a&&href',
 }
