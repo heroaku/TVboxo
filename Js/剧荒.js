@@ -4,7 +4,7 @@ var rule = {
     host:'https://www.juhuang.tv',    
     // homeUrl:'/',
     url:'/type/fyclass_type.html',
-    searchUrl:'/s/**/fypage.html',
+    searchUrl:'https://so.juhuang.tv/?s=**',
     searchable:2,
     quickSearch:0,
     filterable:0,
