@@ -1,4 +1,3 @@
-//网站探测 无法访问
 var rule = {
     title:'神马影视',
     host:'https://www.smdyy.cc',
