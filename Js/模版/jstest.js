@@ -11,7 +11,9 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_parse:'.stui-header__menu li.hidden-xs;a&&Text;a&&href;/(\\d+)/',
+    //class_parse:'.stui-header__menu li.hidden-xs;a&&Text;a&&href;/(\\d+)/',
+    class_name:'电影&剧集&综艺&动漫&记录',
+    class_url:'1&2&3&4&4&23',
     play_parse:true,
     lazy:'',
     limit:8,
