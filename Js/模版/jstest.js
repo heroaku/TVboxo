@@ -1,7 +1,8 @@
 
 //muban.首图2.二级.content = '.stui-content__desc&&Text';
-//muban.首图2.二级.title = '.stui-content__detail&&h3&&Text;.stui-content__detail&&p:eq(1)&&Text;';
-muban.首图2.二级.重定向='js:let url = jsp.pd(html,".playbtn&&a&&href");log("重定向到:"+url);html = request(url)';
+muban.首图2.二级.img = '.poster&&img&&src';
+muban.首图2.二级.title = 'h1&&Text;.stui-content__detail&&p:eq(1)&&Text;';
+muban.首图2.二级.重定向='js:let url = jsp.pd(html,".se-q&&a&&href");log("重定向到:"+url);html = request(url)';
 muban.首图2.二级.tabs='.t-ul&&li';
 muban.首图2.二级.lists='.stui-content__playlist:eq(#id)&&li';
 
@@ -30,6 +31,6 @@ searchUrl:'/xssearch?s=**',
     推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.animation-2.items&&.item;h3&&Text;img&&src;.hl-pic-text&&Text;a&&href',
-    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(5)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-from a","lists":".hl-plays-list:eq(#id) li"},
+    //二级:{"title":"h1&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(5)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-from a","lists":".hl-plays-list:eq(#id) li"},
     搜索:'.hl-list-wrap&&ul&&li;.hl-item-thumb&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
 });
