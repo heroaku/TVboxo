@@ -1,19 +1,10 @@
-
-//muban.首图2.二级.content = '.stui-content__desc&&Text';
-muban.首图2.二级.img = '.poster&&img&&src';
-muban.首图2.二级.title = 'h1&&Text;.stui-content__detail&&p:eq(1)&&Text;';
-muban.首图2.二级.重定向='js:let url = jsp.pd(html,".se-q&&a&&href");log("重定向到:"+url);html = request(url)';
-muban.首图2.二级.tabs='.t-ul&&li';
-muban.首图2.二级.lists='.stui-content__playlist:eq(#id)&&li';
-
-var rule = Object.assign(muban.首图2,{
-title:'4K电影',
-host:'https://www.4kvm.com',
-url:'/fyclass/page/fypage',
-searchUrl:'/xssearch?s=**',
-
-
-
+var rule={
+    title:'7喜影院',
+    host:'https://www.789dyhd.com',
+    // host:'https://zaoii.com',
+    // homeUrl:'/',
+    url:'/index.php/vod/type/id/fyclass/page/fypage.html',
+    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -23,14 +14,14 @@ searchUrl:'/xssearch?s=**',
     },
     //class_parse:'.conch-nav&&ul&&li;a&&Text;a&&href;./(\\d+).html',
     //cate_exclude:'',
-    class_name:'电影&电视剧&综艺&动漫&国剧&港剧&台剧&韩剧&日剧&泰剧&欧美剧',
-    class_url:'movie&tvshows&variety&anime&china&hkg&taiwan&kr&jp&tailan&usa',
+    class_name:'电影&电视剧&综艺&动漫&记录片&国产剧&港台剧&日韩剧&欧美剧&海外剧',
+    class_url:'1&2&3&4&21&13&14&15&16&22',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    推荐:'.index-tj-l;ul&&li;a&&title;*;*;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.animation-2.items&&.item;h3&&Text;img&&src;.hl-pic-text&&Text;a&&href',
-    //二级:{"title":"h1&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(5)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-from a","lists":".hl-plays-list:eq(#id) li"},
+    一级:'.index-area.clearfix&&ul&&li;a&&title;img&&data-original;.other&&Text;a&&href',
+    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-from a","lists":".hl-plays-list:eq(#id) li"},
     搜索:'.hl-list-wrap&&ul&&li;.hl-item-thumb&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-});
+}
