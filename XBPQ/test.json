@@ -20,7 +20,7 @@
 //"线路数组": "class=\"playfrom tab8 clearfix\">&&</div>",
 //"线路数组":"tab\"&&/a>",
 //"播放数组":"id=\"playlist&&</ul",
-"播放数组": "class=\"videourl clearfix\">&&</li>",
+"播放数组": "class=\"videourl clearfix\">&&</ul>",
 
 "搜索url":"https://www.qxsyy.com/index.php/ajax/suggest?mid=1&wd={wd}",
 "搜索后缀":"/play/",
