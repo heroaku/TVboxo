@@ -23,6 +23,6 @@ var rule={
     推荐:'.index-tj-l;ul&&li;a&&title;*;*;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.index-area.clearfix&&ul&&li;a&&title;img&&data-original;.other&&Text;a&&href',
-    二级:{"title":".lazy&&alt;.other&&Text","img":".ct-l&&img&&data-original","desc":";;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".tab-down&&.playfrom&&ul&&li","lists":".tab-down:eq(#id)&&.videourl&&ul&&li"},
+    二级:{"title":".lazy&&alt;.other&&Text","img":".ct-l&&img&&data-original","desc":";;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".tab-down:eq(#id)&&.playfrom&&ul&&li","lists":".tab-down:eq(#id)&&.videourl&&ul&&li"},
     搜索:'.hl-list-wrap&&ul&&li;.hl-item-thumb&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
 }
