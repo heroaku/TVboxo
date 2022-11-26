@@ -4,7 +4,9 @@ var rule={
     title:'789影院',
     host:'https://www.789dyhd.com',
     //host:'https://www.666dyhd.com',
-
+//https://www.789dyhd.com/index.php/vod/type/id/2/page/2.html
+//https://www.789dyhd.com/index.php/vod/search/page/2/wd/ai.html
+//https://www.789dyhd.com/index.php/vod/detail/id/1669606.html
     // homeUrl:'/',
     url:'/index.php/vod/type/id/fyclass/page/fypage.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
