@@ -53,7 +53,7 @@ function pre(){
 }
 
 let rule = {};
-const VERSION = '3.9.20beta7';
+const VERSION = 'drpy1 3.9.25beta1 20221126';
 /** 已知问题记录
  * 1.影魔的jinjia2引擎不支持 {{fl}}对象直接渲染 (有能力解决的话尽量解决下，支持对象直接渲染字符串转义,如果加了|safe就不转义)[影魔牛逼，最新的文件发现这问题已经解决了]
  * Array.prototype.append = Array.prototype.push; 这种js执行后有毛病,for in 循环列表会把属性给打印出来 (这个大毛病需要重点排除一下)
@@ -397,6 +397,47 @@ function getCryptoJS(){
     // return request('https://gitcode.net/qq_32394351/dr_py/-/raw/master/libs/crypto-hiker.js');
     return 'console.log("CryptoJS已装载");'
 }
+
+/**
+ * 强制正序算法
+ * @param lists  待正序列表
+ * @param key 正序键
+ * @param option 单个元素处理函数
+ * @returns {*}
+ */
+function forceOrder(lists,key,option){
+    let start = Math.floor(lists.length/2);
+    let end = Math.min(lists.length-1,start+1);
+    if(start >= end){
+        return lists;
+    }
+    let first = lists[start];
+    let second = lists[end];
+    if(key){
+        try {
+            first = first[key];
+            second = second[key];
+        }catch (e) {}
+    }
+    if(option && typeof(option)==='function'){
+        try {
+            first = option(first);
+            second = option(second);
+        }catch (e) {}
+    }
+    first+='';
+    second+='';
+    // console.log(first,second);
+    if(first.match(/(\d+)/)&&second.match(/(\d+)/)){
+        let num1 = Number(first.match(/(\d+)/)[1]);
+        let num2 = Number(second.match(/(\d+)/)[1]);
+        if (num1 > num2){
+            lists.reverse();
+        }
+    }
+    return lists
+}
+
 
 let VODS = [];// 一级或者搜索需要的数据列表
 let VOD = {};// 二级的单个数据
@@ -936,12 +977,17 @@ function request(url,obj,ocr_flag){
         }
     }
     if(typeof(obj.body)!='undefined'&&obj.body&&typeof (obj.body)==='string'){
-        let data = {};
-        obj.body.split('&').forEach(it=>{
-            data[it.split('=')[0]] = it.split('=')[1]
-        });
-        obj.data = data;
-        delete obj.body
+        // let data = {};
+        // obj.body.split('&').forEach(it=>{
+        //     data[it.split('=')[0]] = it.split('=')[1]
+        // });
+        // obj.data = data;
+        // delete obj.body
+
+        // 传body加 "Content-Type":"application/x-www-form-urlencoded;" 即可post form
+        if(!obj.headers.hasOwnProperty('Content-Type')&&!obj.headers.hasOwnProperty('content-type')){ // 手动指定了就不管
+            obj.headers["Content-Type"] = 'application/x-www-form-urlencoded; charset='+rule.encoding;
+        }
     }else if(typeof(obj.body)!='undefined'&&obj.body&&typeof (obj.body)==='object'){
         obj.data = obj.body;
         delete obj.body
@@ -955,7 +1001,7 @@ function request(url,obj,ocr_flag){
     }
     console.log(JSON.stringify(obj.headers));
     // console.log('request:'+url+' obj:'+JSON.stringify(obj));
-    console.log('request:'+url);
+    console.log('request:'+url+`|method:${obj.method||'GET'}|body:${obj.body||''}`);
     let res = req(url, obj);
     let html = res.content||'';
     // console.log(html);
@@ -982,15 +1028,16 @@ function post(url,obj){
 fetch = request;
 print = function (data){
     data = data||'';
-    if(typeof(data)=='object'&&!isNaN(data)){
+    if(typeof(data)=='object'&&Object.keys(data).length>0){
         try {
             data = JSON.stringify(data);
+            console.log(data);
         }catch (e) {
             // console.log('print:'+e.message);
             console.log(typeof(data)+':'+data.length);
             return
         }
-    }else if(typeof(data)=='object'&&isNaN(data)){
+    }else if(typeof(data)=='object'&&Object.keys(data).length<1){
         console.log('null object');
     }else{
         console.log(data);
@@ -1133,8 +1180,12 @@ function homeParse(homeObj) {
  * @returns {*}
  */
 function getPP(p, pn, pp, ppn){
-    let ps = p[pn] === '*' && pp.length > ppn ?pp[ppn]:p[pn]
-    return ps
+    try {
+        let ps = p[pn] === '*' && pp.length > ppn ?pp[ppn]:p[pn]
+        return ps
+    }catch (e) {
+        return ''
+    }
 }
 
 /**
@@ -1192,25 +1243,27 @@ function homeVodParse(homeVodObj){
             if (homeVodObj.double) {
                 let items = _pdfa(html, p0);
                 // console.log(items.length);
+                let p1 = getPP(p,1,pp,0);
+                let p2 = getPP(p,2,pp,1);
+                let p3 = getPP(p,3,pp,2);
+                let p4 = getPP(p,4,pp,3);
+                let p5 = getPP(p,5,pp,4);
+                let p6 = getPP(p,6,pp,5);
                 for (let item of items) {
                     // console.log(p[1]);
-                    let items2 = _pdfa(item, p[1]);
+                    let items2 = _pdfa(item, p1);
                     // console.log(items2.length);
                     for (let item2 of items2) {
                         try {
-                            let p2 = getPP(p,2,pp,1);
                             let title = _pdfh(item2, p2);
                             let img = '';
                             try {
-                                let p3 = getPP(p,3,pp,2);
                                 img = _pd(item2, p3);
                             } catch (e) {}
                             let desc = '';
                             try {
-                                let p4 = getPP(p,4,pp,3);
                                 desc = _pdfh(item2, p4);
                             }catch (e) {}
-                            let p5 = getPP(p,5,pp,4);
                             let links = [];
                             for (let _p5 of p5.split('+')) {
                                 let link = !homeVodObj.detailUrl ? _pd(item2, _p5, MY_URL) : _pdfh(item2, _p5);
@@ -1218,7 +1271,6 @@ function homeVodParse(homeVodObj){
                             }
                             let content;
                             if(p.length > 6 && p[6]){
-                                let p6 = getPP(p,6,pp,5);
                                 content = _pdfh(item2, p6);
                             } else{
                                 content = '';
@@ -1248,21 +1300,22 @@ function homeVodParse(homeVodObj){
 
             } else {
                 let items = _pdfa(html, p0);
+                let p1 = getPP(p,1,pp,1);
+                let p2 = getPP(p,2,pp,2);
+                let p3 = getPP(p,3,pp,3);
+                let p4 = getPP(p,4,pp,4);
+                let p5 = getPP(p,5,pp,5);
                 for (let item of items) {
                     try {
-                        let p1 = getPP(p,1,pp,1);
                         let title = _pdfh(item, p1);
                         let img = '';
                         try {
-                            let p2 = getPP(p,2,pp,2);
                             img = _pd(item, p2, MY_URL);
                         } catch (e) {}
                         let desc = '';
                         try {
-                            let p3 = getPP(p,3,pp,3);
                             desc = _pdfh(item, p3);
                         }catch (e) {}
-                        let p4 = getPP(p,4,pp,4);
                         let links = [];
                         for (let _p5 of p4.split('+')) {
                             let link = !homeVodObj.detailUrl ? _pd(item, _p5, MY_URL) : _pdfh(item, _p5);
@@ -1270,7 +1323,6 @@ function homeVodParse(homeVodObj){
                         }
                         let content;
                         if(p.length > 5 && p[5]){
-                            let p5 = getPP(p,5,pp,5);
                             content = _pdfh(item, p5);
                         }else{
                             content = ''
@@ -1498,7 +1550,34 @@ function searchParse(searchObj) {
         p0 = p0.replace(/^(jsp:|json:|jq:)/,'');
         // print('1381 p0:'+p0);
         try {
-            let html = getHtml(MY_URL);
+            let req_method = MY_URL.split(';').length>1?MY_URL.split(';')[1].toLowerCase():'get';
+            let html;
+            if(req_method==='post'){
+                let rurls = MY_URL.split(';')[0].split('#')
+                let rurl = rurls[0]
+                let params = rurls.length > 1 ?rurls[1]:'';
+                print(`post=》rurl:${rurl},params:${params}`);
+                // let new_dict = {};
+                // let new_tmp = params.split('&');
+                // new_tmp.forEach(i=>{
+                //     new_dict[i.split('=')[0]] = i.split('=')[1];
+                // });
+                // html = post(rurl,{body:new_dict});
+                html = post(rurl,{body:params});
+            }else if(req_method==='postjson'){
+                let rurls = MY_URL.split(';')[0].split('#')
+                let rurl = rurls[0]
+                let params = rurls.length > 1 ?rurls[1]:'';
+                print(`postjson-》rurl:${rurl},params:${params}`);
+                try{
+                    params = JSON.parse(params);
+                }catch (e) {
+                    params = '{}'
+                }
+                html = post(rurl,{body:params});
+            }else{
+                html = getHtml(MY_URL);
+            }
             if (html) {
                 if(/系统安全验证|输入验证码/.test(html)){
                     let cookie = verifyCode(MY_URL);
@@ -1518,24 +1597,24 @@ function searchParse(searchObj) {
                 if(is_json){
                     // console.log(html);
                     html = dealJson(html);
+                    // console.log(JSON.stringify(html));
                 }
-                console.log(JSON.stringify(html));
-                console.log(html);
+                // console.log(html);
                 let list = _pdfa(html, p0);
                 // print(list.length);
                 // print(list);
+                let p1 = getPP(p, 1, pp, 1);
+                let p2 = getPP(p, 2, pp, 2);
+                let p3 = getPP(p, 3, pp, 3);
+                let p4 = getPP(p, 4, pp, 4);
+                let p5 = getPP(p,5,pp,5);
                 list.forEach(it => {
-                    let p1 = getPP(p, 1, pp, 1);
-                    let p2 = getPP(p, 2, pp, 2);
-                    let p3 = getPP(p, 3, pp, 3);
-                    let p4 = getPP(p, 4, pp, 4);
                     let links = p4.split('+').map(_p4=>{
                         return !rule.detailUrl?_pd(it, _p4,MY_URL):_pdfh(it, _p4)
                     });
                     let link = links.join('$');
                     let content;
                     if(p.length > 5 && p[5]){
-                        let p5 = getPP(p,5,pp,5);
                         content = _pdfh(it, p5);
                     }else{
                         content = '';
@@ -1795,6 +1874,7 @@ function detailParse(detailObj){
                     let p1 = p.lists.replaceAll('#idv', tab_name).replaceAll('#id', i);
                     tab_ext = tab_ext.replaceAll('#idv', tab_name).replaceAll('#id', i);
                     // 测试jsp提速
+                    // console.log(p1);
                     // p1 = p1.replace(':eq(0)',',0').replace(' ','&&');
                     // console.log(p1);
                     // console.log(html);
@@ -1823,6 +1903,7 @@ function detailParse(detailObj){
                         new_vod_list.push(_pdfh(it, list_text).trim() + '$' +_pd(it, list_url,MY_URL));
                     });
                     if(vodList.length>0){
+                        new_vod_list = forceOrder(new_vod_list,'',x=>x.split('$')[0]);
                         console.log(`drpy影响性能代码共计列表数循环次数:${vodList.length},耗时:${(new Date()).getTime()-tt1}毫秒`);
                     }
                     let vlist = new_vod_list.join('#');
