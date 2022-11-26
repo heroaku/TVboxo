@@ -1,7 +1,8 @@
 var rule={
     title:'7喜影院',
     host:'https://www.789dyhd.com',
-    // host:'https://zaoii.com',
+    //host:'https://www.666dyhd.com',
+
     // homeUrl:'/',
     url:'/index.php/vod/type/id/fyclass/page/fypage.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
