@@ -1,4 +1,3 @@
-
 var rule={
     title:'厂长资源',
     // host:'https://www.c-zzy.com',
