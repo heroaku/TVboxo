@@ -17,7 +17,7 @@ var rule = {
     推荐:'.tbox2;*;*;*;*;*',
     double:true, // 推荐内容是否双层定位
     一级:'ul.tbox_m2 li;a&&title;a&&data-original;span&&Text;a&&href',
-    二级:{"title":".data h4&&Text;.yac&&Text","img":".item-lazy&&data-original","desc":";;;.act&&Text;.dir&&Text","content":".tbox_js&&Text","tabs":".tbox_t&&h3","lists":".list_block.show:eq(#id) li"},
+    二级:{"title":".data h4&&Text;.yac&&Text","img":".item-lazy&&data-original","desc":";;;.act&&Text;.dir&&Text","content":".tbox_js&&Text","tabs":".tbox2&&h3","lists":".list_block.show:eq(#id) li"},
     //二级:{"title":".data h4--i&&Text;.yac&&Text","img":".item-lazy&&data-original","desc":";;;.act&&Text;.dir&&Text","content":".tbox_js&&Text","tabs":"js:pdfa=jsp.pdfa;TABS=pdfa(html,'.tbox_t h3').map(function(it,idex){return '线路'+(idex+1)})","lists":"ul.list_block:eq(#id) li"},
     搜索:'ul.tbox_m li;*;*;*;*',
 	
