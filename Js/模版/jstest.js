@@ -1,5 +1,5 @@
 var rule={
-    title:'898TV',
+    title:'看BZ影视',
     host:'https://kanb.tv',
     // homeUrl:'/',
     url:'/Show/fyclassKKKKKKKfypageKKK.html',
