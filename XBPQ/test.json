@@ -19,8 +19,8 @@
   
 //"线路数组": "class=\"on\">&&</li>",
 //"线路数组":"tab\"&&/a>",
-"播放数组":"id=\"vlink&&</ul",
-//"播放数组": "class=\"videourl clearfix\">&&</ul>",
+//"播放数组":"id=\"vlink&&</ul",
+"播放数组": "class=\"videourl clearfix\">&&</ul>",
 
 //"搜索url":"https://www.qxsyy.com/index.php/ajax/suggest?mid=1&wd={wd}",
 //"搜索后缀":"/play/",
