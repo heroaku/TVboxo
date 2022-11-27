@@ -1,26 +1,21 @@
-var rule={
-    title:'看BZ影视',
-    host:'https://kanb.tv',
+var rule = {
+    title:'偲霖影视',
+    host:'https://40tl.com',    
     // homeUrl:'/',
-    url:'/Show/fyclassKKKKKKKfypageKKK.html',
-    searchUrl:'/Videosearch/**KKKKKKKKKKfypageKKK.html',
-    searchable:2,//是否启用全局搜索,
-    quickSearch:0,//是否启用快速搜索,
-    filterable:0,//是否启用分类筛选,
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
-        'User-Agent':'MOBILE_UA',
-        // "Cookie": "searchneed=ok"
-    },
-    //class_parse:'.conch-nav&&ul&&li;a&&Text;a&&href;./(\\d+).html',
-    //cate_exclude:'',
-    class_name:'电影&电视剧&综艺&哔哩哔哩',
-    class_url:'MovieK&lianxujuK&VarietyK&bilibiliK',
+    url:'/show/id/fyclass/page/fypage.html',
+    searchUrl:'/search/so**/page/fypage.html',
+    searchable:2,
+    quickSearch:0,
+    filterable:0,
+    headers:{'User-Agent':'MOBILE_UA', },
+    class_name:'电影&电视剧&综艺&动漫&电影解说',//静态分类名称拼接
+    class_url:'dianying&lianxuju&zongyi&dongman&dianyingjieshuo',//静态分类标识拼接
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.hl-vod-list&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(5)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-from a","lists":".hl-plays-list:eq(#id) li"},
-    搜索:'.hl-list-wrap&&ul&&li;.hl-item-thumb&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    一级:'.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+    二级:{"title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text","img":".module-item-pic&&img&&data-src","desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text","content":".video-info-content&&Text","tabs":".module-tab-title","lists":".module-blocklist&&.sort-item a"},
+    搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
 }
