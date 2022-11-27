@@ -1,25 +1,23 @@
-var rule={
-    title:'爱看影视',
-    host:'https://www.jiaozi.me',
-    url:'/mlist/indexfyclass-fypage.html',
-    searchUrl:'/search.php?page=fypage&searchword=**&searchtype=',
-    class_name:'电影&电视剧&综艺&动漫&日韩剧&美剧&港台剧',
-    class_url:'1&2&3&4&15&16&14',
+var rule = {
+     title:'碟调影视',
+    host:'http://www.618648.com',
+    // homeUrl:'/',
+    url:'/die-tiao/fyclass-fypage.html',
+    searchUrl:'/diediaoch/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    headers:{
-        'User-Agent':'UC_UA',
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
     },
-    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-    //class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
-    //cate_exclude: '专题',
+    class_parse:'.stui-header__menu li.hidden-xs;a&&Text;a&&href;/(\\d+)/',
     play_parse:true,
     lazy:'',
-    limit:6,
-    推荐:'ul.myui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+    limit:8,
+    推荐:'.stui-vodlist.clearfix;.stui-vodlist__box;a&&title;a&&data-original;.pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.myui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":".myui-content__detail .title&&Text;.t-muted:eq(-1)&&Text","img":".lazyload&&data-original","desc":";;.myui-content__detail p:eq(2)&&Text;.myui-content__detail p:eq(3)&&Text;.myui-content__detail p:eq(4)&&Text","content":".content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
-    搜索:'.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text',
+    一级:'.stui-vodlist.clearfix li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    二级:{"title":"h1.title&&Text;.stui-content__detail p:eq(0)&&Text","img":".lazyload&&src","content":".stui-content__detail p:eq(4)&&Text","tabs":".playlist.mb h3.title","lists":".stui-content__playlist:eq(#id) li"},
+    搜索:'.stui-vodlist.clearfix li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
 }
