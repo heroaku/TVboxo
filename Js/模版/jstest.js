@@ -1,14 +1,24 @@
-muban.首图2.二级.title = '.stui-content__detail&&h1&&Text;.stui-content__detail&&p:eq(0)&&Text';
-muban.首图2.二级.tabs = '.stui-pannel__head a';
-muban.首图2.二级.lists = '.stui-content__playlist:eq(#id) li';
-muban.首图2.二级.desc = '.stui-content__detail&&p:eq(1)&&Text;.stui-content__detail&&p:eq(2)&&Text;.stui-content__detail&&p:eq(3)&&Text';
-muban.首图2.二级.content = '.stui-pannel_bd:eq(1)&&Text';
-var rule = Object.assign(muban.首图2,{
-    title:'奇优影院',
-    host:'http://1e6e.com',
-    // host:'https://www.gdjilong.com/',
-    url:'/list/fyclass_fypage.html',
-    searchUrl:'/search.php;**',
-    搜索:'js:let url=input.split(";")[0];let d=[];let body={searchword:input.split(";")[1]};body="searchword="+input.split(";")[1];fetch_params.body=body;let html=post(url,fetch_params);let pdfa=jsp.pdfa;let pdfh=jsp.pdfh;let pd=jsp.pd;let lists=pdfa(html,"ul.stui-vodlist__media&&li");lists.forEach(function(it){d.push({title:pdfh(it,".title&&Text"),url:pd(it,"a&&href"),desc:pdfh(html,".pic-text&&Text"),pic_url:pd(html,".lazyload&&data-original")})});setResult(d);',
-//搜索:'li.stui-vodlist__item;a&&title;a&&data-original;.pic-text&&Text;a&&href'
-});
+var rule = {
+    title:'乐猪TV',
+    host:'http://www.lezhutv.com',
+    // homeUrl:'/',
+    url:'/type/fyclass-fypage.html',
+    searchUrl:'/search-pg-fypage-wd-**.html',
+    searchable:2,
+    quickSearch:0,
+    headers:{
+        'User-Agent':'UC_UA'
+    },
+    timeout:5000,
+    class_parse:'div.nav a;a&&Text;a&&href;/(\\d.+).html',
+    play_parse:true,
+    lazy:'',
+    limit:5,
+    推荐:'.tbox2;*;*;*;*;*',
+    double:true, // 推荐内容是否双层定位
+    一级:'ul.tbox_m2 li;a&&title;a&&data-original;span&&Text;a&&href',
+    二级:{"title":".data h4&&Text;.yac&&Text","img":".item-lazy&&data-original","desc":";;;.act&&Text;.dir&&Text","content":".tbox_js&&Text","tabs":".tbox_t&&h3","lists":".list_block.show:eq(#id) li"},
+    //二级:{"title":".data h4--i&&Text;.yac&&Text","img":".item-lazy&&data-original","desc":";;;.act&&Text;.dir&&Text","content":".tbox_js&&Text","tabs":"js:pdfa=jsp.pdfa;TABS=pdfa(html,'.tbox_t h3').map(function(it,idex){return '线路'+(idex+1)})","lists":"ul.list_block:eq(#id) li"},
+    搜索:'ul.tbox_m li;*;*;*;*',
+	
+}
