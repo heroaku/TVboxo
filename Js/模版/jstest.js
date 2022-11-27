@@ -11,7 +11,7 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_parse:'.stui-header__menu li.hidden-xs;a&&Text;a&&href;/(\\d+)/',
+    class_parse:'.stui-header__menu li.hidden-xs;a&&Text;a&&href;.*/(.*?).html',
     play_parse:true,
     lazy:'',
     limit:8,
