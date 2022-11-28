@@ -20,6 +20,6 @@ var rule = {
     推荐:'.stui-vodlist.clearfix;.stui-vodlist__box;a&&title;a&&data-original;.pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.stui-vodlist.clearfix li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":"h1.title&&Text;.stui-content__detail p:eq(2)&&Text","img":".lazyload&&data-original","desc":".video-info-items:eq(-2)&&Text;.video-info-items:eq(-1)&&Text;.video-info-items:eq(-2)&&Text;.stui-content__detail p:eq(5)&&Text;.stui-content__detail p:eq(4)&&Text","content":".stui-content__detail p:eq(6)&&Text","tabs":".stui-vodlist__head h3","lists":".stui-vodlist__head:eq(#id)&&.stui-content__playlist li"},
+    二级:{"title":"h1.title&&Text;.stui-content__detail p:eq(1)&&Text","img":".lazyload&&data-original","desc":".video-info-items:eq(-2)&&Text;.video-info-items:eq(-1)&&Text;.video-info-items:eq(-2)&&Text;.stui-content__detail p:eq(4)&&Text;.stui-content__detail p:eq(3)&&Text","content":".stui-content__detail p:eq(5)&&Text","tabs":".stui-vodlist__head h3","lists":".stui-vodlist__head:eq(#id)&&.stui-content__playlist li"},
     搜索:'.stui-vodlist.clearfix li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
 }
