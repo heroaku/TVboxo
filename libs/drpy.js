@@ -1362,6 +1362,9 @@ function homeVodParse(homeVodObj){
             }
         });
     }
+    if(d.length>0){
+        print(d.slice(0,2));
+    }
     return JSON.stringify({
         list:d
     })
@@ -1497,6 +1500,9 @@ function categoryParse(cateObj) {
         });
     }
     // print(d);
+    if(d.length>0){
+        print(d.slice(0,2));
+    }
     return d.length<1?'{}':JSON.stringify({
         'page': parseInt(cateObj.pg),
         'pagecount': 999,
@@ -1815,11 +1821,20 @@ function detailParse(detailObj){
                 console.log(vHeader.length);
                 let tab_text = p.tab_text||'body&&Text';
                 // print('tab_text:'+tab_text);
+                let new_map = {};
                 for(let v of vHeader){
                     let v_title = _pdfh(v,tab_text).trim();
                     console.log(v_title);
                     if(tab_exclude&& (new RegExp(tab_exclude)).test(v_title)){
                         continue;
+                    }
+                    if(!new_map.hasOwnProperty(v_title)){
+                        new_map[v_title] = 1;
+                    }else{
+                        new_map[v_title] += 1;
+                    }
+                    if(new_map[v_title]>1){
+                        v_title+=Number(new_map[v_title]-1);
                     }
                     playFrom.push(v_title);
                 }
@@ -2037,9 +2052,9 @@ function playParse(playObj){
                 if (js){
                     eval(js.replace('var rule', 'rule'));
                 }
-                }
-        } else {
-            eval(ext.replace('var rule', 'rule'));
+            } else {
+                eval(ext.replace('var rule', 'rule'));
+            }
         }
         if (rule.模板 && muban.hasOwnProperty(rule.模板)) {
             print('继承模板:'+rule.模板);
