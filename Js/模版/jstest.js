@@ -15,7 +15,7 @@ var rule={
     class_url:'1&3&13&14&15',
     lazy:'',
     limit:6,
-    推荐:'.module-item;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
+    推荐:'.module-items;.module-item;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.module-item;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
     二级:{"title":"h1&&Text;.video-info-header&&Text","img":".lazyload&&data-src","desc":".video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text","content":".vod_content&&Text","tabs":".module-tab-item","lists":".sort-item:eq(#id) a"},
