@@ -1,18 +1,23 @@
-var rule={     
-    title:'NY影院',
-    host:'https://www.nycvod.com',
-    url:'/vodshow/fyclass--------fypage---.html',
-    searchUrl:'/vodsearch/**----------fypage---.html',
+var rule={
+    title:'子子影视',
+    host:'https://www.ziziys.com',
+    // homeUrl:'/',
+    url:'/list/fyclass/page/fypage.html',
+    searchUrl:'/vsearch/--.html?wd=**',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    //class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
-    //cate_exclude:'演员',
-    class_name:'电影&电视剧&综艺&动漫&纪录片&竞技体育&国产剧&港台剧&日韩剧&欧美剧&新马泰&其他',
-    class_url:'1&2&3&4&29&5&30&16&18&47&14&13',  
-   推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-   double:true, // 推荐内容是否双层定位
-   一级:'.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-   二级:{"title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text","img":".module-item-pic&&img&&data-src","desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text","content":".video-info-content&&Text","tabs":".module-tab-item.tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
-   搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
+    },
+    class_name:'电影&动漫&国产剧&美剧&日韩剧',
+    class_url:'1&3&13&14&15',
+    lazy:'',
+    limit:6,
+    推荐:'.module-item;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.module-item;a&&title;.lazyloaded&&data-src;.module-item-text&&Text;a&&href',
+    二级:{"title":"h1&&Text;.video-info-header&&Text","img":".lazyload&&data-src","desc":".video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text","content":".vod_content&&Text","tabs":".module-tab-item","lists":".sort-item:eq(#id) a"},
+    搜索:'.module-items;.lazyload&&alt;.lazyload&&data-src;.tag-link&&Text;*',
 }
