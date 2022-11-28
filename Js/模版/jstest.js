@@ -1,25 +1,18 @@
-var rule = {
-     title:'星辰影视',
-    host:'https://www.vod66.com',
-    // homeUrl:'/',
-    url:'/fyclass/index_fypage_______.html',
-    searchUrl:'/index.php?s=vod-search-wd-**-p-fypage.html',
+var rule={     
+    title:'NY影院',
+    host:'https://www.nycvod.com',
+    url:'/vodshow/fyclass--------fypage---.html',
+    searchUrl:'/vodsearch/**----------fypage---.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
-        'User-Agent':'MOBILE_UA',
-        // "Cookie": "searchneed=ok"
-    },
-    //class_parse:'.stui-header__menu li.hidden-xs;a&&Text;a&&href;.*/(.*?).html',
-    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&香港剧&台湾剧&韩国剧&日本剧&欧美剧&海外剧',
-    class_url:'mov&tv&fun&cartoon&jilupian&guocanju&xianggangju&taiwanju&hanguoju&ribenju&oumeiju&haiwaiju',
-    play_parse:true,
-    lazy:'',
-    limit:8,
-    推荐:'.stui-vodlist.clearfix;.stui-vodlist__box;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    double:true, // 推荐内容是否双层定位
-    一级:'.stui-vodlist.clearfix li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":"h1.title&&Text;.stui-content__detail p:eq(2)&&Text","img":".lazyload&&data-original","desc":".video-info-items:eq(-2)&&Text;.video-info-items:eq(-1)&&Text;.video-info-items:eq(-2)&&Text;.stui-content__detail p:eq(4)&&Text;.stui-content__detail p:eq(3)&&Text","content":".stui-content__detail p:eq(5)&&Text","tabs":".stui-vodlist__head h3","lists":".stui-vodlist__head:eq(#id)&&.stui-content__playlist li"},
-    搜索:'.stui-vodlist.clearfix li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    //class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
+    //cate_exclude:'演员',
+    class_name:'电影&电视剧&综艺&动漫&纪录片&竞技体育&国产剧&港台剧&日韩剧&欧美剧&新马泰&其他',
+    class_url:'1&2&3&4&29&5&30&16&18&47&14&13',  
+   推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+   double:true, // 推荐内容是否双层定位
+   一级:'.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+   二级:{"title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text","img":".module-item-pic&&img&&data-src","desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text","content":".video-info-content&&Text","tabs":".module-tab-item.tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
+   搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
 }
