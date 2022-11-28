@@ -5,6 +5,6 @@
 "线路数组": "class=\"intro&&</p>",
 //"播放标题":">&&<",
 //"播放数组":"class=\"videourl&&</ul>",
-"播放数组": "<div id=\"vlink&&</ul>",
+"播放数组": "<div class=\"videourl &&</ul>",
 "分类url":"https://www.789dyhd.com/index.php/vod/type/id/{cateId}/page/{catePg}.html"
  }
