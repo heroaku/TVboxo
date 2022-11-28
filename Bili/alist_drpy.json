@@ -10,6 +10,10 @@
 {"name": "💫触光","server": "https://pan.ichuguang.com/","startPage": "/","showAll": false,"search": true,"params": {}},
 {"name": "🎡资源小站","server": "https://960303.xyz/","startPage": "/","showAll": false,"search": true,"params": {}},
 {"name": "🕵好汉吧","server": "https://8023.haohanba.cn/","startPage": "/","showAll": false,"search": true,"params": {}},
+{"name": "杜比","server": "https://dubi.tk","startPage": "/","showAll": false,"search": true,"params": {}},
+{"name": "神族九帝","server": "https://alist.shenzjd.com","startPage": "/","showAll": false,"search": true,"params": {}},
+{"name": "秋雨","server": "https://share.laowang.me","startPage": "/","showAll": false,"search": true,"params": {}},
+{"name": "🕵梓澪","server": "https://zi0.cc","startPage": "/","showAll": false,"search": true,"params": {}},
 
 {"name": "🦀9T(Adult)","server": "https://drive.9t.ee","startPage": "/","showAll": false,"search": true,"params": {"/abc": {"password": "123"},"/abc/abc": {"password": "123"}}}
 ]
