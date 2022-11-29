@@ -1,23 +1,27 @@
+
 var rule={
-    title:'零柒影视',
-    host:'https://07vod.fun',
-    url:'/index.php/vod/type/id/fyclass/page/fypage.html',
-    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
+    title:'898TV',
+    host:'https://www.shijueyy.com',
+    // homeUrl:'/',
+    url:'/v_type/fyclass-fypage.html',
+    searchUrl:'/v_search/**----------fypage---.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
-    headers:{
-        'User-Agent':'UC_UA',
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&番剧&动漫&国产剧&港台剧&日韩剧&欧美剧',
-    class_url:'1&2&20&4&13&14&15&16',
-
+    //class_parse:'.conch-nav&&ul&&li;a&&Text;a&&href;./(\\d+).html',
+    //cate_exclude:'',
+    class_name:'电影&电视剧&综艺&动漫&国剧&港剧&台剧&韩剧&日剧&泰剧&欧美剧',
+    class_url:'1&2&3&4&china&hkg&taiwan&kr&jp&tailan&usa',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'ul.fed-list-info.fed-part-rows;li;a.fed-list-title&&Text;a&&data-original;.fed-list-remarks&&Text;a&&href',
+    推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.fed-list-info&&li;a.fed-list-title&&Text;a&&data-original;.fed-list-remarks&&Text;a&&href',
-    二级:{"title":"h1&&Text;.fed-mute&&Text","img":".fed-list-info&&a&&data-original","desc":".fed-deta-content&&.fed-part-rows&&li:eq(-1)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(-2)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(-3)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(0)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(1)&&Text","content":".fed-deta-content&&.fed-part-rows&&li:eq(6)&&Text","tabs":".fed-drop-boxs&&.fed-part-rows li","lists":".fed-play-item:eq(#id)&&.fed-part-rows:eq(1) li"},
-    搜索:'.fed-list-deta;h1&&Text;.fed-lazy&&data-original;.fed-list-remarks&&Text;a&&href;.fed-deta-content&&Text',
+    一级:'.hl-vod-list&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(5)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-from a","lists":".hl-plays-list:eq(#id) li"},
+    搜索:'.hl-list-wrap&&ul&&li;.hl-item-thumb&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
 }
