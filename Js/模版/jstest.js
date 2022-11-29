@@ -1,8 +1,9 @@
-var rule = {
-    title:'玄天',
-    host:'https://m.7caa.com',
-    url:'/list/fyclass-fypage.html',
-    searchUrl:'/search/**----------fypage---.html',
+var rule={
+    title:'视中心影视',
+    host:'https://www.ksksy.com',
+    // homeUrl:'/',
+    url:'/vodshow/fyclass--------fypage---.html',
+    searchUrl:'/vodsearch/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -10,15 +11,14 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    //class_parse:'.stui-header__menu li.hidden-xs;a&&Text;a&&href;.*/(.*?).html',
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'1&2&4&3',
+    class_parse:'.nav&&ul&&li;a&&title;a&&href;.*/(.*?).html',
+    cate_exclude:'原站',
     play_parse:true,
     lazy:'',
-    limit:8,
-    推荐:'.stui-pannel_bd;.stui-vodlist.clearfix li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    double:true, // 推荐内容是否双层定位
-    一级:'.stui-vodlist.clearfix li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":"h1.title&&Text;.stui-content__detail p:eq(2)&&Text","img":".lazyload&&data-original","desc":".video-info-items:eq(-2)&&Text;.video-info-items:eq(-1)&&Text;.video-info-items:eq(-2)&&Text;.stui-content__detail p:eq(7)&&Text;.stui-content__detail p:eq(6)&&Text","content":".detail-sketch&&Text","tabs":".stui-pannel_hd&&ul li","lists":".tab-pane.fade:eq(#id)&&ul&&li"},
-    搜索:'.stui-vodlist.clearfix li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    limit:6,
+    推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+double:true, // 推荐内容是否双层定位
+一级:'.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":".video-info-items:eq(-1)&&Text;.video-info-items:eq(-1)&&Text;.video-info-items:eq(-2)&&Text;.video-info-items:eq(1)&&.video-info-item.video-info-actor&&Text;.video-info-items:eq(0)&&.video-info-item.video-info-actor&&Text","content":".vod_content&&Text","tabs":".module-tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
+搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
 }
