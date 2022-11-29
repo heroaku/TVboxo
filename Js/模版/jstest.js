@@ -1,8 +1,8 @@
 var rule={
-    title:'交子影院',
-    host:'https://www.jiaozi.me',
-    url:'/mlist/indexfyclass-fypage.html',
-    searchUrl:'/search.php?page=fypage&searchword=**&searchtype=',
+    title:'追剧迷',
+    host:'https://07vod.fun',
+    url:'/index.php/vod/type/id/fyclass/page/fypage.html',
+    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -11,12 +11,13 @@ var rule={
     },
     class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&港台剧&日韩剧&欧美剧&其他剧',
     class_url:'1&2&3&4&16&20&21&22&23&24',
+
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'ul.myui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+    推荐:'ul.fed-list-info.fed-part-rows;li;a.fed-list-title&&Text;a&&data-original;.fed-list-remarks&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.myui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":".myui-content__detail .title&&Text;.t-muted:eq(-1)&&Text","img":".lazyload&&data-original","desc":";;;.myui-content__detail p:eq(2)&&Text;.myui-content__detail p:eq(3)&&Text","content":".content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
-    搜索:'.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text',
+    一级:'.fed-list-info&&li;a.fed-list-title&&Text;a&&data-original;.fed-list-remarks&&Text;a&&href',
+    二级:{"title":"h1&&Text;.fed-mute&&Text","img":".fed-list-info&&a&&data-original","desc":".fed-deta-content&&.fed-part-rows&&li:eq(-1)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(-2)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(-3)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(0)&&Text;.fed-deta-content&&.fed-part-rows&&li:eq(1)&&Text","content":".fed-conv-text&&Text","tabs":".fed-tabs-foot&&.fed-part-rows li","lists":".fed-deta-playlist&&.fed-tabs-btm:eq(#id) li"},
+    搜索:'.fed-list-deta;h1&&Text;.fed-lazy&&data-original;.fed-list-remarks&&Text;a&&href;.fed-deta-content&&Text',
 }
