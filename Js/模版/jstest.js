@@ -1,7 +1,7 @@
 var rule={
     title:'交子影院',
     host:'https://www.jiaozi.me',
-    url:'/mlist/index/fyclass-fypage.html',
+    url:'/mlist/indexfyclass-fypage.html',
     searchUrl:'/search.php?page=fypage&searchword=**&searchtype=',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
@@ -9,9 +9,6 @@ var rule={
     headers:{
         'User-Agent':'UC_UA',
     },
-    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-    //class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
-    //cate_exclude: '专题',
     class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&港台剧&日韩剧&欧美剧&其他剧',
     class_url:'1&2&3&4&16&20&21&22&23&24',
     play_parse:true,
