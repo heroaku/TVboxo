@@ -1,6 +1,6 @@
 
 var rule={
-    title:'898TV',
+    title:'视觉影院',
     host:'https://www.shijueyy.com',
     // homeUrl:'/',
     url:'/v_type/fyclass-fypage.html',
@@ -14,8 +14,8 @@ var rule={
     },
     //class_parse:'.conch-nav&&ul&&li;a&&Text;a&&href;./(\\d+).html',
     //cate_exclude:'',
-    class_name:'电影&电视剧&综艺&动漫&国剧&港剧&台剧&韩剧&日剧&泰剧&欧美剧',
-    class_url:'1&2&3&4&china&hkg&taiwan&kr&jp&tailan&usa',
+    class_name:'电影&电视剧&综艺&动漫&国产剧&港台剧&日韩剧&欧美剧',
+    class_url:'1&2&3&4&13&14&15&16',
     play_parse:true,
     lazy:'',
     limit:6,
