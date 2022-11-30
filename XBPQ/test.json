@@ -1,12 +1,8 @@
 {
-"免嗅":"0",
-//"副标题":"class=\"pic-text text-right\">&&</span>",
-"分类": "电视剧$1#电影$2#动漫$41#纪录片$4#综艺$44",
-"线路数组": "data-toggle=\"tab&&</a>",
-"线路标题": ">&&</a>",
-//"播放标题":">&&<",
-//"播放数组":"class=\"videourl&&</ul>",
-"播放数组":"class=\"myui-content__list&&</div>",
- //网站无法访问
-"分类url":"https://www.jiaozi.me/mlist/index{cateId}-{catePg}.html"
+  "分类": "电影$1#连续剧$2#综艺$3#动漫$4#蓝光$37",
+  "分类url":"https://www.zaixiandianying8.com/vodshow/{cateId}-{area}-{by}-{class}-{lang}----{catePg}---{year}.html",
+  "线路数组": "data-toggle=\"tab&&</a>",
+  "线路标题": ">&&</a>",
+  "简介": "简介</span>&&</p>",
+  "播放数组":"class=\"myui-content__list &&</ul>"
  }
