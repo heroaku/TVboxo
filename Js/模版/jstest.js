@@ -5,11 +5,11 @@ var rule={
     //https://www.fuju1.tv/vodshow/Fuju/area/%E6%B3%B0%E5%9B%BD/by/time/class/%E6%A0%A1%E5%9B%AD/page/2.html
     //url: '/vodshow/fyclass-fyfilter',
     searchUrl:'/vodsearch**/page/fypage.html',
-    class_name:'腐剧&电影&综艺&动漫',
-    class_url:'Fuju&BLdianying&BLzongyi&BLdongman',
+    class_name:'电影&腐剧&综艺&动漫',
+    class_url:'BLdianying&Fuju&BLzongyi&BLdongman',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
-    filterable:0,//是否启用分类筛选,
+    filterable:1,//是否启用分类筛选,
     headers:{
         'User-Agent':'UC_UA',
     },
