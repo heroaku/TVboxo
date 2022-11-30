@@ -1,4 +1,4 @@
-
+//搜索有验证
 var rule={
     title:'好多影视',
     host:'http://hdmov.cc',
