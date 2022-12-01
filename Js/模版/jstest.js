@@ -1,5 +1,5 @@
 var rule={     
-    title:'新思古影院',
+    title:'花屋影院',
     host:'https://www.huafun.vip',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
