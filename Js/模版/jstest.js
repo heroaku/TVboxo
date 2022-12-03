@@ -1,5 +1,5 @@
 var rule={     
-    title:'花屋影院',
+    title:'叭度影视',
     host:'https://www.bd8s.com',
     url:'/vodshow/fyclass--------fypage---/',
     searchUrl:'/vodsearch/**----------fypage---/',
