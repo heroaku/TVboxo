@@ -1,5 +1,5 @@
 var rule={
-    title:'看BZ影视',
+    title:'飞兔影视',
     host:'https://www.feitu.tv',
     // homeUrl:'/',
     url:'/filter/fyclass/page/fypage/',
@@ -13,8 +13,8 @@ var rule={
     },
     //class_parse:'.conch-nav&&ul&&li;a&&Text;a&&href;./(\\d+).html',
     //cate_exclude:'',
-    class_name:'电影&电视剧&综艺&哔哩哔哩',
-    class_url:'MovieK&lianxujuK&VarietyK&bilibiliK',
+    class_name:'电影&电视剧&综艺&动漫&剧情&动画电影&喜剧&爱情&经典&同性&国产剧&欧美剧&港剧&日剧&韩剧&台剧&泰剧&新马剧&其它剧&成人',
+    class_url:'1&2&3&4&11&21&7&8&29&22&13&16&14&15&31&33&32&34&35&52',
     play_parse:true,
     lazy:'',
     limit:6,
