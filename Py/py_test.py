@@ -1,183 +1,71 @@
-#coding=utf-8
-#!/usr/bin/python
+
+# coding=utf-8
+# !/usr/bin/python
 import sys
-sys.path.append('..') 
+import re
+sys.path.append('..')
 from base.spider import Spider
 import json
-import time
-import base64
+
+
 
 class Spider(Spider):  # 元类 默认的元类 type
     def getName(self):
-        return "哔哩哔哩"
-    def init(self,extend=""):
+        return "麦豆TV"
+
+    def init(self, extend=""):
         print("============{0}============".format(extend))
         pass
-    def isVideoFormat(self,url):
-        pass
-    def manualVideoCheck(self):
-        pass
-    def homeContent(self,filter):
+
+    def homeContent(self, filter):
         result = {}
         cateManual = {
-            "胖团和胖圆":"胖团和胖圆",
-            "动态":"动态",
-            "热门":"热门",
-            "排行榜":"排行榜",
-            "zane妈":"zane妈",
-            "相声小品": "相声小品",
-            "林芊妤":"林芊妤",
-            "Zard": "Zard",
-            "玩具汽车": "玩具汽车",
-            "儿童": "儿童",
-            "幼儿": "幼儿",
-            "儿童玩具": "儿童玩具",
-            "昆虫": "昆虫",
-            "动物世界": "动物世界",
-            "纪录片": "纪录片",
-            "搞笑": "搞笑",
-            "假窗-白噪音": "窗+白噪音",
-            "演唱会": "演唱会"
+            "国产": "guocanju",
+            "港台": "gangtai",
+            "欧美": "en",
+            "韩剧": "hanju",
+            "日剧": "riju",
+            "泰剧": "taiju",
+            "集剧": "tv",
+            "电影": "movie",
+            "动漫": "ac",
+            "综艺": "zongyi"            
         }
         classes = []
         for k in cateManual:
             classes.append({
-                'type_name':k,
-                'type_id':cateManual[k]
+                'type_name': k,
+                'type_id': cateManual[k]
             })
+
         result['class'] = classes
-        if(filter):
+        if (filter):
             result['filters'] = self.config['filter']
         return result
+
     def homeVideoContent(self):
         result = {
-            'list':[]
+            'list': []
         }
         return result
-    cookies = ''
-    def getCookie(self):
-        import requests
-        import http.cookies
-        raw_cookie_line = ''
-        simple_cookie = http.cookies.SimpleCookie(raw_cookie_line)
-        cookie_jar = requests.cookies.RequestsCookieJar()
-        cookie_jar.update(simple_cookie)
-        return cookie_jar
-    def get_dynamic(self,pg):
+
+    def categoryContent(self, tid, pg, filter, extend):
         result = {}
-        if int(pg) > 1:
-            return result
-        offset = ''
+        url = 'https://www.mdoutv.com/movie_bt_series/{0}/page/{1}'.format(tid, pg)       
+        rsp = self.fetch(url)
+        root = self.html(rsp.text)
+        aList = root.xpath("//li/a[@target='_blank']")
         videos = []
-        for i in range(0,10):
-            url= 'https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/all?timezone_offset=-480&type=all&page={0}&offset={1}'.format(pg,offset)
-            rsp = self.fetch(url,cookies=self.getCookie())
-            content = rsp.text
-            jo = json.loads(content)
-            if jo['code'] == 0:
-                offset = jo['data']['offset']
-                vodList = jo['data']['items']
-                for vod in vodList:
-                    if vod['type'] == 'DYNAMIC_TYPE_AV':
-                        ivod = vod['modules']['module_dynamic']['major']['archive']
-                        aid = str(ivod['aid']).strip()
-                        title = ivod['title'].strip().replace("<em class=\"keyword\">","").replace("</em>","")
-                        img =  ivod['cover'].strip()
-                        remark = str(ivod['duration_text']).strip()
-                        videos.append({
-                            "vod_id":aid,
-                            "vod_name":title,
-                            "vod_pic":img,
-                            "vod_remarks":remark
-                        })
-        result['list'] = videos
-        result['page'] = pg
-        result['pagecount'] = 9999
-        result['limit'] = 90
-        result['total'] = 999999
-        return result
-    def get_hot(self,pg):
-        result = {}
-        url= 'https://api.bilibili.com/x/web-interface/popular?ps=20&pn={0}'.format(pg)
-        rsp = self.fetch(url,cookies=self.getCookie())
-        content = rsp.text
-        jo = json.loads(content)
-        if jo['code'] == 0:
-            videos = []
-            vodList = jo['data']['list']
-            for vod in vodList:
-                aid = str(vod['aid']).strip()
-                title = vod['title'].strip().replace("<em class=\"keyword\">","").replace("</em>","")
-                img =  vod['pic'].strip()
-                remark = str(vod['duration']).strip()
-                videos.append({
-                    "vod_id":aid,
-                    "vod_name":title,
-                    "vod_pic":img,
-                    "vod_remarks":remark
-                })
-            result['list'] = videos
-            result['page'] = pg
-            result['pagecount'] = 9999
-            result['limit'] = 90
-            result['total'] = 999999
-        return result
-    def get_rank(self):
-        result = {}
-        url= 'https://api.bilibili.com/x/web-interface/ranking/v2?rid=0&type=all'
-        rsp = self.fetch(url,cookies=self.getCookie())
-        content = rsp.text
-        jo = json.loads(content)
-        if jo['code'] == 0:
-            videos = []
-            vodList = jo['data']['list']
-            for vod in vodList:
-                aid = str(vod['aid']).strip()
-                title = vod['title'].strip().replace("<em class=\"keyword\">","").replace("</em>","")
-                img =  vod['pic'].strip()
-                remark = str(vod['duration']).strip()
-                videos.append({
-                    "vod_id":aid,
-                    "vod_name":title,
-                    "vod_pic":img,
-                    "vod_remarks":remark
-                })
-            result['list'] = videos
-            result['page'] = 1
-            result['pagecount'] = 1
-            result['limit'] = 90
-            result['total'] = 999999
-        return result
-    def categoryContent(self,tid,pg,filter,extend):	
-        result = {}
-        if tid == "热门":
-            return self.get_hot(pg=pg)
-        if tid == "排行榜" :
-            return self.get_rank()
-        if tid == '动态':
-            return self.get_dynamic(pg=pg)
-        url = 'https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword={0}&page={1}'.format(tid,pg)
-        if len(self.cookies) <= 0:
-            self.getCookie()
-        rsp = self.fetch(url,cookies=self.getCookie())
-        content = rsp.text
-        jo = json.loads(content)
-        if jo['code'] != 0:			
-            rspRetry = self.fetch(url,cookies=self.getCookie())
-            content = rspRetry.text		
-        jo = json.loads(content)
-        videos = []
-        vodList = jo['data']['result']
-        for vod in vodList:
-            aid = str(vod['aid']).strip()
-            title = tid + ":" + vod['title'].strip().replace("<em class=\"keyword\">","").replace("</em>","")
-            img = 'https:' + vod['pic'].strip()
-            remark = str(vod['duration']).strip()
+        for a in aList:
+            name = a.xpath('./img/@alt')
+            pic = a.xpath('./img/@data-original')
+            mark = a.xpath('./div/span/text()')
+            sid = a.xpath('./@href')
             videos.append({
-                "vod_id":aid,
-                "vod_name":title,
-                "vod_pic":img,
-                "vod_remarks":remark
+                "vod_id": ''.join(sid),
+                "vod_name": ''.join(name),
+                "vod_pic": ''.join(pic),
+                "vod_remarks": ''.join(mark)
             })
         result['list'] = videos
         result['page'] = pg
@@ -185,87 +73,85 @@ class Spider(Spider):  # 元类 默认的元类 type
         result['limit'] = 90
         result['total'] = 999999
         return result
-    def cleanSpace(self,str):
-        return str.replace('\n','').replace('\t','').replace('\r','').replace(' ','')
-    def detailContent(self,array):
-        aid = array[0]
-        url = "https://api.bilibili.com/x/web-interface/view?aid={0}".format(aid)
 
-        rsp = self.fetch(url,headers=self.header,cookies=self.getCookie())
-        jRoot = json.loads(rsp.text)
-        jo = jRoot['data']
-        title = jo['title'].replace("<em class=\"keyword\">","").replace("</em>","")
-        pic = jo['pic']
-        desc = jo['desc']
-        typeName = jo['tname']
+    def detailContent(self, array):
+        tid = array[0]
+        url = '{0}'.format(tid)	
+        header = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"}
+        rsp = self.fetch(url,)
+        root = self.html(rsp.text)	
+        title = root.xpath("//div[@class='mi_ne_kd dypre']/div[2]/div/h1/text()")[0]
+        pic = root.xpath("//div[@class='mi_ne_kd dypre']/div[1]/img/@src")[0]
+        detail = root.xpath("//div[@class='yp_context']/p/text()")[0]
         vod = {
-            "vod_id":aid,
-            "vod_name":title,
-            "vod_pic":pic,
-            "type_name":typeName,
-            "vod_year":"",
-            "vod_area":"bilidanmu",
-            "vod_remarks":"",
-            "vod_actor":jo['owner']['name'],
-            "vod_director":jo['owner']['name'],
-            "vod_content":desc
-        }
-        ja = jo['pages']
-        playUrl = ''
-        for tmpJo in ja:
-            cid = tmpJo['cid']
-            part = tmpJo['part']
-            playUrl = playUrl + '{0}${1}_{2}#'.format(part,aid,cid)
-
-        vod['vod_play_from'] = 'B站'
-        vod['vod_play_url'] = playUrl
-
+            "vod_id": tid,
+            "vod_name": title,
+            "vod_pic": pic,
+            "type_name": "",
+            "vod_year": "",
+            "vod_area": "",
+            "vod_remarks": "",
+            "vod_actor": "",
+            "vod_director": "",
+            "vod_content": detail
+        }	
+        infoArray = root.xpath("//ul[@class='moviedteail_list']/li")
+        for info in infoArray:
+            content = info.xpath('string(.)')	        
+            if content.startswith('地区'):
+                vod['vod_area'] = content.replace("地区：", "")
+            if content.startswith('年份'):
+                vod['vod_year'] = content.replace("年份：", "")   
+            if content.startswith('主演'):
+                vod['vod_actor'] = content.replace("主演：", "")
+            if content.startswith('导演'):
+                vod['vod_director'] = content.replace("导演：", "")
+        vod_play_from = '$$$'
+        playFrom = []
+        vod_play_url = '$$$'
+        playList = []
+        vodHeader = root.xpath("//div[@class='paly_list_btn']/a")
+        for v in vodHeader:
+            playFrom.append(v.xpath('./text()')[0])
+            playList.append(v.xpath('./text()')[0] + '$' +v.xpath('./@href')[0] + '#')
+        vod_play_url = vod_play_url.join(playList)
+        vod_play_from = vod_play_from.join(playFrom)
+        vod['vod_play_from'] = vod_play_from
+        vod['vod_play_url'] = vod_play_url
         result = {
-            'list':[
-                vod
-            ]
+			'list':[
+				vod
+			]
         }
         return result
-    def searchContent(self,key,quick):
-        search = self.categoryContent(tid=key,pg=1,filter=None,extend=None)
-        result = {
-            'list':search['list']
-        }
-        return result
-    def playerContent(self,flag,id,vipFlags):
-        # https://www.555dianying.cc/vodplay/static/js/playerconfig.js
+
+    def searchContent(self, key, quick):
         result = {}
+        return result
 
-        ids = id.split("_")
-        url = 'https://api.bilibili.com:443/x/player/playurl?avid={0}&cid=%20%20{1}&qn=112'.format(ids[0],ids[1])
-        rsp = self.fetch(url,cookies=self.getCookie())
-        jRoot = json.loads(rsp.text)
-        jo = jRoot['data']
-        ja = jo['durl']
-        
-        maxSize = -1
-        position = -1
-        for i in range(len(ja)):
-            tmpJo = ja[i]
-            if maxSize < int(tmpJo['size']):
-                maxSize = int(tmpJo['size'])
-                position = i
-
-        url = ''
-        if len(ja) > 0:
-            if position == -1:
-                position = 0
-            url = ja[position]['url']
-
+    def playerContent(self, flag, id, vipFlags):
+        result = {}
+        rsp = self.fetch(id)
+        root = self.html(rsp.text)
+        vl = root.xpath("//div[@class='xilubg xla']/a")[0]
+        vurl = vl.xpath("./@vurl")[0]
+        vurl1 = vurl.split('?url=')
+        vurl = vurl1[1]
+        url = 'https://jxdp.codermart.net/jxplayer.php?v={0}'.format(vurl)
+        rsp = self.fetch(url)
+        root = self.html(rsp.text)
+        si = root.xpath("//script[@type='text/javascript']/text()")
+        for info in si:
+            if info.startswith('\nvar canPlay'):
+                si1 = info
+                si1 = self.regStr(si1,"var urls = \"(\\S+)\";")
+                break
         result["parse"] = 0
         result["playUrl"] = ''
-        result["url"] = url
-        result["header"] = {
-            "Referer":"https://www.bilibili.com",
-            "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"
-        }
-        result["contentType"] = 'video/x-flv'
+        result["url"] = si1
+        result["header"] = ''
         return result
+
 
     config = {
         "player": {},
@@ -273,6 +159,12 @@ class Spider(Spider):  # 元类 默认的元类 type
     }
     header = {}
 
-    def localProxy(self,param):
+    def isVideoFormat(self, url):
+        pass
+
+    def manualVideoCheck(self):
+        pass
+
+    def localProxy(self, param):       
         return [200, "video/MP2T", action, ""]
 
