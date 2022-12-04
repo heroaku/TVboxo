@@ -26,6 +26,7 @@
    {"key":"csp_测试","name":"🐞测试","type":3,"api":"csp_Xiaoh","searchable":1,"quickSearch":1,"filterable":1,"jar":"https://github.com/heroaku/TVboxo/raw/main/Jar/1018.jar"}, 
    {"key":"haiwaicaiji","name":" 🍁海外看影视","type":0,"api":"https://haiwaikan.com/api.php/provide/vod/at/xml","searchable":1,"quickSearch":0,"filterable":0},
    {"key":"非凡采集","name":" 🍁非凡影视","type":0,"api":"http://cj.ffzyapi.com/api.php/provide/vod/at/xml/","searchable":1,"quickSearch":0,"filterable":0},
+   {"key":"量子采集","name":" 🍁量子资源","type":0,"api":"https://cj.lziapi.com/api.php/provide/vod/at/xml/","searchable":1,"quickSearch":0,"filterable":0},
    {"key":"csp_appysv2_M2_haiwai影视","name":"淘片影视","type":0,"api":"https://taopianapi.com/home/cjapi/as/mc/vod/xml","searchable":1,"quickSearch":0,"filterable":0},
    {"key": "1080zyk","name": " 🍁1080ZYK","type": 1,"api": "https://api.1080zyku.com/inc/api_mac10.php",	"searchable": 1,"quickSearch": 0}, 
    //{"key" : "drpy_js_蜻蜓FM","name" : "蜻蜓FM[DRPY]","type" : 3,"api" : "./lib/drpy.min.js","ext" : "./js/蜻蜓FM.js","playerType":"2"},
