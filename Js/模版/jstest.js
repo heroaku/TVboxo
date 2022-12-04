@@ -1,8 +1,8 @@
 var rule={
-title:'我爱跟剧',
-host:'https://www.genmov.com',
-url:'/vodshow/fyclass--------fypage---/',
-searchUrl:'/vodsearch/**----------fypage---/',
+title:'雅克坊',
+host:'https://yakoo.fun',
+url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
 searchable:2,
 quickSearch:0,
 filterable:0,
