@@ -1,4 +1,4 @@
-var rule = { // 模板字典
+var rule = { 
     title: 'fositv',
     host: 'https://fositv.com/',
     // homeUrl:'/',
