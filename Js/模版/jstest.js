@@ -13,8 +13,6 @@ var rule = {
                 'User-Agent': 'MOBILE_UA',
                 // "Cookie": "searchneed=ok"
             },
-    //class_parse: '.dropdown-box&&ul&&li;a&&Text;a&&href;/(\\d+).html',
-    //cate_exclude:'电影|电视剧',//分类过滤
     play_parse: true,//播放是否解析
     lazy: '',//是否免嗅探
     limit: 6,
