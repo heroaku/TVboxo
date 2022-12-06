@@ -1,5 +1,5 @@
 var rule = {
-    title:'麻花影视',
+    title:'看一看影视',
     host:'https://www.kanyk.cc',
     // homeUrl:'/',
     url:'/index.php?m=vod-list-id-fyclass-pg-fypage-order--by--class--year--letter--area--lang-.html',
