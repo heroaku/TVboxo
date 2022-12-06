@@ -20,5 +20,5 @@ var rule = {
     double:true, // 推荐内容是否双层定位
     一级:'.index-area.clearfix&&ul&&li;a&&title;img&&data-original;.other&&Text;a&&href',
     二级:{"title":".ek.title&&a:eq(2)&&Text;.module-info-tag-link:eq(2)&&Text","img":".ek.ct-l&&img&&data-original","desc":".module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-2)&&Text;.ek.ct-c&&dl&&dt:eq(1)&&Text;.ek.ct-c&&dl&&dt:eq(3)&&Text","content":".ek.ct-c&&.ek.ee&&Text","tabs":".ek.playfrom&&li","lists":".ek.playlist:eq(#id)&&.ek.videourl li"},
-    搜索:'.module-card-item.module-item;.module-card-item-title&&Text;img&&data-original;.module-item-note&&Text;a.play-btn-o&&href',
+    搜索:'.index-area.clearfix&&ul&&li;*;*;*;*',
 }
