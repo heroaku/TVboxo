@@ -19,6 +19,6 @@ var rule = {
     推荐:'ul.img-list;li;a&&title;.lazyload&&data-original;.text-right&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.img-list li;a&&title;.lazyload&&data-original;.text-right&&Text;a&&href',
-    二级:{"title":".myui-content__detail .title&&Text;.t-muted:eq(-1)&&Text","img":".lazyload&&data-original","desc":";;.myui-player__data&&p.text-muted&&Text;.col-pd.text-collapse p:eq(1)&&Text;.col-pd.text-collapse p:eq(0)&&Text","content":".sketch.content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
-    搜索:'.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text',
+    二级:{"title":".myui-content__detail .title&&Text;.t-muted:eq(-1)&&Text","img":".lazyload&&data-original","desc":";;.myui-player__data&&p.text-muted&&Text;.col-pd.text-collapse p:eq(1)&&Text;.col-pd.text-collapse p:eq(0)&&Text","content":".sketch.content&&Text","tabs":".details-play-nav li","lists":".play-list.fade-in:eq(#id) li"},
+    搜索:'.img-list li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text',
         }
