@@ -1,5 +1,5 @@
 var rule = { 
-    title: 'fositv',
+    title: '城市影视',
     host: 'https://www.citydy.com',
     // homeUrl:'/',
     url: '/show/id-fyclass/page/fypage.html',
