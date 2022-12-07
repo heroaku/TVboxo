@@ -19,6 +19,6 @@ var rule = {
     推荐:'ul;li.leo-video-item;a&&title;img&&data-original;.leo-video-remark&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'li.leo-video-item;a&&title;img&&data-original;.leo-video-remark&&Text;a&&href',
-    二级:{"title":"h1&&Text;.t-muted:eq(-1)&&Text","img":".lazyload&&data-original","desc":";;.vod-detail-info&&ul&&li:eq(2)&&Text;.vod-detail-info&&ul&&li:eq(3)&&Text;.vod-detail-info&&ul&&li:eq(4)&&Text","content":".vod-detail-info&&ul&&li:eq(10)&&Text","tabs":".details-play-nav li","lists":".play-list.fade-in:eq(#id) li"},
+    二级:{"title":"h1&&Text;.t-muted:eq(-1)&&Text","img":".lazyload&&data-original","desc":";;.vod-detail-info&&ul&&li:eq(2)&&Text;.vod-detail-info&&ul&&li:eq(3)&&Text;.vod-detail-info&&ul&&li:eq(4)&&Text","content":".vod-detail-info&&ul&&li:eq(10)&&Text","tabs":".play_source_tab&&.swiper-wrapper a","lists":".play_list_box:eq(#id)&&.playlist_notfull li"},
     搜索:'li.leo-video-item;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text',
         }
