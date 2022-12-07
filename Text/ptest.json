@@ -190,6 +190,7 @@
 	{"key": "drpy_js_雅克坊","name": " 🎑雅克坊[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/雅克坊.js"},
 	{"key": "drpy_js_看一看影视","name": " 🎑看一看影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/看一看影视.js"},
 	{"key": "drpy_js_fositv","name": " 🎑fositv[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/fositv.js"},
+	{"key": "drpy_js_城市影视","name": " 🎑城市影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/城市影视.js"},
 	{"key": "drpy_js_枫林网","name": " 🎑枫林网[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/枫林网.js"},
 	  //待完善源	  
 	{"key": "drpy_js_石榴影院","name": " 🎑石榴影院[DRPY]待完善","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/石榴影院.js"},	  
