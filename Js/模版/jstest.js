@@ -1,6 +1,8 @@
 var rule={     
-    title:'YOKE影视',
-    host:'https://www.xdn8.com',
+    title:'320影视',
+    //host:'https://www.xdn8.com',
+    host:'https://www.yucjit.org',
+    //host:'https://320m.com',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
