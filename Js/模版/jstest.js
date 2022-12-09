@@ -19,6 +19,6 @@ var rule = {
     推荐:'.stui-vodlist.clearfix;.stui-vodlist__box;a&&title;a&&data-original;.pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.stui-vodlist.clearfix li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":"h1.line1&&Text;.stui-content__detail p:eq(0)&&Text","img":".lazyload&&data-original","desc":";;;.stui-content__detail p:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text","content":".stui-content__detail p:eq(-1)&&Text","tabs":".nav.nav-tabs.pull-right&&li","lists":".stui-content__playlist:eq(#id) li"},
+    二级:{"title":"h1.line1&&Text;.stui-content__detail p:eq(0)&&Text","img":".lazyload&&data-original","desc":";;;.stui-content__detail p:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text","content":".stui-content__detail p:eq(5)&&Text","tabs":".nav.nav-tabs.pull-right&&li","lists":".stui-content__playlist:eq(#id) li"},
     
 }
