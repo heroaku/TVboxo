@@ -1,5 +1,5 @@
 {
-  "分类": "电影$BLdianying#连续剧$Fuju#综艺$BLzongyi#动漫$BLdongman",
+  "分类": "电影$1#连续剧$2#综艺$3#动漫$4",
   "分类url":"https://www.znlove.net/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
   
   "线路数组": "class=\"play_source_tab &&</div>",
