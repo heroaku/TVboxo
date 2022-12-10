@@ -1,10 +1,11 @@
 {
   "分类": "电影$BLdianying#连续剧$Fuju#综艺$BLzongyi#动漫$BLdongman",
-  "分类url":"https://www.fuju1.tv/vodshow/{cateId}/area/{area}/by/{by}/class/{class}/page/{catePg}/year/{year}.html",
-  //"线路数组": "data-toggle=\"tab&&</a>",
-  //"线路标题": ">&&</a>",
+  "分类url":"https://www.znlove.net/index.php/vod/show/area/{area}/by/{by}/class/{class}/id/{cateId}/page/{catePg}/year/{year}.html",
+  
+  "线路数组": "class=\"play_source_tab &&</div>",
+  "线路标题": ">&&</a>",
   "简介": "简介</span>&&</p>",
-  "播放数组":"class=\"myui-content__list &&</ul>",
+  "播放数组":"class=\"content_playlist &&</ul>",
   "筛选": {
 "BLdianying":[
   {"key":"class","name":"剧情","value":[
