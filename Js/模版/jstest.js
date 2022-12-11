@@ -1,6 +1,6 @@
 var rule={
 title:'1985影视',
-host:'https://www.1985.one',
+host:'https://aiyingshis.com',
 url:'/vodshow/id/fyclass/page/fyclass.html',
 searchUrl:'/vodsearch/page/fyclass/wd/**.html',
 searchable:2,
