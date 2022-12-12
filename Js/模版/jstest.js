@@ -1,25 +1,33 @@
-var rule = { 
-    title: 'fositv',
-    host: 'https://fositv.com/',
+var rule = {
+    title:'剧荒TV',
+    host:'https://juhuang.tv',
     // homeUrl:'/',
-    //url: '/vod_____type/fyclass-fypage.html',
-    url:'/vod_____show/fyclass--time------fypage---.html',
-    searchUrl: '/vod_____search/**----------fypage---.html',
-    class_name:'电影&电视剧&综艺&动漫&纪录片',
-    class_url:'1&2&3&4&5',
-    searchable: 2,//是否启用全局搜索,
-    quickSearch: 0,//是否启用快速搜索,
-    filterable: 0,//是否启用分类筛选,
-    headers: {//网站的请求头,完整支持所有的,常带ua和cookies
-                'User-Agent': 'MOBILE_UA',
-                // "Cookie": "searchneed=ok"
-            },
-    play_parse: true,//播放是否解析
-    lazy: '',//是否免嗅探
-    limit: 6,
-    推荐:'ul.myui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+    url:'/type/fyclass_type_fypage.html[/type/fyclass_type.html]',
+    searchable:2,
+    quickSearch:0,
+    filterable:0,
+    headers:{'User-Agent':'MOBILE_UA', },
+    class_name:'电视剧&电影&综艺&动漫&纪录片&Youtube精选',//静态分类名称拼接
+    class_url:'2&1&3&4&21&28',//静态分类标识拼接
+    play_parse:true,
+    lazy:'',
+    limit:6,
+    推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.myui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":".myui-content__detail .title&&Text;.t-muted:eq(-1)&&Text","img":".lazyload&&data-original","desc":";;.myui-player__data&&p.text-muted&&Text;.col-pd.text-collapse p:eq(1)&&Text;.col-pd.text-collapse p:eq(0)&&Text","content":".sketch.content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
-    搜索:'.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text',
-        }
+    一级:'.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+    二级:{
+	    "title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text",
+    	"img":".module-item-pic&&img&&data-src",
+    	"desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text",
+    	// "content":".video-info-content&&Text",
+    	"content":".sqjj_a&&Text",
+    	"tabs":".module-tab-title",
+    	"lists":".module-blocklist&&.sort-item a"
+	},
+
+    // searchUrl:'https://so.juhuang.tv/?s=**',
+    searchUrl:'https://so.juhuang.tv/soapi.php?wd=**',
+    detailUrl:'https://juhuang.tv/play/fyid_play_1_1.html', //非必填,二级详情拼接链接
+    // 搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
+    搜索:'json:list;vod_name;vod_pic;vod_year;vod_id',
+}
