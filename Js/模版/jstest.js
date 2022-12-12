@@ -1,33 +1,28 @@
 var rule = {
-    title:'剧荒TV',
-    host:'https://juhuang.tv',
+    title:'歪片星球',
+    host:'https://waipian8.com',
     // homeUrl:'/',
-    url:'/type/fyclass_type_fypage.html[/type/fyclass_type.html]',
-    searchable:2,
-    quickSearch:0,
-    filterable:0,
-    headers:{'User-Agent':'MOBILE_UA', },
-    class_name:'电视剧&电影&综艺&动漫&纪录片&Youtube精选',//静态分类名称拼接
-    class_url:'2&1&3&4&21&28',//静态分类标识拼接
+    // url:'/show-fyclass--------fypage---/',
+	url:'/show-fyclassfyfilter/',
+    filterable:1,//是否启用分类筛选,
+    filter_url:'-{{fl.area}}-{{fl.by}}-{{fl.class}}-----fypage---{{fl.year}}',
+    filter: {"dianying":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"剧情","v":"剧情"},{"n":"喜剧","v":"喜剧"},{"n":"动作","v":"动作"},{"n":"爱情","v":"爱情"},{"n":"科幻","v":"科幻"},{"n":"动画","v":"动画"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"恐怖","v":"恐怖"},{"n":"犯罪","v":"犯罪"},{"n":"同性","v":"同性"},{"n":"战争","v":"战争"},{"n":"奇幻","v":"奇幻"},{"n":"冒险","v":"冒险"},{"n":"灾难","v":"灾难"},{"n":"武侠","v":"武侠"},{"n":"古装","v":"古装"},{"n":"短片","v":"短片"},{"n":"Netflix","v":"Netflix"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"中国香港","v":"中国香港"},{"n":"中国台湾","v":"中国台湾"},{"n":"美国","v":"美国"},{"n":"韩国","v":"韩国"},{"n":"日本","v":"日本"},{"n":"泰国","v":"泰国"},{"n":"新加坡","v":"新加坡"},{"n":"马来西亚","v":"马来西亚"},{"n":"印度","v":"印度"},{"n":"英国","v":"英国"},{"n":"法国","v":"法国"},{"n":"加拿大","v":"加拿大"},{"n":"俄罗斯","v":"俄罗斯"},{"n":"澳大利亚","v":"澳大利亚"}]},{"key":"by","name":"排序","value":[{"n":"更新时间","v":",time"},{"n":"最多播放","v":",hits"},{"n":"实时热门","v":",hits_day"},{"n":"近期热播","v":",hits_week"},{"n":"新片上线","v":",year"}]}],"juji":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"剧情","v":"剧情"},{"n":"喜剧","v":"喜剧"},{"n":"动作","v":"动作"},{"n":"爱情","v":"爱情"},{"n":"科幻","v":"科幻"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"恐怖","v":"恐怖"},{"n":"犯罪","v":"犯罪"},{"n":"同性","v":"同性"},{"n":"历史","v":"历史"},{"n":"战争","v":"战争"},{"n":"奇幻","v":"奇幻"},{"n":"冒险","v":"冒险"},{"n":"灾难","v":"灾难"},{"n":"武侠","v":"武侠"},{"n":"古装","v":"古装"},{"n":"都市","v":"都市"},{"n":"情景","v":"情景"},{"n":"家庭","v":"家庭"},{"n":"短剧","v":"短剧"},{"n":"Netflix","v":"Netflix"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"中国香港","v":"中国香港"},{"n":"中国台湾","v":"中国台湾"},{"n":"韩国","v":"韩国"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"英国","v":"英国"},{"n":"澳大利亚","v":"澳大利亚"},{"n":"西班牙","v":"西班牙"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"},{"n":"新加坡","v":"新加坡"},{"n":"马来西亚","v":"马来西亚"}]},{"key":"by","name":"排序","value":[{"n":"更新时间","v":",time"},{"n":"最多播放","v":",hits"},{"n":"实时热门","v":",hits_day"},{"n":"近期热播","v":",hits_week"},{"n":"新片上线","v":",year"}]}],"zongyi":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"音乐","v":"音乐"},{"n":"歌舞","v":"歌舞"},{"n":"运动","v":"运动"},{"n":"真人秀","v":"真人秀"},{"n":"旅游","v":"旅游"},{"n":"美食","v":"美食"},{"n":"Netflix","v":"Netflix"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"中国香港","v":"中国香港"},{"n":"中国台湾","v":"中国台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"韩国","v":"韩国"}]},{"key":"by","name":"排序","value":[{"n":"更新时间","v":",time"},{"n":"最多播放","v":",hits"},{"n":"实时热门","v":",hits_day"},{"n":"近期热播","v":",hits_week"},{"n":"新片上线","v":",year"}]}],"dongman":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"剧情","v":"剧情"},{"n":"喜剧","v":"喜剧"},{"n":"动作","v":"动作"},{"n":"爱情","v":"爱情"},{"n":"科幻","v":"科幻"},{"n":"动画","v":"动画"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"恐怖","v":"恐怖"},{"n":"犯罪","v":"犯罪"},{"n":"同性","v":"同性"},{"n":"战争","v":"战争"},{"n":"冒险","v":"冒险"},{"n":"灾难","v":"灾难"},{"n":"Netflix","v":"Netflix"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"中国香港","v":"中国香港"},{"n":"中国台湾","v":"中国台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"韩国","v":"韩国"}]},{"key":"by","name":"排序","value":[{"n":"更新时间","v":",time"},{"n":"最多播放","v":",hits"},{"n":"实时热门","v":",hits_day"},{"n":"近期热播","v":",hits_week"},{"n":"新片上线","v":",year"}]}],"jilupian":[{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"传记","v":"传记"},{"n":"历史","v":"历史"},{"n":"纪录","v":"纪录"},{"n":"Netflix","v":"Netflix"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"中国香港","v":"中国香港"},{"n":"中国台湾","v":"中国台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"}]},{"key":"by","name":"排序","value":[{"n":"更新时间","v":",time"},{"n":"最多播放","v":",hits"},{"n":"实时热门","v":",hits_day"},{"n":"近期热播","v":",hits_week"},{"n":"新片上线","v":",year"}]}]},
+    searchUrl:'/search-**----------fypage---/',
+    searchable:2,//是否启用全局搜索,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
+    },
+    //class_parse:'.nav-menu-items&&li;a&&title;a&&href;/(\\d+).html',
+    class_name:'电影&电视剧&综艺&动漫&纪录片',
+    class_url:'dianying&juji&zongyi&dongman&jilupian',
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+    //推荐:'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    推荐:'.tab-list.active;.module-poster-item.module-item;.module-poster-item-title&&Text;.lazyload&&data-src;.module-item-note&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-    二级:{
-	    "title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text",
-    	"img":".module-item-pic&&img&&data-src",
-    	"desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text",
-    	// "content":".video-info-content&&Text",
-    	"content":".sqjj_a&&Text",
-    	"tabs":".module-tab-title",
-    	"lists":".module-blocklist&&.sort-item a"
-	},
-
-    // searchUrl:'https://so.juhuang.tv/?s=**',
-    searchUrl:'https://so.juhuang.tv/soapi.php?wd=**',
-    detailUrl:'https://juhuang.tv/play/fyid_play_1_1.html', //非必填,二级详情拼接链接
-    // 搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
-    搜索:'json:list;vod_name;vod_pic;vod_year;vod_id',
+    一级:'.module-poster-item.module-item;a&&title;img&&data-src;.module-item-note&&Text;a&&href',
+    二级:{"title":"h1&&Text;.module-info-tag-link:eq(2)&&Text","img":".module-item-pic&&img&&data-src","desc":".module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-4)&&Text;.module-info-content&&.module-info-item:eq(5)&&Text;.module-info-content&&.module-info-item:eq(3)&&.module-info-item-content&&Text;.module-info-content&&.module-info-item:eq(1)&&.module-info-item-content&&Text","content":".module-info-introduction-content&&Text","tabs":".module-tab-items-box:eq(0)&&.module-tab-item","lists":".module-list:eq(#id)&&.module-play-list-content a"},
+    搜索:'.module-card-item.module-item;.module-card-item-title&&Text;img&&data-src;.module-item-note&&Text;a.play-btn-o&&href',
 }
