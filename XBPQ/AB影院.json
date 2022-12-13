@@ -1,0 +1,14 @@
+{  //AB影院
+"免嗅":"1",
+//"副标题":"class=\"handle-btn-name\">&&</span>",
+"导演": "导演：&&</div",
+"主演": "主演：&&</div",
+"简介": "简介：&&</li>",
+//"播放标题":"<span>&&</span>",
+"播放数组":"class=\"stui-content__playlist &&</ul>",
+"线路数组": "class=\"stui-pannel__head &&</div>",
+"线路标题": ">&&</h3>",
+"分类":"电影$1#电视剧$2#综艺$3#动漫$4#纪录片$5",
+"分类url":"https://abu22.com/vodtype/{cateId}-{catePg}.html",
+"年份":"2004-2022",
+"筛选":"0"}
