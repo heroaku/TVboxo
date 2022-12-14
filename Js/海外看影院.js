@@ -1,6 +1,7 @@
 var rule = {
 	title: '海外看影院',
-	host: 'https://haiwaiys.cc',
+	//host: 'https://haiwaiys.cc',
+	host: 'https://www.huale.org',
 	// url: '/vodshow/fyclass--------fypage---.html',
 	url: '/vodshow/fyfilter.html',
 	filterable:1,//是否启用分类筛选,
