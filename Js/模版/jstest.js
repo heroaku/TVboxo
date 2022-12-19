@@ -1,9 +1,10 @@
 var rule={
     title:'宅腐影视',
     host:'https://www.fuju1.tv',
-    url:'/vodshow/fyclass/fyfilter',
+    url:'/vodshow/fyclassfyfilter.html',
 	filterable:1,//是否启用分类筛选,
-    filter_url:'area/{{fl.地区}}/by/{{fl.排序}}/class/{{fl.剧情}}/page/fypage/year/{{fl.年份}}.html',
+    //filter_url:'area/{{fl.地区}}/by/{{fl.排序}}/class/{{fl.剧情}}/page/fypage/year/{{fl.年份}}.html',
+    	filter_url:'{{fl.area}}{{fl.by}}{{fl.class}}/page/fypage{{fl.year}}',
 	//filter_def:{BLdianying:{cateId:'BLdianying'},Fuju:{cateId:'Fuju'},BLzongyi:{cateId:'BLzongyi'},BLdongman:{cateId:'BLdongman'}},
     //https://www.fuju1.tv/vodshow/Fuju/area/%E6%B3%B0%E5%9B%BD/by/time/class/%E6%A0%A1%E5%9B%AD/page/2.html
     //url: '/vodshow/fyclass-fyfilter',
