@@ -1,6 +1,7 @@
 var rule={
     title:'BD影视',
     host:'https://bd360.xyz',
+    //host:'https://nep.ink',
     // homeUrl:'/',
     url:'/vodshow/fyclass--------fypage---.html',
     searchUrl:'/vodsearch/**----------fypage---.html',
