@@ -1,4 +1,3 @@
-
 var rule = {
     title:'大中影视',
     host:'https://www.malustv.com',
