@@ -1,6 +1,7 @@
 var rule = {
     title:'大中影视',
     host:'https://www.malustv.com',
+    host:'https://www.xinghehd.com/',
     // homeUrl:'/',
     //url:'/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
