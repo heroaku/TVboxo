@@ -43,5 +43,5 @@ filter: {
     	"tabs":".module-tab-item",
     	"lists":".sort-item:eq(#id) a"
 	},
-    搜索:'.module-items;.lazyload&&alt;.lazyload&&data-src;.tag-link&&Text;*',
+    搜索:'.module-items&&.module-search-item;.lazyload&&alt;.lazyload&&data-src;.video-serial&&Text;*',
 }
