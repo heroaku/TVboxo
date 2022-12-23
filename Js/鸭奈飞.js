@@ -2,6 +2,7 @@ var rule = {
     title:'鸭奈飞',
     //host:'https://yanetflix.com',
     host:'https://yanetflix.tv/',
+    //host:'https://netflix.mom',
     //url:'/vodshow/fyclass--------fypage---.html',
     //class_parse:'.navbar-items&&li;a&&Text;a&&href;.*/(.*?).html',
     	url:'/vodshow/fyfilter.html',
