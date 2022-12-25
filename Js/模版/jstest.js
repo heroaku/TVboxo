@@ -24,7 +24,8 @@ var rule={
 		51:{cateId:'51'},
 	        56:{cateId:'56'}
 	},
-    class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
+    class_name:'电影&电视剧&综艺&动漫&体育赛事&伦理',
+    class_url:'1&2&3&4&51&56',
     play_parse:true,
     lazy:'',
     limit:6,
