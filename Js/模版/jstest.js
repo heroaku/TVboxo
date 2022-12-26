@@ -21,11 +21,10 @@ var rule={
 		2:{cateId:'2'},
 		3:{cateId:'3'},
                 4:{cateId:'4'},
-		51:{cateId:'51'},
-	        56:{cateId:'56'}
+		51:{cateId:'51'}
 	},
-    class_name:'电影&电视剧&综艺&动漫&体育赛事&伦理',
-    class_url:'1&2&3&4&51&56',
+    class_name:'电影&电视剧&综艺&动漫&体育赛事',
+    class_url:'1&2&3&4&51',
     play_parse:true,
     lazy:'',
     limit:6,
