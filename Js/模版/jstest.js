@@ -23,7 +23,7 @@ var rule = {
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'.uk-switcher.uk-margin;.fed-week-boxs li;.fed-list-pics&&title;.fed-list-pics&&data-original;.fed-list-remarks&&Text;a&&href',
+    推荐:'.fed-list-info;.fed-list-item li;a&&title;.fed-list-pics&&data-original;.fed-list-remarks&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.fed-list-info&&.fed-list-item;a&&title;.fed-list-pics&&data-original;.fed-list-remarks&&Text;a&&href',
     二级:{"title":"h1&&Text;.uk-list&&li:eq(3)&&Text","img":".cover-shadow-xs&&data-original","desc":".module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-4)&&Text;.module-info-content&&.module-info-item:eq(-3)&&Text;.uk-list&&li:eq(0)&&Text;.uk-list&&li:eq(1)&&Text","content":".fed-col-xs12.fed-show-md-block&&Text","tabs":"ul.yunlist&&li a","lists":".fed-play-item.fed-drop-item:eq(#id) ul.fed-part-rows:eq(1) li"},
