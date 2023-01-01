@@ -16,15 +16,16 @@ var rule={
 		1:{cateId:'1'},
 		2:{cateId:'2'},
 		3:{cateId:'3'},
-		4:{cateId:'4'}
+		4:{cateId:'4'},
+		5:{cateId:'5'}
 	},
     headers:{//网站的请求头,完整支持所有的,常带ua和cookies
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
     //class_parse:'.navbar-items li:gt(2):lt(8);a&&Text;a&&href;.*/(.*?).html',
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'1&2&3&4',
+    class_name:'电影&电视剧&综艺&动漫&纪录片',
+    class_url:'1&2&3&4&5',
     play_parse:true,
     lazy:'',
     limit:6,
