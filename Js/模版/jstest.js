@@ -1,3 +1,4 @@
+//搜索有验证码
 var rule={
     title:'西瓜影视',
     host:'https://www.xigua133.com',
