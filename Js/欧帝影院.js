@@ -3,6 +3,7 @@ var rule={
     host:'https://www.odivod.com',
     // homeUrl:'/',
     url:'/vodshow/fyclass--------fypage---/',
+    //https://www.odivod.com/vodshow/2--------2---.html
     searchUrl:'/vodsearch/**----------fypage---/',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
@@ -18,9 +19,9 @@ var rule={
     play_parse:true,
     lazy:'',
     limit:6,
-    推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    推荐:'body .main;.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'.hl-vod-list&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-from a","lists":".hl-plays-list:eq(#id) li"},
-    搜索:'.hl-list-wrap&&ul&&li;.hl-item-thumb&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    一级:'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    二级:{"title":"h1&&Text;.module-info-tag&&Text","img":".lazy.lazyload&&data-original","desc":".module-info-item:eq(-1)&&Text;.module-info-item:eq(-2)&&Text;.module-info-item:eq(-3)&&Text;.module-info-item:eq(2)&&.module-info-item-content&&Text;.module-info-item:eq(1)&&.module-info-item-content&&Text","content":".module-info-introduction&&Text","tabs":".module-tab-item.tab-item","lists":".module-list:eq(#id)&&.module-play-list a"},
+    搜索:'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',
 }
