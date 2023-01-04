@@ -219,6 +219,7 @@
 	{"key": "drpy_js_万博剧院","name": " 🎑万博剧院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/万博剧院.js"},
 	{"key": "drpy_js_哔哩影视","name": " 🎑哔哩影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/哔哩影视.js"}, 
 	{"key": "drpy_js_我的哔哩","name": " 🎑我的哔哩[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/我的哔哩.js"},
+	{"key": "drpy_js_虎牙直播","name": " 🎑虎牙直播[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/虎牙直播.js"},
 	  
 	  
 	  
