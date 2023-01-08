@@ -45,6 +45,7 @@
    {"key":"csp_Zjdr","name":"👓追剧达人┃SP","type":3,"api":"csp_Zjdr","searchable":1,"quickSearch":1,"filterable":1},
 	  
 //js 
+        {"key": "drpy_js_我的哔哩","name": " 🎑我的哔哩[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/我的哔哩.js"},
 	{"key": "drpy_js_小宝影院","name": " 🎑小宝影院 🚪[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/小宝影院.js"},
 	{"key": "drpy_js_多瑙影视","name": " 🎑多瑙影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/多瑙影视.js"},
 	{"key": "drpy_js_NY影院","name": " 🎑NY影院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/NY影院.js"},
@@ -218,7 +219,6 @@
 	{"key": "drpy_js_小狗影视","name": " 🎑小狗影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/小狗影视.js"},  
 	{"key": "drpy_js_万博剧院","name": " 🎑万博剧院[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/万博剧院.js"},
 	{"key": "drpy_js_哔哩影视","name": " 🎑哔哩影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/哔哩影视.js"}, 
-	{"key": "drpy_js_我的哔哩","name": " 🎑我的哔哩[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/我的哔哩.js"},
 	{"key": "drpy_js_虎牙直播","name": " 🎑虎牙直播[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/虎牙直播.js"},
 	{"key": "drpy_js_朴樱影视","name": " 🎑朴樱影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/朴樱影视.js"},
 	  
