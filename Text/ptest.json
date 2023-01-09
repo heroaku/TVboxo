@@ -221,6 +221,9 @@
 	{"key": "drpy_js_哔哩影视","name": " 🎑哔哩影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/哔哩影视.js"}, 
 	{"key": "drpy_js_虎牙直播","name": " 🎑虎牙直播[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/虎牙直播.js"},
 	{"key": "drpy_js_朴樱影视","name": " 🎑朴樱影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/朴樱影视.js"},
+	{"key": "drpy_js_午夜影视","name": " 🎑午夜影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/午夜影视.js"},
+	{"key": "drpy_js_大豆影视","name": " 🎑大豆影视[DRPY]","type": 3,"api": "https://github.com/heroaku/TVboxo/raw/main/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/大豆影视.js"},
+	  
 	  
 	  
 	  
