@@ -19,20 +19,3 @@ var rule = {
     二级: 'js:let d=[];let html=request(input);let json=JSON.parse(html).data.tracks[0];VOD={vod_id:"",vod_url:input,vod_name:"",type_name:"",vod_actor:"",vod_year:"",vod_director:"",vod_area:"",vod_content:"",vod_remarks:"",vod_pic:""};VOD.vod_id=json.albumId;VOD.vod_name=json.albumTitle;VOD.vod_pic=/http/.test(json.albumCoverPath)?json.albumCoverPath:"https://imagev2.xmcdn.com/"+json.albumCoverPath;VOD.vod_year=(json.createDateFormat+"").split("-")[0];VOD.vod_actor=json.anchorName;VOD.vod_director=json.anchorName;VOD.vod_content=json.albumTitle;let playlists=[];let listUrl="https://www.ximalaya.com/revision/album/v1/getTracksList?albumId="+json.albumId+"&pageSize=100&pageNum=1";let data=JSON.parse(request(listUrl)).data;let total=data.trackTotalCount;playlists=data.tracks;if(total>100){for(let i=2;i<total/100+1;i++){let listUrl="https://www.ximalaya.com/revision/album/v1/getTracksList?albumId="+json.albumId+"&pageSize=100&pageNum="+i;let data=JSON.parse(request(listUrl)).data;playlists=playlists.concat(data.tracks)}}playlists.forEach(function(it){d.push({title:"第"+it.index+"集",desc:it.albumTitle||it.anchorName||it.length,img:/http/.test(it.albumCoverPath)?it.albumCoverPath:"https://imagev2.xmcdn.com/"+it.albumCoverPath,url:it.trackId})});VOD.vod_play_from="ximalaya";VOD.vod_play_url=d.map(function(it){return it.title+"$"+it.url}).join("#");',
     搜索: 'json:data.album.docs;title;coverPath;intro;albumId',
 }
- 14  
-js/幻听网听书.js
-@@ -0,0 +1,14 @@
-muban.首图2.二级.title = 'h1--span&&title;.data--span:eq(0)&&Text';
-muban.首图2.二级.desc = '.data--span:eq(3)&&Text;;;.data--span:eq(1)&&Text;.data--span:eq(2)&&Text';
-muban.首图2.二级.content = '.detail-content&&Text';
-muban.首图2.二级.tabs = '.stui-pannel__head.bottom-line&&h3';
-var rule = {
-    title:'幻听网听书',
-    模板:'首图2',
-    host:'http://www.ting38.com',
-    url:'/ting/fyclass-fypage.html',
-    searchUrl:'/search.php?page=fypage&searchword=**&searchtype=',
-    class_parse: '.stui-header__menu li:gt(0);a&&Text;a&&href;.*/(.*?).html',
-    cate_exclude:'导航',
-    搜索:'.stui-vodlist__media:eq(0) li;a&&title;.lazyload&&data-original;p:eq(0)&&Text;a&&href;.pic-text&&Text',
-}
