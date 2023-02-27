@@ -1,5 +1,5 @@
 var rule={
-    title:'子子影视',
+    title:'熊猫影视',
     host:'https://www.pandavod.com/',
     // homeUrl:'/',
     //url:'/list/fyclass/page/fypage.html',
