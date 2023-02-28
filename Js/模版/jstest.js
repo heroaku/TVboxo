@@ -21,8 +21,8 @@ var rule={
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&动漫',
-    class_url:'1&2&3',
+    class_name:'电影&电视剧&综艺&动漫&体育',
+    class_url:'dianying&lianxuju&zongyi&dongman&tiyu',
     lazy:'',
     limit:6,
     double:true, // 推荐内容是否双层定位
