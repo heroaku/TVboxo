@@ -229,6 +229,8 @@
 	{"key": "drpy_js_喜马拉雅","name": " 🎑喜马拉雅[DRPY]","type": 3,"api": "https://github.com/heroaku/drpy/raw/master/libs/drpy2.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/喜马拉雅.js"},
 	{"key": "drpy_js_哔哩兔","name": " 🎑哔哩兔[DRPY]","type": 3,"api": "https://github.com/heroaku/drpy/raw/master/libs/drpy2.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/哔哩兔.js"},
 	{"key": "drpy_js_皮皮鸭","name": " 🎑皮皮鸭[DRPY]","type": 3,"api": "https://github.com/heroaku/drpy/raw/master/libs/drpy2.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/皮皮鸭.js"},
+	{"key": "drpy_js_HG影院","name": " 🎑HG影院[DRPY]","type": 3,"api": "https://github.com/heroaku/drpy/raw/master/libs/drpy2.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/HG影院.js"},
+	  
 	  
 	  
 	  
