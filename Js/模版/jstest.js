@@ -25,7 +25,7 @@ var rule={
         "img": ".img-responsive&&data-original",
         "desc": ";;;.data--span:eq(1)&&Text;.data--span:eq(2)&&Text",
         "content": ".desc&&Text",
-        "tabs": ".stui-pannel__head span",
+        "tabs": ".stui-pannel__head h3",
         "lists": ".stui-content__playlist:eq(#id) li"
     },
     搜索: muban.首图2.搜索1,
