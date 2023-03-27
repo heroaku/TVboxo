@@ -238,6 +238,8 @@
 	{"key": "drpy_js_花猫TV","name": " 🎑花猫TV[DRPY]","type": 3,"api": "https://github.com/heroaku/drpy/raw/master/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/花猫TV.js"},
 	{"key": "drpy_js_HDmoli","name": " 🎑HDmoli[DRPY]","type": 3,"api": "https://github.com/heroaku/drpy/raw/master/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/HDmoli.js"},
 	{"key": "drpy_js_飞飞影视","name": " 🎑飞飞影视[DRPY]","type": 3,"api": "https://github.com/heroaku/drpy/raw/master/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/飞飞影视.js"},
+	{"key": "drpy_js_网飞TV","name": " 🎑网飞TV[DRPY]","type": 3,"api": "https://github.com/heroaku/drpy/raw/master/libs/drpy.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/Js/网飞TV.js"},
+	  
 	  
 	  
 	  
