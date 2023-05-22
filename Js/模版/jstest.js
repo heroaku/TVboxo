@@ -24,7 +24,7 @@ var rule = {
         4:{by:'time'},
         5:{by:'time'}
     },
-    class_parse:'.navbar-items li:gt(1):lt(5);a&&Text;a&&href;.*/(.*?)/',
+    class_parse:'.navbar-items li:gt(1):lt(5);a&&Text;a&&href;/(\\d+).html',
 
     searchUrl:'/vodsearch/**----------fypage---/',
    //https://wzyshi.com/vodsearch/ai----------2---.html
