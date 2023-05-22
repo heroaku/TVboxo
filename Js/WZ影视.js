@@ -12,8 +12,8 @@ var rule={
         // "Cookie": "searchneed=ok"
     },
     //class_parse:'.navbar-items li:gt(2):lt(8);a&&Text;a&&href;.*/(.*?).html',
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'1&2&3&4',
+    class_name:'电影&电视剧&综艺&动漫&国产剧&港台剧&欧美剧&日韩剧',
+    class_url:'1&2&3&4&13&14&15&16',
     play_parse:true,
     host:'https://wzyshi.com/',
     // url:'/vodshow/fyclass--------fypage---/',
