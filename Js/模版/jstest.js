@@ -1,5 +1,5 @@
 var rule = {
-    title:'闪影影院',
+    title:'穷奇影院',
     host:'https://qiong7.cn',
     // homeUrl:'/',
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
