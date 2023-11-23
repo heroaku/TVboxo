@@ -1,6 +1,6 @@
 var rule={     
     title:'TF影院',
-    host:'hhttps://www.oftens.top',
+    host:'https://www.oftens.top',
     url:'/oftensshow/fyclass--------fypage---.html',
     searchUrl:'/oftenssearch/**----------fypage---.html',
     searchable:2,//是否启用全局搜索,
