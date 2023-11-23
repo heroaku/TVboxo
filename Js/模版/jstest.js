@@ -1,6 +1,6 @@
 var rule={     
     title:'往往影院',
-    //https://www.oftens.top/oftensshow/dianshiju--------2---.html
+    //https://www.wwys.pro/oftensshow/dianshiju--------2---.html
     host:'https://www.wwys.pro',
     url:'/oftensshow/fyclass--------fypage---.html',
     searchUrl:'/oftenssearch/**----------fypage---.html',
@@ -9,8 +9,8 @@ var rule={
     filterable:0,//是否启用分类筛选,
     //class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
     //cate_exclude:'演员',
-    class_name:'电影&电视剧&综艺&动漫&纪录片',
-    class_url:'dianying&dianshiju&zongyi&dongman&jilupian',  
+    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&日韩剧&港台剧&欧美剧&泰国剧&其他剧',
+    class_url:'dianying&dianshiju&zongyi&dongman&jilupian&guochanju&rihanju&gangtaiju&oumeiju&taiguoju&qitaju',  
     推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.hl-vod-list&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
