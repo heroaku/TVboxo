@@ -5,8 +5,8 @@ var rule={
     title:'NY影院',
     模板:'短视2',
     host:'https://7xi.tv',
-    homeUrl:'/index.php/label/rb.html',
-    url: '/index.php/api/vod#type=fyfilter&page=fypage',
+    //homeUrl:'/index.php/label/rb.html',
+    url:'/vodshow/fyfilter.html',
     filterable:1,//是否启用分类筛选,
     filter_url:'{{fl.cateId}}',
     filter:{
