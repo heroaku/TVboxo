@@ -25,4 +25,4 @@ var rule={
     推荐:'.list-vod .public-list-box;a&&title;.lazy&&data-src;.public-list-prb&&Text;a&&href',
     double: false, // 推荐内容是否双层定位
 }
-}
+
