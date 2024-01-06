@@ -1,7 +1,7 @@
 var rule = {
     title:'蚂蚁影视',
-    host:'https://www.4kvcd.com',
-    // homeUrl:'/',
+    host:'https://www.4kvcd.cc',
+    // homeUrl:'https://www.4kvcd.com',
     url:'/fyclass/index_fypage_______.html',
     searchUrl:'/index.php?s=vod-search-wd-**-p-fypage.html',
     searchable:2,//是否启用全局搜索,
