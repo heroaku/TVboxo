@@ -1,7 +1,7 @@
 var rule={     
     title:'菠萝小站',
     host:'https://www.boluoxiaozhan.com/',
-    url:'/vodshow/fyclass.html',
+    url:'/vodshow/fyclass/page/fypage.html',
     searchUrl:'vodsearch.html?wd=**&submit=',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
