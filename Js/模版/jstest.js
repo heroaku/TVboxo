@@ -1,6 +1,5 @@
 var rule={     
-    title:'往往影院',
-    //https://www.wwys.pro/oftensshow/dianshiju--------2---.html
+    title:'菠萝小站',
     host:'https://www.boluoxiaozhan.com/',
     url:'/vodshow/fyclass.html',
     searchUrl:'vodsearch.html?wd=**&submit=',
