@@ -1,5 +1,5 @@
 var rule= {
-    title:'369影视',
+    title:'酷亚影视',
     host:'https://kuyatv.app',
     // url:'/index.php/vod/show/id/fyclass/page/fypage.html',
     url:'/vodshow/fyclass/page/fypage.html',
@@ -23,7 +23,7 @@ var rule= {
         "desc": ';;;.video-info-actor:eq(1)&&Text;.video-info-actor:eq(0)&&Text',
         "content": ".stui-pannel:eq(2)&&p&&Text",
         "tabs": "h3:eq(0)",
-        "lists": ".stui-content__playlist&&li"
+        "lists": ".stui-content__playlist:eq(#id)&&li"
     },
     搜索:'.stui-vodlist__media li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
 }
