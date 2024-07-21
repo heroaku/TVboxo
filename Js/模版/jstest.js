@@ -9,8 +9,8 @@ var rule={
     filterable:0,//是否启用分类筛选,
     //class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
     //cate_exclude:'演员',
-    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&日韩剧&港台剧&欧美剧&泰国剧&其他剧',
-    class_url:'1&2&3&4&jilupian&guochanju&rihanju&gangtaiju&oumeiju&taiguoju&qitaju',  
+    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&日剧&韩剧&港剧&欧美剧&泰剧&台剧',
+    class_url:'1&2&3&4&17&18&20&22&19&21&24&23',  
     推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.hl-vod-list&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
