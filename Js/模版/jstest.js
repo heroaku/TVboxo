@@ -3,7 +3,7 @@ var rule={
     //https://www.wwys.pro/oftensshow/dianshiju--------2---.html
     host:'https://www.56music.top',
     url:'/vodshow/fyclass-----------.html?page=fypage',
-    searchUrl:'/vodshow/**----------fypage---.html',
+    searchUrl:'/vodsearch.html?wd=**&page=fypage',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
