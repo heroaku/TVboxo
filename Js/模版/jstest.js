@@ -2,7 +2,7 @@ var rule={
     title:'时代影视',
     //https://www.wwys.pro/oftensshow/dianshiju--------2---.html
     host:'https://www.56music.top',
-    url:'/vodshow/fyclass--------fypage---.html',
+    url:'/vodshow/fyclass-----------.html?page=fypage',
     searchUrl:'/vodshow/**----------fypage---.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
