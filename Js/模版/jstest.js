@@ -23,7 +23,7 @@ var rule= {
         "desc": ';;;.video-info-actor:eq(1)&&Text;.video-info-actor:eq(0)&&Text',
         "content": ".stui-pannel:eq(2)&&p&&Text",
         "tabs": "h3:eq(0)",
-        "lists": ".stui-pannel:eq(＞1)&&.stui-content__playlist&&li"
+        "lists": ".stui-content__playlist&&li"
     },
     搜索:'.stui-vodlist__media li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
 }
