@@ -10,7 +10,7 @@ var rule = {
     headers: {
         'User-Agent': 'MOBILE_UA',
     },
-    url: '/index.php/api/vod#type=fyclassfyfilter&page=fypage',
+    url: '/index.php/api/vod#type=fyclass&page=fypage',
     filterable: 0,
     filter_url: '&class={{fl.class}}&year={{fl.year}}&letter={{fl.letter}}&by={{fl.by}}',
     filter: 'H4sIAAAAAAAAA+2W204TURSG32WuMdnT0nbDnZzP57PhopImEhETWk0IIUFOloNQDLSigGJCLCIWhJCWgr4MM9O+hdPO2mstDzE10cSYudv/989u55t0uteUpmuVd6a0+6FJrVIbGQuGw1qZNh58ELKjdZo19lbs/Dg49ihUvG7cxsZCMj+XLGA7aNNlQK9mb9Jxa2sVCsrqCmv7sxGLQg0Bd8fWjI9HaqsTcN/ccW5/Ru1zAnaXKSt6qjonYHf4JXexrDon4PcdPDUyWfV9TlCdGX1hxhPQQSjlPs3YnvVhQ+1zAnaJAyOdVp0T8D7fbdC9QMB9n7LmvHpmELB7s2+8OladE7B7skLPBQI6LD7Pbx8qByfgvrWkFVtU+5yA3c6l/TRU5wTV5V+f3WRi0EFQXS62m1tbgg4C3WfMnInjfRYDdnPL5uxL1TkBu7P9/O5ba+u9qjHjFem0GV03NzPqCsz4HE7Wc6lzuoIyfsbVkbWZZZ+BGd0WlHRhNT1c4M67NBkKTtCrZGTOb7LXJb5KHuEpB1ZcMu4l7uXcQ9zDuU5c51wQF4zrFcjtJeOSuOQ8QDzAuZ+4n3MfcR/n5KtzX518de6rk6/OfXXy1bmvTr469xXkK7ivIF/BfQX5Cu4ryFdwX0G+gvsK8hXcV5Cv4L6CfAX3FeQruK8gX0G+ekWF8i0uGZfEJecB4gHO/cT9nPuI+zgvJ17OuZe4l3MPcQ/nOnGdc0Gc+0ryldxXkq/kvpJ8JfeV5Cu5ryRfyX0l+UruK8lXcl9JvpL7SvKV3FeSr73kfztjoUgkxP94jhNm6lmJfzy3AdxGUgWkCkk1kGokNUBqkNQCqUVSB6QOST2QeiQNQBqQNAJpRNIEpAlJM5BmJC1AWpC0AmlF0gakDUk7kHYkHUA6kHQC6UTSBaQLSTeQbiQ9QHqQ9ALpRdIHpA9JP5B+JANABpAMAhlEMgRkCIm4pd6Bwor/VO5O0s/ETFzkE+c//EzM1SVzZ8aMn8BHREbtq/F0LJb2QAblvdFImJe51LwRVbNEeOThRKjw9cNlmuefGDl/OVb+hdHxvxgPf3cEdAcidyByByK1dAcidyByByJ3IPp+IPL+qYFoOXlzvaOObieUMrb8dMRwj2736HaPbrV0j2736HaPbvfo/vbonv4K+TrlXkAbAAA=',
