@@ -12,8 +12,8 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&欧美剧&韩剧&日剧&港剧&台剧&泰剧&海外剧',
-    class_url:'1&2&4&3&6&15&13&16&24&14&22&23&40',
+    class_name:'电视剧&电影&综艺&动漫',
+    class_url:'Fuju&BLdianying&BLzongyi&BLdongman',
     //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
     play_parse:true,
     lazy:'',
