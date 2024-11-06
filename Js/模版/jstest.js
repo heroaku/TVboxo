@@ -1,24 +1,26 @@
-var rule={
-title:'TVA云播',
-host:'https://www.fujutv.net',
-    //https://www.fujuyy.com/sptype/20-2.html
-    //https://www.fujutv.net/spshow/fyclass--------fypage---.html
-    //https://www.fujutv.net/spsearch/**----------fypage---.html
-url:'/spshow/fyclass--------fypage---.html',
-searchUrl:'/spsearch/**----------fypage---.html',
-searchable:2,//是否启用全局搜索,
-quickSearch:0,//是否启用快速搜索,
-filterable:0,//是否启用分类筛选,
-class_name:'电影&电视剧&综艺&动漫',
-class_url:'21&20&23&22',
-play_parse:true,
-lazy:'',
-limit:6,
-// 推荐:'ul.myui-vodlist;ul li;*;*;*;*',
-推荐:'ul.myui-vodlist;li;*;*;*;*',
-// 推荐:'ul.myui-vodlist;ul&&li;*;*;*;*', // 此写法本地js无效
-double:true, // 推荐内容是否双层定位
-一级:'.myui-vodlist__box;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-二级:{"title":"h1&&Text;.data:eq(0) a:eq(0)&&Text","img":".lazyload&&data-original","desc":";.data:eq(0) a:eq(2)&&Text;.data:eq(0) a:eq(1)&&Text;.data:eq(2)&&Text;.data:eq(3)&&Text","content":".text-collapse span&&Text","tabs":".myui-panel__head h3","lists":".myui-content__list:eq(#id) li"},
-搜索:'ul.myui-vodlist__media li;*;*;*;*',
+var rule = {
+    title:'看腐剧',
+    host:'https://www.kanfujutv.com',
+    // https://www.kanfujutv.com/vodshow/fyclass/page/fypage.html
+    // https://www.kanfujutv.com/vodsearch**/page/fypage.html
+    url:'/vodshow/fyclass/page/fypage.html',
+    searchUrl:'/vodsearch**/page/fypage.html',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
+    },
+    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&欧美剧&韩剧&日剧&港剧&台剧&泰剧&海外剧',
+    class_url:'1&2&4&3&6&15&13&16&24&14&22&23&40',
+    //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
+    play_parse:true,
+    lazy:'',
+    limit:6,
+    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    二级:{"title":".hl-item-thumb.hl-lazy&&title;.hl-full-box&&ul li:eq(6)&&Text","img":".hl-item-thumb.hl-lazy&&data-original","desc":".hl-full-box&&ul&&li:eq(-1)&&Text;.hl-full-box&&ul&&li:eq(-2)&&Text;.hl-full-box&&ul&&li:eq(-3)&&Text;.hl-full-box&&ul&&li:eq(2)&&Text;.hl-full-box&&ul&&li:eq(3)&&Text","content":".hl-col-xs-12.blurb&&Text","tabs":".hl-plays-from:eq(0) a","lists":".hl-plays-list:eq(#id) li"},
+    搜索:'ul.hl-one-list&&li;a&&title;.hl-item-thumb&&data-original;.hl-lc-1&&Text;a&&href;.text-muted:eq(-1)&&Text',
 }
