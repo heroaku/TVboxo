@@ -1,6 +1,6 @@
 var rule={
 title:'影视大全',
-host:'https://www.ysdq.me/',
+host:'https://www.ysdq.me',
 url:'/vodshow/fyclass--time------fypage---.html',
 searchUrl:'/vodsearch/-------------.html?wd=**',
 searchable:2,//是否启用全局搜索,
