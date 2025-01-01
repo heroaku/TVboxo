@@ -1,6 +1,6 @@
 var rule = Object.assign(muban.vfed,{
 title:'欧乐影院',
-host:'https://www.olevod.com',
+host:'https://www.olehdtv.com',
 'User-Agent':'MOBILE_UA',
 class_parse:'ul.top_nav&&li;a&&Text;a&&href;./(\\d+).html',
 cate_exclude:'午夜影院|VIP蓝光影院|电视直播',
