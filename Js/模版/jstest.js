@@ -2,7 +2,7 @@ var rule={
 title:'影视大全',
 host:'https://www.ysdq.me',
 url:'/vodshow/fyclass--time----fypage-.html',
-searchUrl:'/vodsearch/-------------.html?wd=**',
+searchUrl:'/vodsearch/**--/page/fypage.html',
    searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
