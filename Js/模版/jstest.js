@@ -10,7 +10,8 @@ headers:{//网站的请求头,完整支持所有的,常带ua和cookies
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-class_parse:'.navbar li;a&&Text;a&&href;/(\\d+).html',
+class_name:'电影&电视剧&综艺&动漫&短剧',
+class_url:'1&2&4&5&3',
 play_parse:true,
 lazy:'',
 limit:6,
