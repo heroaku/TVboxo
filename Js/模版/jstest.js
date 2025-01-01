@@ -1,18 +1,12 @@
-var rule={
-title:'影视大全',
-host:'https://www.ysdq.me',
-url:'/vodshow/fyclass--time----fypage-.html',
-searchUrl:'/vodsearch/**--/page/fypage.html',
-   searchable:2,//是否启用全局搜索,
-    quickSearch:0,//是否启用快速搜索,
-    filterable:0,//是否启用分类筛选,
-    //class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
-    //cate_exclude:'演员',
-    class_name:'电影&电视剧&综艺&动漫&短剧',
-    class_url:'1&2&4&5&3',  
-    推荐:'.module-poster-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-    一级:'.module-poster-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-    //二级:{"title":"h1&&Text;","img":".lazyload&&data-original","desc":";;.module-info-item:eq(4) p&&Text;.module-info-item:eq(3) div&&Text;.module-info-item:eq(1) a&&Text","content":".show-desc&&Text","tabs":'#y-playList&&span',"lists":".module-play-list:eq(#id) a"},     
-    二级:{"title":"h1&&Text;.module-info-tag-link:eq(2)&&Text","img":".lazyload&&data-original","desc":".module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(-2)&&Text;.module-info-content&&.module-info-item:eq(2)&&.module-info-item-content&&Text;.module-info-content&&.module-info-item:eq(1)&&.module-info-item-content&&Text","content":".module-info-introduction-content&&Text","tabs":".module-tab-items-box:eq(0)&&.module-tab-item","lists":".module-list:eq(#id)&&.module-play-list-content a"}, 
-    搜索:'.module-card-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href', 
-}
+var rule = Object.assign(muban.vfed,{
+title:'欧乐影院',
+host:'https://www.olehdtv.com',
+'User-Agent':'MOBILE_UA',
+class_parse:'ul.top_nav&&li;a&&Text;a&&href;./(\\d+).html',
+cate_exclude:'午夜影院|VIP蓝光影院|电视直播',
+推荐:'.cbox_list;ul&&li;a&&title;.lazyload&&data-original;.text_dy&&Text;a&&href',
+double:true, // 推荐内容是否双层定位
+一级:'.vodlist&&li;a&&title;.lazyload&&data-original;.text_dy&&Text;a&&href',
+二级:{"title":".hd_tit&&Text;.content_min&&ul&&li&&Text","img":".lazyload&&data-original","desc":";;;.content_min&&ul&&li:eq(2) a&&Text;.content_min&&ul&&li:eq(3) a&&Text","content":".context&&span&&Text","tabs":".play_source_tab&&.active","lists":".content_playlist:eq(#id) li"},
+搜索:'.vodlist&&li;*;*;*;*',
+});
