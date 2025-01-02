@@ -1,12 +1,18 @@
-var rule = Object.assign(muban.vfed,{
-title:'欧乐影院',
-host:'https://www.olehdtv.com',
-'User-Agent':'MOBILE_UA',
-class_parse:'ul.top_nav&&li;a&&Text;a&&href;./(\\d+).html',
-cate_exclude:'午夜影院|VIP蓝光影院|电视直播',
-推荐:'.cbox_list;ul&&li;a&&title;.lazyload&&data-original;.text_dy&&Text;a&&href',
+var rule={
+    title: '专享影视',
+    host: 'https://zxys.cc',
+    url: '/show/id/fyclass/page/fypage.html',
+    searchUrl: '/search/page/fypage/wd/**.html',
+    headers: {'User-Agent': 'UC_UA'},
+    searchable: 1, quickSearch: 0, filterable: 0, double: true, play_parse: true, limit: 6,
+    class_name: '电影&电视剧&动漫&短剧&综艺',
+    class_url: 'dianying&dianshi&dongman&duanju&zongyi',
+play_parse:true,
+lazy:'',
+limit:6,
+推荐:'.module;.module-main;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
 double:true, // 推荐内容是否双层定位
-一级:'.vodlist&&li;a&&title;.lazyload&&data-original;.text_dy&&Text;a&&href',
-二级:{"title":".hd_tit&&Text;.content_min&&ul&&li&&Text","img":".lazyload&&data-original","desc":";;;.content_min&&ul&&li:eq(2) a&&Text;.content_min&&ul&&li:eq(3) a&&Text","content":".context&&span&&Text","tabs":".play_source_tab&&.active","lists":".content_playlist:eq(#id) li"},
-搜索:'.vodlist&&li;*;*;*;*',
-});
+一级:'.module .module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":";;.module-info-main&&.module-info-item:eq(1)&&Text;.module-info-main&&.module-info-item:eq(2)&&Text","content":".show-desc&&Text","tabs":"#y-playList&&.tab-item","lists":".module-play-list-content:eq(#id) a"},
+搜索:'.module&&.module-main;.lazy&&alt;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+}
