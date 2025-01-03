@@ -2,8 +2,7 @@ var rule={
 title:'海兔影院',
 host:'https://www.haitu.xyz',
 url:'/vodshow/fyclass--------fypage---.html',
-searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
- //https://www.haitu.xyz/vodshow/fyclass--------fypage---.html       
+searchUrl:'/vodsearch/**----------fypage---.html',
 searchable:2,//是否启用全局搜索,
 quickSearch:0,//是否启用快速搜索,
 filterable:0,//是否启用分类筛选,
@@ -11,8 +10,8 @@ headers:{//网站的请求头,完整支持所有的,常带ua和cookies
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-class_name: '电影&电视剧&综艺&动漫&短剧&欧美剧&港台剧&日韩剧',
-class_url: '1&2&3&4&42&14&15&16',
+class_name: '电影&电视剧&综艺&动漫&短剧&国产剧&泰国剧&韩剧&日剧&欧美剧&海外剧',
+class_url: '1&2&3&4&42&25&14&16&23&24&13',
 play_parse:true,
 lazy:'',
 limit:6,
