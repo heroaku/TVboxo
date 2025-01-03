@@ -23,5 +23,7 @@
           {"name": "大卫", "url": "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/main/大卫.txt"},
           {"name": "小雅TV", "url": "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/main/小雅TV.txt"},
           {"name": "欧哥", "url": "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/main/欧哥.txt"},
+          {"name": "FM", "url": "https://github.com/shawn82/fm/raw/refs/heads/main/fm.json"},
+          //{"name": "FM18", "url": "https://github.com/shawn82/fm/raw/refs/heads/main/fm18.json"},
           {"name": "王小二", "url": "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/main/王小二.txt"},
           {"name": "运输车{跑马灯}", "url": "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/main/运输车{跑马灯}.txt"}]}
