@@ -1,8 +1,8 @@
 var rule = {
-    title:'泥视频',
+    title:'泥视频Ⅱ',
     host:'https://nivodi1.com',
     // homeUrl:'/',
-    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+    url:'/index.php/vod/show/by/time/id/fyclass/page/fypage.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
@@ -11,8 +11,8 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&欧美剧&韩剧&日剧&港剧&台剧&泰剧&海外剧',
-    class_url:'1&2&4&3&6&15&13&16&24&14&22&23&40',
+    class_name:'电影&电视剧&综艺&动漫&纪录片',
+    class_url:'1&2&3&48&21',
     //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
     play_parse:true,
     lazy:'',
