@@ -1,23 +1,25 @@
-var rule={
-title:'海兔影院',
-host:'https://www.haitu.xyz',
-url:'/vodshow/fyclass--------fypage---.html',
-searchUrl:'/vodsearch/**----------fypage---.html',
-searchable:2,//是否启用全局搜索,
-quickSearch:0,//是否启用快速搜索,
-filterable:0,//是否启用分类筛选,
-headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+var rule = {
+    title:'泥视频',
+    host:'https://nivodi1.com',
+    // homeUrl:'/',
+    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-class_name: '电影&电视剧&综艺&动漫&短剧&国产剧&泰国剧&韩剧&日剧&欧美剧&海外剧',
-class_url: '1&2&3&4&42&25&14&16&23&24&13',
-play_parse:true,
-lazy:'',
-limit:6,
-推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-double:true, // 推荐内容是否双层定位
-一级:'.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-二级:{"title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text","img":".module-item-pic&&img&&data-src","desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text","content":".video-info-content&&Text","tabs":".module-tab-item.tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
-搜索:'.module&&.module-main;.lazy&&alt;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+    class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&欧美剧&韩剧&日剧&港剧&台剧&泰剧&海外剧',
+    class_url:'1&2&4&3&6&15&13&16&24&14&22&23&40',
+    //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
+    play_parse:true,
+    lazy:'',
+    limit:6,
+    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    二级:{"title":".hl-item-thumb.hl-lazy&&title;.hl-full-box&&ul li:eq(6)&&Text","img":".hl-item-thumb.hl-lazy&&data-original","desc":".hl-full-box&&ul&&li:eq(-1)&&Text;.hl-full-box&&ul&&li:eq(-2)&&Text;.hl-full-box&&ul&&li:eq(-3)&&Text;.hl-full-box&&ul&&li:eq(2)&&Text;.hl-full-box&&ul&&li:eq(3)&&Text","content":".hl-col-xs-12.blurb&&Text","tabs":".hl-plays-from:eq(0) a","lists":".hl-plays-list:eq(#id) li"},
+    搜索:'ul.hl-one-list&&li;a&&title;.hl-item-thumb&&data-original;.hl-lc-1&&Text;a&&href;.text-muted:eq(-1)&&Text',
 }
