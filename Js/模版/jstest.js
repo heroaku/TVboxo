@@ -1,25 +1,26 @@
-
 var rule = {
-    title:'火车太堵',
-    host:'https://tdgo.shop',
-    // homeUrl:'/',
-    url:'/vodshow/fyclass--time------fypage---.html',
-    searchUrl:'/vodsearch/**----------fypage---.html',
-    searchable:2,//是否启用全局搜索,
-    quickSearch:0,//是否启用快速搜索,
-    filterable:0,//是否启用分类筛选,
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
-        'User-Agent':'MOBILE_UA',
-        // "Cookie": "searchneed=ok"
-    },
-    class_name:'电影&电视剧&综艺&动漫&短剧',
-    class_url:'20&21&23&22&24',
-    play_parse:true,
-    lazy:'',
-    limit:6,
-推荐:'.module;.module-main;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-double:true, // 推荐内容是否双层定位
-一级:'.module .module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-src","desc":";;.module-info-main&&.module-info-item:eq(1)&&Text;.module-info-main&&.module-info-item:eq(2)&&Text","content":".show-desc&&Text","tabs":"#y-playList&&.tab-item","lists":".module-play-list-content:eq(#id) a"},
-搜索:'.module&&.module-main;.lazy&&alt;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+  title: 'KimiVod',
+  host: 'https://kimivod.com/vod/show/id/2/page/2.html',
+  url: '/vod/show/id/fyclass/page/fypage.html',
+  searchUrl: '/vodsearch.html?wd=**',
+  searchable: 2,quickSearch: 0,filterable: 0,
+  headers: {'User-Agent': 'MOBILE_UA'},
+class_name: '电影&剧集&综艺&动漫&短剧&国产剧&韩剧&美剧&日剧&台剧&港剧&海外剧&纪录片&泰剧&战争片&动画电影&悬疑片&奇幻片&爱情片&恐怖片&剧情片&动作片&科幻片&喜剧片&国产动漫&日本动漫&韩国动漫&欧美动漫&港台动漫&台港综艺&欧美综艺&韩日综艺&国产综艺',
+class_url: '2&1&4&3&39&6&7&8&9&10&11&12&26&32&22&23&24&25&21&20&13&14&15&16&28&27&29&30&31&36&33&34&38',
+  play_parse: true,limit: 6,double: true,
+  lazy: `js:
+  let html=request(input);
+  input=html.match(/vid\s*=\s*["'](.*?)["']/)[1];
+  `,
+  推荐: '*',
+  一级: '.grid .s6.m3;a&&title;img&&data-src;.white-text.small-text&&Text;a&&href',
+  二级: {
+    title: 'h1&&Text',
+    img: 'img&&data-src',
+    desc: '.grid&&.error-text&&Text;.grid&&nav&&a:ep(2)&&Text;.grid&&nav&&a:ep(1)&&Text;.grid&&p:ep(1)&&Text;.grid&&p:ep(0)&&Text',
+    content: '.right-align&&Text',
+    tabs: '.tabs span',
+    lists: '.playno:eq(#id) a'
+  },
+  搜索: '*',
 }
