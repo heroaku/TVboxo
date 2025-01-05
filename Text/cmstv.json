@@ -34,3 +34,212 @@
         { "name": "火狐|点播", "type": 1, "api": "https://hhzyapi.com/api.php/provide/vod/" },
         { "name": "新浪|点播", "type": 1, "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod/" }
 ]
+
+
+//
+{
+  "privateKey": "404",
+  "tvSources": [
+    {
+      "name": "源1 [IPV6]",
+      "m3uUrl": "http://iptv.mac-cms.com/iptv_m3u/iptv/ipv6.m3u",
+      "block": false
+    },
+    {
+      "name": "源2 [IPV4]",
+      "m3uUrl": "http://iptv.mac-cms.com/iptv_m3u/iptv/ipv4.m3u",
+      "block": false
+    },
+    {
+      "name": "源3 [IPV]",
+      "m3uUrl": "http://192.168.2.102:35455/tv.m3u",
+      "block": false
+    },
+    {
+      "name": "广播电台",
+      "m3uUrl": "http://iptv.mac-cms.com/iptv_m3u/iptv/radio.m3u",
+      "block": false
+    }
+  ],
+  "sources": [
+    {
+      "name": "7Na7",
+      "url": "https://vod.7na7.com/kapi.php/provide/vod/",
+      "desc": "资源较全"
+    },
+    {
+      "name": "暴风资源",
+      "url": "https://bfzyapi.com/api.php/provide/vod/",
+      "playerName": {
+        "bfzym3u8": "暴风"
+      },
+      "blockTypeIds": [29, 73],
+      "blockTypeName": [
+        "理论片",
+        "福利"
+      ],
+      "blockAdsRule": [],
+      "desc": "资源较全"
+    },
+    {
+      "name": "量子资源",
+      "url": "https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8/",
+      "playerName": {
+        "lzm3u8": "量子"
+      },
+      "blockTypeIds": [34, 41, 42, 43, 44],
+      "blockTypeName": [
+        "伦理片",
+        "演员",
+        "新闻资讯",
+        "电影资讯",
+        "娱乐新闻"
+      ],
+      "blockAdsRule": [],
+      "desc": "资源较全,但接口较慢"
+    },
+    {
+      "name": "非凡资源",
+      "url": "http://api.ffzyapi.com/api.php/provide/vod/from/ffm3u8/",
+      "playerName": {
+        "ffm3u8": "非凡"
+      },
+      "blockTypeIds": [34],
+      "blockTypeName": [
+        "伦理片"
+      ],
+      "blockAdsRule": [
+        "#EXT-X-DISCONTINUITY[\\r\\n]+(?:#EXTINF:\\d+\\.\\d{6},[\\r\\n]+.*?[\\r\\n]+){4,5}#EXT-X-DISCONTINUITY"
+      ],
+      "desc": ""
+    },
+    {
+      "name": "华为吧",
+      "url": "https://cjhwba.com/api.php/provide/vod/",
+      "playerName": {
+        "hw8": "华为吧"
+      },
+      "blockTypeIds": [58],
+      "blockTypeName": [
+        "伦理片"
+      ],
+      "blockAdsRule": [],
+      "desc": ""
+    },
+    {
+      "name": "黑木耳资源",
+      "url": "https://json02.heimuer.xyz/api.php/provide/vod/",
+      "playerName": {
+        "heimuer": "黑木耳"
+      },
+      "blockTypeIds": [],
+      "blockTypeName": [
+        "伦理片"
+      ],
+      "blockAdsRule": [
+        "#EXT-X-DISCONTINUITY\\n#EXTINF:\\d+\\.\\d+,\\n.*?\\n#EXT-X-DISCONTINUITY"
+      ],
+      "desc": ""
+    },
+    {
+      "name": "Ikun资源",
+      "url": "https://ikunzyapi.com/api.php/provide/vod/",
+      "playerName": {
+        "ikm3u8": "Ikun"
+      },
+      "blockTypeIds": [5, 56],
+      "blockTypeName": [
+        "伦理片",
+        "里番动漫"
+      ],
+      "blockAdsRule": [
+        "#EXT-X-DISCONTINUITY[\\r\\n]+#EXT-X-KEY:METHOD=NONE[\\r\\n]+(?:#EXTINF:\\d+\\.\\d+,[\\r\\n]+.*?[\\r\\n]+){1,9}#EXT-X-DISCONTINUITY"
+      ],
+      "desc": ""
+    },
+    {
+      "name": "快车资源",
+      "url": "https://caiji.kczyapi.com/api.php/provide/vod/from/kcm3u8/",
+      "blockAdsRule": [],
+      "blockTypeName": [
+        "伦理",
+        "港台三级",
+        "韩国伦理",
+        "韩国伦理",
+        "两性课堂",
+        "写真热舞"
+      ],
+      "typeConfig": {
+        "电影": [
+          "动作片",
+          "喜剧片",
+          "爱情片",
+          "科幻片",
+          "恐怖片",
+          "剧情片",
+          "纪录片",
+          "战争片",
+          "动画片",
+          "邵氏电影",
+          "4K电影"
+        ],
+        "电视剧": [
+          "国产剧",
+          "欧美剧",
+          "韩剧",
+          "日剧",
+          "港剧",
+          "台剧",
+          "泰剧",
+          "海外剧"
+        ],
+        "综艺": [
+          "演唱会",
+          "大陆综艺",
+          "日韩综艺",
+          "港台综艺",
+          "欧美综艺"
+        ],
+        "动漫": [
+          "国产动漫",
+          "日韩动漫",
+          "欧美动漫",
+          "港台动漫",
+          "海外动漫"
+        ],
+        "爽文短剧": [
+          "有声动漫",
+          "女频恋爱",
+          "反转爽剧",
+          "古装仙侠",
+          "年代穿越",
+          "脑洞悬疑",
+          "现代都市"
+        ],
+        "伦理": [
+          "韩国伦理",
+          "港台三级",
+          "西方伦理",
+          "日本伦理",
+          "两性课堂",
+          "写真热舞"
+        ],
+        "体育赛事": [
+          "篮球",
+          "足球"
+        ]
+      },
+      "desc": "资源全,广告多"
+    },
+    {
+      "name": "旺旺短剧",
+      "url": "http://api.wwzy.tv/api.php/provide/vod/",
+      "playerName": {
+        "wwm3u8": "旺旺"
+      },
+      "blockTypeIds": [],
+      "blockAdsRule": [],
+      "desc": "短剧资源"
+    }
+  ]
+}
