@@ -13,7 +13,7 @@ var rule = {
      },
      class_name:'电影&剧集&动漫&综艺',
      class_url:'1&2&4&3',
-    detailUrl:'/vodplay-fyid.html',
+    //detailUrl:'/vodplay-fyid.html',
      play_parse: true,
 
 
@@ -21,14 +21,16 @@ var rule = {
      推荐: '*',
      double: true, // 推荐内容是否双层定位
      一级: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
-         二级:{
-		"title":".slide-info-title&&Text;.slide-info:eq(3)--strong&&Text",
-		"img":".detail-pic&&data-original",
-		"desc":".fraction&&Text;.slide-info-remarks:eq(1)&&Text;.slide-info-remarks:eq(2)&&Text;.slide-info:eq(2)--strong&&Text;.slide-info:eq(1)--strong&&Text",
-		"content":"#height_limit&&Text",
-		"tabs":".anthology.wow.fadeInUp.animated&&.swiper-wrapper&&a",
-		"tab_text":".swiper-slide&&Text",
-		"lists":".anthology-list-box:eq(#id)&&.anthology-list-play&&li"
-	},
+  二级: {
+    title: 'h3&&Text;.hl-ma0&&Text',
+    img: '.mask-1&&data-src',
+    desc: '.detail-info .slide-info:eq(1)--strong&&Text;.deployment.none.cor5&&span&&Text;.deployment.none.cor5&&span:eq(2)&&Text;.detail-info .slide-info:eq(3)--strong&&Text;.detail-info .slide-info:eq(2)--strong&&Text',
+    content: '#height_limit&&Text',
+    tabs: '.anthology-tab a',
+    lists: '.anthology-list-play:eq(#id)&&li',
+    tab_text: 'body&&Text',
+    list_text: 'body&&Text',
+    list_url: 'a&&href',
+  },
      搜索: '.public-list-box;.thumb-txt&&Text;.public-list-exp&&img&&data-src;.public-list-prb&&Text;a&&href',
     }
