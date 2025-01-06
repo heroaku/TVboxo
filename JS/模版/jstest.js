@@ -13,31 +13,18 @@ var rule = {
      },
      class_name:'电影&剧集&动漫&综艺',
      class_url:'1&2&4&3',
-     play_parse: true,
-     tab_exclude:'网盘|云盘|SN|FX|LZ',
-     lazy:`js:
-        var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
-        var url = html.url;
-        var from = html.from;
-        var MacPlayerConfig={};
-        if (/.m3u8|.mp4/.test(url)) {
-            input = url
-        } else {
-        eval(fetch(HOST + "/static/js/playerconfig.js").replace('var Mac','Mac'));
-        var list = MacPlayerConfig.player_list[from].parse;
-            input={
-                jx:0,
-                url:list+url,
-                parse:1,
-                header: JSON.stringify({
-                    'referer': HOST
-                })
-            }
-        }
-     `,
-     limit: 6,
-     推荐: '*',
-     double: true, // 推荐内容是否双层定位
-     一级: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
-     搜索: '.public-list-box;.thumb-txt&&Text;.public-list-exp&&img&&data-src;.public-list-prb&&Text;a&&href',
-    }
+    detailUrl:'/vodplay-fyid.html',
+    推荐:'.list-vod.flex .public-list-box;a&&title;.lazy&&data-original;.public-list-prb&&Text;a&&href',
+    一级:'',
+    一级:'js:let body=input.split("#")[1];let t=Math.round(new Date/1e3).toString();let key=md5("DS"+t+"DCC147D11943AF75");let url=input.split("#")[0];body=body+"&time="+t+"&key="+key;print(body);fetch_params.body=body;let html=post(url,fetch_params);let data=JSON.parse(html);VODS=data.list;',
+    二级:{
+		"title":".slide-info-title&&Text;.slide-info:eq(3)--strong&&Text",
+		"img":".detail-pic&&data-original",
+		"desc":".fraction&&Text;.slide-info-remarks:eq(1)&&Text;.slide-info-remarks:eq(2)&&Text;.slide-info:eq(2)--strong&&Text;.slide-info:eq(1)--strong&&Text",
+		"content":"#height_limit&&Text",
+		"tabs":".anthology.wow.fadeInUp.animated&&.swiper-wrapper&&a",
+		"tab_text":".swiper-slide&&Text",
+		"lists":".anthology-list-box:eq(#id)&&.anthology-list-play&&li"
+	},
+    搜索:'json:list;name;pic;;id',
+}
