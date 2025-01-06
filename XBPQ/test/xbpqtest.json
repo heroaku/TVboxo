@@ -53,7 +53,7 @@
 //分类{cateId}，地区{area}，排序{by}，剧情{class}，语言{lang}，页面{catePg}，年份{year}
 //https://cnys.tv/vodshow-1/area/{area}/class/{class}/lang/{lang}/page/{catePg}/year/{year}.html
             //https://cnys.tv/vodshow-2-area-大陆-by-hits-class-国产-lang-国语-page-2-year-2024.html
-    "分类url":"https://cnys.tv/vodshow-1/area/{area}/class/{class}/lang/{lang}/page/{catePg}/year/{year}.html;ak",
+    "分类url":"https://cnys.tv/vodshow-1/area/{area}/class/{class}/lang/{lang}/page/{catePg}/year/{year}.html",
     "分类":"电视剧$2#电影$1#综艺$3#动漫$4#短剧$97#",
     
     "筛选":{
