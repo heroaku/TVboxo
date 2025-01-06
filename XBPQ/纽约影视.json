@@ -1,0 +1,14 @@
+{
+                "主页url": "https://www.nycvod.com/",
+                "数组": "public-list-div public-list-bj\"&&</div>",
+                "图片": "data-src=\"&&\"",
+                "标题": "title=\"&&\"",
+                "副标题": "public-prt hide cr4\">&&</span>",
+                "链接": "href=\"&&\"",
+                "简介": "class=\"text cor3\"&&</div>",
+                "播放数组": "anthology-list-play size\"&&</ul>",
+                "线路数组": "anthology-tab nav-swiper b-b br\">&&</div>",
+                "线路标题": ">&nbsp;&&<span",
+                "分类url": "https://www.nycvod.com/vodshow/{cateId}-{area}--{class}-{lang}-{letter}---{catePg}---{year}.html",
+                "分类": "电影$1#电视剧$2#综艺$3#动漫$4#竞技体育$5#短剧$50#纪录片$29#伦理片$8"
+}

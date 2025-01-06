@@ -1,0 +1,13 @@
+{
+                "主页url": "https://euvod.tv/",
+                "数组": "\"module-item-pic\"&&\"module-item\"",
+                "图片": "data-src=\"&&\"",
+                "标题": "alt=\"&&\"",
+                "副标题": "class=\"module-item-text\">&&</div>",
+                "链接": "href=\"&&\"",
+  		          "线路数组": "<div class=\"module-tab-item&&</div>",
+	            	"线路标题": "<span>&&</small>[替换:</span><small>>> -更新至]",
+                "简介": "module-item-style video-text\"&&</div>",
+                "分类url": "https://euvod.tv/vodshow/{cateId}--{by}-{class}-{lang}-{letter}---{catePg}---{year}.html",
+                "分类": "电影$1#电视剧$2#动漫$3#综艺$4#短剧$38"
+}
