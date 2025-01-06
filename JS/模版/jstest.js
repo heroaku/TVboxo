@@ -23,7 +23,7 @@ var rule = {
      一级: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
   二级: {
     title: 'h3&&Text;.hl-ma0&&Text',
-    img: '.mask-1&&data-src',
+    img: '.mask-0&&src',
     desc: '.detail-info .slide-info:eq(1)--strong&&Text;.deployment.none.cor5&&span&&Text;.deployment.none.cor5&&span:eq(2)&&Text;.detail-info .slide-info:eq(3)--strong&&Text;.detail-info .slide-info:eq(2)--strong&&Text',
     content: '#height_limit&&Text',
     tabs: '.anthology-tab a',
