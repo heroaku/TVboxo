@@ -13,7 +13,7 @@ var rule = {
      },
      class_name:'电影&剧集&动漫&综艺',
      class_url:'1&2&4&3',
-    //detailUrl:'/vodplay-fyid.html',
+    detailUrl:'/vodplay-fyid.html',
      play_parse: true,
 
 
