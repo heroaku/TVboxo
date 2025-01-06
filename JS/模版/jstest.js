@@ -3,7 +3,7 @@ var rule = {
      title: 'LIBHD',
      host: 'https://cnys.tv',
      模板:'短视2',
-     searchUrl: '/vodsearch/**-------------.html',
+     searchUrl: 'vodsearch/page/fypage/wd/**.html',
      url: '/vodshow-fyclass/page/fypage.html',
      searchable: 2,//是否启用全局搜索,
      quickSearch: 1,//是否启用快速搜索,
