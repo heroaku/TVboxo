@@ -1,5 +1,5 @@
 var rule={
-    title:'宅腐影视',
+    title:'小宝影院',
     host:'https://www.xiaobaotv.com',
     url:'/vod/show/by/time/id/fyclass/page/fypage.html',
     searchUrl:'/search/**----------fypage---.html',
