@@ -1,36 +1,26 @@
-
-var rule = {
-     title: 'LIBHD',
-     host: 'https://cnys.tv',
-     模板:'短视2',
-     searchUrl: 'vodsearch/page/fypage/wd/**.html',
-     url: '/vodshow-fyclass/page/fypage.html',
-     searchable: 2,//是否启用全局搜索,
-     quickSearch: 1,//是否启用快速搜索,
-     filterable: 0,//是否启用分类筛选,
-     headers: {
-       'User-Agent': 'MOBILE_UA',
-     },
-     class_name:'电影&剧集&动漫&综艺',
-     class_url:'1&2&4&3',
-    //detailUrl:'/vodplay-fyid.html',
-     play_parse: true,
-
-
-     limit: 6,
-     推荐: '*',
-     double: true, // 推荐内容是否双层定位
-     一级: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
-  二级: {
-    title: 'h3&&Text;.hl-ma0&&Text',
-    img: '.mask-0&&data-src',
-    desc: '.detail-info .slide-info:eq(1)--strong&&Text;.deployment.none.cor5&&span&&Text;.deployment.none.cor5&&span:eq(2)&&Text;.detail-info .slide-info:eq(3)--strong&&Text;.detail-info .slide-info:eq(2)--strong&&Text',
-    content: '#height_limit&&Text',
-    tabs: '.anthology-tab a',
-    lists: '.anthology-list-play:eq(#id)&&li',
-    tab_text: 'body&&Text',
-    list_text: 'body&&Text',
-    list_url: 'a&&href',
-  },
-     搜索: '.public-list-box;.thumb-txt&&Text;.public-list-exp&&img&&data-src;.public-list-prb&&Text;a&&href',
-    }
+var rule={
+    title:'宅腐影视',
+    host:'https://www.xiaobaotv.com',
+    url:'/vod/show/by/time/id/fyclass/page/fypage.html',
+    searchUrl:'/vodsearch**/page/fypage.html',
+     //https://www.xiaobaotv.com/vod/show/by/time/id/fyclass/page/fypage.html
+    class_name:'电影&电视剧&综艺&动漫&短剧',
+    class_url:'1&2&3&4&27',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{
+        'User-Agent':'UC_UA',
+    },
+    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
+    //class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
+    //cate_exclude: '专题',
+    play_parse:true,
+    lazy:'',
+    limit:6,
+    推荐:'ul.myui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.myui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+    二级:{"title":".myui-content__detail .title&&Text;.t-muted:eq(-1)&&Text","img":".myui-content__thumb&&.lazyload&&data-original","desc":";;.myui-content__detail p:eq(2)&&Text;.myui-content__detail p:eq(3)&&Text;.myui-content__detail p:eq(4)&&Text","content":".content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
+    搜索:'.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text',
+}
