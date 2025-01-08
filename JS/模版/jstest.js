@@ -2,8 +2,7 @@ var rule={
     title:'宅腐影视',
     host:'https://www.xiaobaotv.com',
     url:'/vod/show/by/time/id/fyclass/page/fypage.html',
-    searchUrl:'/vodsearch**/page/fypage.html',
-     //https://www.xiaobaotv.com/vod/show/by/time/id/fyclass/page/fypage.html
+    searchUrl:'/search/**----------fypage---.html',
     class_name:'电影&电视剧&综艺&动漫&短剧',
     class_url:'1&2&3&4&27',
     searchable:2,//是否启用全局搜索,
