@@ -115,6 +115,17 @@
             "filterable": 1
         },
 //添加开始
+  {
+      "key": "lf_js_search",
+      "name": "搜索|lf_search",
+      "type": 3,
+      "searchable": 0,
+      "changeable": 1,
+      "quickSearch": 0,
+      "filterable": 0,
+      "api": "./JS/lf_search3_min.js",
+      "ext": "18+"
+    },
 	{"key":"机器人2","name":"机器┃影视","type":3,"api":"csp_Ikanbot","searchable":1,"quickSearch":1,"changeable":1,"ext":"https://v.aikanbot.com","jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 	{"key":"腐剧视频","name":"腐剧┃影视","type":3,"api":"csp_WexFujutv","searchable":1,"changeable":1,"jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 	{
