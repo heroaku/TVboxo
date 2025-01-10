@@ -1,6 +1,7 @@
 {"urls": [{"name": "APIG", "url": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/apig.json"},
           {"name": "宝盒G", "url": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/bhg.json"},
           {"name": "DTES", "url": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/Text/dtes.json"},
+           {"name": "MAOYS", "url": "https://github.com/maoystv/6/raw/refs/heads/main/002.json"},
           {"name": "MY俊俊", "url": "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/main/MY俊俊.txt"},
           {"name": "MY巧巧", "url": "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/main/MY巧巧.txt"},
           {"name": "MY探探", "url": "https://ghp.ci/https://raw.githubusercontent.com/vbskycn/tvbox/main/MY探探.txt"},
