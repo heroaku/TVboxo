@@ -235,6 +235,22 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/荐片影视.js"
         },
+			 {
+      "key": "xpyg",
+      "name": "新片预告",
+      "type": 3,
+      "api": "csp_XBPQ",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": "./XBPQ/预告新片.json"
+    },
+        {
+      "key": "十六万MV听歌📣",
+      "name": "MV曲库",
+      "type": 3,
+      "api": "http://zb.hys.cool/app/lib/16万hys.js",
+      "ext": "http://zb.hys.cool/app/lib/16万mv.js"
+    },
 //添加结束
 	{
             "key": "酷影视",
