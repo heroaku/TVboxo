@@ -1,7 +1,7 @@
 {"首页":"正在热映",
                  "图片代理":"",
                  "分类url":"https://movie.douban.com/{cateId}/;;aRC",
-                 "分类":"预告片：💕一个分享者💕$cinema/later#正在热映$cinema/nowplaying",
+                 "分类":"预告片：豆瓣$cinema/later#正在热映$cinema/nowplaying",
                  "数组":"class=\"item mod &&</ul>||正在热映--class=\"list-item&&</ul>",
                  "图片":"src=\"&&\"","标题":"\"intro\">&&</a>",
                  "链接":"href=\"&&\"",
