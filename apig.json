@@ -228,6 +228,13 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/网飞猫.js"
         },
+	{
+            "key": "荐片影视",
+            "name": "荐片影视",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/荐片影视.js"
+        },
 //添加结束
 	{
             "key": "酷影视",
