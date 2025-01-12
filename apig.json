@@ -242,7 +242,9 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/荐片影视.js"
         },
-			 {
+	{ "key": "金牌影视", "name": "金牌 | 影视", "type": 3, "api": "./JS/drpy2.min.js", "ext": "./JS/金牌影视.js" }, 
+	{ "key": "dr_低端", "name": "低端 | 影视", "type": 3, "api": "./JS/drpy2.min.js", "searchable": 1, "playerType": 2, "quickSearch": 1, "filterable": 1, "ext": "./JS/ddys.js" }, 
+  {
       "key": "xpyg",
       "name": "新片预告",
       "type": 3,
@@ -292,8 +294,11 @@
 	{ "key": "小宝影院", "name": "小宝 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/小宝影院.json" },
 	{ "key": "网飞啦", "name": "网飞啦 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/网飞啦.json" }, { "key": "wvod", "name": "蛙 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/蛙影视.json" },     
 	{ "key": "Kimivod", "name": "Kimi | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/Kimivod.json" },
-	{ "key": "金牌影视", "name": "金牌 | 影视", "type": 3, "api": "./JS/drpy2.min.js", "ext": "./JS/金牌影视.js" }, 
-	{ "key": "dr_低端", "name": "低端 | 影视", "type": 3, "api": "./JS/drpy2.min.js", "searchable": 1, "playerType": 2, "quickSearch": 1, "filterable": 1, "ext": "./JS/ddys.js" }, 
+	{ "key": "huaweiba", "name": "华为吧 | 采集", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/华为吧资源.json" },
+  	{ "key": "wujinzy", "name": "无尽 | 采集", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/无尽资源.json" }, 
+  	{ "key": "zuidazy", "name": "最大 | 采集", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/最大资源.json" },  
+  	{ "key": "360zy", "name": "360 | 采集", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/360资源.json" }, 
+ 	{ "key": "okzy", "name": "OK | 采集", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/ok资源.json" },
 	{"key":"木耳","name":"黑木耳┃秒播","type":1,"api":"https://json.heimuer.xyz/api.php/provide/vod","searchable":1,"filterable":1,"changeable":1,"timeout":10,"categories":["剧情片","动作片","冒险片","同性片","喜剧片","奇幻片","恐怖片","悬疑片","惊悚片","灾难片","爱情片","犯罪片","科幻片","歌舞片","战争片","经典片","动画电影","网络电影","其他片","国产剧","港剧","韩剧","日剧","泰剧","台剧","欧美剧","新马剧","其他剧","国产综艺","港台综艺","韩国综艺","日本综艺","欧美综艺","新马泰综艺","其他综艺","古装短剧","虐恋短剧","逆袭短剧","神豪短剧","重生短剧","复仇短剧","穿越短剧","甜宠短剧","强者短剧","欧美动漫","日本动漫","韩国动漫","国产动漫","港台动漫"],"header":{"user-agent":"Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/125.0.0.0Safari/537.36"}},	
 	{
             "key": "南瓜影视",
