@@ -5,7 +5,8 @@
   
   "分类": "全部&电影&电视剧&综艺&动漫&短剧&纪录片",
   "分类值": "1&20&60&82&80&120&86",
-  "分类url": "https://cjhwba.com/index.php/ajax/data?mid=1&tid={cateId}&page={catePg}&limit=20",
+  //"分类url": "https://cjhwba.com/index.php/ajax/data?mid=1&tid={cateId}&page={catePg}&limit=20",
+  "分类url": "https://cjhwba.com/index.php/vod/type/id/{cateId}/page/{catePg}.html",
   
   "数组二次截取": "list\":[&&]",
   "数组": "{&&}",
