@@ -1,7 +1,8 @@
 var rule = {
     title:'爱看机器人3',
-    host:'https://www.aikanbot.com',
+    host:'https://v.aikanbot.com',
     url:'/hot/index-fyclass-fyfilter-p-fypage.html[/hot/index-fyclass-fyfilter.html]',
+	//https://v.aikanbot.com/hot/index-tv-%E5%9B%BD%E4%BA%A7%E5%89%A7-p-2.html
     searchUrl:'/search?q=**&p=fypage[/search?q=**]',
     searchable:2,
     quickSearch:0,
