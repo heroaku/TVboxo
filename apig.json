@@ -158,6 +158,13 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/酷亚影视.js"
         },
+	{
+            "key": "唐人街影院",
+            "name": "唐人街影院",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/唐人街影院.js"
+        },
         {
             "key": "影视大全",
             "name": "影视大全",
