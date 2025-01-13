@@ -2,10 +2,10 @@ muban.短视2.二级.img = '.detail-pic&&.lazy&&data-src';
 var rule = {
     title: '统一影视',
     模板:'短视2',
-    host: 'https://www.tyys2.com',
+    host: 'https://www.gyf.lol',
    // homeUrl:'/map.html',
-    // url: '/index.php/api/vod#type=fyclass&page=fypage', https://www.tyys2.com/index.php/vod/search/page/2/wd/ai.html
-    url: '/index.php/vod/type/id/fyclass/page/fypage.html',
+    // url: 'https://www.gyf.lol/index.php/vod/show/id/2/page/2.html', https://www.gyf.lol/index.php/vod/search/page/2/wd/ai.html
+    url: '/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
     filterable:1,//是否启用分类筛选,
     filter_url:'{{fl.cateId}}',
@@ -21,8 +21,8 @@ var rule = {
         43:{cateId:'43'}
     },
     //class_parse:'.swiper-wrapper&&li;a&&Text;a&&href;.*/(\\d+).html',
-    class_name:'电影&电视剧&综艺&动漫&短剧&体育',
-    class_url:'2&1&4&3&41&5',
+    class_name:'电影&电视剧&综艺&动漫&短剧&少儿',
+    class_url:'1&2&3&4&21&22',
     detailUrl:'/index.php/vod/detail/id/fyid.html',
     推荐:'.border-box .public-list-box;.time-title&&Text;.lazy&&data-src;.public-list-prb&&Text;a&&href',
     double: false, // 推荐内容是否双层定位
