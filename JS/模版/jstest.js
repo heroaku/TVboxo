@@ -1,6 +1,6 @@
 muban.短视2.二级.img = '.detail-pic&&.lazy&&data-src';
 var rule = {
-    title: '统一影视',
+    title: '流光影视',
     模板:'短视2',
     host: 'https://www.gyf.lol',
    // homeUrl:'/map.html',
