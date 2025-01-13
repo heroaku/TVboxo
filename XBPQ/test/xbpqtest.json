@@ -50,9 +50,9 @@
   //"播放数组": "scroll-content\">&&</div>",
   //"播放标题": "<span>&&</span>",
   //"播放列表": "<a&&</a>",
-  
-  "分类url": "https://www.trjvod.com/index.php/vod/show/id/{cateId}/area/{area}/by/{by}/class/{class}/page/{catePg}/lang/{lang}/year/{year}.html",
-           //https://www.trjvod.com/index.php/vod/show/id/201.html
+  "分类url": "https://www.trjvod.com/index.php/vod/show/area/{area}/id/{cateId}/lang/{lang}/page/{catePg}/year/{year}.html",
+  //"分类url": "https://www.trjvod.com/index.php/vod/show/id/{cateId}/area/{area}/by/{by}/class/{class}/page/{catePg}/lang/{lang}/year/{year}.html",
+           //https://www.trjvod.com/index.php/vod/show/area/{area}/id/{cateId}/lang/{lang}/page/{catePg}/year/{year}.html
   "分类": "国产剧$13#日韩剧$15#国产动漫$24#电视剧$2#动漫$4#电影$1#综艺$3#短剧$53#纪录片$20#",
 
   
