@@ -1,6 +1,6 @@
 muban.短视2.二级.img = '.detail-pic&&.lazy&&data-src';
 var rule = {
-    title: 'moflix',
+    title: '统一影视',
     模板:'短视2',
     host: 'https://www.tyys2.com',
    // homeUrl:'/map.html',
