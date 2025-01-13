@@ -23,8 +23,8 @@ var rule = {
     class_name:'电影&电视剧&综艺&动漫',
     class_url:'1&2&3&4',
     detailUrl:'/index.php/vod/detail/id/fyid.html',
-    推荐:'.border-box .public-list-box;a&&title;.lazy&&data-original;.public-list-prb&&Text;a&&href',
+    推荐:'.border-box .public-list-box;a&&title;.lazy&&src;.public-list-prb&&Text;a&&href',
     double: false, // 推荐内容是否双层定位
-    一级:'.border-box .public-list-box;a&&title;.lazy&&data-original;.public-list-prb&&Text;a&&href',
+    一级:'.border-box .public-list-box;a&&title;.lazy&&src;.public-list-prb&&Text;a&&href',
 }
 
