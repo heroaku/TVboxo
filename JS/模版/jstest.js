@@ -1,8 +1,8 @@
 var rule = {
     title:'喵喵',
-    host:'https://www.2345ka.com',
-    // homeUrl:'/',
-    url:'/t/fyclass/fyfilter/fypage.html',
+    host:'https://www.a6club.com',
+    // https://www.a6club.com/index.php/vod/show/id/fyclass/page/fypage.html
+    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl:'/s/**/fypage.html',
     searchable:2,
     quickSearch:0,
