@@ -2,8 +2,8 @@ var rule = {
     title: 'brovod',
     host: 'https://www.pipiys1.com',
     url: '/vodshow/fyclass--------fypage---.html',
-    //https://www.pipiys1.com/vodshow/fyclass--------fypage---.html
-    searchUrl: '/ss/**----------fypage---/',
+    //https://www.pipiys1.com/vodshow/fyclass--------fypage---.html https://www.pipiys1.com/vodsearch/ai----------3---.html
+    searchUrl: '/vodsearch/**----------fypage---.html',
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
