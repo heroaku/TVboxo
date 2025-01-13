@@ -1,5 +1,5 @@
 var rule = {
-    title:'喵喵',
+    title:'西瓜在线',
     host:'https://www.a6club.com',
     // https://www.a6club.com/index.php/vod/show/id/fyclass/page/fypage.html
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
@@ -20,8 +20,8 @@ var rule = {
 	
 	
 filter_url:'{{fl.by}}',
-class_name:'電影&電視劇&綜藝&動漫&音樂&    ',
-class_url:'20&37&3&4&6&5',
+class_name:'电影&电视剧&综艺&动漫&B站&体育',
+class_url:'20&37&45&43&47&52',
     timeout:5000,
     class_parse:'.bm-item-list a:gt(0):lt(7);a&&Text;a&&href;/(\\d+).html',
     play_parse:true,
