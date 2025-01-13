@@ -20,8 +20,8 @@ var rule = {
         43:{cateId:'43'}
     },
     //class_parse:'.swiper-wrapper&&li;a&&Text;a&&href;.*/(\\d+).html',
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'1&2&3&4',
+    class_name:'电影&电视剧&综艺&动漫&短剧&体育',
+    class_url:'2&1&4&3&41&5',
     detailUrl:'/index.php/vod/detail/id/fyid.html',
     推荐:'.border-box .public-list-box;a&&title;.lazy&&src;.public-list-prb&&Text;a&&href',
     double: false, // 推荐内容是否双层定位
