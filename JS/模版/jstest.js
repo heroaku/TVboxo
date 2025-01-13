@@ -1,8 +1,8 @@
 var rule = {
-    title: '皮皮影视',
-    host: 'https://www.pipiys1.com',
+    title: 'YGG影视',
+    host: 'https://ygg01.com',
     url: '/vodshow/fyclass--------fypage---.html',
-    //https://www.pipiys1.com/vodshow/fyclass--------fypage---.html https://www.pipiys1.com/vodsearch/ai----------3---.html
+    //https://ygg01.com/vodshow/2--------2---.html https://ygg01.com/vodsearch/ai----------2---.html
     searchUrl: '/vodsearch/**----------fypage---.html',
     searchable: 2,
     quickSearch: 0,
