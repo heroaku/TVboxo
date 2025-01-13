@@ -266,6 +266,13 @@
             "ext": "./JS/统一影视.js"
         },
 	{
+            "key": "流光影视",
+            "name": "流光影视",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/流光影视.js"
+        },
+	{
       "key": "xpyg",
       "name": "新片预告",
       "type": 3,
