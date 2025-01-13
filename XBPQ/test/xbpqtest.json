@@ -20,5 +20,6 @@
         "搜索url": "https://www.gs4x7nq4.com/vod/search/{wd}",
         "搜索副标题": "class=\"boottom\"*<div>&&</div",
         "分类": "电影$1#电视剧$2#综艺$3#动漫$4",
+        //https://www.gs4x7nq4.com/vod/show/id/2/page/2
         "分类url": "https://www.gs4x7nq4.com/vod/show/id/{cateId}/class/{class}/year/{year}/area/{area}/page/{catePg}"
       }
