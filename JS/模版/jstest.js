@@ -1,5 +1,5 @@
 var rule = {
-    title: 'brovod',
+    title: '皮皮影视',
     host: 'https://www.pipiys1.com',
     url: '/vodshow/fyclass--------fypage---.html',
     //https://www.pipiys1.com/vodshow/fyclass--------fypage---.html https://www.pipiys1.com/vodsearch/ai----------3---.html
