@@ -273,6 +273,13 @@
             "ext": "./JS/皮皮影视.js"
         },
 	{
+            "key": "YGG影视",
+            "name": "YGG影视",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/YGG影视.js"
+        },
+	{
             "key": "流光影视",
             "name": "流光影视",
             "type": 3,
