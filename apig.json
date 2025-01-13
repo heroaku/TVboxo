@@ -222,6 +222,13 @@
             "ext": "./JS/CN影视.js"
         },
 	{
+            "key": "西瓜在线",
+            "name": "西瓜在线",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/西瓜在线.js"
+        },
+	{
             "key": "小宝影院",
             "name": "小宝影院",
             "type": 3,
