@@ -4,6 +4,8 @@ var rule = {
     host: 'https://ibaopian.pro',
     searchUrl: '/vod/search/page/fypage/wd/**.html',
     url: '/vod/show/id/fyclass/page/fypage.html',
+    class_name:'电视剧&电影&动漫&综艺&纪录片&短剧',
+    class_url:'2&1&4&3&5&8',
     二级: {
         title: '.hl-dc-title&&Text;.hl-dc-content&&li:eq(6)&&Text',
         img: '.hl-lazy&&data-original',
