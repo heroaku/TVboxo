@@ -1,4 +1,4 @@
-muban.短视2.二级.img = '.detail-pic&&img&&data-scr';
+muban.短视2.二级.img = '.detail-pic&&.lazy&&data-src';
 var rule = {
     title: 'moflix',
     模板:'短视2',
