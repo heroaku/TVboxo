@@ -1,31 +1,48 @@
-muban.短视2.二级.img = '.detail-pic&&.lazy&&data-src';
 var rule = {
-    title: '流光影视',
-    模板:'短视2',
-    host: 'https://www.gyf.lol',
-   // homeUrl:'/map.html',
-    // url: 'https://www.gyf.lol/index.php/vod/show/id/2/page/2.html', https://www.gyf.lol/index.php/vod/search/page/2/wd/ai.html
-    url: '/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
-    filterable:1,//是否启用分类筛选,
-    filter_url:'{{fl.cateId}}',
-    filter: {
-        "20":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"20"},{"n":"动作片","v":"21"},{"n":"喜剧片","v":"22"},{"n":"爱情片","v":"23"},{"n":"科幻片","v":"24"},{"n":"恐怖片","v":"25"},{"n":"剧情片","v":"26"},{"n":"战争片","v":"27"},{"n":"惊悚片","v":"28"},{"n":"犯罪片","v":"29"},{"n":"冒险篇","v":"30"},{"n":"动画片","v":"31"},{"n":"悬疑片","v":"32"},{"n":"武侠片","v":"33"},{"n":"奇幻片","v":"34"},{"n":"纪录片","v":"35"},{"n":"其他片","v":"36"}]}],
-        "37":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"37"},{"n":"国产剧","v":"38"},{"n":"港台剧","v":"39"},{"n":"欧美剧","v":"40"},{"n":"日韩剧","v":"41"},{"n":"其他剧","v":"42"}]}],
-        "43":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"43"},{"n":"国产动漫","v":"52"},{"n":"日本动漫","v":"53"},{"n":"欧美动漫","v":"54"}]}]
+    title: 'brovod',
+    host: 'https://www.pipiys1.com',
+    url: '/vodshow/fyclass--------fypage---.html',
+    //https://www.pipiys1.com/vodshow/fyclass--------fypage---.html
+    searchUrl: '/ss/**----------fypage---/',
+    searchable: 2,
+    quickSearch: 0,
+    filterable: 0,
+    headers: {
+        'User-Agent': 'MOBILE_UA',
     },
-    filter_def:{
-        20:{cateId:'20'},
-        37:{cateId:'37'},
-        45:{cateId:'45'},
-        43:{cateId:'43'}
+    class_name: '电影&电视剧&综艺&动漫&短剧',
+    class_url: '1&2&3&4&5',
+    tab_order:['自建','PC蓝光','蓝光1线'],
+    //tab_remove:['急速1线','急速2线','急速3线','急速4线'],
+    play_parse: true,
+    lazy: `js:
+    var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+    log(html)
+    var url = html.url;
+    if (html.from == 'bilibili' || html.from== 'lzm3u8' || html.from== 'ffm3u8'|| html.from== 'bfzym3u8' || html.from== 'leshi'|| html.from== 'qiyi'|| html.from== 'xdzj'|| html.from== 'qq'|| html.from== 'youku'|| html.from== 'NBY') {
+    let jxhtml = post('https://api.xdys.vip/lx/post.php', {
+        body:url
+        });
+    let jxurl =JSON.parse(jxhtml)
+    input=jxurl.url || input
+    }
+    if (html.from == 'mytv') {
+    let jxinput = 'https://pl.qcheng.cc/?url='+url
+    let jxhtml=JSON.parse(request(jxinput))
+    input=jxhtml.url || input
+    }
+  `,
+    limit: 6,
+    推荐: '.tab-list.active;a.module-poster-item.module-item;.module-poster-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+    double: true,
+    一级: 'body a.module-poster-item.module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+    二级: {
+        title: 'h1&&Text;.module-info-tag-link:eq(2)&&Text',
+        img: '.lazyload&&data-original',
+        desc: '.module-info-item:eq(3)&&Text;.module-info-tag-link:eq(0)&&Text;.module-info-tag-link:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(1)&&Text',
+        content: '.module-info-introduction&&Text',
+        tabs: '.module-tab-items-box.hisSwiper span',
+        lists: '.module-play-list:eq(#id) a',
     },
-    //class_parse:'.swiper-wrapper&&li;a&&Text;a&&href;.*/(\\d+).html',
-    class_name:'电影&电视剧&综艺&动漫&短剧&少儿',
-    class_url:'1&2&3&4&21&22',
-    detailUrl:'/index.php/vod/detail/id/fyid.html',
-    推荐:'.border-box .public-list-box;.time-title&&Text;.lazy&&data-src;.public-list-prb&&Text;a&&href',
-    double: false, // 推荐内容是否双层定位
-    一级:'.border-box .public-list-box;.time-title&&Text;.lazy&&data-src;.public-list-prb&&Text;a&&href',
+    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',
 }
-
