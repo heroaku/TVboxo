@@ -1,5 +1,5 @@
 //唐人街影院  wwx.tangrenjie.one wwx.trjvod.com
-//https://www.trjvod.com/index.php/vod/show/id/201.html
+//https://www.trjvod.com/index.php/vod/show/id/2/page/2.html
 //https://www.trjvod.com/index.php/vod/detail/id/56422.html
 //https://www.trjvod.com/index.php/vod/search.html?wd=庆余年&submit=
 //海外蓝光>>海外看#蓝光2>>快看#线路蓝光1>>乐视#蓝光1>>暴风#蓝光3>>索尼#
@@ -50,7 +50,7 @@
   //"播放数组": "scroll-content\">&&</div>",
   //"播放标题": "<span>&&</span>",
   //"播放列表": "<a&&</a>",
-  "分类url": "https://www.trjvod.com/index.php/vod/show/area/{area}/id/{cateId}/lang/{lang}/page/{catePg}/year/{year}.html",
+  "分类url": "https://www.trjvod.com/index.php/vod/show/id/{cateId}/page/{catePg}.html",
   //"分类url": "https://www.trjvod.com/index.php/vod/show/id/{cateId}/area/{area}/by/{by}/class/{class}/page/{catePg}/lang/{lang}/year/{year}.html",
            //https://www.trjvod.com/index.php/vod/show/area/{area}/id/{cateId}/lang/{lang}/page/{catePg}/year/{year}.html
   "分类": "国产剧$13#日韩剧$15#国产动漫$24#电视剧$2#动漫$4#电影$1#综艺$3#短剧$53#纪录片$20#",
