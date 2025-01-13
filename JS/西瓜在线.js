@@ -2,8 +2,9 @@ var rule = {
     title:'西瓜在线',
     host:'https://www.a6club.com',
     // https://www.a6club.com/index.php/vod/show/id/fyclass/page/fypage.html
+    //https://www.a6club.com/index.php/vod/search/page/fypage/wd/**.html
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl:'/s/**/fypage.html',
+    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,
     quickSearch:0,
     headers:{
