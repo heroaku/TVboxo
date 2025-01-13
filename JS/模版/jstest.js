@@ -4,8 +4,9 @@ var rule = {
     模板:'短视2',
     host: 'https://www.tyys2.com',
    // homeUrl:'/map.html',
-    // url: '/index.php/api/vod#type=fyclass&page=fypage',
+    // url: '/index.php/api/vod#type=fyclass&page=fypage', https://www.tyys2.com/index.php/vod/search/page/2/wd/ai.html
     url: '/index.php/vod/type/id/fyclass/page/fypage.html',
+    searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
     filterable:1,//是否启用分类筛选,
     filter_url:'{{fl.cateId}}',
     filter: {
