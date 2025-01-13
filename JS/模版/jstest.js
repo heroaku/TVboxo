@@ -2,7 +2,8 @@ var rule={
     title: '宝片视频',
     host: 'https://ibaopian.pro',
     searchUrl: '/vod/search/page/fypage/wd/**.html',
-    url: '/vod/show/id/fyclass/page/fypage.html',
+    url: '/vod/type/id/fyclass/page/fypage.html',
+    //https://ibaopian.pro/vod/type/id/2/page/3.html
     class_name:'电视剧&电影&动漫&综艺&纪录片&短剧',
     class_url:'2&1&4&3&5&8',
     searchable:2,//是否启用全局搜索,
