@@ -9,7 +9,7 @@ var rule = {
     headers:{
         'User-Agent':'UC_UA'
     },
-    cate_exclude:'电影|电视剧|综艺|动漫|音乐|福利',
+    //cate_exclude:'电影|电视剧|综艺|动漫|音乐|福利',
     filter:{
 	1: [{'key': 'by', 'name': '排序', 'value': [{'n': '时间', 'v': ''}, {'n': '人气', 'v': 'hits'}, {'n': '评分', 'v': 'score'} ]}], 
 	2: [{'key': 'by', 'name': '排序', 'value': [{'n': '时间', 'v': ''}, {'n': '人气', 'v': 'hits'}, {'n': '评分', 'v': 'score'} ]}], 
