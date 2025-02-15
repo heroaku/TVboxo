@@ -1,6 +1,6 @@
 
 var rule = {
-    title:'火车太赌',
+    title:'火车太堵',
     host:'https://www.tdgo.shop',
     // https://www.tdgo.shop/vodshow/21--------4---.html  https://www.tdgo.shop/vodsearch/ai----------2---.html,
     url:'/vodshow/fyclass--------fypage---.html',
