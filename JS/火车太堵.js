@@ -16,9 +16,14 @@ var rule = {
     play_parse:true,
     lazy:'',
     limit:6,
-推荐:'.module;.module-main;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-double:true, // 推荐内容是否双层定位
-一级:'.module .module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-original","desc":";;.module-info-main&&.module-info-item:eq(1)&&Text;.module-info-main&&.module-info-item:eq(2)&&Text","content":".show-desc&&Text","tabs":"#y-playList&&.tab-item","lists":".module-play-list-content:eq(#id) a"},
-搜索:'.module&&.module-main;.lazy&&alt;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-}
+    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    double: true,
+    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    二级: {
+    "title": "h1&&Text;.module-info-tag&&Text",
+    "img": ".lazyload&&data-original",
+    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
+    "content": ".module-info-introduction&&Text",
+    "tabs": ".hisSwiper&&span",
+    "lists": ".his-tab-list:eq(#id) a"},
+    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
