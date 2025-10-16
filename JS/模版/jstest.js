@@ -1,7 +1,7 @@
 var rule={
     title:'多瑙影视',
     host:'https://www.duonaovod.com',
-    // homeUrl:'/',
+    // https://www.duonaovod.com/index.php/vod/show/id/2/page/2.html
     url:'/index.php/vod/show/fyfilter.html',
     searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
 	filterable:1,//是否启用分类筛选,
@@ -23,9 +23,9 @@ filter: {
     headers:{'User-Agent':'MOBILE_UA', },
     class_name:'电影&电视剧&综艺&动漫',
     class_url:'1&2&3&4',
-    推荐:'ul.vodlist.vodlist_wi;li;a&&title;a&&data-original;.pic_text.text_right&&Text;a&&href',
+    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
-    一级:'li.vodlist_item;a&&title;a&&data-original;.pic_text.text_right&&Text;a&&href',
+    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
        二级: {
     "title": ".hl-dc-title&&Text;span.hl-text-conch&&Text",
     "img": ".hl-lazy&&data-original",
