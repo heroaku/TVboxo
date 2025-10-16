@@ -1,35 +1,24 @@
-var rule = {
-    title:'唐人街影院',
-    host:' https://www.chinatownfilm.com',
-    // https://www.chinatownfilm.com/vodsearch/**----------fypage---.html
-    //https://www.chinatownfilm.com/vodshow/fyclass--------fypage---.html
-    url:'/vodshow/fyclass--------fypage---.html',
-    searchUrl:'/vodsearch/**----------fypage---.html',
-    searchable:2,//是否启用全局搜索,
-    quickSearch:0,//是否启用快速搜索,
-    filterable:0,//是否启用分类筛选,
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+var rule={
+title:'春华影院',
+host:'https://ylsp.tv',
+url:'index.php/vod/show/by/time/id/fyclass/page/fypage.html',
+//https://ylsp.tv/vodshow/fyclass--------fypage---/
+searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
+searchable:2,//是否启用全局搜索,
+quickSearch:0,//是否启用快速搜索,
+filterable:0,//是否启用分类筛选,
+headers:{//网站的请求头,完整支持所有的,常带ua和cookies
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电视剧&电影&综艺&动漫&大陆剧&欧美剧&港台剧&日韩剧&海外剧&记录片',
-    class_url:'2&1&3&4&13&27&42&43&28&24',
-    //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
-    play_parse:true,
-    lazy:'',
-    limit:6,
-    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    double:true, // 推荐内容是否双层定位
-    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    // 一级: 'body&&.hl-list-item;a&&title;a&&data-original;.hl-lc-1 remarks&&Text;a&&href',
-    二级: {
-    "title": ".hl-dc-title&&Text;span.hl-text-conch&&Text",
-    "img": ".hl-lazy&&data-original",
-    "desc": ".hl-col-xs-12:eq(5)&&Text;.hl-col-xs-12:eq(6)&&Text;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text",
-    "content": "li.hl-col-xs-12:eq(11)&&Text",
-    "tabs": ".hl-tabs-btn",
-    "lists": ".hl-plays-list:eq(#id) li"
-          },
-    //二级:{"title":".hl-item-thumb.hl-lazy&&title;.hl-full-box&&ul li:eq(6)&&Text","img":".hl-item-thumb.hl-lazy&&data-original","desc":".hl-full-box&&ul&&li:eq(-1)&&Text;.hl-full-box&&ul&&li:eq(-2)&&Text;.hl-full-box&&ul&&li:eq(-3)&&Text;.hl-full-box&&ul&&li:eq(2)&&Text;.hl-full-box&&ul&&li:eq(3)&&Text","content":".hl-col-xs-12.blurb&&Text","tabs":".hl-tabs-btn:eq(#id) a","lists":".hl-plays-list:eq(#id) li"},
-    搜索:'ul.hl-one-list&&li;a&&title;.hl-item-thumb&&data-original;.hl-lc-1&&Text;a&&href;.text-muted:eq(-1)&&Text',
+class_name: '电影&电视剧&综艺&动漫&国产剧&欧美剧&港台剧&日韩剧',
+class_url: '1&2&3&4&13&14&15&16',
+play_parse:true,
+lazy:'',
+limit:6,
+推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+double:true, // 推荐内容是否双层定位
+一级:'.module-items .module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+二级:{"title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text","img":".module-item-pic&&img&&data-src","desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text","content":".video-info-content&&Text","tabs":".module-tab-item.tab-item","lists":".module-player-list:eq(#id)&&.scroll-content&&a"},
+搜索:'.module&&.module-main;.lazy&&alt;.lazyload&&data-original;.module-item-note&&Text;a&&href',
 }
