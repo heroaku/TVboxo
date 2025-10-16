@@ -23,7 +23,7 @@ var rule = {
     author: '小可乐/2409/第二版',
     title: '可可影视',
     类型: '影视',
-    host: 'https://www.kkys02.com',
+    host: 'https://www.kkys03.com',
     // host: 'https://dl.keke12.com:51111',
     // hostJs: 'HOST = pdfh(request(HOST), ".section-row-subtitle:eq(0)&&Text")',
     headers: {
