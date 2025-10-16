@@ -1,9 +1,10 @@
 var rule = {
-    title:'火车太堵',
-    host:'https://tdgo.shop',
-    // homeUrl:'/',
-    url:'/vodshow/fyclass--time------fypage---.html',
-    searchUrl:'/vodsearch/**----------fypage---.html',
+    title:'看腐剧',
+    host:' https://www.chinatownfilm.com',
+    // https://www.chinatownfilm.com/vodshow/fyclass-----------.html
+    //https://www.chinatownfilm.com/vodshow/fyclass--------fypage---.html
+    url:'/vodshow/fyclass--------fypage---.html',
+    searchUrl:'/vodsearch.html?wd=**&submit=',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -11,14 +12,15 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电影&电视剧&综艺&动漫&短剧',
-    class_url:'20&21&23&22&24',
+    class_name:'电视剧&电影&综艺&动漫',
+    class_url:'2&1&3&4',
+    //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
     play_parse:true,
     lazy:'',
     limit:6,
-推荐:'.module;.module-main;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-double:true, // 推荐内容是否双层定位
-一级:'.module .module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-二级:{"title":"h1&&Text;.tag-link&&Text","img":".module-item-pic&&img&&data-original","desc":";;.module-info-main&&.module-info-item:eq(1)&&Text;.module-info-main&&.module-info-item:eq(2)&&Text","content":".show-desc&&Text","tabs":"#y-playList&&.tab-item","lists":".module-play-list-content:eq(#id) a"},
-搜索:'.module&&.module-main;.lazy&&alt;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    二级:{"title":".hl-item-thumb.hl-lazy&&title;.hl-full-box&&ul li:eq(6)&&Text","img":".hl-item-thumb.hl-lazy&&data-original","desc":".hl-full-box&&ul&&li:eq(-1)&&Text;.hl-full-box&&ul&&li:eq(-2)&&Text;.hl-full-box&&ul&&li:eq(-3)&&Text;.hl-full-box&&ul&&li:eq(2)&&Text;.hl-full-box&&ul&&li:eq(3)&&Text","content":".hl-col-xs-12.blurb&&Text","tabs":".hl-plays-from:eq(0) a","lists":".hl-plays-list:eq(#id) li"},
+    搜索:'ul.hl-one-list&&li;a&&title;.hl-item-thumb&&data-original;.hl-lc-1&&Text;a&&href;.text-muted:eq(-1)&&Text',
 }
