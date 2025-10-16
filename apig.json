@@ -131,6 +131,13 @@
 	{"key":"机器人2","name":"机器┃影视","type":3,"api":"csp_Ikanbot","searchable":1,"quickSearch":1,"changeable":1,"ext":"https://v.aikanbot.com","jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 	{"key":"腐剧视频","name":"腐剧┃影视","type":3,"api":"csp_WexFujutv","searchable":1,"changeable":1,"jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 		{
+            "key": "多瑙影视",
+            "name": "多瑙影视",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/多瑙影视.js"
+        },	
+		{
             "key": "永乐视频",
             "name": "永乐视频",
             "type": 3,
