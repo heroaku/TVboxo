@@ -131,6 +131,13 @@
 	{"key":"机器人2","name":"机器┃影视","type":3,"api":"csp_Ikanbot","searchable":1,"quickSearch":1,"changeable":1,"ext":"https://v.aikanbot.com","jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 	{"key":"腐剧视频","name":"腐剧┃影视","type":3,"api":"csp_WexFujutv","searchable":1,"changeable":1,"jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 		{
+            "key": "永乐视频",
+            "name": "永乐视频",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/永乐视频.js"
+        },
+		{
             "key": "唐人街影院CF",
             "name": "唐人街影院CF",
             "type": 3,
