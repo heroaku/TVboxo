@@ -1,8 +1,8 @@
 var rule = {
     title:'火车太堵',
     host:'https://tdgo.shop',
-    // homeUrl:'/',
-    url:'/vodshow/fyclass--time------fypage---.html',
+    // https://www.tdgo.shop/vodshow/fyclass--------fypage---.html
+    url:'/vodshow/fyclass--------fypage---.html',
     searchUrl:'/vodsearch/**----------fypage---.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
