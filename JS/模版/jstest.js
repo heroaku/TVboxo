@@ -1,5 +1,5 @@
 var rule={
-title:'春华影院',
+title:'永乐视频',
 host:'https://ylsp.tv',
 url:'/vodshow/fyclass--------fypage---',
 //https://ylsp.tv/vodshow/fyclass--------fypage---/
