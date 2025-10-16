@@ -145,6 +145,17 @@
             "ext": "./JS/努努影视.js"
         },
 		{
+	  "key": " fxzds ",
+	  "name": "袋鼠影视",
+	  "type": 3,
+	  "api": "csp_XBPQ",
+	  "searchable": 1,
+	  "quickSearch": 1,
+	  "filterable": 1,
+	"jar":"./Jar/XBPQ.jar",
+	  "ext": "./XBPQ/袋鼠影视.json"
+	},
+		{
             "key": "腐剧TV",
             "name": "腐剧TV",
             "type": 3,
