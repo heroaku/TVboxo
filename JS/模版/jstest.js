@@ -1,5 +1,5 @@
 var rule = {
-    title:'看腐剧',
+    title:'唐人街影院',
     host:' https://www.chinatownfilm.com',
     // https://www.chinatownfilm.com/vodsearch/**----------fypage---.html
     //https://www.chinatownfilm.com/vodshow/fyclass--------fypage---.html
@@ -12,8 +12,8 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    class_name:'电视剧&电影&综艺&动漫',
-    class_url:'2&1&3&4',
+    class_name:'电视剧&电影&综艺&动漫&大陆剧&欧美剧&港台剧&日韩剧&海外剧&记录片',
+    class_url:'2&1&3&4&13&27&42&43&28&24',
     //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
     play_parse:true,
     lazy:'',
