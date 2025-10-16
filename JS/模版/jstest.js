@@ -1,6 +1,6 @@
 var rule = {
     title:'火车太堵',
-    host:'https://tdgo.shop',
+    host:'https://www.tdgo.shop',
     // https://www.tdgo.shop/vodshow/fyclass--------fypage---.html
     url:'/vodshow/fyclass--------fypage---.html',
     searchUrl:'/vodsearch/**----------fypage---.html',
