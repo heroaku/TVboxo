@@ -12,8 +12,8 @@ headers:{//网站的请求头,完整支持所有的,常带ua和cookies
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-class_name: '电影&电视剧&综艺&动漫&国产剧&欧美剧&港台剧&日韩剧',
-class_url: '1&2&3&4&13&14&15&16',
+class_name: '电影&电视剧&综艺&动漫&国产剧&港台剧&日剧&欧美剧&韩剧&泰剧&新马剧&其他剧&纪录片',
+class_url: '1&2&3&4&13&14&15&16&33&34&35&25&21',
 play_parse:true,
 lazy:'',
 limit:6,
