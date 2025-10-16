@@ -1,7 +1,7 @@
 var rule={
 title:'春华影院',
 host:'https://ylsp.tv',
-url:'index.php/vod/show/by/time/id/fyclass/page/fypage.html',
+url:'/vodshow/fyclass--------fypage---',
 //https://ylsp.tv/vodshow/fyclass--------fypage---/
 searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
 searchable:2,//是否启用全局搜索,
