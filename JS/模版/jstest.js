@@ -3,7 +3,8 @@ title:'春华影院',
 host:'https://ylsp.tv',
 url:'/vodshow/fyclass--------fypage---',
 //https://ylsp.tv/vodshow/fyclass--------fypage---/
-searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
+//https://ylsp.tv/vodsearch/**----------fypage---/
+searchUrl:'/vodsearch/**----------fypage---/',
 searchable:2,//是否启用全局搜索,
 quickSearch:0,//是否启用快速搜索,
 filterable:0,//是否启用分类筛选,
