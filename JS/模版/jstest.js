@@ -1,10 +1,11 @@
 
 var rule = {
-     title: 'CN影视',
+     title: '华人直播',
      host: 'https://huaren.live',
      模板:'短视2',
      searchUrl: 'vodsearch/page/fypage/wd/**.html',
-  //https://huaren.live/vodshow/fyclass/by/time/page/fypage.html
+     //https://huaren.live/vodshow/fyclass/by/time/page/fypage.html
+     //https://huaren.live/vodsearch/page/2/wd/ai.html
      url: '/vodshow/fyclass/by/time/page/fypage.html',
      searchable: 2,//是否启用全局搜索,
      quickSearch: 1,//是否启用快速搜索,
