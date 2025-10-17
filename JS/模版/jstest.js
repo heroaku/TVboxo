@@ -14,7 +14,7 @@ var rule = {
     alias: '电影猎手',
     desc: 'mxpro模板纯js写法',
     // host: 'https://tdgo.shop',
-    host: 'https://tdwin.wiki',
+    host: 'https://tdgo.shop',
     url: '/vodshow/fyclass--------fypage---.html',
     searchUrl: '/vodsearch/**----------fypage---.html',
     headers: {
