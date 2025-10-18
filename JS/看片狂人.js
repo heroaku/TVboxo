@@ -2,7 +2,7 @@ var rule = {
     title:'看片狂人',
     //host:'https://www.kpkuang.de',
     host:'https://www.kpkuang.org',    
-    // homeUrl:'/',
+    // https://www.kpkuang.fun/
     url:'/vodshow/fyclass--------fypage-----.html',
     searchUrl:'/vodsearch/**----------fypage---.html',
     searchable:2,//是否启用全局搜索,
