@@ -1,5 +1,5 @@
 var rule = {
-    title: '短剧网 | 星星',
+    title: 'EU影视',
     host: 'https://euvod.tv',
      //https://euvod.tv/vodshow/fyclass--time------fypage---.html
     //https://euvod.tv/vodshow/fyclass--------fypage---.html
