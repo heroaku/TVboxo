@@ -21,13 +21,13 @@ var rule = {
      limit: 6,
      推荐: '*',
      double: true, // 推荐内容是否双层定位
-     一级: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
+     一级: '.public-list-box;.time-title&&Text;img&&data-src;.ft2&&Text;a&&href',
   二级: {
     title: 'h3&&Text;.hl-ma0&&Text',
     img: '.mask-0&&data-src',
     desc: '.detail-info .slide-info:eq(1)--strong&&Text;.deployment.none.cor5&&span&&Text;.deployment.none.cor5&&span:eq(2)&&Text;.detail-info .slide-info:eq(3)--strong&&Text;.detail-info .slide-info:eq(2)--strong&&Text',
     content: '#height_limit&&Text',
-    tabs: '.anthology-tab a',
+    tabs: '.swiper-slide a',
     lists: '.anthology-list-play:eq(#id)&&li',
     tab_text: 'body&&Text',
     list_text: 'body&&Text',
