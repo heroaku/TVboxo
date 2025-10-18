@@ -1,4 +1,4 @@
-  },var rule = {
+  var rule = {
      title: '狗番',
      host: 'http://www.jumomo.fun',
       //http://www.jumomo.fun/vodshow/2--------2---.html
