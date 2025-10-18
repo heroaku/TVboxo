@@ -1,8 +1,8 @@
 var rule = {
     title: '短剧网 | 星星',
     host: 'https://euvod.tv',
-     //https://euvod.tv/vodshow/fyclass--------fypage---.html
-    url: '/vodshow/fyclass--------fypage---.html',
+     //https://euvod.tv/vodshow/fyclass--time------fypage---.html
+    url: '/vodshow/fyclass--time------fypage---.html',
     searchUrl: '/vodshow/fyclass--------fypage---.html',
     headers: {
         'User-Agent': 'MOBILE_UA'
