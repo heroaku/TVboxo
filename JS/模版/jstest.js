@@ -1,10 +1,11 @@
 
 var rule = {
-     title: 'CN影视',
+     title: '统一影视',
      host: 'https://ty1010.com',
     //https://ty1010.com/index.php/vod/type/id/fyclass/page/fypage.html
+     //https://ty1010.com/index.php/vod/search/page/2/wd/ai.html
      模板:'短视2',
-     searchUrl: 'vodsearch/page/fypage/wd/**.html',
+     searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
      url: '/index.php/vod/type/id/fyclass/page/fypage.html',
      searchable: 2,//是否启用全局搜索,
      quickSearch: 1,//是否启用快速搜索,
