@@ -16,7 +16,7 @@ var rule={
     limit: 6,
     推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
     double: true,
-    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    一级: '.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
     二级: {
     "title": "h1&&Text;.module-info-tag&&Text",
     "img": ".lazyload&&data-original",
