@@ -27,7 +27,7 @@ var rule = {
     img: '.mask-0&&data-src',
     desc: '.detail-info .slide-info:eq(1)--strong&&Text;.deployment.none.cor5&&span&&Text;.deployment.none.cor5&&span:eq(2)&&Text;.detail-info .slide-info:eq(3)--strong&&Text;.detail-info .slide-info:eq(2)--strong&&Text',
     content: '#height_limit&&Text',
-    tabs: '.swiper-slide a',
+    tabs: '.anthology-tab&&.swiper-slide a',
     lists: '.anthology-list-play:eq(#id)&&li',
     tab_text: 'body&&Text',
     list_text: 'body&&Text',
