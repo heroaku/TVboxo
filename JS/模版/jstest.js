@@ -1,5 +1,5 @@
 var rule = {
-    title: '短剧网 | 星星',
+    title: 'SQZ影视',
     host: 'https://www.shenqizhe.com',
     //https://www.shenqizhe.com/vodshow/fyclass--------fypage---.html
     url: '/vodshow/fyclass--------fypage---.html',
