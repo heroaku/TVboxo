@@ -23,6 +23,6 @@ double: true, // 推荐内容是否双层定位
     "desc": ".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text",
     "content": "Text",
     "tabs": ".module-tab-item",
-    "lists": ".module-blocklist:eq(#id)&&.scroll-content&&a"
+    "lists": ".module-list:eq(#id)&&.scroll-content&&a"
 }, 搜索: '.module-items&&.module-search-item;a&&title;img&&data-src;.video-info&&a&&Text;a&&href',
 }
