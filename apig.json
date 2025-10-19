@@ -158,6 +158,13 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/唐人街影院CF.js"
         },
+			{
+            "key": "老网影视",
+            "name": "老网影视",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/老网影视.js"
+        },	
 		{
             "key": "努努影视",
             "name": "努努影视",
