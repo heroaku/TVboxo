@@ -1,5 +1,5 @@
 var rule = {
-    title: '短剧网 | 星星',
+    title: '老网影视',
     host: 'https://www.laowang.co',
      //https://www.laowang.co/vs/fyclass--------fypage---.html
     url: '/vs/fyclass--------fypage---.html',
