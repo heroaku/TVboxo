@@ -1,9 +1,9 @@
 var rule={
-    title: '映像星球',
-    host: 'https://yxxq1.cc',
-    url: '/top/fyclass--------fypage---.html',
+    title: '大米星球',
+    host: 'https://www.dmyy1.com',
+    url: '/vodshow/fyclass--------fypage---.html',
     searchUrl: '/search/**----------fypage---.html',
-  //https://yxxq1.cc/top/2--------2---.html
+  //https://www.dmyy1.com/vodshow/21--------2---.html
     //https://yxxq1.cc/search/**----------fypage---.html
     searchable: 2,
     quickSearch: 0,
