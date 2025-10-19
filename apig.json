@@ -179,6 +179,13 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/映像星球.js"
         },	
+			{
+            "key": "大米星球DM",
+            "name": "大米星球DM",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/大米星球DM.js"
+        },	
 		{
 	  "key": " fxzds ",
 	  "name": "袋鼠影视",
