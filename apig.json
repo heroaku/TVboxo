@@ -173,6 +173,13 @@
             "ext": "./JS/看片狂人.js"
         },	
 		{
+            "key": "映像星球",
+            "name": "映像星球",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/映像星球.js"
+        },	
+		{
 	  "key": " fxzds ",
 	  "name": "袋鼠影视",
 	  "type": 3,
