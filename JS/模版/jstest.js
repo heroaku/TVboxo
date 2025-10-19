@@ -1,28 +1,28 @@
-var rule={
-    title: '大米星球',
-    host: 'https://www.dmyy1.com',
+var rule = {
+    title: '短剧网 | 星星',
+    host: 'https://www.shenqizhe.com',
+    //https://www.shenqizhe.com/vodshow/fyclass--------fypage---.html
     url: '/vodshow/fyclass--------fypage---.html',
-    searchUrl: '/search/**----------fypage---.html',
-  //https://www.dmyy1.com/vodshow/21--------2---.html
-    //https://yxxq1.cc/search/**----------fypage---.html
-    searchable: 2,
-    quickSearch: 0,
-    filterable: 0,
+    searchUrl: '/vodsearch/**----------fypage---.html',
     headers: {
-    'User-Agent': 'MOBILE_UA',
+        'User-Agent': 'MOBILE_UA'
     },
-    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
-    play_parse: false,
-    lazy: '',
-    limit: 6,
-    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    double: true,
-    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    二级: {
-    "title": "h1&&Text;.module-info-tag&&Text",
-    "img": ".lazyload&&data-original",
-    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
-    "content": ".module-info-introduction&&Text",
-    "tabs": ".hisSwiper&&span",
-    "lists": ".his-tab-list:eq(#id) a"},
-    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
+    searchable: 2, //是否启用全局搜索,
+    quickSearch: 0, //是否启用快速搜索,
+    filterable: 0, //是否启用分类筛选,
+class_parse: '.nav&&ul&&li;a&&Text;a&&href;.*/(.*?).html',
+play_parse: true,
+lazy: '',
+limit: 6, 
+推荐: '.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+double: true, // 推荐内容是否双层定位
+一级: '.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href', 
+二级: {
+    "title": "h1&&Text;.video-info-item:eq(1)&&Text",
+    "img": ".module-item-pic&&img&&data-src",
+    "desc": ".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text",
+    "content": "Text",
+    "tabs": ".module-tab-content",
+    "lists": ".module-blocklist:eq(#id)&&.sort-item&&a"
+}, 搜索: '.module-items&&.module-search-item;a&&title;img&&data-src;.video-info&&a&&Text;a&&href',
+}
