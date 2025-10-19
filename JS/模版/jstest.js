@@ -1,9 +1,11 @@
 var rule = {
-     title: 'CN影视',
+     title: '海兔影视',
      host: 'https://www.haituu.tv',
+     //https://www.haitu.xyz
      模板:'短视2',
     //https://www.haituu.tv/index.php/vod/show/id/fyclass/page/fypage.html
-     searchUrl: 'vodsearch/page/fypage/wd/**.html',
+     //https://www.haituu.tv/index.php/vod/search/page/2/wd/ai.html
+     searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
      url: '/index.php/vod/show/id/fyclass/page/fypage.html',
      searchable: 2,//是否启用全局搜索,
      quickSearch: 1,//是否启用快速搜索,
@@ -11,8 +13,8 @@ var rule = {
      headers: {
        'User-Agent': 'MOBILE_UA',
      },
-     class_name:'电影&剧集&动漫&综艺',
-     class_url:'1&2&4&3',
+     class_name: '电影&电视剧&综艺&动漫&短剧&国产剧&泰国剧&日韩剧&港台剧&欧美剧&海外剧',
+     class_url: '1&2&3&4&23&13&38&15&14&16&37',
     //detailUrl:'/vodplay-fyid.html',
      play_parse: true,
 
