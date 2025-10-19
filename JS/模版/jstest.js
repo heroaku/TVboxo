@@ -1,9 +1,10 @@
 var rule={
-    title: '耐看',
+    title: '映像星球',
     host: 'https://yxxq1.cc',
     url: '/top/fyclass--------fypage---.html',
-    searchUrl: '/nk/-------------.html?wd=**',
+    searchUrl: '/search/**----------fypage---.html',
   //https://yxxq1.cc/top/2--------2---.html
+    //https://yxxq1.cc/search/**----------fypage---.html
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
