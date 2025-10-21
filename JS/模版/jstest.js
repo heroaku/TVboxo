@@ -2,7 +2,7 @@ var rule={
     title: '耐看',
     host: 'https://www.ffys.fun',
     //https://www.ffys.fun/vodshow/id/fyclass/page/fypage.html
-    url: '/id/fyclass/page/fypage.html',
+    url: '/vodshow/id/fyclass/page/fypage.html',
     searchUrl: '/nk/-------------.html?wd=**',
     searchable: 2,
     quickSearch: 0,
