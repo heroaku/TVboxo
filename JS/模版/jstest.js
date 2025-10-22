@@ -1,9 +1,11 @@
 var rule={
-    title: '耐看',
+    title: '金牌影院',
     host: 'https://huadian2.com',
+    //网址发布 https://jp246.com/
     //https://huadian2.com/show/2-----------.html
+    //https://huadian2.com/search/**----------fypage---.html
     url: '/show/fyclass--------fypage---.html',
-    searchUrl: '/nk/-------------.html?wd=**',
+    searchUrl: '/search/**----------fypage---.html',
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
