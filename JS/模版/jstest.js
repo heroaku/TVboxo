@@ -1,5 +1,5 @@
 var rule = {
-    title: '短剧网 | 星星',
+    title: '毒舌电影',
     host: 'https://www.dushe9.app',
     url: '/show/fyclass-----2-fypage.html',
 	//https://www.dushe9.app/show/fyclass-----2-fypage.html
