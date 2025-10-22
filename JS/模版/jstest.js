@@ -2,7 +2,7 @@ var rule={
     title: '耐看',
     host: 'https://www.dadalv.fun',
     //https://www.dadalv.fun/list/fyclass--------fypage---.html
-    url: '/vodshow/id/fyclass/page/fypage.html',
+    url: '/list/fyclass--------fypage---.html',
     searchUrl: '/nk/-------------.html?wd=**',
     searchable: 2,
     quickSearch: 0,
