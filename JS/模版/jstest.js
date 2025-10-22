@@ -1,7 +1,7 @@
 var rule={
     title: '耐看',
-    host: 'https://www.mtvod.cc',
-    //https://www.mtvod.cc/vodshow/id/juji/page/2.html
+    host: 'https://www.dadalv.fun',
+    //https://www.dadalv.fun/list/fyclass--------fypage---.html
     url: '/vodshow/id/fyclass/page/fypage.html',
     searchUrl: '/nk/-------------.html?wd=**',
     searchable: 2,
@@ -10,18 +10,23 @@ var rule={
     headers: {
     'User-Agent': 'MOBILE_UA',
     },
-    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
-    play_parse: false,
-    lazy: '',
-    limit: 6,
-    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    double: true,
-    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    二级: {
-    "title": "h1&&Text;.module-info-tag&&Text",
-    "img": ".lazyload&&data-original",
-    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
-    "content": ".module-info-introduction&&Text",
-    "tabs": ".hisSwiper&&span",
-    "lists": ".his-tab-list:eq(#id) a"},
-    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
+            // class_parse:'.stui-header__menu li:gt(0):lt(7);a&&Text;a&&href;/(\\d+).html',
+            class_parse: '.stui-header__menu li:gt(0):lt(7);a&&Text;a&&href;.*/(.*?).html',
+            play_parse: true,
+            lazy: '',
+            limit: 6,
+            推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+            double: true, // 推荐内容是否双层定位
+            一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+            二级: {
+                "title": ".stui-content__detail .title&&Text;.stui-content__detail p:eq(-2)&&Text",
+                "img": ".stui-content__thumb .lazyload&&data-original",
+                "desc": ".stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text",
+                "content": ".detail&&Text",
+                "tabs": ".stui-vodlist__head h3",
+                "lists": ".stui-content__playlist:eq(#id) li"
+            },
+            搜索: 'ul.stui-vodlist__media:eq(0) li,ul.stui-vodlist:eq(0) li,#searchList li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
+            搜索1: 'ul.stui-vodlist&&li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
+            搜索2: 'ul.stui-vodlist__media&&li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
+}
