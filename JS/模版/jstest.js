@@ -1,38 +1,26 @@
-var rule = {
-    title: '海外剧汇',
-    host: 'https://huadian2.com',
+var rule={
+    title: '耐看',
+    host: 'https://nkdyw.us/',
     url: '/show/fyclass--------fypage---.html',
-  //https://huadian2.com/show/2-----------.html
-    searchUrl: '/vodsearch/**----------fypage---.html',
+    searchUrl: '/nk/-------------.html?wd=**',
     searchable: 2,
     quickSearch: 0,
-    filterable: 1,
-    filter: '',
-    filter_url: '',
-    filter_def: {},
+    filterable: 0,
     headers: {
-        'User-Agent': 'MOBILE_UA',
+    'User-Agent': 'MOBILE_UA',
     },
-    timeout: 5000,
-    class_parse: '.hl-menus li;a&&span&&Text;a&&href;.*/(.*?)\.html',
-    cate_exclude: '最新|排行',
-    play_parse: true,
-    lazy: $js.toString(() => {
-        input = {parse: 1, url: input, js: ''};
-    }),
+    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
+    play_parse: false,
+    lazy: '',
+    limit: 6,
+    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
     double: true,
-    推荐: 'body&&.container;*;*;*;*;*',
-    一级: '.hl-vod-list&&li;.hl-item-title&&Text;.hl-lazy&&data-original;.remarks&&Text;a&&href',
+    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
     二级: {
-        title: 'h2&&Text',
-        img: '.hl-lazy&&data-original',
-        desc: '.hl-dc-sub&&Text;.hl-data-menu&&span&&Text',
-        content: '.hl-content-text&&Text',
-        tabs: '.hl-plays-from&&a',
-        lists: '.hl-plays-list:eq(#id)&&li',
-        tab_text: 'body&&Text',
-        list_text: 'body&&Text',
-        list_url: 'a&&href'
-    },
-    搜索: '.hl-one-list&&li;.hl-item-title&&Text;*;*;*',
-}
+    "title": "h1&&Text;.module-info-tag&&Text",
+    "img": ".lazyload&&data-original",
+    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
+    "content": ".module-info-introduction&&Text",
+    "tabs": ".hisSwiper&&span",
+    "lists": ".his-tab-list:eq(#id) a"},
+    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
