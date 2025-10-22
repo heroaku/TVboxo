@@ -1,51 +1,28 @@
 var rule = {
-     title: '狗番',
-     host: 'https://www.pipisha.me',
-     模板:'首图2',
-	//https://www.pipisha.me/list/2--------2---.html
-     searchUrl: '/vodsearch/**----------fypage---',
-     url: '/list/fyclass--------fypage---',
-     searchable: 2,//是否启用全局搜索,
-     quickSearch: 1,//是否启用快速搜索,
-     filterable: 0,//是否启用分类筛选,
-     //class_name:'TV动画&剧场动画',
-     //class_url:'1&2',
-     tab_rename:{'追番乐切':'LR',},
-     lazy:`js:
-        var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
-        var url = html.url;
-        var from = html.from;
-        var MacPlayerConfig={};
-        if (html.encrypt == '1') {
-            url = unescape(url)
-        } else if (html.encrypt == '2') {
-            url = unescape(base64Decode(url))
-        } else if (html.encrypt == '3') {
-            url = base64Decode(url);
-        }
-        if (/\\.m3u8|\\.mp4/.test(url)) {
-            input = url
-        } else {
-            eval(fetch(HOST + "/static/js/playerconfig.js").replace('var Mac','Mac'));
-            var list = MacPlayerConfig.player_list[from].parse;
-            input={
-                jx:0,
-                url:list+url,
-                parse:1,
-                header: JSON.stringify({
-                    'referer': HOST
-                })
-            }
-        }
-    `,
-    推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-tag-left&&Text;a&&href',
-    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-tag-left&&Text;a&&href',
-    二级:{
-           'title': '.h1&&Text',
-           'desc': '.stui-content__detail p:eq(3)&&Text;.stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(2)&&Text;.stui-content__detail p:eq(1)&&Text;',
-           'content': '.stui-content__detail p:eq(4)&&Text;',
-           'tabs':'.title H3',
-           'lists':'.stui-content__playlist:eq(#id) li'
-         },
-    搜索: 'ul.stui-vodlist__media:eq(0) li,ul.stui-vodlist:eq(0) li,#searchList li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href;.text-muted:eq(-1)&&Text'
-    }
+    title: '短剧网 | 星星',
+    host: 'https://www.dushe9.app',
+    url: '/show/fyclass-----2-fypage.html',
+	//https://www.dushe9.app/show/fyclass-----2-fypage.html
+    searchUrl: '/vodsearch/**----------fypage---.html',
+    headers: {
+        'User-Agent': 'MOBILE_UA'
+    },
+    searchable: 2, //是否启用全局搜索,
+    quickSearch: 0, //是否启用快速搜索,
+    filterable: 0, //是否启用分类筛选,
+class_parse: '.nav&&ul&&li;a&&Text;a&&href;.*/(.*?).html',
+play_parse: true,
+lazy: '',
+limit: 6, 
+推荐: '.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+double: true, // 推荐内容是否双层定位
+一级: '.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href', 
+二级: {
+    "title": "h1&&Text;.video-info-item:eq(1)&&Text",
+    "img": ".module-item-pic&&img&&data-src",
+    "desc": ".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text",
+    "content": "Text",
+    "tabs": ".module-tab-content",
+    "lists": ".module-blocklist:eq(#id)&&.sort-item&&a"
+}, 搜索: '.module-items&&.module-search-item;a&&title;img&&data-src;.video-info&&a&&Text;a&&href',
+}
