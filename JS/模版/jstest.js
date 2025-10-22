@@ -13,7 +13,25 @@ var rule={
             // class_parse:'.stui-header__menu li:gt(0):lt(7);a&&Text;a&&href;/(\\d+).html',
             class_parse: '.stui-header__menu li:gt(0):lt(7);a&&Text;a&&href;.*/(.*?).html',
             play_parse: true,
-            lazy: '',
+    lazy: `js:
+  let html = request(input);
+  let hconf = html.match(/r player_.*?=(.*?)</)[1];
+  let json = JSON5.parse(hconf);
+  let url = json.url;
+  if (json.encrypt == '1') {
+    url = unescape(url);
+  } else if (json.encrypt == '2') {
+    url = unescape(base64Decode(url));
+  }
+  if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {
+    input = {
+      parse: 0,
+      jx: 0,
+      url: url,
+    };
+  } else {
+    input;
+  }`,
             limit: 6,
             推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
             double: true, // 推荐内容是否双层定位
