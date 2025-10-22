@@ -4,8 +4,8 @@ var rule = {
      模板:'短视2',
     //https://www.zjkrmv.com/vodshow/fyclass--------fypage---.html
     //https://www.zjkrmv.com/vodsearch/**----------fypage---.html
-     searchUrl: 'vodsearch/page/fypage/wd/**.html',
-     url: '/vodsearch/**----------fypage---.html',
+     searchUrl: '/vodsearch/**----------fypage---.html',
+     url: '/vodshow/fyclass--------fypage---.html',
      searchable: 2,//是否启用全局搜索,
      quickSearch: 1,//是否启用快速搜索,
      filterable: 0,//是否启用分类筛选,
