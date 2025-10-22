@@ -1,50 +1,29 @@
-var rule={
-    title: '耐看',
-    host: 'https://www.dadalv.fun',
-    //https://www.dadalv.fun/list/fyclass--------fypage---.html
-    url: '/list/fyclass--------fypage---.html',
-    searchUrl: '/nk/-------------.html?wd=**',
-    searchable: 2,
-    quickSearch: 0,
-    filterable: 0,
-    headers: {
-    'User-Agent': 'MOBILE_UA',
-    },
-            // class_parse:'.stui-header__menu li:gt(0):lt(7);a&&Text;a&&href;/(\\d+).html',
-            class_parse: '.stui-header__menu li:gt(0):lt(7);a&&Text;a&&href;.*/(.*?).html',
-            play_parse: true,
-    lazy: `js:
-  let html = request(input);
-  let hconf = html.match(/r player_.*?=(.*?)</)[1];
-  let json = JSON5.parse(hconf);
-  let url = json.url;
-  if (json.encrypt == '1') {
-    url = unescape(url);
-  } else if (json.encrypt == '2') {
-    url = unescape(base64Decode(url));
-  }
-  if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {
-    input = {
-      parse: 0,
-      jx: 0,
-      url: url,
-    };
-  } else {
-    input;
-  }`,
-            limit: 6,
-            推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-            double: true, // 推荐内容是否双层定位
-            一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-            二级: {
-                "title": ".stui-content__detail .title&&Text;.stui-content__detail p:eq(-2)&&Text",
-                "img": ".stui-content__thumb .lazyload&&data-original",
-                "desc": ".stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text",
-                "content": ".detail&&Text",
-                "tabs": ".nav-tabs:eq(#id) li",
-                "lists": ".stui-content__playlist:eq(#id) li"
-            },
-            搜索: 'ul.stui-vodlist__media:eq(0) li,ul.stui-vodlist:eq(0) li,#searchList li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
-            搜索1: 'ul.stui-vodlist&&li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
-            搜索2: 'ul.stui-vodlist__media&&li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
-}
+var rule ={
+    title: '短剧网',
+    host: 'https://www.quickvod.cc',
+    url: '/show/fyclass--------fypage---.html',
+    //https://www.quickvod.cc/show/fyclass--------fypage---.html
+    searchUrl: '/vodsearch/-------------.html?wd=**',
+    searchable: 2,//是否启用全局搜索,
+    quickSearch: 0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+		'User-Agent':'MOBILE_UA'
+	},
+    class_parse: '.stui-header__menu li;a&&Text;a&&href;.*/(.*?).html',
+    play_parse: true,
+    lazy: '',
+    limit: 6,
+    推荐: '.stui-pannel_bd;*;*;*;*;*',
+    double: true, // 推荐内容是否双层定位
+    一级: '.stui-pannel_bd .stui-vodlist__box;a&&title;img&&src;.pic-text&&Text;a&&href',
+    二级: {
+        "title": "h3&&Text;.pic-text&&Text",
+        "img": "img&&src",
+        "desc": "p:eq(0)&&Text;p:eq(1)&&Text;p:eq(2)&&Text;p:eq(3)&&Text;p:eq(4)&&Text",
+        "content": ".detail-content&&Text",
+        "tabs": "body&&.stui-pannel__head",
+        "lists": ".stui-content__playlist:eq(#id) li"
+        },
+        搜索: '.stui-pannel_bd .thumb;a&&title;img&&src;.pic-text&&Text;a&&href',
+        }
