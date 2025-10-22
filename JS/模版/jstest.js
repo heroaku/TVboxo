@@ -1,7 +1,7 @@
 var rule={
     title: '耐看',
-    host: 'https://www.ffys.fun',
-    //https://www.ffys.fun/vodshow/id/fyclass/page/fypage.html
+    host: 'https://www.mtvod.cc',
+    //https://www.mtvod.cc/vodshow/id/juji/page/2.html
     url: '/vodshow/id/fyclass/page/fypage.html',
     searchUrl: '/nk/-------------.html?wd=**',
     searchable: 2,
