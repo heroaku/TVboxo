@@ -208,6 +208,13 @@
             "ext": "./JS/SQZ影视.js"
         },	
 			{
+            "key": "看片狂",
+            "name": "看片狂",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/看片狂.js"
+        },	
+			{
             "key": "毒舌电影",
             "name": "毒舌电影",
             "type": 3,
