@@ -207,6 +207,13 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/毒舌电影.js"
         },	
+			{
+            "key": "可可影视",
+            "name": "可可影视",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/可可影视.js"
+        },	
 		{
 	  "key": " fxzds ",
 	  "name": "袋鼠影视",
