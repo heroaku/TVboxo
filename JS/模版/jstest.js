@@ -1,31 +1,35 @@
-var rule={
-    title: '金牌影院',
-    host: 'https://huadian2.com',
-    //网址发布 https://jp246.com/
-    //https://huadian2.com/show/2-----------.html
-    //https://huadian2.com/search/**----------fypage---.html
-    url: '/show/fyclass--------fypage---.html',
-    searchUrl: '/search/**----------fypage---.html',
-    searchable: 2,
-    quickSearch: 0,
-    filterable: 0,
-    headers: {
-    'User-Agent': 'MOBILE_UA',
-    },
-    class_parse: '.hl-menus li;a&&span&&Text;a&&href;.*/(.*?)\.html',
-    play_parse: false,
-    lazy: '',
-    limit: 6,
-    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    double: true,
-     一级: '.hl-vod-list li;a&&title;a&&data-original;.hl-lc-1&&Text;a&&href',
-     二级:{
-            'title':'.h1&&Text;.data:eq(0)&&Text',
-            'img':'.hl-item-thumb&&data-original',
-            'desc':'.hl-infos-content&&.hl-text-conch&&Text',
-            'content':'.hl-content-text&&Text',
-            'tabs':'.hl-tabs&&a',
-            'lists':'.hl-plays-list:eq(#id)&&li'
-         },
-     搜索: '.hl-list-item;a&&title;a&&data-original;.remarks&&Text;a&&href'
+var rule = {
+     title: '看片狂',
+     host: 'https://www.zjkrmv.com',
+     模板:'短视2',
+    //https://www.zjkrmv.com/vodshow/fyclass--------fypage---.html
+    //https://www.zjkrmv.com/vodsearch/**----------fypage---.html
+     searchUrl: 'vodsearch/page/fypage/wd/**.html',
+     url: '/vodsearch/**----------fypage---.html',
+     searchable: 2,//是否启用全局搜索,
+     quickSearch: 1,//是否启用快速搜索,
+     filterable: 0,//是否启用分类筛选,
+     headers: {
+       'User-Agent': 'MOBILE_UA',
+     },
+     class_name:'电影&剧集&动漫&综艺',
+     class_url:'1&2&4&3',
+    //detailUrl:'/vodplay-fyid.html',
+     play_parse: true,
+     limit: 6,
+     推荐: '*',
+     double: true, // 推荐内容是否双层定位
+     一级: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
+  二级: {
+    title: 'h3&&Text;.hl-ma0&&Text',
+    img: '.mask-0&&data-src',
+    desc: '.detail-info .slide-info:eq(1)--strong&&Text;.deployment.none.cor5&&span&&Text;.deployment.none.cor5&&span:eq(2)&&Text;.detail-info .slide-info:eq(3)--strong&&Text;.detail-info .slide-info:eq(2)--strong&&Text',
+    content: '#height_limit&&Text',
+    tabs: '.anthology-tab a',
+    lists: '.anthology-list-play:eq(#id)&&li',
+    tab_text: 'body&&Text',
+    list_text: 'body&&Text',
+    list_url: 'a&&href',
+  },
+     搜索: '.public-list-box;.thumb-txt&&Text;.public-list-exp&&img&&data-src;.public-list-prb&&Text;a&&href',
     }
