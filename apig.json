@@ -200,6 +200,13 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/SQZ影视.js"
         },	
+			{
+            "key": "毒舌电影",
+            "name": "毒舌电影",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/毒舌电影.js"
+        },	
 		{
 	  "key": " fxzds ",
 	  "name": "袋鼠影视",
