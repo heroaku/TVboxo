@@ -16,7 +16,7 @@ var rule = {
 play_parse: true,
 lazy: '',
 limit: 6, 
-    推荐: '.module-one-row-box&&.module-box-inner&&.module-item;.v-item-title:eq(-1)&&Text;*;*;*',
+    推荐: '.module-one-row-box&&.module-box-inner&&.module-item;.v-item-title:eq(1)&&Text;*;*;*',
     double: false,
     一级: '.module-box-inner&&.module-item;.v-item-title:eq(1)&&Text;img:eq(1)&&data-original;.v-item-bottom&&span&&Text;a&&href',
     二级: {
