@@ -1,6 +1,7 @@
 var rule={
     title: '耐看',
-    host: 'https://nkdyw.us/',
+    host: 'https://huadian2.com',
+    //https://huadian2.com/show/2-----------.html
     url: '/show/fyclass--------fypage---.html',
     searchUrl: '/nk/-------------.html?wd=**',
     searchable: 2,
