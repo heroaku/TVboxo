@@ -14,14 +14,16 @@ var rule={
     play_parse: false,
     lazy: '',
     limit: 6,
-    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
     double: true,
-    一级: '.hl-item-text;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    二级: {
-    "title": "h1&&Text;.module-info-tag&&Text",
-    "img": ".lazyload&&data-original",
-    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
-    "content": ".module-info-introduction&&Text",
-    "tabs": ".hisSwiper&&span",
-    "lists": ".his-tab-list:eq(#id) a"},
-    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
+     一级: '.hl-vod-list li;a&&title;a&&data-original;.hl-lc-1&&Text;a&&href',
+     二级:{
+            'title':'.h1&&Text;.data:eq(0)&&Text',
+            'img':'.hl-item-thumb&&data-original',
+            'desc':'.hl-infos-content&&.hl-text-conch&&Text',
+            'content':'.hl-content-text&&Text',
+            'tabs':'.hl-tabs&&a',
+            'lists':'.hl-plays-list:eq(#id)&&li'
+         },
+     搜索: '.hl-list-item;a&&title;a&&data-original;.remarks&&Text;a&&href'
+    }
