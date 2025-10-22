@@ -10,7 +10,7 @@ var rule={
     headers: {
     'User-Agent': 'MOBILE_UA',
     },
-    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
+    class_parse: '.hl-menus li;a&&span&&Text;a&&href;.*/(.*?)\.html',
     play_parse: false,
     lazy: '',
     limit: 6,
