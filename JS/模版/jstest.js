@@ -13,7 +13,7 @@ var rule = {
             lazy: '',
             推荐: '.hl-vod-list;li;a&&title;a&&data-original;.remarks&&Text;a&&href',
             double: true,
-            一级: '.hl-vod-list&&.hl-list-item;a&&title;a&&data-original;.remarks&&Text;a&&href',
+            一级: '.hl-vod-list li;a&&title;a&&data-original;.remarks&&Text;a&&href',
             二级: {
                 "title": ".hl-infos-title&&Text;.hl-text-conch&&Text",
                 "img": ".hl-lazy&&data-original",
