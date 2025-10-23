@@ -1,31 +1,18 @@
-var rule = {
-          title: '',
-            host: 'https://www.moguvodw.com',
-            searchUrl: '/v_search/**----------fypage---.html',
-     //https://www.moguvodw.com/vodshow/2--------2---.html
-            url: '/vodshow/fyclass--------fypage---.html',
-            headers: {
-                'User-Agent': 'MOBILE_UA'
-            },
-            //class_parse: '.hl-nav li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
-            //cate_exclude: '明星|专题|最新|排行',
-            class_name:'电视剧&电影&综艺&动漫&短剧&纪录片',
-            class_url:'2&1&3&4&21&23',
-            play_parse: true,
-            lazy: '',
-            推荐: '.hl-vod-list;li;a&&title;a&&data-original;.remarks&&Text;a&&href',
-            double: true,
-            一级: '.hl-vod-list&&li;a&&title;a&&data-original;.remarks&&Text;a&&href',
-            二级: {
-                "title": ".hl-infos-title&&Text;.hl-text-conch&&Text",
-                "img": ".hl-lazy&&data-original",
-                "desc": ".hl-infos-content&&.hl-text-conch&&Text",
-                "content": ".hl-content-text&&Text",
-                "tabs": ".hl-tabs&&a",
-                "lists": ".hl-plays-list:eq(#id)&&li"
-            },
-            搜索: '.hl-list-item;a&&title;a&&data-original;.remarks&&Text;a&&href',
-            searchable: 2,//是否启用全局搜索,
-            quickSearch: 0,//是否启用快速搜索,
-            filterable: 0,//是否启用分类筛选,
-        }
+var rule={     
+    title:'菠萝小站',
+    host: 'https://www.moguvodw.com',
+    url: '/vodshow/fyclass--------fypage---.html',
+    searchUrl:'vodsearch.html?wd=**&submit=',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    //class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
+    //cate_exclude:'演员',
+    class_name:'电视剧&电影&动漫&综艺',
+    class_url:'2&1&4&3',  
+    推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.hl-vod-list&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(5)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-from a","lists":".hl-plays-list:eq(#id) li"},
+    搜索:'.hl-list-wrap&&ul&&li;.hl-item-thumb&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+}
