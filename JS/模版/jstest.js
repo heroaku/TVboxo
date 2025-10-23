@@ -7,7 +7,7 @@ var rule = {
             headers: {
                 'User-Agent': 'MOBILE_UA'
             },
-            class_parse: '.hl-nav li:gt(0):lt(4);a&&Text;a&&href;.*/(.*?).html',
+            class_parse: '.hl-nav li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
             cate_exclude: '明星|专题|最新|排行',
             play_parse: true,
             lazy: '',
