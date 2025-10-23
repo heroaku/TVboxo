@@ -9,8 +9,8 @@ var rule={
     filterable:0,//是否启用分类筛选,
     //class_parse:'.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
     //cate_exclude:'演员',
-    class_name:'电视剧&电影&动漫&综艺',
-    class_url:'2&1&4&3',  
+    class_name:'电视剧&电影&动漫&综艺&短剧&纪录片',
+    class_url:'2&1&4&3&21&23',  
     推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
     double:true, // 推荐内容是否双层定位
     一级:'.hl-vod-list&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
