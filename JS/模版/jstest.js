@@ -21,7 +21,7 @@ var rule = {
                 "content": ".hl-content-text&&Text",
                 "tabs": ".hl-tabs&&a",
                 "lists": ".hl-plays-list:eq(#id)&&li"
-            }
+            },
             搜索: '.hl-list-item;a&&title;a&&data-original;.remarks&&Text;a&&href',
             searchable: 2,//是否启用全局搜索,
             quickSearch: 0,//是否启用快速搜索,
