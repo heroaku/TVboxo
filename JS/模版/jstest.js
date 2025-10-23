@@ -1,35 +1,31 @@
 var rule = {
-     title: '看片狂',
-     host: 'https://www.zjkrmv.com',
-     模板:'短视2',
-    //https://www.zjkrmv.com/vodshow/fyclass--------fypage---.html
-    //https://www.zjkrmv.com/vodsearch/**----------fypage---.html
-     searchUrl: '/vodsearch/**----------fypage---.html',
-     url: '/vodshow/fyclass--------fypage---.html',
-     searchable: 2,//是否启用全局搜索,
-     quickSearch: 1,//是否启用快速搜索,
-     filterable: 0,//是否启用分类筛选,
-     headers: {
-       'User-Agent': 'MOBILE_UA',
-     },
-     class_name:'电影&剧集&动漫&综艺',
-     class_url:'1&2&4&3',
-    //detailUrl:'/vodplay-fyid.html',
-     play_parse: true,
-     limit: 6,
-     推荐: '*',
-     double: true, // 推荐内容是否双层定位
-     一级: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
-  二级: {
-    title: 'h3&&Text;.hl-ma0&&Text',
-    img: '.mask-0&&data-src',
-    desc: '.detail-info .slide-info:eq(1)--strong&&Text;.deployment.none.cor5&&span&&Text;.deployment.none.cor5&&span:eq(2)&&Text;.detail-info .slide-info:eq(3)--strong&&Text;.detail-info .slide-info:eq(2)--strong&&Text',
-    content: '#height_limit&&Text',
-    tabs: '.anthology-tab a',
-    lists: '.anthology-list-play:eq(#id)&&li',
-    tab_text: 'body&&Text',
-    list_text: 'body&&Text',
-    list_url: 'a&&href',
-  },
-     搜索: '.public-list-box;.thumb-txt&&Text;.public-list-exp&&img&&data-src;.public-list-prb&&Text;a&&href',
-    }
+          title: '',
+            host: 'https://www.moguvodw.com',
+            searchUrl: '/v_search/**----------fypage---.html',
+     //https://www.moguvodw.com/vodshow/2--------2---.html
+            url: '/vodshow/fyclass--------fypage---.html',
+            headers: {
+                'User-Agent': 'MOBILE_UA'
+            },
+            timeout: 5000,
+            class_parse: 'body&&.hl-nav li:gt(0);a&&Text;a&&href;.*/(.*?).html',
+            cate_exclude: '明星|专题|最新|排行',
+            limit: 40,
+            play_parse: true,
+            lazy: '',
+            推荐: '.hl-vod-list;li;a&&title;a&&data-original;.remarks&&Text;a&&href',
+            double: true,
+            一级: '.hl-vod-list&&.hl-list-item;a&&title;a&&data-original;.remarks&&Text;a&&href',
+            二级: {
+                "title": ".hl-infos-title&&Text;.hl-text-conch&&Text",
+                "img": ".hl-lazy&&data-original",
+                "desc": ".hl-infos-content&&.hl-text-conch&&Text",
+                "content": ".hl-content-text&&Text",
+                "tabs": ".hl-tabs&&a",
+                "lists": ".hl-plays-list:eq(#id)&&li"
+            },
+            搜索: '.hl-list-item;a&&title;a&&data-original;.remarks&&Text;a&&href',
+            searchable: 2,//是否启用全局搜索,
+            quickSearch: 0,//是否启用快速搜索,
+            filterable: 0,//是否启用分类筛选,
+        }
