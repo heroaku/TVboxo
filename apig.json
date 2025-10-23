@@ -201,6 +201,13 @@
             "ext": "./JS/大米星球DM.js"
         },	
 			{
+            "key": "蘑菇影视",
+            "name": "蘑菇影视",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/蘑菇影视.js"
+        },	
+			{
             "key": "SQZ影视",
             "name": "SQZ影视",
             "type": 3,
