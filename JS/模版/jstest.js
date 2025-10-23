@@ -1,8 +1,9 @@
 var rule={     
-    title:'菠萝小站',
+    title:'蘑菇影视',
     host: 'https://www.moguvodw.com',
     url: '/vodshow/fyclass--------fypage---.html',
-    searchUrl:'vodsearch.html?wd=**&submit=',
+    //https://www.moguvodw.com/vodsearch/**----------fypage---.html
+    searchUrl:'/vodsearch/**----------fypage---.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
