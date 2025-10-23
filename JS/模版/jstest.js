@@ -7,8 +7,10 @@ var rule = {
             headers: {
                 'User-Agent': 'MOBILE_UA'
             },
-            class_parse: '.hl-nav li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
-            cate_exclude: '明星|专题|最新|排行',
+            //class_parse: '.hl-nav li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
+            //cate_exclude: '明星|专题|最新|排行',
+            class_name:'电视剧&电影&综艺&动漫&短剧&纪录片',
+            class_url:'2&1&3&4&21&23',
             play_parse: true,
             lazy: '',
             推荐: '.hl-vod-list;li;a&&title;a&&data-original;.remarks&&Text;a&&href',
