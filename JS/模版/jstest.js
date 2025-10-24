@@ -1,10 +1,10 @@
 var rule = {
-    title:'看腐剧',
+    title:'蛋蛋影院',
     host:'https://dandanzandy.com/',
     // https://dandanzandy.com/vod/show/id/dianshiju/page/1.html
-    // https://www.kanfujutv.com/vodsearch.html?wd=%E5%85%B3%E4%BA%8E&submit=
+    // https://dandanzandy.com/vod/search/page/fypage/wd/**.html
     url:'/vod/show/id/fyclass/page/fypage.html',
-    searchUrl:'/vodsearch.html?wd=**&submit=',
+    searchUrl:'/vod/search/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
