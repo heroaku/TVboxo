@@ -201,6 +201,13 @@
             "ext": "./JS/大米星球DM.js"
         },	
 			{
+            "key": "蛋蛋影院",
+            "name": "蛋蛋影院",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/蛋蛋影院.js"
+        },
+			{
             "key": "蘑菇影视",
             "name": "蘑菇影视",
             "type": 3,
