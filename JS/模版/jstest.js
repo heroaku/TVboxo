@@ -1,52 +1,26 @@
 var rule = {
-    title: '3Q影视',
-    host: 'https://qqqys.com/',
-    url: 'https://qqqys.com/',
-    searchUrl: 'https://qqqys.com/index.php?m=vod-search&wd=**----------&page=fypage',
-    searchable: 2, //是否启用全局搜索
-    quickSearch: 0, //是否启用快速搜索
-    filterable: 0, //是否启用分类筛选
-    headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    title:'看腐剧',
+    host:'https://dandanzandy.com/',
+    // https://dandanzandy.com/vod/show/id/dianshiju/page/1.html
+    // https://www.kanfujutv.com/vodsearch.html?wd=%E5%85%B3%E4%BA%8E&submit=
+    url:'/vod/show/id/fyclass/page/fypage.html',
+    searchUrl:'/vodsearch.html?wd=**&submit=',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
     },
-    class_parse: '.nav-item:gt(0):lt(5);a&&Text;a&&href;.*/(.*?)\\.html',
-    play_parse: true,
-    lazy: `js:
-            let html = request(input);
-            let hconf = html.match(/r player_.*?=(.*?)</)[1];
-            let json = JSON5.parse(hconf);
-            let url = json.url;
-            if (json.encrypt == '1') {
-                url = unescape(url);
-            } else if (json.encrypt == '2') {
-                url = unescape(base64Decode(url));
-            }
-            if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {
-                input = {
-                    parse: 0,
-                    jx: 0,
-                    url: url,
-                };
-            } else {
-                input;
-            }`,
-    limit: 6,
-    推荐: '.module-item;li;a&&title;.lazyload&&data-original;.module-item-desc&&Text;a&&href',
-    double: true, // 推荐内容是否双层定位
-    一级: '.module-item li;a&&title;a&&data-original;.module-item-desc&&Text;a&&href',
-    二级: {
-        "title": "h1&&Text",
-        "img": ".poster-img .lazyload&&data-original",
-        "desc": ".info-item:eq(0)&&Text;.info-item:eq(1)&&Text;.info-item:eq(2)&&Text;.info-item:eq(3)&&Text;.info-item:eq(4)&&Text",
-        "content": ".intro-content&&Text",
-        "tabs": ".play-tabs li",
-        "lists": ".play-list:eq(#id) li"
-    },
-    搜索: '.module-item;a&&title;.lazyload&&data-original;.module-item-desc&&Text;a&&href;.info&&p:eq(0) p&&Text',
-    // 分类映射
-    电影: 'https://qqqys.com/index.php?m=vod-type-id-1.html',
-    剧集: 'https://qqqys.com/index.php?m=vod-type-id-2.html',
-    动漫: 'https://qqqys.com/index.php?m=vod-type-id-3.html',
-    综艺: 'https://qqqys.com/index.php?m=vod-type-id-4.html',
-    短剧: 'https://qqqys.com/index.php?m=vod-type-id-5.html'
+    class_name:'电视剧&电影&综艺&动漫&短剧',
+    class_url:'dianshiju&dianying&zongyi&dongman&duanju',
+    //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
+    play_parse:true,
+    lazy:'',
+    limit:6,
+    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    二级:{"title":".hl-item-thumb.hl-lazy&&title;.hl-full-box&&ul li:eq(6)&&Text","img":".hl-item-thumb.hl-lazy&&data-original","desc":".hl-full-box&&ul&&li:eq(-1)&&Text;.hl-full-box&&ul&&li:eq(-2)&&Text;.hl-full-box&&ul&&li:eq(-3)&&Text;.hl-full-box&&ul&&li:eq(2)&&Text;.hl-full-box&&ul&&li:eq(3)&&Text","content":".hl-col-xs-12.blurb&&Text","tabs":".hl-plays-from:eq(0) a","lists":".hl-plays-list:eq(#id) li"},
+    搜索:'ul.hl-one-list&&li;a&&title;.hl-item-thumb&&data-original;.hl-lc-1&&Text;a&&href;.text-muted:eq(-1)&&Text',
 }
