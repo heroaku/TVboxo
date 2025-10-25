@@ -1,5 +1,5 @@
 var rule = {
-     title: 'clicli - LR',
+     title: '云逸影院',
      host: 'https://www.yunyibo2.com',
     //https://www.yunyibo2.com/vod/show/id/2/page/1.html
      //https://www.yunyibo2.com/vod/search/page/2/wd/ai.html
