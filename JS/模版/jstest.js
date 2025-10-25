@@ -1,29 +1,56 @@
-var rule= {
-    title:'酷亚影视',
-    host:'https://www.wkvod.cc',
-    // https://www.wkvod.cc/vodshow/id/guochanju/page/2.html
-    url:'/vodshow/id/fyclass/page/fypage.html',
-    searchable: 2,//是否启用全局搜索,
-    quickSearch: 0,//是否启用快速搜索,
-    filterable:1,//是否启用分类筛选,
-    //class_parse: '.stui-header__menu&&li:gt(0):lt(4);a&&Text;a&&href;.*/(.*?).html',
-    class_name:'国产剧&日剧&欧美剧&韩剧&泰剧&其他剧&电视剧&综艺&动漫&电影&纪录片',
-    class_url:'dianying&juji&western-tv-series&korean-tv-series&thai-tv-series&other-tv-series&shows&tvshows&animation&movies&documentary',
-    play_parse: true,
-    lazy:'js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=="1"){url=unescape(url)}else if(html.encrypt=="2"){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}',
-    limit: 6,
-    searchUrl:'/vodsearch/**keyword/page/fypage/',
-    detailUrl:'/detail/fyid.html', //非必填,二级详情拼接链接
-    推荐: '.stui-pannel:eq(2);.stui-vodlist&&li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    double: true, // 推荐内容是否双层定位
-    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    二级: {
-        "title": "h1&&Text;.data&&Text",
-        "img": "img&&data-original",
-        "desc": ';;;.video-info-actor:eq(1)&&Text;.video-info-actor:eq(0)&&Text',
-        "content": ".stui-pannel:eq(2)&&p&&Text",
-        "tabs": ".title h3",
-        "lists": ".stui-content__playlist:eq(#id) li"
-    },
-    搜索:'.stui-vodlist__media li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-}
+var rule = {
+     title: 'clicli - LR',
+     host: 'https://www.yunyibo2.com',
+    //https://www.yunyibo2.com/vod/show/id/2/page/1.html
+     //homeUrl: '/label/week.html',
+     searchUrl: '/search/page/fypage/wd/**.html',
+     url:'/vod/show/id/fyclass/page/fypage.html',
+     searchable: 2,//是否启用全局搜索,
+     quickSearch: 1,//是否启用快速搜索,
+     filterable: 0,//是否启用分类筛选,
+     headers: {
+       'User-Agent': 'MOBILE_UA'
+     },
+     play_parse: false,
+     lazy:`js:
+        var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+        var url = html.url;
+        var from = html.from;
+        var MacPlayerConfig={};
+        if (html.encrypt == '1') {
+            url = unescape(url)
+        } else if (html.encrypt == '2') {
+            url = unescape(base64Decode(url))
+        }
+        if (/.m3u8|.mp4/.test(url)) {
+            input = url
+        } else {
+        eval(fetch(HOST + '/static/js/playerconfig.js').replace('var Mac','Mac'));
+        var list = MacPlayerConfig.player_list[from].parse;
+            input={
+                jx:0,
+                url:list+url,
+                parse:1,
+                header: JSON.stringify({
+                    'referer': HOST
+                })
+            }
+        }
+     `,
+     limit: 6,
+     tab_rename:{'排序':'LR',},
+     class_name:'番剧&剧集',
+     class_url:'1&2',
+     double: false, // 推荐内容是否双层定位
+     推荐: '.module-main;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+     一级: 'body a.module-poster-item.module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+     二级: {
+              'title': 'h1&&Text',
+              'img': '.lazyload&&data-original',
+              'desc': '.module-info-item-content:eq(8)&&Text;.module-info-tag-link:eq(0)&&Text;.module-info-tag-link:eq(1)&&Text;.module-info-tag-link:eq(3)&&Text;.module-info-tag-link:eq(4)&&Text',
+              'content': '.module-info-introduction-content&&Text',
+              'tabs': '.module-tab-item',
+              'lists': '.module-play-list:eq(#id) a'
+          },
+     搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text'
+    }
