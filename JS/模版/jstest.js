@@ -1,11 +1,11 @@
 var rule = {
      title: '云逸影院',
-     host: 'https://www.yunyibo2.com',
-    //https://www.yunyibo2.com/vod/show/id/2/page/1.html
+     host: 'https://www.tdgo.shop',
+    //https://www.tdgo.shop/vodshow/fyclass--------fypage---.html
      //https://www.yunyibo2.com/vod/search/page/2/wd/ai.html
      //homeUrl: '/label/week.html',
      searchUrl: '/search/page/fypage/wd/**.html',
-     url:'/vod/show/id/fyclass/page/fypage.html',
+     url:'/vodshow/fyclass--------fypage---.html',
      searchable: 2,//是否启用全局搜索,
      quickSearch: 1,//是否启用快速搜索,
      filterable: 0,//是否启用分类筛选,
