@@ -456,6 +456,161 @@
 	"jar":"./Jar/XBPQ.jar",
 	  "ext": "./XBPQ/袋鼠影视.json"
 	},
+	{
+			"key": "huomaoys",
+			"name": "🎬️火猫┃影视",
+			"type": 3,
+			"searchable": 1,
+			"quickSearch": 0,
+			"api": "csp_Muou",
+			"jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/714c5f6aa89af46f/071.png;md5;9cf0a6c1f62ad83e9dccc2b7dd683a10",
+			"playerType": 2,
+			"ext": "7lj763gg0939790i413gi484k8058896highi4414h68l7g6hk8qiaojig9k2k289l9ik807i213k5j602"
+		},
+		{
+			"key": "金牌app",
+			"name": "🎬️爆炸┃影视",
+			"type": 3,
+			"searchable": 1,
+			"quickSearch": 0,
+			"api": "csp_Muou",
+			"jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/714c5f6aa89af46f/071.png;md5;9cf0a6c1f62ad83e9dccc2b7dd683a10",
+			"playerType": 2,
+			"ext": "7lj763gg402i79425i3l85i6h848i295l5hiji5l828g3l3jjhg6kg7410lhjkqiaojij3ig1lg475178k7h0il4ig3h753h7hi516758699jh2g5h433li30gk11g73l90312h4g7"
+		},
+		{
+			"key": "主角巧计",
+			"name": "🎬️主角┃影视",
+			"type": 3,
+			"searchable": 1,
+			"quickSearch": 0,
+			"api": "csp_Muou",
+			"jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/714c5f6aa89af46f/071.png;md5;9cf0a6c1f62ad83e9dccc2b7dd683a10",
+			"playerType": 2,
+			"ext": "7lj763gg402i794247258k9jh6598585l3g6ij13il8g20g9qiaoji8j9i9k1g3k90h7i507i213k5j602"
+		},
+    {
+      "key": "芒果视频",
+      "name": "芒果｜视频",
+      "type": 3,
+      "api": "https://gitee.com/PizazzXS/another-d/raw/master/js/drpy2.min.js",
+      "ext": "https://gitee.com/PizazzXS/another-d/raw/master/movie/js/MGSP.js"
+    },
+    {
+      "key": "爱奇艺",
+      "name": "爱奇艺｜视频",
+      "type": 3,
+      "api": "https://gitee.com/PizazzXS/another-d/raw/master/js/drpy2.min.js",
+      "ext": "https://gitee.com/PizazzXS/another-d/raw/master/movie/js/AQY.js"
+    },
+    {
+      "key": "三六零",
+      "name": "三六零｜视频",
+      "type": 3,
+      "api": "csp_SP360"
+    },
+	 {
+      "key": "金牌影视",
+      "name": "金牌｜影视",
+      "type": 3,
+      "api": "csp_Jpys",
+      "ext": "https://m.hkybqufgh.com,https://m.sizhengxt.com,https://m.9zhoukj.com,https://m.sizhengxt.com,https://m.jiabaide.cn"
+    },
+	{
+      "key": "奇优影视",
+      "name": "奇优｜影视",
+      "type": 3,
+      "api": "csp_Qiyou"
+    },
+    {
+      "key": "苹果影视",
+      "name": "苹果｜影视",
+      "type": 3,
+      "api": "csp_LiteApple",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+	 {
+      "key": "瓜子影视",
+      "name": "瓜子｜影视",
+      "type": 3,
+      "api": "csp_Gz360",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
+	 {
+      "key": "修罗",
+      "name": "修罗｜磁力",
+      "api": "csp_Xlys",
+      "type": 3,
+      "ext": "https://xl01.com.de"
+    },
+	 {
+      "key": "骚火影视",
+      "name": "骚火｜影视",
+      "type": 3,
+      "api": "csp_SaoHuo",
+      "playerType": 2,
+      "ext": "https://shdy5.us"
+    },
+		{
+            "key": "第七电影",
+            "name": "🍉第七电影┃xb",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "分类url": "https://the7tv.com/the/{cateId}-{catePg}.html",
+                "分类": "动作片$5#喜剧片$6#爱情片$7#科幻片$8#动画片$33#国产剧$12#香港剧$13#韩国剧$16#欧美剧$17",
+				"二次截取": "<h2 class=\"title&&id=\"page",
+				"数组": "<a&&</a>",
+                "标题": "title=\"&&\"",
+                "图片": "data-original=\"&&\"",
+                "链接": "href=\"&&\"",
+                "播放数组": "<ul class=\"clearfix&&</ul>",
+                "播放列表": "<a&&</a>",
+                "播放标题": ">&&</a>",
+                "线路数组": "<h2 class=\"flex-1&&/h2>",
+                "线路标题": ">&&<"
+            }
+        },
+		{
+            "key": "永乐",
+            "name": "🍰永乐┃xb",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+                "请求头": "User-Agent$MOBILE_UA",
+                "编码": "UTF-8",
+                "分类": "电影$1#电视剧$2#综艺$3#动漫$4",
+				"二次截取": "module-main module-page&&id=\"page",
+				"数组": "<a&&</a>",
+				"图片": "data-original=\"&&\"",
+"标题": "title=\"&&\"",
+                "类型": "动作片$6#喜剧片$7#爱情片$8#科幻片$9#奇幻片$10#恐怖片$11#剧情片$12#战争片$20#动画片$26#悬疑片$22#冒险片$23#犯罪片$24#惊悚片$45#歌舞片$46#灾难片$47#网络片$48||国产剧$13#港台剧$14#日剧$15#韩剧$33#欧美剧$16#泰剧$34#新马剧$35#其他剧$25||内地综艺$27#港台综艺$28#日本综艺$29#韩国综艺$36#欧美综艺$30#新马泰综艺$37#其他综艺$38||国产动漫$31#日本动漫$32#韩国动漫$39#港台动漫$40#新马泰动漫$41#欧美动漫$42#其他动漫$43",
+                "分类url": "https://www.ylys.tv/vodshow/{cateId}-{area}-{by}-{class}-{lang}-{letter}---{catePg}---{year}.html"
+            }
+        },
+		{"key": "雪糕影视","name": "雪糕影视🎦XB","type": 3,"api": "csp_XBPQ","ext": 
+		{
+		"分类url": "https://www.xgitv.com/vshow/{cateId}-{area}-{by}-{class}-----{catePg}---{year}.html;;rc","分类": "电影$1#剧集$2#综艺$3#动漫$4"}},
+    {
+      "key": "星芽短剧",
+      "name": "星芽｜短剧",
+      "type": 3,
+      "api": "https://gitee.com/PizazzXS/another-d/raw/master/movie/py/XYDJ.py",
+      "searchable": 1,
+      "changeable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
 		{
             "key": "腐剧TV",
             "name": "腐剧TV",
