@@ -35,30 +35,43 @@
                 "ratio": 1.597
             }
         },
-        {
-            "key": "无忧短剧",
-            "name": "无忧｜短剧",
-            "type": 3,
-            "api": "csp_Duanj",
-            "searchable": 1,
-            "changeable": 0,
-            "style": {
-                "type": "rect",
-                "ratio": 1.433
-            }
-        },
-        {
-            "key": "在线短剧",
-            "name": "在线｜短剧",
-            "type": 3,
-            "api": "csp_Duanju",
-            "searchable": 1,
-            "changeable": 0,
-            "style": {
-                "type": "rect",
-                "ratio": 1.433
-            }
-        },
+	{
+			"key": "巧技2",
+			"name": "🚗聚搜┃4K",
+			"type": 3,
+			"searchable": 1,
+			"quickSearch": 0,
+			"api": "csp_qiao2",
+			"playerType": 2,
+			"jar": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/714c5f6aa89af46f/071.png;md5;9cf0a6c1f62ad83e9dccc2b7dd683a10",
+			"ext": "7lj763gg402i79425739i7jghj118797l4hj840gi18633331l4708g2h7145403549g44l8ii56i187681hkjj3hhgh1ih3l32j250lk1k786lj20j468hk3hli4l46gig4i3g7g2722328j0136h01i7g5183k22k7gg3i72hk81gl8k9839kl7i0707"
+		},
+		 {
+      "key": "热播影视",
+      "name": "热播｜APP",
+      "type": 3,
+      "api": "csp_AppRJ",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "jar":"./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
+      "ext": {
+        "url": "http://v.rbotv.cn"
+      }
+    },
+	 {
+      "key": "浪酷影视",
+      "name": "浪酷｜APP",
+      "type": 3,
+      "api": "csp_AppRJ",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "jar":"./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
+      "ext": {
+        "url": "http://v.lkuys.cn"
+      }
+    },
         {
             "key": "星芽短剧",
             "name": "星芽｜短剧",
@@ -192,6 +205,13 @@
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/映像星球.js"
+        },	
+			{
+            "key": "云逸影院",
+            "name": "云逸影院",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/云逸影院.js"
         },	
 			{
             "key": "大米星球DM",
