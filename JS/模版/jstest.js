@@ -2,6 +2,7 @@ var rule = {
      title: 'clicli - LR',
      host: 'https://www.yunyibo2.com',
     //https://www.yunyibo2.com/vod/show/id/2/page/1.html
+     //https://www.yunyibo2.com/vod/search/page/2/wd/ai.html
      //homeUrl: '/label/week.html',
      searchUrl: '/search/page/fypage/wd/**.html',
      url:'/vod/show/id/fyclass/page/fypage.html',
@@ -39,8 +40,8 @@ var rule = {
      `,
      limit: 6,
      tab_rename:{'排序':'LR',},
-     class_name:'番剧&剧集',
-     class_url:'1&2',
+     class_name:'电影&剧集&综艺&动漫&短剧&国产剧&泰剧&日剧&韩剧&港澳剧',
+     class_url:'1&2&3&4&40&15&23&14&16&22',
      double: false, // 推荐内容是否双层定位
      推荐: '.module-main;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
      一级: 'body a.module-poster-item.module-item;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
