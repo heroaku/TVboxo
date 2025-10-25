@@ -55,7 +55,6 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
-      "jar":"./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
       "ext": {
         "url": "http://v.rbotv.cn"
       }
@@ -83,52 +82,225 @@
         "name": "金牌影院（请断网再安装）"
       }
     },
-        {
-            "key": "星芽短剧",
-            "name": "星芽｜短剧",
-            "type": 3,
-            "api": "csp_AppXY",
-            "searchable": 1,
-            "quickSearch": 0,
-            "filterable": 0
-        },
-        {
-            "key": "天堂短剧",
-            "name": "天堂｜短剧",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/天堂短剧.js"
-        },
-        {
-            "key": "爱你短剧",
-            "name": "爱你｜短剧",
-            "type": 3,
-            "api": "csp_XYQHiker",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./XYQHiker/爱你短剧.json"
-        },
-        {
-            "key": "河马短剧",
-            "name": "河马｜短剧",
-            "type": 3,
-            "api": "csp_XYQHiker",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./XYQHiker/河马短剧.json"
-        },
-        {
-            "key": "短剧屋",
-            "name": "短剧屋｜短剧",
-            "type": 3,
-            "api": "csp_XYQHiker",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "./XYQHiker/短剧屋.json"
-        },
+	   {
+      "key": "咖啡",
+      "name": "咖啡丨APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppQi",
+      "ext": {
+        "url": "",
+        "site": "https://daen-1256234123.cos.ap-shanghai.myqcloud.com/MuQi/mqxh.txt",
+        "dataKey": "37kj83zs1q16jk6t",
+        "dataIv": "37kj83zs1q16jk6t",
+        "deviceId": "",
+        "version": "101",
+        "ua": ""
+      }
+    },
+	 {
+      "key": "蓝鹰",
+      "name": "蓝鹰｜APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppQi",
+      "ext": {
+        "url": "",
+        "site": "https://lanyinghz.oss-cn-hangzhou.aliyuncs.com/lanyingxmy.txt",
+        "dataKey": "ca94b06ca359d80e",
+        "dataIv": "ca94b06ca359d80e",
+        "deviceId": "",
+        "version": "120"
+      }
+    },
+	{
+      "key": "仓鼠",
+      "name": "仓鼠｜APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppQi",
+      "ext": {
+        "url": "",
+        "site": "https://ceshi307386.oss-cn-beijing.aliyuncs.com/ceshi421.txt",
+        "dataKey": "da61247f5b662597",
+        "dataIv": "da61247f5b662597",
+        "deviceId": "",
+        "version": "120"
+      }
+    },
+	 {
+      "key": "热剧",
+      "name": "热剧丨APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppQi",
+      "ext": {
+        "url": "https://www.rebovod.com",
+        "site": "",
+        "dataKey": "8191A7F47B37882F",
+        "dataIv": "8191A7F47B37882F",
+        "deviceId": "",
+        "version": "",
+        "ua": ""
+      }
+    },
+	  {
+      "key": "影视",
+      "name": "影视丨APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppQi",
+      "ext": {
+        "url": "",
+        "site": "https://aysappto.oss-cn-chengdu.aliyuncs.com/qj2.txt",
+        "dataKey": "sada21321sdq231d",
+        "dataIv": "sada21321sdq231d",
+        "deviceId": "",
+        "version": "",
+        "ua": ""
+      }
+    },
+	    {
+      "key": "小猪",
+      "name": "小猪丨APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppQi",
+      "ext": {
+        "url": "",
+        "site": "https://tiantangyoulu.oss-cn-beijing.aliyuncs.com/tengxunyun.txt",
+        "dataKey": "seb5tq9mykp2w9ry",
+        "dataIv": "seb5tq9mykp2w9ry",
+        "deviceId": "",
+        "version": "",
+        "ua": "okhttp/3.10.0"
+      }
+    },
+	    {
+      "key": "云云",
+      "name": "云云丨APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppQi",
+      "ext": {
+        "url": "",
+        "site": "https://staraugust123456.oss-cn-hangzhou.aliyuncs.com/2.txt",
+        "dataKey": "staraugust123456",
+        "dataIv": "staraugust123456",
+        "deviceId": "",
+        "version": "120",
+        "ua": ""
+      }
+    },
+	{
+      "key": "紫金",
+      "name": "紫金丨APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppGet",
+      "ext": {
+        "url": "http://www.zjcvod.com",
+        "site": "",
+        "dataKey": "ab4e9a421675f14b",
+        "dataIv": "ab4e9a421675f14b",
+        "deviceId": "",
+        "version": "",
+        "ua": ""
+      }
+    },
+	{
+      "key": "星星",
+      "name": "星星丨APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppGet",
+      "ext": {
+        "url": "http://starani.qcanime.xyz",
+        "site": "",
+        "dataKey": "123456789StarAni",
+        "dataIv": "123456789StarAni",
+        "deviceId": "",
+        "version": "",
+        "ua": "okhttp/3.10.0 BDYS/109.0.0.8"
+      }
+    },
+	 {
+      "key": "驿站",
+      "name": "驿站丨APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppGet",
+      "ext": {
+        "url": "",
+        "site": "https://dyyztvappapigoodgx.68.gy:12689/ciwk28vu38io8/apiurl.txt",
+        "dataKey": "dyyztvapiappyyds",
+        "dataIv": "dyyztvapiappyyds",
+        "deviceId": "",
+        "version": "",
+        "ua": ""
+      }
+    },
+	 {
+      "key": "五八",
+      "name": "五八丨APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppGet",
+      "ext": {
+        "url": "https://dy.58ys.vip",
+        "site": "",
+        "dataKey": "JEWibY1AgWF0V1xx",
+        "dataIv": "JEWibY1AgWF0V1xx",
+        "deviceId": "",
+        "version": "",
+        "ua": ""
+      }
+    },
+	 {
+      "key": "火狐",
+      "name": "火狐丨APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppGet",
+      "ext": {
+        "url": "http://huohu.yihn.cc",
+        "site": "",
+        "dataKey": "huohushipingetap",
+        "dataIv": "huohushipingetap",
+        "deviceId": "",
+        "version": "140",
+        "ua": ""
+      }
+    },
+	{
+      "key": "灵虎",
+      "name": "灵虎｜APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppGet",
+      "ext": {
+        "url": "",
+        "site": "https://bind.315999.xyz/89.txt",
+        "dataKey": "#getapp@TMD@2025",
+        "dataIv": "#getapp@TMD@2025",
+        "deviceId": "",
+        "version": "120"
+      }
+    },
+	{
+      "key": "萝卜",
+      "name": "萝卜｜APP",
+      "type": 3,
+      "quickSearch": 1,
+      "api": "csp_AppGet",
+      "ext": {
+        "url": "https://apiapplbys.lbys.app:5678",
+        "dataKey": "apiapplbyskey168",
+        "dataIv": "apiapplbyskey168",
+        "deviceId": "",
+        "version": "107"
+      }
+    },
         {
             "key": "韩小圈",
             "name": "韩小圈｜APP",
