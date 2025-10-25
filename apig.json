@@ -1,5 +1,6 @@
 {
     "spider": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
+	"spider": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
         {
@@ -59,17 +60,27 @@
         "url": "http://v.rbotv.cn"
       }
     },
-	 {
-      "key": "浪酷影视",
-      "name": "浪酷｜APP",
+	  {
+      "key": "冷心",
+      "name": "冷心｜APP",
       "type": 3,
-      "api": "csp_AppRJ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "jar":"./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
+      "api": "csp_AppMuou",
       "ext": {
-        "url": "http://v.lkuys.cn"
+        "url": "http://app.789dd.cn",
+        "name": "火猫影视"
+      }
+    },
+	 {
+      "key": "金牌",
+      "name": "金牌｜APP",
+      "type": 3,
+      "api": "csp_AppMuou",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": {
+        "url": "",
+        "site": "https://muouapp.oss-cn-hangzhou.aliyuncs.com/MUOUAPP/godbbq.txt",
+        "name": "金牌影院（请断网再安装）"
       }
     },
         {
