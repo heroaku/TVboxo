@@ -3,11 +3,12 @@ muban.首图.二级.tabs='.play_source_tab a';
 muban.首图.二级.lists='.play_list_box:eq(#id) li';
 
 var rule = Object.assign(muban.首图,{
-    title:'真爱影视',
+    title:'老地影视',
     host:'https://www.laodifang.cc',
      //https://www.laodifang.cc/vodshow/fyclass--------fypage---.html
+    //https://www.laodifang.cc/vodsearch/**----------fypage---.html
     url:'/vodshow/fyclass--------fypage---.html',
-    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
+    searchUrl:'/vodsearch/**----------fypage---.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
@@ -16,8 +17,8 @@ var rule = Object.assign(muban.首图,{
     },
     // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
     //class_parse:'.top_nav&&ul li:gt(0):lt(25);a&&Text;a&&href;.*/(.*?).html',
-    class_name:'电影&电视剧&综艺&动漫&国产剧&港台剧&日韩剧&欧美剧&海外剧',
-    class_url:'1&2&3&4&13&14&15&16&27',
+    class_name:'电影&电视剧&综艺&动漫&短剧&纪录片',
+    class_url:'1&2&3&4&20&5',
     play_parse:true,
     lazy:'',
     limit:6,
