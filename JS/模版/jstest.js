@@ -28,7 +28,7 @@ var rule = {
     play_parse:true,
     lazy:'',
     limit:6,
-        推荐: '.vodlist_item;.vodlist_thumb;*;*;*;*',
+        推荐: '.vodlist_item;.vodlist_thumb;a&&title;*;*;*',
     一级: 'ul.vodlist&&li;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
     二级: {
         title: 'h2&&Text;.detail_list&&ul:eq(1)&&li&&a:eq(2)&&Text',
