@@ -326,6 +326,17 @@
 	{"key":"vod_华为资源","name":"HW资源","type":1,"api":"http://nikanba.live/api.php/provide/vod/?ac=list","searchable":1,"quickSearch":1},
 	{"key":"机器人2","name":"机器┃影视","type":3,"api":"csp_Ikanbot","searchable":1,"quickSearch":1,"changeable":1,"ext":"https://v.aikanbot.com","jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 	{"key":"腐剧视频","name":"腐剧┃影视","type":3,"api":"csp_WexFujutv","searchable":1,"changeable":1,"jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
+        {
+            "key": "壹影视",
+            "name": "壹影｜APP",
+            "type": 3,
+            "api": "https://github.com/heroaku/svip/raw/refs/heads/main/py/%E5%A3%B9%E5%BD%B1%E8%A7%86.py",
+            "searchable": 1,
+            "changeable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+        },
 		{
             "key": "EU影视",
             "name": "EU影视",
