@@ -29,7 +29,7 @@ var rule = {
     lazy:'',
     limit:6,
         推荐: '.vodlist_item;.vodlist_thumb;*;*;*;*',
-    一级: 'ul.vodlist&&li;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
+    一级: 'ul.vodlist&&li;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
     二级: {
         title: 'h2&&Text;.detail_list&&ul:eq(1)&&li&&a:eq(2)&&Text',
         img: '.lazyload&&data-original',
