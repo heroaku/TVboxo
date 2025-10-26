@@ -3,8 +3,8 @@ var rule = {
   title: '壹影视',
   desc: '源动力出品',
   host: 'https://light-ios.yiys04.com',
-    //https://light-ios.yiys04.com/vod/show/by/time/id/2
-  url: '/api/vod/v1/vod/list?pageNum=fypage&pageSize=12&tid=fyclass&by=time&area=&lang=&year=&class=',  
+    //https://light-ios.yiys04.com/vod/show/by/time/id/fyclass
+  url: '/vod/show/by/time/id/fyclass',  
   //url: '/api/vod/v1/vod/list?pageNum=fypage&pageSize=12&tid=fyclass&by=time&area=&lang=&year=&class=',
   searchUrl: '/api/search?pageNum=fypage&pageSize=12&key=**',
   searchable: 2,
