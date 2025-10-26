@@ -22,8 +22,10 @@ var rule = {
         'User-Agent': 'PC_UA',
     },
     timeout: 10000,
-    class_parse: '.top_nav&&li:lt(7);a&&Text;a&&href;/(\\w+).html',
-    cate_exclude: 'Netflix|今日更新|专题列表|排行榜|热榜|文章',
+    //class_parse: '.top_nav&&li:lt(7);a&&Text;a&&href;/(\\w+).html',
+    //cate_exclude: 'Netflix|今日更新|专题列表|排行榜|热榜|文章',
+    class_name:'电影&电视剧&综艺&动漫&短剧&纪录片',
+    class_url:'1&2&3&4&20&5',
     play_parse: true,
     lazy: $js.toString(() => {
         let html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
