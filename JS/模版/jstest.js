@@ -1,8 +1,9 @@
-muban.首图.二级.重定向='js:let url = jsp.pd(html,".playbtn&&a&&href");log("重定向到:"+url);html = request(url)';
-muban.首图.二级.tabs='.play_source_tab a';
-muban.首图.二级.lists='.play_list_box:eq(#id) li';
+//muban.首图.二级.重定向='js:let url = jsp.pd(html,".playbtn&&a&&href");log("重定向到:"+url);html = request(url)';
+//muban.首图.二级.tabs='.play_source_tab a';
+//muban.首图.二级.lists='.play_list_box:eq(#id) li';
 
-var rule = Object.assign(muban.首图,{
+//var rule = Object.assign(muban.首图,{
+    var rule = {
     title:'老地影视',
     host:'https://www.laodifang.cc',
      //https://www.laodifang.cc/vodshow/fyclass--------fypage---.html
