@@ -525,6 +525,14 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/老地影视.js"
         },	
+	       {
+            "key": "海兔影院",
+            "name": "海兔影院",
+            "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/海兔影院.js"
+        },
 		{
 	  "key": " fxzds ",
 	  "name": "袋鼠影视",
@@ -1240,14 +1248,7 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/春华影院.js"
         },
-	{
-            "key": "海兔影院",
-            "name": "海兔影院",
-            "type": 3,
-            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/海兔影院.js"
-        },
+
 	{
             "key": "泥视频Ⅱ",
             "name": "泥视频Ⅱ",
