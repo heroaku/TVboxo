@@ -315,48 +315,26 @@
         },
 //添加开始
     {
-      "key": "央视大全",
+      "key": "央库云",
       "name": "☀央视🔹大全",
       "type": 3,
-      "api": "./JS/drpy2.min.js",
+      "api": "./Py/央库云.py",
       "searchable": 1,
+      "changeable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "order_num": 0,
-      "ext": "./JS/央视大全.js"
+      "playerType": 2
     },
     {
-      "key": "央视新闻",
-      "name": "☀央视🔹新闻",
+      "key": "央视影视",
+      "name": "☀央视🔹栏目",
       "type": 3,
-      "api": "./JS/drpy2.min.js",
+      "api": "./Py/央视影视.py",
       "searchable": 1,
+      "changeable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "order_num": 0,
-      "ext": "./JS/央视新闻.js"
-    },
-    {
-      "key": "央视综合",
-      "name": "☀央视🔹综合",
-      "type": 3,
-      "api": "./JS/drpy2.min.js",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "order_num": 0,
-      "ext": "./JS/央视综合.js"
-    },
-    {
-      "key": "央视少儿",
-      "name": "☀央视🔹少儿",
-      "type": 3,
-      "api": "./JS/drpy2.min.js",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "order_num": 0,
-      "ext": "./JS/央视少儿.js"
+      "playerType": 2
     },
     {
       "key": "养生堂",
