@@ -445,14 +445,14 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/映像星球.js"
         },	
-			{
-            "key": "云逸影院",
-            "name": "云逸影院",
+	{
+            "key": "小宝影院",
+            "name": "小宝影院",
             "type": 3,
-            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
             "api": "./JS/drpy2.min.js",
-            "ext": "./JS/云逸影院.js"
-        },	
+            "ext": "./JS/小宝影院.js"
+        },
 			{
             "key": "大米星球DM",
             "name": "大米星球DM",
@@ -1275,14 +1275,7 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/西瓜在线.js"
         },
-	{
-            "key": "小宝影院",
-            "name": "小宝影院",
-            "type": 3,
-            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/小宝影院.js"
-        },
+
 	{
             "key": "网飞猫",
             "name": "网飞猫",
