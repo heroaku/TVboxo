@@ -1,5 +1,6 @@
 {
    // "spider": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
+	//"jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
 	"spider": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
@@ -327,7 +328,7 @@
     {"key":"采集之王","name":"采集聚合","type":3,"api":"./JS/drpy2.min.js","searchable":1,"quickSearch":1,"ext":"https://git.acwing.com/YGFXZ/0/-/raw/main/采集之王_合_.js?type=url&params=https://git.acwing.com/YGFXZ/0/-/raw/main/采集静态.json"},
 	{"key":"vod_华为资源","name":"HW资源","type":1,"api":"http://nikanba.live/api.php/provide/vod/?ac=list","searchable":1,"quickSearch":1},
 	{"key":"机器人2","name":"机器┃影视","type":3,"api":"csp_Ikanbot","searchable":1,"quickSearch":1,"changeable":1,"ext":"https://v.aikanbot.com","jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
-	{"key":"腐剧视频","name":"腐剧┃影视","type":3,"api":"csp_WexFujutv","searchable":1,"changeable":1,"jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
+	//{"key":"腐剧视频","name":"腐剧┃影视","type":3,"api":"csp_WexFujutv","searchable":1,"changeable":1,"jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
         {
             "key": "壹影视",
             "name": "壹影｜APP",
@@ -367,20 +368,23 @@
             "key": "唐人街影院CF",
             "name": "唐人街影院CF",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
+			"api": "./JS/drpy2.min.js",
             "ext": "./JS/唐人街影院CF.js"
         },
 			{
             "key": "老网影视",
             "name": "老网影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
+			"api": "./JS/drpy2.min.js",
             "ext": "./JS/老网影视.js"
         },	
 			{
             "key": "金牌影院",
             "name": "金牌影院",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/金牌影院.js"
         },	
@@ -388,6 +392,7 @@
             "key": "努努影视",
             "name": "努努影视",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",			
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/努努影视.js"
         },
@@ -395,6 +400,7 @@
             "key": "看片狂人",
             "name": "看片狂人",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",			
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/看片狂人.js"
         },	
@@ -402,6 +408,7 @@
             "key": "映像星球",
             "name": "映像星球",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",			
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/映像星球.js"
         },	
@@ -409,6 +416,7 @@
             "key": "云逸影院",
             "name": "云逸影院",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/云逸影院.js"
         },	
@@ -416,13 +424,15 @@
             "key": "大米星球DM",
             "name": "大米星球DM",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
+			"api": "./JS/drpy2.min.js",
             "ext": "./JS/大米星球DM.js"
         },	
 			{
             "key": "蛋蛋影院",
             "name": "蛋蛋影院",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/蛋蛋影院.js"
         },
@@ -430,6 +440,7 @@
             "key": "蘑菇影视",
             "name": "蘑菇影视",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/蘑菇影视.js"
         },	
@@ -437,6 +448,7 @@
             "key": "SQZ影视",
             "name": "SQZ影视",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/SQZ影视.js"
         },	
@@ -444,6 +456,7 @@
             "key": "看片狂",
             "name": "看片狂",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/看片狂.js"
         },	
@@ -451,6 +464,7 @@
             "key": "毒舌电影",
             "name": "毒舌电影",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/毒舌电影.js"
         },	
@@ -458,6 +472,7 @@
             "key": "可可影视",
             "name": "可可影视",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/可可影视.js"
         },	
@@ -465,6 +480,7 @@
             "key": "老地影视",
             "name": "老地影视",
             "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/老地影视.js"
         },	
