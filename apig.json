@@ -343,21 +343,24 @@
             "key": "EU影视",
             "name": "EU影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
+			"api": "./JS/drpy2.min.js",
             "ext": "./JS/EU影视.js"
         },	
 		{
             "key": "多瑙影视",
             "name": "多瑙影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
+			"api": "./JS/drpy2.min.js",
             "ext": "./JS/多瑙影视.js"
         },	
 		{
             "key": "永乐视频",
             "name": "永乐视频",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
+			"api": "./JS/drpy2.min.js",
             "ext": "./JS/永乐视频.js"
         },
 		{
