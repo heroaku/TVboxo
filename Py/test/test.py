@@ -29,7 +29,7 @@ import os
 
 sys.path.append('..')
 
-xurl = "https://ys2046.live"
+xurl = "https://huarw.com/"
 
 headerx = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.87 Safari/537.36'
@@ -117,14 +117,14 @@ class Spider(Spider):
 
     def homeContent(self, filter):
         result = {}
-        result = {"class": [{"type_id": "1", "type_name": "电影"},
-                            {"type_id": "2", "type_name": "剧集"},
-                            {"type_id": "3", "type_name": "综艺"},
-                            {"type_id": "4", "type_name": "动漫"},
-                            {"type_id": "40", "type_name": "豆瓣"}],
+        result = {"class": [{"type_id": "dianying", "type_name": "电影"},
+                            {"type_id": "dianshiju", "type_name": "剧集"},
+                            {"type_id": "zongyi", "type_name": "综艺"},
+                            {"type_id": "dongman", "type_name": "动漫"},
+                            {"type_id": "duanju", "type_name": "短剧"}],
 
                   "list": [],
-                  "filters": {"1": [{"key": "年代",
+                  "filters": {"dianying": [{"key": "年代",
                                      "name": "年代",
                                      "value": [{"n": "全部", "v": ""},
                                                {"n": "2025", "v": "2025"},
@@ -135,7 +135,7 @@ class Spider(Spider):
                                                {"n": "2020", "v": "2020"},
                                                {"n": "2019", "v": "2019"},
                                                {"n": "2018", "v": "2018"}]}],
-                              "2": [{"key": "年代",
+                              "dianshiju": [{"key": "年代",
                                      "name": "年代",
                                      "value": [{"n": "全部", "v": ""},
                                                {"n": "2025", "v": "2025"},
@@ -146,7 +146,7 @@ class Spider(Spider):
                                                {"n": "2020", "v": "2020"},
                                                {"n": "2019", "v": "2019"},
                                                {"n": "2018", "v": "2018"}]}],
-                              "3": [{"key": "年代",
+                              "zongyi": [{"key": "年代",
                                      "name": "年代",
                                      "value": [{"n": "全部", "v": ""},
                                                {"n": "2025", "v": "2025"},
@@ -157,7 +157,7 @@ class Spider(Spider):
                                                {"n": "2020", "v": "2020"},
                                                {"n": "2019", "v": "2019"},
                                                {"n": "2018", "v": "2018"}]}],
-                              "4": [{"key": "年代",
+                              "dongman": [{"key": "年代",
                                      "name": "年代",
                                      "value": [{"n": "全部", "v": ""},
                                                {"n": "2025", "v": "2025"},
@@ -168,7 +168,7 @@ class Spider(Spider):
                                                {"n": "2020", "v": "2020"},
                                                {"n": "2019", "v": "2019"},
                                                {"n": "2018", "v": "2018"}]}],
-                              "40": [{"key": "年代",
+                              "duanju": [{"key": "年代",
                                      "name": "年代",
                                      "value": [{"n": "全部", "v": ""},
                                                {"n": "2025", "v": "2025"},
