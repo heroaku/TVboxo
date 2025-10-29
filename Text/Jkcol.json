@@ -2,6 +2,10 @@
     "warningText": "8.19UP低调使用！！！",
     "urls": [
 	{
+            "name": "9木盒子",
+            "url": "https://github.com/ninemui/9muiBOX/raw/refs/heads/main/9muiBOX.json"
+        },
+	{
             "name": "📚【天微vip线】📚",
             "url": "https://ghcy.eu.org/https://raw.githubusercontent.com/waxtdm/daye/refs/heads/main/%E3%80%90%E5%A4%A9%E5%BE%AEVIP%E7%BA%BF%E3%80%91/api.json"
         },
