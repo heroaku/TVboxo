@@ -1,9 +1,10 @@
 var rule={
-    title: '耐看',
+    title: '师兄影视',
     host: 'https://bli.one',
     url: '/k/fyclass--------fypage---.html',
-     //https://bli.one/k/2--------2---.html
-    searchUrl: '/nk/-------------.html?wd=**',
+    //https://bli.one/k/2--------2---.html
+    //https://bli.one/s/**----------fypage---.html
+    searchUrl: '/s/**----------fypage---.html',
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
