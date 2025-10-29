@@ -374,6 +374,14 @@
             "playerType": 2
         },
 		{
+            "key": "剧迷影视",
+            "name": "剧迷影视",
+            "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",			
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/剧迷影视.js"
+        },			
+		{
             "key": "EU影视",
             "name": "EU影视",
             "type": 3,
