@@ -1,9 +1,9 @@
 {
       "简介": "class=\"public-list-subtitle cor5 hide ft2\">&&</span>",
         "副标题": "module-item-note&&</div>",
-       // "线路数组": "module-tab-item tab-item\" data-dropdown-value=&&</div>",
+       "线路数组": "module-tab-item tab-item\" data-dropdown-value=&&</div>",
       //
-       "线路数组": "<a class=\"channelname swiper-slide&&</a>",
+       //"线路数组": "<a class=\"channelname swiper-slide&&</a>",
        // "线路标题": "<h3>&&</h3>[替换:在线播放>>🐱4k猫线路]",
         "播放数组": "<ul class=\"content_playlist cf\">&&</ul>",
         "播放列表": ">&&</a",
