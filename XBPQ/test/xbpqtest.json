@@ -29,5 +29,5 @@
     "搜索链接": "href=\"&&\"",
     "分类url": "https://www.xiaohys.com/show/{cateId}-{class}-{area}-{year}-{by}-{catePg}.html",
     "分类": "电影&剧集&综艺&动漫",
-    "分类值": "1&2&3&4"
+    "分类值": "movie&tv&3&4"
 }
