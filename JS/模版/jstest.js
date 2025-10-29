@@ -41,7 +41,7 @@ var rule = {
     推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-tag-left&&Text;a&&href',
     一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-tag-left&&Text;a&&href',
     二级:{
-           'title': '.h1&&Text',
+           'title': '.title&&Text',
            'desc': '.stui-content__detail p:eq(3)&&Text;.stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(2)&&Text;.stui-content__detail p:eq(1)&&Text;',
            'content': '.stui-content__detail p:eq(4)&&Text;',
            'tabs':'.nav-tabs li',
