@@ -460,7 +460,15 @@
             "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",			
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/欧乐影院.js"
-        },		
+        },	
+		{
+            "key": "师兄影视",
+            "name": "师兄影视",
+            "type": 3,
+            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",			
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/师兄影视.js"
+        },			
 			{
             "key": "大米星球DM",
             "name": "大米星球DM",
