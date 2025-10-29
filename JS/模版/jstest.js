@@ -1,16 +1,17 @@
 var rule = {
-     title: '狗番',
+     title: '哈哈影视',
      host: 'https://www.hahahd.com',
-     模板:'首图2',
+     //模板:'首图2',
     //https://www.hahahd.com/show/2--------2---.html
-     searchUrl: '/vodsearch/**----------fypage---',
+     searchUrl: '/search/**----------fypage---',
      url: '/show/fyclass--------fypage---',
      searchable: 2,//是否启用全局搜索,
      quickSearch: 1,//是否启用快速搜索,
      filterable: 0,//是否启用分类筛选,
-     class_name:'TV动画&剧场动画',
-     class_url:'1&2',
-     tab_rename:{'追番乐切':'LR',},
+     class_name:'电影&电视剧&综艺&动漫',
+     class_url:'1&2&3&4',
+     lazy: '',
+    // tab_rename:{'追番乐切':'LR',},
      /*
      lazy:`js:
         var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
@@ -40,8 +41,8 @@ var rule = {
         }
     `,
     */
-    推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-tag-left&&Text;a&&href',
-    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-tag-left&&Text;a&&href',
+    推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-textt&&Text;a&&href',
+    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
     二级:{
            'title': '.title&&Text',
            'desc': '.stui-content__detail p:eq(3)&&Text;.stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(2)&&Text;.stui-content__detail p:eq(1)&&Text;',
