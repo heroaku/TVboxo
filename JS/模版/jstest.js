@@ -11,6 +11,7 @@ var rule = {
      class_name:'TV动画&剧场动画',
      class_url:'1&2',
      tab_rename:{'追番乐切':'LR',},
+     /*
      lazy:`js:
         var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
         var url = html.url;
@@ -38,6 +39,7 @@ var rule = {
             }
         }
     `,
+    */
     推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-tag-left&&Text;a&&href',
     一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-tag-left&&Text;a&&href',
     二级:{
