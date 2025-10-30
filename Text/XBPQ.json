@@ -8,7 +8,7 @@
   "logo": "https://gitee.com/yanglongxiang/my/raw/master/%E8%A3%81%E7%BC%9D%E5%A4%A7%E5%8F%94.gif",
 "sites":[ {
       "key": "csp_豆瓣",
-      "name": "🌈防失联，关注快手号济宁裁缝大叔",
+      "name": "豆瓣",
       "type": 3,
   "jar": "https://gitee.com/yanglongxiang/xs/raw/master/spider.jar",
       "api": "csp_Douban",
