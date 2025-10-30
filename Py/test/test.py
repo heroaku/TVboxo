@@ -189,7 +189,7 @@ class Spider(Spider):
                 season_links = data('.seasons-list a, .season-item a, .se-c a, .se-a a, .seasons a')
                 play_links = self.getSeasonEpisodes(season_links) if season_links else [f"播放${first_id}"]
             
-            vod['vod_play_from'] = '老僧酿酒'
+            vod['vod_play_from'] = '影院专线'
             vod['vod_play_url'] = '#'.join(play_links)
             
             return {'list': [vod]}
