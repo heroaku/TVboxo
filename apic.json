@@ -5,6 +5,18 @@
     //"spider": "./Jar/tvkj.jar",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
+##PY源系列
+{"key": "UVod","name": "🎦┃优视频┃影视","type": 3,"api": "https://github.com/heroaku/X/raw/refs/heads/main/py/UVod.py","style": {"type": "rect","ratio": 1.33},"changeable": 1},	
+{"key": "努努","name": "🍆┃努努影院┃TV","type": 3,"api": "https://github.com/heroaku/X/raw/refs/heads/main/py/努努影院.py","searchable": 1,"quickSearch": 0,"filterable": 0,"changeable": 0},
+{"key": "界影视","name": "📚┃界影视┃TV","type": 3,"api": "https://github.com/heroaku/X/raw/refs/heads/main/py/界影视.py","searchable": 1,"quickSearch": 0,"filterable": 0,"changeable": 0},
+{"key": "apple","name": "☎️┃小苹果┃PY","type": 3,"api": "https://github.com/heroaku/X/raw/refs/heads/main/py/apple.py","searchable": 1,"quickSearch": 0,"filterable": 0,"changeable": 0},
+{"key": "4KVM","name": "🍿┃4K影视┃TV","type": 3,"api": "./Py/4KVM.py","searchable": 1,"quickSearch": 0,"filterable": 0,"changeable": 0},
+{"key": "LSYS","name": "🛠️┃电影猎手┃TV","type": 3,"api": "https://github.com/heroaku/X/raw/refs/heads/main/py/LSYS.py","style": {"type": "rect","ratio": 1.33},"changeable": 1},
+{"key": "猎手","name": "👟┃猎手影视┃TV","type": 3,"api": "https://github.com/heroaku/X/raw/refs/heads/main/py/py_电影猎手.py","searchable": 1,"quickSearch": 1,"changeable": 1,"filterable": 1,"timeout": 60},	
+{"key": "YYMP3","name": "🎸┃YYMP3┃音乐网","type": 3,"api": "https://github.com/heroaku/X/raw/refs/heads/main/py/YYMP3音乐网.py","style": {"type": "rect","ratio": 1.33},"changeable": 1},	
+{"key": "云端","name": "✨┃云端影视┃TV","type": 3,"api": "https://github.com/heroaku/X/raw/refs/heads/main/py/云端APP.py","searchable": 1,"quickSearch": 1,"changeable": 1,"filterable": 1,"timeout": 60},
+{"key": "金牌","name": "🏅┃金牌影视┃TV","type": 3,"api": "https://github.com/heroaku/X/raw/refs/heads/main/py/金牌.py","searchable": 1,"quickSearch": 1,"changeable": 1,"filterable": 1,"timeout": 60},	
+		
         {
             "key": "豆瓣",
             "name": "豆瓣｜首页",
