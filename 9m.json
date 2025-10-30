@@ -1,8 +1,8 @@
 {
 ## spider
-//"spider":"https://github.com/ninemui/gaoBOX/raw/master/jar/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9",
-"spider": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
-
+"spider":"https://github.com/ninemui/gaoBOX/raw/master/jar/pg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9",
+//"spider": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
+ //"spider": "https://github.com/heroaku/svip/raw/refs/heads/main/svip.jar",
 ##主頁壁紙
 "wallpaper": "https://api.likepoems.com/img/bing",
 
