@@ -5,8 +5,6 @@
     //"spider": "./Jar/tvkj.jar",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
-##PY源系列
-	
         {
             "key": "豆瓣",
             "name": "豆瓣｜首页",
