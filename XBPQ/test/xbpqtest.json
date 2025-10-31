@@ -15,5 +15,6 @@
 			 "跳转播放链接": "var player_*\"url\":\"&&\"",
             "简介": "小林子为您剧情介绍: +detail-sketch\">&&</span>",
             "分类url": "https://quickvod.cc/type/{cateId}-{catePg}.html",
+	//https://www.quickvod.cc/type/2-1.html
             "分类": "电影$1#电视剧$2#综艺$3#动漫$4"
         }
