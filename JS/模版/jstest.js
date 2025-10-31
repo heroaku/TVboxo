@@ -1,39 +1,97 @@
 var rule = {
-    title: '热播之家',
-    host: 'https://rebozj.pro',
-    //url: '/type/fyclass-fypage.html',
-    url: '/show/fyfilter.html',
-    filterable: 1,//是否启用分类筛选,
-    filter_url: '{{fl.cateId}}-{{fl.area}}-{{fl.by or "time"}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
-    filter: 'H4sIAAAAAAAAA+1Z704bRxB/l/vMhzuDDeQN+gxVPrip1UalVAJaCUVIJMbUNsQ2UWOXQPmjYuwUDAZSEmxsXsZ7Z79Fz97dmVlymV6x2yqSv/n3m9u9mdmd3d+cn1mO9ejLZ9Z3iWXrkfUkvpT44mtrwpqPf5/wsbuZ8S6aYm/Dp36Kz/2YGDw771tEqtpLVvu0DxxrZULR2WqntavoGNLFXZGpKHoaaC994SZTip5BurIlbpqKngXafV5wV4v6lTZOnqngLA764qZ/7TQymo9YK4/7FhXoXHxx0YgTZ/l0nMGvVCAwVgUC06NAYDIUgFCSWffFG2VTIDAtCsCc2XOv9YeeUwIY9+LUK27pcRKAn+uvettvtZ8SBK6OAjCu/DPaFAhcDgVg3Nm1aNT0OAnAllsX+UttkwBs+aPu77AOEmhb5/age1ZXNgXAl9pxp32gfZFA23r7V52bgrIpoG3du4K/asqmAM652U3vwZwDAOPKd7iLFIB8Pm/33rR1PiWgWzW+kIibO3W3LjYbYXfqUaW3va4zJAFEerztfjjXkUqAma27N23I7ACAx+2c2GlpjyWALFy9RpsCkIWNC7QpAONKZXf3VI+TAFfkLY5TAPxsv0ebAuhLnfpSN8a9rIvGsR4nAYxby/uZEmldAIjJenr5mpfZxiVVGCv9wN2484dBsWsMT6SuO01dtwrQdV9OxBfMdb9512m2Qq57xI5MKW7wk/CTyE9SPoJ8hPIO8g7lbeRtwjuzwDuzlJ9Bfoby08hPUz6GfIzyUeSjlMd4HRqvg/E6NF4H43VovA7G69B4HYy3f/mQlZqLz39jrFT3vNatroat0J2W/7zeBxKQikGbAlCFl0doUwAqptQSL0toRkxqipglILWINgVIfRObBKQWSSQSkN0uzpK42/uA5vCrZZLB3CvRyH+UPrd03Su9U1MsPfUfhaO+0XDrvyjLt0+XFjGB52sirY+/xSc/LCT6b308YUWGVz0RuoSdRgVvfbLP/DPVPz2JaYqmuX+YoQl3s/vne3FUJKbYKNULpzQ4ZcPdF6zSYG5+ToVwyoa7+bnbnVM2nDrjlA2n+Djl9lDVwyqwwVbE06QPwJfTin9ba18kGPb+lTtVj5Mg1P0bpC9Gp3rWU/7zsMoDECaahyoiLnu8Wvp0hli1VKz7gkL8dqiHAh6ri7G6sD5bdfGPVMJm5r8QCpPDC4XJUV7efhsrWq/1okkQpuXlLpSHtrzePuyQfbJ1OCkA2sL4vMF9GuA+Rfy7rTNziUhZpz2WwNR1uMH7gL2Cx8fyqI7lQcVODV+xmDol7bNV9/ZEv+ojCW9Yo/c2iWmN3dsKpnV6lCdFgHMGxYRoUIzDBsWEbVD3mhzjOUqFkuycLOc+tnIS+oEfd9m2ipP6a3feSVnbJAjTHgWfvuwnSqYZ4e4ArhFjz26mSWNvCaaB4z6zsk1TMy9SH/T7JIA5C3veKWRZgjDS3g/XLZYw9j4A28Gh2AGZIwH4kqx1D1e1LxJADIWcOIM6lCBMA2fW771KS6a6mUtY9wGAcfUtUb7S4yQAP0/23Cz4KQHMedl019J6TgnAlqt6BS2mFBjhvcy1uNxqcdkbt0vWuF0at0tDt0vR4cUX7iP5f5XXvO1mGspIdqUUFaZ1hubNz6RhJZUhy9+0OiMQX9G/myPEQRcdnzyfz8kDvI3x2jReG+O1abw2xmvTeG2M16bx2hivTeO1MV57ahQn4f/2p8zKXyGn+e2MIgAA',
-    filter_def: {
-        1: {cateId: '1'},
-        2: {cateId: '2'},
-        3: {cateId: '3'},
-        4: {cateId: '4'},
-        5: {cateId: '5'}
-    },
-    searchUrl: '/type/id-.html?wd=**',
-    searchable: 2,//是否启用全局搜索,
-    quickSearch: 0,//是否启用快速搜索,
-    headers: {
-        'User-Agent': 'UC_UA',
-    },
-    class_parse: '.stui-header__menu li:lt(6);a&&Text;a&&href;.*/(.*?).html',
-    play_parse: true,
-    tab_remove:['蓝光专享1','夸克4K','极速有广①','极速有广②'],
-    lazy: '',
-    limit: 6,
-    推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-    double: true, // 推荐内容是否双层定位
-    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    二级: {
-        "title": ".stui-content__detail .title&&Text;.stui-content__detail p:eq(-2)&&Text",
-        "img": ".stui-content__thumb .lazyload&&data-original",
-        "desc": ".stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text",
-        "content": ".detail&&Text",
-        "tabs": ".nav.nav-tabs li",
-        "lists": ".stui-content__playlist:eq(#id) li"
-    },
-    搜索: '*',
+author: '小可乐/2503/第一版',
+title: '小红影视.',
+类型: '影视',
+host: 'https://www.xiaohys.com',
+hostJs: '',
+headers: {'User-Agent': MOBILE_UA},
+编码: 'utf-8',
+timeout: 5000,
+homeUrl: '/',
+url: '/index.php/api/vod',
+filter_url: '',
+searchUrl: '/index.php/ajax/suggest?mid=1&limit=60&wd=**',
+detailUrl: '/detail/fyid',
+limit: 9,
+double: false,
+class_name: '电影&剧集&综艺&动漫',
+class_url: '1&2&3&4',
+filter_def: {},
+推荐: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
+一级: $js.toString(() => {
+let t = new Date().getTime().toString();
+let key = md5(`DS${t}DCC147D11943AF75`);
+let fbody = {
+    "type": MY_CATE.toString(),
+    "class": (MY_FL.class || "").toString(),
+    "area": (MY_FL.area || "").toString(),
+    "year": (MY_FL.year || "").toString(),
+    "letter": (MY_FL.letter || "").toString(),
+    "by": (MY_FL.by || "").toString(),
+    "page": MY_PAGE,
+    "time": t,
+    "key": key
+};
+let khtml = fetch(input, {
+    headers: rule.headers,
+    body: fbody,
+    method: 'POST'
+});
+VODS = JSON.parse(khtml).list
+}),
+搜索: 'json:list;name;pic;en;id',
+二级: $js.toString(() => {
+let khtml = fetch(input);
+let kdetail = pdfh(khtml, '.search-show');
+let ktabs = pdfa(khtml, '.anthology-tab&&a').map((it) => { return '👶' + pdfh(it, 'body--span&&Text') });
+let kurls = pdfa(khtml, '.anthology-list-play').map((item) => {
+    let kurl = pdfa(item,'a').map((it) => { return pdfh(it, 'body&&Text') + '$' + pd(it, 'a&&href', input) });
+    return kurl.join('#')
+});
+VOD = {
+    vod_id: input,
+    vod_name: pdfh(khtml,'h3&&Text'),
+    vod_pic: pdfh(khtml,'.detail-pic&&img&&data-src'),
+    type_name: pdfh(kdetail,'li:contains(类型)--em&&Text'),
+    vod_remarks: pdfh(kdetail,'li:contains(状态)--em&&Text'),
+    vod_year: pdfh(kdetail,'li:contains(年份)--em&&Text'),
+    vod_area: pdfh(kdetail,'li:contains(地区)--em&&Text'),
+    vod_lang: pdfh(kdetail,'li:contains(语言)--em&&Text'),
+    vod_director: pdfh(kdetail,'li:contains(导演)--em&&Text'),
+    vod_actor: pdfh(kdetail,'li:contains(主演)--em&&Text'),
+    vod_content: pdfh(kdetail,'.top26--em&&Text'),
+    vod_play_from: ktabs.join('$$$'),
+    vod_play_url: kurls.join('$$$')
+}
+}),
+
+play_parse: true,
+lazy: $js.toString(() => {
+let kdata = fetch(input).split('aaaa=')[1].split('<')[0];
+let kurl = JSON.parse(kdata).url;
+if (/\.(m3u8|mp4)/.test(kurl)) {
+    input = { jx: 0, parse: 0, url: kurl, header: rule.headers }
+} else {
+    let furl = `${HOST}/static/player/artplayer/api.php?ac=getdate`;
+    let fbody = `url=${kurl}`;
+    let khtml = fetch(furl, {
+        headers: rule.headers,
+        body: fbody,
+        method: 'POST'
+    });
+    kdata = JSON.parse(khtml).data;
+    let iv = JSON.parse(khtml).iv;
+    iv = CryptoJS.enc.Utf8.parse(iv);
+    const key = CryptoJS.enc.Utf8.parse('d978a93ffb4d3a00');
+    let decrypted = CryptoJS.AES.decrypt(kdata, key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    kdata = decrypted.toString(CryptoJS.enc.Utf8);
+    kurl = JSON.parse(kdata).url;
+    input = { jx: 0, parse: 0, url: kurl, header: rule.headers }
+}
+}),
+filter: 'H4sIAAAAAAAAA+2ZWU8bVxTH3/kYfqbSDNAkzVv2fd8T5cGNrDYqpRLQSgghGYyJIWAbRCCuzdawhWIwSynYNf4yvjPmW+Ta92xuy8hqaV8yb/79z9w755w7M/fvmd6mgB04+6KpN/BdqCdwNvCqPdjVFWgOdAS/D2lUwytOJKr5p2D7j1p40RvoqMrR1aPIalXWEOhrBnUqo48HFQBjbmwLJmLAmNOfdMJTEAOgOUdWy8UMzmmA5lwZVwcFnNMAjaPEGeh8sffl/DCezwDGKtllNboGMQA638imW8QYgMjTnSxwnlWg2NIbzhOAcskulw/nMRcDNG5o4ij1EccZoHGzazpzHGeAYgPr7tQ4xgxQLDLiDPyMMQNUXyGhovtYnwGMHc1MOO+XIAZAc069qQzncU4DVMPhhjv5mypuYRnEdERisfKBVsoAxeJDKrGNMQO0UqWk7jOulAHuXMaZGafO1YBigyX3V6wEgDpQHHcLmbqE66S+l33NdKsEO0NBcadkcmo03+idsrhylBrCHAxQp5dTzv4mdtoA9yrnHBxSr2pAuR/GVbqIWRugFdp5xzEA6uPbLY4B0LjpJSezjuMMUJ5zH3kcAK/67xwD4FxyMpdc3bixnMov4zgDNG4woTulYnhDMFMlSyU3kXWHU1gMMd+l887bkh5GNyoyHRHdKxfwWQRQt+rtwY5veNUrm9nKarjRVU8X9fE4twGxChwDoJXdXuQYAK3CdFGNTXOYWayTCBsQ68sxAHHNiJgBsb6iEgOig2ojwh2sQl0He0LBTnHfHOyWC8UGO9hitXwJWu2n0NtYb5N6K+utUm9hvUXqNuu21C3WLaHbX5Gufwr9DOtnpH6a9dNSP8X6Kalzvbas1+Z6bVmvzfXasl6b67VlvTbXa8t6ba7XlvVaXK8l67W4XkvWa3G9lqzX4notWa/F9VqyXovr1T/r78hQd3dIXlHZaWdzrMEr6hwI50g5D8p5Ui6AcoGUi6BcJOUSKJdIuQzKZVKugHKFlKugXCXlGijXSLkOynVSboByg5SboNwk5RYot0i5DcptUu6AcoeUu6DcJeUeKPdIuQ/KfVIegPKAlIegPCTlESiPSHkMymNSnoDyhJSnoDwl5Rkoz0h5DspzUqwv8CKt/qq7Vr7u4evEiU+ofOIv14mTCTtTOZig+7U+lJ6ImbAbwafet6+7u/jpvTmoYrifd736oTNUPW3Ty+amQMuJuWsPn+TlaI1ZU/17KpKo828gNeLe1caeytPz3kCDrvhY9+7lir3cu5cn9HKw5YMF9oQA7IqjTgo9FwCd790QO20A4Re5ZwANO4l/4x+Hovp48rc1aMSX/VNv6eUDvX3n8V7P03dO5bQ1UzML9KcC2fdpf/Zpvt/y/Zbvt3y/5futmt9qPSm/dRQedlfC+Dw2IP3C4JzwCxoot41SJRfDHcIAjZvIOiP47gmAn/FRZx+9CwDvDTvlgyTtDTUQ++/RB8wFgGL5NbUxizEDdL70tnhrZ4DGTc45u/Rm1QCN2993YolyfoLfvtVJ1IfdX7QDwz4YoDm2Bir9ozjawP/hjbTf0c6Gsq6B2GP1rst7bBUotr6iO4sxA77b8N2G7zZ8t+G7jc/YbbSdlNvwchRe3zl1ypUFdCkANGd81U1i3gAUS8666/SN0ADvoMd/d6wkZypxfNMEQHPOL6g07RsGaE6PN0FOJi++ZRqg83l85fN666Vyuk27eD4DMra0I2IaqJ+Lh+U/8PsoAI2Lz6lYGscZwFg5v62y6NAAaM70iJNCpwXAfdlSpWnqSw3EXvvfvUHy+ALp9bbnb51Qo/n6Lsl3Sb5L8l1SwHdJn49Laur7BLEioANkJgAA'
 }
