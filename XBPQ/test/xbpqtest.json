@@ -1,25 +1,4 @@
-/*
-{"数组": "stui-vodlist__box\"&&</li>",
-			"标题": "title=\"&&\"",
-			"图片": "data-original=\"&&\"",
-			"副标题": "text-right\">&&</span>",
-			"链接": "href=\"&&\"",
-			"播放数组": "<ul class=\"stui-content__playlist&&</ul>",
-			
-			"播放列表": "<a&&a>",
-			"播放链接": "href=\"&&\"",
-			"播放标题": ">&&</",
-			"线路数组": "<div class=\"stui-vodlist__head\">&&</div>",
-			
-			"线路标题": "<h3>&&</h3>",
-			
-			 "跳转播放链接": "var player_*\"url\":\"&&\"",
-            "简介": "小林子为您剧情介绍: +detail-sketch\">&&</span>",
-            "分类url": "https://quickvod.cc/type/{cateId}-{catePg}.html",
-	//https://www.quickvod.cc/type/2-1.html
-            "分类": "电影$1#电视剧$2#综艺$3#动漫$4"
-        }
-*/
+
 {
                 "数组": "stui-vodlist__box\"&&</li>",
                 "标题": "title=\"&&\"",
