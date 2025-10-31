@@ -1,29 +1,49 @@
-# -*- coding: utf-8 -*-
-# @Author  : Doubebly
-# @Time    : 2025/1/19 22:00
+"""
 
-import sys
+作者 凯悦宾馆 🚓 内容均从互联网收集而来 仅供交流学习使用 版权归原创者所有 如侵犯了您的权益 请通知作者 将及时删除侵权内容
+                    ====================kaiyuebinguan====================
+
+"""
+
+from Crypto.Util.Padding import unpad
+from urllib.parse import unquote
+from Crypto.Cipher import ARC4
+from base.spider import Spider
+from bs4 import BeautifulSoup
+import urllib.request
+import urllib.parse
+import binascii
 import requests
-from lxml import etree
 import base64
 import json
+import time
+import sys
 import re
-from urllib import parse
-sys.path.append('..')
-from base.spider import Spider
+import os
 
+sys.path.append('..')
+
+xurl = "https://51souju1.com"
+
+headerx = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.87 Safari/537.36'
+          }
+
+# headerx = {
+#     'User-Agent': 'Linux; Android 12; Pixel 3 XL) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.101 Mobile Safari/537.36'
+#           }
+
+pm = ''
 
 class Spider(Spider):
+    global xurl
+    global headerx
+
     def getName(self):
-        return "QuickVod"
+        return "首页"
 
     def init(self, extend):
-        self.home_url = 'https://www.quickvod.cc'
-        self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"}
-
-    def getDependence(self):
-        return []
+        pass
 
     def isVideoFormat(self, url):
         pass
@@ -31,214 +51,762 @@ class Spider(Spider):
     def manualVideoCheck(self):
         pass
 
+    def extract_middle_text(self, text, start_str, end_str, pl, start_index1: str = '', end_index2: str = ''):
+        if pl == 3:
+            plx = []
+            while True:
+                start_index = text.find(start_str)
+                if start_index == -1:
+                    break
+                end_index = text.find(end_str, start_index + len(start_str))
+                if end_index == -1:
+                    break
+                middle_text = text[start_index + len(start_str):end_index]
+                plx.append(middle_text)
+                text = text.replace(start_str + middle_text + end_str, '')
+            if len(plx) > 0:
+                purl = ''
+                for i in range(len(plx)):
+                    matches = re.findall(start_index1, plx[i])
+                    output = ""
+                    for match in matches:
+                        match3 = re.search(r'(?:^|[^0-9])(\d+)(?:[^0-9]|$)', match[1])
+                        if match3:
+                            number = match3.group(1)
+                        else:
+                            number = 0
+                        if 'http' not in match[0]:
+                            output += f"#{'📽️丢丢👉' + match[1]}${number}{xurl}{match[0]}"
+                        else:
+                            output += f"#{'📽️丢丢👉' + match[1]}${number}{match[0]}"
+                    output = output[1:]
+                    purl = purl + output + "$$$"
+                purl = purl[:-3]
+                return purl
+            else:
+                return ""
+        else:
+            start_index = text.find(start_str)
+            if start_index == -1:
+                return ""
+            end_index = text.find(end_str, start_index + len(start_str))
+            if end_index == -1:
+                return ""
+
+        if pl == 0:
+            middle_text = text[start_index + len(start_str):end_index]
+            return middle_text.replace("\\", "")
+
+        if pl == 1:
+            middle_text = text[start_index + len(start_str):end_index]
+            matches = re.findall(start_index1, middle_text)
+            if matches:
+                jg = ' '.join(matches)
+                return jg
+
+        if pl == 2:
+            middle_text = text[start_index + len(start_str):end_index]
+            matches = re.findall(start_index1, middle_text)
+            if matches:
+                new_list = [f'✨丢丢👉{item}' for item in matches]
+                jg = '$$$'.join(new_list)
+                return jg
+
     def homeContent(self, filter):
-        return {
-            'class': [
-                {'type_id': '1', 'type_name': '电影'},
-                {'type_id': '2', 'type_name': '剧集'},
-                {'type_id': '4', 'type_name': '动漫'}
-            ]
-        }
+        result = {}
+        result = {"class": [{"type_id": "1", "type_name": "丢丢电影🌠"},
+                            {"type_id": "2", "type_name": "丢丢剧集🌠"},
+                            {"type_id": "4", "type_name": "丢丢动漫🌠"},
+                            {"type_id": "41", "type_name": "丢丢记录🌠"},
+                            {"type_id": "3", "type_name": "丢丢综艺🌠"}],
+
+                  "list": [],
+                  "filters": {"1": [{"key": "年代",
+                                     "name": "年代",
+                                     "value": [{"n": "全部", "v": ""},
+                                               {"n": "2024", "v": "2024"},
+                                               {"n": "2023", "v": "2023"},
+                                               {"n": "2022", "v": "2022"},
+                                               {"n": "2021", "v": "2021"},
+                                               {"n": "2020", "v": "2020"},
+                                               {"n": "2019", "v": "2019"},
+                                               {"n": "2018", "v": "2018"}]}],
+                              "2": [{"key": "年代",
+                                     "name": "年代",
+                                     "value": [{"n": "全部", "v": ""},
+                                               {"n": "2024", "v": "2024"},
+                                               {"n": "2023", "v": "2023"},
+                                               {"n": "2022", "v": "2022"},
+                                               {"n": "2021", "v": "2021"},
+                                               {"n": "2020", "v": "2020"},
+                                               {"n": "2019", "v": "2019"},
+                                               {"n": "2018", "v": "2018"}]}],
+                              "3": [{"key": "年代",
+                                     "name": "年代",
+                                     "value": [{"n": "全部", "v": ""},
+                                               {"n": "2024", "v": "2024"},
+                                               {"n": "2023", "v": "2023"},
+                                               {"n": "2022", "v": "2022"},
+                                               {"n": "2021", "v": "2021"},
+                                               {"n": "2020", "v": "2020"},
+                                               {"n": "2019", "v": "2019"},
+                                               {"n": "2018", "v": "2018"}]}],
+                              "41": [{"key": "年代",
+                                     "name": "年代",
+                                     "value": [{"n": "全部", "v": ""},
+                                               {"n": "2024", "v": "2024"},
+                                               {"n": "2023", "v": "2023"},
+                                               {"n": "2022", "v": "2022"},
+                                               {"n": "2021", "v": "2021"},
+                                               {"n": "2020", "v": "2020"},
+                                               {"n": "2019", "v": "2019"},
+                                               {"n": "2018", "v": "2018"}]}],
+                              "4": [{"key": "年代",
+                                     "name": "年代",
+                                     "value": [{"n": "全部", "v": ""},
+                                               {"n": "2024", "v": "2024"},
+                                               {"n": "2023", "v": "2023"},
+                                               {"n": "2022", "v": "2022"},
+                                               {"n": "2021", "v": "2021"},
+                                               {"n": "2020", "v": "2020"},
+                                               {"n": "2019", "v": "2019"},
+                                               {"n": "2018", "v": "2018"}]}]}}
+
+        return result
 
     def homeVideoContent(self):
-        data = self.get_data(self.home_url)
-        return {'list': data, 'parse': 0, 'jx': 0}
+        videos = []
 
-    def categoryContent(self, cid, page, filter, ext):
-        # if page != 1:
-        #     return {'list': [], 'parse': 0, 'jx': 0, 'msg': '第二页'}
-        url = f'{self.home_url}/type/{cid}-{page}.html'
-        data = self.get_data(url)
-        return {'list': data, 'parse': 0, 'jx': 0}
-
-
-    def detailContent(self, did):
-        ids = did[0]
-        video_list = []
         try:
-            res = requests.get(f'{self.home_url}/video/{ids}.html', headers=self.headers)
-            root = etree.HTML(res.text.encode('utf-8'))
-            vod_play_from = root.xpath('//div[@class="stui-vodlist__head"]/h3/text()')[
-                0]  # //ul[contains(@class, "abc")]  [@class="tab_control play_from"]
-            play_list = root.xpath('//ul[contains(@class, "stui-content__playlist")]/li')
-            p_list = []
-            for play in play_list:
-                name = play.xpath('./a/text()')[0]
-                url = play.xpath('./a/@href')[0]
-                p_list.append(f'{name}${url}')
-            video_list.append(
-                {
-                    'type_name': '',
-                    'vod_id': ids,
-                    'vod_name': '',
-                    'vod_remarks': '',
-                    'vod_year': '',
-                    'vod_area': '',
-                    'vod_actor': '',
-                    'vod_director': '沐辰_为爱发电',
-                    'vod_content': '',
-                    'vod_play_from': vod_play_from,
-                    'vod_play_url': '#'.join(p_list)
+            detail = requests.get(url=xurl, headers=headerx)
+            detail.encoding = "utf-8"
+            res = detail.text
 
-                }
-            )
-            return {"list": video_list, 'parse': 0, 'jx': 0}
-        except requests.RequestException as e:
-            return {'list': [], 'msg': e}
+            doc = BeautifulSoup(res, "lxml")
 
-        # return {"list": [], "msg": "来自py_dependence的detailContent"}
+            soups = doc.find_all('ul', class_="hl-vod-list")
 
-    def searchContent(self, key, quick, page='1'):
-        if page != '1':
-            return {'list': [], 'parse': 0, 'jx': 0}
-        url = f'{self.home_url}/vodsearch/-------------.html'
-        d = {
-            'wd': key,
-            'submit': '',
-        }
-        h = {
-            'cache-control': 'no-cache',
-            'content-type': 'application/x-www-form-urlencoded',
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-        }
-        data = []
-        try:
-            res = requests.post(url, data=d, headers=h)
-            root = etree.HTML(res.text.encode('utf-8'))
-            data_list = root.xpath('//div[@class="stui-vodlist__box"]/a')
-            for i in data_list:
-                data.append(
-                    {
-                        'vod_id': i.xpath('./@href')[0].split('/')[-1].split('.')[0],
-                        'vod_name': i.xpath('./@title')[0],
-                        'vod_pic': i.xpath('./@data-original')[0],
-                        'vod_remarks': i.xpath('./span[2]/text()')[0]
-                    }
-                )
-            return {'list': data, 'parse': 0, 'jx': 0}
-        except requests.RequestException as e:
-            print(e)
-            return {'list': [], 'parse': 0, 'jx': 0}
+            for soup in soups:
+                vods = soup.find_all('li')
 
-    def playerContent(self, flag, pid, vipFlags):
-        play_url = 'https://gitee.com/dobebly/my_img/raw/c1977fa6134aefb8e5a34dabd731a4d186c84a4d/x.mp4'
-        try:
-            res = requests.get(f'{self.home_url}{pid}', headers=self.headers)
-            res.encoding = 'utf-8'
-            urls = re.findall(r'},\"url\":\"(.*?)\",\"url_next\"', res.text)
-            if len(urls) == 0:
-                return {'url': play_url, 'parse': 0, 'jx': 0}
-            d = urls[0]
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-                'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                'origin': 'https://www.quickvod.cc'
-            }
+                for vod in vods:
+                    names = vod.find('a', class_="hl-lazy")
+                    name = names['title']
 
-            data = {
-                'vid': d,
-            }
-            response = requests.post('https://www.quickvod.cc/qvod/api.php', headers=headers, data=data)
-            if response.status_code == 200:
-                en_url = response.json()['data']['url']
-                play_url = self.de_url(en_url)
-                host = parse.urlparse(play_url).netloc
-                h = {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-                    'Host': host,
-                }
-                return {'url': play_url, "header": h, 'parse': 0, 'jx': 0}
-            return {'url': play_url, 'parse': 0, 'jx': 0}
-        except requests.RequestException as e:
-            print(e)
-            return {'url': play_url, 'parse': 0, 'jx': 0}
+                    id = names['href']
+
+                    pic = names['data-original']
+
+                    if 'http' not in pic:
+                        pic = xurl + pic
+
+                    remarks = vod.find('span', class_="douban")
+                    remark = remarks.text.strip()
+
+                    video = {
+                        "vod_id": id+'++'+name,
+                        "vod_name": '丢丢📽️' + name,
+                        "vod_pic": pic,
+                        "vod_tag": "folder",
+                        "vod_remarks": '丢丢▶️' + remark
+                             }
+                    videos.append(video)
+
+            result = {'list': videos}
+            return result
+        except:
+            pass
+
+    def categoryContent(self, cid, pg, filter, ext):
+        result = {}
+        videos = []
+
+        if pg:
+            page = int(pg)
+        else:
+            page = 1
+
+        if '++' in cid:
+
+            split = cid.split("++")
+
+            xurl1 = xurl+split[0]
+            detail = requests.get(url=xurl1, headers=headerx)
+            detail.encoding = "utf-8"
+            res = detail.text
+            doc = BeautifulSoup(res, "lxml")
+
+            soups = doc.find_all('div', class_="jsx-17a26d933178525f search-result-container")
+
+            for vod in soups:
+
+                ids = vod.find('a', class_="mac_ulog")
+                id = ids['href']
+
+                pic = ids['data-icon']
+
+                remark = ids['data-web-name']
+
+                video = {
+                    "vod_id": id,
+                    "vod_name": '丢丢📽️' + split[1],
+                    "vod_pic": pic,
+                    "vod_remarks": '丢丢▶️' + remark
+                        }
+                videos.append(video)
+
+        else:
+
+            if '年代' in ext.keys():
+                NdType = ext['年代']
+            else:
+                NdType = ''
+
+            if page == '1':
+                url = f'{xurl}/vodshow/{cid}-----------.html'
+
+            else:
+                url = f'{xurl}/vodshow/{cid}--------{str(page)}---{NdType}.html'
+
+            try:
+                detail = requests.get(url=url, headers=headerx)
+                detail.encoding = "utf-8"
+                res = detail.text
+                doc = BeautifulSoup(res, "lxml")
+
+                soups = doc.find_all('ul', class_="hl-vod-list")
+
+                for soup in soups:
+                    vods = soup.find_all('li')
+
+                    for vod in vods:
+                        names = vod.find('a', class_="hl-lazy")
+                        name = names['title']
+
+                        id = names['href']
+
+                        pic = names['data-original']
+
+                        if 'http' not in pic:
+                            pic = xurl + pic
+
+                        remarks = vod.find('span', class_="douban")
+                        remark = remarks.text.strip()
+
+                        video = {
+                            "vod_id": id+'++'+name,
+                            "vod_name": '丢丢📽️' + name,
+                            "vod_pic": pic,
+                            "vod_tag": "folder",
+                            "vod_remarks": '丢丢▶️' + remark
+                                }
+                        videos.append(video)
+
+            except:
+                pass
+        result = {'list': videos}
+        result['page'] = pg
+        result['pagecount'] = 9999
+        result['limit'] = 90
+        result['total'] = 999999
+        return result
+
+    def detailContent(self, ids):
+        global pm
+        did = ids[0]
+        result = {}
+        videos = []
+
+        if 'http' not in did:
+            did = xurl + did
+
+        if 'www.nkdvd.com' in did:  # 耐看点播
+            res1 = requests.get(url=did, headers=headerx)
+            res1.encoding = "utf-8"
+            res = res1.text
+
+            url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732697392729/didiu.txt'
+            response = requests.get(url)
+            response.encoding = 'utf-8'
+            code = response.text
+            name = self.extract_middle_text(code, "s1='", "'", 0)
+            Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+
+            content = '😸丢丢🎉为您介绍剧情📢本资源来源于网络🚓侵权请联系删除👉' + self.extract_middle_text(res,'<div class="module-info-introduction-content">','</p>', 0)
+            content = content.replace('\n', '').replace('\t', '').replace('<p>', '')
+
+            if name not in content:
+                bofang = Jumps
+            else:
+                bofang = self.extract_middle_text(res, '<div class="module-play-list-content', '</div>', 3, 'href="(.*?)" title=".*?"><span>(.*?)</span>')
+                bofang = bofang.replace('https://51souju1.com', 'https://www.nkdvd.com')
+
+            xianlu = self.extract_middle_text(res, '<div class="module-tab-items-box hisSwiper"','<div class="shortcuts-mobile-overlay">',2, 'data-dropdown-value=".*?"><span>(.*?)</span>')
+
+            videos.append({
+                "vod_id": did,
+                "vod_actor": '😸皮皮 😸灰灰',
+                "vod_director": '😸丢丢',
+                "vod_content": content,
+                "vod_play_from": xianlu,
+                "vod_play_url": bofang
+                         })
+
+        if 'www.ffys.fun' in did:  # 飞飞影视
+            res1 = requests.get(url=did, headers=headerx)
+            res1.encoding = "utf-8"
+            res = res1.text
+
+            url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732697392729/didiu.txt'
+            response = requests.get(url)
+            response.encoding = 'utf-8'
+            code = response.text
+            name = self.extract_middle_text(code, "s1='", "'", 0)
+            Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+
+            content = '😸丢丢🎉为您介绍剧情📢本资源来源于网络🚓侵权请联系删除👉' + self.extract_middle_text(res,'<div class="module-info-introduction-content">','</p>', 0)
+            content = content.replace('\n', '').replace('\t', '').replace('<p>', '')
+
+            if name not in content:
+                bofang = Jumps
+            else:
+                bofang = self.extract_middle_text(res, '<div class="module-play-list-content', '</div>', 3, 'href="(.*?)" title=".*?"><span>(.*?)</span>')
+                bofang = bofang.replace('https://51souju1.com', 'https://www.ffys.fun')
+
+            xianlu = self.extract_middle_text(res, '<div class="module-tab-items-box hisSwiper"','<div class="shortcuts-mobile-overlay">',2, 'data-dropdown-value=".*?"><span>(.*?)</span>')
+
+            videos.append({
+                "vod_id": did,
+                "vod_actor": '😸皮皮 😸灰灰',
+                "vod_director": '😸丢丢',
+                "vod_content": content,
+                "vod_play_from": xianlu,
+                "vod_play_url": bofang
+                         })
+
+        if 'cddys1.me' in did:  # 臭蛋蛋影视
+            res1 = requests.get(url=did, headers=headerx)
+            res1.encoding = "utf-8"
+            res = res1.text
+
+            url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732697392729/didiu.txt'
+            response = requests.get(url)
+            response.encoding = 'utf-8'
+            code = response.text
+            name = self.extract_middle_text(code, "s1='", "'", 0)
+            Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+
+            content = '😸丢丢🎉为您介绍剧情📢本资源来源于网络🚓侵权请联系删除👉' + self.extract_middle_text(res,'<meta name="description" content=','>', 0)
+
+            if name not in content:
+                bofang = Jumps
+            else:
+                bofang = self.extract_middle_text(res, '<div class="module-play-list-content', '</div>', 3, 'href="(.*?)" title=".*?"><span>(.*?)</span>')
+                bofang = bofang.replace('https://51souju1.com', 'https://cddys1.me')
+
+            xianlu = self.extract_middle_text(res, '<div class="module-tab-items-box hisSwiper"','<div class="shortcuts-mobile-overlay">',2, 'data-dropdown-value=".*?"><span>(.*?)</span>')
+
+            videos.append({
+                "vod_id": did,
+                "vod_actor": '😸皮皮 😸灰灰',
+                "vod_director": '😸丢丢',
+                "vod_content": content,
+                "vod_play_from": xianlu,
+                "vod_play_url": bofang
+                         })
+
+        if 'rebozj.pro' in did:  # 热播之家
+            res1 = requests.get(url=did, headers=headerx)
+            res1.encoding = "utf-8"
+            res = res1.text
+
+            url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732697392729/didiu.txt'
+            response = requests.get(url)
+            response.encoding = 'utf-8'
+            code = response.text
+            name = self.extract_middle_text(code, "s1='", "'", 0)
+            Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+
+            content = '😸丢丢🎉为您介绍剧情📢本资源来源于网络🚓侵权请联系删除👉' + self.extract_middle_text(res,'style="display: none;">','</span>', 0)
+            content = content.replace('\u3000', '')
+
+            if name not in content:
+                bofang = Jumps
+            else:
+                bofang = self.extract_middle_text(res, '<ul class="stui-content__playlist', '</ul>', 3, 'href="(.*?)">(.*?)</a>')
+                bofang = bofang.replace('https://51souju1.com', 'https://rebozj.pro')
+
+            xianlu = self.extract_middle_text(res, '<ul class="nav nav-tabs','</ul>',2, 'data-toggle=".*?">(.*?)</a>')
+
+            videos.append({
+                "vod_id": did,
+                "vod_actor": '😸皮皮 😸灰灰',
+                "vod_director": '😸丢丢',
+                "vod_content": content,
+                "vod_play_from": xianlu,
+                "vod_play_url": bofang
+                         })
+
+        if 'www.juyeye.cc' in did:  # 剧爷爷
+            res1 = requests.get(url=did, headers=headerx)
+            res1.encoding = "utf-8"
+            res = res1.text
+
+            url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732697392729/didiu.txt'
+            response = requests.get(url)
+            response.encoding = 'utf-8'
+            code = response.text
+            name = self.extract_middle_text(code, "s1='", "'", 0)
+            Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+
+            content = '😸丢丢🎉为您介绍剧情📢本资源来源于网络🚓侵权请联系删除👉' + self.extract_middle_text(res,'<div class="module-info-introduction-content">','</p>', 0)
+            content = content.replace('\n', '').replace('\t', '').replace('<p>', '')
+
+            if name not in content:
+                bofang = Jumps
+            else:
+                bofang = self.extract_middle_text(res, '<div class="module-play-list-content', '</div>', 3, 'href="(.*?)" title=".*?"><span>(.*?)</span>')
+                bofang = bofang.replace('https://51souju1.com', 'https://www.juyeye.cc')
+
+            xianlu = self.extract_middle_text(res, '<div class="module-tab-items-box hisSwiper"','<div class="shortcuts-mobile-overlay">',2, 'data-dropdown-value=".*?"><span>(.*?)</span>')
+
+            videos.append({
+                "vod_id": did,
+                "vod_actor": '😸皮皮 😸灰灰',
+                "vod_director": '😸丢丢',
+                "vod_content": content,
+                "vod_play_from": xianlu,
+                "vod_play_url": bofang
+                         })
+
+        if 'www.1080p.club' in did:  # 1080迷
+            res1 = requests.get(url=did, headers=headerx)
+            res1.encoding = "utf-8"
+            res = res1.text
+
+            url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732697392729/didiu.txt'
+            response = requests.get(url)
+            response.encoding = 'utf-8'
+            code = response.text
+            name = self.extract_middle_text(code, "s1='", "'", 0)
+            Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+
+            content = '😸丢丢🎉为您介绍剧情📢本资源来源于网络🚓侵权请联系删除👉' + self.extract_middle_text(res,'<div class="ju-blurb">','</p>', 0)
+            content = content.replace('<p>', '')
+
+            if name not in content:
+                bofang = Jumps
+            else:
+                bofang = self.extract_middle_text(res, '<ul class="playNumList">', '</ul>', 3, 'href="(.*?)">(.*?)</a>')
+                bofang = bofang.replace('https://51souju1.com', 'https://www.1080p.club')
+
+            xianlu = self.extract_middle_text(res, '<div class="m-title">','</div>',2, '<h2>(.*?)</h2>')
+
+            videos.append({
+                "vod_id": did,
+                "vod_actor": '😸皮皮 😸灰灰',
+                "vod_director": '😸丢丢',
+                "vod_content": content,
+                "vod_play_from": xianlu,
+                "vod_play_url": bofang
+                         })
+
+        if 'www.a8ys.vip' in did:  # A8影视
+            res1 = requests.get(url=did, headers=headerx)
+            res1.encoding = "utf-8"
+            res = res1.text
+
+            url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732697392729/didiu.txt'
+            response = requests.get(url)
+            response.encoding = 'utf-8'
+            code = response.text
+            name = self.extract_middle_text(code, "s1='", "'", 0)
+            Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+
+            content = '😸丢丢🎉为您介绍剧情📢本资源来源于网络🚓侵权请联系删除👉' + self.extract_middle_text(res,'style="line-height: 20px;">','</p>', 0)
+            content = content.replace('<p>', '').replace('\u3000', '')
+
+            if name not in content:
+                bofang = Jumps
+            else:
+                bofang = self.extract_middle_text(res, '<div class="module-play-list-content', '</div>', 3, 'href="(.*?)" title=".*?"><span>(.*?)</span>')
+                bofang = bofang.replace('https://51souju1.com', 'https://www.a8ys.vip')
+
+            xianlu = self.extract_middle_text(res, '<div class="module-tab-items-box hisSwiper"','<div class="shortcuts-mobile-overlay">',2, 'data-dropdown-value="(.*?)">')
+
+            videos.append({
+                "vod_id": did,
+                "vod_actor": '😸皮皮 😸灰灰',
+                "vod_director": '😸丢丢',
+                "vod_content": content,
+                "vod_play_from": xianlu,
+                "vod_play_url": bofang
+                         })
+
+        if 'www.kpkuang.fun' in did:  # 看片狂人
+            res1 = requests.get(url=did, headers=headerx)
+            res1.encoding = "utf-8"
+            res = res1.text
+
+            url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732697392729/didiu.txt'
+            response = requests.get(url)
+            response.encoding = 'utf-8'
+            code = response.text
+            name = self.extract_middle_text(code, "s1='", "'", 0)
+            Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+
+            content = '😸丢丢🎉为您介绍剧情📢本资源来源于网络🚓侵权请联系删除👉' + self.extract_middle_text(res,'简介：</span>','<', 0)
+            content = content.replace('\t', '').replace('(www.kpkuang.com)', '').replace('\u3000', '').replace(' ', '')
+
+            if name not in content:
+                bofang = Jumps
+            else:
+                bofang = self.extract_middle_text(res, '<ul class="fed-part-rows" >', '</ul>', 3, 'href="(.*?)" rel="nofollow" title=".*?">\s+.*?\s+(.*?)                        </a>')
+                bofang = bofang.replace('https://51souju1.com', 'https://www.kpkuang.fun')
+
+            xianlu = self.extract_middle_text(res, '<ul uk-tab class="yunlist">','</ul>',2, 'data-linename=".*?" >(.*?)                   <span')
+
+            videos.append({
+                "vod_id": did,
+                "vod_actor": '😸皮皮 😸灰灰',
+                "vod_director": '😸丢丢',
+                "vod_content": content,
+                "vod_play_from": xianlu,
+                "vod_play_url": bofang
+                         })
+
+        if 'www.hdmoli.pro' in did:  # HDMoli
+            res1 = requests.get(url=did, headers=headerx)
+            res1.encoding = "utf-8"
+            res = res1.text
+
+            url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732697392729/didiu.txt'
+            response = requests.get(url)
+            response.encoding = 'utf-8'
+            code = response.text
+            name = self.extract_middle_text(code, "s1='", "'", 0)
+            Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+
+            content = '😸丢丢🎉为您介绍剧情📢本资源来源于网络🚓侵权请联系删除👉' + self.extract_middle_text(res,'剧情：','</p>', 0)
+            content = content.replace('\n', '').replace('\t', '')
+
+            if name not in content:
+                bofang = Jumps
+            else:
+                bofang = self.extract_middle_text(res, '<ul class="myui-content__list sort-list', '</ul>', 3, 'href="(.*?)" target=".*?">(.*?)</a>')
+                bofang = bofang.replace('https://51souju1.com', 'https://www.hdmoli.pro')
+
+            xianlu = self.extract_middle_text(res, '<ul class="nav nav-tabs active">','</ul>',2, 'data-toggle=".*?">(.*?)</a>')
+
+            videos.append({
+                "vod_id": did,
+                "vod_actor": '😸皮皮 😸灰灰',
+                "vod_director": '😸丢丢',
+                "vod_content": content,
+                "vod_play_from": xianlu,
+                "vod_play_url": bofang
+                         })
+
+        result['list'] = videos
+        return result
+
+    def playerContent(self, flag, id, vipFlags):
+        parts = id.split("http")
+
+        xiutan = 0
+
+        if xiutan == 0:
+            if len(parts) > 1:
+                before_https, after_https = parts[0], 'http' + parts[1]
+
+            if '239755956819.mp4' in after_https:
+                url = after_https
+
+            if 'www.nkdvd.com' in after_https:  # 耐看点播
+                res = requests.get(url=after_https, headers=headerx)
+                res = res.text
+
+                url = after_https
+
+                result = {}
+                result["parse"] = xiutan
+                result["playUrl"] = ''
+                result["url"] = url
+                result["header"] = headerx
+                return result
+
+            if 'cddys1.me' in after_https:  # 臭蛋蛋影视
+                res = requests.get(url=after_https, headers=headerx)
+                res = res.text
+
+                url = after_https
+
+                result = {}
+                result["parse"] = xiutan
+                result["playUrl"] = ''
+                result["url"] = url
+                result["header"] = headerx
+                return result
+
+            if 'rebozj.pro' in after_https:  # 热播之家
+                res = requests.get(url=after_https, headers=headerx)
+                res = res.text
+
+                url = self.extract_middle_text(res, '},"url":"', '"', 0).replace('\\', '')
+                url = unquote(url)
+
+                result = {}
+                result["parse"] = xiutan
+                result["playUrl"] = ''
+                result["url"] = url
+                result["header"] = headerx
+                return result
+
+            if 'www.juyeye.cc' in after_https:  # 剧爷爷
+                res = requests.get(url=after_https, headers=headerx)
+                res = res.text
+
+                url = self.extract_middle_text(res, '},"url":"', '"', 0).replace('\\', '')
+
+                result = {}
+                result["parse"] = xiutan
+                result["playUrl"] = ''
+                result["url"] = url
+                result["header"] = headerx
+                return result
+
+            if 'www.a8ys.vip' in after_https:  # A8影院
+                res = requests.get(url=after_https, headers=headerx)
+                res = res.text
+
+                url = self.extract_middle_text(res, '},"url":"', '"', 0).replace('\\', '')
+                url = url.replace('u7b2c', '%E7%AC%AC').replace('u96c6', '%E9%9B%86')
+
+                result = {}
+                result["parse"] = xiutan
+                result["playUrl"] = ''
+                result["url"] = url
+                result["header"] = headerx
+                return result
+
+            if 'www.kpkuang.fun' in after_https:  # 看片狂人
+                res = requests.get(url=after_https, headers=headerx)
+                res = res.text
+
+                url = after_https
+
+                result = {}
+                result["parse"] = xiutan
+                result["playUrl"] = ''
+                result["url"] = url
+                result["header"] = headerx
+                return result
+
+            if 'www.1080p.club' in after_https:  # 1080迷
+                res = requests.get(url=after_https, headers=headerx)
+                res = res.text
+
+                url = after_https
+
+                result = {}
+                result["parse"] = xiutan
+                result["playUrl"] = ''
+                result["url"] = url
+                result["header"] = headerx
+                return result
+
+            if 'www.ffys.fun' in after_https:  # 飞飞影视
+                res = requests.get(url=after_https, headers=headerx)
+                res = res.text
+
+                url = self.extract_middle_text(res, '},"url":"', '"', 0).replace('\\', '')
+
+                result = {}
+                result["parse"] = xiutan
+                result["playUrl"] = ''
+                result["url"] = url
+                result["header"] = headerx
+                return result
+
+            if 'www.hdmoli.pro' in after_https:  # HDMoli
+                res = requests.get(url=after_https, headers=headerx)
+                res = res.text
+
+                url = self.extract_middle_text(res, '";var now="', '"', 0).replace('\\', '')
+                url = "https://v.damoli.pro/v/" + url
+
+                result = {}
+                result["parse"] = xiutan
+                result["playUrl"] = ''
+                result["url"] = url
+                result["header"] = headerx
+                return result
+
+    def searchContentPage(self, key, quick, page):
+        result = {}
+        videos = []
+
+        if not page:
+            page = '1'
+        if page == '1':
+            url = f'{xurl}/vodsearch/-------------.html?wd={key}&submit='
+
+        else:
+            url = f'{xurl}/vodsearch/{key}----------{str(page)}---.html'
+
+        detail = requests.get(url=url, headers=headerx)
+        detail.encoding = "utf-8"
+        res = detail.text
+        doc = BeautifulSoup(res, "lxml")
+
+        soups = doc.find_all('ul', class_="hl-one-list")
+
+        for soup in soups:
+            vods = soup.find_all('div', class_="hl-item-pic")
+
+            for vod in vods:
+
+                name = vod.find('a')['title']
+
+                id = vod.find('a')['href']
+
+                pic = vod.find('a')['data-original']
+
+                if 'http' not in pic:
+                    pic = xurl + pic
+
+                remarks = vod.find('span', class_="douban")
+                remark = remarks.text.strip()
+
+                video = {
+                    "vod_id": id+'++'+name,
+                    "vod_name": '丢丢📽️' + name,
+                    "vod_pic": pic,
+                    "vod_tag": "folder",
+                    "vod_remarks": '丢丢▶️' + remark
+                        }
+                videos.append(video)
+
+        result['list'] = videos
+        result['page'] = page
+        result['pagecount'] = 9999
+        result['limit'] = 90
+        result['total'] = 999999
+        return result
+
+    def searchContent(self, key, quick):
+        return self.searchContentPage(key, quick, '1')
 
     def localProxy(self, params):
-        pass
+        if params['type'] == "m3u8":
+            return self.proxyM3u8(params)
+        elif params['type'] == "media":
+            return self.proxyMedia(params)
+        elif params['type'] == "ts":
+            return self.proxyTs(params)
+        return None
 
-    def destroy(self):
-        return '正在Destroy'
 
-    def get_data(self, url):
-        data = []
-        try:
-            res = requests.get(url, headers=self.headers, timeout=5)  # 设置超时
-            res.raise_for_status()  # 检查请求是否成功
-            c = res.text
-            root = etree.HTML(c.encode('utf-8'))
-            data_list = root.xpath('//div[@class="stui-vodlist__box"]/a')
-            for i in data_list:
-                vod_id = i.xpath('./@href')
-                vod_name = i.xpath('./@title')
-                vod_pic = i.xpath('./@data-original')
-                vod_remarks = i.xpath('./span[2]/text()')
 
-                if vod_id and vod_name and vod_pic and vod_remarks:  # 检查是否存在
-                    data.append({
-                        'vod_id': vod_id[0].split('/')[-1].split('.')[0],
-                        'vod_name': vod_name[0],
-                        'vod_pic': vod_pic[0],
-                        'vod_remarks': vod_remarks[0]
-                    })
 
-            return data
-        except requests.RequestException as e:
-            # 可以记录错误信息或抛出自定义异常
-            return data
-        except Exception as e:
-            # 捕获其他可能的异常
-            return data
 
-    def b64decode(self, original_string):
-        # 添加填充
-        padding_needed = len(original_string) % 4
-        if padding_needed:
-            original_string += '=' * (4 - padding_needed)
-
-        # 解码 Base64 字符串
-        decoded_bytes = base64.b64decode(original_string)
-
-        # 将字节转换为字符串（假设使用 UTF-8 编码）
-        decoded_string = decoded_bytes.decode('utf-8', errors='ignore')
-        return decoded_string
-
-    def custom_str_decode(self, encoded_string):
-        key = '098f6bcd4621d373cade4e832627b4f6'
-        _len = len(key)
-        code = ''
-        de_base64 = self.b64decode(encoded_string)
-
-        i = 0
-        while True:
-            if i >= len(de_base64):
-                break
-            k = i % 32
-            code += chr(ord(de_base64[i]) ^ ord(key[k]))
-            i += 1
-        return self.b64decode(code)
-
-    def de_url(self, d):
-        a = self.custom_str_decode(d).split('/')
-        a1 = a[0]
-        a2 = a[1]
-        a3 = a[2]
-        a1 = json.loads(self.b64decode(a1))
-        a2 = json.loads(self.b64decode(a2))
-        a3 = self.b64decode(a3)
-        s = ''
-        b1 = a2
-        b2 = a1
-        d3 = list(a3)
-        i = 0
-        while True:
-            if i >= len(d3):
-                break
-            c1 = d3[i]
-            c2 = bool(re.match(r'^[a-zA-Z]+$', c1))
-            c3 = True if c1 in b2 else False
-            if c2 and c3:
-                s += b2[b1.index(c1)]
-            else:
-                s += c1
-            i += 1
-        return s
