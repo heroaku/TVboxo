@@ -514,7 +514,7 @@ var rule={
 		4:{cateId:'4'}
 	},
 
-  class_parse: ".nav-menu-items&&li;a&&Text;a&&href;(\\d+)",
+    class_parse: '.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
 	lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
 	搜索: '.module-items .module-search-item;.video-serial&&title;img&&data-src;.video-serial&&Text;.video-serial&&href;.video-serial&&Text',
 }
