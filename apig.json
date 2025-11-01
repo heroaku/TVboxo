@@ -417,7 +417,7 @@
             "key": "乐王电影",
             "name": "乐王电影",
             "type": 3,
-            "jar": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/Jar/xpg.jar;md5;dffec63fb83a2b31b8606bd4bf6bead9",
+            "jar": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/Jar/NJS.jar;md5;A81AFC9C6A39CBD3DE57DD8FCA9031E3",
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/乐王电影.js"
         },		
