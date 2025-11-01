@@ -44,8 +44,8 @@ var rule = {
         "desc": "li.data:eq(4)&&Text;;;li.data--span:eq(3)&&Text;li.data--span:eq(2)&&Text",
         // "content":".context.clearfix&&Text",
         "content": ".full_text&&span&&Text",
-        "tabs": ".play_source_tab--i&&a",
-        "lists": ".content_playlist.list_scroll:eq(#id) li"
+        "tabs": ".play_source_tab&&a",
+        "lists": ".content_playlist:eq(#id) li"
     },
     搜索: '.vodlist.clearfix li.vodlist_item;*;*;*;*',
 }
