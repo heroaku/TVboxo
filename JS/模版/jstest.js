@@ -34,8 +34,8 @@ var rule = {
 
     `,
     推荐: '*',
-    // 一级:'.vodlist.vodlist_wi li;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
-    一级: '.vodlist.vodlist_wi li;a&&title;.lazyload&&data-background-image;.xszxj&&Text;a&&href',
+    一级:'.vodlist.vodlist_wi li;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
+    //一级: '.vodlist.vodlist_wi li;a&&title;.lazyload&&data-background-image;.xszxj&&Text;a&&href',
     二级: {
         "title": "h1&&Text;li.data--span:eq(0)&&Text",
         // "img":".lazyload&&data-original",
