@@ -1,6 +1,6 @@
 
 var rule={
-	title:'老王电影',
+	title:'MX影院',
 
 	模板:'mxone5',
   host: "https://mxvod.com",
