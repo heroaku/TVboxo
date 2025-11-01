@@ -22,9 +22,11 @@ var rule = {
     quickSearch: 0,
     headers: {'User-Agent': 'MOBILE_UA',},
     // class_parse: '.top_nav li:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-    class_parse: '.nav_list li:gt(0):lt(7);a&&title;a&&href;.*/(.*?).html',
-    cate_exclude: '纪录',
-    tab_remove: ['VIP线路', 'app专用'], // VIP线路 需登录会员
+    //class_parse: '.nav_list li:gt(0):lt(7);a&&title;a&&href;.*/(.*?).html',
+    //cate_exclude: '纪录',
+    //tab_remove: ['VIP线路', 'app专用'], // VIP线路 需登录会员
+	class_name:'电影&电视剧&综艺&动漫&短剧&纪录片&国产剧&日韩剧&欧美剧&港台剧&海外剧&其他剧',
+    class_url:'dianying&dianshiju&zongyi&dongman&duanju&118&201&203&204&202&205&206',
     play_parse: true,
     lazy: `js:
         var url = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]).url;
