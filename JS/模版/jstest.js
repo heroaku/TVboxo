@@ -2,7 +2,7 @@ var rule = {
     title: '爱迪影视',
     host: 'https://bcvod.com',
     //host:'https://adys123.com',  //网址发布站
-    url:'/show/fyclass--------fypage---.html',
+    url:'/vodshow/fyclass--------fypage---.html',
 	//https://bcvod.com/vodshow/dianshiju--------2---.html
     //url: '/vodshow/fyfilter.html',
     filterable: 0,//是否启用分类筛选,
