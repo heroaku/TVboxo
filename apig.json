@@ -413,6 +413,14 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/唐人街影院CF.js"
         },
+				{
+            "key": "乐王电影",
+            "name": "乐王电影",
+            "type": 3,
+           // "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/乐王电影.js"
+        },	
 			{
             "key": "老网影视",
             "name": "老网影视",
