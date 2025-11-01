@@ -7,7 +7,8 @@ var rule={
 	//https://mxvod.com/vodshow/fyclass--------fypage---.html
 	url: "/vodshow/fyclass--------fypage---.html",
   //url: "/vs/fyclassfyfilter.html",
-  searchUrl: "/s**/page/fypage.html",
+  searchUrl: "/vodsearch/**----------fypage---.html",
+//https://mxvod.com/vodsearch/**----------fypage---.html
   //filterable: 1,
 	filterable: 0, 
 
