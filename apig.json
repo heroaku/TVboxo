@@ -429,6 +429,15 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/老网影视.js"
         },	
+# 新js jar
+			{
+            "key": "柏彩影视",
+            "name": "柏彩影视",
+            "type": 3,
+         //   "jar": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/Jar/NJS.jar;md5;A81AFC9C6A39CBD3DE57DD8FCA9031E3",
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/柏彩影视.js"
+        },	
 			{
             "key": "MX影院",
             "name": "MX影院",
