@@ -413,14 +413,7 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/唐人街影院CF.js"
         },
-			{
-            "key": "乐王电影",
-            "name": "乐王电影",
-            "type": 3,
-            "jar": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/Jar/NJS.jar;md5;A81AFC9C6A39CBD3DE57DD8FCA9031E3",
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/乐王电影.js"
-        },		
+	
 			{
             "key": "老网影视",
             "name": "老网影视",
@@ -431,10 +424,18 @@
         },	
 # 新js jar
 			{
+            "key": "乐王电影",
+            "name": "乐王电影",
+            "type": 3,
+            "jar": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/Jar/NJS.jar;md5;A81AFC9C6A39CBD3DE57DD8FCA9031E3",
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/乐王电影.js"
+        },	
+			{
             "key": "柏彩影视",
             "name": "柏彩影视",
             "type": 3,
-         //   "jar": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/Jar/NJS.jar;md5;A81AFC9C6A39CBD3DE57DD8FCA9031E3",
+            "jar": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/Jar/NJS.jar;md5;A81AFC9C6A39CBD3DE57DD8FCA9031E3",
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/柏彩影视.js"
         },	
