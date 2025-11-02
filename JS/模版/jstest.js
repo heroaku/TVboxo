@@ -1,6 +1,6 @@
 var rule = {
     title: 'EU影视',
-    host: 'https://mxvod.com',
+    host: 'https://bsvod.com',
      //https://euvod.tv/vodshow/fyclass--time------fypage---.html
     //https://euvod.tv/vodshow/fyclass--------fypage---.html
     url: '/vodshow/fyclass--------fypage---.html',
@@ -12,8 +12,10 @@ var rule = {
     quickSearch: 0, //是否启用快速搜索,
     filterable: 0, //是否启用分类筛选,
     //class_parse: '.nav&&ul&&li;a&&Text;a&&href;.*/(.*?).html',
-   class_name: '电影&电视剧&综艺&动漫&国产剧&港台剧&日韩剧&泰国剧&欧美剧&海外剧',
-   class_url: 'dianying&dianshiju&4&3&14&15&16&30&20&13',
+    //https://bsvod.com/vodshow/dianshiju--------2---.html
+    class_parse: '.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
+  // class_name: '电影&电视剧&综艺&动漫&国产剧&港台剧&日韩剧&泰国剧&欧美剧&海外剧',
+  // class_url: 'dianying&dianshiju&4&3&14&15&16&30&20&13',
 play_parse: true,
 lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
 limit: 6, 
