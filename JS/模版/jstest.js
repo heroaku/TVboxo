@@ -1,5 +1,5 @@
 var rule = {
-    title: '柏彩影视',
+    title: '万象影视',
     host: 'https://vxvod.com',
     //url:'/vodshow/fyclass--------fypage---.html',
 	//https://bcvod.com/vodshow/dianshiju--------2---.html
