@@ -39,7 +39,7 @@ limit: 6,
 double: true, // 推荐内容是否双层定位
 一级: '.module-items&&.module-item;.module-item-title&&Text;img&&data-src;.module-item-caption&&Text;a&&href', 
 二级: {
-    "title": "h1&&Text;.video-info-item:eq(1)&&Text",
+    "title": "h1&&a&&Text;.video-info-item:eq(1)&&Text",
     "img": ".module-item-pic&&img&&data-src",
     "desc": ".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text",
     "content": "Text",
