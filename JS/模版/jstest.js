@@ -1,8 +1,9 @@
 var rule = {
     title: '柏彩影视',
-    host: 'https://bcvod.com',
+    host: 'https://vxvod.com',
     //url:'/vodshow/fyclass--------fypage---.html',
 	//https://bcvod.com/vodshow/dianshiju--------2---.html
+	//https://vxvod.com/vodshow/dianshiju--------2---.html
     url: '/vodshow/fyfilter.html',
     filterable: 1,//是否启用分类筛选,
 	filter_url:'{{fl.cateId}}-{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
