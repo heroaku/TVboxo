@@ -3,7 +3,7 @@ var rule={
 	title:'MX影院',
 
 	模板:'mxone5',
-  host: "https://mxvod.com",
+  host: "https://mxvod.us",
 	//https://mxvod.com/vodshow/fyclass--------fypage---.html
 	url: "/vodshow/fyclass--------fypage---.html",
   //url: "/vs/fyclassfyfilter.html",
