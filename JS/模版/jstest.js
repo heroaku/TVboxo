@@ -50,7 +50,7 @@ var rule = {
         // "content":".context.clearfix&&Text",
         "content": ".full_text&&span&&Text",
         "tabs": ".play_source_tab&&a",
-        "lists": ".content_playlist:eq(#id) li"
+        "lists": ".play_list_box:eq(#id)&&.content_playlist li"
     },
     搜索: '.vodlist.clearfix li.vodlist_item;*;*;*;*',
 }
