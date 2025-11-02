@@ -19,15 +19,15 @@ var rule = {
 play_parse: true,
 lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
 limit: 6, 
-推荐: '.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+推荐: '.module-list;.module-items&&.module-item;.module-item-title&&Text;img&&data-src;.module-item-caption&&Text;a&&href',
 double: true, // 推荐内容是否双层定位
-一级: '.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href', 
+一级: '.module-items&&.module-item;.module-item-title&&Text;img&&data-src;.module-item-caption&&Text;a&&href', 
 二级: {
     "title": "h1&&Text;.video-info-item:eq(1)&&Text",
     "img": ".module-item-pic&&img&&data-src",
     "desc": ".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text",
     "content": "Text",
-    "tabs": ".module-tab-item .tab-item",
-    "lists": ".module-list:eq(#id)&&.sort-item&&a"
+    "tabs": ".module-tab-item:eq(#id)",
+    "lists": ".module-list:eq(#id)&&.scroll-content&&a"
 }, 搜索: '.module-items&&.module-search-item;a&&title;img&&data-src;.video-info&&a&&Text;a&&href',
 }
