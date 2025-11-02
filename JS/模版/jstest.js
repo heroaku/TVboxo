@@ -11,33 +11,8 @@ var rule = {
      class_name:'电视剧&电影',
      class_url:'juji&dianying',
      //tab_rename:{'追番乐切':'LR',},
-     lazy:`js:
-        var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
-        var url = html.url;
-        var from = html.from;
-        var MacPlayerConfig={};
-        if (html.encrypt == '1') {
-            url = unescape(url)
-        } else if (html.encrypt == '2') {
-            url = unescape(base64Decode(url))
-        } else if (html.encrypt == '3') {
-            url = base64Decode(url);
-        }
-        if (/\\.m3u8|\\.mp4/.test(url)) {
-            input = url
-        } else {
-            eval(fetch(HOST + "/static/js/playerconfig.js").replace('var Mac','Mac'));
-            var list = MacPlayerConfig.player_list[from].parse;
-            input={
-                jx:0,
-                url:list+url,
-                parse:1,
-                header: JSON.stringify({
-                    'referer': HOST
-                })
-            }
-        }
-    `,
+    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
+
     推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-tag-left&&Text;a&&href',
     一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-tag-left&&Text;a&&href',
     二级:{
