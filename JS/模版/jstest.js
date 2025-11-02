@@ -2,7 +2,7 @@ var rule = {
      title: '狗番',
      host: 'https://www.wkvod.cc',
 	//https://www.wkvod.cc/vodshow/id/fyclass/page/fypage.html
-     模板:'首图2',
+     //模板:'首图2',
      searchUrl: '/vodsearch/**----------fypage---',
      url: '/vodshow/id/fyclass/page/fypage.html',
      searchable: 2,//是否启用全局搜索,
