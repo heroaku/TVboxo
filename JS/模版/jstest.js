@@ -1,8 +1,8 @@
 var rule = {
     title: 'EU影视',
-    host: 'https://bsvod.com',
+    host: 'https://www.mxvod.us',
      //https://euvod.tv/vodshow/fyclass--time------fypage---.html
-    //https://euvod.tv/vodshow/fyclass--------fypage---.html
+    //https://www.mxvod.us/vodshow/dianshiju-----------.html
     url: '/vodshow/fyclass--------fypage---.html',
     searchUrl: '/vodshow/fyclass--------fypage---.html',
     headers: {
