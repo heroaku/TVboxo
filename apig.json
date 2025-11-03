@@ -432,6 +432,14 @@
             "ext": "./JS/乐王电影.js"
         },	
 			{
+            "key": "55影视",
+            "name": "55影视",
+            "type": 3,
+            "jar": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/Jar/NJS.jar;md5;A81AFC9C6A39CBD3DE57DD8FCA9031E3",
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/55影视.js"
+        },
+			{
             "key": "柏彩影视",
             "name": "柏彩影视",
             "type": 3,
