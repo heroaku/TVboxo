@@ -2,10 +2,10 @@ var rule = {
      title: '狗番',
      host: 'https://www.55kan.com',
 	//https://www.wkvod.cc/vodshow/id/fyclass/page/fypage.html
-	//https://www.55kan.com/show/2--------2---.html
+	//https://www.55kan.com/show/fyclass--------fypage---.html
      //模板:'首图2',
      searchUrl: '/vodsearch/**----------fypage---',
-     url: '/vodshow/id/fyclass/page/fypage.html',
+     url: '/show/fyclass--------fypage---.html',
      searchable: 2,//是否启用全局搜索,
      quickSearch: 1,//是否启用快速搜索,
      filterable: 0,//是否启用分类筛选,
