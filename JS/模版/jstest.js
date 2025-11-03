@@ -15,7 +15,7 @@ var rule = {
     lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
 
     推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-tag-left&&Text;a&&href',
-    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-tag-left&&Text;a&&href',
+    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
     二级:{
            'title': '.h1&&Text',
            'desc': '.stui-content__detail p:eq(3)&&Text;.stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(2)&&Text;.stui-content__detail p:eq(1)&&Text;',
