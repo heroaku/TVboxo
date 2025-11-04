@@ -1,5 +1,5 @@
 var rule = {
-  title: '火狐影视',
+  title: '可视影院',
   host: 'https://www.ketv.cc/',
   url: '/s/fyclass--------fypage---.html',
 //https://www.ketv.cc/s/fyclass--------fypage---.html
