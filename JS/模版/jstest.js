@@ -1,9 +1,10 @@
 var rule={
-    title: '耐看',
+    title: '旗星影视',
     host: 'https://qxys.nbcys.eu.org',
     url: '/vds/fyclass--------fypage---.html',
-  //https://qxys.nbcys.eu.org/vds/1--------2---.html
-    searchUrl: '/nk/-------------.html?wd=**',
+    //https://qxys.nbcys.eu.org/vds/1--------2---.html
+    //https://qxys.nbcys.eu.org/vdh/**-/page/fypage.html
+    searchUrl: '/vdh/**-/page/fypage.html',
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
