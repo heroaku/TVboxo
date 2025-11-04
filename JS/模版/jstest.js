@@ -16,13 +16,14 @@ var rule = {
     quickSearch: 0,
     filterable: 1,
 
-    class_name: '电影&剧集&综艺&动漫',
-    class_url: '17&18&20&48',
+    class_name: '电影&剧集&综艺&动漫&短剧',
+    class_url: '17&18&20&48&53',
     filter_def: {
         17: {cateId: '17'},
         18: {cateId: '18'},
         20: {cateId: '20'},
-        48: {cateId: '48'}
+        48: {cateId: '48'},
+        53: {cateId: '53'}
     },
 
     play_parse: true,
