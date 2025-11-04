@@ -17,11 +17,11 @@ var rule = {
     推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
     一级: '.mvlist&&ul li;.mvname&&title;img&&src;.pic-text&&Text;a&&href',
     二级:{
-           'title': '.h1&&Text',
+           'title': '.mvinfo&&.mvname2&&Text',
            'desc': '.stui-content__detail p:eq(3)&&Text;.stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(2)&&Text;.stui-content__detail p:eq(1)&&Text;',
            'content': '.stui-content__detail p:eq(4)&&Text;',
-           'tabs':'h3',
-           'lists':'.stui-pannel_bd:eq(#id)&&.stui-content__playlist li'
+           'tabs':'.boxright.mtop&&.inner&&.mtop:eq(#id)',
+           'lists':'.boxright.mtop&&.inner&&..list.playlist:eq(#id) a'
          },
     搜索: 'ul.stui-vodlist__media:eq(0) li,ul.stui-vodlist:eq(0) li,#searchList li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href;.text-muted:eq(-1)&&Text'
     }
