@@ -11,7 +11,7 @@ var rule = {
   class_name:'电影&电视剧&综艺&动漫',
   class_url:'movie&series&variety&anime',
   play_parse: true,
-  lazy: '',
+  lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
   limit: 6,
   推荐: '.cbox_list li;.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
   double: true,
