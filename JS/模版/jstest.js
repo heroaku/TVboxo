@@ -1,10 +1,10 @@
 var rule={
     title: '旗星影视',
-    host: 'https://qxys.nbcys.eu.org',
-    url: '/vds/fyclass--------fypage---.html',
-    //https://qxys.nbcys.eu.org/vds/1--------2---.html
-    //https://qxys.nbcys.eu.org/vdh/**-/page/fypage.html
-    searchUrl: '/vdh/**-/page/fypage.html',
+    host: 'https://www.111tv.one',
+    url: '/vodshow/fyclass--------fypage---.html',
+    //https://www.111tv.one/vodshow/20--------1---.html
+    //https://www.111tv.one/vodsearch/page/fypage/wd/**.html
+    searchUrl: '/page/fypage/wd/**.html',
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
