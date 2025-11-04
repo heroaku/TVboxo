@@ -627,6 +627,14 @@
 	//"jar":"./Jar/XBPQ.jar",
 	  "ext": "./XBPQ/袋鼠影视.json"
 	},
+			{
+            "key": "旗星影视",
+            "name": "旗星影视",
+            "type": 3,
+            "jar": "https://github.com/heroaku/TVboxo/raw/refs/heads/main/Jar/NJS.jar;md5;A81AFC9C6A39CBD3DE57DD8FCA9031E3",
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/旗星影视.js"
+        },
 	{
       "key": "华人影院",
       "name": "华人影院",
