@@ -2,8 +2,9 @@ var rule = {
   title: '可视影院',
   host: 'https://www.ketv.cc/',
   url: '/s/fyclass--------fypage---.html',
-//https://www.ketv.cc/s/fyclass--------fypage---.html
-  searchUrl: '/vod-search-page-fypage-wd-**.html',
+  //https://www.ketv.cc/s/fyclass--------fypage---.html
+  //https://www.ketv.cc/search/**----------fypage---.html
+  searchUrl: '/search/**----------fypage---.html',
   searchable: 2,
   quickSearch: 0,
   filterable: 0,
