@@ -1,5 +1,5 @@
 var rule = {
-  title: '可视影院',
+  title: 'SKR影院',
   host: 'https://www.skr2.cc',
   url: '/vodshow/fyclass--------fypage---.html',
   //https://www.skr2.cc/vodshow/32--------2---/
