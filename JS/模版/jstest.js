@@ -1,29 +1,35 @@
 var rule = {
-  title: 'SKR影院',
-  host: 'https://www.skr2.cc',
-  url: '/vodshow/fyclass--------fypage---.html',
-  //https://www.skr2.cc/vodshow/32--------2---/
-  //https://www.ketv.cc/search/**----------fypage---.html
-  searchUrl: '/search/**----------fypage---.html',
-  searchable: 2,
-  quickSearch: 0,
-  filterable: 0,
-  //class_parse: '.top_nav.clearfix li;a&&Text;a&&href;/.*-(.*?).html',
-  class_name:'电视剧&综艺&动漫&国产剧&港台剧&日本剧&海外剧&纪录片',
-  class_url:'32&91&1&81&82&32&83&88',
-  play_parse: true,
-  lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
-  limit: 6,
-  推荐: '.cbox_list li;.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
-  double: true,
-  一级: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
-  二级: {
-    title: '.hd_tit.fl&&Text',
-    img: '.lazyload&&data-original',
-    desc: '.text_muted hidden_xs:eq(0)&&Text;.text_muted hidden_xs:eq(1)&&Text;.text_muted hidden_xs:eq(2)&&Text;.text_muted hidden_xs:eq(3)&&Text',
-    content: '.left.text_muted&&Text',
-    tabs: '#NumTab&&a',
-    lists: '.play_list_box:eq(#id)&&.playlist_notfull&&a',
-  },
-  搜索: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
+    title:'唐人街影院',
+    host:' https://www.chinatownfilm.com',
+    // https://www.chinatownfilm.com/vodsearch/**----------fypage---.html
+    //https://www.chinatownfilm.com/vodshow/fyclass--------fypage---.html
+    url:'/vodshow/fyclass--------fypage---.html',
+    searchUrl:'/vodsearch/**----------fypage---.html',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
+    },
+    class_name:'电视剧&电影&综艺&动漫&大陆剧&欧美剧&港台剧&日韩剧&海外剧&记录片',
+    class_url:'2&1&3&4&13&27&42&43&28&24',
+    //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
+    play_parse:true,
+    lazy:'',
+    limit:6,
+    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    // 一级: 'body&&.hl-list-item;a&&title;a&&data-original;.hl-lc-1 remarks&&Text;a&&href',
+    二级: {
+    "title": ".hl-dc-title&&Text;span.hl-text-conch&&Text",
+    "img": ".hl-lazy&&data-original",
+    "desc": ".hl-col-xs-12:eq(5)&&Text;.hl-col-xs-12:eq(6)&&Text;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text",
+    "content": "li.hl-col-xs-12:eq(11)&&Text",
+    "tabs": ".hl-tabs-btn",
+    "lists": ".hl-plays-list:eq(#id) li"
+          },
+    //二级:{"title":".hl-item-thumb.hl-lazy&&title;.hl-full-box&&ul li:eq(6)&&Text","img":".hl-item-thumb.hl-lazy&&data-original","desc":".hl-full-box&&ul&&li:eq(-1)&&Text;.hl-full-box&&ul&&li:eq(-2)&&Text;.hl-full-box&&ul&&li:eq(-3)&&Text;.hl-full-box&&ul&&li:eq(2)&&Text;.hl-full-box&&ul&&li:eq(3)&&Text","content":".hl-col-xs-12.blurb&&Text","tabs":".hl-tabs-btn:eq(#id) a","lists":".hl-plays-list:eq(#id) li"},
+    搜索:'ul.hl-one-list&&li;a&&title;.hl-item-thumb&&data-original;.hl-lc-1&&Text;a&&href;.text-muted:eq(-1)&&Text',
 }
