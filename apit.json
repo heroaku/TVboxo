@@ -53,7 +53,7 @@
       "key": "热播影视",
       "name": "热播｜APP",
       "type": 3,
-	  "jar": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
+	  //"jar": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
       "api": "csp_AppRJ",
       "searchable": 1,
       "quickSearch": 1,
@@ -66,7 +66,7 @@
       "key": "冷心",
       "name": "冷心｜APP",
       "type": 3,
-      "jar": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
+      //"jar": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
 	  "api": "csp_AppMuou",
       "ext": {
         "url": "http://app.789dd.cn",
