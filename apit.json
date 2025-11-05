@@ -581,9 +581,16 @@
             "key": "看片狂",
             "name": "看片狂",
             "type": 3,
-            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
+            //"jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",				
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/看片狂.js"
+        },	
+				{
+            "key": "SKR影院",
+            "name": "SKR影院",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/SKR影院.js"
         },	
 			{
             "key": "毒舌电影",
