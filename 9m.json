@@ -19,6 +19,41 @@
             "api": "csp_Douban",
             "searchable": 0
         },
+	 	 {
+      "key": "金界影视",
+      "name": "界｜影视",
+      "type": 3,
+      "api": "csp_Jpys",
+      "ext": "https://m.hkybqufgh.com"
+     },
+	 {
+      "key": "金牌影视",
+      "name": "金牌｜影视",
+      "type": 3,
+      "api": "csp_Jpys",
+      "ext": "https://m.sizhengxt.com"
+     },
+	 {
+      "key": "金牌影苑",
+      "name": "金苑｜影视",
+      "type": 3,
+      "api": "csp_Jpys",
+      "ext": "https://m.9zhoukj.com"
+     },
+	 {
+      "key": "金牌影视2",
+      "name": "金牌3｜影视",
+      "type": 3,
+      "api": "csp_Jpys",
+      "ext": "https://m.sizhengxt.com"
+     },
+	 {
+      "key": "金牌影视3",
+      "name": "金牌3｜影视",
+      "type": 3,
+      "api": "csp_Jpys",
+      "ext": "https://m.jiabaide.cn"
+     },
         {
             "key": "预告",
             "name": "新片｜预告",
