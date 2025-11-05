@@ -1,17 +1,14 @@
 {
 ## spider
-   // "spider": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
+    // "spider": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
 	//"jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
 	//"spider": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
-	"spider": "./tvkj.jar",
+"spider": "./tvkj.jar",
 
 ##主頁壁紙
-    "wallpaper": "https://api.likepoems.com/img/bing",
-
-
-
-
- "sites":[
+"wallpaper": "https://api.likepoems.com/img/bing",
+	
+"sites":[
         {
             "key": "豆瓣",
             "name": "豆瓣｜首页",
@@ -1881,6 +1878,4 @@
 {"category":1,"name":"dns_cache_timeout","value":"600000000"}
 ]}
 ]
-
-
 }
