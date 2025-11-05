@@ -67,29 +67,6 @@
         "url": "http://v.rbotv.cn"
       }
     },
-	  {
-      "key": "冷心",
-      "name": "冷心｜APP",
-      "type": 3,
-	  "api": "csp_AppMuou",
-      "ext": {
-        "url": "http://app.789dd.cn",
-        "name": "火猫影视"
-      }
-    },
-	 {
-      "key": "金牌",
-      "name": "金牌｜APP",
-      "type": 3,
-      "api": "csp_AppMuou",
-      "searchable": 1,
-      "changeable": 1,
-      "ext": {
-        "url": "",
-        "site": "https://muouapp.oss-cn-hangzhou.aliyuncs.com/MUOUAPP/godbbq.txt",
-        "name": "金牌影院（请断网再安装）"
-      }
-    },
 
 #TW
     {
