@@ -1,152 +1,34 @@
 var rule = {
-    title: '4KAV',
-    类型: '影视',
-    //host: 'https://www.4kvm.pro',
-    host: 'https://4k-av.com',
-    hostJs: '',
-    headers: {
-        'User-Agent': 'IOS_UA'
-    },
-    编码: 'utf-8',
-    timeout: 5000,
-
-    homeUrl: '/',
-    url: '/fyclassfyfilter/page-fypage.html[/fyclassfyfilter]',
-    filter_url: '{{fl.class}}',
-    detailUrl: '',
-    searchUrl: '/s?q=**',
-    searchable: 1,
-    quickSearch: 1,
-    filterable: 1,
-
-    class_name: '电影&剧集',
-    class_url: 'movie&tv',
-    filter_def: {},
-
-    play_parse: true,
-    lazy: `js:
-if (/m3u8|mp4/.test(input)) {
-input = { jx: 0, parse: 0, url: input }
-} else {
-let kurl = request(input).match(/<source src="(.*?)"/)[1];
-input = { jx: 0, parse: 0, url: kurl }
-}
-`,
-
-    limit: 9,
-    double: false,
-    推荐: '*',
-    一级: '.NTMitem;a&&title;img&&src;.tags&&Text;a&&href',
-    二级: `js:
-let khtml = request(input);
-VOD = {};
-VOD.vod_id = input;
-VOD.vod_name = pdfh(khtml, '#MainContent_titleh12&&div:eq(1)&&Text');
-VOD.type_name = pdfh(khtml, '.tags--span&&Text');
-VOD.vod_pic = pdfh(khtml, '#MainContent_poster&&img&&src');
-VOD.vod_remarks = pdfh(khtml, '.videodetail&&label:eq(0)&&Text');
-VOD.vod_year = pdfh(khtml, '.videodetail&&a&&Text');
-VOD.vod_area = pdfh(khtml, '.videodetail&&label:eq(1)&&Text');
-VOD.vod_director = '未知';
-VOD.vod_actor = '未知';
-VOD.vod_content = pdfh(khtml, '.videodesc&&Text');
-VOD.vod_play_from = '4KAV专线';
-
-let klists = [];
-let kcode = pdfa(khtml, 'ul#rtlist&&li');
-if ( kcode == 0) {
-    kcode = pdfa(khtml, '#MainContent_poster&&a');
-    kcode.forEach((kc) => {
-    let kname = pdfh(kc, 'a&&title').replace('电影海报','');
-    let khref = pdfh(kc, 'a&&href').replace('poster.jpg','');
-    let klist = kname + '$' + khref;
-    klists.push(klist);
-    });
-    VOD.vod_play_url = klists.join('#');
-} else {
-    kcode;
-    kcode.forEach((kc) => {
-    let kname = pdfh(kc, 'span&&Text');
-    let khref = pdfh(kc, 'img&&src').replace('screenshot.jpg','');
-    let klist = kname + '$' + khref;
-    klists.push(klist);
-    });
-    VOD.vod_play_url = klists.join('#');
-}
-`,
-    搜索: '*',
-
-    filter: {
-        "tv": [{
-                "key": "class",
-                "name": "剧情",
-                "value": [{
-                    "n": "全部",
-                    "v": ""
-                }, {
-                    "n": "动作",
-                    "v": "/tag/动作"
-                }, {
-                    "n": "剧情",
-                    "v": "/tag/剧情"
-                }, {
-                    "n": "冒险",
-                    "v": "/tag/冒险"
-                }, {
-                    "n": "喜剧",
-                    "v": "/tag/喜剧"
-                }, {
-                    "n": "国产剧",
-                    "v": "/tag/国产剧"
-                }, {
-                    "n": "恐怖",
-                    "v": "/tag/恐怖"
-                }, {
-                    "n": "战争",
-                    "v": "/tag/战争"
-                }, {
-                    "n": "科幻",
-                    "v": "/tag/科幻"
-                }, {
-                    "n": "动画",
-                    "v": "/tag/动画"
-                }, {
-                    "n": "韩剧",
-                    "v": "/tag/韩剧"
-                }, {
-                    "n": "犯罪",
-                    "v": "/tag/犯罪"
-                }, {
-                    "n": "纪录片",
-                    "v": "/tag/纪录片"
-                }]
-            },
-            {
-                "key": "class",
-                "name": "剧情",
-                "value": [{
-                    "n": "全部",
-                    "v": ""
-                }, {
-                    "n": "2024",
-                    "v": "/2024"
-                }, {
-                    "n": "2023",
-                    "v": "/2023"
-                }, {
-                    "n": "2022",
-                    "v": "/2022"
-                }, {
-                    "n": "2021",
-                    "v": "/2021"
-                }, {
-                    "n": "2020",
-                    "v": "/2020"
-                }, {
-                    "n": "2019",
-                    "v": "/2019"
-                }]
-            }
-        ]
-    }
+  类型: '影视',
+  title: '5点电影',
+  host: 'https://www.5.movie/',
+  url: '/vodshow/fyfilter.html',
+  searchUrl: '/vodsearch/**----------fypage---.html',
+  timeout: 5000,
+  searchable: 2,
+  quickSearch: 1,
+  filterable: 1,
+  headers: {
+    'User-Agent':'UC_UA',
+  },
+  class_name: '电影&剧集&短剧&动漫&综艺',
+  class_url: '20&21&24&22&23',
+  filter_url:'{{fl.类型}}-{{fl.地区}}-{{fl.排序}}-{{fl.剧情}}-{{fl.语言}}-{{fl.字母}}---fypage---{{fl.年份}}',
+  filter_def: {20: { 类型: "20" },21: { 类型: "21" },22: { 类型: "22" },23: { 类型: "23" },24: { 类型: "24" }},
+  filter:'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',
+  推荐:'.more-box li;.pic a&&title;.lazyload&&data-original;.text-overflow&&Text;.pic a&&href',
+  一级:'.col-xs-4;h3&&Text;.lazyload&&data-original;.item-status&&Text;a&&href',
+  二级: {
+    title: 'h3&&Text;span.col-xs-12:eq(0) a:gt(0)&&Text',
+    img: '.lazyload&&data-original',
+    //desc: 'span.col-xs-12:eq(3)&&Text;span.col-xs-6:eq(1) a&&Text;span.col-xs-6:eq(0) a&&Text;span.col-xs-12:eq(2) a:gt(-1)&&Text;span.col-xs-12:eq(1) a:gt(-1)&&Text',
+    desc: 'span.col-xs-12:eq(3)&&Text;span.col-xs-6:eq(1) a&&Text;span.col-xs-6:eq(0) a&&Text;span.col-xs-12:eq(2) a:gt(0)&&Text;span.col-xs-12:eq(1) a&&Text',    
+    content: '.pt-10.pb-10&&Text',
+    tabs: '.playlist-tab li',
+    lists: '.ewave-playlist-content:eq(#id)&&a',
+    tab_text: 'body&&Text',
+    list_text:'body&&Text',
+    list_url:'a&&href',
+  },
+  搜索:'*',
 }
