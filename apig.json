@@ -534,6 +534,63 @@
             "playerType": "2",
             "ext": "https://ev2089.zxbwv.com"
         },
+	        {
+            "key": "肥猫",
+            "name": "肥猫┃APP",
+            "type": 3,
+            "api": "csp_AppGet",
+            "ext": "https://bind.315999.xyz/89.txt|#getapp@TMD@2025|120"
+        },
+        {
+            "key": "干饭",
+            "name": "干饭┃APP",
+            "type": 3,
+            "api": "csp_AppQi",
+            "ext": "https://staraugust123456.oss-cn-hangzhou.aliyuncs.com/2.txt|staraugust123456|120"
+        },
+        {
+            "key": "行动",
+            "name": "行动┃APP",
+            "type": 3,
+            "api": "csp_AppQi",
+            "ext": "https://ceshi307386.oss-cn-beijing.aliyuncs.com/ceshi421.txt|da61247f5b662597|120"
+        },
+        {
+            "key": "再来",
+            "name": "┃再来┃APP",
+            "type": 3,
+            "api": "csp_AppQi",
+            "ext": "https://daen-1256234123.cos.ap-shanghai.myqcloud.com/MuQi/mqxh.txt|37kj83zs1q16jk6t|101"
+        },
+        {
+            "key": "一碗",
+            "name": "一碗┃APP",
+            "type": 3,
+            "api": "csp_AppGet",
+            "ext": "http://www.zjcvod.com|ab4e9a421675f14b"
+        },
+        {
+            "key": "猫抓",
+            "name": "猫抓┃APP",
+            "type": 3,
+            "api": "csp_AppGet",
+            "ext": "https://dy.8ttv.cn|1111111111111111"
+        },
+        {
+            "key": "黑猫",
+            "name": "黑猫┃APP",
+            "type": 3,
+            "api": "csp_AppGet",
+            "ext": "https://c8k2n5l0i9s8b2m1jj8k2x2l9ff68.ydysapi.cfd:27899|k9o3p2c8b7m3z0o8"
+        },
+        {
+            "key": "永永",
+            "name": "永永┃APP",
+            "type": 3,
+            "api": "csp_AppGet",
+            "ext": "http://ys.qist.top|2SWSPFxugBLPPOKo|120"
+        },
+	//FM 结束
 		{
             "key": "剧迷影视",
             "name": "剧迷影视",
