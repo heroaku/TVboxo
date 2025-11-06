@@ -1,43 +1,152 @@
 var rule = {
-    title: '420电影院',
-    host: 'https://www.dapian1234.com',
-    url: '/sort/fyfilter.html',
-    searchUrl: '/search-wd-**-p-fypage.html',
-    searchable: 2,
-    quickSearch: 0,
-    filterable: 1,
-    filter: {
-        '1': [{ key: '分类', name: '分类', value: [{ n: '全部', v: '1', }, { n: '动作片', v: '8', }, { n: '喜剧片', v: '9', }, { n: '爱情片', v: '10', }, { n: '科幻片', v: '11', }, { n: '恐怖片', v: '12', }, { n: '战争片', v: '13', }, { n: '剧情片', v: '14', },], }, { key: '地区', name: '地区', value: [{ n: '全部', v: '', }, { n: '大陆', v: 'dalu', }, { n: '美国', v: 'meiguo', }, { n: '香港', v: 'xianggang', }, { n: '台湾', v: 'taiwan', }, { n: '韩国', v: 'hanguo', }, { n: '日本', v: 'riben', }, { n: '泰国', v: 'taiguo', }, { n: '新加坡', v: 'xinjiapo', }, { n: '马来西亚', v: 'malaixiya', }, { n: '印度', v: 'yindu', }, { n: '英国', v: 'yingguo', }, { n: '法国', v: 'faguo', }, { n: '加拿大', v: 'jianada', }, { n: '俄罗斯', v: 'eluosi', }, { n: '德国', v: 'deguo', },], }, { key: '年份', name: '年份', value: [{ n: '全部', v: '', }, { n: '2024', v: '2024', }, { n: '2023', v: '2023', }, { n: '2022', v: '2022', }, { n: '2021', v: '2021', }, { n: '2020', v: '2020', }, { n: '2019', v: '2019', }, { n: '2018', v: '2018', }, { n: '2017', v: '2017', }, { n: '2016', v: '2016', }, { n: '2015', v: '2015', }, { n: '2014', v: '2014', }, { n: '2013', v: '2013', }, { n: '2012', v: '2012', }, { n: '2011', v: '2011', }, { n: '2010', v: '2010', }, { n: '2009', v: '2009', },], },],
-        '2': [{ key: '分类', name: '分类', value: [{ n: '全部', v: '2', }, { n: '大陆剧', v: '15', }, { n: '国产剧', v: '933', }, { n: '香港剧', v: '16', }, { n: '台湾剧', v: '918', }, { n: '日剧', v: '18', }, { n: '韩剧', v: '915', }, { n: '美剧', v: '916', }, { n: '英剧', v: '923', }, { n: '欧美剧', v: '17', }, { n: '泰剧', v: '922', }, { n: '亚洲剧', v: '19', },], }, { key: '地区', name: '地区', value: [{ n: '全部', v: '', }, { n: '大陆', v: 'dalu', }, { n: '美国', v: 'meiguo', }, { n: '香港', v: 'xianggang', }, { n: '台湾', v: 'taiwan', }, { n: '韩国', v: 'hanguo', }, { n: '日本', v: 'riben', }, { n: '泰国', v: 'taiguo', }, { n: '新加坡', v: 'xinjiapo', }, { n: '马来西亚', v: 'malaixiya', }, { n: '印度', v: 'yindu', }, { n: '英国', v: 'yingguo', }, { n: '法国', v: 'faguo', }, { n: '加拿大', v: 'jianada', }, { n: '俄罗斯', v: 'eluosi', }, { n: '德国', v: 'deguo', },], }, { key: '年份', name: '年份', value: [{ n: '全部', v: '', }, { n: '2024', v: '2024', }, { n: '2023', v: '2023', }, { n: '2022', v: '2022', }, { n: '2021', v: '2021', }, { n: '2020', v: '2020', }, { n: '2019', v: '2019', }, { n: '2018', v: '2018', }, { n: '2017', v: '2017', }, { n: '2016', v: '2016', }, { n: '2015', v: '2015', }, { n: '2014', v: '2014', }, { n: '2013', v: '2013', }, { n: '2012', v: '2012', }, { n: '2011', v: '2011', }, { n: '2010', v: '2010', }, { n: '2009', v: '2009', },], },],
-        '3': [{ key: '分类', name: '分类', value: [{ n: '全部', v: '3', }, { n: '国漫', v: '906', }, { n: '日漫', v: '904', }, { n: '美漫', v: '905', }, { n: '其他动漫', v: '903', },], }, { key: '地区', name: '地区', value: [{ n: '全部', v: '', }, { n: '大陆', v: 'dalu', }, { n: '美国', v: 'meiguo', }, { n: '香港', v: 'xianggang', }, { n: '台湾', v: 'taiwan', }, { n: '韩国', v: 'hanguo', }, { n: '日本', v: 'riben', }, { n: '泰国', v: 'taiguo', }, { n: '新加坡', v: 'xinjiapo', }, { n: '马来西亚', v: 'malaixiya', }, { n: '印度', v: 'yindu', }, { n: '英国', v: 'yingguo', }, { n: '法国', v: 'faguo', }, { n: '加拿大', v: 'jianada', }, { n: '俄罗斯', v: 'eluosi', }, { n: '德国', v: 'deguo', },], }, { key: '年份', name: '年份', value: [{ n: '全部', v: '', }, { n: '2024', v: '2024', }, { n: '2023', v: '2023', }, { n: '2022', v: '2022', }, { n: '2021', v: '2021', }, { n: '2020', v: '2020', }, { n: '2019', v: '2019', }, { n: '2018', v: '2018', }, { n: '2017', v: '2017', }, { n: '2016', v: '2016', }, { n: '2015', v: '2015', }, { n: '2014', v: '2014', }, { n: '2013', v: '2013', }, { n: '2012', v: '2012', }, { n: '2011', v: '2011', }, { n: '2010', v: '2010', }, { n: '2009', v: '2009', },], },],
-        '4': [{ key: '分类', name: '分类', value: [{ n: '全部', v: '4', }, { n: '大陆综艺', v: '911', }, { n: '港台综艺', v: '907', }, { n: '韩综', v: '908', }, { n: '日综', v: '912', }, { n: '泰综', v: '913', }, { n: '欧美综艺', v: '909', },], }, { key: '地区', name: '地区', value: [{ n: '全部', v: '', }, { n: '大陆', v: 'dalu', }, { n: '美国', v: 'meiguo', }, { n: '香港', v: 'xianggang', }, { n: '台湾', v: 'taiwan', }, { n: '韩国', v: 'hanguo', }, { n: '日本', v: 'riben', }, { n: '泰国', v: 'taiguo', }, { n: '新加坡', v: 'xinjiapo', }, { n: '马来西亚', v: 'malaixiya', }, { n: '印度', v: 'yindu', }, { n: '英国', v: 'yingguo', }, { n: '法国', v: 'faguo', }, { n: '加拿大', v: 'jianada', }, { n: '俄罗斯', v: 'eluosi', }, { n: '德国', v: 'deguo', },], }, { key: '年份', name: '年份', value: [{ n: '全部', v: '', }, { n: '2024', v: '2024', }, { n: '2023', v: '2023', }, { n: '2022', v: '2022', }, { n: '2021', v: '2021', }, { n: '2020', v: '2020', }, { n: '2019', v: '2019', }, { n: '2018', v: '2018', }, { n: '2017', v: '2017', }, { n: '2016', v: '2016', }, { n: '2015', v: '2015', }, { n: '2014', v: '2014', }, { n: '2013', v: '2013', }, { n: '2012', v: '2012', }, { n: '2011', v: '2011', }, { n: '2010', v: '2010', }, { n: '2009', v: '2009', },], },],
-    },
-    filter_url: '/{{fl.分类}}/select---{{fl.年份}}---{{fl.地区}}--fypage',
-    filter_def: { '1': { 分类: '1' }, '2': { 分类: '2' }, '3': { 分类: '3' }, '4': { 类型: '4' }, '5': { 类型: '5' } },
+    title: '4KAV',
+    类型: '影视',
+    //host: 'https://www.4kvm.pro',
+    host: 'https://4k-av.com',
+    hostJs: '',
     headers: {
-        'User-Agent': 'MOBILE_UA',
-        'accept-language': 'zh-CN,zh;q=0.8',
+        'User-Agent': 'IOS_UA'
     },
+    编码: 'utf-8',
     timeout: 5000,
-    class_parse: 'ul.nav&&li;a&&Text;a&&href;/sort/(\\d+)/',
-    cate_exclude: '最近更新',
+
+    homeUrl: '/',
+    url: '/fyclassfyfilter/page-fypage.html[/fyclassfyfilter]',
+    filter_url: '{{fl.class}}',
+    detailUrl: '',
+    searchUrl: '/s?q=**',
+    searchable: 1,
+    quickSearch: 1,
+    filterable: 1,
+
+    class_name: '电影&剧集',
+    class_url: 'movie&tv',
+    filter_def: {},
+
     play_parse: true,
-    lazy: $js.toString(() => {
-        input = { parse: 1, url: input, js: '' };
-    }),
-    double: true,
-    推荐: '.content&&.m-movies;article;*;*;*;*',
-    一级: '.m-movies&&article;h2&&Text;img&&src;.zhuangtai&&Text;a&&href',
-    二级: {
-        title: '.info-main-title&&a&&Text',
-        img: '.video-info-img&&style',
-        desc: '.video_info&&li:eq(1)&&Text',
-        content: '.abstract-content&&Text',
-        tabs: '#video_list_li h3',
-        lists: '.playlist:eq(#id)&&li',
-        tab_text: 'body&&Text',
-        list_text: 'body&&Text',
-        list_url: 'a&&href'
-    },
+    lazy: `js:
+if (/m3u8|mp4/.test(input)) {
+input = { jx: 0, parse: 0, url: input }
+} else {
+let kurl = request(input).match(/<source src="(.*?)"/)[1];
+input = { jx: 0, parse: 0, url: kurl }
+}
+`,
+
+    limit: 9,
+    double: false,
+    推荐: '*',
+    一级: '.NTMitem;a&&title;img&&src;.tags&&Text;a&&href',
+    二级: `js:
+let khtml = request(input);
+VOD = {};
+VOD.vod_id = input;
+VOD.vod_name = pdfh(khtml, '#MainContent_titleh12&&div:eq(1)&&Text');
+VOD.type_name = pdfh(khtml, '.tags--span&&Text');
+VOD.vod_pic = pdfh(khtml, '#MainContent_poster&&img&&src');
+VOD.vod_remarks = pdfh(khtml, '.videodetail&&label:eq(0)&&Text');
+VOD.vod_year = pdfh(khtml, '.videodetail&&a&&Text');
+VOD.vod_area = pdfh(khtml, '.videodetail&&label:eq(1)&&Text');
+VOD.vod_director = '未知';
+VOD.vod_actor = '未知';
+VOD.vod_content = pdfh(khtml, '.videodesc&&Text');
+VOD.vod_play_from = '4KAV专线';
+
+let klists = [];
+let kcode = pdfa(khtml, 'ul#rtlist&&li');
+if ( kcode == 0) {
+    kcode = pdfa(khtml, '#MainContent_poster&&a');
+    kcode.forEach((kc) => {
+    let kname = pdfh(kc, 'a&&title').replace('电影海报','');
+    let khref = pdfh(kc, 'a&&href').replace('poster.jpg','');
+    let klist = kname + '$' + khref;
+    klists.push(klist);
+    });
+    VOD.vod_play_url = klists.join('#');
+} else {
+    kcode;
+    kcode.forEach((kc) => {
+    let kname = pdfh(kc, 'span&&Text');
+    let khref = pdfh(kc, 'img&&src').replace('screenshot.jpg','');
+    let klist = kname + '$' + khref;
+    klists.push(klist);
+    });
+    VOD.vod_play_url = klists.join('#');
+}
+`,
     搜索: '*',
+
+    filter: {
+        "tv": [{
+                "key": "class",
+                "name": "剧情",
+                "value": [{
+                    "n": "全部",
+                    "v": ""
+                }, {
+                    "n": "动作",
+                    "v": "/tag/动作"
+                }, {
+                    "n": "剧情",
+                    "v": "/tag/剧情"
+                }, {
+                    "n": "冒险",
+                    "v": "/tag/冒险"
+                }, {
+                    "n": "喜剧",
+                    "v": "/tag/喜剧"
+                }, {
+                    "n": "国产剧",
+                    "v": "/tag/国产剧"
+                }, {
+                    "n": "恐怖",
+                    "v": "/tag/恐怖"
+                }, {
+                    "n": "战争",
+                    "v": "/tag/战争"
+                }, {
+                    "n": "科幻",
+                    "v": "/tag/科幻"
+                }, {
+                    "n": "动画",
+                    "v": "/tag/动画"
+                }, {
+                    "n": "韩剧",
+                    "v": "/tag/韩剧"
+                }, {
+                    "n": "犯罪",
+                    "v": "/tag/犯罪"
+                }, {
+                    "n": "纪录片",
+                    "v": "/tag/纪录片"
+                }]
+            },
+            {
+                "key": "class",
+                "name": "剧情",
+                "value": [{
+                    "n": "全部",
+                    "v": ""
+                }, {
+                    "n": "2024",
+                    "v": "/2024"
+                }, {
+                    "n": "2023",
+                    "v": "/2023"
+                }, {
+                    "n": "2022",
+                    "v": "/2022"
+                }, {
+                    "n": "2021",
+                    "v": "/2021"
+                }, {
+                    "n": "2020",
+                    "v": "/2020"
+                }, {
+                    "n": "2019",
+                    "v": "/2019"
+                }]
+            }
+        ]
+    }
 }
