@@ -1,34 +1,79 @@
 var rule = {
-  类型: '影视',
-  title: '5点电影',
-  host: 'https://www.5.movie/',
-  url: '/vodshow/fyfilter.html',
-  searchUrl: '/vodsearch/**----------fypage---.html',
-  timeout: 5000,
-  searchable: 2,
-  quickSearch: 1,
-  filterable: 1,
-  headers: {
-    'User-Agent':'UC_UA',
-  },
-  class_name: '电影&剧集&短剧&动漫&综艺',
-  class_url: '20&21&24&22&23',
-  filter_url:'{{fl.类型}}-{{fl.地区}}-{{fl.排序}}-{{fl.剧情}}-{{fl.语言}}-{{fl.字母}}---fypage---{{fl.年份}}',
-  filter_def: {20: { 类型: "20" },21: { 类型: "21" },22: { 类型: "22" },23: { 类型: "23" },24: { 类型: "24" }},
-  filter:'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',
-  推荐:'.more-box li;.pic a&&title;.lazyload&&data-original;.text-overflow&&Text;.pic a&&href',
-  一级:'.col-xs-4;h3&&Text;.lazyload&&data-original;.item-status&&Text;a&&href',
-  二级: {
-    title: 'h3&&Text;span.col-xs-12:eq(0) a:gt(0)&&Text',
-    img: '.lazyload&&data-original',
-    //desc: 'span.col-xs-12:eq(3)&&Text;span.col-xs-6:eq(1) a&&Text;span.col-xs-6:eq(0) a&&Text;span.col-xs-12:eq(2) a:gt(-1)&&Text;span.col-xs-12:eq(1) a:gt(-1)&&Text',
-    desc: 'span.col-xs-12:eq(3)&&Text;span.col-xs-6:eq(1) a&&Text;span.col-xs-6:eq(0) a&&Text;span.col-xs-12:eq(2) a:gt(0)&&Text;span.col-xs-12:eq(1) a&&Text',    
-    content: '.pt-10.pb-10&&Text',
-    tabs: '.playlist-tab li',
-    lists: '.ewave-playlist-content:eq(#id)&&a',
-    tab_text: 'body&&Text',
-    list_text:'body&&Text',
-    list_url:'a&&href',
-  },
-  搜索:'*',
+    author: '小可乐/2408/第一版',
+    title: '97电影网',
+    类型: '影视',
+    host: 'http://m.aogetu.com',
+    headers: {'User-Agent': 'MOBILE_UA'},
+    编码: 'gb2312',
+    timeout: 5000,
+    homeUrl: '/',
+    url: '/fyfilter/indexfypage.html[/fyfilter]',
+    filter_url: '{{fl.cateId}}',
+    detailUrl: '',
+    searchUrl: '/s.asp?page=fypage&searchword=**&searchtype=-1',
+    searchable: 1,
+    quickSearch: 1,
+    filterable: 1,
+    class_name: '电影&剧集&综艺&动漫&音乐&午夜',
+    filter: 'H4sIAAAAAAAAA62VwW7aQBRF93yG10js8wdRFamLik2UxRC7eIgxTco0MQipVQQNqdTQqqVFRWGTFtImKVHUNuDA19jj8Bd9ZozjGY+RKrpCM5z7fP3um3E1pagYmRY288raZqqq7GiWsqZso7K2rippxURFDdbete2evoH1C2QQ2NisKiZsu/XB7HDgb8MirFNLB/8eD5xJ12u+FoCMWjLzFVJ6BusHuN11m30JfIALhCO9o2t6WJeQCO/CD8/237kjW8LuaDpBJsfSVy36si1jwW6O9wBW5R4KJOaBHn12xk0JW9GRWdE10fL4uzv5KCuNDd5Edv2xyDwlBo723/tgx5qvq5ZS26qlttIs++c6dPh/hM8KhU//MnHGfWiUSGTypLQNrx5h6UXfm76VsSVS1KJVZ9869PanjNQhJT+pKNw7BxdSGJngIur2ZEhHUxlaRnifN/vpK+1eyNA9nNM4A/RmmGAAqvIG6K8/7llb7hUMcJ2dXnm9SxmqEuY0SLcC7bCwRQxt1XgjlUIXZ/1Zp+HZd/fNcYzKqFCLLYXokgSL+AQRyyVJxLIRJJAPBJ8k2cN6XDEfvyTFfARFW/Xfjt1OUuziMloIFgcNlkVk+j9w8ax82vhqwpE7HtC7H1KSvUuwJw70Etl8sGMydmj/9WnBoVwiY4dT1LGWL9P5bQ9VQd/9PDayq/Y7qMKP/qx344xaHJGxkOlfbWAnMl1wX50MZXSkJBtaGfToSVZouYzKwUMLcA/kjYeZ2yeWViBzP6s2IFoq/FC1GvdX4ziQMYgZ/Qo1Ol63J8EOsOZ//ULQubXp+0sJWNFJrsTeKlX7C/ZMI3ixCAAA',
+    class_url: 'dianying&dianshiju&zongyiyule&dongmandonghua&yuleMV&wuyejuchang',
+    cate_exclude: '午夜',
+    filter_def: {
+        dianying: {cateId: 'dianying'},
+        dianshiju: {cateId: 'dianshiju'},
+        zongyiyule: {cateId: 'zongyiyule'},
+        dongmandonghua: {cateId: 'dongmandonghua'},
+        yuleMV: {cateId: 'yuleMV'},
+        wuyejuchang: {cateId: 'wuyejuchang'}
+    },
+    play_parse: true,
+    lazy: `js: input = { jx: 0, parse: 0, url: input } `,
+    limit: 9,
+    double: false,
+    推荐: '*',
+    一级: `js:
+       VODS = [];
+       let klists = pdfa(request(input), 'li:has([title])');
+       klists.forEach((it) => {
+       VODS.push({
+        vod_name: pdfh(it,'a&&title'),
+        vod_pic: pdfh(it,'img&&data-original'),
+        vod_remarks: pdfh(it,'.title&&Text')||pdfh(it,'.name&&Text'),
+        vod_id: pdfh(it,'a&&href')
+        })
+    })
+    `,
+    二级: `js:
+       let khtml = request(input);
+       let kdetail = pdfh(khtml, '.vod-body');
+       VOD = {};
+       VOD.vod_id = input;
+       VOD.vod_name = pdfh(kdetail, 'h1&&Text');
+       VOD.vod_pic = pdfh(kdetail, 'img&&src');
+       VOD.type_name = pdfh(kdetail, 'p--em:eq(3)&&Text');
+       VOD.vod_remarks = pdfh(kdetail, 'p:eq(1)&&Text');
+       VOD.vod_year = pdfh(kdetail, 'p--em:eq(0)&&Text');
+       VOD.vod_area = pdfh(kdetail, 'p--em:eq(5)&&Text');
+       VOD.vod_director = pdfh(kdetail, 'p--em:eq(4)&&Text');
+       VOD.vod_actor = pdfh(kdetail, 'p--em:eq(2)&&Text');
+       VOD.vod_content = pdfh(khtml, '.vod_content&&Text');
+       let jinput = pd(khtml, '.plau-ul-list:eq(0)&&a:eq(0)&&href', input);
+       let jinput2 = pd(request(jinput), '.play&&script:eq(0)&&src', input);
+       let kjson = JSON.parse(request(jinput2).match(/VideoListJson=(.*?),urlinfo=/)[1].replace(/'/g,'"'));
+       let ktabs = [];
+       let i = 1;
+       kjson.forEach((jit) => {
+       ktabs.push('👶线路' + i + '-' + jit[0]);
+       i++
+    });
+       VOD.vod_play_from = ktabs.join('$$$');
+       let kplists = [];
+       kjson.forEach((jit) => {
+       let plist = jit[1].map((it) => { return it.replace('$bdhd','').replace('$lzm3u8','') });
+       plist = plist.join('#');
+       kplists.push(plist)
+    });
+       VOD.vod_play_url = kplists.join('$$$')
+    `,
+    搜索: '*',
 }
