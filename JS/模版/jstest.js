@@ -1,152 +1,74 @@
-/*
-@header({
-  searchable: 1,
-  filterable: 1,
-  quickSearch: 1,
-  title: '03影视',
-  author: '小可乐/250915/第一版',
-  '类型': '影视',
-  lang: 'dr2'
-})
-*/
-
 var rule = {
-    author: '小可乐/250915/第一版',
-    title: '03影视',
-    类型: '影视',
-    host: 'https://www.03yy.live',
-    headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/128.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'zh-CN,zh;q=0.9'
-    },
-    编码: 'utf-8',
-    timeout: 5000,
-    url: '/type/indexfyclass-fypage.html',
-    filter_url: '',
-    searchUrl: '/search.php?searchword=**',
-    searchable: 1,
-    quickSearch: 1,
-    filterable: 1,
+author: '小可乐/240701/第一版',
+title: '2345one',
+类型: '影视',
+host: 'http://142.171.220.28',
+hostJs: '',
+headers: {'User-Agent': 'MOBILE_UA'},
+编码: 'utf-8',
+timeout: 5000,
 
-    class_name: '电影&电视剧&综艺&动漫',
-    class_url: '1&2&3&4',
-    filter_def: {},
-    预处理: $js.toString(() => {
-        // 使用withHeaders: true来获取响应头
-        const res = request(HOST, {
-            headers: rule.headers,
-            withHeaders: true,
-            redirect: false,
-            method: 'GET'
-        });
-        const resJson = typeof res === 'string' ? JSON.parse(res) : res;
+homeUrl: '/',
+url: '/vodshow/fyfilter',
+filter_url: '{{fl.cateId}}-{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
+detailUrl: '',
+searchUrl: '/vodsearch/**----------fypage---',
+searchable: 1, 
+quickSearch: 1, 
+filterable: 1, 
 
-        // 提取set-cookie头
-        const setCookie = resJson['set-cookie'] || '';
+class_name: '电影天堂&电视剧集&樱花动漫&综艺娱乐',
+class_url: 'dianying&dianshiju&dongman&zongyi',
+filter_def: {
+dianying: {cateId: 'dianying'},
+dianshiju: {cateId: 'dianshiju'},
+dongman: {cateId: 'dongman'},
+zongyi: {cateId: 'zongyi'}
+},
 
-        // 处理cookie格式
-        let cookies = '';
-        if (Array.isArray(setCookie)) {
-            cookies = setCookie.map(c => c.split(';')[0].trim()).join('; ');
-        } else if (setCookie) {
-            cookies = setCookie.split(';')[0].trim();
-        }
+play_parse: true,
+lazy: `js:
+let kcode = JSON.parse(request(input).match(/var player_.*?=(.*?)</)[1]);
+let kurl = kcode.url;
+if (/\\.(m3u8|mp4)/.test(kurl)) {
+input = { jx: 0, parse: 0, url: kurl };
+} else {
+input = { jx: 0, parse: 1, url: kurl };
+}
+`,
 
-        // 更新rule.headers中的cookie
-        if (cookies) {
-            rule.headers["cookie"] = rule.headers["cookie"] ?
-                rule.headers["cookie"] + '; ' + cookies : cookies;
-            rule_fetch_params.headers = Object.assign({}, rule.headers);
-        }
+limit: 9,
+double: false,
+推荐: '*',
+一级: 'li.col-lg-2;a:eq(0)&&title;.lazyload&&data-original;p&&Text;a:eq(0)&&href',
+二级: `js:
+let html = request(input);
+VOD = {};
+VOD.vod_id = input;
+VOD.vod_name = pdfh(html, '.info&&h3&&Text');
+VOD.vod_pic = pd(html, 'img&&data-original', input);
+VOD.type_name = pdfh(html, 'p.row&&span:eq(0)&&Text').replace('分类：','');
+VOD.vod_remarks = pdfh(html, 'p.row&&span:eq(-1)&&Text');
+VOD.vod_year = pdfh(html, 'p.row&&span:eq(2)&&Text').replace('年份：','');
+VOD.vod_area = pdfh(html, 'p.row&&span:eq(1)&&Text').replace('地区：','');
+VOD.vod_actor = pdfh(html, 'p.row&&span:eq(-2)&&Text').replace('主演：','');
+VOD.vod_director = pdfh(html, 'p.row&&span:eq(-3)&&Text').replace('导演：','');
+VOD.vod_content = pdfh(html, '.pb-10&&Text');
 
-        console.log(`提取的Cookie: ${cookies || '无'}`);
-        console.log(`最终Cookie: ${rule.headers["cookie"] || '无'}`);
-    }),
-    play_parse: true,
-    lazy: $js.toString(() => {
-        let html = request(input, {
-            headers: rule.headers,
-            withHeaders: true,
-            redirect: false,
-            method: 'GET'
-        });
+let ktabs = pdfa(html,'.ewave-tab').map((it) => { return pdfh(it, 'body&&Text') });
+VOD.vod_play_from = ktabs.join('$$$');
 
-        // 处理转义引号：将 \" 替换为 "
-        html = html.replace(/\\"/g, '"');
+let klists = [];
+pdfa(html, '.ewave-playlist-content').forEach((pl) => {
+    let klist = pdfa(pl, 'body&&a').map((it) => {
+    return pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input);
+    });
+    klist = klist.join('#');
+    klists.push(klist)
+});
+VOD.vod_play_url = klists.join('$$$')
+`,
+搜索: '*',
 
-        // 匹配参数
-        const nowMatch = html.match(/var\s+now\s*=\s*base64decode\s*\(\s*["']([^"']+)["']\s*\)/);
-        const prePageMatch = html.match(/var\s+prePage\s*=\s*["']([^"']+)["']/);
-        const nextPageMatch = html.match(/var\s+nextPage\s*=\s*["']([^"']+)["']/);
-        var now = nowMatch[1];
-        now = base64Decode(now);
-        console.log("now:" + now);
-        
-        if (/\.(m3u8|mp4|mkv|jpg)/.test(now)) {
-            input = {parse: 0, url: now}
-        } else {
-            const prePage = prePageMatch[1];
-            const nextPage = nextPageMatch[1];
-            console.log("prePage:" + prePage);
-            console.log("nextPage:" + nextPage);
-            
-            let jx = `${HOST}/api/dplayer.php?url=${now}&ref=${encodeURIComponent(prePage)}&next=${encodeURIComponent(nextPage)}`;
-            
-            console.log("请求URL:" + jx);
-            
-            let videohtml = request(jx, {
-                headers: rule.headers,
-                withHeaders: true,
-                redirect: false,
-                method: 'GET'
-            });
-            console.log("videohtml:" + videohtml);
-            
-            const mediaInfoRegex = /mediaInfo\s*=\s*(\[.*?\]);/gis;
-            const mediaInfoMatch = mediaInfoRegex.exec(videohtml);
-            let videoUrl = "";
-            
-            if (mediaInfoMatch && mediaInfoMatch[1]) {
-                const mediaInfoContent = mediaInfoMatch[1];
-                const qualityLevels = ["1080", "720", "540", "360"];
-                const urls = [];
-                for (const quality of qualityLevels) {
-                    const urlRegex = new RegExp(
-                        `definition.*?${quality}.*?url.*?:.*?"(https.*?)"`, 
-                        'is'
-                    );
-                    const urlMatch = mediaInfoContent.match(urlRegex);
-                    if (urlMatch && urlMatch[1]) {
-                        videoUrl = urlMatch[1];
-                        videoUrl = videoUrl.replace(/\\\\\//g, '/').replace(/\\+/g, '');
-                        console.log(`找到${quality}清晰度的URL:`, videoUrl);
-                        urls.push(quality, videoUrl);
-                    }
-                }
-                input = { parse: 0, url: urls };
-                if (!videoUrl) {
-                    console.log("未找到任何已知清晰度的URL");
-                }
-            } else {
-                console.error("未匹配到mediaInfo");
-            }
-        }
-    }),
-    limit: 9,
-    double: true,
-    推荐: '.Pic-list&&.pic-content;a&&title;img&&src;span&&Text;a&&href',
-    一级: '.type-box&&.pic-height-a;a&&title;img&&src;span&&Text;a&&href',
-    二级: {
-        title: 'h2&&Text;.m-content&&ul&&li:eq(4)',
-        img: 'img&&src',
-        desc: '.color-red&&Text;.m-content&&ul&&span:eq(2)&&Text;.m-content&&ul&&span:eq(0)&&Text;.m-content&&ul&&li:eq(1)&&Text;.m-content&&ul&&li:eq(0)&&Text',
-        content: '.m-intro&&Text',
-        tabs: '#playlist&&li',
-        tab_text: 'body&&Text',
-        lists: '.play_list:eq(#id)&&li',
-        list_text: 'body&&Text',
-        list_url: 'a&&href'
-    },
-    搜索: '*',
+filter: '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'
 }
