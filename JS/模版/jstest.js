@@ -1,79 +1,86 @@
 var rule = {
-    author: '小可乐/2408/第一版',
-    title: '97电影网',
-    类型: '影视',
-    host: 'http://m.aogetu.com',
-    headers: {'User-Agent': 'MOBILE_UA'},
-    编码: 'gb2312',
-    timeout: 5000,
-    homeUrl: '/',
-    url: '/fyfilter/indexfypage.html[/fyfilter]',
-    filter_url: '{{fl.cateId}}',
-    detailUrl: '',
-    searchUrl: '/s.asp?page=fypage&searchword=**&searchtype=-1',
-    searchable: 1,
-    quickSearch: 1,
+    类型: '影视',//影视|听书|漫画|小说
+    title: 'PTT[优]',
+    host: 'https://ptt.red',
+    homeUrl: '/zh-cn',
+    url: '/zh-cn/p/fyclassfyfilter',
+    searchUrl: '/zh-cn/q/**?page=fypage',
+    searchable: 2,
+    quickSearch: 0,
     filterable: 1,
-    class_name: '电影&剧集&综艺&动漫&音乐&午夜',
-    filter: 'H4sIAAAAAAAAA62VwW7aQBRF93yG10js8wdRFamLik2UxRC7eIgxTco0MQipVQQNqdTQqqVFRWGTFtImKVHUNuDA19jj8Bd9ZozjGY+RKrpCM5z7fP3um3E1pagYmRY288raZqqq7GiWsqZso7K2rippxURFDdbete2evoH1C2QQ2NisKiZsu/XB7HDgb8MirFNLB/8eD5xJ12u+FoCMWjLzFVJ6BusHuN11m30JfIALhCO9o2t6WJeQCO/CD8/237kjW8LuaDpBJsfSVy36si1jwW6O9wBW5R4KJOaBHn12xk0JW9GRWdE10fL4uzv5KCuNDd5Edv2xyDwlBo723/tgx5qvq5ZS26qlttIs++c6dPh/hM8KhU//MnHGfWiUSGTypLQNrx5h6UXfm76VsSVS1KJVZ9869PanjNQhJT+pKNw7BxdSGJngIur2ZEhHUxlaRnifN/vpK+1eyNA9nNM4A/RmmGAAqvIG6K8/7llb7hUMcJ2dXnm9SxmqEuY0SLcC7bCwRQxt1XgjlUIXZ/1Zp+HZd/fNcYzKqFCLLYXokgSL+AQRyyVJxLIRJJAPBJ8k2cN6XDEfvyTFfARFW/Xfjt1OUuziMloIFgcNlkVk+j9w8ax82vhqwpE7HtC7H1KSvUuwJw70Etl8sGMydmj/9WnBoVwiY4dT1LGWL9P5bQ9VQd/9PDayq/Y7qMKP/qx344xaHJGxkOlfbWAnMl1wX50MZXSkJBtaGfToSVZouYzKwUMLcA/kjYeZ2yeWViBzP6s2IFoq/FC1GvdX4ziQMYgZ/Qo1Ol63J8EOsOZ//ULQubXp+0sJWNFJrsTeKlX7C/ZMI3ixCAAA',
-    class_url: 'dianying&dianshiju&zongyiyule&dongmandonghua&yuleMV&wuyejuchang',
-    cate_exclude: '午夜',
-    filter_def: {
-        dianying: {cateId: 'dianying'},
-        dianshiju: {cateId: 'dianshiju'},
-        zongyiyule: {cateId: 'zongyiyule'},
-        dongmandonghua: {cateId: 'dongmandonghua'},
-        yuleMV: {cateId: 'yuleMV'},
-        wuyejuchang: {cateId: 'wuyejuchang'}
+    filter: 'H4sIAAAAAAAAAO2X32saQRDH/5d76JMQ74d3Z8C/pIRytD6UpimYtBCCYCIGY9qoIbWVSltIqia1UUkQf+TSf8bdPf+Luml0ZtcsBFqf9HH3M+vOznxnvNnRdG316Y72Kr6trWqk0iLv+1pI2/Bex/H6nbf+Nn5nuMG3M/VRus63xwstGbrfPauNyvv3u0+8RNx79vJFzJjyUbVMu02ZR+B8vkV7tzK34Py3c/LFl7nuTA3opx+00pgxcMGgUWO3R7KBDfyq9dANYXDxQ4v0qzMG4CPJdIaDkmxgask1bvE3yKw9IF8PIcjT9WOCPLypssIkyCvPV0wT7s7Vh34FEIpsqUIOakDgxSzbpukMEAgmqxVJbwAERXG3QFMlIFE4k2sy/wIIihzNfh72DxDSsd/05idCIJmx14J7OryW9S+I/xEFAt2112ClIkIWvoudoFeZkYdTN0YWvDionQbNa3TKEBJKetfDgY+qZrJ+TEKNsGFN9LId9xKxuw1ETZmamBoyNTDVZapjGpZpGFE9KlE9iqkrUxdTR6YOprZMbUwjMo1gKseK1x5KBT06Jv08pGK6FlPB9tv0+JecClpJ0VJrcsHmm8RWbN3b3OIXrIU0Yy59kota0QJ50UHMhe7JESpI3Pd4QUIehZ7JEQhAaIbcDVdZCjxBS70vmN7NueldLWqUkZlS0JV6d02l3l1DqXekHOF/n1eJoSwFw1yWwsKVgjWvUjBstahttagdtagdtXLdpXIXTrkR3MX/afAIOleskEbTBeSbNS9FBI+n3S7N5hGCfIwbvHDKRt/2flFEigGLt+plP148Vdv2/1I1y/riZAzRCeopYfa0Iazs/HfQyQFy1LOng+bc/Flwimdt9NmS9kl3D3V4+EF2UiGX3xECRQblAt09REg9zDrWskwWrEySfwAneSZu2xMAAA==',
+    filter_url: '{% if fyclass !="1" %}{{fl.地区}}?page=fypage{% else %}{{fl.类型}}?page=fypage{{fl.地区|safe}}{% endif %}{{fl.年份|safe}}{{fl.排序|safe}}',
+    filter_def: {},
+    headers: {
+        'User-Agent': 'MOBILE_UA',
     },
+    timeout: 5000,
+    class_parse: '.nav-tabs&&a;a&&Text;a&&href;(\\d+)',
+    cate_exclude: '',
     play_parse: true,
-    lazy: `js: input = { jx: 0, parse: 0, url: input } `,
-    limit: 9,
+    lazy: $js.toString(() => {
+        let html = request(input);
+        let sdata = pdfh(html, '.container-fluid&&script&&Html');
+        // log(sdata);
+        let json = JSON.parse(sdata);
+        if (json.contentUrl) {
+            input = {parse: 0, url: json.contentUrl, js: ''};
+        }
+    }),
     double: false,
     推荐: '*',
-    一级: `js:
-       VODS = [];
-       let klists = pdfa(request(input), 'li:has([title])');
-       klists.forEach((it) => {
-       VODS.push({
-        vod_name: pdfh(it,'a&&title'),
-        vod_pic: pdfh(it,'img&&data-original'),
-        vod_remarks: pdfh(it,'.title&&Text')||pdfh(it,'.name&&Text'),
-        vod_id: pdfh(it,'a&&href')
-        })
-    })
-    `,
-    二级: `js:
-       let khtml = request(input);
-       let kdetail = pdfh(khtml, '.vod-body');
-       VOD = {};
-       VOD.vod_id = input;
-       VOD.vod_name = pdfh(kdetail, 'h1&&Text');
-       VOD.vod_pic = pdfh(kdetail, 'img&&src');
-       VOD.type_name = pdfh(kdetail, 'p--em:eq(3)&&Text');
-       VOD.vod_remarks = pdfh(kdetail, 'p:eq(1)&&Text');
-       VOD.vod_year = pdfh(kdetail, 'p--em:eq(0)&&Text');
-       VOD.vod_area = pdfh(kdetail, 'p--em:eq(5)&&Text');
-       VOD.vod_director = pdfh(kdetail, 'p--em:eq(4)&&Text');
-       VOD.vod_actor = pdfh(kdetail, 'p--em:eq(2)&&Text');
-       VOD.vod_content = pdfh(khtml, '.vod_content&&Text');
-       let jinput = pd(khtml, '.plau-ul-list:eq(0)&&a:eq(0)&&href', input);
-       let jinput2 = pd(request(jinput), '.play&&script:eq(0)&&src', input);
-       let kjson = JSON.parse(request(jinput2).match(/VideoListJson=(.*?),urlinfo=/)[1].replace(/'/g,'"'));
-       let ktabs = [];
-       let i = 1;
-       kjson.forEach((jit) => {
-       ktabs.push('👶线路' + i + '-' + jit[0]);
-       i++
-    });
-       VOD.vod_play_from = ktabs.join('$$$');
-       let kplists = [];
-       kjson.forEach((jit) => {
-       let plist = jit[1].map((it) => { return it.replace('$bdhd','').replace('$lzm3u8','') });
-       plist = plist.join('#');
-       kplists.push(plist)
-    });
-       VOD.vod_play_url = kplists.join('$$$')
-    `,
+    //α大佬方案去除推荐页广告
+    一级: '#videos&&.card:not(:has(.badge-success:contains(广告)));a:eq(-1)&&Text;img&&src;.badge-success&&Text;a:eq(-1)&&href',
+    二级: $js.toString(() => {
+        let html = request(input);
+        let data = html.split('node:')[1].split('},')[0] + '}';
+        data = data.trim();
+        //   log(data);
+        let json = JSON.parse(data);
+        //   log(json);
+        VOD = {};
+
+        VOD.vod_name = json.title;
+        VOD.type_name = json.type;
+        VOD.vod_id = input;
+        VOD.vod_pic = urljoin(input, json.thumbnail);
+        VOD.vod_year = json.year;
+        VOD.vod_area = json._area;
+        VOD.vod_remarks = json.note;
+        VOD.vod_content = json.description;
+        VOD.vod_director = json.director;
+        VOD.vod_actor = json.actors;
+        let v_tabs = pdfa(html, '.nav-tabs&&li');
+        let v_tab_urls = v_tabs.map(it => pd(it, 'a&&href', input));
+        v_tabs = v_tabs.map(it => pdfh(it, 'a&&title'));
+        // log(v_tab_urls);
+        VOD.vod_play_from = v_tabs.join('$$$');
+        let lists = [];
+        let list1 = pdfa(html, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
+        // log(list1);
+        lists.push(list1);
+        if (v_tab_urls.length > 1) {
+            let reqUrls = v_tab_urls.slice(1).map(it => {
+                return {
+                    url: it,
+                    options: {
+                        timeout: 5000,
+                        headers: rule.headers
+                    }
+                }
+            });
+            let htmls = batchFetch(reqUrls);
+            htmls.forEach((ht) => {
+                if (ht) {
+                    let list0 = pdfa(ht, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
+                    lists.push(list0);
+                } else {
+                    lists.push([]);
+                }
+            });
+        }
+        let playUrls = lists.map(it => it.join('#'));
+        VOD.vod_play_url = playUrls.join('$$$');
+    }),
     搜索: '*',
 }
