@@ -1,7 +1,7 @@
 var rule = {
      title: '狗番',
      host: 'https://www.kan234.com',
-     模板:'首图2',
+     //模板:'首图2',
      searchUrl: '/vodsearch/**----------fypage---',
      url: '/show/fyclass--------fypage---',
      searchable: 2,//是否启用全局搜索,
