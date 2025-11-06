@@ -25,14 +25,14 @@ headers: {'User-Agent': MOBILE_UA},
 二级: $js.toString(() => {
 rule.playPrefix = input;
 let khtml = fetch(input);
-let ktabs = pdfa(khtml, '#slider&&dt').map((it) => { return '努努-' + pdfh(it, 'body&&Text') });
+let ktabs = pdfa(khtml, '#slider&&dt').map((it) => { return '' + pdfh(it, 'body&&Text') });
 let kurls = pdfa(khtml, 'ul.sort-list').map((item) => { 
     let kurl = pdfa(item, 'a').map((it) => { return pdfh(it, 'body&&Text') + '$' + pdfh(it, 'a&&onclick') });
     return kurl.join('#')
 });
 VOD = {
     vod_id: input,
-    vod_name: '📢:本线路仅作者学习测试使用切勿传播!♻️ 正片开始👉' + pdfh(khtml, 'h1&&Text'),
+    vod_name: '努努' + pdfh(khtml, 'h1&&Text'),
     type_name: pdfh(khtml, '.product-excerpt:contains(类型)&&Text').replace('类型：', ' '),
     vod_remarks: pdfh(khtml, '.product-excerpt:contains(又名)&&Text').replace('又名：', ' '),
     vod_year: pdfh(khtml, 'p:contains(年份)&&Text').replace('年份：', ' '),
