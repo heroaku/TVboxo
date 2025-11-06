@@ -1,52 +1,62 @@
 var rule = {
-    title: '3Q影视',
-    host: 'https://qqqys.com/',
-    url: 'https://qqqys.com/',
-    searchUrl: 'https://qqqys.com/index.php?m=vod-search&wd=**----------&page=fypage',
-    searchable: 2, //是否启用全局搜索
-    quickSearch: 0, //是否启用快速搜索
-    filterable: 0, //是否启用分类筛选
-    headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    },
-    class_parse: '.nav-item:gt(0):lt(5);a&&Text;a&&href;.*/(.*?)\\.html',
-    play_parse: true,
-    lazy: `js:
-            let html = request(input);
-            let hconf = html.match(/r player_.*?=(.*?)</)[1];
-            let json = JSON5.parse(hconf);
-            let url = json.url;
-            if (json.encrypt == '1') {
-                url = unescape(url);
-            } else if (json.encrypt == '2') {
-                url = unescape(base64Decode(url));
+     title: '奈飞工厂',
+     host: 'https://www.netflixgc.com',
+     模板:'短视2',
+     searchUrl: '/vodsearch/**-------------/',
+     url:'/index.php/api/vod#type=fyclass&page=fypage',
+     detailUrl:'/detail/fyid.html',
+     searchable: 2,//是否启用全局搜索,
+     quickSearch: 1,//是否启用快速搜索,
+     filterable:0,//是否启用分类筛选,
+     headers: {
+       'Cookie': 'PHPSESSID=e6alj2s5i6gvk0urjp3iqkkfl0; ecPopup=1; _funcdn_token=5ff10ed9fc178af6e2645e44cd768d232acba767ebaa33a15e4d2682b97264a6; user_id=10992; user_name=yuanzl77; group_id=2; group_name=NXVIP; user_check=e59a37f5a4fec0072cb512869352f402; user_portrait=%2Fstatic%2Fimages%2Ftouxiang.png',
+       'User-Agent': 'MOBILE_UA'
+     },
+     lazy:`js:
+        var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+        var url = html.url;
+        var from = html.from;
+        var MacPlayerConfig={};
+        if (html.encrypt == '1') {
+            url = unescape(url)
+        } else if (html.encrypt == '2') {
+            url = unescape(base64Decode(url))
+        }
+        if (/.m3u8|.mp4/.test(url)) {
+            input = url
+        } else {
+        eval(fetch(HOST + "/static/js/playerconfig.js").replace('var Mac','Mac'));
+        var list = MacPlayerConfig.player_list[from].parse;
+            input={
+                jx:0,
+                url:list+url,
+                parse:1,
+                header: JSON.stringify({
+                    'referer': HOST
+                })
             }
-            if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {
-                input = {
-                    parse: 0,
-                    jx: 0,
-                    url: url,
-                };
-            } else {
-                input;
-            }`,
-    limit: 6,
-    推荐: '.module-item;li;a&&title;.lazyload&&data-original;.module-item-desc&&Text;a&&href',
-    double: true, // 推荐内容是否双层定位
-    一级: '.module-item li;a&&title;a&&data-original;.module-item-desc&&Text;a&&href',
-    二级: {
-        "title": "h1&&Text",
-        "img": ".poster-img .lazyload&&data-original",
-        "desc": ".info-item:eq(0)&&Text;.info-item:eq(1)&&Text;.info-item:eq(2)&&Text;.info-item:eq(3)&&Text;.info-item:eq(4)&&Text",
-        "content": ".intro-content&&Text",
-        "tabs": ".play-tabs li",
-        "lists": ".play-list:eq(#id) li"
-    },
-    搜索: '.module-item;a&&title;.lazyload&&data-original;.module-item-desc&&Text;a&&href;.info&&p:eq(0) p&&Text',
-    // 分类映射
-    电影: 'https://qqqys.com/index.php?m=vod-type-id-1.html',
-    剧集: 'https://qqqys.com/index.php?m=vod-type-id-2.html',
-    动漫: 'https://qqqys.com/index.php?m=vod-type-id-3.html',
-    综艺: 'https://qqqys.com/index.php?m=vod-type-id-4.html',
-    短剧: 'https://qqqys.com/index.php?m=vod-type-id-5.html'
-}
+        }
+     `,
+     limit: 6,
+     class_name:'电影&剧集&动漫',
+     class_url:'1&2&3',
+     tab_exclude:'SN|KK|LS|阿里|夸克',
+     double: false, // 推荐内容是否双层定位
+     推荐: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
+     一级:`js:
+        let body = input.split("#")[1];
+        let t = Math.round(new Date / 1e3).toString();
+        let key = md5("DS" + t + "DCC147D11943AF75");
+        let url = input.split("#")[0];
+        body = body + "&time=" + t + "&key=" + key;
+        print(body);
+        fetch_params.body = body;
+        let html = post(url, fetch_params);
+        let data = JSON.parse(html);
+        VODS = data.list.map(function(it) {
+            it.vod_pic = it.vod_pic.replace(/mac/, "https");
+            return it
+        });
+     `,
+     搜索: '.public-list-box;.thumb-txt&&Text;.public-list-exp&&img&&data-src;.public-list-prb&&Text;a&&href'
+    }
