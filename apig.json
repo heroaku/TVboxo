@@ -513,6 +513,7 @@
             "filterable": 1,
             "playerType": 2
         },
+	#FM
         {
             "key": "猎手影视",
             "name": "猎手┃影视",
@@ -523,6 +524,15 @@
             "quickSearch": 1,
             "filterable": 1,
             "playerType": 2
+        },
+	        {
+            "key": "荐片",
+            "name": "荐片┃影视",
+			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",
+            "api": "csp_Jianpian",
+            "type": 3,
+            "playerType": "2",
+            "ext": "https://ev2089.zxbwv.com"
         },
 		{
             "key": "剧迷影视",
