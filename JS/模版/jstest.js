@@ -1,49 +1,52 @@
 var rule = {
-    title:'唐人街影院',
-    host:' https://www.chinatownfilm.com',
-    // https://www.chinatownfilm.com/vodsearch/**----------fypage---.html
-    //https://www.chinatownfilm.com/vodshow/fyclass--------fypage---.html
-    //url:'/vodshow/fyclass--------fypage---.html',
-    searchUrl:'/vodsearch/**----------fypage---.html',
-    searchable:2,//是否启用全局搜索,
-    quickSearch:0,//是否启用快速搜索,
-    filterable:1,//是否启用分类筛选,
-    url: '/vodshow/fyfilter.html',
-	filter_url:'{{fl.cateId}}-{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
-   	filter: {
-		"1":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"1"},{"n":"动作片","v":"6"},{"n":"喜剧片","v":"7"},{"n":"爱情片","v":"8"},{"n":"科幻片","v":"21"},{"n":"恐怖片","v":"20"},{"n":"剧情片","v":"9"},{"n":"战争片","v":"23"},{"n":"悬疑片","v":"11"},{"n":"犯罪片","v":"38"},{"n":"纪录片","v":"24"},{"n":"动画片","v":"25"}]},{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"家庭","v":"家庭"},{"n":"同性","v":"同性"},{"n":"西部","v":"西部"},{"n":"传记","v":"传记"},{"n":"真人秀","v":"真人秀"},{"n":"奇幻","v":"奇幻"},{"n":"武侠","v":"武侠"},{"n":"古装","v":"古装"},{"n":"历史","v":"历史"},{"n":"运动","v":"运动"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"欧美","v":"欧美"},{"n":"韩国","v":"韩国"},{"n":"日本","v":"日本"},{"n":"泰国","v":"泰国"},{"n":"新马","v":"新马"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年代","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
-		"2":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"2"},{"n":"大陆剧","v":"13"},{"n":"港台剧","v":"42"},{"n":"欧美剧","v":"41"},{"n":"日韩剧","v":"43"},{"n":"其他海外剧","v":"28"}]},{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"古装","v":"古装"},{"n":"同性","v":"同性"},{"n":"武侠","v":"武侠"},{"n":"家庭","v":"家庭"},{"n":"西部","v":"西部"},{"n":"奇幻","v":"奇幻"},{"n":"历史","v":"历史"},{"n":"传记","v":"传记"},{"n":"真人秀","v":"真人秀"},{"n":"运动","v":"运动"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"韩国","v":"韩国"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"日本","v":"日本"},{"n":"欧美","v":"欧美"},{"n":"泰国","v":"泰国"},{"n":"新马","v":"新马"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年代","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
-		"3":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"3"},{"n":"国产综艺","v":"29"},{"n":"港台综艺","v":"30"},{"n":"日韩综艺","v":"31"},{"n":"欧美综艺","v":"32"},{"n":"海外综艺","v":"33"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"韩国","v":"韩国"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"日本","v":"日本"},{"n":"欧美","v":"欧美"},{"n":"泰国","v":"泰国"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年代","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
-		"4":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"4"},{"n":"国产动漫","v":"34"},{"n":"日韩动漫","v":"35"},{"n":"欧美动漫","v":"36"},{"n":"海外动漫","v":"37"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"日本","v":"日本"},{"n":"欧美","v":"欧美"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年代","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}]
-	},
-    filter_def:{
-		1:{cateId:'1',by:'time'},
-		2:{cateId:'2',by:'time'},
-		3:{cateId:'3',by:'time'},
-		4:{cateId:'4',by:'time'}
-	},
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
-        'User-Agent':'MOBILE_UA',
-        // "Cookie": "searchneed=ok"
+    title: '3Q影视',
+    host: 'https://qqqys.com/',
+    url: 'https://qqqys.com/',
+    searchUrl: 'https://qqqys.com/index.php?m=vod-search&wd=**----------&page=fypage',
+    searchable: 2, //是否启用全局搜索
+    quickSearch: 0, //是否启用快速搜索
+    filterable: 0, //是否启用分类筛选
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     },
-    class_name:'电视剧&电影&综艺&动漫',
-    class_url:'2&1&3&4',
-    //class_parse:'.myui-panel-box&&ul&&li;a&&Text;a&&href;/v/(.*)/',
-    play_parse:true,
-    lazy:'',
-    limit:6,
-    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    double:true, // 推荐内容是否双层定位
-    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    // 一级: 'body&&.hl-list-item;a&&title;a&&data-original;.hl-lc-1 remarks&&Text;a&&href',
+    class_parse: '.nav-item:gt(0):lt(5);a&&Text;a&&href;.*/(.*?)\\.html',
+    play_parse: true,
+    lazy: `js:
+            let html = request(input);
+            let hconf = html.match(/r player_.*?=(.*?)</)[1];
+            let json = JSON5.parse(hconf);
+            let url = json.url;
+            if (json.encrypt == '1') {
+                url = unescape(url);
+            } else if (json.encrypt == '2') {
+                url = unescape(base64Decode(url));
+            }
+            if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {
+                input = {
+                    parse: 0,
+                    jx: 0,
+                    url: url,
+                };
+            } else {
+                input;
+            }`,
+    limit: 6,
+    推荐: '.module-item;li;a&&title;.lazyload&&data-original;.module-item-desc&&Text;a&&href',
+    double: true, // 推荐内容是否双层定位
+    一级: '.module-item li;a&&title;a&&data-original;.module-item-desc&&Text;a&&href',
     二级: {
-    "title": ".hl-dc-title&&Text;span.hl-text-conch&&Text",
-    "img": ".hl-lazy&&data-original",
-    "desc": ".hl-col-xs-12:eq(5)&&Text;.hl-col-xs-12:eq(6)&&Text;.hl-col-xs-12:eq(2)&&Text;.hl-col-xs-12:eq(3)&&Text",
-    "content": "li.hl-col-xs-12:eq(11)&&Text",
-    "tabs": ".hl-tabs-btn",
-    "lists": ".hl-plays-list:eq(#id) li"
-          },
-    //二级:{"title":".hl-item-thumb.hl-lazy&&title;.hl-full-box&&ul li:eq(6)&&Text","img":".hl-item-thumb.hl-lazy&&data-original","desc":".hl-full-box&&ul&&li:eq(-1)&&Text;.hl-full-box&&ul&&li:eq(-2)&&Text;.hl-full-box&&ul&&li:eq(-3)&&Text;.hl-full-box&&ul&&li:eq(2)&&Text;.hl-full-box&&ul&&li:eq(3)&&Text","content":".hl-col-xs-12.blurb&&Text","tabs":".hl-tabs-btn:eq(#id) a","lists":".hl-plays-list:eq(#id) li"},
-    搜索:'ul.hl-one-list&&li;a&&title;.hl-item-thumb&&data-original;.hl-lc-1&&Text;a&&href;.text-muted:eq(-1)&&Text',
+        "title": "h1&&Text",
+        "img": ".poster-img .lazyload&&data-original",
+        "desc": ".info-item:eq(0)&&Text;.info-item:eq(1)&&Text;.info-item:eq(2)&&Text;.info-item:eq(3)&&Text;.info-item:eq(4)&&Text",
+        "content": ".intro-content&&Text",
+        "tabs": ".play-tabs li",
+        "lists": ".play-list:eq(#id) li"
+    },
+    搜索: '.module-item;a&&title;.lazyload&&data-original;.module-item-desc&&Text;a&&href;.info&&p:eq(0) p&&Text',
+    // 分类映射
+    电影: 'https://qqqys.com/index.php?m=vod-type-id-1.html',
+    剧集: 'https://qqqys.com/index.php?m=vod-type-id-2.html',
+    动漫: 'https://qqqys.com/index.php?m=vod-type-id-3.html',
+    综艺: 'https://qqqys.com/index.php?m=vod-type-id-4.html',
+    短剧: 'https://qqqys.com/index.php?m=vod-type-id-5.html'
 }
