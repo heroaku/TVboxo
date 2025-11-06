@@ -55,39 +55,20 @@
 		},
 		//{"key": "聚搜","name": "☀蚂蚁🔹4k源","type": 3,"api": "csp_qiao2","playerType": 2,"jar": "https://gitee.com/tianwikeji/jar/raw/master/0615qj.jar","ext": "7lj763gg402i79425739i7jghj118797l4hj840gi18633331l4708g2h7145403549g44l8ii56i187681hkjj3hhgh1ih3l32j250lk1k786lj20j468hk3hli4l46gig4i3g7g2722328j0136h01i7g5183k22k7gg3i72hk81gl8k9839kl7i0707"},
 		//{"key": "巧技","name": "☀巧技🔹速播","type": 3,"searchable": 1,"quickSearch": 0,"api": "csp_qiao2","playerType": 2,"jar": "https://gitee.com/tianwikeji/jar/raw/master/qj.jar","ext": "7lj763gg402i79425739i7jghj118797l4hj840gi18633331l4708g2h7145403549g44l8ii56i187681hkjj3hhgh1ih3l32j250lk1k786lj20j468hk3hli4l46gig4i3g7g2722328j0136h01i7g5183k22k7gg3i72hk81gl8k9839kl7i0707"},
-		 {
-      "key": "热播影视",
-      "name": "热播｜APP",
-      "type": 3,
-      "api": "csp_AppRJ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "ext": {
-        "url": "http://v.rbotv.cn"
-      }
-    },
-
-#TW
-    {
-      "key": "金牌APP",
-      "name": "煲宅｜APP",
-      "quickSearch": 0,
-      "type": 3,
-      "jar": "https://gitee.com/tianwikeji/jar/raw/master/xm.jar",
-      "api": "csp_AppMuou",
-      "ext": "ewogICJTaXRlVXJsIjogImh0dHBzOi8vbXVvdS53bGJicS54eXoiLAogICJFeHQiOiAiaXA5K1dadnQ5ODNzUzAwOGtyTktobno4Q2Fzb2d3QjlLYkp2U0FmNGJRZEg5aUlGVHE4Y0tGM3Y4RFBicnphUiIsCiAgIkluZm8iOiAiaHR0cHM6Ly9tdW91aHQuZ2d0dmIuY2MiCn0="
-    },
-
-    {
-      "key": "公众号",
-      "name": "移动┃影视",
-      "type": 3,
-      "jar": "https://gitee.com/tianwikeji/jar/raw/master/YD.jar",
-      "api": "csp_YDjisu",
-      "searchable": 1,
-      "changeable": 1
-    },
+		{
+            "key": "唐人街影院CF",
+            "name": "唐人街影院CF",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/唐人街影院CF.js"
+        },
+		{
+            "key": "乐王电影",
+            "name": "乐王电影",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/乐王电影.js"
+        },	
 #7080    
 	   {
       "key": "咖啡",
@@ -310,6 +291,37 @@
         "version": "107"
       }
     },
+	{
+      "key": "热播影视",
+      "name": "热播｜APP",
+      "type": 3,
+      "api": "csp_AppRJ",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "ext": {
+        "url": "http://v.rbotv.cn"
+      }
+    },
+    {
+      "key": "金牌APP",
+      "name": "煲宅｜APP",
+      "quickSearch": 0,
+      "type": 3,
+      "jar": "https://gitee.com/tianwikeji/jar/raw/master/xm.jar",
+      "api": "csp_AppMuou",
+      "ext": "ewogICJTaXRlVXJsIjogImh0dHBzOi8vbXVvdS53bGJicS54eXoiLAogICJFeHQiOiAiaXA5K1dadnQ5ODNzUzAwOGtyTktobno4Q2Fzb2d3QjlLYkp2U0FmNGJRZEg5aUlGVHE4Y0tGM3Y4RFBicnphUiIsCiAgIkluZm8iOiAiaHR0cHM6Ly9tdW91aHQuZ2d0dmIuY2MiCn0="
+    },
+
+    {
+      "key": "公众号",
+      "name": "移动┃影视",
+      "type": 3,
+      "jar": "https://gitee.com/tianwikeji/jar/raw/master/YD.jar",
+      "api": "csp_YDjisu",
+      "searchable": 1,
+      "changeable": 1
+    },
     {
       "key": "苹果影视",
       "name": "☀苹果🔹弹幕",
@@ -529,27 +541,12 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/永乐视频.js"
         },
-		{
-            "key": "唐人街影院CF",
-            "name": "唐人街影院CF",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/唐人街影院CF.js"
-        },
 			{
             "key": "老网影视",
             "name": "老网影视",
             "type": 3,
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/老网影视.js"
-        },	
-# 新js jar
-			{
-            "key": "乐王电影",
-            "name": "乐王电影",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/乐王电影.js"
         },	
 			{
             "key": "55影视",
