@@ -803,6 +803,14 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/奇优影视.js"
         },	
+				{
+            "key": "飞飞影视",
+            "name": "飞飞影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/飞飞影视.js"
+        },
 		{
 	  "key": " fxzds ",
 	  "name": "袋鼠影视",
