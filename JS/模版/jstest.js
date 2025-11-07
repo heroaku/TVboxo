@@ -1,9 +1,9 @@
 var rule={
     title: '飞飞影视',
-    host: 'https://www.ffys.me',
-    url: '/vodshow/id/fyclass/page/fypage.html',
+    host: 'https://www.pipishi.cc',
+    url: '/list/fyclass--------fypage---.html',
     searchUrl: '/vodsearch**/page/fypage.html',
-  //https://www.ffys.me/vodshow/id/fyclass/page/fypage.html
+    //https://www.pipishi.cc/list/fyclass--------fypage---.html
     //https://www.ffys.me/vodsearch**/page/fypage.html
     searchable: 2,
     quickSearch: 0,
