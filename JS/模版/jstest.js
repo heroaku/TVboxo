@@ -4,7 +4,8 @@ var rule = {
     // host:'https://www.dandanju.cc',https://www.ddjys.vip/
     host:'https://www.ddjys.vip/',
     hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"a:eq(0)&&href");print(src);HOST=src',
-    // url:'/show/fyclass--------fypage---.html',
+     "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+	// url:'/show/fyclass--------fypage---.html',
     url:'/show/fyclassfyfilter.html',
     filterable:1,//是否启用分类筛选,
     filter_url:'-{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
