@@ -3,7 +3,7 @@ var rule={
     host: 'https://qkys2.cc',
     url: '/top/fyclass--------fypage---.html',
     searchUrl: '/search/**----------fypage---.html',
-  //https://qkys2.cc/top/2-----------.html
+  //https://qkys2.cc/top/2-----------.html;host: 'https://yxxq1.cc',
     //https://www.55yy7.com/vodsearch/**----------fypage---.html
     searchable: 2,
     quickSearch: 0,
