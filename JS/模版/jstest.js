@@ -20,7 +20,9 @@ var rule = {
         'User-Agent':'MOBILE_UA'
     },
     timeout:5000,//网站的全局请求超时,默认是3000毫秒
-    class_parse:'ul.swiper-wrapper&&li;a&&Text;a&&href;.*/(.*?).html',
+    //class_parse:'ul.swiper-wrapper&&li;a&&Text;a&&href;.*/(.*?).html',
+	class_name: '电影&剧集&综艺&动漫',
+	class_url: '1&2&3&4',
     play_parse:true,
 	lazy:`js:
         var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
