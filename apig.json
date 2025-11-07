@@ -826,6 +826,13 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/555影视.js"
         },	
+			{
+            "key": "937影院",
+            "name": "937影院",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/937影院.js"
+        },	
 		{
 	  "key": " fxzds ",
 	  "name": "袋鼠影视",
