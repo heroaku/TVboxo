@@ -1,96 +1,67 @@
-var 二级=`js:
-try {
-    VOD={};
-	let html1 = request(input);
-	pdfh = jsp.pdfh;
-	VOD.vod_id = pdfh(html1, "#current_id&&value");
-	VOD.vod_name = pdfh(html1, "h2&&Text");
-	VOD.vod_pic = pdfh(html1, ".item-root&&img&&src");
-	VOD.vod_actor = pdfh(html1, ".celebrity&&Text");
-	VOD.vod_area = pdfh(html1, ".country&&Text");
-	VOD.vod_year = pdfh(html1, ".year&&Text");
-	VOD.vod_remarks = "";
-	VOD.vod_director = "";
-	VOD.vod_content = "";
-	log(VOD);
-	input = "https://www.ikanbot.com/api/getResN?videoId=" + input.split("/").pop() + "&mtype=2";
-	let html = request(input);
-	print(html);
-	html = JSON.parse(html);
-	let episodes = html.data.list;
-	let playMap = {};
-	if (typeof play_url === "undefined") {
-		var play_url = ""
-	}
-	episodes.forEach(function(ep) {
-		let playurls = JSON.parse(ep["resData"]);
-		playurls.forEach(function(playurl) {
-			let source = playurl["flag"];
-			if (!playMap.hasOwnProperty(source)) {
-				playMap[source] = []
-			}
-			playMap[source].push(playurl["url"])
-		})
-	});
-	let playFrom = [];
-	let playList = [];
-	Object.keys(playMap).forEach(function(key) {
-		playFrom.append(key);
-		playList.append(playMap[key])
-	});
-	let vod_play_from = playFrom.join("$$$");
-	let vod_play_url = playList.join("$$$");
-	VOD["vod_play_from"] = vod_play_from;
-	VOD["vod_play_url"] = vod_play_url;
-	log(VOD);
-} catch (e) {
-	log("获取二级详情页发生错误:" + e.message)
-}
-`;
-
+// 地址发布页 https://www.dandanju.vip
 var rule = {
-    title:'爱看机器人',
-    host:'https://www.ikanbot.com',
-    url:'/hot/index-fyclass-fyfilter-p-fypage.html[/hot/index-fyclass-fyfilter.html]',
-    //https://www.ikanbot.com/search?q=%E6%96%97%E7%BD%97%E5%A4%A7&p=2
-    searchUrl:'/search?q=**&p=fypage',
-    searchable:2,
-    quickSearch:0,
-    filterable:1,
-    filter_url:'{{fl.tag}}',
-    图片来源:'@Referer=https://api.douban.com/@User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/113.0.0.0%20Safari/537.36',
-    filter:{
-        "movie":[{"key":"tag","name":"标签","value":[{"n":"热门","v":"热门"},{"n":"最新","v":"最新"},{"n":"经典","v":"经典"},{"n":"豆瓣高分","v":"豆瓣高分"},{"n":"冷门佳片","v":"冷门佳片"},{"n":"华语","v":"华语"},{"n":"欧美","v":"欧美"},{"n":"韩国","v":"韩国"},{"n":"日本","v":"日本"},{"n":"动作","v":"动作"},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":"科幻","v":"科幻"},{"n":"悬疑","v":"悬疑"},{"n":"恐怖","v":"恐怖"},{"n":"治愈","v":"治愈"},{"n":"豆瓣top250","v":"豆瓣top250"}]}]
-        ,"tv":[{"key":"tag","name":"标签","value":[{"n":"热门","v":"热门"},{"n":"美剧","v":"美剧"},{"n":"英剧","v":"英剧"},{"n":"韩剧","v":"韩剧"},{"n":"日剧","v":"日剧"},{"n":"国产剧","v":"国产剧"},{"n":"港剧","v":"港剧"},{"n":"日本动画","v":"日本动画"},{"n":"综艺","v":"综艺"},{"n":"纪录片","v":"纪录片"}]}]
+    title:'蛋蛋剧',
+    // host:'https://www.dandanju.cc',https://www.ddjys.vip/
+    host:'https://www.dddjys.vip',
+    hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"a:eq(0)&&href");print(src);HOST=src',
+    // url:'/show/fyclass--------fypage---.html',
+    url:'/show/fyclassfyfilter.html',
+    filterable:1,//是否启用分类筛选,
+    filter_url:'-{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
+    filter: {
+        "1":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"爱情","v":"爱情"},{"n":" 恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"警匪","v":"警匪"},{"n":"犯罪","v":"犯罪"},{"n":"动画","v":"动画"},{"n":"奇幻","v":"奇幻"},{"n":"武侠","v":"武侠"},{"n":"冒险","v":"冒险"},{"n":"枪战","v":"枪战"},{"n":"恐怖","v":"恐怖"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"经典","v":"经典"},{"n":"青春","v":"青春"},{"n":"文艺","v":"文艺"},{"n":"微电影","v":"微电影"},{"n":"古装","v":"古装"},{"n":"历史","v":"历史"},{"n":"运动","v":"运动"},{"n":"农村","v":"农村"},{"n":"儿童","v":"儿童"},{"n":"网络电影","v":"网络电影"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"大陆"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"法国","v":"法国"},{"n":"英国","v":"英国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"德国","v":"德国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"},{"n":"意大利","v":"意大利"},{"n":"西班牙","v":"西班牙"},{"n":"加拿大","v":"加拿大"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
+        "2":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"古装","v":"古装"},{"n":"战争","v":"战争"},{"n":"青春偶像","v":"青春偶像"},{"n":"喜剧","v":"喜剧"},{"n":"家庭","v":"家庭"},{"n":"犯罪","v":"犯罪"},{"n":"动作","v":"动作"},{"n":"奇幻","v":"奇幻"},{"n":"剧情","v":"剧情"},{"n":"历史","v":"历史"},{"n":"经典","v":"经典"},{"n":"乡村","v":"乡村"},{"n":"情景","v":"情景"},{"n":"商战","v":"商战"},{"n":"网剧","v":"网剧"},{"n":"其他","v":"其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"韩国","v":"韩国"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"日本","v":"日本"},{"n":"美国","v":"美国"},{"n":"泰国","v":"泰国"},{"n":"英国","v":"英国"},{"n":"新加坡","v":"新加坡"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
+        "3":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"选秀","v":"选秀"},{"n":"情感","v":"情感"},{"n":"访谈","v":"访谈"},{"n":"播报","v":"播报"},{"n":"旅游","v":"旅游"},{"n":"音乐","v":"音乐"},{"n":"美食","v":"美食"},{"n":"纪实","v":"纪实"},{"n":"曲艺","v":"曲艺"},{"n":"生活","v":"生活"},{"n":"游戏互动","v":"游戏互动"},{"n":"财经","v":"财经"},{"n":"求职","v":"求职"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"港台","v":"港台"},{"n":"日韩","v":"日韩"},{"n":"欧美","v":"欧美"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
+        "4":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"情感","v":"情感"},{"n":"科幻","v":"科幻"},{"n":"热血","v":"热血"},{"n":"推理","v":"推理"},{"n":"搞笑","v":"搞笑"},{"n":"冒险","v":"冒险"},{"n":"萝莉","v":"萝莉"},{"n":"校园","v":"校园"},{"n":"动作","v":"动作"},{"n":"机战","v":"机战"},{"n":"运动","v":"运动"},{"n":"战争","v":"战争"},{"n":"少年","v":"少年"},{"n":"少女","v":"少女"},{"n":"社会","v":"社会"},{"n":"原创","v":"原创"},{"n":"亲子","v":"亲子"},{"n":"益智","v":"益智"},{"n":"励志","v":"励志"},{"n":"其他","v":"其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"国产","v":"国产"},{"n":"日本","v":"日本"},{"n":"欧美","v":"欧美"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}]
     },
-    filter_def:{
-		movie:{tag:'热门'},
-		tv:{tag:'国产剧'},
-	},
-    filter获取方法:`
-    let value = [];
-    $('ul').eq(2).find('li').each(function() {
-      // console.log($(this).text());
-      let n = $(this).text().trim();
-      value.push({
-      'n': n, 'v': n
-      });
-    });
-    // 电影执行:
-    let data = {'movie': [{'key': 'tag', 'name': '标签', 'value': value}]};
-    console.log(JSON.stringify(data));
-    
-    //剧集执行:
-    let data = {'tv': [{'key': 'tag', 'name': '标签', 'value': value}]};
-    console.log(JSON.stringify(data));
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    headers:{
+        'User-Agent':'MOBILE_UA'
+    },
+    timeout:5000,//网站的全局请求超时,默认是3000毫秒
+    class_parse:'ul.swiper-wrapper&&li;a&&Text;a&&href;.*/(.*?).html',
+    play_parse:true,
+	lazy:`js:
+        var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+        var url = html.url;
+        var from = html.from;
+        if (html.encrypt == '1') {
+            url = unescape(url)
+        } else if (html.encrypt == '2') {
+            url = unescape(base64Decode(url))
+        }
+        if (/m3u8|mp4/.test(url)) {
+            input = url
+        } else {
+            var MacPlayerConfig={};
+            eval(fetch(HOST + "/static/js/playerconfig.js").replace('var Mac','Mac'));
+            var jx = MacPlayerConfig.player_list[from].parse;
+            if (jx == '') {
+                jx = MacPlayerConfig.parse
+            };
+            if (jx.startsWith("/")) {
+                jx = HOST + jx;
+            }
+            input={jx:0,url:jx+url,parse:1,
+                header: JSON.stringify({
+                    'referer': input
+                })}
+        }
     `,
-    headers:{'User-Agent':'MOBILE_UA',},
-    class_name:'电影&剧集',
-    class_url:'movie&tv',
-	play_parse:true,
-	double:true,
-    推荐:'.v-list;div.item;*;*;*;*', //这里可以为空，这样点播不会有内容
-    一级:'.v-list&&div.item;p&&Text;img&&src;;a&&href', //一级的内容是推荐或者点播时候的一级匹配
-    二级:二级,
-    搜索:'#search-result&&.media;h5&&a&&Text;a&&img&&src;.label&&Text;a&&href',//第三个是描述，一般显示更新或者完结
+    limit:6,
+    推荐:'.tab-content&&li;*;*;*;*',
+    一级:'.ewave-vodlist&&li;.lazyload&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+    二级:{
+        "title":".picture&&title;.data--span:eq(0)&&Text",
+        "img":".picture&&img&&data-original",
+        "desc":".pic-text:eq(0)&&Text;;;.data--span:eq(1)&&Text;.data--span:eq(2)&&Text",
+        "content":".desc--a&&Text",
+        "tabs":".nav-tabs&&li",
+        "lists":".tab-pane:eq(#id)&&li"
+    },
+
+    searchUrl:'/index.php/ajax/suggest?mid=1&wd=**&limit=50',
+    detailUrl:'/video/fyid.html', //非必填,二级详情拼接链接
+    搜索:'json:list;name;pic;;id',
 }
