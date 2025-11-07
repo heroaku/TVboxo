@@ -1,5 +1,5 @@
 var rule={
-    title: '飞飞影视',
+    title: '555影视',
     host: 'https://www.55yy7.com',
     url: '/vodshow/fyclass--------fypage---.html',
     searchUrl: '/vodsearch/**----------fypage---.html',
