@@ -1,10 +1,10 @@
 var rule={
-    title: '飞飞影视',
+    title: '皮皮影视',
     host: 'https://www.pipishi.cc',
     url: '/list/fyclass--------fypage---.html',
-    searchUrl: '/vodsearch**/page/fypage.html',
+    searchUrl: '/search/**----------fypage---.html',
     //https://www.pipishi.cc/list/fyclass--------fypage---.html
-    //https://www.ffys.me/vodsearch**/page/fypage.html
+    //https://www.pipishi.cc/search/**----------fypage---.html
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
