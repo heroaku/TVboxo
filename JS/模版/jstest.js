@@ -1,10 +1,10 @@
 var rule={
-    title: '大米星球',
+    title: '飞飞影视',
     host: 'https://www.ffys.me',
     url: '/vodshow/id/fyclass/page/fypage.html',
-    searchUrl: '/search/**----------fypage---.html',
+    searchUrl: '/vodsearch**/page/fypage.html',
   //https://www.ffys.me/vodshow/id/fyclass/page/fypage.html
-    //https://yxxq1.cc/search/**----------fypage---.html
+    //https://www.ffys.me/vodsearch**/page/fypage.html
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
