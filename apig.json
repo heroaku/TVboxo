@@ -613,6 +613,13 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/EU影视.js"
         },	
+			{
+            "key": "FREE影视",
+            "name": "FREE影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/FREE影视.js"
+        },	
 		{
             "key": "多瑙影视",
             "name": "多瑙影视",
