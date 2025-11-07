@@ -55,62 +55,20 @@
 		},
 		//{"key": "聚搜","name": "☀蚂蚁🔹4k源","type": 3,"api": "csp_qiao2","playerType": 2,"jar": "https://gitee.com/tianwikeji/jar/raw/master/0615qj.jar","ext": "7lj763gg402i79425739i7jghj118797l4hj840gi18633331l4708g2h7145403549g44l8ii56i187681hkjj3hhgh1ih3l32j250lk1k786lj20j468hk3hli4l46gig4i3g7g2722328j0136h01i7g5183k22k7gg3i72hk81gl8k9839kl7i0707"},
 		//{"key": "巧技","name": "☀巧技🔹速播","type": 3,"searchable": 1,"quickSearch": 0,"api": "csp_qiao2","playerType": 2,"jar": "https://gitee.com/tianwikeji/jar/raw/master/qj.jar","ext": "7lj763gg402i79425739i7jghj118797l4hj840gi18633331l4708g2h7145403549g44l8ii56i187681hkjj3hhgh1ih3l32j250lk1k786lj20j468hk3hli4l46gig4i3g7g2722328j0136h01i7g5183k22k7gg3i72hk81gl8k9839kl7i0707"},
-		 {
-      "key": "热播影视",
-      "name": "热播｜APP",
-      "type": 3,
-      "api": "csp_AppRJ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "ext": {
-        "url": "http://v.rbotv.cn"
-      }
-    },
-	  {
-      "key": "冷心",
-      "name": "冷心｜APP",
-      "type": 3,
-	  "api": "csp_AppMuou",
-      "ext": {
-        "url": "http://app.789dd.cn",
-        "name": "火猫影视"
-      }
-    },
-	 {
-      "key": "金牌",
-      "name": "金牌｜APP",
-      "type": 3,
-      "api": "csp_AppMuou",
-      "searchable": 1,
-      "changeable": 1,
-      "ext": {
-        "url": "",
-        "site": "https://muouapp.oss-cn-hangzhou.aliyuncs.com/MUOUAPP/godbbq.txt",
-        "name": "金牌影院（请断网再安装）"
-      }
-    },
-
-#TW
-    {
-      "key": "金牌APP",
-      "name": "煲宅｜APP",
-      "quickSearch": 0,
-      "type": 3,
-      "jar": "https://gitee.com/tianwikeji/jar/raw/master/xm.jar",
-      "api": "csp_AppMuou",
-      "ext": "ewogICJTaXRlVXJsIjogImh0dHBzOi8vbXVvdS53bGJicS54eXoiLAogICJFeHQiOiAiaXA5K1dadnQ5ODNzUzAwOGtyTktobno4Q2Fzb2d3QjlLYkp2U0FmNGJRZEg5aUlGVHE4Y0tGM3Y4RFBicnphUiIsCiAgIkluZm8iOiAiaHR0cHM6Ly9tdW91aHQuZ2d0dmIuY2MiCn0="
-    },
-
-    {
-      "key": "公众号",
-      "name": "移动┃影视",
-      "type": 3,
-      "jar": "https://gitee.com/tianwikeji/jar/raw/master/YD.jar",
-      "api": "csp_YDjisu",
-      "searchable": 1,
-      "changeable": 1
-    },
+		{
+            "key": "唐人街影院CF",
+            "name": "唐人街影院CF",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/唐人街影院CF.js"
+        },
+		{
+            "key": "乐王电影",
+            "name": "乐王电影",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/乐王电影.js"
+        },	
 #7080    
 	   {
       "key": "咖啡",
@@ -333,6 +291,37 @@
         "version": "107"
       }
     },
+	{
+      "key": "热播影视",
+      "name": "热播｜APP",
+      "type": 3,
+      "api": "csp_AppRJ",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "ext": {
+        "url": "http://v.rbotv.cn"
+      }
+    },
+    {
+      "key": "金牌APP",
+      "name": "煲宅｜APP",
+      "quickSearch": 0,
+      "type": 3,
+      "jar": "https://gitee.com/tianwikeji/jar/raw/master/xm.jar",
+      "api": "csp_AppMuou",
+      "ext": "ewogICJTaXRlVXJsIjogImh0dHBzOi8vbXVvdS53bGJicS54eXoiLAogICJFeHQiOiAiaXA5K1dadnQ5ODNzUzAwOGtyTktobno4Q2Fzb2d3QjlLYkp2U0FmNGJRZEg5aUlGVHE4Y0tGM3Y4RFBicnphUiIsCiAgIkluZm8iOiAiaHR0cHM6Ly9tdW91aHQuZ2d0dmIuY2MiCn0="
+    },
+
+    {
+      "key": "公众号",
+      "name": "移动┃影视",
+      "type": 3,
+      "jar": "https://gitee.com/tianwikeji/jar/raw/master/YD.jar",
+      "api": "csp_YDjisu",
+      "searchable": 1,
+      "changeable": 1
+    },
     {
       "key": "苹果影视",
       "name": "☀苹果🔹弹幕",
@@ -515,7 +504,7 @@
 	//{"key":"腐剧视频","name":"腐剧┃影视","type":3,"api":"csp_WexFujutv","searchable":1,"changeable":1,"jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 		{
             "key": "壹影视",
-            "name": "壹影｜APP",
+            "name": "壹影｜影视",
             "type": 3,
             "api": "https://github.com/heroaku/svip/raw/refs/heads/main/py/%E5%A3%B9%E5%BD%B1%E8%A7%86.py",
             "searchable": 1,
@@ -524,6 +513,92 @@
             "filterable": 1,
             "playerType": 2
         },
+	#FM
+        {
+            "key": "猎手影视",
+            "name": "猎手┃影视",
+            "type": 3,
+            "api": "./Py/LSYS.py",
+            "searchable": 1,
+            "changeable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+        },
+	        {
+            "key": "荐片",
+            "name": "荐片┃影视",
+			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",
+            "api": "csp_Jianpian",
+            "type": 3,
+            "playerType": "2",
+            "ext": "https://ev2089.zxbwv.com"
+        },
+	        {
+            "key": "肥猫",
+            "name": "肥猫┃APP",
+            "type": 3,
+			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",
+			"api": "csp_AppGet",
+            "ext": "https://bind.315999.xyz/89.txt|#getapp@TMD@2025|120"
+        },
+        {
+            "key": "干饭",
+            "name": "干饭┃APP",
+            "type": 3,
+			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
+            "api": "csp_AppQi",
+			"ext": "https://staraugust123456.oss-cn-hangzhou.aliyuncs.com/2.txt|staraugust123456|120"
+        },
+        {
+            "key": "行动",
+            "name": "行动┃APP",
+            "type": 3,
+			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
+            "api": "csp_AppQi",
+            "ext": "https://ceshi307386.oss-cn-beijing.aliyuncs.com/ceshi421.txt|da61247f5b662597|120"
+        },
+        {
+            "key": "再来",
+            "name": "┃再来┃APP",
+            "type": 3,
+			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
+            "api": "csp_AppQi",
+            "ext": "https://daen-1256234123.cos.ap-shanghai.myqcloud.com/MuQi/mqxh.txt|37kj83zs1q16jk6t|101"
+        },
+        {
+            "key": "一碗",
+            "name": "一碗┃APP",
+            "type": 3,
+			//"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
+            "api": "csp_AppGet",
+            "ext": "http://www.zjcvod.com|ab4e9a421675f14b"
+        },
+        {
+            "key": "猫抓",
+            "name": "猫抓┃APP",
+            "type": 3,
+			//"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
+            "api": "csp_AppGet",
+            "ext": "https://dy.8ttv.cn|1111111111111111"
+        },
+        {
+            "key": "黑猫",
+            "name": "黑猫┃APP",
+            "type": 3,
+			//"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
+            "api": "csp_AppGet",
+            "ext": "https://c8k2n5l0i9s8b2m1jj8k2x2l9ff68.ydysapi.cfd:27899|k9o3p2c8b7m3z0o8"
+        },
+        {
+            "key": "永永",
+            "name": "永永┃APP",
+            "type": 3,
+			//"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
+            "api": "csp_AppGet",
+            "ext": "http://ys.qist.top|2SWSPFxugBLPPOKo|120"
+        },
+	//FM 结束
 		{
             "key": "剧迷影视",
             "name": "剧迷影视",
@@ -552,27 +627,12 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/永乐视频.js"
         },
-		{
-            "key": "唐人街影院CF",
-            "name": "唐人街影院CF",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/唐人街影院CF.js"
-        },
 			{
             "key": "老网影视",
             "name": "老网影视",
             "type": 3,
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/老网影视.js"
-        },	
-# 新js jar
-			{
-            "key": "乐王电影",
-            "name": "乐王电影",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/乐王电影.js"
         },	
 			{
             "key": "55影视",
@@ -613,7 +673,8 @@
             "key": "努努影视",
             "name": "努努影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
+             "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
+			"api": "./JS/drpy2.min.js",
             "ext": "./JS/努努影视.js"
         },
 		{
@@ -713,6 +774,13 @@
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/可可影视.js"
+        },	
+			{
+            "key": "234影院",
+            "name": "234影院",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/234影院.js"
         },	
 			{
             "key": "老地影视",
