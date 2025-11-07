@@ -2,9 +2,9 @@ var rule={
     title: '飞飞影视',
     host: 'https://www.55yy7.com',
     url: '/vodshow/fyclass--------fypage---.html',
-    searchUrl: '/vodsearch**/page/fypage.html',
+    searchUrl: '/vodsearch/**----------fypage---.html',
   //https://www.55yy7.com/vodshow/fyclass--------fypage---.html
-    //https://www.ffys.me/vodsearch**/page/fypage.html
+    //https://www.55yy7.com/vodsearch/**----------fypage---.html
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
