@@ -24,6 +24,14 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/飞飞影视.js"
         },	
+			{
+            "key": "皮皮狮影视",
+            "name": "皮皮狮影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/皮皮狮影视.js"
+        },	
         {
             "key": "预告",
             "name": "新片｜预告",
