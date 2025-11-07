@@ -1,7 +1,7 @@
 var rule = {
      title: '55影视',
      host: 'http://www.wdbay.com',
-	///list/fyclass_fypage.html
+	//http://www.wdbay.com/list/2_1.html
 	//https://www.55kan.com/show/fyclass--------fypage---.html
      //模板:'首图2',
      searchUrl: '/vodsearch/**----------fypage---',
