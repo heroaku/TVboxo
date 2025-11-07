@@ -1,9 +1,9 @@
 var rule={
     title: '555影视',
-    host: 'https://www.kankanqu.fun',
-    url: '/show/fyclass--------fypage---.html',
+    host: 'https://qkys2.cc',
+    url: '/top/fyclass--------fypage---.html',
     searchUrl: '/vodsearch/**----------fypage---.html',
-  //https://www.kankanqu.fun/show/2-----------.html
+  //https://qkys2.cc/top/2-----------.html
     //https://www.55yy7.com/vodsearch/**----------fypage---.html
     searchable: 2,
     quickSearch: 0,
