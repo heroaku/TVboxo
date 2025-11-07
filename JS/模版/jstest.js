@@ -1,5 +1,5 @@
 var rule = {
-  title: '看57',
+  title: 'FREE影视',
   host: 'https://freeys.org',
   url: '/list/fypage/fyclass/0/0/0/0/0',
   searchUrl: '/search/index.html?keyword=**&page=fypage',
