@@ -1,10 +1,10 @@
 var rule={
     title: '映像星球',
-    host: 'https://yxxq1.cc',
+    host: 'https://qkys2.cc',
     url: '/top/fyclass--------fypage---.html',
     searchUrl: '/search/**----------fypage---.html',
-  //https://yxxq1.cc/top/2--------2---.html
-    //https://yxxq1.cc/search/**----------fypage---.html
+  //https://qkys2.cc/top/2-----------.html;host: 'https://yxxq1.cc',
+    //https://www.55yy7.com/vodsearch/**----------fypage---.html
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
@@ -13,7 +13,7 @@ var rule={
     },
     class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
     play_parse: false,
-    lazy: '',
+    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
     limit: 6,
     推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
     double: true,
