@@ -25,6 +25,6 @@ var rule={
     "img": ".lazyload&&data-original",
     "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
     "content": ".module-info-introduction&&Text",
-    "tabs": ".hisSwiper&&span",
-    "lists": ".his-tab-list:eq(#id) a"},
+    "tabs": ".anthology-tab&&.swiper-wrapper a",
+    "lists": ".anthology-list-box:eq(#id) ul li"},
     搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
