@@ -1,30 +1,39 @@
-var rule={
-    title: '555影视',
-    host: 'https://www.wangfei.la',
-    url: '/vod-show-id-fyclass-page-fypage.html',
-    searchUrl: '/vodsearch/**----------fypage---.html',
-  //https://www.wangfei.la/vod-show-id-fyclass-page-fypage.html
-    //https://www.55yy7.com/vodsearch/**----------fypage---.html
-    searchable: 2,
-    quickSearch: 0,
-    filterable: 0,
-    headers: {
+var rule = {
+  title: '看57',
+  host: 'https://freeys.org',
+  url: '/list/fypage/fyclass/0/0/0/0/0',
+  searchUrl: '/search/index.html?keyword=**&page=fypage',
+  // https://freeys.org/list/fypage/fyclass/0/0/0/0/0
+  //https://freeys.org/search/index.html?keyword=**&page=fypage
+  searchable: 2,
+  quickSearch: 0,
+  filterable: 0,
+  filter: '',
+  filter_url: '',
+  filter_def: {},
+  headers: {
     'User-Agent': 'MOBILE_UA',
-    },
-    //class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
-    class_name:'电影&电视剧&综艺&动漫&短剧&体育',
-    class_url:'2&1&4&3&41&5',
-    play_parse: false,
-    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
-    limit: 6,
-    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    double: true,
-    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    二级: {
-    "title": "h1&&Text;.module-info-tag&&Text",
-    "img": ".lazyload&&data-original",
-    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
-    "content": ".module-info-introduction&&Text",
-    "tabs": ".hisSwiper&&span",
-    "lists": ".his-tab-list:eq(#id) a"},
-    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
+  },
+  timeout: 5000,
+  //class_parse: 'ul.flex.around&&li;a&&Text;a&&href;.*/(.*?).html',
+  //cate_exclude: '',
+  class_name:'电影&电视剧&综艺&动漫&短剧',
+  class_url:'1&2&3&4&45',
+  play_parse: true,
+  lazy: "js:\n  input = { parse: 1, url: input, js: '' };",
+  double: true,
+  推荐: '*',
+  一级: 'body&&.public-list-box;a&&title;img&&data-src;.public-list-prb&&Text;a&&href',
+  二级: {
+    title: 'h3&&Text;类型',
+    img: '.mask-0&&data-src',
+    desc: '.detail-info .this-info&&span:eq(1)--strong&&Text;.detail-info .this-info&&span:eq(2)--strong&&Text;.detail-info .this-info&&span:eq(3)--strong&&Text;.lightSpeedIn .this-info:eq(4)--strong&&Text;.lightSpeedIn .this-info:eq(3)--strong&&Text',
+    content: '#height_limit&&Text',
+    tabs: '.anthology-tab a',
+    lists: '.anthology-list-play:eq(#id)&&li',
+    tab_text: 'a--span&&Text',
+    list_text: 'body&&Text',
+    list_url: 'a&&href',
+  },
+   搜索: '*',
+}
