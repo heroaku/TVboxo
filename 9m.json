@@ -32,6 +32,18 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/皮皮狮影视.js"
         },	
+	            {
+            "key": "555影院",
+            "name": "555☞ | 影视",
+            "type": 3,
+            "api": "csp_XBPQ",
+       "ext": {
+            "简介": "<p>&&</p>",
+            "图片": "data-original=\"&&\"[替换:amp;>>]",
+            "分类url": "https://www.55yy7.com/vodshow/{cateId}--------{catePg}---.html",
+   "分类": "电影$1#电视剧$2#综艺$3#动漫$4"
+            }
+            },
         {
             "key": "预告",
             "name": "新片｜预告",
