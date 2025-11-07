@@ -11,7 +11,9 @@ var rule={
     headers: {
     'User-Agent': 'MOBILE_UA',
     },
-    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
+    //class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
+    class_name:'电影&电视剧&综艺&动漫&短剧&体育',
+    class_url:'2&1&4&3&41&5',
     play_parse: false,
     lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
     limit: 6,
