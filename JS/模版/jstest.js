@@ -1,5 +1,5 @@
 var rule = {
-     title: '55影视',
+     title: '奇优影视',
      host: 'http://www.wdbay.com',
 	//http://www.wdbay.com/list/2_1.html
 	//https://www.55kan.com/show/fyclass--------fypage---.html
