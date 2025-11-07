@@ -32,7 +32,7 @@ let kurls = pdfa(khtml, 'ul.sort-list').map((item) => {
 });
 VOD = {
     vod_id: input,
-    vod_name: '努努' + pdfh(khtml, 'h1&&Text'),
+    vod_name: pdfh(khtml, 'h1:eq(1)&&Text'),
     type_name: pdfh(khtml, '.product-excerpt:contains(类型)&&Text').replace('类型：', ' '),
     vod_remarks: pdfh(khtml, '.product-excerpt:contains(又名)&&Text').replace('又名：', ' '),
     vod_year: pdfh(khtml, 'p:contains(年份)&&Text').replace('年份：', ' '),
