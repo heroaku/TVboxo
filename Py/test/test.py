@@ -1,23 +1,21 @@
-# -*- coding: utf-8 -*-
-# by @嗷呜
-import re
+# coding=utf-8
+# !/usr/bin/python
+# 嗷呜
 import sys
 from base64 import b64decode
-from Crypto.Cipher import AES
-from Crypto.Hash import MD5
-from Crypto.Util.Padding import unpad
-sys.path.append("..")
-import json
-import time
-from pyquery import PyQuery as pq
+sys.path.append('..')
 from base.spider import Spider
+import re
+from bs4 import BeautifulSoup
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
+
 
 class Spider(Spider):
+    def getName(self):
+        return "可可"
 
     def init(self, extend=""):
-        pass
-
-    def getName(self):
         pass
 
     def isVideoFormat(self, url):
@@ -26,46 +24,79 @@ class Spider(Spider):
     def manualVideoCheck(self):
         pass
 
-    def action(self, action):
-        pass
-
     def destroy(self):
         pass
 
-    host='https://www.xiaohys.com'
+    def cleanText(self, src):
+        clean = re.sub('[\U0001F600-\U0001F64F\U0001F300-\U0001F5FF\U0001F680-\U0001F6FF\U0001F1E0-\U0001F1FF]', '',
+                       src)
+        return clean
 
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36',
-        'Accept': 'application/json, text/javascript, */*; q=0.01',
-        'sec-ch-ua-platform': '"macOS"',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="134", "Google Chrome";v="134"',
-        'Origin': host,
-        'Referer': f"{host}/",
+    def jsp(self, content):
+        return BeautifulSoup(content, "html.parser")
+
+    host = "https://www.kkys02.com"
+    header = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/94.0.4606.54 Safari/537.36"
     }
-
+    phost="https://vres.jxlfl.cn"
     def homeContent(self, filter):
-        data=self.getpq(self.fetch(self.host,headers=self.headers).text)
         result = {}
+        data = self.fetch(self.host, headers=self.header)
+        htmld = self.jsp(self.cleanText(data.text))
+        list = htmld.select('.main ul[class="fs-margin menu"]')[1]
+        self.hlist = htmld.find('div', class_='module-box module-v-box module-one-row-box')
         classes = []
-        for k in data('.head-more.box a').items():
-            i=k.attr('href')
-            if i and '/show' in i:
-                classes.append({
-                    'type_name': k.text(),
-                    'type_id': i.split('/')[-1]
-                })
+        for li in list.find_all('li', class_='menu-item'):
+            classes.append({
+                'type_name': li.find('div', class_='menu-item-label').get_text(),
+                'type_id': re.findall(r'\d+', li.a.get('href'))[0]
+            })
         result['class'] = classes
-        result['list']=self.getlist(data('.border-box.diy-center .public-list-div'))
         return result
 
     def homeVideoContent(self):
-        pass
+        videos = []
+        for li in self.hlist.select('.module-box-inner .module-item'):
+            id = li.a.get('href')
+            name = li.find('div', class_='v-item-footer').find_all('div')[1].get_text(strip=True)
+            pic = li.find_all('img')[-1].get('data-original')
+            remark = li.find('div', class_='v-item-bottom').find_all('span')[1].get_text(strip=True)
+            year = li.find('div', class_='v-item-top-left').get_text(strip=True)
+            videos.append({
+                "vod_id": id,
+                "vod_name": name,
+                "vod_pic": self.phost + pic,
+                "vod_remarks": remark,
+                "vod_year": year
+            })
+        result = {
+            'list': videos
+        }
+        return result
 
     def categoryContent(self, tid, pg, filter, extend):
-        body = {'type':tid,'class':'','area':'','lang':'','version':'','state':'','letter':'','page':pg}
-        data = self.post(f"{self.host}/index.php/api/vod", headers=self.headers, data=self.getbody(body)).json()
         result = {}
-        result['list'] = data['list']
+        url = f'{self.host}/show/{tid}-----3-{pg}.html'
+        html = self.fetch(url, headers=self.header)
+        data = self.jsp(self.cleanText(html.text))
+        list = data.find('div', class_='module-box-inner')
+        videos = []
+        for li in list.select('.module-box-inner .module-item'):
+            id = li.a.get('href')
+            name = li.find('div', class_='v-item-footer').find_all('div')[1].get_text(strip=True)
+            pic = li.find_all('img')[-1].get('data-original')
+            remark = li.find('div', class_='v-item-bottom').find_all('span')[1].get_text(strip=True)
+            year = li.find('div', class_='v-item-top-left').get_text(strip=True)
+            videos.append({
+                "vod_id": id,
+                "vod_name": name,
+                "vod_pic": self.phost + pic,
+                "vod_remarks": remark,
+                "vod_year": year
+            })
+        result['list'] = videos
         result['page'] = pg
         result['pagecount'] = 9999
         result['limit'] = 90
@@ -73,102 +104,90 @@ class Spider(Spider):
         return result
 
     def detailContent(self, ids):
-        data = self.getpq(self.fetch(f"{self.host}/detail/{ids[0]}/", headers=self.headers).text)
-        v=data('.detail-info.lightSpeedIn .slide-info')
+        tid = ids[0]
+        url = self.host + tid
+        html = self.fetch(url, headers=self.header)
+        data = (self.jsp(self.cleanText(html.text)))
+        data1 = data.find('div', class_='detail-box fs-margin-section')
+        data2 = data.find('div', id='detail-source-swiper')
+        vod_play_from = []
+        index = None
+        for idx, li in enumerate(data2.find_all('span', class_='source-item-label', id=True), start=0):
+            li_text = li.get_text(strip=True)
+            if '4K' in li_text:
+                index = idx
+                continue
+            vod_play_from.append(li_text)
+        data3 = data.find_all('div', class_='episode-list')
+        if index:
+            del data3[index]
+        vod_play_url = []
+        for li in data3:
+            dd = []
+            for lii in li.find_all('a'):
+                dd.append(lii.get_text(strip=True) + "$" + lii.get('href'))
+            vod_play_url.append('#'.join(dd))
+
         vod = {
-            'vod_year': v.eq(-1).text(),
-            'vod_remarks': v.eq(0).text(),
-            'vod_actor': v.eq(3).text(),
-            'vod_director': v.eq(2).text(),
-            'vod_content': data('.switch-box #height_limit').text()
+            "vod_name": data1.find('div', class_='detail-title').find_all('strong')[1].get_text(strip=True),
+            "vod_content": data1.find('div', class_='detail-desc').get_text(strip=True),
+            "vod_play_from": '$$$'.join(vod_play_from),
+            "vod_play_url": '$$$'.join(vod_play_url)
         }
-        np=data('.anthology.wow.fadeInUp')
-        ndata=np('.anthology-tab .swiper-wrapper .swiper-slide')
-        pdata=np('.anthology-list .anthology-list-box ul')
-        play,names=[],[]
-        for i in range(len(ndata)):
-            n=ndata.eq(i)('a')
-            n('span').remove()
-            names.append(n.text())
-            vs=[]
-            for v in pdata.eq(i)('li').items():
-                vs.append(f"{v.text()}${v('a').attr('href')}")
-            play.append('#'.join(vs))
-        vod["vod_play_from"] = "$$$".join(names)
-        vod["vod_play_url"] = "$$$".join(play)
-        result = {"list": [vod]}
+        result = {
+            'list': [
+                vod
+            ]
+        }
         return result
 
+    # 未写搜索下面的可忽略
     def searchContent(self, key, quick, pg="1"):
-        data = self.fetch(f"{self.host}/index.php/ajax/suggest?mid=1&wd={key}&limit=9999&timestamp={int(time.time()*1000)}", headers=self.headers).json()
-        videos=[]
-        for i in data['list']:
+        result = {}
+        url = f'{self.host}/search?k={key}&page={pg}'
+        html = self.fetch(url, headers=self.header)
+        data = self.jsp(self.cleanText(html.text))
+        list = data.find('div', class_='search-result-list fs-margin-section')
+        videos = []
+        for li in list.find_all('a', class_='search-result-item'):
+            id = li.get('href')
+            name = li.find('div', class_='search-result-item-main').find_all('div')[1].get_text(strip=True)
+            pic = li.find_all('img')[-1].get('data-original')
+            ddd = li.find('div', class_='tags').find_all('span')
+            remark = ddd[-1].get_text(strip=True)
+            year = ddd[0].get_text(strip=True)
             videos.append({
-                'vod_id': i['id'],
-                'vod_name': i['name'],
-                'vod_pic': i['pic']
+                "vod_id": id,
+                "vod_name": name,
+                "vod_pic": self.phost + pic,
+                "vod_remarks": remark,
+                "vod_year": year
             })
-        return {'list':videos,'page':pg}
+
+        result = {
+            'list': videos,
+            'pg': pg
+        }
+        return result
 
     def playerContent(self, flag, id, vipFlags):
-        h,p,url1= {"User-Agent": "okhttp/3.14.9"},1,''
-        url=f"{self.host}{id}"
-        data = self.getpq(self.fetch(url, headers=self.headers).text)
-        try:
-            jstr = data('.player .player-left script').eq(0).text()
-            jsdata = json.loads(jstr.split('=',1)[-1])
-            body, url1= {'url': jsdata['url'],'referer':url},jsdata['url']
-            data = self.post(f"{self.host}/static/player/artplayer/api.php?ac=getdate", headers=self.headers, data=body).json()
-            l=self.aes(data['data'],data['iv'])
-            url=l.get('url') or l['data'].get('url')
-            p = 0
-            if not url:raise Exception('未找到播放地址')
-        except Exception as e:
-            print('错误信息：',e)
-            if re.search(r'\.m3u8|\.mp4',url1):url=url1
+        url = self.host + id
+        html = self.fetch(url, headers=self.header)
+        data = self.cleanText(html.text).strip()
+        data1 = re.search(r"TMDPPPP = '(.*?)';", data)[1]
+
+        def decrypt(encrypted_word):
+            key = "FNF9aVQF!G*0ux@2hAigUeB3".encode('utf-8')
+            encrypted_word_bytes = b64decode(encrypted_word)
+            cipher = AES.new(key, AES.MODE_ECB)
+            decrypted = unpad(cipher.decrypt(encrypted_word_bytes), AES.block_size)
+            return decrypted.decode('utf-8')
+
         result = {}
-        result["parse"] = p
-        result["url"] = url
-        result["header"] = h
+        result["parse"] = 0
+        result["url"] = decrypt(data1)
+        result["header"] = self.header
         return result
 
     def localProxy(self, param):
         pass
-
-    def getbody(self, params):
-        t=int(time.time())
-        h = MD5.new()
-        h.update(f"DS{t}DCC147D11943AF75".encode('utf-8'))
-        key=h.hexdigest()
-        params.update({'time':t,'key':key})
-        return params
-
-    def getlist(self,data):
-        videos=[]
-        for i in data.items():
-            id = i('a').attr('href')
-            if id:
-                id = re.search(r'\d+', id).group(0)
-                img = i('img').attr('data-src')
-                if img and 'url=' in img and 'http' not in img: img = f'{self.host}{img}'
-                videos.append({
-                    'vod_id': id,
-                    'vod_name': i('img').attr('alt'),
-                    'vod_pic': img,
-                    'vod_remarks': i('.public-prt').text() or i('.public-list-prb').text()
-                })
-        return videos
-
-    def getpq(self, data):
-        try:
-            return pq(data)
-        except Exception as e:
-            print(f"{str(e)}")
-            return pq(data.encode('utf-8'))
-
-    def aes(self, text,iv):
-        key = b"d978a93ffb4d3a00"
-        iv = iv.encode("utf-8")
-        cipher = AES.new(key, AES.MODE_CBC, iv)
-        pt = unpad(cipher.decrypt(b64decode(text)), AES.block_size)
-        return json.loads(pt.decode("utf-8"))
