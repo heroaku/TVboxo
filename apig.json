@@ -3,7 +3,8 @@
     // "spider": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
 	//"jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
 	//"spider": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
-"spider": "./tvkj.jar",
+	// "jar": "./tvkj.jar",
+"spider": "./fm.jar",
 
 ##主頁壁紙
 "wallpaper": "https://api.likepoems.com/img/bing",
@@ -58,7 +59,6 @@
 		{
             "key": "唐人街影院CF",
             "name": "唐人街影院CF",
-            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
 			"type": 3,
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/唐人街影院CF.js"
@@ -66,7 +66,6 @@
 		{
             "key": "乐王电影",
             "name": "乐王电影",
-            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
 			"type": 3,
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/乐王电影.js"
@@ -77,7 +76,8 @@
       "name": "咖啡丨APP",
       "type": 3,
       "quickSearch": 1,
-      "api": "csp_AppQi",
+      "jar": "./tvkj.jar",
+	  "api": "csp_AppQi",
       "ext": {
         "url": "",
         "site": "https://daen-1256234123.cos.ap-shanghai.myqcloud.com/MuQi/mqxh.txt",
@@ -93,6 +93,7 @@
       "name": "蓝鹰｜APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		 
       "api": "csp_AppQi",
       "ext": {
         "url": "",
@@ -108,6 +109,7 @@
       "name": "仓鼠｜APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppQi",
       "ext": {
         "url": "",
@@ -123,6 +125,7 @@
       "name": "热剧丨APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		 
       "api": "csp_AppQi",
       "ext": {
         "url": "https://www.rebovod.com",
@@ -139,6 +142,7 @@
       "name": "影视丨APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		  
       "api": "csp_AppQi",
       "ext": {
         "url": "",
@@ -157,6 +161,7 @@
       "name": "小猪丨APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",			
       "api": "csp_AppQi",
       "ext": {
         "url": "",
@@ -173,6 +178,7 @@
       "name": "云云丨APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",			
       "api": "csp_AppQi",
       "ext": {
         "url": "",
@@ -189,6 +195,7 @@
       "name": "紫金丨APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppGet",
       "ext": {
         "url": "http://www.zjcvod.com",
@@ -205,6 +212,7 @@
       "name": "星星丨APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppGet",
       "ext": {
         "url": "http://starani.qcanime.xyz",
@@ -221,7 +229,8 @@
       "name": "驿站丨APP",
       "type": 3,
       "quickSearch": 1,
-      "api": "csp_AppGet",
+      "jar": "./tvkj.jar",		 
+	  "api": "csp_AppGet",
       "ext": {
         "url": "",
         "site": "https://dyyztvappapigoodgx.68.gy:12689/ciwk28vu38io8/apiurl.txt",
@@ -237,6 +246,7 @@
       "name": "五八丨APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		 
       "api": "csp_AppGet",
       "ext": {
         "url": "https://dy.58ys.vip",
@@ -253,6 +263,7 @@
       "name": "火狐丨APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		 
       "api": "csp_AppGet",
       "ext": {
         "url": "http://huohu.yihn.cc",
@@ -269,6 +280,7 @@
       "name": "灵虎｜APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppGet",
       "ext": {
         "url": "",
@@ -284,6 +296,7 @@
       "name": "萝卜｜APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppGet",
       "ext": {
         "url": "https://apiapplbys.lbys.app:5678",
@@ -297,6 +310,7 @@
       "key": "热播影视",
       "name": "热播｜APP",
       "type": 3,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppRJ",
       "searchable": 1,
       "quickSearch": 1,
@@ -337,6 +351,7 @@
       "key": "浪酷影视",
       "name": "浪酷｜APP",
       "type": 3,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppRJ",
       "searchable": 1,
       "quickSearch": 1,
@@ -349,6 +364,7 @@
       "key": "闪影",
       "name": "闪影｜APP",
       "type": 3,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppYs",
       "searchable": 1,
       "quickSearch": 1,
@@ -360,7 +376,8 @@
       "name": "爱看｜APP",
       "type": 3,
       "quickSearch": 1,
-      "api": "csp_AppGet",
+      "jar": "./tvkj.jar",		
+	  "api": "csp_AppGet",
       "ext": {
         "url": "https://www.appdm.akandm.com",
         "dataKey": "uI1TkPJC8B46AyN3",
@@ -372,6 +389,7 @@
       "name": "鲸鱼｜APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppQi",
       "ext": {
         "url": "",
@@ -387,6 +405,7 @@
       "name": "开心｜APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppQi",
       "ext": {
         "site": "https://guwozj-1319364746.cos.ap-guangzhou.myqcloud.com/gw.txt",
@@ -400,6 +419,7 @@
       "name": "数字｜APP",
       "type": 3,
       "quickSearch": 1,
+      "jar": "./tvkj.jar",		
       "api": "csp_AppGet",
       "ext": {
         "url": "http://app1-0-0.87333.cc",
@@ -530,7 +550,6 @@
 	        {
             "key": "荐片",
             "name": "荐片┃影视",
-			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",
             "api": "csp_Jianpian",
             "type": 3,
             "playerType": "2",
@@ -540,7 +559,6 @@
             "key": "肥猫",
             "name": "肥猫┃APP",
             "type": 3,
-			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",
 			"api": "csp_AppGet",
             "ext": "https://bind.315999.xyz/89.txt|#getapp@TMD@2025|120"
         },
@@ -548,7 +566,6 @@
             "key": "干饭",
             "name": "干饭┃APP",
             "type": 3,
-			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
             "api": "csp_AppQi",
 			"ext": "https://staraugust123456.oss-cn-hangzhou.aliyuncs.com/2.txt|staraugust123456|120"
         },
@@ -556,7 +573,6 @@
             "key": "行动",
             "name": "行动┃APP",
             "type": 3,
-			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
             "api": "csp_AppQi",
             "ext": "https://ceshi307386.oss-cn-beijing.aliyuncs.com/ceshi421.txt|da61247f5b662597|120"
         },
@@ -564,7 +580,6 @@
             "key": "再来",
             "name": "┃再来┃APP",
             "type": 3,
-			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
             "api": "csp_AppQi",
             "ext": "https://daen-1256234123.cos.ap-shanghai.myqcloud.com/MuQi/mqxh.txt|37kj83zs1q16jk6t|101"
         },
@@ -572,7 +587,6 @@
             "key": "一碗",
             "name": "一碗┃APP",
             "type": 3,
-			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
             "api": "csp_AppGet",
             "ext": "http://www.zjcvod.com|ab4e9a421675f14b"
         },
@@ -580,7 +594,6 @@
             "key": "猫抓",
             "name": "猫抓┃APP",
             "type": 3,
-			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
             "api": "csp_AppGet",
             "ext": "https://dy.8ttv.cn|1111111111111111"
         },
@@ -588,7 +601,6 @@
             "key": "黑猫",
             "name": "黑猫┃APP",
             "type": 3,
-			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
             "api": "csp_AppGet",
             "ext": "https://c8k2n5l0i9s8b2m1jj8k2x2l9ff68.ydysapi.cfd:27899|k9o3p2c8b7m3z0o8"
         },
@@ -596,7 +608,6 @@
             "key": "永永",
             "name": "永永┃APP",
             "type": 3,
-			"jar": "https://github.com/heroaku/TB/raw/refs/heads/main/FM/spider.jar",			
             "api": "csp_AppGet",
             "ext": "http://ys.qist.top|2SWSPFxugBLPPOKo|120"
         },
@@ -682,7 +693,6 @@
             "key": "努努影视",
             "name": "努努影视",
             "type": 3,
-             "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/努努影视.js"
         },
