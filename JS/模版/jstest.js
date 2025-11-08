@@ -2,9 +2,9 @@ var rule={
     title: '皮皮影视',
     host: 'https://www.nivod.vip',
     url: '/k/fyclass--------fypage---/',
-    searchUrl: '/search/**----------fypage---.html',
+    searchUrl: '/s/**----------fypage---/',
     //https://www.nivod.vip/k/2--------2---/
-    //https://www.pipishi.cc/search/**----------fypage---.html
+    //https://www.nivod.vip/s/**----------fypage---/
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
@@ -12,8 +12,8 @@ var rule={
     'User-Agent': 'MOBILE_UA',
     },
     //class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
-    class_name: '电影&电视剧&综艺&动漫&短剧',
-    class_url: '1&2&3&4&5',
+    class_name: '电影&电视剧&综艺&动漫',
+    class_url: '1&2&3&4',
     play_parse: false,
     lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
     limit: 6,
