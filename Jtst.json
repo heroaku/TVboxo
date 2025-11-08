@@ -69,6 +69,18 @@
         }
       }
     },
+	    {
+      "key": "py_JPYS",
+      "name": "🏆｜金牌｜影视",
+      "type": 3,
+      "api": "./Py/JPYS.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "ext": {
+        "site": "https://jpyy.com,https://www.jiabaide.cn,https://cqzuoer.com,https://www.tjrongze.com,https://www.jpyy2.com,https://www.cfkj86.com"
+      }
+    },
 	            {
             "key": "555影院",
             "name": "555☞ | 影视",
