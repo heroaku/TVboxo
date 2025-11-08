@@ -45,6 +45,26 @@
    "分类": "电影$1#电视剧$2#综艺$3#动漫$4"
             }
             },
+	    {
+      "key": "Youtube",
+      "name": "🇹🇼｜Youtube",
+      "type": 3,
+      "api": "csp_Youtube",
+      "jar": "https://github.com/AA999OK/jie20091116/raw/refs/heads/main/jar/pg.jar;md5;3d7366987f27631444e98cde17418a57",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 0,
+      "timeout": 240,
+      "ext": {
+        "token": "https://github.com/AA999OK/jie20091116/raw/refs/heads/main/json/tokenm.json",
+        "json": "https://github.com/AA999OK/jie20091116/raw/refs/heads/main/json/youtube.json",
+        "type": "直播#新闻#剧集#电影#综艺#纪录片#音乐#体育#动物#风光#放松#4K#HDR#movie#music#documentary#bbc documentary#national geographic documentary",
+        "keywords": "排行榜,HOT,TRENDS,热门话题,热门趋势,热门综艺,热门电影,热门电视剧,小姐姐",
+        "codecs": "",
+        "proxy": ""
+      },
+      "style": {"type": "rect", "ratio": 1.77}
+    },
         {
             "key": "预告",
             "name": "新片｜预告",
