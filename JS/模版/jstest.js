@@ -11,13 +11,7 @@ var rule = {
     class_url: '1&2&3',
     limit: 6,
     play_parse: true,
-    lazy: $js.toString(() => {
-        let html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
-        let url = html.url;
-        if (url) {
-            input = {parse: 0, url: url}
-        }
-    }),
+    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
     double: false,
     推荐: '*',
     一级: '.hl-vod-list li;.hl-item-thumb&&title;.hl-item-thumb&&data-original;.remarks&&Text;.hl-item-thumb&&href',
