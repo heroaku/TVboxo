@@ -4,7 +4,7 @@
 	//"jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",
 	//"spider": "./Jar/7080.jar;md5;dbe639527df26d6a0fd4f7c9256be475",
 	//"jar": "./tvkj.jar",
-"spider": "https://img2.gelonghui.com/library/965c0-d47366c3-4293-4676-a72b-76969f775dc9.png;md5;965c0ecb144c99c35f39e4a036712a3a",
+"spider": "./fm.jar;md5;965c0ecb144c99c35f39e4a036712a3a",
 
 ##主頁壁紙
 "wallpaper": "https://api.likepoems.com/img/bing",
@@ -33,6 +33,42 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/皮皮狮影视.js"
         },	
+	    {
+      "key": "yfsp",
+      "name": "🎖︎｜愛壹帆｜官源",
+      "type": 3,
+      "searchable": 1,
+      "changeable": 1,
+      "quickSearch": 1,
+      "style": {"type": "rect", "ratio": 0.75},
+      "jar": "./Jar/GM.jar;md5;3e59c9c3c50ea1d4609cec9dbee730c3",
+      "api": "csp_GM",
+      "ext": {
+        "userScript": "./JS/ysfp.user.js",
+        "debug": false,
+        "webViewSettings": {
+          "blockNetworkImage": true,
+          "blockList": [
+            "*.png*",
+            "*.mp3*",
+            "*.css*",
+            "https://*.googletagmanager.com/*",
+            "https://*.google-analytics.com/*"
+          ]
+        },
+        "spider": {
+          "homeContent": {"loadUrl": "https://m.yfsp.tv/"},
+          "categoryContent": {
+            "loadUrl": "https://m.yfsp.tv/list/${tid}?type=${index-0:-0}${index-1:-,0}${index-2:-,0}${index-3:-,0}${index-4:-,0}${index-5:-}"
+          },
+          "detailContent": {"loadUrl": "https://m.yfsp.tv/play/${id}"},
+          "playerContent": {
+            "loadUrl": "https://m.yfsp.tv/play/${mediaKey}?id=${episodeKey}"
+          },
+          "searchContent": {"loadUrl": "https://m.yfsp.tv/search"}
+        }
+      }
+    },
 	            {
             "key": "555影院",
             "name": "555☞ | 影视",
