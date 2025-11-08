@@ -1,28 +1,29 @@
-var rule = {
-    title: '萌番[漫]',
-    host: 'http://www.dubokutv.cn',
-    url: '/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl: '/search/wd/**/page/fypage/',
-  //http://www.dubokutv.cn/index.php/vod/show/id/fyclass/page/fypage.html
+var rule={
+    title: '皮皮影视',
+    host: 'https://www.nivod.vip',
+    url: '/k/fyclass--------fypage---/',
+    searchUrl: '/search/**----------fypage---.html',
+    //https://www.nivod.vip/k/2--------2---/
+    //https://www.pipishi.cc/search/**----------fypage---.html
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
-    class_name: '新番&番剧&剧场',
-    class_url: '1&2&3',
-    limit: 6,
-    play_parse: true,
-    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
-    double: false,
-    推荐: '*',
-    一级: '.hl-vod-list li;.hl-item-thumb&&title;.hl-item-thumb&&data-original;.remarks&&Text;.hl-item-thumb&&href',
-    二级: {
-        title: 'h2&&Text',
-        desc: '.hl-full-box&&li:eq(-2)&&Text',
-        content: '.blurb&&Text',
-        img: '.hl-item-thumb&&data-original',
-        tabs: '.hl-plays-from a',
-        lists: '.hl-plays-list:eq(#id)&&li',
+    headers: {
+    'User-Agent': 'MOBILE_UA',
     },
-    搜索: '*',
-}
-
+    //class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
+    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/',
+    play_parse: false,
+    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
+    limit: 6,
+    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    double: true,
+    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    二级: {
+    "title": "h1&&Text;.module-info-tag&&Text",
+    "img": ".lazyload&&data-original",
+    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
+    "content": ".module-info-introduction&&Text",
+    "tabs": ".hisSwiper&&span",
+    "lists": ".his-tab-list:eq(#id) a"},
+    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
