@@ -1,5 +1,5 @@
 var rule={
-    title: '皮皮影视',
+    title: '泥视频',
     host: 'https://www.nivod.vip',
     url: '/k/fyclass--------fypage---/',
     searchUrl: '/s/**----------fypage---/',
