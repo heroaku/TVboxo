@@ -1,5 +1,5 @@
 var rule= {
-    title:'996影视',
+    title:'悟空影视',
     host:'https://www.wkvod.cc',
     // https://www.wkvod.cc/vodsearch**/page/fypage.html
     //https://www.wkvod.cc/vodshow/id/fyclass/page/fypage.html
