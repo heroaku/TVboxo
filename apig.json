@@ -547,6 +547,14 @@
             "filterable": 1,
             "playerType": 2
         },
+					{
+            "key": "金牌影院JP",
+            "name": "金牌影院JP",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/金牌影院JP.js"
+        },
 	        {
             "key": "荐片",
             "name": "荐片┃影视",
