@@ -2,7 +2,7 @@ var rule={
     title: '游子视频',
     host: 'https://www.youzisp.tv',
     url: '/vodshow/fyclass--------fypage---.html',
-    searchUrl: '/s/**----------fypage---/',
+    searchUrl: '/vodsearch/**----------fypage---/',
     //https://www.youzisp.tv/vodshow/dianshiju--------2---.html
     //https://www.nivod.vip/s/**----------fypage---/
     searchable: 2,
