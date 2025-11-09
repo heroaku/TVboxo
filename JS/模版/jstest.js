@@ -1,5 +1,5 @@
 var rule = {
-  title: '看57',
+  title: 'FREE影视',
   host: 'https://freeys.org',
   //https://freeys.org/list/fypage/fyclass/0/0/0/0/0
   //https://freeys.org/search/index.html?keyword=**&page=fypage
@@ -27,7 +27,7 @@ var rule = {
   一级: 'body&&.public-list-box;.time-title&&Text;img&&data-src;.public-list-prb&&Text;a&&href',
   二级: {
     title: 'h3&&Text;类型',
-    img: '.mask-0&&data-src',
+    img: 'img&&src',
     desc: '.detail-info .this-info&&span:eq(1)--strong&&Text;.detail-info .this-info&&span:eq(2)--strong&&Text;.detail-info .this-info&&span:eq(3)--strong&&Text;.lightSpeedIn .this-info:eq(4)--strong&&Text;.lightSpeedIn .this-info:eq(3)--strong&&Text',
     content: '#height_limit&&Text',
     tabs: '.anthology-tab a',
