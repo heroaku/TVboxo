@@ -1,9 +1,9 @@
 var rule= {
     title:'悟空影视',
-    host:'https://www.wkvod.cc',
+    host:'https://www.wushtv.com',
     // https://www.wkvod.cc/vodsearch**/page/fypage.html
-    //https://www.wkvod.cc/vodshow/id/fyclass/page/fypage.html
-    url:'/vodshow/id/fyclass/page/fypage.html',
+    //https://www.wushtv.com/p/dianshiju/page/2.html
+    url:'/p/fyclass/page/fypage.html',
     searchable: 2,//是否启用全局搜索,
     quickSearch: 0,//是否启用快速搜索,
     filterable:1,//是否启用分类筛选,
@@ -23,7 +23,7 @@ var rule= {
         "img": "img&&data-original",
         "desc": ';;;.video-info-actor:eq(1)&&Text;.video-info-actor:eq(0)&&Text',
         "content": ".stui-pannel:eq(2)&&p&&Text",
-        "tabs": ".stui-pannel:gt(0) h3",
+        "tabs": ".stui-pannel__head h3",
         "lists": ".stui-pannel_bd:eq(#id)&&.stui-content__playlist li"
     },
     搜索:'.stui-vodlist__media li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
