@@ -860,6 +860,14 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/937影院.js"
         },	
+				{
+            "key": "悟空影视",
+            "name": "悟空影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/悟空影视.js"
+        },	
 		{
 	  "key": " fxzds ",
 	  "name": "袋鼠影视",
