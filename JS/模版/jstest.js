@@ -23,8 +23,8 @@ var rule= {
         "img": "img&&data-original",
         "desc": ';;;.video-info-actor:eq(1)&&Text;.video-info-actor:eq(0)&&Text',
         "content": ".stui-pannel:eq(2)&&p&&Text",
-        "tabs": ".stui-vodlist__head h3",
-        "lists": ".stui-content__playlist:eq(#id)&&li"
+        "tabs": ".stui-pannel:gt(0) h3",
+        "lists": ".stui-pannel:gt(0)&&.stui-content__playlist&&li"
     },
     搜索:'.stui-vodlist__media li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
 }
