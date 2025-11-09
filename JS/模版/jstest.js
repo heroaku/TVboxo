@@ -1,5 +1,5 @@
 var rule={
-    title: '泥视频',
+    title: '游子视频',
     host: 'https://www.youzisp.tv',
     url: '/vodshow/fyclass--------fypage---.html',
     searchUrl: '/s/**----------fypage---/',
