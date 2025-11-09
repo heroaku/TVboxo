@@ -17,6 +17,8 @@ var rule = {
   timeout: 5000,
   //class_parse: 'ul.flex.around&&li;a&&Text;a&&href;.*/(.*?).html',
   //cate_exclude: '',
+  class_name: '电影&电视剧&综艺&动漫&短剧',
+  class_url: '1&2&3&4&45',
   play_parse: true,
   lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
   //lazy: "js:\n  input = { parse: 1, url: input, js: '' };",
