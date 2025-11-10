@@ -1,5 +1,5 @@
 var rule={
-    title: '555影视',
+    title: '飞快影视JS',
     host: 'https://feikuai.tv',
     url: '/vodshow/fyclass--------fypage---.html',
     searchUrl: '/vodsearch/**----------fypage---.html',
