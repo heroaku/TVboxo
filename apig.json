@@ -526,7 +526,7 @@
 	//{"key":"腐剧视频","name":"腐剧┃影视","type":3,"api":"csp_WexFujutv","searchable":1,"changeable":1,"jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 		{
             "key": "壹影视",
-            "name": "壹影｜影视",
+            "name": "壹影PY｜影视",
             "type": 3,
             "api": "https://github.com/heroaku/svip/raw/refs/heads/main/py/%E5%A3%B9%E5%BD%B1%E8%A7%86.py",
             "searchable": 1,
@@ -538,7 +538,7 @@
 	#FM
         {
             "key": "猎手影视",
-            "name": "猎手┃影视",
+            "name": "猎手PY┃影视",
             "type": 3,
             "api": "./Py/LSYS.py",
             "searchable": 1,
@@ -547,6 +547,16 @@
             "filterable": 1,
             "playerType": 2
         },
+		    {
+		      "key": "py_萝卜app",
+		      "name": "萝卜PY｜影视",
+		      "type": 3,
+		      "changeable": 1,
+		      "searchable": 1,
+		      "quickSearch": 1,
+		      "filterable": 1,
+		      "api": "./Py/LBYS.py"
+		    },
 					{
             "key": "金牌影院JP",
             "name": "金牌影院JP",
