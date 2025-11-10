@@ -438,6 +438,14 @@
       "filterable": 1,
       "ext": "./XBPQ/飞快TV.json"
     },
+	{
+	"key": "飞快影视JS",
+	"name": "飞快影视JS",
+	"type": 3,
+	"api": "./JS/drpy2.min.js",
+	"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+	"ext": "./JS/飞快影视JS.js"
+	},	
     {
       "key": "哔哩视频",
       "name": "☀哔哩🔹视频",
