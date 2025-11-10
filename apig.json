@@ -559,13 +559,23 @@
 		    },
 			    {
 		      "key": "py_金牌app",
-		      "name": "｜金牌PY｜影视",
+		      "name": "金牌PY｜影视",
 		      "type": 3,
 		      "changeable": 1,
 		      "searchable": 1,
 		      "quickSearch": 1,
 		      "filterable": 1,
 		      "api": "./Py/Jinpai.py"
+		    },
+			    {
+		      "key": "py_爱瓜app",
+		      "name": "爱瓜PY｜影视",
+		      "type": 3,
+		      "changeable": 1,
+		      "searchable": 1,
+		      "quickSearch": 1,
+		      "filterable": 1,
+		      "api": "./Py/爱瓜.py"
 		    },
 					{
             "key": "金牌影院JP",
