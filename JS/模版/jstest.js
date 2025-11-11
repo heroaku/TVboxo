@@ -19,7 +19,7 @@ var rule = {
            'title': '.h1&&Text',
            'desc': '.stui-content__detail p:eq(3)&&Text;.stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(2)&&Text;.stui-content__detail p:eq(1)&&Text;',
            'content': '.stui-content__detail p:eq(4)&&Text;',
-           'tabs':'h3',
+           'tabs':'.nav-tabs li',
            'lists':'.stui-pannel_bd:eq(#id)&&.stui-content__playlist li'
          },
     搜索: 'ul.stui-vodlist__media:eq(0) li,ul.stui-vodlist:eq(0) li,#searchList li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href;.text-muted:eq(-1)&&Text'
