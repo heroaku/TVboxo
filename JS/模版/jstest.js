@@ -1,29 +1,33 @@
 var rule={
-    title: '飞快影视JS',
-    host: 'https://feikuai.tv',
-    url: '/vodshow/fyclass--------fypage---.html',
-    searchUrl: '/vodsearch/**----------fypage---.html',
-  //https://feikuai.tv/vodshow/2--------2---.html
-    //https://www.55yy7.com/vodsearch/**----------fypage---.html
-    searchable: 2,
-    quickSearch: 0,
-    filterable: 0,
-    headers: {
-    'User-Agent': 'MOBILE_UA',
-    },
-    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
-    play_parse: false,
-    lazy:"",
-    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
-    limit: 6,
-    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    double: true,
-    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    二级: {
-    "title": "h1&&Text;.module-info-tag&&Text",
-    "img": ".lazyload&&data-original",
-    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
-    "content": ".module-info-introduction&&Text",
-    "tabs": ".module-tab-items-box&&.module-tab-item span",
-    "lists": ".module-list:eq(#id) a"},
-    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
+		title: '',
+		host: 'https://darkvod.com',
+		url: '/video/fyclass/page/fypage/',
+		searchUrl: '/vodsearch/**----------fypage---.html',
+        //https://darkvod.com/video/fyclass/page/fypage/
+		searchable: 2,//是否启用全局搜索,
+		quickSearch: 0,//是否启用快速搜索,
+		filterable: 0,//是否启用分类筛选,
+		headers: {//网站的请求头,完整支持所有的,常带ua和cookies
+		'User-Agent': 'MOBILE_UA',
+		// "Cookie": "searchneed=ok"
+		},
+        //lianxuju
+		//class_parse: '.myui-header__menu li.hidden-sm:gt(0):lt(5);a&&Text;a&&href',
+        class_name:'电影&电视剧&综艺&动漫&纪录片',
+        class_url:'dianying&lianxuju&3&4&24',
+		play_parse: true,
+		lazy: '',
+		limit: 6,
+		推荐: 'ul.myui-vodlist.clearfix;li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+		double: true, // 推荐内容是否双层定位
+		一级: '.myui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+		二级: {
+		"title": ".myui-content__detail .title&&Text;.myui-content__detail p:eq(-2)&&Text",
+		"img": ".myui-content__thumb .lazyload&&data-original",
+		"desc": ".myui-content__detail p:eq(0)&&Text;.myui-content__detail p:eq(1)&&Text;.myui-content__detail p:eq(2)&&Text",
+		"content": ".content&&Text",
+		"tabs": ".nav-tabs:eq(0) li",
+		"lists": ".myui-content__list:eq(#id) li"
+		},
+		搜索: '#searchList li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
+		}
