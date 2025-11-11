@@ -2,8 +2,9 @@ var rule={
 		title: '黑夜影视',
 		host: 'https://darkvod.com',
 		url: '/video/fyclass/page/fypage/',
-		searchUrl: '/vodsearch/**----------fypage---.html',
+		searchUrl: '/tag/page/fypage/wd/**/',
         //https://darkvod.com/video/fyclass/page/fypage/
+		//https://darkvod.com/tag/page/fypage/wd/**/
 		searchable: 2,//是否启用全局搜索,
 		quickSearch: 0,//是否启用快速搜索,
 		filterable: 0,//是否启用分类筛选,
