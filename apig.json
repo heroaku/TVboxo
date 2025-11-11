@@ -774,6 +774,13 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/映像星球.js"
         },	
+			{
+            "key": "淘剧影视",
+            "name": "淘剧影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/淘剧影视.js"
+        },	
 	{
             "key": "小宝影院",
             "name": "小宝影院",
