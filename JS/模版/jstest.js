@@ -1,5 +1,5 @@
 var rule={
-    title: '937影院',
+    title: '热播影视',
     host: 'https://www.rebovod.com',
     url: '/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
