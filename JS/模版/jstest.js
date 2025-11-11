@@ -1,5 +1,5 @@
 var rule={
-		title: '',
+		title: '黑夜影视',
 		host: 'https://darkvod.com',
 		url: '/video/fyclass/page/fypage/',
 		searchUrl: '/vodsearch/**----------fypage---.html',
@@ -13,10 +13,10 @@ var rule={
 		},
         //lianxuju
 		//class_parse: '.myui-header__menu li.hidden-sm:gt(0):lt(5);a&&Text;a&&href',
-        class_name:'电影&电视剧&综艺&动漫&纪录片',
-        class_url:'dianying&lianxuju&3&4&24',
+        class_name:'电影&电视剧&综艺&动漫&短剧',
+        class_url:'dianying&lianxuju&zongyi&dongman&shuangwenduanju',
 		play_parse: true,
-		lazy: '',
+    	lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
 		limit: 6,
 		推荐: 'ul.myui-vodlist.clearfix;li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
 		double: true, // 推荐内容是否双层定位
