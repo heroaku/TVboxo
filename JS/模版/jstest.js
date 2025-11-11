@@ -1,5 +1,5 @@
 var rule = {
-     title: '55影视',
+     title: '淘剧影视',
      host: 'http://www.taoju.tv',
 	//http://www.taoju.tv/list/fyclass_fypage.html
 	//https://www.55kan.com/show/fyclass--------fypage---.html
