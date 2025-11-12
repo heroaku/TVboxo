@@ -2,9 +2,9 @@ var rule={
     title: '泥视频VIP',
     host: 'https://www.nivod.vip',
     url: '/k/fyfilter--------fypage---.html',
-    searchUrl: '/vodsearch/**----------fypage---.html',
+    searchUrl: '/s/**----------fypage---.html',
   //https://www.nivod.vip/k/2--------2---/
-    //https://www.55yy7.com/vodsearch/**----------fypage---.html
+    //https://www.nivod.vip/s/ai----------2---/
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
