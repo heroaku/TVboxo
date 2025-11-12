@@ -446,7 +446,15 @@
 	"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
 	"ext": "./JS/飞快影视JS.js"
 	},	
-    {
+	{
+    "key": "泥视频VIP",
+    "name": "泥视频VIP",
+    "type": 3,
+	"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+	"api": "./JS/drpy2.min.js",
+    "ext": "./JS/泥视频VIP.js"
+	},	
+	{
       "key": "泥视频XBPQ",
       "name": "泥视频X｜影视",
       "type": 3,
