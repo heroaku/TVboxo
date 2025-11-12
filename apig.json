@@ -836,6 +836,22 @@
             "ext": "./JS/大米星球DM.js"
         },	
 			{
+		    "key": "大米星球BY",
+		    "name": "大米星球BY",
+		    "type": 3,
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"api": "./JS/drpy2.min.js",
+		    "ext": "./JS/大米星球BY.js"
+			},	
+			{
+		    "key": "夕云影视",
+		    "name": "夕云影视",
+		    "type": 3,
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"api": "./JS/drpy2.min.js",
+		    "ext": "./JS/夕云影视.js"
+			},	
+			{
             "key": "蛋蛋影院",
             "name": "蛋蛋影院",
             "type": 3,
