@@ -1,9 +1,9 @@
 var rule={
-    title: '夕云影视',
+    title: '大米星球BY',
     host: 'https://www.dmq8a2x9s1.shop',
     url: '/vodshow/fyclass--------fypage---.html',
-    searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
-    //https://www.dmq8a2x9s1.shop/vodshow/fyclass--------fypage---.html
+    searchUrl: '/vodsearch/**----------fypage---.html',
+    //https://www.dmq8a2x9s1.shop/vodshow/fyclass--------fypage---.html  https://www.dmq8a2x9s1.shop/vodsearch/**----------fypage---.html
     //https://www.xyxy.live/index.php/vod/show/id/fyclass/page/fypage.html  https://www.xyxy.live/index.php/vod/search/page/fypage/wd/**.html
     searchable: 2,
     quickSearch: 0,
