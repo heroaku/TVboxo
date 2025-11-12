@@ -1,10 +1,10 @@
 var rule={
     title: '游子视频',
-    host: 'https://www.dam7rpv.wiki',
-    url: '/vodshow/fyclass--------fypage---.html',
+    host: 'https://www.xyxy.live',
+    url: '/index.php/vod/show/id/fyclass/page/fypage.html',
     searchUrl: '/vodsearch/**----------fypage---/',
     //https://www.dam7rpv.wiki/vodshow/21--------2---.html
-    //https://www.nivod.vip/s/**----------fypage---/
+    //https://www.xyxy.live/index.php/vod/show/id/fyclass/page/fypage.html
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
@@ -13,7 +13,7 @@ var rule={
     },
     //class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
     class_name: '电影&电视剧&综艺&动漫&短剧',
-    class_url: '20&21&23&22&remenduanju',
+    class_url: '20&39&47&46&remenduanju',
     play_parse: false,
     lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
     limit: 6,
