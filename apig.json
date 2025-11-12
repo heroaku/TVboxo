@@ -447,6 +447,17 @@
 	"ext": "./JS/飞快影视JS.js"
 	},	
     {
+      "key": "泥视频XBPQ",
+      "name": "泥视频X｜影视",
+      "type": 3,
+      "api": "csp_XBPQ",
+      "playerType": 2,
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "ext": "./XBPQ/泥视频VIP.json"
+    },
+    {
       "key": "哔哩视频",
       "name": "☀哔哩🔹视频",
       "type": 3,
