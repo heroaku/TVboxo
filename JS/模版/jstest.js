@@ -1,5 +1,5 @@
 var rule={
-    title: '555影视',
+    title: '泥视频VIP',
     host: 'https://www.nivod.vip',
     url: '/k/fyfilter--------fypage---.html',
     searchUrl: '/vodsearch/**----------fypage---.html',
