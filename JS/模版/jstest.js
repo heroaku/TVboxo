@@ -2,9 +2,9 @@ var rule={
 		title: '黑夜影视',
 		host: 'https://8maple.st',
 		url: '/filter/fyclass--------fypage---.html',
-		searchUrl: '/tag/page/fypage/wd/**/',
+		searchUrl: '/search/**----------fypage---.html',
         //https://8maple.st/filter/fyclass--------fypage---.html
-		//https://darkvod.com/tag/page/fypage/wd/**/
+		//https://8maple.st/search/**----------fypage---.html
 		searchable: 2,//是否启用全局搜索,
 		quickSearch: 0,//是否启用快速搜索,
 		filterable: 0,//是否启用分类筛选,
