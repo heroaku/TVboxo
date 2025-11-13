@@ -1,13 +1,26 @@
 var rule={
-		title: '黑夜影视',
+		title: '枫林影视',
 		host: 'https://8maple.st',
-		url: '/filter/fyclass--------fypage---.html',
+		url: '/filter/fyfilter--------fypage---.html',
 		searchUrl: '/search/**----------fypage---.html',
         //https://8maple.st/filter/fyclass--------fypage---.html
 		//https://8maple.st/search/**----------fypage---.html
 		searchable: 2,//是否启用全局搜索,
 		quickSearch: 0,//是否启用快速搜索,
 		filterable: 0,//是否启用分类筛选,
+	    filter_url:'{{fl.cateId}}',
+	    filter:{
+	        "movie":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"movie"},{"n":"动作片","v":"action"},{"n":"喜剧片","v":"comedy"},{"n":"科幻片","v":"sciencefiction"},{"n":"恐怖片","v":"horror"},{"n":"爱情片","v":"love"},{"n":"战争片","v":"war"},{"n":"剧情片","v":"drama"},{"n":"动画电影","v":"cartoon"},{"n":"纪录片","v":"documentary"}]}],
+	        "tv":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"tv"},{"n":"国产剧","v":"cn"},{"n":"港剧","v":"hk"},{"n":"台剧","v":"tw"},{"n":"韩剧","v":"kr"},{"n":"日剧","v":"jp"},{"n":"美剧","v":"us"},{"n":"泰剧","v":"taidrama"},{"n":"其他剧","v":"etc"}]}],
+	        "show":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"show"},{"n":"国产综艺","v":"cntvshow"},{"n":"日韩综艺","v":"jpkrtvshow"},{"n":"欧美综艺","v":"ustvshow"},{"n":"港台综艺","v":"twhktvshow"}]}],
+	        "anime":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"anime"},{"n":"日韩动漫","v":"jpkranime"},{"n":"国产动漫","v":"cnanime"},{"n":"欧美动漫","v":"usanime"}]}]
+	    },
+	    filter_def:{
+	        movie:{cateId:'movie'},
+	        tv:{cateId:'tv'},
+	        show:{cateId:'show'},
+	        anime:{cateId:'anime'}
+	    },
 		headers: {//网站的请求头,完整支持所有的,常带ua和cookies
 		'User-Agent': 'MOBILE_UA',
 		// "Cookie": "searchneed=ok"
