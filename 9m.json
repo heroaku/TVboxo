@@ -25,6 +25,14 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/飞飞影视.js"
         },	
+	{"key":"4KVM","name":"4KVM","type":3,"api":"https://raw.kkgithub.com/su147456888444/tvbox/main/drpy_js/4KVM.py","jar":"https://raw.kkgithub.com/su147456888444/tvbox/main/yt.jar","searchable":1,"filterable":0,"changeable":0},
+{"key":"爱壹帆","name":"爱壹帆","jar":"https://raw.kkgithub.com/su147456888444/tvbox/main/18.jar;md5;875ce871703d1c382e0498711b9d3ba0","type":3,"searchable":1,"changeable":0,"quickSearch":0,"style":{"type":"rect","ratio":0.75},
+"api":"csp_GM","ext":{"userScript":"https://raw.kkgithub.com/su147456888444/tvbox/main/drpy_js/yfsp.js","debug":false,"webViewSettings":{"blockNetworkImage":true,"blockList":["*.png*","*.mp3*","*.css*","https://*.googletagmanager.com/*","https://*.google-analytics.com/*"]},
+"spider":{"homeContent":{"loadUrl":"https://m.yfsp.tv/"},
+"categoryContent":{"loadUrl":"https://m.yfsp.tv/list/${tid}?type=${index-0:-0}${index-1:-,0}${index-2:-,0}${index-3:-,0}${index-4:-,0}${index-5:-}"},
+"detailContent":{"loadUrl":"https://m.yfsp.tv/play/${id}"},
+"playerContent":{"loadUrl":"https://m.yfsp.tv/play/${mediaKey}?id=${episodeKey}"},
+"searchContent":{"loadUrl":"https://m.yfsp.tv/search"}}}},
 			{
             "key": "皮皮狮影视",
             "name": "皮皮狮影视",
