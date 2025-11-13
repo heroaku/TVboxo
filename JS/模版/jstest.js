@@ -1,10 +1,10 @@
 var rule={
-    title: '泥视频VIP',
+    title: 'FROK影视',
     host: 'https://www.freeokk.pro',
     url: '/show/fyfilter--------fypage---.html',
-    searchUrl: '/s/**----------fypage---.html',
+    searchUrl: '/search/**----------fypage---.html',
   //https://www.freeokk.pro/show/2--------2---.html
-    //https://www.nivod.vip/s/ai----------2---/
+    //https://www.freeokk.pro/search/ai----------2---.html
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
