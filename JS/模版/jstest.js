@@ -1,30 +1,34 @@
-var rule={
-    title: 'FROK影视',
-    host: 'https://www.freeokk.pro',
-    url: '/show/fyfilter--------fypage---.html',
-    searchUrl: '/search/**----------fypage---.html',
-  //https://www.freeokk.pro/show/2--------2---.html
-    //https://www.freeokk.pro/search/ai----------2---.html
-    searchable: 2,
-    quickSearch: 0,
-    filterable: 0,
-    headers: {
-    'User-Agent': 'MOBILE_UA',
+var rule = {
+    title:'蛋蛋影院',
+    host:'https://www.wvod.tv',
+    // https://www.wvod.tv/vodshow/21/page/2.html
+    // https://dandanzandy.com/vod/search/page/fypage/wd/**.html
+    url:'/vodshow/fyclass/page/fypage.html',
+    searchUrl:'/vod/search/page/fypage/wd/**.html',
+    searchable:2,//是否启用全局搜索,
+    quickSearch:0,//是否启用快速搜索,
+    filterable:0,//是否启用分类筛选,
+    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
+        'User-Agent':'MOBILE_UA',
+        // "Cookie": "searchneed=ok"
     },
-    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
-	  //class_name:'电影&电视剧&综艺&动漫',
-    //class_url:'1&2&3&4',  
-	  play_parse: true,
-    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
-    limit: 6,
-    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    double: true,
-    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    二级: {
-    "title": "h1&&Text;.module-info-tag&&Text",
-    "img": ".lazyload&&data-original",
-    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
-    "content": ".module-info-introduction&&Text",
-    "tabs": ".hisSwiper&&span",
-    "lists": ".his-tab-list:eq(#id) a"},
-    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
+    //class_name:'电视剧&电影&综艺&动漫&短剧',
+    //class_url:'dianshiju&dianying&zongyi&dongman&duanju',
+    class_parse:'.hl-nav-wrap&&ul&&li;a&&Text;a&&href;/v/(.*)/.html',
+    play_parse:true,
+    lazy:'',
+    limit:6,
+    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+            二级: {
+                "title": ".hl-infos-title&&Text;.hl-text-conch&&Text",
+                "img": ".hl-lazy&&data-original",
+                "desc": ".hl-infos-content&&.hl-text-conch&&Text",
+                "content": ".hl-content-text&&Text",
+                "tabs": ".hl-tabs&&a",
+                "lists": ".hl-plays-list:eq(#id)&&li"
+            },    
+    //二级:{"title":".hl-item-thumb.hl-lazy&&title;.hl-full-box&&ul li:eq(6)&&Text","img":".hl-item-thumb.hl-lazy&&data-original","desc":".hl-full-box&&ul&&li:eq(-1)&&Text;.hl-full-box&&ul&&li:eq(-2)&&Text;.hl-full-box&&ul&&li:eq(-3)&&Text;.hl-full-box&&ul&&li:eq(2)&&Text;.hl-full-box&&ul&&li:eq(3)&&Text","content":".hl-col-xs-12.blurb&&Text","tabs":".hl-tabs-btn","lists":".hl-plays-list:eq(#id) li"},
+    搜索:'ul.hl-one-list&&li;a&&title;.hl-item-thumb&&data-original;.hl-lc-1&&Text;a&&href;.text-muted:eq(-1)&&Text',
+}
