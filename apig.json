@@ -808,6 +808,14 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/淘剧影视.js"
         },	
+			{
+			"key": "哇视频",
+			"name": "哇视频",
+			"type": 3,
+			"api": "./JS/drpy2.min.js",
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"ext": "./JS/哇视频.js"
+			},		
 	{
             "key": "小宝影院",
             "name": "小宝影院",
