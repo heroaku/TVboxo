@@ -7,7 +7,7 @@ var rule= {
     searchable: 2,//是否启用全局搜索,
     quickSearch: 0,//是否启用快速搜索,
     filterable:1,//是否启用分类筛选,
-    class_parse: '.stui-header__menu&&li:gt(0):lt(7);a&&Text;a&&href;.*/(.*?).html',
+    class_parse: '.stui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
     //class_name:'电影&电视剧&综艺&动漫&日韩剧&国产剧&欧美剧&港台剧',
     //class_url:'dianying&dianshiju&3&4&16&13&15&14',
     play_parse: true,
