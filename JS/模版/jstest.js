@@ -1,10 +1,10 @@
 var rule = {
-    title:'蛋蛋影院',
+    title:'哇视频',
     host:'https://www.wvod.tv',
     // https://www.wvod.tv/vodshow/21/page/2.html
-    // https://dandanzandy.com/vod/search/page/fypage/wd/**.html
+    // https://www.wvod.tv/vodsearch/page/2/wd/ai.html
     url:'/vodshow/fyclass/page/fypage.html',
-    searchUrl:'/vod/search/page/fypage/wd/**.html',
+    searchUrl:'/vodsearch/page/fypage/wd/**.html',
     searchable:2,//是否启用全局搜索,
     quickSearch:0,//是否启用快速搜索,
     filterable:0,//是否启用分类筛选,
