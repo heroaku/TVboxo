@@ -23,4 +23,7 @@ var rule= {
                 "content": ".vod_content&&Text",
                 "tabs": ".module-tab-item",
                 "lists": ".module-player-list:eq(#id)&&.scroll-content&&a"
-            }
+                        }, 
+            搜索: '.module-items&&.module-search-item;a&&title;img&&data-src;.video-info&&a&&Text;a&&href',
+            } 
+
