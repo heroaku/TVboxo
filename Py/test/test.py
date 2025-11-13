@@ -366,329 +366,117 @@ class Spider(Spider):
         # print(f"Debug homeContent: {result}")
         return result
 
-def homeVideoContent(self):
-    d = []
-    try:
-        res = requests.get(self.home_url, headers=self.headers, timeout=10)
-        res.encoding = 'utf-8'
-        root = etree.HTML(res.text)
-        data_list = root.xpath('//div[@class="video-box-new"]/div[@class="Movie-list"]')
-        
-        for i in data_list:
-            # 添加空值检查
-            hrefs = i.xpath('./a[@class="Movie movie-height"]/@href')
-            names = i.xpath('./a[2]/text()')
-            pics = i.xpath('./a[1]/img/@originalsrc')
-            remarks = i.xpath('./div[@class="Movie-type02"]/div[2]/text()')
-            
-            if hrefs and names and pics and remarks:
-                d.append({
-                    'vod_id': hrefs[0].split('=')[-1] if '=' in hrefs[0] else hrefs[0],
-                    'vod_name': names[0].strip(),
-                    'vod_pic': pics[0],
-                    'vod_remarks': remarks[0].strip()
-                })
-        
-        return {'list': d, 'parse': 0, 'jx': 0}
-    except Exception as e:
-        print(f"获取首页视频内容失败: {e}")
-        return {'list': d, 'parse': 0, 'jx': 0}
-
-def categoryContent(self, cid, page, filter, ext):
-    """
-    获取分类内容视频列表
-    
-    Args:
-        cid: 分类ID
-        page: 页码
-        filter: 过滤器
-        ext: 扩展参数字典
-        
-    Returns:
-        dict: 视频列表数据
-    """
-    # 参数提取与默认值设置
-    params = {
-        'class': ext.get('class', '0'),    # 剧情/类型
-        'area': ext.get('area', '0'),      # 地区
-        'year': ext.get('year', '0'),      # 年份
-        'status': ext.get('status', '0'),  # 状态
-        'by': ext.get('by', 'new')         # 排序
-    }
-    
-    # URL构造 - 使用字典方式更清晰
-    url_params = {
-        'page_num': page,
-        'sorttype': 'desc',
-        'channel_id': cid,
-        'tag': params['class'],
-        'area': params['area'],
-        'year': params['year'],
-        'status': params['status'],
-        'sort': params['by'],
-        'page_size': 28
-    }
-    
-    # 使用params参数自动编码URL
-    url = f"{self.home_url}/video/refresh-cate"
-    
-    d = []
-    try:
-        # 添加超时和错误处理
-        res = requests.get(
-            url, 
-            headers=self.headers, 
-            params=url_params,
-            timeout=10
-        )
-        res.raise_for_status()  # 检查HTTP状态码
-        
-        data = res.json()
-        
-        # 添加数据完整性检查
-        if not data.get('data') or not isinstance(data['data'].get('list'), list):
-            print("API返回数据格式异常")
+    def homeVideoContent(self):
+        d = []
+        try:
+            res = requests.get(self.home_url, headers=self.headers)
+            res.encoding = 'utf-8'  # 根据实际情况设置编码
+            root = etree.HTML(res.text.encode('utf-8'))
+            data_list = root.xpath('//div[@class="video-box-new"]/div[@class="Movie-list"]')
+            for i in data_list:
+                d.append(
+                    {
+                        'vod_id': i.xpath('./a[@class="Movie movie-height"]/@href')[0].split('=')[-1],
+                        'vod_name': i.xpath('./a[2]/text()')[0].strip(),
+                        'vod_pic': i.xpath('./a[1]/img/@originalsrc')[0],
+                        'vod_remarks': i.xpath('./div[@class="Movie-type02"]/div[2]/text()')[0].strip()
+                    }
+                )
             return {'list': d, 'parse': 0, 'jx': 0}
-        
-        data_list = data['data']['list']
-        
-        # 使用列表推导式优化循环
-        d = [
-            {
-                'vod_id': item.get('video_id', ''),
-                'vod_name': item.get('video_name', '').strip(),
-                'vod_pic': item.get('cover', ''),
-                'vod_remarks': item.get('flag', ''),
-            }
-            for item in data_list
-            if item.get('video_id')  # 确保有video_id才加入列表
-        ]
-        
-        return {'list': d, 'parse': 0, 'jx': 0}
-        
-    except requests.exceptions.RequestException as e:
-        print(f"网络请求失败: {e}")
-    except ValueError as e:
-        print(f"JSON解析失败: {e}")
-    except Exception as e:
-        print(f"获取分类内容失败: {e}")
-    
-    return {'list': d, 'parse': 0, 'jx': 0}
+        except Exception as e:
+            print(e)
+            return {'list': d, 'parse': 0, 'jx': 0}
 
-def detailContent(self, did):
-    """
-    获取视频详情内容
-    
-    Args:
-        did: 视频ID或ID列表
-        
-    Returns:
-        dict: 视频详情数据
-    """
-    if not did:
-        return {"list": [], "parse": 0, "jx": 0}
-    
-    video_id = did[0] if isinstance(did, (list, tuple)) else did
-    video_list = []
-    
-    try:
-        # 构造请求URL
-        url = f"{self.home_url}/video/detail?video_id={video_id}"
-        
-        # 发送请求
-        response = requests.get(url, headers=self.headers, timeout=10)
-        response.encoding = 'utf-8'
-        response.raise_for_status()
-        
-        # 解析HTML
-        root = etree.HTML(response.text)
-        
-        # 提取视频基本信息
-        video_info = self._extract_video_info(root, video_id)
-        
-        # 提取播放列表
-        play_data = self._extract_play_data(root, video_id)
-        
-        # 构造返回数据
-        video_list.append({
-            'type_name': video_info.get('type_name', ''),
-            'vod_id': video_id,
-            'vod_name': video_info.get('name', ''),
-            'vod_remarks': video_info.get('remarks', ''),
-            'vod_year': video_info.get('year', ''),
-            'vod_area': video_info.get('area', ''),
-            'vod_actor': video_info.get('actors', ''),
-            'vod_director': video_info.get('director', ''),
-            'vod_content': video_info.get('description', ''),
-            'vod_play_from': play_data['play_from'],
-            'vod_play_url': play_data['play_url']
-        })
-        
-        return {"list": video_list, 'parse': 0, 'jx': 0}
-        
-    except requests.exceptions.RequestException as e:
-        print(f"网络请求失败: {e}")
-    except etree.ParseError as e:
-        print(f"HTML解析失败: {e}")
-    except Exception as e:
-        print(f"获取视频详情失败: {e}")
-    
-    return {"list": [], "parse": 0, "jx": 0}
+    def categoryContent(self, cid, page, filter, ext):
+        _class = ext.get('class', '0')  # 剧情/类型
+        _area = ext.get('area', '0')  # 地区
+        _year = ext.get('year', '0')  # 年份
+        _status = ext.get('status', '0')  # 状态
+        _by = ext.get('by', 'new')  # 排序
 
-def _extract_video_info(self, root, video_id):
-    """
-    提取视频基本信息
-    """
-    info = {}
-    
-    try:
-        # 视频名称
-        name_elements = root.xpath('//h1[@class="video-title"]/text()')
-        info['name'] = name_elements[0].strip() if name_elements else ''
-        
-        # 视频类型
-        type_elements = root.xpath('//span[@class="video-type"]/text()')
-        info['type_name'] = type_elements[0].strip() if type_elements else ''
-        
-        # 备注信息
-        remark_elements = root.xpath('//span[@class="video-status"]/text()')
-        info['remarks'] = remark_elements[0].strip() if remark_elements else ''
-        
-        # 年份
-        year_elements = root.xpath('//span[contains(text(), "年份")]/following-sibling::span/text()')
-        info['year'] = year_elements[0].strip() if year_elements else ''
-        
-        # 地区
-        area_elements = root.xpath('//span[contains(text(), "地区")]/following-sibling::span/text()')
-        info['area'] = area_elements[0].strip() if area_elements else ''
-        
-        # 演员
-        actor_elements = root.xpath('//span[contains(text(), "演员")]/following-sibling::span//text()')
-        info['actors'] = ' '.join([actor.strip() for actor in actor_elements]) if actor_elements else ''
-        
-        # 导演
-        director_elements = root.xpath('//span[contains(text(), "导演")]/following-sibling::span/text()')
-        info['director'] = director_elements[0].strip() if director_elements else ''
-        
-        # 简介
-        desc_elements = root.xpath('//div[@class="video-description"]/text()')
-        info['description'] = desc_elements[0].strip() if desc_elements else ''
-        
-    except Exception as e:
-        print(f"提取视频信息失败: {e}")
-    
-    return info
+        url = self.home_url + f'/video/refresh-cate?page_num={page}&sorttype=desc&channel_id={cid}&tag={_class}&area={_area}&year={_year}&status={_status}&sort={_by}&page_size=28'
+        d = []
+        try:
+            res = requests.get(url, headers=self.headers)
+            data_list = res.json()['data']['list']
+            for i in data_list:
+                d.append(
+                    {
+                        'vod_id': i['video_id'],
+                        'vod_name': i['video_name'],
+                        'vod_pic': i['cover'],
+                        'vod_remarks': i['flag'],
+                    }
+                )
+            return {'list': d, 'parse': 0, 'jx': 0}
+        except Exception as e:
+            print(e)
+            return {'list': d, 'parse': 0, 'jx': 0}
 
-def _extract_play_data(self, root, video_id):
-    """
-    提取播放数据
-    """
-    play_from = []
-    play_urls = []
-    
-    try:
-        # 查找所有可能的播放列表容器
-        play_containers = root.xpath('//ul[contains(@class, "qy-episode-num")] | //ul[@id="srctab-1"] | //div[contains(@class, "play-list")]//ul')
-        
-        for index, container in enumerate(play_containers):
-            # 播放源名称
-            source_name = self._get_source_name(container, index)
-            play_from.append(source_name)
-            
-            # 提取播放集数
-            episodes = self._extract_episodes(container, video_id)
-            if episodes:
-                play_urls.append('#'.join(episodes))
-        
-        # 如果没有找到播放列表，使用默认线路
-        if not play_from:
-            play_from = ['线路一', '线路二', '线路三']
-            # 使用默认播放URL或空播放列表
-            play_urls = [''] * 3
-    
-    except Exception as e:
-        print(f"提取播放数据失败: {e}")
-        # 提供默认值
-        play_from = ['线路一', '线路二', '线路三']
-        play_urls = [''] * 3
-    
-    return {
-        'play_from': '$$$'.join(play_from),
-        'play_url': '$$$'.join(play_urls) if play_urls else ''
-    }
+    def detailContent(self, did):
+        ids = did[0]
+        video_list = []
+        url = self.home_url + f'/video/detail?video_id={ids}'
+        try:
+            res = requests.get(url, headers=self.headers)
+            root = etree.HTML(res.text.encode('utf-8'))
+            # vod_play_from_list = root.xpath('//span[@class="source-item-label"]/text()')
+            vod_play_from = '$$$'.join(['线路一', '线路二', '线路三'])
+            # 电视剧
+            play_list1 = root.xpath('//ul[contains(@class, "qy-episode-num")]')
+            # print(play_list1)
+            # 电影
+            # play_list2 = root.xpath('//ul[contains(@class, "qy-play-list")]')
+            play_list2 = root.xpath('//ul[@id="srctab-1"]')
+            # print(play_list2)
+            vod_play_url_list = []
+            if len(play_list1) > 0:
+                play_list = play_list1[:-1]
+                # print(play_list)
 
-def _get_source_name(self, container, index):
-    """
-    获取播放源名称
-    """
-    # 尝试从容器中提取名称
-    name_elements = container.xpath('./preceding-sibling::div[contains(@class, "source-tab")][1]//text() | ./parent::div/preceding-sibling::div[1]//text()')
-    
-    if name_elements:
-        name = ' '.join([text.strip() for text in name_elements if text.strip()])
-        if name:
-            return name
-    
-    # 使用默认名称
-    return f'线路{index + 1}'
+            elif len(play_list2) > 0:
+                play_list = play_list2
+                # print(play_list)
+            else:
+                play_list = []
 
-def _extract_episodes(self, container, video_id):
-    """
-    提取剧集列表
-    """
-    episodes = []
-    
-    try:
-        # 尝试多种XPath模式提取剧集名称
-        name_patterns = [
-            './/a/text()',
-            './/span[@class="title-link"]/text()',
-            './/div[@class="select-link"]/text()',
-            './li/text()',
-            './/button/text()'
-        ]
-        
-        # 尝试多种XPath模式提取剧集ID
-        id_patterns = [
-            './li/@data-chapter-id',
-            './/a/@data-id',
-            './/li/@data-id',
-            './/button/@data-id'
-        ]
-        
-        # 提取剧集名称
-        names = []
-        for pattern in name_patterns:
-            found_names = container.xpath(pattern)
-            if found_names:
-                names = [name.strip() for name in found_names if name.strip()]
-                break
-        
-        # 提取剧集ID
-        ids = []
-        for pattern in id_patterns:
-            found_ids = container.xpath(pattern)
-            if found_ids:
-                ids = found_ids
-                break
-        
-        # 构造剧集列表
-        if names and ids:
-            # 确保数量匹配
-            min_length = min(len(names), len(ids))
-            for i in range(min_length):
-                episode_name = names[i]
-                episode_id = ids[i]
-                episodes.append(f"{episode_name}${video_id}-{episode_id}")
-        elif names:
-            # 只有名称没有ID
-            for i, name in enumerate(names):
-                episodes.append(f"{name}${video_id}-{i+1}")
-    
-    except Exception as e:
-        print(f"提取剧集失败: {e}")
-    
-    return episodes
+            for i in play_list:
+                name_list1 = i.xpath('.//div[@class="select-link"]/text()')
+                name_list2 = i.xpath('.//span[@class="title-link"]/text()')
+                name_list3 = i.xpath('./li/text()')
+                # print(name_list1)
+                # print(name_list2)
+                # print(name_list3)
+                # print(name_list1 + name_list2 + name_list3)
+                name_list = name_list1 + name_list2 + name_list3
+                url_list = i.xpath('./li/@data-chapter-id')
+                vod_play_url_list.append(
+                    '#'.join([_name.strip() + '$' + f'{ids}-{_url}' for _name, _url in zip(name_list, url_list)])
+                )
+
+
+            # print(vod_play_url_list*3)
+            vod_play_url = '$$$'.join(vod_play_url_list*3)
+            # print(vod_play_url_list)
+            video_list.append({
+                'type_name': '',
+                'vod_id': ids,
+                'vod_name': '',
+                'vod_remarks': '',
+                'vod_year': '',
+                'vod_area': '',
+                'vod_actor': '',
+                'vod_director': '',
+                'vod_content': '',
+                'vod_play_from': vod_play_from,
+                'vod_play_url': vod_play_url
+            })
+            return {"list": video_list, 'parse': 0, 'jx': 0}
+
+        except Exception as e:
+            print(f"Error in detailContent: {e}")
+            return {'list': [], 'msg': str(e)}
+
     def searchContent(self, key, quick, page='1'):
         if str(page) != '1':
             return {'list': [], 'parse': 0, 'jx': 0}
@@ -714,176 +502,26 @@ def _extract_episodes(self, container, video_id):
             return {'list': [], 'parse': 0, 'jx': 0}
 
     def playerContent(self, flag, pid, vipFlags):
-    """
-    获取视频播放地址
-    
-    Args:
-        flag: 播放线路标识
-        pid: 视频ID和章节ID的组合字符串 (格式: videoId-chapterId)
-        vipFlags: VIP标志（未使用）
-        
-    Returns:
-        dict: 播放地址信息
-    """
-    # 参数验证
-    if not pid or '-' not in pid:
-        return self._get_error_response("无效的视频ID格式")
-    
-    try:
-        # 解析视频ID和章节ID
-        video_id, chapter_id = self._parse_video_pid(pid)
-        
-        # 构造API请求URL
-        api_url = self._build_play_url(video_id, chapter_id)
-        
-        # 发送请求获取播放信息
-        play_data = self._fetch_play_data(api_url)
-        
-        # 根据线路选择播放地址
-        play_url = self._select_play_url(play_data, flag)
-        
-        return {
-            'url': play_url,
-            'parse': 0, 
-            'jx': 0, 
-            'header': self.headers
-        }
-        
-    except ValueError as e:
-        print(f"参数解析错误: {e}")
-        return self._get_error_response(f"参数错误: {e}")
-    except requests.exceptions.RequestException as e:
-        print(f"网络请求失败: {e}")
-        return self._get_error_response("网络请求失败")
-    except KeyError as e:
-        print(f"数据格式错误，缺少键: {e}")
-        return self._get_error_response("数据解析失败")
-    except Exception as e:
-        print(f"获取播放地址失败: {e}")
-        return self._get_error_response("系统错误")
+        url = 'https://aigua1.com/video/play-url?videoId=230907&sourceId=0&citycode=HKG&chapterId=2916522'
+        a = pid.split('-')
+        videoId = a[0]
+        chapterId = a[1]
+        url = self.home_url + f'/video/play-url?videoId={videoId}&sourceId=0&citycode=HKG&chapterId={chapterId}'
+        try:
+            res = requests.get(url, headers=self.headers)
+            play_url_list = res.json()['data']['urlinfo']['resource_url']
+            if flag == '线路一':
+                play_url = play_url_list['1']
+                pass
+            elif flag == '线路二':
+                play_url = play_url_list['16']
+            else:
+                play_url = play_url_list['21']
+            return {'url': play_url, 'parse': 0, 'jx': 0, 'header': self.headers}
+        except Exception as e:
+            print(f"Error in playerContent: {e}")
+            return {'url': self.default_play_url, 'parse': 0, 'jx': 0}
 
-def _parse_video_pid(self, pid):
-    """
-    解析视频ID和章节ID
-    """
-    parts = pid.split('-')
-    if len(parts) != 2:
-        raise ValueError(f"PID格式错误，应为videoId-chapterId，实际为: {pid}")
-    
-    video_id = parts[0].strip()
-    chapter_id = parts[1].strip()
-    
-    if not video_id or not chapter_id:
-        raise ValueError("视频ID或章节ID为空")
-    
-    return video_id, chapter_id
-
-def _build_play_url(self, video_id, chapter_id, source_id="0", city_code="HKG"):
-    """
-    构造播放地址请求URL
-    
-    Args:
-        video_id: 视频ID
-        chapter_id: 章节ID
-        source_id: 源ID (默认为0)
-        city_code: 城市代码 (默认为HKG)
-    """
-    params = {
-        'videoId': video_id,
-        'sourceId': source_id,
-        'citycode': city_code,
-        'chapterId': chapter_id
-    }
-    
-    # 使用urlencode确保URL安全
-    query_string = urlencode(params)
-    return f"{self.home_url}/video/play-url?{query_string}"
-
-def _fetch_play_data(self, api_url):
-    """
-    获取播放数据
-    """
-    response = requests.get(api_url, headers=self.headers, timeout=10)
-    response.raise_for_status()
-    
-    data = response.json()
-    
-    # 验证数据格式
-    if not isinstance(data, dict):
-        raise ValueError("返回数据不是有效的JSON对象")
-    
-    if 'data' not in data or 'urlinfo' not in data['data']:
-        raise KeyError("返回数据缺少必要的字段")
-    
-    return data['data']['urlinfo']
-
-def _select_play_url(self, play_data, flag):
-    """
-    根据线路标识选择播放地址
-    
-    Args:
-        play_data: 播放数据
-        flag: 线路标识
-    """
-    # 线路映射配置 - 可扩展
-    line_mapping = {
-        '线路一': '1',
-        '线路二': '16', 
-        '线路三': '21',
-        '线路四': '2',  # 可扩展更多线路
-        '线路五': '3'
-    }
-    
-    # 获取资源URL列表
-    resource_urls = play_data.get('resource_url', {})
-    
-    if not resource_urls:
-        raise ValueError("没有可用的播放资源")
-    
-    # 查找对应的线路key
-    line_key = line_mapping.get(flag)
-    
-    if line_key and line_key in resource_urls:
-        return resource_urls[line_key]
-    
-    # 如果指定线路不存在，返回第一个可用线路
-    print(f"线路 '{flag}' 不存在，使用默认线路")
-    first_key = next(iter(resource_urls))
-    return resource_urls[first_key]
-
-def _get_error_response(self, message=""):
-    """
-    获取错误响应
-    """
-    # 可以配置一个默认的播放地址或错误页面
-    default_url = getattr(self, 'default_play_url', '')
-    
-    return {
-        'url': default_url,
-        'parse': 0,
-        'jx': 0,
-        'header': self.headers,
-        'msg': message  # 添加错误信息便于调试
-    }
-
-# 可选的：添加线路自动发现功能
-def _discover_available_lines(self, play_data):
-    """
-    发现可用的播放线路
-    """
-    resource_urls = play_data.get('resource_url', {})
-    available_lines = []
-    
-    for key, url in resource_urls.items():
-        if url and url.strip():  # 确保URL非空
-            available_lines.append({
-                'key': key,
-                'url': url,
-                'name': f'线路{key}'  # 可以根据需要映射为更有意义的名称
-            })
-    
-    return available_lines
-    
     def localProxy(self, params):
         pass
 
