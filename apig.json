@@ -709,6 +709,14 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/FREE影视.js"
         },	
+			{
+			"key": "FROK影视",
+			"name": "FROK影视",
+			"type": 3,
+			"api": "./JS/drpy2.min.js",
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"ext": "./JS/FROK影视.js"
+			},	
 		{
             "key": "多瑙影视",
             "name": "多瑙影视",
