@@ -1,34 +1,30 @@
-var rule = {
-    title:'哇视频',
-    host:'https://www.wvod.tv',
-    // https://www.wvod.tv/vodshow/21/page/2.html
-    // https://www.wvod.tv/vodsearch/page/2/wd/ai.html
-    url:'/vodshow/fyclass/page/fypage.html',
-    searchUrl:'/vodsearch/page/fypage/wd/**.html',
-    searchable:2,//是否启用全局搜索,
-    quickSearch:0,//是否启用快速搜索,
-    filterable:0,//是否启用分类筛选,
-    headers:{//网站的请求头,完整支持所有的,常带ua和cookies
-        'User-Agent':'MOBILE_UA',
-        // "Cookie": "searchneed=ok"
+var rule= {
+    title:'悟空影视',
+    host:'http://dyxz.tv',
+    // http://dyxz.tv/list/fyclass_fypage.html
+    //https://www.wkvod.cc/vodshow/id/fyclass/page/fypage.html
+    url:'/list/fyclass_fypage.html',
+    searchable: 2,//是否启用全局搜索,
+    quickSearch: 0,//是否启用快速搜索,
+    filterable:1,//是否启用分类筛选,
+    class_parse: '.stui-header__menu&&li:gt(0):lt(7);a&&Text;a&&href;.*/(.*?).html',
+    //class_name:'电影&电视剧&综艺&动漫&日韩剧&国产剧&欧美剧&港台剧',
+    //class_url:'dianying&dianshiju&3&4&16&13&15&14',
+    play_parse: true,
+    lazy:'js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=="1"){url=unescape(url)}else if(html.encrypt=="2"){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}',
+    limit: 6,
+    searchUrl:'/vodsearch**/page/fypage.html',
+    detailUrl:'/detail/fyid.html', //非必填,二级详情拼接链接
+    推荐: '.stui-pannel:eq(2);.stui-vodlist&&li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    double: true, // 推荐内容是否双层定位
+    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    二级: {
+        "title": "h1&&Text;.data&&Text",
+        "img": "img&&data-original",
+        "desc": ';;;.video-info-actor:eq(1)&&Text;.video-info-actor:eq(0)&&Text',
+        "content": ".stui-pannel:eq(2)&&p&&Text",
+        "tabs": ".stui-pannel:gt(0) h3",
+        "lists": ".stui-pannel_bd:eq(#id)&&.stui-content__playlist li"
     },
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'20&21&22&23',
-    //class_parse:'.hl-nav-wrap&&ul&&li;a&&Text;a&&href;/v/(.*)/.html',
-    play_parse:true,
-    lazy:'',
-    limit:6,
-    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    double:true, // 推荐内容是否双层定位
-    一级:'.hl-list-item;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-            二级: {
-                "title": ".hl-infos-title&&Text;.hl-text-conch&&Text",
-                "img": ".hl-lazy&&data-original",
-                "desc": ".hl-infos-content&&.hl-text-conch&&Text",
-                "content": ".hl-content-text&&Text",
-                "tabs": ".hl-tabs&&a",
-                "lists": ".hl-plays-list:eq(#id)&&li"
-            },    
-    //二级:{"title":".hl-item-thumb.hl-lazy&&title;.hl-full-box&&ul li:eq(6)&&Text","img":".hl-item-thumb.hl-lazy&&data-original","desc":".hl-full-box&&ul&&li:eq(-1)&&Text;.hl-full-box&&ul&&li:eq(-2)&&Text;.hl-full-box&&ul&&li:eq(-3)&&Text;.hl-full-box&&ul&&li:eq(2)&&Text;.hl-full-box&&ul&&li:eq(3)&&Text","content":".hl-col-xs-12.blurb&&Text","tabs":".hl-tabs-btn","lists":".hl-plays-list:eq(#id) li"},
-    搜索:'ul.hl-one-list&&li;a&&title;.hl-item-thumb&&data-original;.hl-lc-1&&Text;a&&href;.text-muted:eq(-1)&&Text',
+    搜索:'.stui-vodlist__media li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
 }
