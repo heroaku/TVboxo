@@ -11,7 +11,8 @@ var rule= {
             //class_name:'电影&电视剧&综艺&动漫&纪录片&国产剧&日剧&韩剧&港剧&欧美剧&泰剧&台剧',
             //class_url:'1&2&3&4&17&18&20&22&19&21&24&23',  
             play_parse: true,
-            lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
+            lazy: '',            
+            //lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
             limit: 6,
             推荐: '.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
             double: true, // 推荐内容是否双层定位
