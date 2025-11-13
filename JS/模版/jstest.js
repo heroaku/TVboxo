@@ -12,9 +12,9 @@ var rule = {
         'User-Agent':'MOBILE_UA',
         // "Cookie": "searchneed=ok"
     },
-    //class_name:'电视剧&电影&综艺&动漫&短剧',
-    //class_url:'dianshiju&dianying&zongyi&dongman&duanju',
-    class_parse:'.hl-nav-wrap&&ul&&li;a&&Text;a&&href;/v/(.*)/.html',
+    class_name:'电影&电视剧&综艺&动漫',
+    class_url:'20&21&22&23',
+    //class_parse:'.hl-nav-wrap&&ul&&li;a&&Text;a&&href;/v/(.*)/.html',
     play_parse:true,
     lazy:'',
     limit:6,
