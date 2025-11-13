@@ -969,6 +969,14 @@
             "ext": "./JS/皮皮狮影视.js"
         },	
 			{
+			"key": "枫林影视",
+			"name": "枫林影视",
+			"type": 3,
+			"api": "./JS/drpy2.min.js",
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"ext": "./JS/枫林影视.js"
+			},		
+			{
             "key": "555影视",
             "name": "555影视",
             "type": 3,
