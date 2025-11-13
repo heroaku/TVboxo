@@ -24,7 +24,7 @@ var rule= {
         "desc": ';;;.video-info-actor:eq(1)&&Text;.video-info-actor:eq(0)&&Text',
         "content": ".stui-pannel:eq(2)&&p&&Text",
         "tabs": ".nav-tabs li",
-        "lists": ".stui-pannel_bd:eq(#id)&&.stui-content__playlist li"
+        "lists": ".stui-content__playlist:eq(#id) li"
     },
     搜索:'.stui-vodlist__media li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
 }
