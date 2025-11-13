@@ -1,25 +1,30 @@
-var rule = {
-  title: '飞飞影视',
-  host: 'https://www.ffys.fun',
-  url: '/vodshow/id/fyclass/page/fypage.html[/type/fyclass.html]',
-  searchUrl: '/vodsearch**/page/fypage.html',
-  searchable: 1, quickSearch: 0, filterable: 0,
-  headers: {
-    'User-Agent': 'UC_UA'
-  },
-  class_name: '电影&剧集&综艺&动漫&纪录片&短剧&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&动画片&国产剧&港台剧&日韩剧&欧美剧&泰国剧',
-  class_url: '20&21&23&22&24&25&26&27&28&29&30&31&32&33&34&35&36&37&38',
-  play_parse: true, limit: 6, double: true, 推荐: '*',
-  lazy: `js:let html = request(input);
-input=html.match(/[a-zA-z]+://[^\s]*.*.m3u8/g) }`,
-  一级: '.module-items a;a&&title;.lazyload&&data-original;.module-item-note&&Text;a&&href',
-  二级: {
-    title: '.module-info-main&&h1',
-    img: '.lazyload&&data-original',
-    desc: '.module-info-main&&.module-info-tag-link:eq(2)&&Text;..module-info-main&&.module-info-item:eq(3)&&Text;;.module-info-main&&.module-info-item:eq(2)&&Text;.module-info-main&&.module-info-item:eq(1)&&Text',
-    content: '.module-info-introduction-content&&Text',
-    tabs: '.module-tab-item.tab-item',
-    lists: '.module-play-list-content:eq(#id) a',
-  },
-  搜索: '*',
-}
+var rule={
+    title: '泥视频VIP',
+    host: 'https://www.freeokk.pro',
+    url: '/show/fyfilter--------fypage---.html',
+    searchUrl: '/s/**----------fypage---.html',
+  //https://www.freeokk.pro/show/2--------2---.html
+    //https://www.nivod.vip/s/ai----------2---/
+    searchable: 2,
+    quickSearch: 0,
+    filterable: 0,
+    headers: {
+    'User-Agent': 'MOBILE_UA',
+    },
+    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
+	  //class_name:'电影&电视剧&综艺&动漫',
+    //class_url:'1&2&3&4',  
+	  play_parse: true,
+    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
+    limit: 6,
+    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    double: true,
+    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    二级: {
+    "title": "h1&&Text;.module-info-tag&&Text",
+    "img": ".lazyload&&data-original",
+    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
+    "content": ".module-info-introduction&&Text",
+    "tabs": ".hisSwiper&&span",
+    "lists": ".his-tab-list:eq(#id) a"},
+    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
