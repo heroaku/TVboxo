@@ -1,8 +1,8 @@
 var rule= {
-    title:'悟空影视',
+    title:'小镇影视',
     host:'http://dyxz.tv',
     // http://dyxz.tv/list/fyclass_fypage.html
-    //https://www.wkvod.cc/vodshow/id/fyclass/page/fypage.html
+    //http://www.dyxz4.com
     url:'/list/fyclass_fypage.html',
     searchable: 2,//是否启用全局搜索,
     quickSearch: 0,//是否启用快速搜索,
