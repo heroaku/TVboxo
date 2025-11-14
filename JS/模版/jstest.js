@@ -1,10 +1,10 @@
 var rule = {
-  title: 'FREE影视',
+  title: '茉小影视',
   host: 'https://www.moxy.top',
   url: '/show/id/fyclass/page/fypage.html',
-  searchUrl: '/search/index.html?keyword=**&page=fypage',
+  searchUrl: '/search/page/fypage/wd/**.html',
   // https://www.moxy.top/show/id/fyclass/page/fypage.html
-  //https://freeys.org/search/index.html?keyword=**&page=fypage
+  //https://www.moxy.top/search/page/fypage/wd/**.html
   searchable: 2,
   quickSearch: 0,
   filterable: 0,
@@ -18,7 +18,7 @@ var rule = {
   //class_parse: 'ul.flex.around&&li;a&&Text;a&&href;.*/(.*?).html',
   //cate_exclude: '',
   class_name:'电影&电视剧&综艺&动漫&短剧',
-  class_url:'1&2&3&4&45',
+  class_url:'1&2&3&4&5',
   play_parse: false,
   lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
   double: true,
