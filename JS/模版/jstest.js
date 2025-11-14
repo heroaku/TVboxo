@@ -23,7 +23,7 @@ var rule = {
   lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
   double: true,
   推荐: '*',
-  一级: 'body&&.public-list-box;.time-title&&Text;img&&data-src;.public-list-prb&&Text;a&&href',
+  一级: 'body&&.public-list-box;a&&title;img&&data-src;.public-list-prb&&Text;a&&href',
   二级: {
     title: 'h3&&Text;类型',
     img: '.mask-0&&data-src',
