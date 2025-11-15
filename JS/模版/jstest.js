@@ -22,7 +22,8 @@ var rule = {
     	// "content":".video-info-content&&Text",
     	"content":".sqjj_a&&Text",
     	"tabs":".module-tab-item.tab-item",
-    	"lists":".module-blocklist:eq(#id)&&.sort-item a"
+    	//"lists":".module-blocklist:eq(#id)&&.sort-item a"
+		"lists":".module-player-list:eq(#id)&&.sort-item a"
 	},
 
     // searchUrl:'https://so.juhuang.tv/?s=**',
