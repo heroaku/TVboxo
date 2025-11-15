@@ -17,7 +17,8 @@
     "标题": "alt=\"&&\"",
     "图片": "data-srcl=\"&&\"",
    // "副标题": "✨+video-class\">&&</",  
-    "副标题": "✨+module-item-text&&</div>",
+    //<div class=\"module-tab-items&&</div>
+    "副标题": "✨+<div class=\"module-item-text&&</div>",
     "链接": "href=\"&&\"",
     "影片年代": "上映：&&</div>",
     "影片地区": "地区：&&</div>",
