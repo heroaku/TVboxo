@@ -1,39 +1,33 @@
 var rule = {
-  title: '茉小影视',
-  host: 'https://www.moxy.top',
-  url: '/show/id/fyclass/page/fypage.html',
-  searchUrl: '/search/page/fypage/wd/**.html',
-  // https://www.moxy.top/show/id/fyclass/page/fypage.html
-  //https://www.moxy.top/search/page/fypage/wd/**.html
-  searchable: 2,
-  quickSearch: 0,
-  filterable: 0,
-  filter: '',
-  filter_url: '',
-  filter_def: {},
-  headers: {
-    'User-Agent': 'MOBILE_UA',
-  },
-  //timeout: 5000,
-  //class_parse: 'ul.flex.around&&li;a&&Text;a&&href;.*/(.*?).html',
-  //cate_exclude: '',
-  class_name:'电影&电视剧&综艺&动漫&短剧',
-  class_url:'1&2&3&4&5',
-  play_parse: false,
-  lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
-  double: true,
-  推荐: '*',
-  一级: 'body&&.public-list-box;a&&title;img&&data-src;.public-list-prb&&Text;a&&href',
-  二级: {
-    title: 'h3&&Text;类型',
-    img: '.mask-0&&data-src',
-    desc: '.detail-info .this-info&&span:eq(1)--strong&&Text;.detail-info .this-info&&span:eq(2)--strong&&Text;.detail-info .this-info&&span:eq(3)--strong&&Text;.lightSpeedIn .this-info:eq(4)--strong&&Text;.lightSpeedIn .this-info:eq(3)--strong&&Text',
-    content: '#height_limit&&Text',
-    tabs: '.anthology-tab a',
-    lists: '.anthology-list-play:eq(#id)&&li',
-    tab_text: 'a--span&&Text',
-    list_text: 'body&&Text',
-    list_url: 'a&&href',
-  },
-   搜索: '*',
+    title:'剧荒TV',
+    host:'https://www.6699z.cn',
+    // https://www.6699z.cn/index.php/vod/show/id/fyclass/page/fypage.html
+    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+    searchable:2,
+    quickSearch:0,
+    filterable:0,
+    headers:{'User-Agent':'MOBILE_UA', },
+    class_name:'电视剧&电影&综艺&动漫&短剧',//静态分类名称拼接
+    class_url:'2&1&3&4&58',//静态分类标识拼接
+    play_parse:true,
+    lazy:'',
+    limit:6,
+    推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+    double:true, // 推荐内容是否双层定位
+    一级:'.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+    二级:{
+	    "title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text",
+    	"img":".module-item-pic&&img&&data-src",
+    	"desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text",
+    	// "content":".video-info-content&&Text",
+    	"content":".sqjj_a&&Text",
+    	"tabs":".module-tab-title",
+    	"lists":".module-blocklist&&.sort-item a"
+	},
+
+    // searchUrl:'https://so.juhuang.tv/?s=**',
+    searchUrl:'https://so.juhuang.tv/soapi.php?wd=**',
+    detailUrl:'https://juhuang.tv/play/fyid_play_1_1.html', //非必填,二级详情拼接链接
+    // 搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
+    搜索:'json:list;vod_name;vod_pic;vod_year;vod_id',
 }
