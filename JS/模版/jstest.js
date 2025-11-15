@@ -2,7 +2,9 @@ var rule = {
     title:'剧荒TV',
     host:'https://www.6699z.cn',
     // https://www.6699z.cn/index.php/vod/show/id/fyclass/page/fypage.html
+	//https://www.6699z.cn/index.php/vod/search/page/fypage/wd/**.html
     url:'/index.php/vod/show/id/fyclass/page/fypage.html',
+    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
     searchable:2,
     quickSearch:0,
     filterable:0,
@@ -25,10 +27,7 @@ var rule = {
     	//"lists":".module-blocklist:eq(#id)&&.sort-item a"
 		"lists":".module-player-list:eq(#id)&&.sort-item a"
 	},
-
-    // searchUrl:'https://so.juhuang.tv/?s=**',
-    searchUrl:'https://so.juhuang.tv/soapi.php?wd=**',
-    detailUrl:'https://juhuang.tv/play/fyid_play_1_1.html', //非必填,二级详情拼接链接
+   // detailUrl:'https://juhuang.tv/play/fyid_play_1_1.html', //非必填,二级详情拼接链接
     // 搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
     搜索:'json:list;vod_name;vod_pic;vod_year;vod_id',
 }
