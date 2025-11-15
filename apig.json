@@ -431,6 +431,7 @@
       "key": "3Q",
       "name": "三七X｜影视",
       "type": 3,
+	  "jar": "./tvkj.jar",
       "api": "csp_XBPQ",
       "searchable": 1,
       "quickSearch": 1,
