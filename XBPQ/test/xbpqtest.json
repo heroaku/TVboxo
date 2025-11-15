@@ -70,7 +70,7 @@
     "地区详情": "",
     "演员详情": ".detail-info&&.slide-info,2&&Text!演员：",
     "简介详情": "#height_limit&&Text",
-    "线路列表数组规则": ".anthology-tab&&a",
+    "线路列表数组规则": ".swiper-wrapper&&a",
     "线路标题": "Text",
     "播放列表数组规则": "body&&.anthology-list-play",
     "选集列表数组规则": "li",
