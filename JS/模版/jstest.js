@@ -21,8 +21,8 @@ var rule = {
     	"desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text",
     	// "content":".video-info-content&&Text",
     	"content":".sqjj_a&&Text",
-    	"tabs":".module-tab-title",
-    	"lists":".module-blocklist&&.sort-item a"
+    	"tabs":".module-tab-item.tab-item",
+    	"lists":".module-blocklist:eq(#id)&&.sort-item a"
 	},
 
     // searchUrl:'https://so.juhuang.tv/?s=**',
