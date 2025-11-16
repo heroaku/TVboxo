@@ -1,8 +1,9 @@
 var rule = {
-    title: '爱看影视',
-    host: 'https://www.akysw.pro',
-    class_name:'电影&电视剧&综艺&动漫&短剧',
-    class_url:'1&2&3&4&20',
+    title: '660影视',
+    host: 'https://www.660f.com',
+	//https://www.660f.com/vodshow/tvplay-----------.html
+    class_name:'电影&电视剧&综艺&动漫',
+    class_url:'movie&tvplay&tvshow&dongman',
     homeUrl: '',
     searchUrl: '/index.php/ajax/suggest?mid=1&wd=**',
     searchable: 2,
@@ -10,18 +11,18 @@ var rule = {
     headers:{'User-Agent':'MOBILE_UA'},
     // 分类链接fypage参数支持1个()表达式
     // url: '/index.php/api/vod#type=fyclass&page=fypage',
-	url: '/index.php/api/vod#type=fyclass&page=fypage',
-	filterable:0,//是否启用分类筛选,
-	//filter_url:'{{fl.cateId}}',
-	//filter: {"1":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"1"},{"n":"动作片","v":"6"},{"n":"喜剧片","v":"7"},{"n":"爱情片","v":"8"},{"n":"科幻片","v":"9"},{"n":"恐怖片","v":"10"},{"n":"剧情片","v":"11"},{"n":"战争片","v":"12"}]}],"2":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"2"},{"n":"国产剧","v":"13"},{"n":"港台剧","v":"14"},{"n":"日韩剧","v":"15"},{"n":"欧美剧","v":"16"}]}]},
-	//filter_def:{
-	//	1:{cateId:'1'},
-	//	2:{cateId:'2'},
-	//	3:{cateId:'3'},
-	//	4:{cateId:'4'}
-	//},
+	url: '/index.php/api/vod#type=fyfilter&page=fypage',
+	filterable:1,//是否启用分类筛选,
+	filter_url:'{{fl.cateId}}',
+	filter: {"1":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"1"},{"n":"动作片","v":"6"},{"n":"喜剧片","v":"7"},{"n":"爱情片","v":"8"},{"n":"科幻片","v":"9"},{"n":"恐怖片","v":"10"},{"n":"剧情片","v":"11"},{"n":"战争片","v":"12"}]}],"2":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"2"},{"n":"国产剧","v":"13"},{"n":"港台剧","v":"14"},{"n":"日韩剧","v":"15"},{"n":"欧美剧","v":"16"}]}]},
+	filter_def:{
+		1:{cateId:'1'},
+		2:{cateId:'2'},
+		3:{cateId:'3'},
+		4:{cateId:'4'}
+	},
     //detailUrl:'/index.php/vod/detail/id/fyid.html',
-	 detailUrl:'/voddetail/fyid.html',
+	 detailUrl:'/vodhtml/fyid.html',
 	  lazy: "js:\n  let html = request(input);\n  let playerMatch = html.match(/var player_aaaa\\s*=\\s*(\\{.*?\\})\\s*;/);\n  if (playerMatch) {\n    try {\n      let json = JSON5.parse(playerMatch[1]);\n      let url = json.url;\n      if (json.encrypt == '1') {\n        url = unescape(url);\n      } else if (json.encrypt == '2') {\n        url = unescape(base64Decode(url));\n      }\n      if (/(\\.m3u8|\\.mp4)/i.test(url)) {\n        input = {parse:0, jx:0, url: url};\n      } else {\n        input = {parse:0, jx:1, url: url};\n      }\n    } catch (e) {\n      console.error('解析失败:', e);\n      let iframeSrc = html.match(/<iframe[^>]+src=['\"]([^'\"?#]+)/i)?.[1];\n      if (iframeSrc) {\n        let urlParam = new URLSearchParams(iframeSrc.split('?')[1]).get('url');\n        if (urlParam) {\n          input = {parse:0, jx:0, url: decodeURIComponent(urlParam)};\n        }\n      }\n    }\n  }",
     推荐:'.list-vod.flex; .public-list-box;a&&title;.lazy&&data-original;.public-list-prb&&Text;a&&href',
    //一级: '.public-list-box;a&&title;img&&data-src;.public-list-prb&&Text;a&&href',
