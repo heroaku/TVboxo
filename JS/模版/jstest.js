@@ -1,7 +1,9 @@
 var rule = {
     title: '660影视',
     host: 'https://www.660f.com',
-	//https://www.660f.com/vodshow/tvplay-----------.html
+	//https://www.660f.com/vodshow/fyclass-----------.html
+	//url: '/index.php/api/vod#type=fyclass&page=fypage',
+	url: '/vodshow/fyclass-----------.html',
     class_name:'电影&电视剧&综艺&动漫',
     class_url:'movie&tvplay&tvshow&dongman',
     homeUrl: '',
