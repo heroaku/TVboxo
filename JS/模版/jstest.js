@@ -24,12 +24,14 @@ var rule = {
     推荐:'.list-vod.flex; .public-list-box;a&&title;.lazy&&data-original;.public-list-prb&&Text;a&&href',
    //一级: '.public-list-box;a&&title;img&&data-src;.public-list-prb&&Text;a&&href',
    一级:'js:let body=input.split("#")[1];let t=Math.round(new Date/1e3).toString();let key=md5("DS"+t+"DCC147D11943AF75");let url=input.split("#")[0];body=body+"&time="+t+"&key="+key;print(body);fetch_params.body=body;let html=post(url,fetch_params);let data=JSON.parse(html);VODS=data.list;',
-    二级: {
-    "title": ".this-desc-title&&Text;.focus-item-label-original&&Text",
-    "img": ".lazyload&&data-original",
-    "desc": ".this-desc-info&&span:eq(1)&&Text;.this-desc-info&&span:eq(2)&&Text;.this-info:eq(1)&&Text;.this-info&&Text",
-    "content": ".module-info-introduction&&Text",
-    "tabs": ".anthology-tab&&.swiper-wrapper a",
-    "lists": ".anthology-list-box:eq(#id) ul li"},
+  二级: {
+    title: '.slide-info-title&&Text;.slide-info:eq(2)--strong&&Text',
+    img: '.detail-pic&&data-original',
+    desc: '.slide-info-remarks&&Text;.slide-info-remarks:eq(1)&&Text;.slide-info-remarks:eq(2)&&Text;.slide-info:eq(1)--strong&&Text;.info-parameter&&ul&&li:eq(3)&&Text',
+    content: '#height_limit&&Text',
+    tabs: '.anthology.wow.fadeInUp.animated&&.swiper-wrapper&&a',
+    tab_text: 'a--span&&Text',
+    lists: '.anthology-list-box:eq(#id) li',
+  },
     搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',
 }
