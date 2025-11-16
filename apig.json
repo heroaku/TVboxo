@@ -1048,6 +1048,14 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/爱看影视JS.js"
         },
+					{
+            "key": "660影视",
+            "name": "660影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/660影视.js"
+        },
 				{
             "key": "白票影视",
             "name": "白票影视",
