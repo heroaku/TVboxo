@@ -1,33 +1,37 @@
 var rule = {
-    title:'BP影视',
-    host:'https://www.6699z.cn',
-    // https://www.6699z.cn/index.php/vod/show/id/fyclass/page/fypage.html
-	//https://www.6699z.cn/index.php/vod/search/page/fypage/wd/**.html
-    url:'/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl:'/index.php/vod/search/page/fypage/wd/**.html',
-    searchable:2,
-    quickSearch:0,
-    filterable:0,
-    headers:{'User-Agent':'MOBILE_UA', },
-    class_name:'电视剧&电影&综艺&动漫&短剧',//静态分类名称拼接
-    class_url:'2&1&3&4&58',//静态分类标识拼接
-    play_parse:true,
-	lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
-    limit:6,
-    推荐:'.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-    double:true, // 推荐内容是否双层定位
-    一级:'.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
-    二级:{
-	    "title":"h1&&Text;.video-info-aux&&div&&a:eq(0)&&Text",
-    	"img":".module-item-pic&&img&&data-src",
-    	"desc":";.video-info-aux&&a:eq(1)&&Text;.video-info-aux&&a:eq(2)&&Text;.video-info-items:eq(1) a&&Text;.video-info-items:eq(0) a&&Text",
-    	// "content":".video-info-content&&Text",
-    	"content":".sqjj_a&&Text",
-    	"tabs":".module-tab-item.tab-item",
-    	//"lists":".module-blocklist:eq(#id)&&.sort-item a"
-		"lists":".module-player-list:eq(#id)&&.sort-item a"
+    title: '九酷',
+    host: 'https://www.akysw.pro',
+    class_name:'电影&电视剧&综艺&动漫',
+    class_url:'1&2&3&4',
+    homeUrl: '',
+    searchUrl: '/index.php/ajax/suggest?mid=1&wd=**',
+    searchable: 2,
+    quickSearch: 0,
+    headers:{'User-Agent':'MOBILE_UA'},
+    // 分类链接fypage参数支持1个()表达式
+    // url: '/index.php/api/vod#type=fyclass&page=fypage',
+	url: '/index.php/api/vod#type=fyfilter&page=fypage',
+	filterable:1,//是否启用分类筛选,
+	filter_url:'{{fl.cateId}}',
+	filter: {"1":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"1"},{"n":"动作片","v":"6"},{"n":"喜剧片","v":"7"},{"n":"爱情片","v":"8"},{"n":"科幻片","v":"9"},{"n":"恐怖片","v":"10"},{"n":"剧情片","v":"11"},{"n":"战争片","v":"12"}]}],"2":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"2"},{"n":"国产剧","v":"13"},{"n":"港台剧","v":"14"},{"n":"日韩剧","v":"15"},{"n":"欧美剧","v":"16"}]}]},
+	filter_def:{
+		1:{cateId:'1'},
+		2:{cateId:'2'},
+		3:{cateId:'3'},
+		4:{cateId:'4'}
 	},
-   // detailUrl:'https://juhuang.tv/play/fyid_play_1_1.html', //非必填,二级详情拼接链接
-    // 搜索:'.module-items .module-search-item;a&&title;img&&data-src;.video-serial&&Text;a&&href',
-    搜索:'json:list;vod_name;vod_pic;vod_year;vod_id',
+    detailUrl:'/index.php/vod/detail/id/fyid.html',
+    推荐:'.list-vod.flex; .public-list-box;a&&title;.lazy&&data-original;.public-list-prb&&Text;a&&href',
+    一级:'',
+    一级:'js:let body=input.split("#")[1];let t=Math.round(new Date/1e3).toString();let key=md5("DS"+t+"DCC147D11943AF75");let url=input.split("#")[0];body=body+"&time="+t+"&key="+key;print(body);fetch_params.body=body;let html=post(url,fetch_params);let data=JSON.parse(html);VODS=data.list;',
+    二级:{
+		"title":".slide-info-title&&Text;.slide-info:eq(3)--strong&&Text",
+		"img":".detail-pic&&data-original",
+		"desc":".fraction&&Text;.slide-info-remarks:eq(1)&&Text;.slide-info-remarks:eq(2)&&Text;.slide-info:eq(2)--strong&&Text;.slide-info:eq(1)--strong&&Text",
+		"content":"#height_limit&&Text",
+		"tabs":".anthology&&.swiper-slide",
+		"tab_text":".swiper-slide--i&&Text",
+		"lists":".anthology-list-box:eq(#id) li"
+	},
+    搜索:'json:list;name;pic;;id',
 }
