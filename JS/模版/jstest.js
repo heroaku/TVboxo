@@ -1,5 +1,5 @@
 var rule = {
-    title: 'EU影视',
+    title: '智子影视',
     host: 'https://www.ziziys.org',
      //https://euvod.tv/vodshow/fyclass--time------fypage---.html
     //https://www.ziziys.org/vodshow/2--------2---.html
