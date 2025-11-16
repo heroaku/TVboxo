@@ -1,17 +1,26 @@
+# coding=utf-8
+# !/usr/bin/python
+
 """
 
-作者 凯悦宾馆 🚓 内容均从互联网收集而来 仅供交流学习使用 版权归原创者所有 如侵犯了您的权益 请通知作者 将及时删除侵权内容
-                    ====================kaiyuebinguan====================
+作者 丢丢喵推荐 🚓 内容均从互联网收集而来 仅供交流学习使用 版权归原创者所有 如侵犯了您的权益 请通知作者 将及时删除侵权内容
+                    ====================Diudiumiao====================
 
 """
 
 from Crypto.Util.Padding import unpad
+from Crypto.Util.Padding import pad
 from urllib.parse import unquote
 from Crypto.Cipher import ARC4
+from urllib.parse import quote
 from base.spider import Spider
+from Crypto.Cipher import AES
+from datetime import datetime
 from bs4 import BeautifulSoup
+from base64 import b64decode
 import urllib.request
 import urllib.parse
+import datetime
 import binascii
 import requests
 import base64
@@ -23,13 +32,11 @@ import os
 
 sys.path.append('..')
 
-xurl = "https://www.akysw.pro"
+xurl = "https://www.4kvm.me"
 
 headerx = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.87 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Linux; U; Android 8.0.0; zh-cn; Mi Note 2 Build/OPR1.170623.032) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.1.1'
           }
-
-pm = ''
 
 class Spider(Spider):
     global xurl
@@ -72,9 +79,9 @@ class Spider(Spider):
                         else:
                             number = 0
                         if 'http' not in match[0]:
-                            output += f"#{'📽️丢丢👉' + match[1]}${number}{xurl}{match[0]}"
+                            output += f"#{match[1]}${number}{xurl}{match[0]}"
                         else:
-                            output += f"#{'📽️丢丢👉' + match[1]}${number}{match[0]}"
+                            output += f"#{match[1]}${number}{match[0]}"
                     output = output[1:]
                     purl = purl + output + "$$$"
                 purl = purl[:-3]
@@ -104,228 +111,229 @@ class Spider(Spider):
             middle_text = text[start_index + len(start_str):end_index]
             matches = re.findall(start_index1, middle_text)
             if matches:
-                new_list = [f'✨丢丢👉{item}' for item in matches]
+                new_list = [f'{item}' for item in matches]
                 jg = '$$$'.join(new_list)
                 return jg
 
     def homeContent(self, filter):
-        result = {}
-        result = {"class": [{"type_id": "1", "type_name": "丢丢电影🌠"},
-                            {"type_id": "2", "type_name": "丢丢剧集🌠"},
-                            {"type_id": "4", "type_name": "丢丢动漫🌠"},
-                            {"type_id": "164", "type_name": "丢丢4K🌠"},
-                            {"type_id": "79", "type_name": "丢丢综艺🌠"},
-                            {"type_id": "166", "type_name": "丢丢体育🌠"},
-                            {"type_id": "170", "type_name": "丢丢演唱会🌠"},
-                            {"type_id": "165", "type_name": "丢丢短剧🌠"}],
+        result = {"class": []}
 
-                  "list": [],
-                  "filters": {"77": [{"key": "年代",
-                                     "name": "年代",
-                                     "value": [{"n": "全部", "v": "0"},
-                                               {"n": "80年代", "v": "42"},
-                                               {"n": "90年代", "v": "43"},
-                                               {"n": "00年代", "v": "44"},
-                                               {"n": "10年代", "v": "45"},
-                                               {"n": "20年代", "v": "46"}]}],
-                              "78": [{"key": "年代",
-                                     "name": "年代",
-                                     "value": [{"n": "全部", "v": "0"},
-                                               {"n": "80年代", "v": "42"},
-                                               {"n": "90年代", "v": "43"},
-                                               {"n": "00年代", "v": "44"},
-                                               {"n": "10年代", "v": "45"},
-                                               {"n": "20年代", "v": "46"}]}],
-                              "80": [{"key": "年代",
-                                      "name": "年代",
-                                      "value": [{"n": "全部", "v": "0"},
-                                                {"n": "80年代", "v": "42"},
-                                                {"n": "90年代", "v": "43"},
-                                                {"n": "00年代", "v": "44"},
-                                                {"n": "10年代", "v": "45"},
-                                                {"n": "20年代", "v": "46"}]}],
-                              "164": [{"key": "年代",
-                                     "name": "年代",
-                                     "value": [{"n": "全部", "v": "0"},
-                                               {"n": "80年代", "v": "42"},
-                                               {"n": "90年代", "v": "43"},
-                                               {"n": "00年代", "v": "44"},
-                                               {"n": "10年代", "v": "45"},
-                                               {"n": "20年代", "v": "46"}]}],
-                              "79": [{"key": "年代",
-                                      "name": "年代",
-                                      "value": [{"n": "全部", "v": "0"},
-                                                {"n": "80年代", "v": "42"},
-                                                {"n": "90年代", "v": "43"},
-                                                {"n": "00年代", "v": "44"},
-                                                {"n": "10年代", "v": "45"},
-                                                {"n": "20年代", "v": "46"}]}],
-                              "166": [{"key": "年代",
-                                      "name": "年代",
-                                      "value": [{"n": "全部", "v": "0"},
-                                                {"n": "80年代", "v": "42"},
-                                                {"n": "90年代", "v": "43"},
-                                                {"n": "00年代", "v": "44"},
-                                                {"n": "10年代", "v": "45"},
-                                                {"n": "20年代", "v": "46"}]}],
-                              "170": [{"key": "年代",
-                                      "name": "年代",
-                                      "value": [{"n": "全部", "v": "0"},
-                                                {"n": "80年代", "v": "42"},
-                                                {"n": "90年代", "v": "43"},
-                                                {"n": "00年代", "v": "44"},
-                                                {"n": "10年代", "v": "45"},
-                                                {"n": "20年代", "v": "46"}]}],
-                              "165": [{"key": "年代",
-                                     "name": "年代",
-                                     "value": [{"n": "全部", "v": "0"},
-                                               {"n": "80年代", "v": "42"},
-                                               {"n": "90年代", "v": "43"},
-                                               {"n": "00年代", "v": "44"},
-                                               {"n": "10年代", "v": "45"},
-                                               {"n": "20年代", "v": "46"}]}]}}
+        detail = requests.get(url=xurl, headers=headerx)
+        detail.encoding = "utf-8"
+        res = detail.text
+        doc = BeautifulSoup(res, "lxml")
+        soups = doc.find_all('ul', class_="main-header")
+
+        for soup in soups:
+            vods = soup.find_all('li')
+
+            for vod in vods:
+
+                name = vod.text.strip()
+
+                if any(keyword in name for keyword in ["首页", "电视剧", "高分电影", "影片下载", "热门播放"]):
+                    continue
+
+                id = vod.find('a')['href']
+                if 'http' not in id:
+                    id = xurl + id
+
+                result["class"].append({"type_id": id, "type_name": name})
 
         return result
 
     def homeVideoContent(self):
         videos = []
 
-        try:
-            detail = requests.get(url=xurl, headers=headerx)
-            detail.encoding = "utf-8"
-            res = detail.text
+        detail = requests.get(url=xurl, headers=headerx)
+        detail.encoding = "utf-8"
+        res = detail.text
+        doc = BeautifulSoup(res, "lxml")
 
-            doc = BeautifulSoup(res, "lxml")
+        soups = doc.find_all('article', class_="item movies")
 
-            soups = doc.find_all('div', class_="hide-b-20")
+        for vod in soups:
 
-            if soups and len(soups) > 1:
-                soups = soups[1]
-                vods = soups.find_all('div', class_="public-list-box")
+            name = vod.find('img')['alt']
 
-                for vod in vods:
-                    names = vod.find('div', class_="public-list-div")
-                    name = names.find('a')['title']
+            ids = vod.find('div', class_="poster")
+            id = ids.find('a')['href']
 
-                    id = names.find('a')['href']
+            pic = vod.find('img')['src']
 
-                    pic = vod.find('img')['data-src']
+            remarks = vod.find('div', class_="rating")
+            remark = remarks.text.strip()
 
-                    if 'http' not in pic:
-                        pic = xurl + pic
+            video = {
+                "vod_id": id,
+                "vod_name": name,
+                "vod_pic": pic,
+                "vod_remarks": remark
+                     }
+            videos.append(video)
 
-                    remarks = vod.find('span', class_="public-list-prb hide")
-                    remark = remarks.text.strip()
-
-                    video = {
-                        "vod_id": id,
-                        "vod_name": '丢丢📽️' + name,
-                        "vod_pic": pic,
-                        "vod_remarks": '丢丢▶️' + remark
-                             }
-                    videos.append(video)
-
-            result = {'list': videos}
-            return result
-        except:
-            pass
+        result = {'list': videos}
+        return result
 
     def categoryContent(self, cid, pg, filter, ext):
         result = {}
         videos = []
 
-        if pg:
-            page = int(pg)
+        if 'movies' not in cid:
+
+            if '@' in cid:
+                fenge = cid.split("@")
+                detail = requests.get(url=fenge[0], headers=headerx)
+                detail.encoding = "utf-8"
+                res = detail.text
+                doc = BeautifulSoup(res, "lxml")
+
+                soups = doc.find_all('div', class_="se-c")
+
+                for vod in soups:
+
+                    name = vod.text.strip()
+
+                    id = vod.find('a')['href']
+
+                    pic = self.extract_middle_text(str(res), '<meta property="og:image"  content="', '"', 0).replace('#038;', '')
+
+                    remark = "推荐"
+
+                    video = {
+                        "vod_id": id,
+                        "vod_name": name,
+                        "vod_pic": pic,
+                        "vod_remarks": remark
+                            }
+                    videos.append(video)
+            else:
+                if pg:
+                    page = int(pg)
+                else:
+                    page = 1
+
+                url = f'{cid}/page/{str(page)}'
+                detail = requests.get(url=url, headers=headerx)
+                detail.encoding = "utf-8"
+                res = detail.text
+                doc = BeautifulSoup(res, "lxml")
+
+                soups = doc.find_all('article', class_="item tvshows")
+
+                for vod in soups:
+                    name = vod.find('img')['alt']
+
+                    ids = vod.find('div', class_="poster")
+                    id = ids.find('a')['href']
+
+                    pic = vod.find('img')['src']
+
+                    remarks = vod.find('div', class_="update")
+                    remark = remarks.text.strip()
+
+                    video = {
+                        "vod_id": id + '@' + name,
+                        "vod_name": name,
+                        "vod_pic": pic,
+                        "vod_tag": "folder",
+                        "vod_remarks": remark
+                            }
+                    videos.append(video)
         else:
-            page = 1
+            if pg:
+                page = int(pg)
+            else:
+                page = 1
 
-        if '年代' in ext.keys():
-            NdType = ext['年代']
-        else:
-            NdType = ''
-
-        if page == '1':
-            url = f'{xurl}/vod/list/1/{cid}/0/0/0/0/0/0'
-
-        else:
-            url = f'{xurl}/vod/list/{str(page)}/{cid}/0/{NdType}/0/0/0/0'
-
-        try:
+            url = f'{cid}/page/{str(page)}'
             detail = requests.get(url=url, headers=headerx)
             detail.encoding = "utf-8"
             res = detail.text
             doc = BeautifulSoup(res, "lxml")
 
-            soups = doc.find_all('div', class_="border-box")
+            soups = doc.find_all('div', class_="animation-2")
 
-            for soup in soups:
-                vods = soup.find_all('div', class_="public-list-box")
+            for item in soups:
+                vods = item.find_all('article')
 
                 for vod in vods:
 
                     name = vod.find('img')['alt']
 
-                    ids = vod.find('a', class_="public-list-exp")
-                    id = ids['href']
+                    ids = vod.find('div', class_="poster")
+                    id = ids.find('a')['href']
 
                     pic = vod.find('img')['src']
 
-                    if 'http' not in pic:
-                        pic = xurl + pic
-
-                    remarks = vod.find('span', class_="public-list-prb")
+                    remarks = vod.find('div', class_="rating")
                     remark = remarks.text.strip()
 
                     video = {
                         "vod_id": id,
-                        "vod_name": '丢丢📽️' + name,
+                        "vod_name": name,
                         "vod_pic": pic,
-                        "vod_remarks": '丢丢▶️' + remark
-                            }
+                        "vod_remarks": remark
+                           }
                     videos.append(video)
+                    
+        if len(videos)<30:
+            pagecount=1
+        else:
+            pagecount = 9999
 
-        except:
-            pass
         result = {'list': videos}
         result['page'] = pg
-        result['pagecount'] = 9999
-        result['limit'] = 90
-        result['total'] = 999999
+        result['pagecount'] = pagecount
+        result['total'] = 999
+        result['limit'] = len(videos)
+
         return result
 
     def detailContent(self, ids):
-        global pm
         did = ids[0]
         result = {}
         videos = []
+        xianlu = ''
+        bofang = ''
 
-        if 'http' not in did:
-            did = xurl + did
+        if 'movies' not in did:
+            res = requests.get(url=did, headers=headerx)
+            res.encoding = "utf-8"
+            res = res.text
+            doc = BeautifulSoup(res, "lxml")
 
-        res1 = requests.get(url=did, headers=headerx)
-        res1.encoding = "utf-8"
-        res = res1.text
+            content = '剧情介绍📢' + self.extract_middle_text(res,'<meta name="description" content="','"', 0)
 
-        url = 'https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1732697392729/didiu.txt'
-        response = requests.get(url)
-        response.encoding = 'utf-8'
-        code = response.text
-        name = self.extract_middle_text(code, "s1='", "'", 0)
-        Jumps = self.extract_middle_text(code, "s2='", "'", 0)
+            postid = self.extract_middle_text(res, 'postid:', ',', 0)
 
-        content = '😸丢丢🎉为您介绍剧情📢本资源来源于网络🚓侵权请联系删除👉' + self.extract_middle_text(res,'class="text cor3" >','</div>', 0)
+            res1 = self.extract_middle_text(res,'videourls:[','],', 0)
+            data = json.loads(res1)
 
-        if name not in content:
-            bofang = Jumps
+            for vod in data:
+
+                name = str(vod['name'])
+
+                id = f"{vod['url']}@{postid}"
+
+                bofang = bofang + name + '$' + id + '#'
+
+            bofang = bofang[:-1]
+            xianlu = '4K影院'
+
         else:
-            bofang = self.extract_middle_text(res, '<ul class="anthology-list-play', '</ul>', 3, 'href="(.*?)" class="hide" style="width:100px">\s+(.*?)\s+</a>')
+            res = requests.get(url=did, headers=headerx)
+            res.encoding = "utf-8"
+            res = res.text
+            doc = BeautifulSoup(res, "lxml")
 
-        xianlu = self.extract_middle_text(res, '<div class="swiper-wrapper"','</div>',2, '</i>&nbsp;(.*?)</a>')
+            content = '剧情介绍📢' + self.extract_middle_text(res, '<meta name="description" content="', '"', 0)
+
+            bofang = self.extract_middle_text(res, "data-postid='", "'", 0)
+            xianlu = '4K影院'
 
         videos.append({
             "vod_id": did,
-            "vod_actor": '😸皮皮 😸灰灰',
-            "vod_director": '😸丢丢',
             "vod_content": content,
             "vod_play_from": xianlu,
             "vod_play_url": bofang
@@ -335,30 +343,119 @@ class Spider(Spider):
         return result
 
     def playerContent(self, flag, id, vipFlags):
-        parts = id.split("http")
 
-        xiutan = 0
+        if '@' in id:
+            fenge = id.split("@")
 
-        if xiutan == 0:
-            if len(parts) > 1:
-                before_https, after_https = parts[0], 'http' + parts[1]
+            url = f'{xurl}/artplayer?id={fenge[1]}&source=0&ep={fenge[0]}'
+            detail = requests.get(url=url, headers=headerx)
+            detail.encoding = "utf-8"
+            res = detail.text
 
-            if '239755956819.mp4' in after_https:
-                url = after_https
+            expires = self.extract_middle_text(res, "expires: '", "'", 0)
+            client = self.extract_middle_text(res, "client: '", "'", 0)
+            nonce = self.extract_middle_text(res, "nonce: '", "'", 0)
+            token = self.extract_middle_text(res, "token: '", "'", 0)
+            source = self.extract_middle_text(res, "source: '", "'", 0)
+
+            payload = {
+                "expires": expires,
+                "client": client,
+                "nonce": nonce,
+                "token": token,
+                "source": source
+                      }
+
+            response = requests.post(url=source, headers=headerx, json=payload)
+            response_data = json.loads(response.text)
+            url = response_data['url']
+        else:
+            url = f'{xurl}/artplayer?mvsource=0&id={id}&type=hls'
+            detail = requests.get(url=url, headers=headerx)
+            detail.encoding = "utf-8"
+            res = detail.text
+
+            expires = self.extract_middle_text(res, "expires: '", "'", 0)
+            client = self.extract_middle_text(res, "client: '", "'", 0)
+            nonce = self.extract_middle_text(res, "nonce: '", "'", 0)
+            token = self.extract_middle_text(res, "token: '", "'", 0)
+            source = self.extract_middle_text(res, "source: '", "'", 0)
+
+            payload = {
+                "expires": expires,
+                "client": client,
+                "nonce": nonce,
+                "token": token,
+                "source": source
+                      }
+
+            response = requests.post(url=source, headers=headerx, json=payload)
+            response_data = json.loads(response.text)
+            url = response_data['url']
+
+        result = {}
+        result["parse"] = 0
+        result["playUrl"] = ''
+        result["url"] = url
+        result["header"] = headerx
+        return result
+
+    def searchContentPage(self, key, quick, pg):
+        result = {}
+        videos = []
+
+        url = f'{xurl}/xssearch?s={key}'
+        detail = requests.get(url=url, headers=headerx)
+        detail.encoding = "utf-8"
+        res = detail.text
+        doc = BeautifulSoup(res, "lxml")
+
+        soups = doc.find_all('div', class_="result-item")
+
+        for vod in soups:
+            ids = vod.find('div', class_="title")
+            id = ids.find('a')['href']
+
+            if 'movies' not in id:
+
+                name = vod.find('img')['alt']
+
+                pic = vod.find('img')['src']
+
+                remark = "推荐"
+
+                video = {
+                    "vod_id": id + '@' + name,
+                    "vod_name": name,
+                    "vod_pic": pic,
+                    "vod_tag": "folder",
+                    "vod_remarks": remark
+                        }
+                videos.append(video)
+
             else:
-                res = requests.get(url=after_https, headers=headerx)
-                res = res.text
+                name = vod.find('img')['alt']
 
-                url = self.extract_middle_text(res, '?url=', "'", 0).replace('\\', '')
+                pic = vod.find('img')['src']
 
-            result = {}
-            result["parse"] = xiutan
-            result["playUrl"] = ''
-            result["url"] = url
-            result["header"] = headerx
-            return result
+                remark = "推荐"
 
-    def searchContent(self, key, quick):
+                video = {
+                    "vod_id": id,
+                    "vod_name": name,
+                    "vod_pic": pic,
+                    "vod_remarks": remark
+                        }
+                videos.append(video)
+
+        result['list'] = videos
+        result['page'] = pg
+        result['pagecount'] = 1
+        result['limit'] = 90
+        result['total'] = 999999
+        return result
+
+    def searchContent(self, key, quick, pg="1"):
         return self.searchContentPage(key, quick, '1')
 
     def localProxy(self, params):
@@ -369,8 +466,5 @@ class Spider(Spider):
         elif params['type'] == "ts":
             return self.proxyTs(params)
         return None
-
-
-
 
 
