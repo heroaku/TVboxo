@@ -9,7 +9,7 @@
     "起始页": "1",
     "分类url": "/index.php/api/vod;post;type={cateId}&page={catePg}&time=时间戳&key=md5(DS时间戳DCC147D11943AF75)&area={area}&class={class}&by={by}&lang={lang}&letter={letter}&year={year};;mrcd0",
     "分类": "电影&剧集&综艺&动漫&短剧",
-    "分类值": "2&1&3&4&29",
+    "分类值": "movie&tvplay&tvshow&4&29",
     "二次截取": "",
     "数组": "默认--list||首页--public-list-exp&&</a >",
     "标题": "默认--vod_name||首页--title=\"&&\"",
