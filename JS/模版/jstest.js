@@ -29,8 +29,7 @@ var rule = {
 		"img":".detail-pic&&data-original",
 		"desc":".fraction&&Text;.slide-info-remarks:eq(1)&&Text;.slide-info-remarks:eq(2)&&Text;.slide-info:eq(2)--strong&&Text;.slide-info:eq(1)--strong&&Text",
 		"content":"#height_limit&&Text",
-		"tabs":".anthology&&.swiper-slide",
-		"tab_text":".swiper-slide--i&&Text",
+		"tabs":".swiper-wrapper a",
 		"lists":".anthology-list-box:eq(#id) li"
 	},
     搜索:'json:list;name;pic;;id',
