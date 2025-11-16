@@ -1040,6 +1040,14 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/热播影视.js"
         },	
+					{
+            "key": "爱看影视JS",
+            "name": "爱看影视JS",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/爱看影视JS.js"
+        },
 				{
             "key": "白票影视",
             "name": "白票影视",
