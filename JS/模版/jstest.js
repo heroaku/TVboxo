@@ -1,39 +1,232 @@
-var rule = {
-    title: '九酷',
-    host: 'https://www.akysw.pro',
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'1&2&3&4',
-    homeUrl: '',
-    searchUrl: '/index.php/ajax/suggest?mid=1&wd=**',
-    searchable: 2,
-    quickSearch: 0,
-    headers:{'User-Agent':'MOBILE_UA'},
-    // 分类链接fypage参数支持1个()表达式
-    // url: '/index.php/api/vod#type=fyclass&page=fypage',
-	url: '/index.php/api/vod#type=fyfilter&page=fypage',
-	filterable:1,//是否启用分类筛选,
-	filter_url:'{{fl.cateId}}',
-	filter: {"1":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"1"},{"n":"动作片","v":"6"},{"n":"喜剧片","v":"7"},{"n":"爱情片","v":"8"},{"n":"科幻片","v":"9"},{"n":"恐怖片","v":"10"},{"n":"剧情片","v":"11"},{"n":"战争片","v":"12"}]}],"2":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"2"},{"n":"国产剧","v":"13"},{"n":"港台剧","v":"14"},{"n":"日韩剧","v":"15"},{"n":"欧美剧","v":"16"}]}]},
-	filter_def:{
-		1:{cateId:'1'},
-		2:{cateId:'2'},
-		3:{cateId:'3'},
-		4:{cateId:'4'}
-	},
-    //detailUrl:'/index.php/vod/detail/id/fyid.html',
-	 detailUrl:'/voddetail/fyid.html',
-	  lazy: "js:\n  let html = request(input);\n  let playerMatch = html.match(/var player_aaaa\\s*=\\s*(\\{.*?\\})\\s*;/);\n  if (playerMatch) {\n    try {\n      let json = JSON5.parse(playerMatch[1]);\n      let url = json.url;\n      if (json.encrypt == '1') {\n        url = unescape(url);\n      } else if (json.encrypt == '2') {\n        url = unescape(base64Decode(url));\n      }\n      if (/(\\.m3u8|\\.mp4)/i.test(url)) {\n        input = {parse:0, jx:0, url: url};\n      } else {\n        input = {parse:0, jx:1, url: url};\n      }\n    } catch (e) {\n      console.error('解析失败:', e);\n      let iframeSrc = html.match(/<iframe[^>]+src=['\"]([^'\"?#]+)/i)?.[1];\n      if (iframeSrc) {\n        let urlParam = new URLSearchParams(iframeSrc.split('?')[1]).get('url');\n        if (urlParam) {\n          input = {parse:0, jx:0, url: decodeURIComponent(urlParam)};\n        }\n      }\n    }\n  }",
-    推荐:'.list-vod.flex; .public-list-box;a&&title;.lazy&&data-original;.public-list-prb&&Text;a&&href',
-   //一级: '.public-list-box;a&&title;img&&data-src;.public-list-prb&&Text;a&&href',
-   一级:'js:let body=input.split("#")[1];let t=Math.round(new Date/1e3).toString();let key=md5("DS"+t+"DCC147D11943AF75");let url=input.split("#")[0];body=body+"&time="+t+"&key="+key;print(body);fetch_params.body=body;let html=post(url,fetch_params);let data=JSON.parse(html);VODS=data.list;',
-  二级: {
-    title: '.slide-info-title&&Text;.slide-info:eq(2)--strong&&Text',
-    img: '.detail-pic&&data-original',
-    desc: '.slide-info-remarks&&Text;.slide-info-remarks:eq(1)&&Text;.slide-info-remarks:eq(2)&&Text;.slide-info:eq(1)--strong&&Text;.info-parameter&&ul&&li:eq(3)&&Text',
-    content: '#height_limit&&Text',
-    tabs: '.anthology.wow.fadeInUp.animated&&.swiper-wrapper&&a',
-    tab_text: 'a--span&&Text',
-    lists: '.anthology-list-box:eq(#id) li',
-  },
-    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',
+const cheerio = createCheerio()
+const CryptoJS = createCryptoJS()
+
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.3'
+
+let appConfig = {
+    ver: 1,
+    title: '愛壹帆',
+    site: 'https://m.iyf.tv',
+    tabs: [
+        {
+            name: '电影',
+            ext: {
+                id: '3',
+            },
+        },
+        {
+            name: '电视',
+            ext: {
+                id: '4',
+            },
+        },
+        {
+            name: '综艺',
+            ext: {
+                id: '5',
+            },
+        },
+        {
+            name: '动漫',
+            ext: {
+                id: '6',
+            },
+        },
+        {
+            name: '短剧',
+            ext: {
+                id: '4,155',
+            },
+        },
+        {
+            name: '体育',
+            ext: {
+                id: '95',
+            },
+        },
+        {
+            name: '纪录片',
+            ext: {
+                id: '7',
+            },
+        },
+    ],
+}
+
+async function getConfig() {
+    await updateKeys()
+    return jsonify(appConfig)
+}
+
+async function getCards(ext) {
+    ext = argsify(ext)
+    let keys = $cache.get('iyf-keys')
+    const publicKey = JSON.parse(keys).publicKey
+    let cards = []
+    let { id, page = 1 } = ext
+
+    let url = `${appConfig.site}/api/list/Search?cinema=1&page=${page}&size=36&orderby=0&desc=1&cid=0,1,${id}&isserial=-1&isIndex=-1&isfree=-1`
+    let params = url.split('?')[1]
+    url += `&vv=${getSignature(params)}&pub=${publicKey}`
+
+    const { data } = await $fetch.get(url, {
+        headers: {
+            'User-Agent': UA,
+        },
+    })
+    let list = argsify(data).data.info[0].result
+
+    list.forEach((e) => {
+        cards.push({
+            vod_id: e.key,
+            vod_name: e.title,
+            vod_pic: e.image,
+            vod_remarks: e.cid,
+            ext: {
+                key: e.key,
+            },
+        })
+    })
+
+    return jsonify({
+        list: cards,
+    })
+}
+
+async function getTracks(ext) {
+    ext = argsify(ext)
+    const publicKey = JSON.parse($cache.get('iyf-keys')).publicKey
+    let tracks = []
+    let key = ext.key
+
+    let url = `${appConfig.site}/v3/video/languagesplaylist?cinema=1&vid=${key}&lsk=1&taxis=0&cid=0,1,4,133`
+    let params = url.split('?')[1]
+    url += `&vv=${getSignature(params)}&pub=${publicKey}`
+
+    const { data } = await $fetch.get(url, {
+        headers: {
+            'User-Agent': UA,
+        },
+    })
+
+    let playlist = argsify(data).data.info[0].playList
+    playlist.forEach((e) => {
+        const name = e.name
+        const key = e.key
+        tracks.push({
+            name: name,
+            pan: '',
+            ext: {
+                key: key,
+            },
+        })
+    })
+
+    return jsonify({
+        list: [
+            {
+                title: '默认分组',
+                tracks,
+            },
+        ],
+    })
+}
+
+async function getPlayinfo(ext) {
+    ext = argsify(ext)
+    const publicKey = JSON.parse($cache.get('iyf-keys')).publicKey
+    let key = ext.key
+    let url = `${appConfig.site}/v3/video/play?cinema=1&id=${key}&a=0&lang=none&usersign=1&region=GL.&device=1&isMasterSupport=1`
+    let params = url.split('?')[1]
+    url += `&vv=${getSignature(params)}&pub=${publicKey}`
+
+    const { data } = await $fetch.get(url, {
+        headers: {
+            'User-Agent': UA,
+        },
+    })
+
+    let paths = argsify(data).data.info[0].flvPathList
+    let playUrl = ''
+    paths.forEach(async (e) => {
+        if (e.isHls) {
+            let link = e.result
+            link += `?vv=${getSignature('')}&pub=${publicKey}`
+            playUrl = link
+        }
+    })
+
+    return jsonify({ urls: [playUrl] })
+}
+
+async function search(ext) {
+    ext = argsify(ext)
+    let cards = []
+
+    const text = encodeURIComponent(ext.text)
+    const page = ext.page || 1
+    const url = `https://rankv21.iyf.tv/v3/list/briefsearch?tags=${text}&orderby=4&page=${page}&size=10&desc=0&isserial=-1&istitle=true`
+
+    const { data } = await $fetch.get(url, {
+        headers: {
+            'User-Agent': UA,
+        },
+    })
+
+    let list = argsify(data).data.info[0].result
+    list.forEach((e) => {
+        cards.push({
+            vod_id: e.contxt,
+            vod_name: e.title,
+            vod_pic: e.imgPath,
+            vod_remarks: e.cid,
+            ext: {
+                key: e.contxt,
+            },
+        })
+    })
+
+    return jsonify({
+        list: cards,
+    })
+}
+
+async function updateKeys() {
+    let baseUrl = 'https://www.iyf.tv'
+    let { data } = await $fetch.get(baseUrl, {
+        headers: {
+            'User-Agent': UA,
+        },
+    })
+    const $ = cheerio.load(data)
+    let script = $('script:contains(injectJson)').text()
+    script.split('\n').forEach((e) => {
+        if (e.includes('injectJson')) {
+            let json = JSON.parse(e.replace('var injectJson =', '').replace(';', ''))
+            let publicKey = json['config'][0]['pConfig']['publicKey']
+            let privateKey = json['config'][0]['pConfig']['privateKey']
+            let keys = {
+                publicKey: publicKey,
+                privateKey: privateKey,
+            }
+            const jsonData = JSON.stringify(keys, null, 2)
+
+            $cache.set('iyf-keys', jsonData)
+        }
+    })
+}
+
+function getSignature(query) {
+    const publicKey = JSON.parse($cache.get('iyf-keys')).publicKey
+    const privateKey = getPrivateKey()
+    const input = publicKey + '&' + query.toLowerCase() + '&' + privateKey
+
+    return CryptoJS.MD5(CryptoJS.enc.Utf8.parse(input)).toString()
+}
+
+function getPrivateKey() {
+    const privateKey = JSON.parse($cache.get('iyf-keys')).privateKey
+    const timePublicKeyIndex = Date.now()
+
+    return privateKey[timePublicKeyIndex % privateKey.length]
 }
