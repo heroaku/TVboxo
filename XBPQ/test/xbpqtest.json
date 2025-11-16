@@ -7,7 +7,9 @@
     "主页url": "https://www.660f.com",
     "首页": "120",
     "起始页": "1",
-    "分类url": "/index.php/api/vod;post;type={cateId}&page={catePg}&time=时间戳&key=md5(DS时间戳DCC147D11943AF75)&area={area}&class={class}&by={by}&lang={lang}&letter={letter}&year={year};;mrcd0",
+   // https://www.660f.com/vodshow/{cateId}-----------.html
+   // "分类url": "/index.php/api/vod;post;type={cateId}&page={catePg}&time=时间戳&key=md5(DS时间戳DCC147D11943AF75)&area={area}&class={class}&by={by}&lang={lang}&letter={letter}&year={year};;mrcd0",
+   "分类url": "https://www.660f.com/vodshow/{cateId}-----------.html;;mrcd0",
     "分类": "电影&剧集&综艺&动漫&短剧",
     "分类值": "movie&tvplay&tvshow&4&29",
     "二次截取": "",
