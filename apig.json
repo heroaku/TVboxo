@@ -626,6 +626,17 @@
 		      "filterable": 1,
 		      "api": "./Py/爱瓜.py"
 		    },
+	        {
+            "key": "4K影视",
+            "name": "4KPY┃影视",
+            "type": 3,
+            "api": "./Py/4K影视.py",
+            "searchable": 1,
+            "changeable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+        },
 					{
             "key": "金牌影院JP",
             "name": "金牌影院JP",
