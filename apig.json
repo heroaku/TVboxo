@@ -1047,7 +1047,18 @@
 			"api": "./JS/drpy2.min.js",
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/白票影视.js"
-        },		
+        },	
+		    {
+		      "key": "白票影视X",
+		      "name": "白票影视X",
+		      "type": 3,
+		      "api": "csp_XBPQ",
+		      "searchable": 1,
+		      "quickSearch": 1,
+		      "filterable": 1,
+		      "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+		      "ext": "./XBPQ/白票影视X.json"
+		    },
 		{
 	  "key": " fxzds ",
 	  "name": "袋鼠影视",
