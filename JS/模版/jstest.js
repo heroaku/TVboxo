@@ -2,7 +2,7 @@ var rule = {
 author: '小可乐/2503/第一版',
 title: '小红影视',
 类型: '影视',
-host: 'https://www.xiaohys.com',
+host: 'https://www.660f.com/',
 hostJs: '',
 headers: {'User-Agent': MOBILE_UA},
 编码: 'utf-8',
