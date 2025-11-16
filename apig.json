@@ -713,6 +713,14 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/EU影视.js"
         },	
+					{
+            "key": "智子影视",
+            "name": "智子影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/智子影视.js"
+        },
 			{
             "key": "FREE影视",
             "name": "FREE影视",
