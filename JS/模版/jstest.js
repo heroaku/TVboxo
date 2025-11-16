@@ -20,7 +20,9 @@ var rule = {
 		3:{cateId:'3'},
 		4:{cateId:'4'}
 	},
-    detailUrl:'/index.php/vod/detail/id/fyid.html',
+    //detailUrl:'/index.php/vod/detail/id/fyid.html',
+	 detailUrl:'/voddetail/fyid.html',
+	  lazy: "js:\n  let html = request(input);\n  let playerMatch = html.match(/var player_aaaa\\s*=\\s*(\\{.*?\\})\\s*;/);\n  if (playerMatch) {\n    try {\n      let json = JSON5.parse(playerMatch[1]);\n      let url = json.url;\n      if (json.encrypt == '1') {\n        url = unescape(url);\n      } else if (json.encrypt == '2') {\n        url = unescape(base64Decode(url));\n      }\n      if (/(\\.m3u8|\\.mp4)/i.test(url)) {\n        input = {parse:0, jx:0, url: url};\n      } else {\n        input = {parse:0, jx:1, url: url};\n      }\n    } catch (e) {\n      console.error('解析失败:', e);\n      let iframeSrc = html.match(/<iframe[^>]+src=['\"]([^'\"?#]+)/i)?.[1];\n      if (iframeSrc) {\n        let urlParam = new URLSearchParams(iframeSrc.split('?')[1]).get('url');\n        if (urlParam) {\n          input = {parse:0, jx:0, url: decodeURIComponent(urlParam)};\n        }\n      }\n    }\n  }",
     推荐:'.list-vod.flex; .public-list-box;a&&title;.lazy&&data-original;.public-list-prb&&Text;a&&href',
    //一级: '.public-list-box;a&&title;img&&data-src;.public-list-prb&&Text;a&&href',
    一级:'js:let body=input.split("#")[1];let t=Math.round(new Date/1e3).toString();let key=md5("DS"+t+"DCC147D11943AF75");let url=input.split("#")[0];body=body+"&time="+t+"&key="+key;print(body);fetch_params.body=body;let html=post(url,fetch_params);let data=JSON.parse(html);VODS=data.list;',
