@@ -1,6 +1,7 @@
 var rule = {
      title: '55影视',
      host: 'https://www.55kan.com',
+	//https://www.55kpw.com
 	//https://www.wkvod.cc/vodshow/id/fyclass/page/fypage.html
 	//https://www.55kan.com/show/fyclass--------fypage---.html
      //模板:'首图2',
