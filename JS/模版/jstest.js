@@ -1,39 +1,62 @@
 var rule = {
-    title: '爱看影视',
-    host: 'https://www.netflixgc.com/',
-    class_name:'电影&电视剧&综艺&动漫',
-    class_url:'1&2&3&4',
-    homeUrl: '',
-    searchUrl: '/index.php/ajax/suggest?mid=1&wd=**',
-    searchable: 2,
-    quickSearch: 0,
-    headers:{'User-Agent':'MOBILE_UA'},
-    // 分类链接fypage参数支持1个()表达式
-    // url: '/index.php/api/vod#type=fyclass&page=fypage',
-	url: '/index.php/api/vod#type=fyfilter&page=fypage',
-	filterable:1,//是否启用分类筛选,
-	filter_url:'{{fl.cateId}}',
-	filter: {"1":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"1"},{"n":"动作片","v":"6"},{"n":"喜剧片","v":"7"},{"n":"爱情片","v":"8"},{"n":"科幻片","v":"9"},{"n":"恐怖片","v":"10"},{"n":"剧情片","v":"11"},{"n":"战争片","v":"12"}]}],"2":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"2"},{"n":"国产剧","v":"13"},{"n":"港台剧","v":"14"},{"n":"日韩剧","v":"15"},{"n":"欧美剧","v":"16"}]}]},
-	filter_def:{
-		1:{cateId:'1'},
-		2:{cateId:'2'},
-		3:{cateId:'3'},
-		4:{cateId:'4'}
-	},
-    //detailUrl:'/index.php/vod/detail/id/fyid.html',
-	 detailUrl:'/detail/fyid.html',
-	  lazy: "js:\n  let html = request(input);\n  let playerMatch = html.match(/var player_aaaa\\s*=\\s*(\\{.*?\\})\\s*;/);\n  if (playerMatch) {\n    try {\n      let json = JSON5.parse(playerMatch[1]);\n      let url = json.url;\n      if (json.encrypt == '1') {\n        url = unescape(url);\n      } else if (json.encrypt == '2') {\n        url = unescape(base64Decode(url));\n      }\n      if (/(\\.m3u8|\\.mp4)/i.test(url)) {\n        input = {parse:0, jx:0, url: url};\n      } else {\n        input = {parse:0, jx:1, url: url};\n      }\n    } catch (e) {\n      console.error('解析失败:', e);\n      let iframeSrc = html.match(/<iframe[^>]+src=['\"]([^'\"?#]+)/i)?.[1];\n      if (iframeSrc) {\n        let urlParam = new URLSearchParams(iframeSrc.split('?')[1]).get('url');\n        if (urlParam) {\n          input = {parse:0, jx:0, url: decodeURIComponent(urlParam)};\n        }\n      }\n    }\n  }",
-    推荐:'.list-vod.flex; .public-list-box;a&&title;.lazy&&data-original;.public-list-prb&&Text;a&&href',
-   //一级: '.public-list-box;a&&title;img&&data-src;.public-list-prb&&Text;a&&href',
-   一级:'js:let body=input.split("#")[1];let t=Math.round(new Date/1e3).toString();let key=md5("DS"+t+"DCC147D11943AF75");let url=input.split("#")[0];body=body+"&time="+t+"&key="+key;print(body);fetch_params.body=body;let html=post(url,fetch_params);let data=JSON.parse(html);VODS=data.list;',
-  二级: {
-    title: '.slide-info-title&&Text;.slide-info:eq(2)--strong&&Text',
-    img: '.detail-pic&&data-original',
-    desc: '.slide-info-remarks&&Text;.slide-info-remarks:eq(1)&&Text;.slide-info-remarks:eq(2)&&Text;.slide-info:eq(1)--strong&&Text;.info-parameter&&ul&&li:eq(3)&&Text',
-    content: '#height_limit&&Text',
-    tabs: '.anthology.wow.fadeInUp.animated&&.swiper-wrapper&&a',
-    tab_text: 'a--span&&Text',
-    lists: '.anthology-list-box:eq(#id) li',
-  },
-    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',
-}
+     title: '奈飞工厂',
+     host: 'https://www.netflixgc.com',
+     模板:'短视2',
+     searchUrl: '/vodsearch/**-------------/',
+     url:'/index.php/api/vod#type=fyclass&page=fypage',
+     detailUrl:'/detail/fyid.html',
+     searchable: 2,//是否启用全局搜索,
+     quickSearch: 1,//是否启用快速搜索,
+     filterable:0,//是否启用分类筛选,
+     headers: {
+       'Cookie': 'PHPSESSID=e6alj2s5i6gvk0urjp3iqkkfl0; ecPopup=1; _funcdn_token=5ff10ed9fc178af6e2645e44cd768d232acba767ebaa33a15e4d2682b97264a6; user_id=10992; user_name=yuanzl77; group_id=2; group_name=NXVIP; user_check=e59a37f5a4fec0072cb512869352f402; user_portrait=%2Fstatic%2Fimages%2Ftouxiang.png',
+       'User-Agent': 'MOBILE_UA'
+     },
+     lazy:`js:
+        var html = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);
+        var url = html.url;
+        var from = html.from;
+        var MacPlayerConfig={};
+        if (html.encrypt == '1') {
+            url = unescape(url)
+        } else if (html.encrypt == '2') {
+            url = unescape(base64Decode(url))
+        }
+        if (/.m3u8|.mp4/.test(url)) {
+            input = url
+        } else {
+        eval(fetch(HOST + "/static/js/playerconfig.js").replace('var Mac','Mac'));
+        var list = MacPlayerConfig.player_list[from].parse;
+            input={
+                jx:0,
+                url:list+url,
+                parse:1,
+                header: JSON.stringify({
+                    'referer': HOST
+                })
+            }
+        }
+     `,
+     limit: 6,
+     class_name:'电影&剧集&动漫',
+     class_url:'1&2&3',
+     tab_exclude:'SN|KK|LS|阿里|夸克',
+     double: false, // 推荐内容是否双层定位
+     推荐: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
+     一级:`js:
+        let body = input.split("#")[1];
+        let t = Math.round(new Date / 1e3).toString();
+        let key = md5("DS" + t + "DCC147D11943AF75");
+        let url = input.split("#")[0];
+        body = body + "&time=" + t + "&key=" + key;
+        print(body);
+        fetch_params.body = body;
+        let html = post(url, fetch_params);
+        let data = JSON.parse(html);
+        VODS = data.list.map(function(it) {
+            it.vod_pic = it.vod_pic.replace(/mac/, "https");
+            return it
+        });
+     `,
+     搜索: '.public-list-box;.thumb-txt&&Text;.public-list-exp&&img&&data-src;.public-list-prb&&Text;a&&href'
+    }
