@@ -1,86 +1,97 @@
 var rule = {
-    类型: '影视',//影视|听书|漫画|小说
-    title: 'PTT[优]',
-    host: 'https://ptt.red',
-    homeUrl: '/zh-cn',
-    url: '/zh-cn/p/fyclassfyfilter',
-    searchUrl: '/zh-cn/q/**?page=fypage',
-    searchable: 2,
-    quickSearch: 0,
-    filterable: 1,
-    filter: 'H4sIAAAAAAAAAO2X32saQRDH/5d76JMQ74d3Z8C/pIRytD6UpimYtBCCYCIGY9qoIbWVSltIqia1UUkQf+TSf8bdPf+Luml0ZtcsBFqf9HH3M+vOznxnvNnRdG316Y72Kr6trWqk0iLv+1pI2/Bex/H6nbf+Nn5nuMG3M/VRus63xwstGbrfPauNyvv3u0+8RNx79vJFzJjyUbVMu02ZR+B8vkV7tzK34Py3c/LFl7nuTA3opx+00pgxcMGgUWO3R7KBDfyq9dANYXDxQ4v0qzMG4CPJdIaDkmxgask1bvE3yKw9IF8PIcjT9WOCPLypssIkyCvPV0wT7s7Vh34FEIpsqUIOakDgxSzbpukMEAgmqxVJbwAERXG3QFMlIFE4k2sy/wIIihzNfh72DxDSsd/05idCIJmx14J7OryW9S+I/xEFAt2112ClIkIWvoudoFeZkYdTN0YWvDionQbNa3TKEBJKetfDgY+qZrJ+TEKNsGFN9LId9xKxuw1ETZmamBoyNTDVZapjGpZpGFE9KlE9iqkrUxdTR6YOprZMbUwjMo1gKseK1x5KBT06Jv08pGK6FlPB9tv0+JecClpJ0VJrcsHmm8RWbN3b3OIXrIU0Yy59kota0QJ50UHMhe7JESpI3Pd4QUIehZ7JEQhAaIbcDVdZCjxBS70vmN7NueldLWqUkZlS0JV6d02l3l1DqXekHOF/n1eJoSwFw1yWwsKVgjWvUjBstahttagdtagdtXLdpXIXTrkR3MX/afAIOleskEbTBeSbNS9FBI+n3S7N5hGCfIwbvHDKRt/2flFEigGLt+plP148Vdv2/1I1y/riZAzRCeopYfa0Iazs/HfQyQFy1LOng+bc/Flwimdt9NmS9kl3D3V4+EF2UiGX3xECRQblAt09REg9zDrWskwWrEySfwAneSZu2xMAAA==',
-    filter_url: '{% if fyclass !="1" %}{{fl.地区}}?page=fypage{% else %}{{fl.类型}}?page=fypage{{fl.地区|safe}}{% endif %}{{fl.年份|safe}}{{fl.排序|safe}}',
-    filter_def: {},
-    headers: {
-        'User-Agent': 'MOBILE_UA',
-    },
-    timeout: 5000,
-    class_parse: '.nav-tabs&&a;a&&Text;a&&href;(\\d+)',
-    cate_exclude: '',
-    play_parse: true,
-    lazy: $js.toString(() => {
-        let html = request(input);
-        let sdata = pdfh(html, '.container-fluid&&script&&Html');
-        // log(sdata);
-        let json = JSON.parse(sdata);
-        if (json.contentUrl) {
-            input = {parse: 0, url: json.contentUrl, js: ''};
-        }
-    }),
-    double: false,
-    推荐: '*',
-    //α大佬方案去除推荐页广告
-    一级: '#videos&&.card:not(:has(.badge-success:contains(广告)));a:eq(-1)&&Text;img&&src;.badge-success&&Text;a:eq(-1)&&href',
-    二级: $js.toString(() => {
-        let html = request(input);
-        let data = html.split('node:')[1].split('},')[0] + '}';
-        data = data.trim();
-        //   log(data);
-        let json = JSON.parse(data);
-        //   log(json);
-        VOD = {};
+author: '小可乐/2503/第一版',
+title: '小红影视',
+类型: '影视',
+host: 'https://www.netflixgc.com/',
+hostJs: '',
+headers: {'User-Agent': MOBILE_UA},
+编码: 'utf-8',
+timeout: 5000,
+homeUrl: '/',
+url: '/index.php/api/vod',
+filter_url: '',
+searchUrl: '/index.php/ajax/suggest?mid=1&limit=60&wd=**',
+detailUrl: '/detail/fyid',
+limit: 9,
+double: false,
+class_name: '电影&剧集&综艺&动漫',
+class_url: '1&2&3&4',
+filter_def: {},
+推荐: '.public-list-exp;a&&title;img&&data-src;.ft2&&Text;a&&href',
+一级: $js.toString(() => {
+let t = new Date().getTime().toString();
+let key = md5(`DS${t}DCC147D11943AF75`);
+let fbody = {
+    "type": MY_CATE.toString(),
+    "class": (MY_FL.class || "").toString(),
+    "area": (MY_FL.area || "").toString(),
+    "year": (MY_FL.year || "").toString(),
+    "letter": (MY_FL.letter || "").toString(),
+    "by": (MY_FL.by || "").toString(),
+    "page": MY_PAGE,
+    "time": t,
+    "key": key
+};
+let khtml = fetch(input, {
+    headers: rule.headers,
+    body: fbody,
+    method: 'POST'
+});
+VODS = JSON.parse(khtml).list
+}),
+搜索: 'json:list;name;pic;en;id',
+二级: $js.toString(() => {
+let khtml = fetch(input);
+let kdetail = pdfh(khtml, '.search-show');
+let ktabs = pdfa(khtml, '.anthology-tab&&a').map((it) => { return '👶' + pdfh(it, 'body--span&&Text') });
+let kurls = pdfa(khtml, '.anthology-list-play').map((item) => {
+    let kurl = pdfa(item,'a').map((it) => { return pdfh(it, 'body&&Text') + '$' + pd(it, 'a&&href', input) });
+    return kurl.join('#')
+});
+VOD = {
+    vod_id: input,
+    vod_name: pdfh(khtml,'h3&&Text'),
+    vod_pic: pdfh(khtml,'.detail-pic&&img&&data-src'),
+    type_name: pdfh(kdetail,'li:contains(类型)--em&&Text'),
+    vod_remarks: pdfh(kdetail,'li:contains(状态)--em&&Text'),
+    vod_year: pdfh(kdetail,'li:contains(年份)--em&&Text'),
+    vod_area: pdfh(kdetail,'li:contains(地区)--em&&Text'),
+    vod_lang: pdfh(kdetail,'li:contains(语言)--em&&Text'),
+    vod_director: pdfh(kdetail,'li:contains(导演)--em&&Text'),
+    vod_actor: pdfh(kdetail,'li:contains(主演)--em&&Text'),
+    vod_content: pdfh(kdetail,'.top26--em&&Text'),
+    vod_play_from: ktabs.join('$$$'),
+    vod_play_url: kurls.join('$$$')
+}
+}),
 
-        VOD.vod_name = json.title;
-        VOD.type_name = json.type;
-        VOD.vod_id = input;
-        VOD.vod_pic = urljoin(input, json.thumbnail);
-        VOD.vod_year = json.year;
-        VOD.vod_area = json._area;
-        VOD.vod_remarks = json.note;
-        VOD.vod_content = json.description;
-        VOD.vod_director = json.director;
-        VOD.vod_actor = json.actors;
-        let v_tabs = pdfa(html, '.nav-tabs&&li');
-        let v_tab_urls = v_tabs.map(it => pd(it, 'a&&href', input));
-        v_tabs = v_tabs.map(it => pdfh(it, 'a&&title'));
-        // log(v_tab_urls);
-        VOD.vod_play_from = v_tabs.join('$$$');
-        let lists = [];
-        let list1 = pdfa(html, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
-        // log(list1);
-        lists.push(list1);
-        if (v_tab_urls.length > 1) {
-            let reqUrls = v_tab_urls.slice(1).map(it => {
-                return {
-                    url: it,
-                    options: {
-                        timeout: 5000,
-                        headers: rule.headers
-                    }
-                }
-            });
-            let htmls = batchFetch(reqUrls);
-            htmls.forEach((ht) => {
-                if (ht) {
-                    let list0 = pdfa(ht, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
-                    lists.push(list0);
-                } else {
-                    lists.push([]);
-                }
-            });
-        }
-        let playUrls = lists.map(it => it.join('#'));
-        VOD.vod_play_url = playUrls.join('$$$');
-    }),
-    搜索: '*',
+play_parse: true,
+lazy: $js.toString(() => {
+let kdata = fetch(input).split('aaaa=')[1].split('<')[0];
+let kurl = JSON.parse(kdata).url;
+if (/\.(m3u8|mp4)/.test(kurl)) {
+    input = { jx: 0, parse: 0, url: kurl, header: rule.headers }
+} else {
+    let furl = `${HOST}/static/player/artplayer/api.php?ac=getdate`;
+    let fbody = `url=${kurl}`;
+    let khtml = fetch(furl, {
+        headers: rule.headers,
+        body: fbody,
+        method: 'POST'
+    });
+    kdata = JSON.parse(khtml).data;
+    let iv = JSON.parse(khtml).iv;
+    iv = CryptoJS.enc.Utf8.parse(iv);
+    const key = CryptoJS.enc.Utf8.parse('d978a93ffb4d3a00');
+    let decrypted = CryptoJS.AES.decrypt(kdata, key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    kdata = decrypted.toString(CryptoJS.enc.Utf8);
+    kurl = JSON.parse(kdata).url;
+    input = { jx: 0, parse: 0, url: kurl, header: rule.headers }
+}
+}),
+filter: 'H4sIAAAAAAAAA+2ZWU8bVxTH3/kYfqbSDNAkzVv2fd8T5cGNrDYqpRLQSgghGYyJIWAbRCCuzdawhWIwSynYNf4yvjPmW+Ta92xuy8hqaV8yb/79z9w755w7M/fvmd6mgB04+6KpN/BdqCdwNvCqPdjVFWgOdAS/D2lUwytOJKr5p2D7j1p40RvoqMrR1aPIalXWEOhrBnUqo48HFQBjbmwLJmLAmNOfdMJTEAOgOUdWy8UMzmmA5lwZVwcFnNMAjaPEGeh8sffl/DCezwDGKtllNboGMQA638imW8QYgMjTnSxwnlWg2NIbzhOAcskulw/nMRcDNG5o4ij1EccZoHGzazpzHGeAYgPr7tQ4xgxQLDLiDPyMMQNUXyGhovtYnwGMHc1MOO+XIAZAc069qQzncU4DVMPhhjv5mypuYRnEdERisfKBVsoAxeJDKrGNMQO0UqWk7jOulAHuXMaZGafO1YBigyX3V6wEgDpQHHcLmbqE66S+l33NdKsEO0NBcadkcmo03+idsrhylBrCHAxQp5dTzv4mdtoA9yrnHBxSr2pAuR/GVbqIWRugFdp5xzEA6uPbLY4B0LjpJSezjuMMUJ5zH3kcAK/67xwD4FxyMpdc3bixnMov4zgDNG4woTulYnhDMFMlSyU3kXWHU1gMMd+l887bkh5GNyoyHRHdKxfwWQRQt+rtwY5veNUrm9nKarjRVU8X9fE4twGxChwDoJXdXuQYAK3CdFGNTXOYWayTCBsQ68sxAHHNiJgBsb6iEgOig2ojwh2sQl0He0LBTnHfHOyWC8UGO9hitXwJWu2n0NtYb5N6K+utUm9hvUXqNuu21C3WLaHbX5Gufwr9DOtnpH6a9dNSP8X6Kalzvbas1+Z6bVmvzfXasl6b67VlvTbXa8t6ba7XlvVaXK8l67W4XkvWa3G9lqzX4notWa/F9VqyXovr1T/r78hQd3dIXlHZaWdzrMEr6hwI50g5D8p5Ui6AcoGUi6BcJOUSKJdIuQzKZVKugHKFlKugXCXlGijXSLkOynVSboByg5SboNwk5RYot0i5DcptUu6AcoeUu6DcJeUeKPdIuQ/KfVIegPKAlIegPCTlESiPSHkMymNSnoDyhJSnoDwl5Rkoz0h5DspzUqwv8CKt/qq7Vr7u4evEiU+ofOIv14mTCTtTOZig+7U+lJ6ImbAbwafet6+7u/jpvTmoYrifd736oTNUPW3Ty+amQMuJuWsPn+TlaI1ZU/17KpKo828gNeLe1caeytPz3kCDrvhY9+7lir3cu5cn9HKw5YMF9oQA7IqjTgo9FwCd790QO20A4Re5ZwANO4l/4x+Hovp48rc1aMSX/VNv6eUDvX3n8V7P03dO5bQ1UzML9KcC2fdpf/Zpvt/y/Zbvt3y/5futmt9qPSm/dRQedlfC+Dw2IP3C4JzwCxoot41SJRfDHcIAjZvIOiP47gmAn/FRZx+9CwDvDTvlgyTtDTUQ++/RB8wFgGL5NbUxizEDdL70tnhrZ4DGTc45u/Rm1QCN2993YolyfoLfvtVJ1IfdX7QDwz4YoDm2Bir9ozjawP/hjbTf0c6Gsq6B2GP1rst7bBUotr6iO4sxA77b8N2G7zZ8t+G7jc/YbbSdlNvwchRe3zl1ypUFdCkANGd81U1i3gAUS8666/SN0ADvoMd/d6wkZypxfNMEQHPOL6g07RsGaE6PN0FOJi++ZRqg83l85fN666Vyuk27eD4DMra0I2IaqJ+Lh+U/8PsoAI2Lz6lYGscZwFg5v62y6NAAaM70iJNCpwXAfdlSpWnqSw3EXvvfvUHy+ALp9bbnb51Qo/n6Lsl3Sb5L8l1SwHdJn49Laur7BLEioANkJgAA'
 }
