@@ -948,20 +948,6 @@
             "ext": "./JS/SKR影院.js"
         },	
 			{
-            "key": "毒舌电影",
-            "name": "毒舌电影",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/毒舌电影.js"
-        },	
-			{
-            "key": "可可影视",
-            "name": "可可影视",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/可可影视.js"
-        },	
-			{
             "key": "234影院",
             "name": "234影院",
             "type": 3,
@@ -1945,13 +1931,6 @@
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/瓜子影视.js"
-        },
-	{
-            "key": "荐片影视",
-            "name": "荐片影视",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/荐片影视.js"
         },
 	{ "key": "金牌影视", "name": "金牌 | 影视", "type": 3, "api": "./JS/drpy2.min.js", "ext": "./JS/金牌影视.js" }, 
 	{ "key": "dr_低端", "name": "低端 | 影视", "type": 3, "api": "./JS/drpy2.min.js", "searchable": 1, "playerType": 2, "quickSearch": 1, "filterable": 1, "ext": "./JS/ddys.js" }, 
