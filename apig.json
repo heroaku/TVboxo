@@ -574,6 +574,13 @@
 	{"key":"机器人2","name":"机器┃影视","type":3,"api":"csp_Ikanbot","searchable":1,"quickSearch":1,"changeable":1,"ext":"https://v.aikanbot.com","jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 	//{"key":"腐剧视频","name":"腐剧┃影视","type":3,"api":"csp_WexFujutv","searchable":1,"changeable":1,"jar": "https://github.com/heroaku/yg/raw/refs/heads/main/pg/lib/o.jar"},
 		{
+            "key": "爱看机器人",
+            "name": "爱看机器人JS",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/爱看机器人.js"
+        },
+		{
             "key": "壹影视",
             "name": "壹影PY｜影视",
             "type": 3,
