@@ -29,7 +29,8 @@ var rule = {
     推荐:'.v-list;div.item;*;*;*;*',
     
     // 修改后的一级规则 - 修复图片获取
-    一级:'.v-list&&div.item;p&&Text;img&&data-src;img&&src;.label&&Text;a&&href',
+    //一级:'.v-list&&div.item;p&&Text;img&&data-src;img&&src;.label&&Text;a&&href',
+    一级:'.v-list&&div.item;p&&Text;img&&data-src;.label&&Text;a&&href',
     
     // 修改后的搜索规则 - 修复图片获取
     搜索:'.col-md-8&&.media;h5&&a&&Text;.lazyload&&data-src;img&&src;.label&&Text;a&&href',
