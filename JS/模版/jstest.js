@@ -28,38 +28,202 @@ var rule = {
     tab_rename:{'bfzym3u8':'暴风','1080zyk':'优质','kuaikan':'快看','lzm3u8':'量子','ffm3u8':'非凡','snm3u8':'索尼','qhm3u8':'奇虎','haiwaikan':'海外看','gsm3u8':'光速','zuidam3u8':'最大','bjm3u8':'八戒','wolong':'卧龙','xlm3u8':'新浪','yhm3u8':'樱花','tkm3u8':'天空','jsm3u8':'极速','wjm3u8':'无尽','sdm3u8':'闪电','kcm3u8':'快车','jinyingm3u8':'金鹰','fsm3u8':'飞速','tpm3u8':'淘片','lem3u8':'鱼乐','dbm3u8':'百度','tomm3u8':'番茄','ukm3u8':'U酷','ikm3u8':'爱坤','hnzym3u8':'红牛资源','hnm3u8':'红牛','68zy_m3u8':'68','kdm3u8':'酷点','bdxm3u8':'北斗星','hhm3u8':'豪华','kbm3u8':'快播'},
     推荐:'.v-list;div.item;*;*;*;*',
     
-    // 修改后的一级规则 - 修复图片获取
-    //一级:'.v-list&&div.item;p&&Text;img&&data-src;img&&src;.label&&Text;a&&href',
-    一级:'.v-list&&div.item;p&&Text;img&&src;.label&&Text;a&&href',
-    
-    // 修改后的搜索规则 - 修复图片获取
-    搜索:'.col-md-8&&.media;h5&&a&&Text;img&&src;.label&&Text;a&&href',
-    
-    // 图片处理函数 - 确保获取完整的图片URL
-    图片预处理: `js:
-        let html = request(input);
-        let $ = cheerio.load(html);
-        let imgUrl = '';
-        
-        // 尝试多种方式获取图片
-        if ($('img[data-src]').length > 0) {
-            imgUrl = $('img[data-src]').attr('data-src');
-        } else if ($('img[src]').length > 0) {
-            imgUrl = $('img[src]').attr('src');
-        }
-        
-        // 处理相对路径
-        if (imgUrl && !imgUrl.startsWith('http')) {
-            if (imgUrl.startsWith('//')) {
-                imgUrl = 'https:' + imgUrl;
-            } else {
-                imgUrl = HOST + (imgUrl.startsWith('/') ? '' : '/') + imgUrl;
+    // 修复一级规则 - 多种尝试方案
+    一级: `js:
+        try {
+            let html = request(input);
+            let $ = cheerio.load(html);
+            let results = [];
+            
+            $('.v-list .item').each(function() {
+                try {
+                    let titleElem = $(this).find('h3, p').first();
+                    let title = titleElem.text().trim();
+                    
+                    let imgElem = $(this).find('img').first();
+                    let img = imgElem.attr('data-src') || imgElem.attr('src');
+                    
+                    let descElem = $(this).find('.label, .tags, .score').first();
+                    let desc = descElem.text().trim() || '';
+                    
+                    let linkElem = $(this).find('a').first();
+                    let link = linkElem.attr('href');
+                    
+                    // 处理相对链接
+                    if (link) {
+                        if (link.startsWith('//')) {
+                            link = 'https:' + link;
+                        } else if (!link.startsWith('http')) {
+                            link = HOST + (link.startsWith('/') ? '' : '/') + link;
+                        }
+                    }
+                    
+                    if (title && link) {
+                        results.push({
+                            title: title,
+                            img: img,
+                            desc: desc,
+                            link: link
+                        });
+                    }
+                } catch (e) {
+                    log('处理单个项目错误: ' + e.message);
+                }
+            });
+            
+            // 构建输出格式
+            let output = results.map(item => 
+                item.title + ';' + (item.img || '') + ';' + item.desc + ';' + item.link
+            ).join('##');
+            
+            log('一级规则解析完成，找到 ' + results.length + ' 个项目');
+            if (results.length > 0) {
+                log('第一个项目链接: ' + results[0].link);
             }
+            
+            print(output);
+            
+        } catch (e) {
+            log('一级规则执行错误: ' + e.message);
+            print('');
         }
-        
-        input = imgUrl || input;
     `,
     
-    // 二级解析保持不变
-    二级:'js:eval(unescape(base64Decode("anM6CiAgICAgICAgcGRmaCA9IGpzcC5wZGZoOwogICAgICAgIGZ1bmN0aW9uIGdldFRva2VuKGh0bWwxKSB7CiAgICAgICAgICAgIGxldCBjdXJyZW50SWQgPSBwZGZoKGh0bWwxLCAnI2N1cnJlbnRfaWQmJnZhbHVlJyk7CiAgICAgICAgICAgIGxldCBlVG9rZW4gPSBwZGZoKGh0bWwxLCAnI2VfdG9rZW4mJnZhbHVlJyk7CiAgICAgICAgICAgIGlmICghY3VycmVudElkIHx8ICFlVG9rZW4pIHJldHVybiAnJzsKICAgICAgICAgICAgbGV0IGlkTGVuZ3RoID0gY3VycmVudElkLmxlbmd0aDsKICAgICAgICAgICAgbGV0IHN1YklkID0gY3VycmVudElkLnN1YnN0cmluZyhpZExlbmd0aCAtIDQsIGlkTGVuZ3RoKTsKICAgICAgICAgICAgbGV0IGtleXMgPSBbXTsKICAgICAgICAgICAgZm9yIChsZXQgaSA9IDA7IGkgPCBzdWJJZC5sZW5ndGg7IGkrKykgewogICAgICAgICAgICAgICAgbGV0IGN1ckludCA9IHBhcnNlSW50KHN1YklkW2ldKTsKICAgICAgICAgICAgICAgIGxldCBzcGxpdFBvcyA9IGN1ckludCAlIDMgKyAxOwogICAgICAgICAgICAgICAga2V5c1tpXSA9IGVUb2tlbi5zdWJzdHJpbmcoc3BsaXRQb3MsIHNwbGl0UG9zICsgOCk7CiAgICAgICAgICAgICAgICBlVG9rZW4gPSBlVG9rZW4uc3Vic3RyaW5nKHNwbGl0UG9zICsgOCwgZVRva2VuLmxlbmd0aCk7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgcmV0dXJuIGtleXMuam9pbignJyk7CiAgICAgICAgfQogICAgICAgIHRyeSB7CiAgICAgICAgICAgIFZPRD17fTsKICAgICAgICAgICAgbGV0IGh0bWwxID0gcmVxdWVzdChpbnB1dCk7CiAgICAgICAgICAgIFZPRC52b2RfaWQgPSBwZGZoKGh0bWwxLCAnI2N1cnJlbnRfaWQmJnZhbHVlJyk7CiAgICAgICAgICAgIFZPRC52b2RfbmFtZSA9IHBkZmgoaHRtbDEsICdoMiYmVGV4dCcpOwogICAgICAgICAgICBWT0Qudm9kX3BpYyA9IHBkZmgoaHRtbDEsICcuaXRlbS1yb290JiZpbWcmJmRhdGEtc3JjJyk7CiAgICAgICAgICAgIFZPRC52b2RfYWN0b3IgPSBwZGZoKGh0bWwxLCAnLm1ldGE6ZXEoNCkmJlRleHQnKTsKICAgICAgICAgICAgVk9ELnZvZF9hcmVhID0gcGRmaChodG1sMSwgJy5tZXRhOmVxKDMpJiZUZXh0Jyk7CiAgICAgICAgICAgIFZPRC52b2RfeWVhciA9IHBkZmgoaHRtbDEsICcubWV0YTplcSgyKSYmVGV4dCcpOwogICAgICAgICAgICBWT0Qudm9kX3JlbWFya3MgPSAnJzsKICAgICAgICAgICAgVk9ELnZvZF9kaXJlY3RvciA9ICcnOwogICAgICAgICAgICBWT0Qudm9kX2NvbnRlbnQgPSBwZGZoKGh0bWwxLCAnI2xpbmUtdGlwcyYmVGV4dCcpOwogICAgICAgICAgICAvLyBsb2coVk9EKTsKICAgICAgICAgICAgdmFyIHZfdGtzID0gZ2V0VG9rZW4oaHRtbDEpOwogICAgICAgICAgICBsb2coJ3ZfdGtzID09PT4gJyArIHZfdGtzKTsKICAgICAgICAgICAgaW5wdXQgPSBIT1NUICsgJy9hcGkvZ2V0UmVzTj92aWRlb0lkPScgKyBpbnB1dC5zcGxpdCgnLycpLnBvcCgpICsgJyZtdHlwZT0yJnRva2VuPScrdl90a3M7CiAgICAgICAgICAgIGxldCBodG1sID0gcmVxdWVzdChpbnB1dCwgewogICAgICAgICAgICAgICAgaGVhZGVyczogewogICAgICAgICAgICAgICAgICAgICdVc2VyLUFnZW50JzonTW96aWxsYS81LjAgKGlQaG9uZTsgQ1BVIGlQaG9uZSBPUyAxM18yXzMgbGlrZSBNYWMgT1MgWCkgQXBwbGVXZWJLaXQvNjA1LjEuMTUgKEtIVE1MLCBsaWtlIEdlY2tvKSBWZXJzaW9uLzEzLjAuMyBNb2JpbGUvMTVFMTQ4IFNhZmFyaS82MDQuMScsCiAgICAgICAgICAgICAgICAgICAgJ1JlZmVyZXInOiBNWV9VUkwsCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0pOwogICAgICAgICAgICBwcmludChodG1sKTsKICAgICAgICAgICAgaHRtbCA9IEpTT04ucGFyc2UoaHRtbCk7CiAgICAgICAgICAgIGxldCBlcGlzb2RlcyA9IGh0bWwuZGF0YS5saXN0OwogICAgICAgICAgICBsZXQgcGxheU1hcCA9IHt9OwogICAgICAgICAgICBpZiAodHlwZW9mIHBsYXlfdXJsID09PSAndW5kZWZpbmVkJykgewogICAgICAgICAgICAgICAgdmFyIHBsYXlfdXJsID0gJycKICAgICAgICAgICAgfQogICAgICAgICAgICBsZXQgbWFwID0ge30KICAgICAgICAgICAgbGV0IGFyciA9IFtdCiAgICAgICAgICAgIGxldCBuYW1lID0gewogICAgICAgICAgICAgICAgJ2JmenltM3U4JzogJ+aatOmjjicsCiAgICAgICAgICAgICAgICAnMTA4MHp5ayc6ICfkvJjotKgnLAogICAgICAgICAgICAgICAgJ2t1YWlrYW4nOiAn5b+r55yLJywKICAgICAgICAgICAgICAgICdsem0zdTgnOiAn6YeP5a2QJywKICAgICAgICAgICAgICAgICdmZm0zdTgnOiAn6Z2e5YehJywKICAgICAgICAgICAgICAgICdoYWl3YWlrYW4nOiAn5rW35aSW55yLJywKICAgICAgICAgICAgICAgICdnc20zdTgnOiAn5YWJ6YCfJywKICAgICAgICAgICAgICAgICd6dWlkYW0zdTgnOiAn5pyA5aSnJywKICAgICAgICAgICAgICAgICdiam0zdTgnOiAn5YWr5oiSJywKICAgICAgICAgICAgICAgICdzbm0zdTgnOiAn57Si5bC8JywKICAgICAgICAgICAgICAgICd3b2xvbmcnOiAn5Y2n6b6ZJywKICAgICAgICAgICAgICAgICd4bG0zdTgnOiAn5paw5rWqJywKICAgICAgICAgICAgICAgICd5aG0zdTgnOiAn5qix6IqxJywKICAgICAgICAgICAgICAgICd0a20zdTgnOiAn5aSp56m6JywKICAgICAgICAgICAgICAgICdqc20zdTgnOiAn5p6B6YCfJywKICAgICAgICAgICAgICAgICd3am0zdTgnOiAn5peg5bC9JywKICAgICAgICAgICAgICAgICdzZG0zdTgnOiAn6Zeq55S1JywKICAgICAgICAgICAgICAgICdrY20zdTgnOiAn5b+r6L2mJywKICAgICAgICAgICAgICAgICdqaW55aW5nbTN1OCc6ICfph5HpubAnLAogICAgICAgICAgICAgICAgJ2ZzbTN1OCc6ICfpo57pgJ8nLAogICAgICAgICAgICAgICAgJ3RwbTN1OCc6ICfmt5jniYcnLAogICAgICAgICAgICAgICAgJ2xlbTN1OCc6ICfpsbzkuZAnLAogICAgICAgICAgICAgICAgJ2RibTN1OCc6ICfnmb7luqYnLAogICAgICAgICAgICAgICAgJ3RvbW0zdTgnOiAn55Wq6IyEJywKICAgICAgICAgICAgICAgICd1a20zdTgnOiAnVemFtycsCiAgICAgICAgICAgICAgICAnaWttM3U4JzogJ+eIseWdpCcsCiAgICAgICAgICAgICAgICAnaG56eW0zdTgnOiAn57qi54mb6LWE5rqQJywKICAgICAgICAgICAgICAgICdobm0zdTgnOiAn57qi54mbJywKICAgICAgICAgICAgICAgICc2OHp5X20zdTgnOiAnNjgnLAogICAgICAgICAgICAgICAgJ2tkbTN1OCc6ICfphbfngrknLAogICAgICAgICAgICAgICAgJ2JkeG0zdTgnOiAn5YyX5paX5pifJywKICAgICAgICAgICAgICAgICdxaG0zdTgnOiAn5aWH6JmOJywKICAgICAgICAgICAgICAgICdoaG0zdTgnOiAn6LGq5Y2OJwogICAgICAgICAgICB9OwogICAgICAgICAgICBlcGlzb2Rlcy5mb3JFYWNoKGZ1bmN0aW9uKGVwKSB7CiAgICAgICAgICAgICAgICBsZXQgZGF0YSA9IEpTT04ucGFyc2UoZXBbJ3Jlc0RhdGEnXSk7CiAgICAgICAgICAgICAgICBkYXRhLm1hcCh2YWwgPT4gewogICAgICAgICAgICAgICAgICAgIGlmKCFtYXBbdmFsLmZsYWddKXsKICAgICAgICAgICAgICAgICAgICAgICAgbWFwW3ZhbC5mbGFnXSA9IFt2YWwudXJsLnJlcGxhY2VBbGwoJyMjJywnIycpXQogICAgICAgICAgICAgICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgICAgICAgICAgICAgIG1hcFt2YWwuZmxhZ10ucHVzaCh2YWwudXJsLnJlcGxhY2VBbGwoJyMjJywnIycpKQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0pCiAgICAgICAgICAgIH0pOwogICAgICAgICAgICBmb3IgKHZhciBrZXkgaW4gbWFwKSB7CiAgICAgICAgICAgICAgICBpZiAoJ2JmenltM3U4JyA9PSBrZXkpIHsKICAgICAgICAgICAgICAgICAgICBhcnIucHVzaCh7CiAgICAgICAgICAgICAgICAgICAgICAgIGZsYWc6IG5hbWVba2V5XSwKICAgICAgICAgICAgICAgICAgICAgICAgdXJsOiBtYXBba2V5XSwKICAgICAgICAgICAgICAgICAgICAgICAgc29ydDogMQogICAgICAgICAgICAgICAgICAgIH0pCiAgICAgICAgICAgICAgICB9IGVsc2UgaWYgKCcxMDgwenlrJyA9PSBrZXkpIHsKICAgICAgICAgICAgICAgICAgICBhcnIucHVzaCh7CiAgICAgICAgICAgICAgICAgICAgICAgIGZsYWc6IG5hbWVba2V5XSwKICAgICAgICAgICAgICAgICAgICAgICAgdXJsOiBtYXBba2V5XSwKICAgICAgICAgICAgICAgICAgICAgICAgc29ydDogMgogICAgICAgICAgICAgICAgICAgIH0pCiAgICAgICAgICAgICAgICB9IGVsc2UgaWYgKCdrdWFpa2FuJyA9PSBrZXkpIHsKICAgICAgICAgICAgICAgICAgICBhcnIucHVzaCh7CiAgICAgICAgICAgICAgICAgICAgICAgIGZsYWc6IG5hbWVba2V5XSwKICAgICAgICAgICAgICAgICAgICAgICAgdXJsOiBtYXBba2V5XSwKICAgICAgICAgICAgICAgICAgICAgICAgc29ydDogMwogICAgICAgICAgICAgICAgICAgIH0pCiAgICAgICAgICAgICAgICB9IGVsc2UgaWYgKCdsem0zdTgnID09IGtleSkgewogICAgICAgICAgICAgICAgICAgIGFyci5wdXNoKHsKICAgICAgICAgICAgICAgICAgICAgICAgZmxhZzogbmFtZVtrZXldLAogICAgICAgICAgICAgICAgICAgICAgICB1cmw6IG1hcFtrZXldLAogICAgICAgICAgICAgICAgICAgICAgICBzb3J0OiA0CiAgICAgICAgICAgICAgICAgICAgfSkKICAgICAgICAgICAgICAgIH0gZWxzZSBpZiAoJ2ZmbTN1OCcgPT0ga2V5KSB7CiAgICAgICAgICAgICAgICAgICAgYXJyLnB1c2goewogICAgICAgICAgICAgICAgICAgICAgICBmbGFnOiBuYW1lW2tleV0sCiAgICAgICAgICAgICAgICAgICAgICAgIHVybDogbWFwW2tleV0sCiAgICAgICAgICAgICAgICAgICAgICAgIHNvcnQ6IDUKICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgfSBlbHNlIGlmICgnc25tM3U4JyA9PSBrZXkpIHsKICAgICAgICAgICAgICAgICAgICBhcnIucHVzaCh7CiAgICAgICAgICAgICAgICAgICAgICAgIGZsYWc6IG5hbWVba2V5XSwKICAgICAgICAgICAgICAgICAgICAgICAgdXJsOiBtYXBba2V5XSwKICAgICAgICAgICAgICAgICAgICAgICAgc29ydDogNgogICAgICAgICAgICAgICAgICAgIH0pCiAgICAgICAgICAgICAgICB9IGVsc2UgaWYgKCdxaG0zdTgnID09IGtleSkgewogICAgICAgICAgICAgICAgICAgIGFyci5wdXNoKHsKICAgICAgICAgICAgICAgICAgICAgICAgZmxhZzogbmFtZVtrZXldLAogICAgICAgICAgICAgICAgICAgICAgICB1cmw6IG1hcFtrZXldLAogICAgICAgICAgICAgICAgICAgICAgICBzb3J0OiA3CiAgICAgICAgICAgICAgICAgICAgfSkKICAgICAgICAgICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgICAgICAgICAgYXJyLnBudXNoKHsKICAgICAgICAgICAgICAgICAgICAgICAgZmxhZzogKG5hbWVba2V5XSkgPyBuYW1lW2tleV0gOiBrZXksCiAgICAgICAgICAgICAgICAgICAgICAgIHVybDogbWFwW2tleV0sCiAgICAgICAgICAgICAgICAgICAgICAgIHNvcnQ6IDgKICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIGFyci5zb3J0KChhLCBiKSA9PiBhLnNvcnQgLSBiLnNvcnQpOwogICAgICAgICAgICBsZXQgcGxheUZyb20gPSBbXTsKICAgICAgICAgICAgbGV0IHBsYXlMaXN0ID0gW107CiAgICAgICAgICAgIGFyci5tYXAodmFsID0+IHsKICAgICAgICAgICAgICAgIGlmICghL3VuZGVmaW5lZC8udGVzdCh2YWwuZmxhZykpIHsKICAgICAgICAgICAgICAgICAgICBwbGF5RnJvbS5wdXNoKHZhbC5mbGFnKTsKICAgICAgICAgICAgICAgICAgICBwbGF5TGlzdC5wdXNoKHZhbC51cmwpOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9KQogICAgICAgICAgICBsZXQgdm9kX3BsYXlfZnJvbSA9IHBsYXlGcm9tLmpvaW4oJyQkJCcpOwogICAgICAgICAgICBsZXQgdm9kX3BsYXlfdXJsID0gcGxheUxpc3Quam9pbignJCQkJyk7CiAgICAgICAgICAgIFZPRFsndm9kX3BsYXlfZnJvbSddID0gdm9kX3BsYXlfZnJvbTsKICAgICAgICAgICAgVk9EWyd2b2RfcGxheV91cmwnXSA9IHZvZF9wbGF5X3VybDsKICAgICAgICAgICAgLy8gbG9nKFZPRCk7CiAgICAgICAgfSBjYXRjaCAoZSkgewogICAgICAgICAgICBsb2coJ+iOt+WPl+S6jOe6p+ivpuaDhemhteWPkeeUn+mUmeivrzonICsgZS5tZXNzYWdlKQogICAgICAgIH0=")))'
+    // 修复搜索规则
+    搜索: `js:
+        try {
+            let html = request(input);
+            let $ = cheerio.load(html);
+            let results = [];
+            
+            $('.col-md-8 .media, .search-result .item').each(function() {
+                try {
+                    let titleElem = $(this).find('h5 a, .title a').first();
+                    let title = titleElem.text().trim();
+                    
+                    let imgElem = $(this).find('img').first();
+                    let img = imgElem.attr('data-src') || imgElem.attr('src');
+                    
+                    let descElem = $(this).find('.label, .type, .year').first();
+                    let desc = descElem.text().trim() || '';
+                    
+                    let link = titleElem.attr('href');
+                    
+                    // 处理相对链接
+                    if (link) {
+                        if (link.startsWith('//')) {
+                            link = 'https:' + link;
+                        } else if (!link.startsWith('http')) {
+                            link = HOST + (link.startsWith('/') ? '' : '/') + link;
+                        }
+                    }
+                    
+                    if (title && link) {
+                        results.push({
+                            title: title,
+                            img: img,
+                            desc: desc,
+                            link: link
+                        });
+                    }
+                } catch (e) {
+                    log('搜索项目处理错误: ' + e.message);
+                }
+            });
+            
+            let output = results.map(item => 
+                item.title + ';' + (item.img || '') + ';' + item.desc + ';' + item.link
+            ).join('##');
+            
+            log('搜索完成，找到 ' + results.length + ' 个项目');
+            print(output);
+            
+        } catch (e) {
+            log('搜索规则错误: ' + e.message);
+            print('');
+        }
+    `,
+    
+    // 简化二级解析
+    二级: `js:
+        try {
+            log('进入二级页面: ' + input);
+            
+            // 确保链接完整
+            if (!input.startsWith('http')) {
+                if (input.startsWith('//')) {
+                    input = 'https:' + input;
+                } else {
+                    input = HOST + (input.startsWith('/') ? '' : '/') + input;
+                }
+            }
+            
+            let html = request(input, {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
+                    'Referer': HOST
+                }
+            });
+            
+            let $ = cheerio.load(html);
+            
+            // 基本信息
+            let VOD = {
+                vod_id: input.split('/').pop(),
+                vod_name: $('h1, h2').first().text().trim() || '未知标题',
+                vod_pic: $('.poster img, .cover img').attr('src') || $('img').first().attr('src'),
+                vod_actor: $('.actor, .starring').text().trim() || '',
+                vod_area: $('.region, .country').text().trim() || '',
+                vod_year: $('.year, .release-time').text().trim() || '',
+                vod_content: $('.description, .intro, .summary').text().trim() || '',
+                vod_play_from: '',
+                vod_play_url: ''
+            };
+            
+            // 播放列表
+            let playMap = {};
+            $('.play-list a, .episode-list a').each(function() {
+                let playName = $(this).text().trim();
+                let playUrl = $(this).attr('href') || $(this).attr('data-url');
+                if (playName && playUrl) {
+                    if (!playMap[playName]) {
+                        playMap[playName] = [];
+                    }
+                    playMap[playName].push(playUrl);
+                }
+            });
+            
+            // 构建播放源
+            let playFrom = [];
+            let playUrl = [];
+            
+            for (let name in playMap) {
+                playFrom.push(name);
+                playUrl.push(playMap[name].join('#'));
+            }
+            
+            VOD.vod_play_from = playFrom.join('$$$');
+            VOD.vod_play_url = playUrl.join('$$$');
+            
+            // 如果没有播放列表，设置默认值
+            if (!VOD.vod_play_from) {
+                VOD.vod_play_from = '默认';
+                VOD.vod_play_url = input;
+            }
+            
+            log('二级解析完成: ' + VOD.vod_name);
+            print(JSON.stringify(VOD));
+            
+        } catch (e) {
+            log('二级解析错误: ' + e.message);
+            let errorResult = {
+                vod_id: input.split('/').pop(),
+                vod_name: '解析失败',
+                vod_remarks: '错误: ' + e.message,
+                vod_play_from: '错误',
+                vod_play_url: '关于解析失败，请检查网络'
+            };
+            print(JSON.stringify(errorResult));
+        }
+    `
 }
