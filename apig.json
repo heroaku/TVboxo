@@ -638,8 +638,8 @@
             "playerType": 2
         },
 					{
-            "key": "金牌影院JP",
-            "name": "金牌影院JP",
+            "key": "金牌影院JS",
+            "name": "金牌影院JS",
             "type": 3,
 			"api": "./JS/drpy2.min.js",
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
@@ -652,6 +652,13 @@
             "type": 3,
             "playerType": "2",
             "ext": "https://ev2089.zxbwv.com"
+        },
+		{
+            "key": "荐片影视JS",
+            "name": "荐片影视JS",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/荐片影视.js"
         },
 	        {
             "key": "肥猫",
