@@ -1,9 +1,9 @@
 var rule = {
     title: '糖豆影视',
     host: 'https://tdys.cc',
-    // 启用翻页：MacCMS 标准格式
     url: '/show/fyclass--------fypage---.html',
-    //detailUrl: '/vod-detail/fyid.html',
+    // ✅ 修复点：detailUrl 必须是 /vod-detail/fyid.html
+    detailUrl: '/vod-detail/fyid.html',
     searchUrl: '/so/-.html?wd=**',
     searchable: 2,
     quickSearch: 1,
@@ -13,16 +13,34 @@ var rule = {
     },
     class_name: '电影&剧集&动漫&综艺&纪录片',
     class_url: 'dianying&juji&dongman&zongyi&jilupian',
-    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
-    limit: 6,
-    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
-    double: true,
-    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    lazy: '',
+    limit: 30,
+    推荐: 'a.module-poster-item.module-item;a&&title;.module-item-pic&&img&&data-original;.module-item-note&&Text;a&&href',
+    // ✅ 一级：正确提取 href 中的 ID
+    一级: js:`
+        pdfh = jsp.pdfh; pdfa = jsp.pdfa;
+        let d = [];
+        let items = pdfa(html, 'a.module-poster-item.module-item');
+        items.forEach(item => {
+            let href = pdfh(item, 'a&&href');
+            if (!href.startsWith('/vod-detail/')) return;
+            let vod_id = href.replace('/vod-detail/', '').replace('.html', '');
+            d.push({
+                vod_id: vod_id,
+                vod_name: pdfh(item, 'a&&title'),
+                vod_pic: pdfh(item, '.module-item-pic&&img&&data-original'),
+                vod_remarks: pdfh(item, '.module-item-note&&Text')
+            });
+        });
+        VODS = d;
+    `,
     二级: {
-    "title": "h1&&Text;.module-info-tag&&Text",
-    "img": ".lazyload&&data-original",
-    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
-    "content": ".module-info-introduction&&Text",
-    "tabs": ".hisSwiper&&span",
-    "lists": ".his-tab-list:eq(#id) a"},
-    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
+        "title": "h1&&Text;.module-info-tag&&Text",
+        "img": ".module-info-poster&&img&&data-original",
+        "desc": ".module-info-content&&p:eq(1)&&Text",
+        "content": ".module-info-introduction&&p&&Text",
+        "tabs": "div.module-player-tab-item",
+        "lists": "div.module-player-list:eq(#id) a"
+    },
+    搜索: 'a.module-poster-item.module-item;a&&title;.module-item-pic&&img&&data-original;.module-item-note&&Text;a&&href'
+};
