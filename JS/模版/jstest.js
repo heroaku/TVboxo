@@ -289,11 +289,11 @@ var rule = {
 
     // ✅ 修正后的默认筛选
     filter_def: {
-        "1": { "cateId": "1", "by": "time" },
-        "2": { "cateId": "2", "by": "time" },
-        "4": { "cateId": "4", "by": "time" }, // 综艺 → 4
-        "3": { "cateId": "3", "by": "time" }, // 动漫 → 3
-        "11": { "cateId": "11","by": "time" }                // 短剧无 cateId
+        "1": { "cateId": "1"},
+        "2": { "cateId": "2" },
+        "4": { "cateId": "4" }, // 综艺 → 4
+        "3": { "cateId": "3" }, // 动漫 → 3
+        "11": { "cateId": "11" }                // 短剧无 cateId
     },
 
     headers: {
