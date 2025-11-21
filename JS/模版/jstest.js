@@ -1,9 +1,7 @@
 var rule = {
     title: '小宝影院',
     host: 'https://www.xiaobaotv.com',
-     url: '/vod/show/by/{{fl.by}}/id/{{fl.cateId}}/area/{{fl.area}}/lang/{{fl.lang}}/year/{{fl.year}}/page/fypage.html',
-    //url: '/vod/show/fyfilter.html',
-    //filter_url: '/by/{{fl.by}}/id/{{fl.cateId}}/area/{{fl.area}}/lang/{{fl.lang}}/year/{{fl.year}}/page/fypage',
+    url: '/vod/show/by/{{fl.by}}/id/{{fl.cateId}}/area/{{fl.area}}/lang/{{fl.lang}}/year/{{fl.year}}/page/fypage.html',
     searchUrl: '/search.html?wd=**&page=fypage',
     class_name: '电影&电视剧&综艺&动漫&短剧',
     class_url: '1&2&4&3&11',
@@ -161,7 +159,7 @@ var rule = {
                 { "n": "评分", "v": "score" }
             ] }
         ],
-        "4": [
+        "4": [ // 综艺
             { "key": "cateId", "name": "类型", "value": [
                 { "n": "全部", "v": "4" },
                 { "n": "大陆综艺", "v": "401" },
@@ -229,7 +227,7 @@ var rule = {
                 { "n": "评分", "v": "score" }
             ] }
         ],
-        "3": [
+        "3": [ // 动漫
             { "key": "cateId", "name": "类型", "value": [
                 { "n": "全部", "v": "3" },
                 { "n": "国产动漫", "v": "301" },
@@ -296,7 +294,7 @@ var rule = {
                 { "n": "评分", "v": "score" }
             ] }
         ],
-        "11": [
+        "11": [ // 短剧（无 type 子类）
             { "key": "area", "name": "地区", "value": [
                 { "n": "全部", "v": "" },
                 { "n": "中国大陆", "v": "%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86" },
@@ -357,12 +355,13 @@ var rule = {
         ]
     },
 
+    // ✅ 修正后的默认筛选
     filter_def: {
-        "1": { "cateId": "1"},
-        "2": { "cateId": "2" },
-        "3": { "cateId": "4" },
-        "4": { "cateId": "3" },
-        "11": { "cateId": "11"  }
+        "1": { "cateId": "1", "by": "time" },
+        "2": { "cateId": "2", "by": "time" },
+        "4": { "cateId": "4", "by": "time" }, // 综艺 → 4
+        "3": { "cateId": "3", "by": "time" }, // 动漫 → 3
+        "11": { "cateId": "11","by": "time" }                // 短剧无 cateId
     },
 
     headers: {
