@@ -1,8 +1,25 @@
 var rule = {
     title: '小宝影院',
     host: 'https://www.xiaobaotv.com',
-    url: '/vod/show/fyfilter.html',
-    filter_url: 'by/{{fl.by}}/id/{{fl.cateId}}/area/{{fl.area}}/lang/{{fl.lang}}/year/{{fl.year}}/page/fypage',
+    // 使用函数动态拼接 URL（支持任意参数顺序）
+    url: function (params) {
+        let { cate, page, filter } = params;
+        let fl = filter || {};
+        let parts = [];
+
+        // 必选：排序
+        parts.push('by', fl.by || 'time');
+        // 必选：分类ID（有子类用 cateId，否则用主分类 cate）
+        parts.push('id', fl.cateId || cate);
+
+        // 可选：地区、年份
+        if (fl.area) parts.push('area', fl.area);
+        if (fl.year) parts.push('year', fl.year);
+
+        parts.push('page', page);
+        return '/vod/show/' + parts.join('/') + '.html';
+    },
+
     searchUrl: '/search.html?wd=**&page=fypage',
     class_name: '电影&电视剧&综艺&动漫&短剧',
     class_url: '1&2&4&3&11',
@@ -11,9 +28,9 @@ var rule = {
     filterable: 1,
 
     filter: {
-        "1": [
+        "1": [ // 电影
             { "key": "cateId", "name": "类型", "value": [
-                { "n": "全部", "v": "1" },
+                { "n": "全部", "v": "" },
                 { "n": "动作片", "v": "101" },
                 { "n": "喜剧片", "v": "102" },
                 { "n": "爱情片", "v": "103" },
@@ -53,20 +70,6 @@ var rule = {
                 { "n": "俄罗斯", "v": "%E4%BF%84%E7%BD%97%E6%96%AF" },
                 { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
             ] },
-            { "key": "lang", "name": "语言", "value": [
-                { "n": "全部", "v": "" },
-                { "n": "汉语普通话", "v": "%E6%B1%89%E8%AF%AD%E6%99%AE%E9%80%9A%E8%AF%9D" },
-                { "n": "英语", "v": "%E8%8B%B1%E8%AF%AD" },
-                { "n": "粤语", "v": "%E7%B2%A4%E8%AF%AD" },
-                { "n": "韩语", "v": "%E9%9F%A9%E8%AF%AD" },
-                { "n": "日语", "v": "%E6%97%A5%E8%AF%AD" },
-                { "n": "法语", "v": "%E6%B3%95%E8%AF%AD" },
-                { "n": "德语", "v": "%E5%BE%B7%E8%AF%AD" },
-                { "n": "西班牙语", "v": "%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD" },
-                { "n": "意大利语", "v": "%E6%84%8F%E5%A4%A7%E5%88%A9%E8%AF%AD" },
-                { "n": "泰语", "v": "%E6%B3%B0%E8%AF%AD" },
-                { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
-            ] },
             { "key": "year", "name": "年份", "value": [
                 { "n": "全部", "v": "" },
                 { "n": "2025", "v": "2025" },
@@ -92,9 +95,9 @@ var rule = {
                 { "n": "评分", "v": "score" }
             ] }
         ],
-        "2": [
+        "2": [ // 电视剧
             { "key": "cateId", "name": "类型", "value": [
-                { "n": "全部", "v": "2" },
+                { "n": "全部", "v": "" },
                 { "n": "国产剧", "v": "201" },
                 { "n": "港台剧", "v": "202" },
                 { "n": "日韩剧", "v": "204" },
@@ -119,20 +122,6 @@ var rule = {
                 { "n": "加拿大", "v": "%E5%8A%A0%E6%8B%BF%E5%A4%A7" },
                 { "n": "西班牙", "v": "%E8%A5%BF%E7%8F%AD%E7%89%99" },
                 { "n": "俄罗斯", "v": "%E4%BF%84%E7%BD%97%E6%96%AF" },
-                { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
-            ] },
-            { "key": "lang", "name": "语言", "value": [
-                { "n": "全部", "v": "" },
-                { "n": "汉语普通话", "v": "%E6%B1%89%E8%AF%AD%E6%99%AE%E9%80%9A%E8%AF%9D" },
-                { "n": "英语", "v": "%E8%8B%B1%E8%AF%AD" },
-                { "n": "粤语", "v": "%E7%B2%A4%E8%AF%AD" },
-                { "n": "韩语", "v": "%E9%9F%A9%E8%AF%AD" },
-                { "n": "日语", "v": "%E6%97%A5%E8%AF%AD" },
-                { "n": "法语", "v": "%E6%B3%95%E8%AF%AD" },
-                { "n": "德语", "v": "%E5%BE%B7%E8%AF%AD" },
-                { "n": "西班牙语", "v": "%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD" },
-                { "n": "意大利语", "v": "%E6%84%8F%E5%A4%A7%E5%88%A9%E8%AF%AD" },
-                { "n": "泰语", "v": "%E6%B3%B0%E8%AF%AD" },
                 { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
             ] },
             { "key": "year", "name": "年份", "value": [
@@ -162,7 +151,7 @@ var rule = {
         ],
         "4": [ // 综艺
             { "key": "cateId", "name": "类型", "value": [
-                { "n": "全部", "v": "4" },
+                { "n": "全部", "v": "" },
                 { "n": "大陆综艺", "v": "401" },
                 { "n": "日韩综艺", "v": "402" },
                 { "n": "港台综艺", "v": "404" },
@@ -187,20 +176,6 @@ var rule = {
                 { "n": "加拿大", "v": "%E5%8A%A0%E6%8B%BF%E5%A4%A7" },
                 { "n": "西班牙", "v": "%E8%A5%BF%E7%8F%AD%E7%89%99" },
                 { "n": "俄罗斯", "v": "%E4%BF%84%E7%BD%97%E6%96%AF" },
-                { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
-            ] },
-            { "key": "lang", "name": "语言", "value": [
-                { "n": "全部", "v": "" },
-                { "n": "汉语普通话", "v": "%E6%B1%89%E8%AF%AD%E6%99%AE%E9%80%9A%E8%AF%9D" },
-                { "n": "英语", "v": "%E8%8B%B1%E8%AF%AD" },
-                { "n": "粤语", "v": "%E7%B2%A4%E8%AF%AD" },
-                { "n": "韩语", "v": "%E9%9F%A9%E8%AF%AD" },
-                { "n": "日语", "v": "%E6%97%A5%E8%AF%AD" },
-                { "n": "法语", "v": "%E6%B3%95%E8%AF%AD" },
-                { "n": "德语", "v": "%E5%BE%B7%E8%AF%AD" },
-                { "n": "西班牙语", "v": "%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD" },
-                { "n": "意大利语", "v": "%E6%84%8F%E5%A4%A7%E5%88%A9%E8%AF%AD" },
-                { "n": "泰语", "v": "%E6%B3%B0%E8%AF%AD" },
                 { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
             ] },
             { "key": "year", "name": "年份", "value": [
@@ -230,7 +205,7 @@ var rule = {
         ],
         "3": [ // 动漫
             { "key": "cateId", "name": "类型", "value": [
-                { "n": "全部", "v": "3" },
+                { "n": "全部", "v": "" },
                 { "n": "国产动漫", "v": "301" },
                 { "n": "日韩动漫", "v": "302" },
                 { "n": "港台动漫", "v": "304" },
@@ -254,20 +229,6 @@ var rule = {
                 { "n": "加拿大", "v": "%E5%8A%A0%E6%8B%BF%E5%A4%A7" },
                 { "n": "西班牙", "v": "%E8%A5%BF%E7%8F%AD%E7%89%99" },
                 { "n": "俄罗斯", "v": "%E4%BF%84%E7%BD%97%E6%96%AF" },
-                { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
-            ] },
-            { "key": "lang", "name": "语言", "value": [
-                { "n": "全部", "v": "" },
-                { "n": "汉语普通话", "v": "%E6%B1%89%E8%AF%AD%E6%99%AE%E9%80%9A%E8%AF%9D" },
-                { "n": "英语", "v": "%E8%8B%B1%E8%AF%AD" },
-                { "n": "粤语", "v": "%E7%B2%A4%E8%AF%AD" },
-                { "n": "韩语", "v": "%E9%9F%A9%E8%AF%AD" },
-                { "n": "日语", "v": "%E6%97%A5%E8%AF%AD" },
-                { "n": "法语", "v": "%E6%B3%95%E8%AF%AD" },
-                { "n": "德语", "v": "%E5%BE%B7%E8%AF%AD" },
-                { "n": "西班牙语", "v": "%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD" },
-                { "n": "意大利语", "v": "%E6%84%8F%E5%A4%A7%E5%88%A9%E8%AF%AD" },
-                { "n": "泰语", "v": "%E6%B3%B0%E8%AF%AD" },
                 { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
             ] },
             { "key": "year", "name": "年份", "value": [
@@ -295,7 +256,7 @@ var rule = {
                 { "n": "评分", "v": "score" }
             ] }
         ],
-        "11": [ // 短剧（无 type 子类）
+        "11": [ // 短剧（无 cateId）
             { "key": "area", "name": "地区", "value": [
                 { "n": "全部", "v": "" },
                 { "n": "中国大陆", "v": "%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86" },
@@ -313,20 +274,6 @@ var rule = {
                 { "n": "加拿大", "v": "%E5%8A%A0%E6%8B%BF%E5%A4%A7" },
                 { "n": "西班牙", "v": "%E8%A5%BF%E7%8F%AD%E7%89%99" },
                 { "n": "俄罗斯", "v": "%E4%BF%84%E7%BD%97%E6%96%AF" },
-                { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
-            ] },
-            { "key": "lang", "name": "语言", "value": [
-                { "n": "全部", "v": "" },
-                { "n": "汉语普通话", "v": "%E6%B1%89%E8%AF%AD%E6%99%AE%E9%80%9A%E8%AF%9D" },
-                { "n": "英语", "v": "%E8%8B%B1%E8%AF%AD" },
-                { "n": "粤语", "v": "%E7%B2%A4%E8%AF%AD" },
-                { "n": "韩语", "v": "%E9%9F%A9%E8%AF%AD" },
-                { "n": "日语", "v": "%E6%97%A5%E8%AF%AD" },
-                { "n": "法语", "v": "%E6%B3%95%E8%AF%AD" },
-                { "n": "德语", "v": "%E5%BE%B7%E8%AF%AD" },
-                { "n": "西班牙语", "v": "%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD" },
-                { "n": "意大利语", "v": "%E6%84%8F%E5%A4%A7%E5%88%A9%E8%AF%AD" },
-                { "n": "泰语", "v": "%E6%B3%B0%E8%AF%AD" },
                 { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
             ] },
             { "key": "year", "name": "年份", "value": [
@@ -356,13 +303,13 @@ var rule = {
         ]
     },
 
-    // ✅ 修正后的默认筛选
+    // 默认筛选（短剧无 cateId）
     filter_def: {
-        "1": { "cateId": "1", "by": "time" },
-        "2": { "cateId": "2", "by": "time" },
-        "4": { "cateId": "4", "by": "time" }, // 综艺 → 4
-        "3": { "cateId": "3", "by": "time" }, // 动漫 → 3
-        "11": { "cateId": "11","by": "time" }                // 短剧无 cateId
+        "1": { "by": "time" },
+        "2": { "by": "time" },
+        "4": { "by": "time" },
+        "3": { "by": "time" },
+        "11": { "by": "time" }
     },
 
     headers: {
@@ -375,7 +322,7 @@ var rule = {
     推荐: 'div.myui-panel-box:has(.title:contains("大片推荐")) ul.myui-vodlist;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
     double: false,
 
-    一级: '.myui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+    一级: 'ul.myui-vodlist.clearfix li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
 
     二级: {
         title: 'h1.title&&Text;.eq(0) a:eq(0)&&Text',
