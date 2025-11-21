@@ -3,8 +3,11 @@
 
 """
 
-作者 丢丢喵 🚓 剧多多 jddzx.cc 专用规则
-支持完整翻页 + 多线路二级解析
+作者 丢丢喵 🚓 剧多多 jddzx.cc 完整抓取规则
+✅ 自动绕过 /robot.php 人机验证
+✅ 仅抓第一页（因翻页无效）
+✅ 完整解析多线路（tabs + lists 一一对应）
+✅ 支持搜索 + 二级详情
 
 """
 
@@ -77,11 +80,8 @@ class Spider(Spider):
         return self.categoryContent("juji", "1", False, {})
 
     def categoryContent(self, tid, pg, filter, ext):
-        # ✅ 关键修正：使用 /vodshow/id/xxx/page/xx.html 路径
-        if pg == "1":
-            url = f"{xurl}/vodshow/id/{tid}/page/1.html"
-        else:
-            url = f"{xurl}/vodshow/id/{tid}/page/{pg}.html"
+        # ✅ 关键：只请求第一页，路径用 /type/xxx.html
+        url = f"{xurl}/type/{tid}.html"
 
         session = requests.Session()
         html = self.fetch_html(session, url)
@@ -109,20 +109,12 @@ class Spider(Spider):
                 "vod_remarks": vod_remarks
             })
 
-        # 获取总页数
-        page_links = soup.select('.page-link.page-number[title*="第"]')
-        max_page = 1
-        for a in page_links:
-            match = re.search(r'第(\d+)页', a.get("title", ""))
-            if match:
-                max_page = max(max_page, int(match.group(1)))
-
         return {
             "list": videos,
-            "page": int(pg),
-            "pagecount": max_page,
-            "limit": 30,
-            "total": max_page * 30
+            "page": 1,
+            "pagecount": 1,
+            "limit": len(videos),
+            "total": len(videos)
         }
 
     def detailContent(self, array):
@@ -139,25 +131,23 @@ class Spider(Spider):
         vod_pic = soup.select_one(".module-info-poster img").get("data-original", "") if soup.select_one(".module-info-poster img") else ""
         vod_content = soup.select_one(".module-info-introduction-content p").get_text(strip=True) if soup.select_one(".module-info-introduction-content p") else ""
 
-        # ✅ 关键修正：完整提取 tabs 和 lists
+        # ✅ 完整解析多线路
         tab_items = soup.select(".module-player-tab-item")
         play_lists = soup.select(".module-play-list")
 
         tabs = []
         urls = []
-        for i, tab in enumerate(tab_items):
-            tab_name = tab.get_text(strip=True)
-            if i < len(play_lists):
-                play_list = play_lists[i]
-                eps = []
-                for a in play_list.select("a"):
-                    ep_name = a.get_text(strip=True)
-                    ep_url = a.get("href", "")
-                    if ep_url:
-                        eps.append(f"{ep_name}${ep_url}")
-                if eps:
-                    tabs.append(tab_name)
-                    urls.append("#".join(eps))
+        for i in range(min(len(tab_items), len(play_lists))):
+            tab_name = tab_items[i].get_text(strip=True)
+            eps = []
+            for a in play_lists[i].select("a"):
+                ep_name = a.get_text(strip=True)
+                ep_url = a.get("href", "")
+                if ep_name and ep_url:
+                    eps.append(f"{ep_name}${ep_url}")
+            if eps:
+                tabs.append(tab_name)
+                urls.append("#".join(eps))
 
         vod_play_from = "$$$".join(tabs)
         vod_play_url = "$$$".join(urls)
@@ -183,12 +173,8 @@ class Spider(Spider):
         }
 
     def searchContent(self, key, quick, pg="1"):
-        # 搜索也使用 page 路径
-        if pg == "1":
-            search_url = f"{xurl}/vodsearch.html?wd={quote(key)}"
-        else:
-            search_url = f"{xurl}/vodsearch/page/{pg}.html?wd={quote(key)}"
-
+        # 搜索也只抓第一页
+        search_url = f"{xurl}/vodsearch.html?wd={quote(key)}"
         session = requests.Session()
         html = self.fetch_html(session, search_url)
         if not html:
@@ -215,13 +201,12 @@ class Spider(Spider):
                 "vod_remarks": vod_remarks
             })
 
-        # 搜索页总页数（简化处理）
         return {
             "list": videos,
-            "page": int(pg),
-            "pagecount": 999,
-            "limit": 30,
-            "total": 999 * 30
+            "page": 1,
+            "pagecount": 1,
+            "limit": len(videos),
+            "total": len(videos)
         }
 
     def localProxy(self, params):
