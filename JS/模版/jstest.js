@@ -1,9 +1,9 @@
 var rule = {
     title: '小宝影院',
     host: 'https://www.xiaobaotv.com',
-    url: '/vod/show/fyfilter/page/fypage.html',
+    url: '/vod/show/by/time/id/fyfilter/page/fypage.html',
     // 仅保留 by 和 id
-    filter_url: 'by/{{fl.by}}/id/{{fl.cateId}}',
+    filter_url: '{{fl.cateId}}',
     searchUrl: '/search.html?wd=**&page=fypage',
     class_name: '电影&电视剧&综艺&动漫&短剧',
     class_url: '1&2&4&3&11',
@@ -34,13 +34,7 @@ var rule = {
                 { "n": "同性片", "v": "118" },
                 { "n": "经典片", "v": "121" },
                 { "n": "其它片", "v": "122" }
-            ] },
-            { "key": "by", "name": "排序", "value": [
-                { "n": "时间", "v": "time" },
-                { "n": "人气", "v": "hits" },
-                { "n": "评分", "v": "score" }
             ] }
-        ],
         "2": [
             { "key": "cateId", "name": "类型", "value": [
                 { "n": "全部", "v": "2" },
@@ -50,11 +44,6 @@ var rule = {
                 { "n": "欧美剧", "v": "206" },
                 { "n": "新马泰剧", "v": "209" },
                 { "n": "其他剧", "v": "210" }
-            ] },
-            { "key": "by", "name": "排序", "value": [
-                { "n": "时间", "v": "time" },
-                { "n": "人气", "v": "hits" },
-                { "n": "评分", "v": "score" }
             ] }
         ],
         "4": [
@@ -66,11 +55,6 @@ var rule = {
                 { "n": "欧美综艺", "v": "406" },
                 { "n": "新马泰综艺", "v": "407" },
                 { "n": "其它综艺", "v": "410" }
-            ] },
-            { "key": "by", "name": "排序", "value": [
-                { "n": "时间", "v": "time" },
-                { "n": "人气", "v": "hits" },
-                { "n": "评分", "v": "score" }
             ] }
         ],
         "3": [
@@ -81,19 +65,6 @@ var rule = {
                 { "n": "港台动漫", "v": "304" },
                 { "n": "欧美动漫", "v": "306" },
                 { "n": "其它动漫", "v": "310" }
-            ] },
-            { "key": "by", "name": "排序", "value": [
-                { "n": "时间", "v": "time" },
-                { "n": "人气", "v": "hits" },
-                { "n": "评分", "v": "score" }
-            ] }
-        ],
-        "11": [
-            // 短剧无子类型，直接使用主分类 id=11
-            { "key": "by", "name": "排序", "value": [
-                { "n": "时间", "v": "time" },
-                { "n": "人气", "v": "hits" },
-                { "n": "评分", "v": "score" }
             ] }
         ]
     },
