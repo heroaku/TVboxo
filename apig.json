@@ -731,6 +731,13 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/剧迷影视.js"
         },
+				{
+            "key": "柏彩影视",
+            "name": "柏彩影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/柏彩影视.js"
+        },	
 		{
             "key": "小宝影院",
             "name": "小宝影院",
@@ -788,13 +795,7 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/55影视.js"
         },
-			{
-            "key": "柏彩影视",
-            "name": "柏彩影视",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/柏彩影视.js"
-        },	
+
 		{
       "key": "华人影院",
       "name": "华人影院",
