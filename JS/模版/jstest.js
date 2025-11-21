@@ -3,7 +3,9 @@ var rule = {
     host: 'https://www.netflixgc.com',
     模板: '短视2',
     searchUrl: '/vodsearch/**-------------/',
-    url: '/index.php/api/vod#type=fyclass&page=fypage',
+    //url: '/index.php/api/vod#type=fyclass&page=fypage',
+    url: 'vodshow/fyclass-----------.html',
+    //https://www.netflixgc.com/vodshow/fyclass-----------.html
     detailUrl: '/detail/fyid.html',
     searchable: 2,
     quickSearch: 1,
