@@ -2,8 +2,8 @@ var rule = {
     title: '小宝影院',
     host: 'https://www.xiaobaotv.com',
     url: '/vod/show/fyfilter.html',
-    // ⭐ 严格按照真实URL参数顺序：area/by/id/page/year
-    filter_url: 'area/{{fl.area}}/by/{{fl.by}}/id/{{fl.cateId}}/page/fypage/year/{{fl.year}}',
+    // 仅保留 by 和 id
+    filter_url: 'by/{{fl.by}}/id/{{fl.cateId}}/page/fypage',
     searchUrl: '/search.html?wd=**&page=fypage',
     class_name: '电影&电视剧&综艺&动漫&短剧',
     class_url: '1&2&4&3&11',
@@ -35,44 +35,6 @@ var rule = {
                 { "n": "经典片", "v": "121" },
                 { "n": "其它片", "v": "122" }
             ] },
-            { "key": "area", "name": "地区", "value": [
-                { "n": "全部", "v": "" },
-                { "n": "中国大陆", "v": "%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86" },
-                { "n": "中国香港", "v": "%E4%B8%AD%E5%9B%BD%E9%A6%99%E6%B8%AF" },
-                { "n": "中国台湾", "v": "%E4%B8%AD%E5%9B%BD%E5%8F%B0%E6%B9%BE" },
-                { "n": "欧美", "v": "%E6%AC%A7%E7%BE%8E" },
-                { "n": "韩国", "v": "%E9%9F%A9%E5%9B%BD" },
-                { "n": "日本", "v": "%E6%97%A5%E6%9C%AC" },
-                { "n": "泰国", "v": "%E6%B3%B0%E5%9B%BD" },
-                { "n": "新加坡", "v": "%E6%96%B0%E5%8A%A0%E5%9D%A1" },
-                { "n": "马来西亚", "v": "%E9%A9%AC%E6%9D%A5%E8%A5%BF%E4%BA%9A" },
-                { "n": "印度", "v": "%E5%8D%B0%E5%BA%A6" },
-                { "n": "英国", "v": "%E8%8B%B1%E5%9B%BD" },
-                { "n": "法国", "v": "%E6%B3%95%E5%9B%BD" },
-                { "n": "加拿大", "v": "%E5%8A%A0%E6%8B%BF%E5%A4%A7" },
-                { "n": "西班牙", "v": "%E8%A5%BF%E7%8F%AD%E7%89%99" },
-                { "n": "俄罗斯", "v": "%E4%BF%84%E7%BD%97%E6%96%AF" },
-                { "n": "其它", "v": "%E5%85%B6%E5%AE%83" }
-            ] },
-            { "key": "year", "name": "年份", "value": [
-                { "n": "全部", "v": "" },
-                { "n": "2025", "v": "2025" },
-                { "n": "2024", "v": "2024" },
-                { "n": "2023", "v": "2023" },
-                { "n": "2022", "v": "2022" },
-                { "n": "2021", "v": "2021" },
-                { "n": "2020", "v": "2020" },
-                { "n": "2019", "v": "2019" },
-                { "n": "2018", "v": "2018" },
-                { "n": "2017", "v": "2017" },
-                { "n": "2016", "v": "2016" },
-                { "n": "2015", "v": "2015" },
-                { "n": "2014", "v": "2014" },
-                { "n": "2013", "v": "2013" },
-                { "n": "2012", "v": "2012" },
-                { "n": "2011", "v": "2011" },
-                { "n": "2010", "v": "2010" }
-            ] },
             { "key": "by", "name": "排序", "value": [
                 { "n": "时间", "v": "time" },
                 { "n": "人气", "v": "hits" },
@@ -89,15 +51,13 @@ var rule = {
                 { "n": "新马泰剧", "v": "209" },
                 { "n": "其他剧", "v": "210" }
             ] },
-            { "key": "area", "name": "地区", "value": [ /* 同上，略 */ ] },
-            { "key": "year", "name": "年份", "value": [ /* 同上，略 */ ] },
             { "key": "by", "name": "排序", "value": [
                 { "n": "时间", "v": "time" },
                 { "n": "人气", "v": "hits" },
                 { "n": "评分", "v": "score" }
             ] }
         ],
-        "4": [ // 综艺
+        "4": [
             { "key": "cateId", "name": "类型", "value": [
                 { "n": "全部", "v": "4" },
                 { "n": "大陆综艺", "v": "401" },
@@ -107,11 +67,13 @@ var rule = {
                 { "n": "新马泰综艺", "v": "407" },
                 { "n": "其它综艺", "v": "410" }
             ] },
-            { "key": "area", "name": "地区", "value": [ /* 同上 */ ] },
-            { "key": "year", "name": "年份", "value": [ /* 同上 */ ] },
-            { "key": "by", "name": "排序", "value": [ /* 同上 */ ] }
+            { "key": "by", "name": "排序", "value": [
+                { "n": "时间", "v": "time" },
+                { "n": "人气", "v": "hits" },
+                { "n": "评分", "v": "score" }
+            ] }
         ],
-        "3": [ // 动漫
+        "3": [
             { "key": "cateId", "name": "类型", "value": [
                 { "n": "全部", "v": "3" },
                 { "n": "国产动漫", "v": "301" },
@@ -120,13 +82,14 @@ var rule = {
                 { "n": "欧美动漫", "v": "306" },
                 { "n": "其它动漫", "v": "310" }
             ] },
-            { "key": "area", "name": "地区", "value": [ /* 同上 */ ] },
-            { "key": "year", "name": "年份", "value": [ /* 同上 */ ] },
-            { "key": "by", "name": "排序", "value": [ /* 同上 */ ] }
+            { "key": "by", "name": "排序", "value": [
+                { "n": "时间", "v": "time" },
+                { "n": "人气", "v": "hits" },
+                { "n": "评分", "v": "score" }
+            ] }
         ],
-        "11": [ // 短剧（无 cateId）
-            { "key": "area", "name": "地区", "value": [ /* 同上 */ ] },
-            { "key": "year", "name": "年份", "value": [ /* 同上 */ ] },
+        "11": [
+            // 短剧无子类型，直接使用主分类 id=11
             { "key": "by", "name": "排序", "value": [
                 { "n": "时间", "v": "time" },
                 { "n": "人气", "v": "hits" },
@@ -135,7 +98,7 @@ var rule = {
         ]
     },
 
-    // ⭐ 关键：filter_def 不设 cateId，避免覆盖“全部”
+    // 默认筛选：短剧不设 cateId
     filter_def: {
         "1": { "by": "time" },
         "2": { "by": "time" },
@@ -144,7 +107,9 @@ var rule = {
         "11": { "by": "time" }
     },
 
-    headers: { 'User-Agent': 'Mozilla/5.0' },
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36'
+    },
     play_parse: true,
     lazy: '',
     limit: 6,
@@ -152,7 +117,7 @@ var rule = {
     推荐: 'div.myui-panel-box:has(.title:contains("大片推荐")) ul.myui-vodlist;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
     double: false,
 
-    // ⭐ 一级选择器修正（确保匹配分类页）
+    // 修正一级选择器（确保匹配分类页）
     一级: 'ul.myui-vodlist.clearfix li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
 
     二级: {
@@ -165,4 +130,4 @@ var rule = {
     },
 
     搜索: '.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text'
-};
+}
