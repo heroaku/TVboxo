@@ -54,7 +54,6 @@ var rule = {
     },
     headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'
-        // 无需 Referer，豆瓣图床 + 站点 API 均允许直接访问
     },
     class_name: '电影&剧集',
     class_url: 'movie&tv',
@@ -72,10 +71,14 @@ var rule = {
         'kdm3u8': '酷点', 'bdxm3u8': '北斗星', 'hhm3u8': '豪华', 'kbm3u8': '快播'
     },
     推荐: '.v-list;div.item;*;*;*;*',
+    
+    // 一级规则 - 正确的5项格式，描述项为空
     一级: '.v-list&&div.item;p&&Text;img&&data-src;;a&&href',
+    
+    // 搜索规则 - 5项格式，包含描述
     搜索: '.col-md-8&&.media;h5&&a&&Text;a&&img&&data-src;.label&&Text;a&&href',
 
-    // ========== 二级：明文 JS（已解码） ==========
+    // 二级规则保持不变
     二级: `
         js:
         pdfh = jsp.pdfh;
@@ -99,7 +102,7 @@ var rule = {
             let html1 = request(input);
             VOD.vod_id = pdfh(html1, '#current_id&&value');
             VOD.vod_name = pdfh(html1, 'h2&&Text');
-            VOD.vod_pic = pdfh(html1, '.item-root&&img&&data-src');  // ✅ 使用 data-src
+            VOD.vod_pic = pdfh(html1, '.item-root&&img&&data-src');
             VOD.vod_actor = pdfh(html1, '.meta:eq(4)&&Text');
             VOD.vod_area = pdfh(html1, '.meta:eq(3)&&Text');
             VOD.vod_year = pdfh(html1, '.meta:eq(2)&&Text');
