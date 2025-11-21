@@ -2,7 +2,7 @@ var rule = {
     title: '糖豆影视',
     host: 'https://tdys.cc',
     url: '/show/fyclass--------fypage---.html',
-    detailUrl: '/vod-detail/fyid.html',
+    //detailUrl: '/vod-detail/fyid.html',
     searchUrl: '/so/-.html?wd=**',
     searchable: 2,
     quickSearch: 1,
