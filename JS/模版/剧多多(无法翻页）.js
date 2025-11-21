@@ -27,3 +27,35 @@ var rule = {
     },
     搜索: 'a.module-poster-item.module-item;a&&title;.module-item-pic&&img&&data-original;.module-item-note&&Text;a&&href'
 }
+
+
+var rule = {
+    title: '剧多多',
+    host: 'https://www.jddzx.cc',
+    // 仅使用第一页（翻页无效）
+    url: '/type/fyclass.html',
+    detailUrl: '/vod/fyid.html',
+    searchUrl: '/vodsearch.html?wd=**',
+    searchable: 2,
+    quickSearch: 1,
+    filterable: 0,
+    class_name: '电影&剧集&动漫&综艺&短剧',
+    class_url: 'dianying&juji&dongman&zongyi&duanju',
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36'
+    },
+    lazy: '',
+    limit: 30,
+    double: false,
+    推荐: 'a.module-poster-item.module-item;a&&title;.module-item-pic&&img&&data-original;.module-item-note&&Text;a&&href',
+    一级: 'a.module-poster-item.module-item;a&&title;.module-item-pic&&img&&data-original;.module-item-note&&Text;a&&href',
+    二级: {
+        "title": "h1&&Text;.module-info-tag&&Text",
+        "img": ".module-info-poster&&img&&data-original",
+        "desc": ".module-info-item:eq(0)&&Text",
+        "content": ".module-info-introduction-content&&p&&Text",
+        "tabs": "div.module-player-tab-item",
+        "lists": "div.module-play-list:eq(#id) a"
+    },
+    搜索: 'a.module-poster-item.module-item;a&&title;.module-item-pic&&img&&data-original;.module-item-note&&Text;a&&href'
+};
