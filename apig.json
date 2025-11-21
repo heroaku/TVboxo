@@ -730,22 +730,21 @@
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/剧迷影视.js"
-        },			
-		{
-            "key": "EU影视",
-            "name": "EU影视",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/EU影视.js"
-        },	
-					{
-            "key": "智子影视",
-            "name": "智子影视",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
-            "ext": "./JS/智子影视.js"
         },
+		{
+            "key": "小宝影院",
+            "name": "小宝影院",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/小宝影院.js"
+        },
+        {
+            "key": "欧乐影院",
+            "name": "欧乐影院",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/欧乐影院.js"
+        },	
 			{
             "key": "FREE影视",
             "name": "FREE影视",
@@ -796,6 +795,16 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/柏彩影视.js"
         },	
+		{
+      "key": "华人影院",
+      "name": "华人影院",
+      "type": 3,
+      "api": "csp_XBPQ",
+      "searchable": 1,
+      "changeable": 1,
+      "playerType": 2,
+      "ext":"./XBPQ/华人影院.json"
+    },
 			{
             "key": "万象影视",
             "name": "万象影视",
@@ -860,20 +869,6 @@
 			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
 			"ext": "./JS/哇视频.js"
 			},		
-	{
-            "key": "小宝影院",
-            "name": "小宝影院",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/小宝影院.js"
-        },
-        {
-            "key": "欧乐影院",
-            "name": "欧乐影院",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/欧乐影院.js"
-        },	
 		{
             "key": "师兄影视",
             "name": "师兄影视",
@@ -1119,16 +1114,14 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/旗星影视.js"
         },
-	{
-      "key": "华人影院",
-      "name": "华人影院",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "searchable": 1,
-      "changeable": 1,
-      "playerType": 2,
-      "ext":"./XBPQ/华人影院.json"
-    },
+			{
+            "key": "EU影视",
+            "name": "EU影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/EU影视.js"
+        },	
+
     {
       "key": "金蝉",
       "name": "金蝉｜影视",
