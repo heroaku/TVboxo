@@ -1,25 +1,9 @@
 var rule = {
     title: '小宝影院',
     host: 'https://www.xiaobaotv.com',
-    // 使用函数动态拼接 URL（支持任意参数顺序）
-    url: function (params) {
-        let { cate, page, filter } = params;
-        let fl = filter || {};
-        let parts = [];
-
-        // 必选：排序
-        parts.push('by', fl.by || 'time');
-        // 必选：分类ID（有子类用 cateId，否则用主分类 cate）
-        parts.push('id', fl.cateId || cate);
-
-        // 可选：地区、年份
-        if (fl.area) parts.push('area', fl.area);
-        if (fl.year) parts.push('year', fl.year);
-
-        parts.push('page', page);
-        return '/vod/show/' + parts.join('/') + '.html';
-    },
-
+    url: '/vod/show/fyfilter.html',
+    filter_url: 'area/{{fl.area}}/by/{{fl.by}}/id/{{fl.cateId}}/page/fypage/year/{{fl.year}}',
+    //https://www.xiaobaotv.com/vod/show/area/{{fl.area}}/by/{{fl.by}}/id/{{fl.cateId}}/page/fypage/year/{{fl.year}}.html
     searchUrl: '/search.html?wd=**&page=fypage',
     class_name: '电影&电视剧&综艺&动漫&短剧',
     class_url: '1&2&4&3&11',
@@ -28,9 +12,9 @@ var rule = {
     filterable: 1,
 
     filter: {
-        "1": [ // 电影
+        "1": [
             { "key": "cateId", "name": "类型", "value": [
-                { "n": "全部", "v": "" },
+                { "n": "全部", "v": "1" },
                 { "n": "动作片", "v": "101" },
                 { "n": "喜剧片", "v": "102" },
                 { "n": "爱情片", "v": "103" },
@@ -95,9 +79,9 @@ var rule = {
                 { "n": "评分", "v": "score" }
             ] }
         ],
-        "2": [ // 电视剧
+        "2": [
             { "key": "cateId", "name": "类型", "value": [
-                { "n": "全部", "v": "" },
+                { "n": "全部", "v": "2" },
                 { "n": "国产剧", "v": "201" },
                 { "n": "港台剧", "v": "202" },
                 { "n": "日韩剧", "v": "204" },
@@ -151,7 +135,7 @@ var rule = {
         ],
         "4": [ // 综艺
             { "key": "cateId", "name": "类型", "value": [
-                { "n": "全部", "v": "" },
+                { "n": "全部", "v": "4" },
                 { "n": "大陆综艺", "v": "401" },
                 { "n": "日韩综艺", "v": "402" },
                 { "n": "港台综艺", "v": "404" },
@@ -205,7 +189,7 @@ var rule = {
         ],
         "3": [ // 动漫
             { "key": "cateId", "name": "类型", "value": [
-                { "n": "全部", "v": "" },
+                { "n": "全部", "v": "3" },
                 { "n": "国产动漫", "v": "301" },
                 { "n": "日韩动漫", "v": "302" },
                 { "n": "港台动漫", "v": "304" },
@@ -256,7 +240,7 @@ var rule = {
                 { "n": "评分", "v": "score" }
             ] }
         ],
-        "11": [ // 短剧（无 cateId）
+        "11": [ // 短剧（无 type 子类）
             { "key": "area", "name": "地区", "value": [
                 { "n": "全部", "v": "" },
                 { "n": "中国大陆", "v": "%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86" },
@@ -303,13 +287,13 @@ var rule = {
         ]
     },
 
-    // 默认筛选（短剧无 cateId）
+    // ✅ 修正后的默认筛选
     filter_def: {
-        "1": { "by": "time" },
-        "2": { "by": "time" },
-        "4": { "by": "time" },
-        "3": { "by": "time" },
-        "11": { "by": "time" }
+        "1": { "cateId": "1", "by": "time" },
+        "2": { "cateId": "2", "by": "time" },
+        "4": { "cateId": "4", "by": "time" }, // 综艺 → 4
+        "3": { "cateId": "3", "by": "time" }, // 动漫 → 3
+        "11": { "cateId": "11","by": "time" }                // 短剧无 cateId
     },
 
     headers: {
@@ -322,7 +306,7 @@ var rule = {
     推荐: 'div.myui-panel-box:has(.title:contains("大片推荐")) ul.myui-vodlist;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
     double: false,
 
-    一级: 'ul.myui-vodlist.clearfix li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+    一级: '.myui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
 
     二级: {
         title: 'h1.title&&Text;.eq(0) a:eq(0)&&Text',
