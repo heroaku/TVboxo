@@ -100,11 +100,11 @@ var rule = {
 
     // 默认筛选：短剧不设 cateId
     filter_def: {
-        "1": { "by": "time" },
-        "2": { "by": "time" },
-        "4": { "by": "time" },
-        "3": { "by": "time" },
-        "11": { "by": "time" }
+        "1": { "cateId": "1"},
+        "2": { "cateId": "2" },
+        "4": { "cateId": "4"}, // 综艺 → 4
+        "3": { "cateId": "3"}, // 动漫 → 3
+        "11": { "cateId": "11"}                // 短剧无 cateId
     },
 
     headers: {
