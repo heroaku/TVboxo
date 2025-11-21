@@ -1,7 +1,6 @@
 var rule = {
     title: '奈飞工厂',
     host: 'https://www.netflixgc.com',
-    模板:'短视2',
     searchUrl: '/vodsearch/**-------------/',
     url:'/index.php/api/vod#type=fyclass&page=fypage',
     detailUrl:'/detail/fyid.html',
