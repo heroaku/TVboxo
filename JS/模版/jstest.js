@@ -28,7 +28,7 @@ var rule = {
         img: '.myui-content__thumb img.lazyload&&data-original',
         desc: '.data:eq(1)&&Text;.data:eq(2)&&Text;.data:eq(3)&&Text;.data:eq(0) a:eq(1)&&Text;.data:eq(0) a:eq(2)&&Text', // 更新、主演、导演、地区、年份
         content: '.content span.sketch&&Text',
-        tabs: '.nav-tabs a',
+        tabs: '.nav-tabs li',
         lists: '.myui-content__list:eq(#id) a'
     },
 
