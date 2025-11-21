@@ -3,6 +3,8 @@
 
 """
 
+作者 丢丢喵 🚓 剧多多 jddzx.cc 专用规则
+支持完整翻页 + 多线路二级解析
 
 """
 
@@ -11,7 +13,6 @@ from base.spider import Spider
 from bs4 import BeautifulSoup
 import requests
 import base64
-import json
 import time
 import re
 
@@ -29,14 +30,7 @@ class Spider(Spider):
     def init(self, extend=""):
         pass
 
-    def isVideoFormat(self, url):
-        return False
-
-    def manualVideoCheck(self):
-        pass
-
     def encrypt(self, s, dummy='P'):
-        """复现前端 encrypt 函数"""
         result = ""
         for ch in s:
             pos = STATIC_CHARS.find(ch)
@@ -48,7 +42,6 @@ class Spider(Spider):
         return base64.b64encode(result.encode()).decode()
 
     def bypass_robot(self, session, target_url):
-        """执行人机验证"""
         full_url = urljoin(xurl, target_url)
         value = self.encrypt(full_url)
         token = self.encrypt("MTc2MzczNjk4MQ==")
@@ -84,10 +77,11 @@ class Spider(Spider):
         return self.categoryContent("juji", "1", False, {})
 
     def categoryContent(self, tid, pg, filter, ext):
-        if not pg or pg == "1":
-            url = f"{xurl}/type/{tid}.html"
+        # ✅ 关键修正：使用 /vodshow/id/xxx/page/xx.html 路径
+        if pg == "1":
+            url = f"{xurl}/vodshow/id/{tid}/page/1.html"
         else:
-            url = f"{xurl}/type/{tid}/page/{pg}.html"
+            url = f"{xurl}/vodshow/id/{tid}/page/{pg}.html"
 
         session = requests.Session()
         html = self.fetch_html(session, url)
@@ -98,13 +92,12 @@ class Spider(Spider):
         videos = []
         for item in soup.select("a.module-poster-item.module-item"):
             href = item.get("href", "").strip()
-            if not href.startswith("/vod/"):
-                continue
+            if not href.startswith("/vod/"): continue
             title = item.select_one(".module-poster-item-title")
             img = item.select_one("img.lazy")
             note = item.select_one(".module-item-note")
 
-            vod_id = href.lstrip("/").rstrip(".html")
+            vod_id = href.replace("/vod/", "").rstrip(".html")
             vod_name = title.get_text(strip=True) if title else ""
             vod_pic = img.get("data-original", "") if img else ""
             vod_remarks = note.get_text(strip=True) if note else ""
@@ -116,22 +109,20 @@ class Spider(Spider):
                 "vod_remarks": vod_remarks
             })
 
-        # 获取总页数（可选，若无法获取可设为999）
-        total_pages = 999
-        page_links = soup.select(".page-link[href*='/page/']")
-        if page_links:
-            try:
-                nums = [int(re.search(r'/page/(\d+)', a.get("href", "")).group(1)) for a in page_links if re.search(r'/page/(\d+)', a.get("href", ""))]
-                total_pages = max(nums) if nums else 999
-            except:
-                total_pages = 999
+        # 获取总页数
+        page_links = soup.select('.page-link.page-number[title*="第"]')
+        max_page = 1
+        for a in page_links:
+            match = re.search(r'第(\d+)页', a.get("title", ""))
+            if match:
+                max_page = max(max_page, int(match.group(1)))
 
         return {
             "list": videos,
             "page": int(pg),
-            "pagecount": total_pages,
+            "pagecount": max_page,
             "limit": 30,
-            "total": total_pages * 30
+            "total": max_page * 30
         }
 
     def detailContent(self, array):
@@ -143,25 +134,33 @@ class Spider(Spider):
             return {"list": []}
 
         soup = BeautifulSoup(html, "html.parser")
-        vod_name = soup.select_one("h1").get_text(strip=True) if soup.select_one("h1") else ""
+
+        vod_name = soup.select_one("h1").get_text(strip=True) if soup.select_one("h1") else tid
         vod_pic = soup.select_one(".module-info-poster img").get("data-original", "") if soup.select_one(".module-info-poster img") else ""
         vod_content = soup.select_one(".module-info-introduction-content p").get_text(strip=True) if soup.select_one(".module-info-introduction-content p") else ""
 
-        # 提取多线路（标签）
+        # ✅ 关键修正：完整提取 tabs 和 lists
         tab_items = soup.select(".module-player-tab-item")
-        tab_names = [t.get_text(strip=True) for t in tab_items] or ["播放"]
-
-        # 提取播放列表（按线路分组）
         play_lists = soup.select(".module-play-list")
-        play_urls = []
-        for idx, lst in enumerate(play_lists):
-            tab_name = tab_names[idx] if idx < len(tab_names) else f"线路{idx+1}"
-            urls = lst.select("a")
-            episodes = "#".join([f"{a.get_text(strip=True)}${a.get('href', '')}" for a in urls])
-            play_urls.append(f"{tab_name}${episodes}")
 
-        vod_play_from = "$$$".join(tab_names)
-        vod_play_url = "$$$".join([part.split("$", 1)[1] if "$" in part else part for part in play_urls])
+        tabs = []
+        urls = []
+        for i, tab in enumerate(tab_items):
+            tab_name = tab.get_text(strip=True)
+            if i < len(play_lists):
+                play_list = play_lists[i]
+                eps = []
+                for a in play_list.select("a"):
+                    ep_name = a.get_text(strip=True)
+                    ep_url = a.get("href", "")
+                    if ep_url:
+                        eps.append(f"{ep_name}${ep_url}")
+                if eps:
+                    tabs.append(tab_name)
+                    urls.append("#".join(eps))
+
+        vod_play_from = "$$$".join(tabs)
+        vod_play_url = "$$$".join(urls)
 
         return {
             "list": [{
@@ -184,7 +183,8 @@ class Spider(Spider):
         }
 
     def searchContent(self, key, quick, pg="1"):
-        if not pg or pg == "1":
+        # 搜索也使用 page 路径
+        if pg == "1":
             search_url = f"{xurl}/vodsearch.html?wd={quote(key)}"
         else:
             search_url = f"{xurl}/vodsearch/page/{pg}.html?wd={quote(key)}"
@@ -198,13 +198,12 @@ class Spider(Spider):
         videos = []
         for item in soup.select("a.module-poster-item.module-item"):
             href = item.get("href", "").strip()
-            if not href.startswith("/vod/"):
-                continue
+            if not href.startswith("/vod/"): continue
             title = item.select_one(".module-poster-item-title")
             img = item.select_one("img.lazy")
             note = item.select_one(".module-item-note")
 
-            vod_id = href.lstrip("/").rstrip(".html")
+            vod_id = href.replace("/vod/", "").rstrip(".html")
             vod_name = title.get_text(strip=True) if title else ""
             vod_pic = img.get("data-original", "") if img else ""
             vod_remarks = note.get_text(strip=True) if note else ""
@@ -216,22 +215,13 @@ class Spider(Spider):
                 "vod_remarks": vod_remarks
             })
 
-        # 搜索页总页数（可选）
-        total_pages = 999
-        page_links = soup.select(".page-link[href*='/page/']")
-        if page_links:
-            try:
-                nums = [int(re.search(r'/page/(\d+)', a.get("href", "")).group(1)) for a in page_links if re.search(r'/page/(\d+)', a.get("href", ""))]
-                total_pages = max(nums) if nums else 999
-            except:
-                total_pages = 999
-
+        # 搜索页总页数（简化处理）
         return {
             "list": videos,
             "page": int(pg),
-            "pagecount": total_pages,
+            "pagecount": 999,
             "limit": 30,
-            "total": total_pages * 30
+            "total": 999 * 30
         }
 
     def localProxy(self, params):
