@@ -1,9 +1,9 @@
 var rule = {
     title: '小宝影院',
     host: 'https://www.xiaobaotv.com',
-    url: '/vod/show/fyfilter.html',
+    url: '/vod/show/fyfilter/page/fypage.html',
     // 仅保留 by 和 id
-    filter_url: 'by/{{fl.by}}/id/{{fl.cateId}}/page/fypage',
+    filter_url: 'by/{{fl.by}}/id/{{fl.cateId}}',
     searchUrl: '/search.html?wd=**&page=fypage',
     class_name: '电影&电视剧&综艺&动漫&短剧',
     class_url: '1&2&4&3&11',
