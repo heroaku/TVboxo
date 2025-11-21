@@ -3,21 +3,18 @@
 
 """
 
-作者 丢丢喵 🚓 内容均从互联网收集而来 仅供交流学习使用 版权归原创者所有 如侵犯了您的权益 请通知作者 将及时删除侵权内容
-                    ====================Diudiumiao====================
 
 """
 
-from urllib.parse import urljoin
+from urllib.parse import urljoin, quote
 from base.spider import Spider
 from bs4 import BeautifulSoup
 import requests
 import base64
 import json
-import re
 import time
+import re
 
-# 全局配置
 xurl = "https://www.jddzx.cc"
 STATIC_CHARS = "PXhw7UT1B0a9kQDKZsjIASmOezxYG4CHo5Jyfg2b8FLpEvRr3WtVnlqMidu6cN"
 
@@ -54,7 +51,7 @@ class Spider(Spider):
         """执行人机验证"""
         full_url = urljoin(xurl, target_url)
         value = self.encrypt(full_url)
-        token = self.encrypt("MTc2MzczNjk4MQ==")  # 固定值
+        token = self.encrypt("MTc2MzczNjk4MQ==")
         data = f"value={value}&token={token}"
         try:
             session.post(f"{xurl}/robot.php", data=data, timeout=10)
@@ -87,11 +84,11 @@ class Spider(Spider):
         return self.categoryContent("juji", "1", False, {})
 
     def categoryContent(self, tid, pg, filter, ext):
-        if pg != "1":
-            # 仅支持第一页（翻页无效/重复）
-            pg = "1"
+        if not pg or pg == "1":
+            url = f"{xurl}/type/{tid}.html"
+        else:
+            url = f"{xurl}/type/{tid}/page/{pg}.html"
 
-        url = f"{xurl}/type/{tid}.html"
         session = requests.Session()
         html = self.fetch_html(session, url)
         if not html:
@@ -99,9 +96,7 @@ class Spider(Spider):
 
         soup = BeautifulSoup(html, "html.parser")
         videos = []
-        items = soup.select("a.module-poster-item.module-item")
-
-        for item in items:
+        for item in soup.select("a.module-poster-item.module-item"):
             href = item.get("href", "").strip()
             if not href.startswith("/vod/"):
                 continue
@@ -121,12 +116,22 @@ class Spider(Spider):
                 "vod_remarks": vod_remarks
             })
 
+        # 获取总页数（可选，若无法获取可设为999）
+        total_pages = 999
+        page_links = soup.select(".page-link[href*='/page/']")
+        if page_links:
+            try:
+                nums = [int(re.search(r'/page/(\d+)', a.get("href", "")).group(1)) for a in page_links if re.search(r'/page/(\d+)', a.get("href", ""))]
+                total_pages = max(nums) if nums else 999
+            except:
+                total_pages = 999
+
         return {
             "list": videos,
-            "page": 1,
-            "pagecount": 1,
+            "page": int(pg),
+            "pagecount": total_pages,
             "limit": 30,
-            "total": len(videos)
+            "total": total_pages * 30
         }
 
     def detailContent(self, array):
@@ -138,21 +143,25 @@ class Spider(Spider):
             return {"list": []}
 
         soup = BeautifulSoup(html, "html.parser")
-        vod_name = soup.select_one("h1").get_text(strip=True) if soup.select_one("h1") else tid
+        vod_name = soup.select_one("h1").get_text(strip=True) if soup.select_one("h1") else ""
         vod_pic = soup.select_one(".module-info-poster img").get("data-original", "") if soup.select_one(".module-info-poster img") else ""
         vod_content = soup.select_one(".module-info-introduction-content p").get_text(strip=True) if soup.select_one(".module-info-introduction-content p") else ""
 
-        # 提取多线路
-        tabs = soup.select(".module-player-tab-item")
-        lists = soup.select(".module-play-list")
+        # 提取多线路（标签）
+        tab_items = soup.select(".module-player-tab-item")
+        tab_names = [t.get_text(strip=True) for t in tab_items] or ["播放"]
 
-        vod_play_from = "$$$".join([t.get_text(strip=True) for t in tabs]) if tabs else "播放"
-        vod_play_url = ""
-        for lst in lists:
+        # 提取播放列表（按线路分组）
+        play_lists = soup.select(".module-play-list")
+        play_urls = []
+        for idx, lst in enumerate(play_lists):
+            tab_name = tab_names[idx] if idx < len(tab_names) else f"线路{idx+1}"
             urls = lst.select("a")
-            line = "#".join([f"{a.get_text(strip=True)}${a.get('href', '')}" for a in urls])
-            vod_play_url += line + "$$$"
-        vod_play_url = vod_play_url.rstrip("$$$")
+            episodes = "#".join([f"{a.get_text(strip=True)}${a.get('href', '')}" for a in urls])
+            play_urls.append(f"{tab_name}${episodes}")
+
+        vod_play_from = "$$$".join(tab_names)
+        vod_play_url = "$$$".join([part.split("$", 1)[1] if "$" in part else part for part in play_urls])
 
         return {
             "list": [{
@@ -175,8 +184,55 @@ class Spider(Spider):
         }
 
     def searchContent(self, key, quick, pg="1"):
-        # 搜索功能可选实现（如需）
-        return {"list": []}
+        if not pg or pg == "1":
+            search_url = f"{xurl}/vodsearch.html?wd={quote(key)}"
+        else:
+            search_url = f"{xurl}/vodsearch/page/{pg}.html?wd={quote(key)}"
+
+        session = requests.Session()
+        html = self.fetch_html(session, search_url)
+        if not html:
+            return {"list": []}
+
+        soup = BeautifulSoup(html, "html.parser")
+        videos = []
+        for item in soup.select("a.module-poster-item.module-item"):
+            href = item.get("href", "").strip()
+            if not href.startswith("/vod/"):
+                continue
+            title = item.select_one(".module-poster-item-title")
+            img = item.select_one("img.lazy")
+            note = item.select_one(".module-item-note")
+
+            vod_id = href.lstrip("/").rstrip(".html")
+            vod_name = title.get_text(strip=True) if title else ""
+            vod_pic = img.get("data-original", "") if img else ""
+            vod_remarks = note.get_text(strip=True) if note else ""
+
+            videos.append({
+                "vod_id": vod_id,
+                "vod_name": vod_name,
+                "vod_pic": vod_pic,
+                "vod_remarks": vod_remarks
+            })
+
+        # 搜索页总页数（可选）
+        total_pages = 999
+        page_links = soup.select(".page-link[href*='/page/']")
+        if page_links:
+            try:
+                nums = [int(re.search(r'/page/(\d+)', a.get("href", "")).group(1)) for a in page_links if re.search(r'/page/(\d+)', a.get("href", ""))]
+                total_pages = max(nums) if nums else 999
+            except:
+                total_pages = 999
+
+        return {
+            "list": videos,
+            "page": int(pg),
+            "pagecount": total_pages,
+            "limit": 30,
+            "total": total_pages * 30
+        }
 
     def localProxy(self, params):
         return None
