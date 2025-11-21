@@ -26,4 +26,4 @@ var rule = {
         "lists": ".module-player-list:eq(#id)&&a"
     },
     搜索: 'a.module-poster-item.module-item;a&&title;.module-item-pic&&img&&data-original;.module-item-note&&Text;a&&href'
-};
+}
