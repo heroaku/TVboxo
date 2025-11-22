@@ -434,6 +434,13 @@
         "dataIv": "VwsHxkCViDXEExWa"
       }
     },
+		{
+		"key": "暴风资源JS",
+		"name": "暴风资源JS",
+		"type": 3,
+		"api": "./JS/drpy2.min.js",
+		"ext": "./JS/暴风资源JS.js"
+		},
     {
       "key": "3Q",
       "name": "三七X｜影视",
