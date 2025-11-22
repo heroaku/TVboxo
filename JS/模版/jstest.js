@@ -1,8 +1,7 @@
 var rule = {
     title: '小宝影院',
     host: 'https://www.xiaobaotv.com',
-    url: '/vod/show/by/time/id/fyfilter/page/fypage.html',
-    // 仅保留 by 和 id
+    url: '/vod/show/id/fyfilter/page/fypage.html',
     filter_url: '{{fl.cateId}}',
     searchUrl: '/search.html?wd=**&page=fypage',
     class_name: '电影&电视剧&综艺&动漫&短剧',
@@ -35,6 +34,7 @@ var rule = {
                 { "n": "经典片", "v": "121" },
                 { "n": "其它片", "v": "122" }
             ] }
+        ],
         "2": [
             { "key": "cateId", "name": "类型", "value": [
                 { "n": "全部", "v": "2" },
@@ -66,16 +66,16 @@ var rule = {
                 { "n": "欧美动漫", "v": "306" },
                 { "n": "其它动漫", "v": "310" }
             ] }
-        ]
+        ],
+        "11": []
     },
 
-    // 默认筛选：短剧不设 cateId
     filter_def: {
-        "1": { "cateId": "1"},
+        "1": { "cateId": "1" },
         "2": { "cateId": "2" },
-        "4": { "cateId": "4"}, // 综艺 → 4
-        "3": { "cateId": "3"}, // 动漫 → 3
-        "11": { "cateId": "11"}                // 短剧无 cateId
+        "4": { "cateId": "4" },
+        "3": { "cateId": "3" },
+        "11": {}
     },
 
     headers: {
@@ -88,7 +88,6 @@ var rule = {
     推荐: 'div.myui-panel-box:has(.title:contains("大片推荐")) ul.myui-vodlist;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
     double: false,
 
-    // 修正一级选择器（确保匹配分类页）
     一级: 'ul.myui-vodlist.clearfix li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
 
     二级: {
