@@ -435,6 +435,15 @@
       }
     },
     {
+      "key": "采集之王",
+      "name": "采集｜合集",
+      "type": 3,
+      "api": "./JS/drpy2.min.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "ext": "./JS/采集之王.js?type=url&params=../JS/采集静态.json"
+    },
+    {
       "key": "高清资源网",
       "name": "️高清采集",
       "type": 1,
