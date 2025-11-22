@@ -95,7 +95,7 @@ var rule = {
         img: '.myui-content__thumb img.lazyload&&data-original',
         desc: '.eq(1)&&Text;.eq(2)&&Text;.eq(3)&&Text;.eq(0) a:eq(1)&&Text;.eq(0) a:eq(2)&&Text',
         content: '.content span.sketch&&Text',
-        tabs: '.nav-tabs a',
+        tabs: '.nav-tabs:eq(0) li',
         lists: '.myui-content__list:eq(#id) a'
     },
 
