@@ -88,7 +88,8 @@ var rule = {
     推荐: 'div.myui-panel-box:has(.title:contains("大片推荐")) ul.myui-vodlist;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
     double: false,
 
-    一级: 'ul.myui-vodlist.clearfix li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+  //  一级: 'ul.myui-vodlist.clearfix li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+    一级:'.myui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
 
     二级: {
         title: 'h1.title&&Text;.eq(0) a:eq(0)&&Text',
