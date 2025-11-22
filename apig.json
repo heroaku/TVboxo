@@ -788,13 +788,6 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/柏彩影视.js"
         },	
-		{
-            "key": "小宝影院",
-            "name": "小宝影院",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/小宝影院.js"
-        },
         {
             "key": "欧乐影院",
             "name": "欧乐影院",
@@ -845,17 +838,13 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/55影视.js"
         },
-
 		{
-      "key": "华人影院",
-      "name": "华人影院",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "searchable": 1,
-      "changeable": 1,
-      "playerType": 2,
-      "ext":"./XBPQ/华人影院.json"
-    },
+            "key": "小宝影院",
+            "name": "小宝影院",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/小宝影院.js"
+        },
 			{
             "key": "万象影视",
             "name": "万象影视",
