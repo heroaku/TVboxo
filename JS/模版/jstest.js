@@ -1,11 +1,11 @@
 var rule = {
-    title: 'DYTT电影天堂',
+    title: '电影天堂采集',
     host: 'http://caiji.dyttzyapi.com',
     url: '/api.php/provide/vod/?ac=detail&t=fyclass&pg=fypage',
     detailUrl: '/api.php/provide/vod/?ac=detail&ids=fyid',
     searchUrl: '/api.php/provide/vod/?wd=**&pg=fypage',
     //homeUrl: '/api.php/provide/vod/?ac=detail&t=13&pg=1', // 默认国产剧
-
+    //采集地址：http://caiji.dyttzyapi.com/api.php/provide/vod
     headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     },
@@ -18,8 +18,8 @@ var rule = {
     filterable: 0, // ✅ 明确不支持筛选
 
     // 分类映射（根据 MacCMS 常见 type_id）
-    class_name: '电影&电视剧&综艺&动漫&国产剧&港台剧&日韩剧&欧美剧&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&动画片&纪录片',
-    class_url: '1&2&3&4&13&14&22&16&6&7&8&9&10&11&12&37&20',
+    class_name: '国产剧&港台剧&日韩剧&欧美剧&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&动画片&纪录片',
+    class_url: '13&14&22&16&6&7&8&9&10&11&12&37&20',
 
     // 自动识别 m3u8 播放源（如 k234m3u8）
     play_parse: true,
