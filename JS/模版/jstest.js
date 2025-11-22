@@ -1,16 +1,17 @@
 var rule = {
-    title: 'EU影视',
+    title: '大米影视',
     host: 'https://www.dmdh.cc',
      //https://www.dmdh.cc/vodshow/2--------1---.html
-    //https://euvod.tv/vodshow/fyclass--------fypage---.html
-    url: '/vodshow/fyclass--------fypage---.html',
+    //  url: '/show/fyclass-fyfilter-fypage.html',
+    url: '/vodshow/fyfilter.html',
+    filter_url: '{{fl.cateId}}-{{fl.area}}-{{fl.by or "time"}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
     searchUrl: '/vodshow/fyclass--------fypage---.html',
     headers: {
         'User-Agent': 'MOBILE_UA'
     },
     searchable: 2, //是否启用全局搜索,
     quickSearch: 0, //是否启用快速搜索,
-    filterable: 0, //是否启用分类筛选,
+    filterable: 1, //是否启用分类筛选,
     class_parse: '.nav&&ul&&li;a&&Text;a&&href;.*/(.*?).html',
    // class_name: '电影&电视剧&综艺&动漫&国产剧&港台剧&日韩剧&泰国剧&欧美剧&海外剧',
    // class_url: '1&2&4&3&14&15&16&30&20&13',
