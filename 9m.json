@@ -25,7 +25,14 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/飞飞影视.js"
         },	
-
+    {
+      "name": "DYTT电影天堂",
+      "type": 1,
+      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    },
 			{
             "key": "皮皮狮影视",
             "name": "皮皮狮影视",
