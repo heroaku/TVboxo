@@ -1,11 +1,11 @@
 var rule = {
-    title: '看看影视',
-    host: 'https://www.kan234.com',
-    homeUrl: '/api.php/provide/vod/?ac=detail&t=13', // 默认国产剧
+    title: 'DYTT电影天堂',
+    host: 'http://caiji.dyttzyapi.com',
     url: '/api.php/provide/vod/?ac=detail&t=fyclass&pg=fypage',
     detailUrl: '/api.php/provide/vod/?ac=detail&ids=fyid',
     searchUrl: '/api.php/provide/vod/?wd=**&pg=fypage',
-    
+    //homeUrl: '/api.php/provide/vod/?ac=detail&t=13&pg=1', // 默认国产剧
+
     headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     },
