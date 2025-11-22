@@ -1,25 +1,31 @@
-var rule={
-    title:'小宝影院',
-    host:'https://www.xiaobaotv.com',
-    url:'/vod/show/by/time/id/fyclass/page/fypage.html',
-    searchUrl:'/search/**----------fypage---.html',
-    class_name:'电影&电视剧&综艺&动漫&短剧',
-    class_url:'1&2&3&4&27',
-    searchable:2,//是否启用全局搜索,
-    quickSearch:0,//是否启用快速搜索,
-    filterable:0,//是否启用分类筛选,
-    headers:{
-        'User-Agent':'UC_UA',
+var rule = {
+    title: 'EU影视',
+    host: 'https://www.dmdh.cc',
+     //https://www.dmdh.cc/vodshow/2--------1---.html
+    //https://euvod.tv/vodshow/fyclass--------fypage---.html
+    url: '/vodshow/fyclass--------fypage---.html',
+    searchUrl: '/vodshow/fyclass--------fypage---.html',
+    headers: {
+        'User-Agent': 'MOBILE_UA'
     },
-    // class_parse:'.fed-pops-navbar&&ul.fed-part-rows&&a.fed-part-eone:gt(0):lt(5);a&&Text;a&&href;.*/(.*?).html',
-    //class_parse:'.myui-header__menu&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
-    //cate_exclude: '专题',
-    play_parse:true,
-    lazy:'',
-    limit:6,
-    推荐:'ul.myui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-    double:true, // 推荐内容是否双层定位
-    一级:'.myui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-    二级:{"title":".myui-content__detail .title&&Text;.t-muted:eq(-1)&&Text","img":".myui-content__thumb&&.lazyload&&data-original","desc":";;.myui-content__detail p:eq(2)&&Text;.myui-content__detail p:eq(3)&&Text;.myui-content__detail p:eq(4)&&Text","content":".content&&Text","tabs":".nav-tabs:eq(0) li","lists":".myui-content__list:eq(#id) li"},
-    搜索:'.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text',
+    searchable: 2, //是否启用全局搜索,
+    quickSearch: 0, //是否启用快速搜索,
+    filterable: 0, //是否启用分类筛选,
+    class_parse: '.nav&&ul&&li;a&&Text;a&&href;.*/(.*?).html',
+   // class_name: '电影&电视剧&综艺&动漫&国产剧&港台剧&日韩剧&泰国剧&欧美剧&海外剧',
+   // class_url: '1&2&4&3&14&15&16&30&20&13',
+play_parse: true,
+lazy: '',
+limit: 6, 
+推荐: '.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+double: true, // 推荐内容是否双层定位
+一级: '.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href', 
+二级: {
+    "title": "h1&&Text;.video-info-item:eq(1)&&Text",
+    "img": ".module-item-pic&&img&&data-src",
+    "desc": ".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text",
+    "content": "Text",
+    "tabs": ".module-tab-item .tab-item",
+    "lists": ".module-list:eq(#id)&&.sort-item&&a"
+}, 搜索: '.module-items&&.module-search-item;a&&title;img&&data-src;.video-info&&a&&Text;a&&href',
 }
