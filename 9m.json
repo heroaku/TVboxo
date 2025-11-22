@@ -42,7 +42,7 @@
   "searchable": 1,
   "quickSearch": 1,
   "filterable": 1,
-  "jar": "./JSON/dytt_filter.json"
+  "ext": "./JSON/dytt_filter.json"
 },
 			{
             "key": "皮皮狮影视",
