@@ -91,14 +91,16 @@ var rule = {
   //  一级: 'ul.myui-vodlist.clearfix li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
     一级:'.myui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
 
-    二级: {
-        title: 'h1.title&&Text;.eq(0) a:eq(0)&&Text',
-        img: '.myui-content__thumb img.lazyload&&data-original',
-        desc: '.eq(1)&&Text;.eq(2)&&Text;.eq(3)&&Text;.eq(0) a:eq(1)&&Text;.eq(0) a:eq(2)&&Text',
-        content: '.content span.sketch&&Text',
-        tabs: '.nav-tabs:eq(0) li',
-        lists: '.myui-content__list:eq(#id) a'
-    },
+    //二级: {        title: 'h1.title&&Text;.eq(0) a:eq(0)&&Text',        img: '.myui-content__thumb img.lazyload&&data-original',        desc: '.eq(1)&&Text;.eq(2)&&Text;.eq(3)&&Text;.eq(0) a:eq(1)&&Text;.eq(0) a:eq(2)&&Text',     content: '.content span.sketch&&Text',    tabs: '.nav-tabs:eq(0) li',lists: '.myui-content__list:eq(#id) a'},
 
-    搜索: '.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text'
+    //搜索: '.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text'
+    二级:{
+        "title":".myui-content__detail .title&&Text;.t-muted:eq(-1)&&Text",
+        "img":".myui-content__thumb&&.lazyload&&data-original",
+        "desc":";;.myui-content__detail p:eq(2)&&Text;.myui-content__detail p:eq(3)&&Text;.myui-content__detail p:eq(4)&&Text",
+        "content":".content&&Text",
+        "tabs":".nav-tabs:eq(0) li",
+        "lists":".myui-content__list:eq(#id) li"
+    },
+    搜索:'.myui-vodlist__media li;a&&title;*;*;a&&href;.text-muted:eq(-1)&&Text',
 }
