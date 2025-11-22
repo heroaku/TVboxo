@@ -26,6 +26,7 @@
             "ext": "./JS/飞飞影视.js"
         },	
     {
+	  "key": "DYTT电影天堂",
       "name": "DYTT电影天堂",
       "type": 1,
       "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
