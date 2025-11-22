@@ -1,86 +1,46 @@
 var rule = {
     title: '暴风资源',
     host: 'https://bfzyapi.com',
-    url: '/api.php/provide/vod/?ac=list&t=fyclass&pg=fypage',
-    searchable: 2,
-    quickSearch: false,
-    filterable: false,
+    homeUrl: '/api.php/provide/vod/?ac=detail&t=13',
+    detailUrl: '/api.php/provide/vod/?ac=detail&ids=fyid',
+    searchUrl: '/api.php/provide/vod/?wd=**&pg=fypage',
+    url: '/api.php/provide/vod/?ac=detail&pg=fypage&t=fyclass',
     headers: {
-        'User-Agent': 'Mozilla/5.0',
+        'User-Agent': 'Mozilla/5.0'
     },
-    class_parse: '.nav-item a[href*="t="]:not([href*="t=0"]):not([href*="t="*"]):lt(10);a&&Text;a&&href;/(\\d+)/',
-    play_parse: true,
-    lazy: function () {
-        // bfzym3u8 通常是直链 m3u8，无需解析
-        if (/bfzym3u8/.test(input)) {
-            input = {
-                jx: 0,
-                url: input.split('$')[1],
-                parse: 0,
-                header: {
-                    'Referer': 'https://bfzy.tv/',
-                    'User-Agent': 'Mozilla/5.0'
-                }
-            };
-        }
-        // 若有其他线路需要解析（如使用 vip.vipuuvip.com），可在此扩展
-    },
-    limit: 6,
-    // 搜索
-    search_url: '/api.php/provide/vod/?ac=detail&wd=**',
+    timeout: 5000,
+    class_parse: 'json:class;',
+    limit: 20,
+    multi: 1,
     searchable: 2,
-    // 详情页解析
-    detail_url: '/api.php/provide/vod/?ac=detail&ids=fyid',
-    detail_parse: function (doc, args) {
-        let data = JSON.parse(doc).list[0];
-        if (!data) return '{}';
-
-        let vod = {
-            vod_id: data.vod_id,
-            vod_name: data.vod_name,
-            vod_pic: data.vod_pic,
-            type_name: data.type_name,
-            vod_year: data.vod_year,
-            vod_area: data.vod_area,
-            vod_remarks: data.vod_remarks,
-            vod_actor: data.vod_actor,
-            vod_director: data.vod_director,
-            vod_content: data.vod_content || ''
-        };
-
-        // 处理多线路
-        let playFrom = [];
-        let playList = [];
-
-        let urls = data.vod_play_url.split('$$$');
-        let froms = data.vod_play_from.split('$$$');
-
-        for (let i = 0; i < froms.length; i++) {
-            let from = froms[i].trim();
-            let url = urls[i] || '';
-            if (url && from) {
-                playFrom.push(from);
-                playList.push(url);
+    quickSearch: 1,
+    filterable: 0,
+    play_parse: true,
+    parse_url: '',
+    lazy: function () {
+        // 自动识别播放源（如 bfzym3u8），直链播放，无需解析
+        if (/bfzym3u8|ffm3u8|1080zyk|lzm3u8|wjm3u8/.test(input)) {
+            let purl = input.split('$')[1];
+            if (purl) {
+                input = {
+                    jx: 0,
+                    url: purl,
+                    parse: 0,
+                    header: {
+                        'Referer': 'https://www.ece8.com/',
+                        'User-Agent': 'Mozilla/5.0'
+                    }
+                };
             }
         }
-
-        vod.vod_play_from = playFrom.join('$$$');
-        vod.vod_play_url = playList.join('$$$');
-
-        return JSON.stringify({ list: [vod] });
     },
-    // 列表解析
-    parseVodList: function (doc) {
-        let data = JSON.parse(doc);
-        let vods = [];
-        if (data.list && data.list.length > 0) {
-            vods = data.list.map(item => ({
-                vod_id: item.vod_id,
-                vod_name: item.vod_name,
-                vod_pic: item.vod_pic,
-                vod_remarks: item.vod_remarks || ''
-            }));
-        }
-        return JSON.stringify({ list: vods, total: data.total || vods.length, limit: 20 });
-    }
-};
+    推荐: '*',
+    一级: 'json:list;vod_name;vod_pic;vod_remarks;vod_id;vod_play_from',
+    二级: `js:
+        let html = request(input);
+        let data = JSON.parse(html).list;
+        VOD = data[0];
+    `,
+    搜索: '*',
+    cate_exclude: '电影片|连续剧|综艺片|动漫片|电影解说|体育|演员|新闻资讯'
+}
