@@ -1,9 +1,9 @@
 var rule = {
     title: 'EU影视',
     host: 'https://103.194.185.51:51123',
-     //https://euvod.tv/vodshow/fyclass--time------fypage---.html
+     //https://103.194.185.51:51123/show/2------1.html
     //https://103.194.185.51:51123/show/fyclass-----2-fypage.html
-    url: '/show/fyclass-----2-fypage.html',
+    url: '/show/fyclass------fypage.html',
     searchUrl: '/vodshow/fyclass--------fypage---.html',
     headers: {
         'User-Agent': 'MOBILE_UA'
