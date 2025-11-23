@@ -481,10 +481,17 @@
     },
 		{
 		"key": "暴风资源JS",
-		"name": "暴风资源JS",
+		"name": "暴风采集JS",
 		"type": 3,
 		"api": "./JS/drpy2.min.js",
 		"ext": "./JS/暴风资源JS.js"
+		},
+		{
+		"key": "天堂采集JS",
+		"name": "天堂采集JS",
+		"type": 3,
+		"api": "./JS/drpy2.min.js",
+		"ext": "./JS/天堂采集JS.js"
 		},
     {
       "key": "3Q",
