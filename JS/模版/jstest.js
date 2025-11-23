@@ -14,6 +14,7 @@ var rule = {
     //class_parse: '.nav&&ul&&li;a&&Text;a&&href;.*/(.*?).html',
    class_name: '电影&电视剧&综艺&动漫&短剧',
    class_url: '1&2&4&3&6',
+     图片替换:'https://103.194.185.51:51123=>https://vf.mgdnka.cn',
 play_parse: true,
 lazy: '',
 limit: 6, 
