@@ -21,11 +21,11 @@ limit: 6,
 double: true, // 推荐内容是否双层定位
 一级: '.module-item;.v-item-title:eq(1)&&Text;img:eq(1)&&data-original;.v-item-bottom&&Text;a&&href', 
 二级: {
-    "title": "h1&&Text;.video-info-item:eq(1)&&Text",
+    "title": ".detail-title&&strong:eq(1)&&Text;.video-info-item:eq(1)&&Text",
     "img": ".module-item-pic&&img&&data-src",
     "desc": ".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text",
     "content": "Text",
-    "tabs": ".module-tab-item .tab-item",
-    "lists": ".module-list:eq(#id)&&.sort-item&&a"
+    "tabs": ".swiper-slide .source-swiper-slide",
+    "lists": ".episode-list:eq(#id)&&a"
 }, 搜索: '.module-items&&.module-search-item;a&&title;img&&data-src;.video-info&&a&&Text;a&&href',
 }
