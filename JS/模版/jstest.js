@@ -1,5 +1,5 @@
 var rule = {
-    title: 'EU影视',
+    title: '好看影视',
     host: 'https://103.194.185.51:51123',
      //https://103.194.185.51:51123/show/2------1.html
     //https://103.194.185.51:51123/show/fyclass-----2-fypage.html
