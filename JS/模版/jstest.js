@@ -19,7 +19,7 @@ lazy: '',
 limit: 6, 
 推荐: '.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
 double: true, // 推荐内容是否双层定位
-一级: '.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href', 
+一级: '.module-item;.v-item-title:eq(1)&&Text;img:eq(1)&&data-original;.v-item-bottom&&Text;a&&href', 
 二级: {
     "title": "h1&&Text;.video-info-item:eq(1)&&Text",
     "img": ".module-item-pic&&img&&data-src",
