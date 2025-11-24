@@ -5,7 +5,7 @@ var rule = {
     //https://www.xiuer.pro/show/dianshiju/by/level/class/%E7%88%B1%E6%83%85/page/2/year/2025/
     url: '/show/fyfilter/',
     //filter_url:'{{fl.cateId}}/by/{{fl.by}}/class/{{fl.class}}/page/fypage/year/{{fl.year}}',
-    filter_url: '{{fl.cateId ? fl.cateId : fl.type}}/by/{{fl.by || "year"}}{{fl.area ? "/area/" + encodeURIComponent(fl.area) : ""}}{{fl.class ? "/class/" + encodeURIComponent(fl.class) : ""}}{{fl.year ? "/year/" + fl.year : ""}}{{fypage > 1 ? "/page/" + fypage : ""}}',
+filter_url: '{{fl.cateId ? fl.cateId : fl.type}}/by/{{fl.by || "year"}}{{fl.year ? "/year/" + fl.year : ""}}{{fl.area ? "/area/" + encodeURIComponent(fl.area) : ""}}{{fl.class ? "/class/" + encodeURIComponent(fl.class) : ""}}{{fypage > 1 ? "/page/" + fypage : ""}}'
 filter: {
   "dianying": [{"key":"cateId","name":"类型","value":[{"n":"全部","v":"dianying"},{"n":"动作","v":"dongzuopian"},{"n":"喜剧","v":"xijupian"},{"n":"爱情","v":"aiqingpian"},{"n":"科幻","v":"kehuanpian"},{"n":"恐怖","v":"kongbupian"},{"n":"剧情","v":"juqingpian"},{"n":"战争","v":"zhanzhengpian"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"美国","v":"美国"},{"n":"韩国","v":"韩国"},{"n":"日本","v":"日本"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"英国","v":"英国"},{"n":"法国","v":"法国"},{"n":"德国","v":"德国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"},{"n":"加拿大","v":"加拿大"},{"n":"澳大利亚","v":"澳大利亚"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"year"},{"n":"人气","v":"level"},{"n":"评分","v":"score"}]}],
   "dianshiju": [{"key":"cateId","name":"类型","value":[{"n":"全部","v":"dianshiju"},{"n":"国产剧","v":"guochanju"},{"n":"欧美剧","v":"oumeiju"},{"n":"韩剧","v":"hanju"},{"n":"日剧","v":"riju"},{"n":"台湾剧","v":"taiwanju"},{"n":"香港剧","v":"xianggangju"},{"n":"泰国剧","v":"taiguoju"}]},{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"武侠","v":"武侠"},{"n":"古装","v":"古装"},{"n":"家庭","v":"家庭"},{"n":"犯罪","v":"犯罪"},{"n":"科幻","v":"科幻"},{"n":"恐怖","v":"恐怖"},{"n":"历史","v":"历史"},{"n":"战争","v":"战争"},{"n":"动作","v":"动作"},{"n":"冒险","v":"冒险"},{"n":"传记","v":"传记"},{"n":"剧情","v":"剧情"},{"n":"奇幻","v":"奇幻"},{"n":"惊悚","v":"惊悚"},{"n":"灾难","v":"灾难"},{"n":"歌舞","v":"歌舞"},{"n":"音乐","v":"音乐"},{"n":"同性","v":"同性"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"year"},{"n":"人气","v":"level"},{"n":"评分","v":"score"}]}],
@@ -15,13 +15,13 @@ filter: {
   "jilupian": [{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"美国","v":"美国"},{"n":"英国","v":"英国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"台湾","v":"台湾"},{"n":"香港","v":"香港"},{"n":"法国","v":"法国"},{"n":"德国","v":"德国"},{"n":"意大利","v":"意大利"},{"n":"西班牙","v":"西班牙"},{"n":"印度","v":"印度"},{"n":"泰国","v":"泰国"},{"n":"俄罗斯","v":"俄罗斯"},{"n":"加拿大","v":"加拿大"},{"n":"澳大利亚","v":"澳大利亚"},{"n":"爱尔兰","v":"爱尔兰"},{"n":"瑞典","v":"瑞典"},{"n":"巴西","v":"巴西"},{"n":"丹麦","v":"丹麦"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"year"},{"n":"人气","v":"level"},{"n":"评分","v":"score"}]}]
 },
 
-    filter_def: {
-  "dianying": {"cateId": "dianying" },
-  "dianshiju": {"cateId": "dianshiju" },
-  "zongyi": {"cateId": "zongyi" },
-  "dongman": {"cateId": "dongman" },
-  "duanju": {"cateId": "duanju" },
-  "jilupian": {"cateId": "jilupian" }
+filter_def: {
+  "dianying": { cateId: "dianying", by: "year" },
+  "dianshiju": { cateId: "dianshiju", by: "year" },
+  "zongyi": { cateId: "zongyi", by: "year" },
+  "dongman": { cateId: "dongman", by: "year" },
+  "duanju": { cateId: "duanju", by: "year" },
+  "jilupian": { cateId: "jilupian", by: "year" }
 },
     searchUrl: '/vodshow/fyclass--------fypage---.html',
     headers: {
