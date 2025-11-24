@@ -15,12 +15,12 @@ filter: {
 },
 
     filter_def: {
-  "dianying": {"cateId": "dianying"},
-  "dianshiju": {"cateId": "dianshiju"},
-  "zongyi": {"cateId": "zongyi"},
-  "dongman": {"cateId": "dongman"},
-  "duanju": {"cateId": "duanju"},
-  "jilupian": {"cateId": "jilupian"}
+  "dianying": {"cateId": "dianying", by: "year" },
+  "dianshiju": {"cateId": "dianshiju", by: "year" },
+  "zongyi": {"cateId": "zongyi", by: "year" },
+  "dongman": {"cateId": "dongman", by: "year" },
+  "duanju": {"cateId": "duanju", by: "year" },
+  "jilupian": {"cateId": "jilupian", by: "year" }
 },
     searchUrl: '/vodshow/fyclass--------fypage---.html',
     headers: {
