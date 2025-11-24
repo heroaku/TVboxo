@@ -1153,6 +1153,14 @@
 			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
 			"ext": "./JS/糖豆影视.js"
 			},	
+				{
+			"key": "好看影视",
+			"name": "好看影视",
+			"type": 3,
+			"api": "./JS/drpy2.min.js",
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"ext": "./JS/好看影视.js"
+			},	
 		{
 	  "key": " fxzds ",
 	  "name": "袋鼠影视",
