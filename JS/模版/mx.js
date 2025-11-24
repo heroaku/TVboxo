@@ -14,11 +14,11 @@ var rule = {
 		"duanju":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"言情","v":"言情"},{"n":"民国","v":"民国"},{"n":"古装","v":"古装"},{"n":"脑洞","v":"脑洞"},{"n":"悬疑","v":"悬疑"},{"n":"重生","v":"重生"},{"n":"年代","v":"年代"},{"n":"穿越","v":"穿越"},{"n":"女频","v":"女频"},{"n":"反转","v":"反转"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国","v":"中国"},{"n":"美国","v":"美国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"国语"},{"n":"英语","v":"英语"},{"n":"韩语","v":"韩语"},{"n":"日语","v":"日语"},{"n":"其它","v":"其它"}]},{"key":"year","name":"年代","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}]
 	},
     filter_def:{
-		dianying:{cateId:'dianying',by:'time'},
-		dianshiju:{cateId:'dianshiju',by:'time'},
-		zongyi:{cateId:'zongyi',by:'time'},
-		dongman:{cateId:'dongman',by:'time'},
-		duanju:{cateId:'duanju',by:'time'}
+		dianying:{cateId:'dianying'},
+		dianshiju:{cateId:'dianshiju'},
+		zongyi:{cateId:'zongyi'},
+		dongman:{cateId:'dongman'},
+		duanju:{cateId:'duanju'}
 	},
     searchUrl: '/vodshow/fyclass--------fypage---.html',
     headers: {
