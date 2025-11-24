@@ -2,7 +2,36 @@ var rule = {
     title: '秀儿影视',
     host: 'https://www.xiuer.pro',
     // ✅ 保留 fyclass，才能显示分类菜单
-    url: '/show/fyclass/',
+  //  url: '/show/fyclass/',
+    // 重点：url 必须包含 fyfilter
+url: '/show/fyfilter/',
+
+// filter_url 定义完整路径模板
+filter_url: '{{fl.type}}' +
+            '{{fl.area ? "/area/" + fl.area : ""}}' +
+            '{{fl.class ? "/class/" + fl.class : ""}}' +
+            '/by/{{fl.by || "year"}}' +
+            '{{fl.year ? "/year/" + fl.year : ""}}' +
+            '{{fypage > 1 ? "/page/" + fypage : ""}}',
+
+// 删除 class_url！！！
+// 改用 filter 的 key 作为分类名
+filter: {
+    "电影": [
+        {"key": "type", "value": [{"n":"全部","v":"dianying"}, {"n":"动作","v":"dongzuopian"}]},
+        {"key": "area", "value": [{"n":"全部","v":""}, {"n":"中国大陆","v":"中国大陆"}]}
+    ],
+    "电视剧": [
+        {"key": "type", "value": [{"n":"全部","v":"dianshiju"}, {"n":"国产剧","v":"guochanju"}]},
+        {"key": "class", "value": [{"n":"全部","v":""}, {"n":"爱情","v":"爱情"}]}
+    ]
+},
+
+// filter_def 提供默认参数
+filter_def: {
+    "电影": { type: "dianying", by: "year" },
+    "电视剧": { type: "dianshiju", by: "year" }
+},
     // ❌ 不用 filter_url（CSP 会忽略）
     searchable: 2,
     quickSearch: 0,
@@ -13,24 +42,7 @@ var rule = {
     class_url: 'dianying&dianshiju&zongyi&dongman&duanju&jilupian',
 
     // ✅ filter 定义筛选项（key 必须和 class_url 一致！）
-    filter: {
-        "dianying": [
-            {"key":"cateId","name":"类型","value":[{"n":"全部","v":"dianying"},{"n":"动作","v":"dongzuopian"},{"n":"喜剧","v":"xijupian"},{"n":"爱情","v":"aiqingpian"},{"n":"科幻","v":"kehuanpian"},{"n":"恐怖","v":"kongbupian"},{"n":"剧情","v":"juqingpian"},{"n":"战争","v":"zhanzhengpian"}]},
-            {"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"},{"n":"美国","v":"美国"},{"n":"韩国","v":"韩国"},{"n":"日本","v":"日本"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"}]},
-            {"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"}]},
-            {"key":"by","name":"排序","value":[{"n":"时间","v":"year"},{"n":"人气","v":"level"},{"n":"评分","v":"score"}]}
-        ],
-        "dianshiju": [
-            {"key":"cateId","name":"类型","value":[{"n":"全部","v":"dianshiju"},{"n":"国产剧","v":"guochanju"},{"n":"韩剧","v":"hanju"},{"n":"美剧","v":"meiju"},{"n":"日剧","v":"riju"}]},
-            {"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"爱情","v":"爱情"},{"n":"古装","v":"古装"},{"n":"悬疑","v":"悬疑"},{"n":"家庭","v":"家庭"}]},
-            {"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"}]},
-            {"key":"by","name":"排序","value":[{"n":"时间","v":"year"},{"n":"人气","v":"level"},{"n":"评分","v":"score"}]}
-        ],
-        "zongyi": [{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"year"}]}],
-        "dongman": [{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"year"}]}],
-        "duanju": [{"key":"cateId","name":"类型","value":[{"n":"全部","v":"duanju"},{"n":"重生民国","v":"zhongshengminguo"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"year"}]}],
-        "jilupian": [{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"中国大陆"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"2025"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"year"}]}]
-    },
+
 
     // ✅ 一级：核心！动态拼接筛选 URL
     一级: $js.toString(() => {
