@@ -46,4 +46,94 @@ double: true, // 推荐内容是否双层定位
     "tabs": ".module-tab-item .tab-item",
     "lists": ".module-list:eq(#id)&&.sort-item&&a"
 }, 搜索: '.module-items&&.module-search-item;a&&title;img&&data-src;.video-info&&a&&Text;a&&href',
+    一级f: `js:
+    let classMap = {
+        'dianying': '电影',
+        'dianshiju': '电视剧',
+        'zongyi': '综艺',
+        'dongman': '动漫',
+        'duanju': '短剧',
+        'jilupian': '纪录片'
+    };
+    let filters = {};
+    let pdfa = jsp.pdfa;
+    let pdfh = jsp.pdfh;
+
+    for (let [cateId, cateName] of Object.entries(classMap)) {
+        let url = 'https://www.xiuer.pro/show/' + cateId + '/';
+        let html = request(url);
+        let data = [];
+
+        // 提取「类型」筛选（子类）
+        let typeValues = [{ n: "全部", v: cateId }];
+        let typeLinks = pdfa(html, 'div.library-list:first a.library-item');
+        for (let a of typeLinks) {
+            let href = pdfh(a, 'a&&href');
+            let text = pdfh(a, 'a&&Text').trim();
+            if (href.startsWith('/show/') && href !== '/show/' + cateId + '/') {
+                let subType = href.replace('/show/', '').replace('/', '');
+                typeValues.push({ n: text, v: subType });
+            }
+        }
+        data.push({ key: "cateId", name: "类型", value: typeValues });
+
+        // 提取「地区」或「剧情」
+        if (cateId === 'dianying' || cateId === 'jilupian') {
+            // 电影/纪录片：用 area
+            let areaValues = [{ n: "全部", v: "" }];
+            let areaLinks = pdfa(html, 'a[href*="/area/"]');
+            for (let a of areaLinks) {
+                let href = pdfh(a, 'a&&href');
+                let area = href.match(/area\\/([^\\/]+)/)?.[1];
+                if (area) {
+                    area = decodeURIComponent(area);
+                    if (!areaValues.some(x => x.n === area)) {
+                        areaValues.push({ n: area, v: area });
+                    }
+                }
+            }
+            data.push({ key: "area", name: "地区", value: areaValues });
+        } else {
+            // 电视剧/综艺/动漫/短剧：用 class
+            let classValues = [{ n: "全部", v: "" }];
+            let classLinks = pdfa(html, 'a[href*="/class/"]');
+            for (let a of classLinks) {
+                let href = pdfh(a, 'a&&href');
+                let cls = href.match(/class\\/([^\\/]+)/)?.[1];
+                if (cls) {
+                    cls = decodeURIComponent(cls);
+                    if (!classValues.some(x => x.n === cls)) {
+                        classValues.push({ n: cls, v: cls });
+                    }
+                }
+            }
+            data.push({ key: "class", name: "剧情", value: classValues });
+        }
+
+        // 年份（从分页链接中提取）
+        let yearValues = [{ n: "全部", v: "" }];
+        let yearLinks = pdfa(html, 'a[href*="/year/"]');
+        for (let a of yearLinks) {
+            let href = pdfh(a, 'a&&href');
+            let year = href.match(/year\\/([^\\/]+)/)?.[1];
+            if (year && /^\d{4}$/.test(year) && !yearValues.some(x => x.n === year)) {
+                yearValues.push({ n: year, v: year });
+            }
+        }
+        data.push({ key: "year", name: "年份", value: yearValues });
+
+        // 排序（固定）
+        data.push({ key: "by", name: "排序", value: [
+            { n: "时间", v: "year" },
+            { n: "人气", v: "level" },
+            { n: "评分", v: "score" }
+        ]});
+
+        filters[cateId] = data;
+    }
+
+    VODS = [filters];
+    console.log("Gzip Base64 filter:");
+    console.log(gzip(JSON.stringify(filters)));
+`,
 }
