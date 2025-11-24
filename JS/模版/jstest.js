@@ -1,103 +1,89 @@
 var rule = {
     title: '量子资源',
     host: 'https://www.lzizy.com',
-    url: '/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
+    // ⚠️ 注意：使用 /show/ 而非 /type/ 来支持筛选
+    url: '/index.php/vod/show/id/fyclass/fyfilter.html',
+    filter_url: '{{fl.class ? "class/" + fl.class + "/" : ""}}{{fl.area ? "area/" + fl.area + "/" : ""}}{{fl.year ? "year/" + fl.year + "/" : ""}}',
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
-    filter_url: '',
-    filter: {
-        "1": [{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"动作片","v":"6"},{"n":"喜剧片","v":"7"},{"n":"爱情片","v":"8"},{"n":"科幻片","v":"9"},{"n":"恐怖片","v":"10"},{"n":"剧情片","v":"11"},{"n":"战争片","v":"12"},{"n":"纪录片","v":"20"},{"n":"伦理片","v":"34"}]}],
-        "2": [{"key":"class","name":"地区","value":[{"n":"全部","v":""},{"n":"国产剧","v":"13"},{"n":"港剧","v":"14"},{"n":"韩剧","v":"15"},{"n":"欧美剧","v":"16"},{"n":"台剧","v":"21"},{"n":"日剧","v":"22"},{"n":"海外剧","v":"23"},{"n":"泰剧","v":"24"},{"n":"短剧","v":"46"}]}],
-        "3": [{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"大陆综艺","v":"25"},{"n":"港台综艺","v":"26"},{"n":"日韩综艺","v":"27"},{"n":"欧美综艺","v":"28"}]}],
-        "4": [{"key":"class","name":"类型","value":[{"n":"全部","v":""},{"n":"国产动漫","v":"29"},{"n":"日韩动漫","v":"30"},{"n":"欧美动漫","v":"31"}]}],
-        "36": [{"key":"class","name":"体育","value":[{"n":"全部","v":""},{"n":"足球","v":"37"},{"n":"篮球","v":"38"},{"n":"网球","v":"39"},{"n":"斯诺克","v":"40"}]}]
-    },
-    class_name: '电影&连续剧&综艺&动漫&体育&电影解说&短剧',
-    class_url: '1&2&3&4&36&35&46',
+
+    // 📌 class_url 必须是数字 ID（对应 MacCMS 分类 ID）
+    class_name: '电影&国产剧&韩剧&美剧&日剧&港剧&台剧&泰剧&综艺&动漫&体育&短剧',
+    class_url: '1&13&15&16&22&14&21&24&3&4&36&46',
+
     headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     },
     timeout: 5000,
 
-    // 首页推荐
+    // 首页（可选，用电影第一页）
     首页: $js.toString(() => {
+        input = HOST + '/index.php/vod/show/id/1/page/1.html';
         let html = fetch(input);
-        let list = pdfa(html, 'ul.videoContent > li');
+        let list = pdfa(html, 'ul.vodlist li');
         VODS = [];
         list.forEach(li => {
-            let title = pdfh(li, 'a.videoName&&Text').replace(/<i>.*<\/i>/, '').trim();
-            let link = pdfh(li, 'a.videoName&&href');
-            let img = ''; // 量子首页无图，可留空
-            let note = '';
-            if (title.includes('已完结') || title.includes('更新至')) {
-                note = title.match(/(已完结|更新至.*)/)?.[0] || '';
-                title = title.replace(/(已完结|更新至.*)/, '').trim();
-            }
             VODS.push({
-                vod_name: title,
-                vod_id: link,
-                vod_pic: img,
-                vod_remarks: note
+                vod_name: pdfh(li, 'a&&title'),
+                vod_id: pdfh(li, 'a&&href').match(/\/detail\/id\/(\d+)\.html/)?.[1] || '',
+                vod_pic: pdfh(li, 'img&&data-original'),
+                vod_remarks: pdfh(li, '.pic-text&&Text') || ''
             });
         });
     }),
 
     // 一级列表
     一级: $js.toString(() => {
-        let html = fetch(input);
-        let list = pdfa(html, 'ul.videoContent > li');
+        // input 形如：/index.php/vod/show/id/13/class/剧情/area/大陆/year/2025.html
+        let pageMatch = input.match(/\/page\/(\d+)\.html/);
+        let page = pageMatch ? pageMatch[1] : '1';
+        let baseUrl = input.split('/page/')[0].split('.html')[0];
+        let url = baseUrl + (page === '1' ? '.html' : `/page/${page}.html`);
+
+        let html = fetch(url);
+        let list = pdfa(html, 'ul.vodlist li');
         VODS = [];
         list.forEach(li => {
-            let title = pdfh(li, 'a.videoName&&Text').replace(/<i>.*<\/i>/, '').trim();
-            let link = pdfh(li, 'a.videoName&&href');
-            let img = '';
-            let note = '';
-            if (title.includes('已完结') || title.includes('更新至')) {
-                note = title.match(/(已完结|更新至.*)/)?.[0] || '';
-                title = title.replace(/(已完结|更新至.*)/, '').trim();
-            }
             VODS.push({
-                vod_name: title,
-                vod_id: link.replace(/.*?\/detail\/id\/(\d+)\.html/, '$1'),
-                vod_pic: img,
-                vod_remarks: note
+                vod_name: pdfh(li, 'a&&title'),
+                vod_id: pdfh(li, 'a&&href').match(/\/detail\/id\/(\d+)\.html/)?.[1] || '',
+                vod_pic: pdfh(li, 'img&&data-original'),
+                vod_remarks: pdfh(li, '.pic-text&&Text') || ''
             });
         });
     }),
 
-    // 二级详情 & 播放列表
+    // 二级详情
     二级: $js.toString(() => {
-        let html = fetch(HOST + input);
-        let vod_name = pdfh(html, 'h1&&Text') || pdfh(html, '.videoName&&Text') || '未知';
-        let vod_pic = pdfh(html, 'img&&src') || '';
-        let vod_year = pdfh(html, 'li:contains(年份)&&Text') || '';
-        let vod_area = pdfh(html, 'li:contains(地区)&&Text') || '';
-        let vod_actor = pdfh(html, 'li:contains(主演)&&Text') || '';
-        let vod_director = pdfh(html, 'li:contains(导演)&&Text') || '';
-        let vod_content = pdfh(html, 'div.vod_content&&Text') || '';
+        let detailUrl = '/index.php/vod/detail/id/' + input + '.html';
+        let html = fetch(HOST + detailUrl);
+        let vod_name = pdfh(html, 'h2&&Text') || input;
+        let vod_pic = pdfh(html, '.detail-pic img&&src');
+        let vod_year = pdfh(html, 'li:contains(年份)&&Text').replace(/\D+/g, '');
+        let vod_area = pdfh(html, 'li:contains(地区)&&Text').replace(/地区：/, '');
+        let vod_actor = pdfh(html, 'li:contains(主演)&&Text').replace(/主演：/, '');
+        let vod_director = pdfh(html, 'li:contains(导演)&&Text').replace(/导演：/, '');
+        let vod_content = pdfh(html, '.vod_content&&Text') || '';
 
-        // 提取播放源（通常只有一个 iframe）
-        let iframe = pdfh(html, 'iframe&&src');
-        let playUrl = '';
-        if (iframe && iframe.includes('m3u8')) {
-            playUrl = iframe;
-        } else if (iframe) {
-            // 尝试进入 iframe 页面提取 m3u8
-            let iframeHtml = fetch(iframe.includes('http') ? iframe : HOST + iframe);
-            let m3u8 = iframeHtml.match(/https?:\/\/[^\s"']+\.m3u8/)?.[0];
-            if (m3u8) playUrl = m3u8;
-        }
-
-        // 如果没有找到，尝试从 script 中提取（备用）
-        if (!playUrl) {
-            let script = html.match(/player_aaaa\s*=\s*({.*?});/)?.[1];
+        // 获取播放列表（假设最多 3 条线路）
+        let vod_play_from = '';
+        let vod_play_url = '';
+        for (let sid = 1; sid <= 3; sid++) {
+            let playHtml = fetch(HOST + `/index.php/vod/play/id/${input}/sid/${sid}/nid/1.html`);
+            let script = playHtml.match(/var player_aaaa=({.*?});/)?.[1];
             if (script) {
                 try {
-                    let obj = JSON.parse(script.replace(/'/g, '"').replace(/([\{\,])(\s*)([a-zA-Z_][a-zA-Z0-9_]*)(\s*:\s*)/g, '$1"$3"$4'));
+                    let obj = JSON.parse(script.replace(/'/g, '"').replace(/,\s*}/, '}').replace(/,\s*]/, ']'));
                     if (obj.url && obj.url.includes('m3u8')) {
-                        playUrl = obj.url;
+                        // 假设每季最多 50 集（可优化为动态获取）
+                        let urls = [];
+                        for (let nid = 1; nid <= 50; nid++) {
+                            urls.push(`第${nid}集$${HOST}/index.php/vod/play/id/${input}/sid/${sid}/nid/${nid}.html`);
+                        }
+                        vod_play_from += (vod_play_from ? '$$$' : '') + `量子线路${sid}`;
+                        vod_play_url += (vod_play_url ? '$$$' : '') + urls.join('#');
+                        break; // 仅取第一条有效线路（可改为多线路）
                     }
                 } catch (e) {}
             }
@@ -107,46 +93,80 @@ var rule = {
             vod_id: input,
             vod_name: vod_name,
             vod_pic: vod_pic,
-            vod_year: vod_year.replace(/\D+/g, ''),
-            vod_area: vod_area.replace(/地区：/, ''),
-            vod_actor: vod_actor.replace(/主演：/, ''),
-            vod_director: vod_director.replace(/导演：/, ''),
+            vod_year: vod_year,
+            vod_area: vod_area,
+            vod_actor: vod_actor,
+            vod_director: vod_director,
             vod_content: vod_content,
-            vod_play_from: '量子线路',
-            vod_play_url: '第1集$' + playUrl
+            vod_play_from: vod_play_from,
+            vod_play_url: vod_play_url
         };
     }),
 
     // 搜索
     搜索: $js.toString(() => {
         let html = fetch(input);
-        let list = pdfa(html, 'ul.videoContent > li');
+        let list = pdfa(html, 'ul.vodlist li');
         VODS = [];
         list.forEach(li => {
-            let title = pdfh(li, 'a.videoName&&Text').replace(/<i>.*<\/i>/, '').trim();
-            let link = pdfh(li, 'a.videoName&&href');
-            let note = '';
-            if (title.includes('已完结') || title.includes('更新至')) {
-                note = title.match(/(已完结|更新至.*)/)?.[0] || '';
-                title = title.replace(/(已完结|更新至.*)/, '').trim();
-            }
             VODS.push({
-                vod_name: title,
-                vod_id: link.replace(/.*?\/detail\/id\/(\d+)\.html/, '$1'),
-                vod_remarks: note
+                vod_name: pdfh(li, 'a&&title'),
+                vod_id: pdfh(li, 'a&&href').match(/\/detail\/id\/(\d+)\.html/)?.[1] || '',
+                vod_pic: pdfh(li, 'img&&data-original'),
+                vod_remarks: pdfh(li, '.pic-text&&Text') || ''
             });
         });
     }),
 
-    // 播放
+    // 懒加载播放
     lazy: $js.toString(() => {
-        // 量子资源多为直链，无需解密
-        input = { jx: 0, parse: 0, url: input }
+        // input 是播放页 URL：/index.php/vod/play/id/123/sid/1/nid/1.html
+        let html = fetch(HOST + input);
+        let m3u8 = '';
+        // 方法1：从 bfurl 提取
+        m3u8 = pdfh(html, 'a#bfurl&&href');
+        if (!m3u8) {
+            // 方法2：从 player_aaaa 提取
+            let script = html.match(/var player_aaaa=({.*?});/)?.[1];
+            if (script) {
+                try {
+                    let obj = JSON.parse(script.replace(/'/g, '"').replace(/,\s*}/, '}'));
+                    m3u8 = obj.url || '';
+                } catch (e) {}
+            }
+        }
+        if (m3u8) {
+            input = { jx: 0, parse: 0, url: m3u8 };
+        }
     }),
 
-    // 编码与 UA
-    编码: 'utf-8',
-    headers: {
-        'User-Agent': MOBILE_UA
+    filter: {
+        "13": [ // 国产剧
+            { "key": "class", "name": "类型", "value": [
+                { "n": "全部", "v": "" },
+                { "n": "剧情", "v": "剧情" },
+                { "n": "古装", "v": "古装" },
+                { "n": "爱情", "v": "爱情" },
+                { "n": "悬疑", "v": "悬疑" }
+            ]},
+            { "key": "area", "name": "地区", "value": [
+                { "n": "全部", "v": "" },
+                { "n": "大陆", "v": "大陆" }
+            ]},
+            { "key": "year", "name": "年份", "value": [
+                { "n": "全部", "v": "" },
+                { "n": "2025", "v": "2025" },
+                { "n": "2024", "v": "2024" }
+            ]}
+        ],
+        "15": [ // 韩剧
+            { "key": "area", "name": "地区", "value": [{ "n": "韩国", "v": "韩国" }] },
+            { "key": "year", "name": "年份", "value": [{ "n": "2025", "v": "2025" }] }
+        ]
+        // 可按需补充其他分类的筛选
+    },
+    filter_def: {
+        "13": { "class": "", "area": "", "year": "" },
+        "15": { "area": "韩国", "year": "2025" }
     }
-}
+};
