@@ -3,7 +3,7 @@ var rule={
     host: 'https://www.pipishi.cc',
     url: '/list/fyclass--------fypage---.html',
     searchUrl: '/search/**----------fypage---.html',
-    //https://www.pipishi.cc/list/fyclass--------fypage---.html
+    //https://www.pipishi.cc/list/fyclass--------fypage---.html 人机验证
     //https://www.pipishi.cc/search/**----------fypage---.html
     searchable: 2,
     quickSearch: 0,
