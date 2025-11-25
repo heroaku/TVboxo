@@ -531,6 +531,17 @@
 	"api": "./JS/drpy2.min.js",
     "ext": "./JS/秀儿影视.js"
 	},
+    {
+      "key": "秀儿影视X",
+      "name": "秀儿影视X",
+      "type": 3,
+	//  "jar": "./tvkj.jar",
+      "api": "csp_XBPQ",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "ext": "./XBPQ/秀儿影视X.json"
+    },		
 	{
     "key": "泥视频VIP",
     "name": "泥视频VIP",
