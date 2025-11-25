@@ -535,7 +535,7 @@
       "key": "秀儿影视X",
       "name": "秀儿影视X",
       "type": 3,
-	//  "jar": "./tvkj.jar",
+	 "jar": "./tvkj.jar",
       "api": "csp_XBPQ",
       "searchable": 1,
       "quickSearch": 1,
