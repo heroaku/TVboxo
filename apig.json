@@ -525,6 +525,13 @@
 	"ext": "./JS/飞快影视JS.js"
 	},	
 	{
+    "key": "秀儿影视",
+    "name": "秀儿影视JS",
+    "type": 3,
+	"api": "./JS/drpy2.min.js",
+    "ext": "./JS/秀儿影视.js"
+	},
+	{
     "key": "泥视频VIP",
     "name": "泥视频VIP",
     "type": 3,
