@@ -1,5 +1,5 @@
 var rule = {
-    title: '可可影视[优]',
+    title: '好看影视',
     host: 'https://103.194.185.51:51123',
     //host: 'https://www.kkys01.com',    
     //url: '/show/fyclass-----3-fypage.html',
