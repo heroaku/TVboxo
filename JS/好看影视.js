@@ -1,6 +1,7 @@
 var rule = {
     title: '好看影视',
     host: 'https://103.194.185.51:51123',
+    //https://103.212.99.243:51120/
     //host: 'https://www.kkys01.com',    
     //url: '/show/fyclass-----3-fypage.html',
     url: '/show/fyclass-fyfilter-fypage.html',    
