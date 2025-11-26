@@ -1,152 +1,63 @@
-/*
-@header({
-  searchable: 1,
-  filterable: 1,
-  quickSearch: 1,
-  title: '03影视',
-  author: '小可乐/250915/第一版',
-  '类型': '影视',
-  lang: 'dr2'
-})
-*/
-
 var rule = {
-    author: '小可乐/250915/第一版',
-    title: '03影视',
-    类型: '影视',
-    host: 'https://www.03yy.live',
-    headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/128.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'zh-CN,zh;q=0.9'
-    },
-    编码: 'utf-8',
-    timeout: 5000,
-    url: '/type/indexfyclass-fypage.html',
-    filter_url: '',
-    searchUrl: '/search.php?searchword=**',
-    searchable: 1,
-    quickSearch: 1,
+    title: '可可影视[优]',
+    host: 'https://www.dushe9.app',
+    //host: 'https://www.kkys01.com',    
+    //url: '/show/fyclass-----3-fypage.html',
+    url: '/show/fyclass-fyfilter-fypage.html',    
+    filter_url: '{{fl.类型}}-{{fl.地区}}-{{fl.语言}}-{{fl.年份}}-{{fl.排序}}',
+    searchUrl: '/search?k=**&page=fypage',
+    searchable: 2,
+    quickSearch: 0,
     filterable: 1,
-
-    class_name: '电影&电视剧&综艺&动漫',
-    class_url: '1&2&3&4',
-    filter_def: {},
-    预处理: $js.toString(() => {
-        // 使用withHeaders: true来获取响应头
-        const res = request(HOST, {
-            headers: rule.headers,
-            withHeaders: true,
-            redirect: false,
-            method: 'GET'
-        });
-        const resJson = typeof res === 'string' ? JSON.parse(res) : res;
-
-        // 提取set-cookie头
-        const setCookie = resJson['set-cookie'] || '';
-
-        // 处理cookie格式
-        let cookies = '';
-        if (Array.isArray(setCookie)) {
-            cookies = setCookie.map(c => c.split(';')[0].trim()).join('; ');
-        } else if (setCookie) {
-            cookies = setCookie.split(';')[0].trim();
-        }
-
-        // 更新rule.headers中的cookie
-        if (cookies) {
-            rule.headers["cookie"] = rule.headers["cookie"] ?
-                rule.headers["cookie"] + '; ' + cookies : cookies;
-            rule_fetch_params.headers = Object.assign({}, rule.headers);
-        }
-
-        console.log(`提取的Cookie: ${cookies || '无'}`);
-        console.log(`最终Cookie: ${rule.headers["cookie"] || '无'}`);
-    }),
+    headers: {
+        'User-Agent': 'MOBILE_UA',
+    },
+    class_parse: '#nav-swiper&&.nav-swiper-slide;a&&Text;a&&href;/(\\w+).html',
+    cate_exclude: 'Netflix|今日更新|专题列表|排行榜',
+    tab_exclude: '可可影视提供',
+    tab_order: ['超清', '蓝光9', '极速蓝光'],
+    tab_remove: ['4K(高峰不卡)', 'FF线路'],
+    /*
+    tab_rename: {
+        '超清': '🌺风言锋语88🌺超清',
+        '蓝光9)': '🌺风言锋语88🌺蓝光9'
+    },
+    */
     play_parse: true,
     lazy: $js.toString(() => {
-        let html = request(input, {
-            headers: rule.headers,
-            withHeaders: true,
-            redirect: false,
-            method: 'GET'
-        });
-
-        // 处理转义引号：将 \" 替换为 "
-        html = html.replace(/\\"/g, '"');
-
-        // 匹配参数
-        const nowMatch = html.match(/var\s+now\s*=\s*base64decode\s*\(\s*["']([^"']+)["']\s*\)/);
-        const prePageMatch = html.match(/var\s+prePage\s*=\s*["']([^"']+)["']/);
-        const nextPageMatch = html.match(/var\s+nextPage\s*=\s*["']([^"']+)["']/);
-        var now = nowMatch[1];
-        now = base64Decode(now);
-        console.log("now:" + now);
-        
-        if (/\.(m3u8|mp4|mkv|jpg)/.test(now)) {
-            input = {parse: 0, url: now}
-        } else {
-            const prePage = prePageMatch[1];
-            const nextPage = nextPageMatch[1];
-            console.log("prePage:" + prePage);
-            console.log("nextPage:" + nextPage);
-            
-            let jx = `${HOST}/api/dplayer.php?url=${now}&ref=${encodeURIComponent(prePage)}&next=${encodeURIComponent(nextPage)}`;
-            
-            console.log("请求URL:" + jx);
-            
-            let videohtml = request(jx, {
-                headers: rule.headers,
-                withHeaders: true,
-                redirect: false,
-                method: 'GET'
-            });
-            console.log("videohtml:" + videohtml);
-            
-            const mediaInfoRegex = /mediaInfo\s*=\s*(\[.*?\]);/gis;
-            const mediaInfoMatch = mediaInfoRegex.exec(videohtml);
-            let videoUrl = "";
-            
-            if (mediaInfoMatch && mediaInfoMatch[1]) {
-                const mediaInfoContent = mediaInfoMatch[1];
-                const qualityLevels = ["1080", "720", "540", "360"];
-                const urls = [];
-                for (const quality of qualityLevels) {
-                    const urlRegex = new RegExp(
-                        `definition.*?${quality}.*?url.*?:.*?"(https.*?)"`, 
-                        'is'
-                    );
-                    const urlMatch = mediaInfoContent.match(urlRegex);
-                    if (urlMatch && urlMatch[1]) {
-                        videoUrl = urlMatch[1];
-                        videoUrl = videoUrl.replace(/\\\\\//g, '/').replace(/\\+/g, '');
-                        console.log(`找到${quality}清晰度的URL:`, videoUrl);
-                        urls.push(quality, videoUrl);
-                    }
-                }
-                input = { parse: 0, url: urls };
-                if (!videoUrl) {
-                    console.log("未找到任何已知清晰度的URL");
-                }
-            } else {
-                console.error("未匹配到mediaInfo");
-            }
+        input = {
+            parse: 1,
+            url: input,
+            js: 'document.querySelector("#my-video video").click()',
         }
     }),
-    limit: 9,
-    double: true,
-    推荐: '.Pic-list&&.pic-content;a&&title;img&&src;span&&Text;a&&href',
-    一级: '.type-box&&.pic-height-a;a&&title;img&&src;span&&Text;a&&href',
+    limit: 20,
+    推荐: '.section-box:eq(2)&&.module-box-inner&&.module-item;*;*;*;*',
+    double: false,
+    一级: '.module-box-inner&&.module-item;.v-item-title:eq(1)&&Text;img:last-of-type&&data-original;.v-item-bottom&&span&&Text;a&&href',
     二级: {
-        title: 'h2&&Text;.m-content&&ul&&li:eq(4)',
-        img: 'img&&src',
-        desc: '.color-red&&Text;.m-content&&ul&&span:eq(2)&&Text;.m-content&&ul&&span:eq(0)&&Text;.m-content&&ul&&li:eq(1)&&Text;.m-content&&ul&&li:eq(0)&&Text',
-        content: '.m-intro&&Text',
-        tabs: '#playlist&&li',
-        tab_text: 'body&&Text',
-        lists: '.play_list:eq(#id)&&li',
-        list_text: 'body&&Text',
-        list_url: 'a&&href'
+        title: '.detail-pic&&img&&alt;.detail-tags&&a:eq(2)&&Text',
+        img: '.detail-pic&&img&&data-original',
+        desc: '.detail-info-row-main:eq(-2)&&Text;.detail-tags&&a&&Text;.detail-tags&&a:eq(1)&&Text;.detail-info-row-main:eq(1)&&Text;.detail-info-row-main&&Text',
+        content: '.detail-desc&&Text',
+        tabs: '.source-item-label',
+        //tabs: 'body&&.source-item-label[id]',
+        lists: '.episode-list:eq(#id) a',
     },
-    搜索: '*',
+    搜索: '.search-result-list&&a;.title:eq(1)&&Text;*;.search-result-item-header&&Text;a&&href;.desc&&Text',
+    预处理: $js.toString(() => {
+        let html = request(rule.host);
+        let scripts = pdfa(html, 'script');
+        let img_script = scripts.find(it => pdfh(it, 'script&&src').includes('rdul.js'));
+        if (img_script) {
+            let img_url = img_script.match(/src="(.*?)"/)[1];
+            //console.log(img_url);
+            let img_html = request(img_url);
+            let img_host = img_html.match(/'(.*?)'/)[1];
+            log(img_host);
+            rule.图片替换 = rule.host + '=>' + img_host;
+        }
+    }),
+    filter: 'H4sIAAAAAAAAA+2Zz08bRxTH/5c9c7ANbXFuPbRSpSqX9lCpiiIOrhQ1JYf+UKsIyWAbjCHYIMfEsQOkYDAJ/gFBjllj+5/ZmV3/F931m/dmnLYvm4bm0PqC+LzvzOx49u287+w+tKLWrW8fWt8nfrNuWe55T+xtWDPW4sIPCZN/Wbj/c2LccNEPi0x9lKoHYR+spRmI3k789N39e7+q8O3Pvv78yy++IVWsn8hURokKSCtV/QhqAKTl6k6/ihoAam72XI+pADW5XJDJktIUkJbKyZWnqAHQmLmW23+BYwKQdrItrnqoAdCYK2duaRvHBKDfUFvT/RSQtrozKp+iBkBjZp849jqOCUD9tlZF/gL7AZCWP/IOaa0BSGt2hN1ADQA15/rAa7aVpoDm0jh2Bgc4FwCtbXrZPdLGQGu233DX13DNAIx76xZ7+t4GQFp66L6soQaAmre8Kaq20hQs3QlUSGNRbYtNW6cxcZg0Fkcno/IqLkK3ISp9FcIWo+Oy7LYmWqiQvgFteTWYHANCtCyDLT+IywJAy7lbk9UzXE4Auvb+qe6ngJZl41xrCmjMV4+1poBmO3itNQWkPWoL+xg1AD1m2xyzbfZzulcj6qeAfvv2nsh08bcD0PVeX3q1IV4PQKfLgdwY+jeDMgaZrjpMu/1dWaKbQ0xzTuf9DiKLT5xmatEq+ih3O9iC2Nh2RLsoMvikaKY7URu6eT/Vy3gziOkqg1dwXcemjcgM0W/OdJwebmMKzFT3Wg2vntSpThwq1St9vz0ODkA/8uJIawqMRNOaAiN5tabASF6tKTAS1OgHEHYRxNWl0+sbzztymEWIRWIfqdj4XyM+p+NzZnxWx2fNeEzHY2Y8quNRMx7R8QjFo5Hx9A9Ji0bu+n/i1CDyZoNI0CCiG8QnG0Tj8chd/49uMP9mg/mgwbxuICuXchcfkUD7JD6x4HJrR9h5veDEkwvu9q5FIYtX0aNXk7KED0/MDLspzAC9rl4rLbK4H88F07gz4/f6d0yLojCmhTMfnKHhDAZrIriizpgkruBzRogzLUHBot+nIIxJ4kwLZ3aCQkfXUxDGmPhbob5HCsIYRM6UjVJ90V3BuQDctDGhsHXDxoSzD//UknDWgrMkrO14q4HizAdnWqYFNcQiTAvq/62gzn6ggpqry+SyvH45ce7ToTCFlz01cm8SmE2dLaBcIeSKHXOClYU994wKPUAoY8EUc+6k7eeB9zyJGgBplZwsY7VREMaQuL28cYwDoH4Hz0WFNh8A1D5dvOenFUjwP2XmsOCvPW6DAHS0sy9Eo4AVAYC2wWc78gmutAJd5jf8NaQyP4Yw1uEvrdFNvWPgyunby/z7vV14P5MwfccwfccwtUQmTy2R9d+0RHM3ZYlc+4XoP8Y0ByCtuu/YtntCtZmY5tZs694KSEufi/yh7q05lJHiPiEwRor7TOBWuuKQNi0Amm1uxa00caoAuhT//ScEzrhxluGrxMKPDxaVpoDmyX3mYYwUZ9xk+alzTTstwPSzxLS8TMvLtLz8ubx8/O7lRYfNuz9Krnq/U0oC0CNQrIomnnAU0KzKBf88hI8AAPU7HXqdHPYDoOutPXKL+3g9gDDlhv16zpzE2PMwc25nv55z7wIyHdFM6Uc1gA+eOX6KLP0BxXCgCpwhAAA=',
+
 }
