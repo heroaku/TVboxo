@@ -68,7 +68,7 @@
 		"key": "可可影视",
 		"name": "可可影视",
 		"type": 3,
-		"api": "./JS/drpy2.min.js",
+		"api": "https://github.com/heroaku/Dr/raw/refs/heads/master/libs/drpy2.min.js",
 		"ext": "./JS/可可影视.js"
 		},
 			{
