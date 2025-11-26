@@ -12,9 +12,11 @@ var rule = {
     headers: {
         'User-Agent': 'MOBILE_UA',
     },
-    class_parse: '#nav-swiper&&.nav-swiper-slide;a&&Text;a&&href;/(\\w+).html',
-    cate_exclude: 'Netflix|今日更新|专题列表|排行榜',
-    tab_exclude: '可可影视提供',
+   // class_parse: '#nav-swiper&&.nav-swiper-slide;a&&Text;a&&href;/(\\w+).html',
+    //cate_exclude: 'Netflix|今日更新|专题列表|排行榜',
+    class_name: '电视剧&电影&动漫&综艺&短剧',
+    class_url: '2&1&3&4&6',
+    //tab_exclude: '可可影视提供',
     tab_order: ['超清', '蓝光9', '极速蓝光'],
     tab_remove: ['4K(高峰不卡)', 'FF线路'],
     /*
