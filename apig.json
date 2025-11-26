@@ -85,6 +85,13 @@
 		"api": "./JS/drpy2.min.js",
 		"ext": "./JS/可可影视.js"
 		},
+			{
+		"key": "03影视",
+		"name": "03影视",
+		"type": 3,
+		"api": "./JS/drpy2.min.js",
+		"ext": "./JS/03影视.js"
+		},
 #7080    
 	   {
       "key": "咖啡",
