@@ -1,125 +1,71 @@
-// 搜索验证 -> drpy_ocr自动过搜索验证失败
 var rule = {
-    title: '烧火影视[优]',
-    host:'https://saohuody.com',
-     //host:'https://saohuo.tv',
-    //host: 'http://shapp.us',
-    //hostJs: 'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"a:eq(2)&&href");print(src);HOST=src',
-    // url:'/list/fyclass-fypage.html',  https://saohuody.com/list/2-2.html
-    url: '/list/fyfilter-fypage.html',
-    filterable: 1,//是否启用分类筛选,
-    filter_url: '{{fl.cateId}}',
-    filter: {
-        "1": [{
-            "key": "cateId",
-            "name": "类型",
-            "value": [{"v": "1", "n": "全部"}, {"v": "6", "n": "喜剧"}, {"v": "7", "n": "爱情"}, {
-                "v": "8",
-                "n": "恐怖"
-            }, {"v": "9", "n": "动作"}, {"v": "10", "n": "科幻"}, {"v": "11", "n": "战争"}, {
-                "v": "12",
-                "n": "犯罪"
-            }, {"v": "13", "n": "动画"}, {"v": "14", "n": "奇幻"}, {"v": "15", "n": "剧情"}, {
-                "v": "16",
-                "n": "冒险"
-            }, {"v": "17", "n": "悬疑"}, {"v": "18", "n": "惊悚"}, {"v": "19", "n": "其它"}]
-        }],
-        "2": [{
-            "key": "cateId",
-            "name": "类型",
-            "value": [{"v": "2", "n": "全部"}, {"v": "20", "n": "大陆"}, {"v": "21", "n": "TVB"}, {
-                "v": "22",
-                "n": "韩剧"
-            }, {"v": "23", "n": "美剧"}, {"v": "24", "n": "日剧"}, {"v": "25", "n": "英剧"}, {
-                "v": "26",
-                "n": "台剧"
-            }, {"v": "27", "n": "其它"}]
-        }],
-        "4": [{
-            "key": "cateId",
-            "name": "类型",
-            "value": [{"v": "4", "n": "全部"}, {"v": "38", "n": "搞笑"}, {"v": "39", "n": "恋爱"}, {
-                "v": "40",
-                "n": "热血"
-            }, {"v": "41", "n": "格斗"}, {"v": "42", "n": "美少女"}, {"v": "43", "n": "魔法"}, {
-                "v": "44",
-                "n": "机战"
-            }, {"v": "45", "n": "校园"}, {"v": "46", "n": "亲子"}, {"v": "47", "n": "童话"}, {
-                "v": "48",
-                "n": "冒险"
-            }, {"v": "49", "n": "真人"}, {"v": "50", "n": "LOLI"}, {"v": "51", "n": "其它"}]
-        }],
-        // "28":[{"key":"cateId","name":"综艺","value":[{"v":"28","n":"脱口秀"},{"v":"29","n":"真人秀"},{"v":"30","n":"选秀"},{"v":"31","n":"美食"},{"v":"32","n":"旅游"},{"v":"33","n":"汽车"},{"v":"34","n":"访谈"},{"v":"35","n":"纪实"},{"v":"36","n":"搞笑"},{"v":"37","n":"其它"}]}]
-    },
+    author: '小可乐/240527/第一版',
+    title: '爱看农民[优]',
+    host: 'https://m.emsdn.cn',
+    hostJs: $js.toString(() => {
+        print(HOST);
+        let html = request(HOST, {headers: {"User-Agent": PC_UA}});
+        let src = jsp.pdfh(html, "body&&a:eq(0)&&href") || jsp.pdfh(html, "body&&a:eq(0)&&Text");
+        if (src && src.length > 5) {
+            print(src);
+            if (!src.startsWith('http')) {
+                src = 'https://' + src
+            }
+            print("抓到主页:" + src);
+            HOST = src
+        }
+    }),
+    headers: {'User-Agent': 'PC_UA'},
+    编码: 'utf-8',
+    timeout: 5000,
+    homeUrl: '/',
+    url: '/vod-list-id-fyfilter.html',
+    filter_url: '{{fl.cateId}}-pg-fypage-order--by-{{fl.by or "time"}}-class-0-year-{{fl.year}}-letter-{{fl.letter}}-area-{{fl.area}}-lang-',
+    detailUrl: '',
+    searchUrl: '/vod-search-pg-fypage-wd-**.html',
+    searchable: 1,
+    quickSearch: 1,
+    filterable: 1,
+    class_name: '电影&剧集&综艺&动漫&短剧',
+    class_url: '1&2&3&4&26',
     filter_def: {
         1: {cateId: '1'},
         2: {cateId: '2'},
-        4: {cateId: '4'}
-        // 28:{cateId:'28'}
+        3: {cateId: '3'},
+        4: {cateId: '4'},
+        26: {cateId: '26'}
     },
-    //searchUrl: '/search.php?page=fypage&searchword=**&searchtype=',
-    searchUrl: '/search/**----------fypage---.html',    
-    searchable: 2,
-    quickSearch: 0,
-    headers: {'User-Agent': 'MOBILE_UA',},
-    timeout: 5000,//网站的全局请求超时,默认是3000毫秒
-    class_name: '电影&电视剧&动漫',
-    class_url: '1&2&4',
+    tab_rename: {
+        '播放列表1：（默认）': '默认',
+        '播放列表1：（云播①）': '云播①',
+        '播放列表1：（云播③）': '云播③',
+        '播放列表2：（百度网盘）': '百度网盘'
+    },
     play_parse: true,
-    lazy: `js:
-        pdfh = jsp.pdfh;pdfa = jsp.pdfa;pd = jsp.pd;
-        var html = pd(request(input), 'iframe&&src');
-        var apiurl = '';
-        if (/api\\.hhplayer/.test(html)) {
-            apiurl = 'https://api.hhplayer.com/api.php';
-        } else if (/hkjx\\.hhplayer/.test(html)) {
-            apiurl = 'https://hkjx.hhplayer.com/api.php';
-        } else if (/hhjx\\.hhplayer/.test(html)) {
-            apiurl = 'https://hhjx.hhplayer.com/api.php';
-        } else if (/play\\.hhplayer/.test(html)) {
-            apiurl = 'https://play.hhplayer.com/hhjx/api.php';
+    lazy: $js.toString(() => {
+        let init_js = `Object.defineProperties(navigator, {platform: {get: () => 'iPhone'}});`;
+        input = {
+            parse: 1,
+            url: input,
+            js: `try{location.href = document.querySelectorAll("iframe")[1].src;}catch(err) {}document.querySelector(".line").click()`,
+            parse_extra: '&init_script=' + encodeURIComponent(base64Encode(init_js)),
         }
-        var url = '';
-        var t = '';
-        var key = '';
-        eval(pdfh(request(html), 'body&&script,0&&Html').split('var act')[0].replaceAll('var ', ''));
-        var purl = JSON.parse(request(apiurl, {
-            headers: {
-                'User-Agent': MOBILE_UA,
-                'Referer': html
-            },
-            body: 'url=' + url + '&t=' + t + '&key=' + key + '&act=0&play=1',
-            method: 'POST'
-        })).url;
-        if(!purl){
-            input = {
-            parse:1,
-            url:html
-            }
-        }
-        else if (/obj\\/tos/.test(purl)) {
-            input = {
-                jx: 0,
-                url: purl,
-                parse: 0
-            }
-        } else {
-            input = {
-                jx: 0,
-                url: /http/.test(purl) ? purl: 'https://api.hhplayer.com' + purl,
-                parse: 0
-            }
-        }
-    `,
-    推荐: '.v_list,0&&li;*;*;*;*',
-    一级: '.v_list li;a&&title;.lazyload&&data-original;.v_note&&Text;a&&href',
+    }),
+    limit: 12,
+    double: false,
+    推荐: 'ul.list_06:has(li) li;*;*;*;*',
+    一级: 'ul.list_01 li;a:eq(0)&&title;img&&src;font&&Text;a:eq(0)&&href',
     二级: {
-        "title": "h1&&Text;",
-        "img": ".m_background&&style",
-        "desc": ";;;.v_info_box&&p&&Text",
-        "content": ".p_txt.show_part&&Text",
-        "tabs": ".from_list&&li",
-        "lists": "#play_link&&li:eq(#id)&&a"
+        "title": ".fen&&h1&&Text;.d_z_y:eq(2)&&font&&Text",
+        "img": ".lef:eq(-1)&&img&&src",
+        "desc": ".d_z_y:eq(-3)&&Text;.d_z_y:eq(-2)&&font&&Text;;.d_z_y:eq(1)&&font&&Text;.d_z_y:eq(0)&&font&&Text",
+        "content": ".jjie&&Text",
+        "tabs": "h2 span",
+        "tab_text": "body&&Text",
+        "lists": ".soyurl:eq(#id)&&a",
+        "list_text": "body&&Text",
+        "list_url": "a&&href"
     },
     搜索: '*',
+    filter: 'H4sIAAAAAAAAA+2YW08TQRTH3/sx9rkPMy0tLW/c7/c7hIeKm0hETKCaEEKiFoQWATXSChYviaUlgpRgiBShX6Y7pd/CrZw959QHQ4K8zVvP79+dmf90dv9nu+AypFEz7lowHprzRo0xGQqbrfcNtzETemTadfH43Pq4ZtdPQ9NPbDC+YMzY2FrOlCKZMrYLaSy6AccyhYtkMboCio+UeNKKpknxo1JcPVaRZVKqSUm/sc7OSQmgop6/Vs/ipARpnmi6YjQp6KLV94VclEm0bhWJqRc7TKLlWamVikVIe30Ti27csNCsGaLtspJZ61Xu39tFQ39Nl7ZfAoXC0Up72+rnEWhQ4HWbWXV26Vx3XeCeXW5YHy5AgwLH/LRPGhS4A4mUSh6ABgVqJ1m6DgrU4lkr9tna/eLIWOOs+wdqN3WVyhdyO87cHKGr9ayV23NcXReOdrV2TCuAgla3xVe3xTV7KWotb2+tMyzWOHIqX9w8LEa3ncGxdr5RyC8VLxIq7vwYVOMsy6fW94gzxXVRcUbmzdAsnRGVOC0lftzwjHiEpwrYn4+Me4l7OfcQ93AuiUvOBXHBuAwil0HOA8QDnFcTr+bcT9zPuY+4j3PyK7lfSX4l9yvJr+R+JfmV3K8kv5L7FeRXcL+C/AruV5Bfwf0K8iu4X0F+BfcryK/gfgX5FdyvIL+C+xXkV3C/gvzaHyvO5bQZDpvsZFqHCXW0fsOTWQugFkkdkDok9UDqkTQAaUDSCKQRSROQJiTNQJqRtABpQdIKpBVJG5A2JO1A2pF0AOlA0gmkE0kXkC4k3UC6kfQA6UHSC6QXSR+QPiT9QPqRDAAZQDIIZBDJEJAhJMNAhpGMABlBMgpkFMkYkLHKU3Fvnj2rNt5auc0bngh6sNlFeMoeAJ+huZzKvgPlwVR4jp6/R0vWqpOBc5OPZ83yYlwTbpfhuW1fQneHnQmFXNruDZwQJ8kO1nKEnmQdycv8pMopSVfR7akO0uVwJcmnuwLdFeiuQHcFuivQXYHuCu6uK/DyrkDHrI5ZHbM6ZnXM6pg1dMz+x5ituu3LN91NViyjfn1j78qBvyT253pQv0brfNf5rvNd57vOd53vd/jnul+/R+uc1Tmrc1bnrKFzVufsXeSsa/E37iRyfV8nAAA='
 }
