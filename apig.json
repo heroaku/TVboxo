@@ -542,6 +542,13 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/毒舌影视.js"
         },
+		{
+        "key": "NCAT影视",
+        "name": "NCAT影视",
+		"type": 3,
+		"api": "./JS/drpy2.min.js",
+        "ext": "./JS/NCAT影视.js"
+    },	
 	{
     "key": "秀儿影视",
     "name": "秀儿影视JS",
