@@ -1,81 +1,73 @@
 var rule = {
-    title: '麻雀视频[优]',
-    host: 'https://www.mqtv.cc',
-    parse_url: 'https://player.mqtv.cc/fun/?url=',
-    url: '/libs/VodList.api.php?type=fyclass&rank=rankhot&cat=&year=&area=&page=fypage',
-    searchUrl: '/libs/VodList.api.php?search=**',
-    //detailUrl:'/libs/VodInfo.api.php?ctid=fyid',
-    searchable: 2,
-    quickSearch: 0,
-    filterable: 1,
-    filter: '',
-    filter_url: '',
-    filter_def: {},
-    headers: {
-        'User-Agent': 'MOBILE_UA',
-    },
+    author: '小可乐/240527/第一版',
+    title: '爱看农民2[优]',
+    host: 'https://m.emsdn.cn',
+    hostJs: $js.toString(() => {
+        print(HOST);
+        let html = request(HOST, {headers: {"User-Agent": PC_UA}});
+        let src = jsp.pdfh(html, "body&&a:eq(0)&&href") || jsp.pdfh(html, "body&&a:eq(0)&&Text");
+        if (src && src.length > 5) {
+            print(src);
+            if (!src.startsWith('http')) {
+                src = 'https://' + src
+            }
+            print("抓到主页:" + src);
+            HOST = src
+        }
+    }),
+    headers: {'User-Agent': 'IOS_UA'},
+    编码: 'utf-8',
     timeout: 5000,
-    class_name: '电影&电视剧&综艺&动漫',
-    class_url: 'movie&tv&va&ct',
-    cate_exclude: '',
+
+    homeUrl: '/',
+    url: '/vod-list-id-fyfilter.html',
+    filter_url: '{{fl.cateId}}-pg-fypage-order--by-{{fl.by or "time"}}-class-0-year-{{fl.year}}-letter-{{fl.letter}}-area-{{fl.area}}-lang-',
+    searchUrl: '/index.php?m=vod-search&wd=**',
+    searchable: 1,
+    quickSearch: 1,
+    filterable: 1,
+    class_name: '电影&剧集&综艺&动漫&短剧',
+    class_url: '1&2&3&4&26',
+    filter_def: {
+        1: {cateId: '1'},
+        2: {cateId: '2'},
+        3: {cateId: '3'},
+        4: {cateId: '4'},
+        26: {cateId: '26'}
+    },
     play_parse: true,
-    is_video: 'obj/tos',
     lazy: $js.toString(() => {
+        let init_js = `Object.defineProperties(navigator, {platform: {get: () => 'iPhone'}});`;
         input = {
             parse: 1,
-            url: rule.parse_url + input,
-            js: "$('.player-btn').click()",
-            parse_extra: '&is_pc=1&custom_regex=' + rule.is_video
-        };
+            url: input,
+            js: `try{location.href = document.querySelectorAll("iframe")[1].src;}catch(err) {}document.querySelector(".line").click()`,
+            parse_extra: '&init_script=' + encodeURIComponent(base64Encode(init_js)),
+        }
     }),
-    double: true,
-    推荐: '',
-    预处理: $js.toString(() => {
-        let xrequest = request;
-        (function() {
-            request = function(url, obj) {
-                function setCookie() {
-                    let {
-                        cookie
-                    } = reqCookie(HOST);
-                    rule.headers["cookie"] = cookie;
-                    return rule.headers;
-                }
-                let result = xrequest(url, obj);
-                if (result == "") {
-                    result = xrequest(url, {
-                        headers: setCookie()
-                    });
-                }
-                return result;
-            }
-        })()
-    }),
-    一级: 'json:data;title;img;remark;url;desc',
-    二级: $js.toString(() => {
-        VOD = {};
-        log(input);
-        let ctid = input.match(/.*\/(\d+)/)[1];
-        // log(ctid);
 
-        let detailUrl = 'https://www.mqtv.cc/libs/VodInfo.api.php?ctid=' + ctid;
-        log('detailUrl:' + detailUrl);
-        let html = request(detailUrl);
-        let json = JSON.parse(html);
-        // log(json);
-        VOD.vod_name = json.data.title;
-        VOD.vod_id = input;
-        VOD.vod_pic = json.data.img;
-        VOD.vod_year = json.data.year;
-        VOD.vod_area = json.data.area;
-        VOD.vod_remarks = json.data.remark;
-        VOD.vod_play_from = json.data.playinfo.map(it => it.cnsite).join('$$$');
-        let playUrls = [];
-        json.data.playinfo.forEach((it) => {
-            let plist = it.player.map(it => it.no + '$' + it.url).join('#');
-            playUrls.push(plist);
-        });
-        VOD.vod_play_url = playUrls.join('$$$');
+    limit: 12,
+    double: false,
+    推荐: '*',
+    一级: '.picTxt li;.sTit&&Text;img&&data-src;.emHot&&Text;a&&href',
+    二级: {
+        "title": "td--.sDes&&Text;.type-title&&Text",
+        "img": ".posterPic&&img&&src",
+        "desc": ".sDes:eq(0)&&Text;.detail-con&&em:eq(0)&&Text;;.sDes:eq(2)&&Text;.sDes:eq(1)&&Text",
+        "content": ".detail-con&&p&&Text",
+        "tabs": ".boxConWidth&&span",
+        "tab_text": "body&&Text",
+        "lists": ".dramaNumList:eq(#id)&&a",
+        "list_text": "body&&Text",
+        "list_url": "a&&href"
+    },
+    二级访问前: $js.toString(() => {
+        if (/-play-/.test(MY_URL)) {
+            MY_URL = MY_URL.replace(/play-id-(\d+).*?\.html/, 'detail-id-$1.html');
+            //log(MY_URL);
+        }
     }),
-    搜索: 'json:data.vod_all[0].show;title;img;remark;url;desc',
+    搜索: '#data_list li;*;*;.sStyle&&Text;*',
+
+    filter: 'H4sIAAAAAAAAA+1YzW5SQRjd8xh3zWIGyl/fwGdousBKYqPWhKIJISQqxRbQosaCrdSfxFtoRHtJTWNvbXkZZihv4dDOzPnowjTpwi5md885zMx35s4934RSxOPe/EKk5D3IFb15bylbyN2550W9leyjnMLjwYn41FD4afbhE0UslLwVRYtqb1LpTWkFuFeOarreG512xrV1rSSgtDqi1oWStMp4YyArVSgpKN234vgEStoq8vkb+awFJYN1at2Z2TjDoI0Po7BGJNQtK3X5YodIKE/46zNFcFXfYjlqNyybz2WxXaITiFfhv7cLU3/rTrZfalYDo032tuXvA61pYMc1A3l8ZsZdArtnZ5vi46nWNLBzft6HpoHdgbYvO32taWC1wwDjNLBaKxD1L2L3q5Ettqvu9+Wuf+4PR+GOWZtS1tXrQIR7xtUlMNp5Y4AKNEB1W7S6LaqpUmRjqLbWTGuxndkfjps/xrVtM7nF5hej4dr4tC1b5mUA21WqR+JnxSxxCWbOSDGXzeOMyPbRpP3rmmckxmJzmrt4JHwcfJzyMfAxynPwnPIMPCM8z1ieZyifBp+mfAp8ivJJ8EnKJ8AnKA+/nPrl8MupXw6/nPrl8MupXw6/nPpl8MuoXwa/jPpl8MuoXwa/jPpl8MuoXwa/jPpl8MuoXwa/jPpl8MuoXwa/DH55JmP8XjwSPg0+TfkU+CsZeLdITvfmOxE2r3m68SkoUFhWE9ivLgxl8F4r95cLq/hiD9bEhknN1aXH+dy0mMhiNOLFbtrJsJ8qRUZhV3UTYxqSiuJp6B4GRooTP/40VzEKL1T2u9M4hpRwfcT1EddHXB9xfeS29ZE47SMumF0wu2B2weyC+f8H89xNL/jYf1HvyT/fyX08fUUif/lk3FXddQTXEVxHcB3htnWEWNLd1V0yu2R2yeyS+RYlc6T8F3Lw1MtZHgAA'
 }
