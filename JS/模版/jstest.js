@@ -66,7 +66,6 @@ var rule = {
     class_name: '电影&电视剧&动漫',
     class_url: '1&2&4',
     play_parse: true,
-/*
     lazy: `js:
         pdfh = jsp.pdfh;pdfa = jsp.pdfa;pd = jsp.pd;
         var html = pd(request(input), 'iframe&&src');
@@ -112,7 +111,6 @@ var rule = {
             }
         }
     `,
-    */
     推荐: '.v_list,0&&li;*;*;*;*',
     一级: '.v_list li;a&&title;.lazyload&&data-original;.v_note&&Text;a&&href',
     二级: {
