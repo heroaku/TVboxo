@@ -1,36 +1,117 @@
+// 地址发布页 https://www.czzy.site
+// 地址发布页 https://cz01.vip
 var rule = {
-    title: '厂长影视',
-    author:'不告诉你',
-    host: 'https://www.czvod.vip',
-    hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});HOST = jsp.pdfh(html,"ul&&li:eq(1)&&a&&href")',
-    url: '/vodshowfyfilter.html',
-    searchUrl: '/vodsearch**/page/fypage.html',
-    class_name: '电影&电视剧&动漫&短剧&综艺',
-    class_url: '/id/1&/id/2&/id/4&/id/6&/id/3',
-    searchable:2,quickSearch:1,double:true,timeout:10000,play_parse:true,filterable:1,tab_exclude:'猜你喜欢',
-    filter_url: '{{fl.area}}{{fl.by}}{{fl.class}}{{fl.cateId}}/page/fypage{{fl.year}}',
-    filter_def: {'/id/1': {cateId: '/id/1'},'/id/2': {cateId: '/id/2'},'/id/3': {cateId: '/id/3'},'/id/4': {cateId: '/id/4'},'/id/6': {cateId: '/id/6'}},
-    headers: {'User-Agent': 'MOBILE_UA'},
-    lazy: `js: 
-    let pclick = 'document.querySelector("#playleft iframe").contentWindow.document.querySelector("#start").click()';
-    input = { parse: 1, url: input, js: pclick, click: pclick}`,
-    推荐: '*',
-    一级: 'ul.stui-vodlist li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-    二级: {
-        title: 'h1&&Text',
-        img: '.lazyload&&data-original',
-        //desc: '主要信息;年代;地区;演员;导演',
-        desc: '.stui-content__detail&&p:eq(0)&&Text;;;.stui-content__detail&&p:eq(1)&&Text;.stui-content__detail&&p:eq(2)&&Text',
-        content: '.stui-content__detail&&.detail&&Text',
-        tabs: '.stui-vodlist__head h3',
-        lists: '.stui-content__playlist:eq(#id) li',
+    title: '厂长资源',
+    //host: 'https://www.czzy88.com',
+    host:'https://www.czzy.site',
+    //hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});HOST = html.match(/推荐访问<a href="(.*)"/)[1];print("厂长跳转地址 =====> " + HOST)',
+	hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"li:eq(3)&&a&&href");print(src);HOST=src',
+    url: '/fyclassfyfilter',
+    filterable: 1,//是否启用分类筛选,
+    filter_url: '{{fl.cateId}}{{fl.class}}{{fl.area}}/page/fypage',
+    filter: 'H4sIAAAAAAAAA42V3U7iQBTH36XXJt77KhtjBql0EFqlHbUYE79AQEXcVfwiarJi8QOVNborUniZTluufIXtiO1U7LRe9KLT3/+cOWfO/LvIpaU5yE/EFG7sxyI3zavcGAcyPOBGOBGkeecNF/JW69V5nwMpxL9jc84yAcjXXKO/1uCWRgaro264CZnPQF4ezQpAnHSehIJgEgLxQ2bdHPX3e2a5YW9X2OK4qrr83hPWWyGkE1oWYBJR3tbyuKiFSCQBAbeKUsPae2WzCSSRIrzw+EQ32lpo+HTS3Uq3HApmXNA8qIeCggv2z67CwXkv5NNffFF14LdOAeeejdfqW6cYIkRARaSVKhQTbqnbZfu+GdX/NA+dHg1JzVvNKT5KmoExXhxWHtTN2m2UkozVl6SkOSd6lJQIvmrtzdY3tFMgoNTH/e9ljX/t7wNuX0Yp+RSSZDgkNXrrln5gVu+j1OTigTgYzlw6Nzd7+EKL7DOCKgJi1hkPcda9AkbnGO8eGv9+4a02tzROxAP3mEwBWab24XgHPt38ZB8+3xgZeAlRD4Ke23cPH6t0HwpIyKOTJH0Seixe71k39WCWV3iFgvmf/aOrYDANpAXiSh5b1My1XDCbRLOkeR5aahh6LRiNS1kk+Umzc8Mi0/70Ax8KJgWBcuU83vkTzKWgY4SU3LmwfzMKSqD3I/WVVNkyl7VgWJHExMKn+qs14kKB8AJxYg+sb+AXRlGzkOyAonfPuN1ktB8CxZ/fXKmYy9VgdhrFaH5z9daq7jI2isiVoOhazi4y+koOX+Z9aMlcPWakJ6jk32vh0GgXg2Hyh8wKPG2C2dyyC6eMI5v3YZdG9zwYm0fOVHuktdLtH3cZ2QEUfQdgFVrM+Qfw0/xbpXtLvw5Gp5ySEG2rdda0ihuMsZ6hmLbLHJRpOvxW+xrr+8yAydQMDWnXe9Rmhs8+RrFexbl6wZga97D+2aPxUmFgKnHB8aX/CTefD1IJAAA=',
+    searchUrl: '/daoyongjiekoshibushiyoubing?q=**&f=_all&p=fypage',
+    
+    searchable: 2,
+    filterable: 0,
+    headers: {
+        'User-Agent': 'PC_UA',
+        // 'Cookie': 'esc_search_captcha=1'
     },
-    搜索: '*;*;*;*;*;p.text&&Text',
-    filter:{
-    "/id/1":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"/id/1"},{"n":"纪录片","v":"/id/5"}]},{"key":"class","name":"分类","value":[{"n":"全部","v":""},{"n":"喜剧","v":"/class/喜剧"},{"n":"爱情","v":"/class/爱情"},{"n":"恐怖","v":"/class/恐怖"},{"n":"动作","v":"/class/动作"},{"n":"科幻","v":"/class/科幻"},{"n":"剧情","v":"/class/剧情"},{"n":"战争","v":"/class/战争"},{"n":"警匪","v":"/class/警匪"},{"n":"犯罪","v":"/class/犯罪"},{"n":"动画","v":"/class/动画"},{"n":"奇幻","v":"/class/奇幻"},{"n":"武侠","v":"/class/武侠"},{"n":"冒险","v":"/class/冒险"},{"n":"枪战","v":"/class/枪战"},{"n":"悬疑","v":"/class/悬疑"},{"n":"惊悚","v":"/class/惊悚"},{"n":"经典","v":"/class/经典"},{"n":"纪录片","v":"/class/纪录片"},{"n":"青春","v":"/class/青春"},{"n":"文艺","v":"/class/文艺"},{"n":"微电影","v":"/class/微电影"},{"n":"古装","v":"/class/古装"},{"n":"历史","v":"/class/历史"},{"n":"运动","v":"/class/运动"},{"n":"农村","v":"/class/农村"},{"n":"儿童","v":"/class/儿童"},{"n":"网络电影","v":"/class/网络电影"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"/area/中国大陆"},{"n":"中国香港","v":"/area/中国香港"},{"n":"中国台湾","v":"/area/中国台湾"},{"n":"美国","v":"/area/美国"},{"n":"法国","v":"/area/法国"},{"n":"英国","v":"/area/英国"},{"n":"日本","v":"/area/日本"},{"n":"韩国","v":"/area/韩国"},{"n":"德国","v":"/area/德国"},{"n":"泰国","v":"/area/泰国"},{"n":"印度","v":"/area/印度"},{"n":"意大利","v":"/area/意大利"},{"n":"西班牙","v":"/area/西班牙"},{"n":"加拿大","v":"/area/加拿大"},{"n":"其他","v":"/area/其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"/year/2025"},{"n":"2024","v":"/year/2024"},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"2009","v":"/year/2009"},{"n":"2008","v":"/year/2008"},{"n":"2007","v":"/year/2007"},{"n":"2006","v":"/year/2006"},{"n":"2005","v":"/year/2005"},{"n":"2004","v":"/year/2004"},{"n":"2003","v":"/year/2003"},{"n":"2002","v":"/year/2002"},{"n":"2001","v":"/year/2001"},{"n":"2000","v":"/year/2000"}]},{"key":"by","name":"排序","value":[{"n":"全部","v":""},{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}],
-    "/id/2":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"古装","v":"/class/古装"},{"n":"战争","v":"/class/战争"},{"n":"青春偶像","v":"/class/青春偶像"},{"n":"喜剧","v":"/class/喜剧"},{"n":"家庭","v":"/class/家庭"},{"n":"犯罪","v":"/class/犯罪"},{"n":"动作","v":"/class/动作"},{"n":"奇幻","v":"/class/奇幻"},{"n":"剧情","v":"/class/剧情"},{"n":"历史","v":"/class/历史"},{"n":"经典","v":"/class/经典"},{"n":"乡村","v":"/class/乡村"},{"n":"情景","v":"/class/情景"},{"n":"商战","v":"/class/商战"},{"n":"网剧","v":"/class/网剧"},{"n":"其他","v":"/class/其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"/area/中国大陆"},{"n":"中国香港","v":"/area/中国香港"},{"n":"中国台湾","v":"/area/中国台湾"},{"n":"美国","v":"/area/美国"},{"n":"法国","v":"/area/法国"},{"n":"英国","v":"/area/英国"},{"n":"日本","v":"/area/日本"},{"n":"韩国","v":"/area/韩国"},{"n":"德国","v":"/area/德国"},{"n":"泰国","v":"/area/泰国"},{"n":"印度","v":"/area/印度"},{"n":"意大利","v":"/area/意大利"},{"n":"西班牙","v":"/area/西班牙"},{"n":"加拿大","v":"/area/加拿大"},{"n":"新加坡","v":"/area/新加坡"},{"n":"其他","v":"/area/其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"/year/2025"},{"n":"2024","v":"/year/2024"},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"2009","v":"/year/2009"},{"n":"2008","v":"/year/2008"},{"n":"2007","v":"/year/2007"},{"n":"2006","v":"/year/2006"},{"n":"2005","v":"/year/2005"},{"n":"2004","v":"/year/2004"},{"n":"2003","v":"/year/2003"},{"n":"2002","v":"/year/2002"},{"n":"2001","v":"/year/2001"},{"n":"2000","v":"/year/2000"}]},{"key":"by","name":"排序","value":[{"n":"全部","v":""},{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}],
-    "/id/3":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"纪录片","v":"/class/纪录片"},{"n":"选秀","v":"/class/选秀"},{"n":"情感","v":"/class/情感"},{"n":"访谈","v":"/class/访谈"},{"n":"播报","v":"/class/播报"},{"n":"旅游","v":"/class/旅游"},{"n":"音乐","v":"/class/音乐"},{"n":"美食","v":"/class/美食"},{"n":"纪实","v":"/class/纪实"},{"n":"曲艺","v":"/class/曲艺"},{"n":"生活","v":"/class/生活"},{"n":"游戏互动","v":"/class/游戏互动"},{"n":"财经","v":"/class/财经"},{"n":"求职","v":"/class/求职"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"/area/中国大陆"},{"n":"中国香港","v":"/area/中国香港"},{"n":"中国台湾","v":"/area/中国台湾"},{"n":"美国","v":"/area/美国"},{"n":"法国","v":"/area/法国"},{"n":"英国","v":"/area/英国"},{"n":"日本","v":"/area/日本"},{"n":"韩国","v":"/area/韩国"},{"n":"其他","v":"/area/其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"/year/2025"},{"n":"2024","v":"/year/2024"},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"2009","v":"/year/2009"},{"n":"2008","v":"/year/2008"},{"n":"2007","v":"/year/2007"},{"n":"2006","v":"/year/2006"},{"n":"2005","v":"/year/2005"},{"n":"2004","v":"/year/2004"},{"n":"2003","v":"/year/2003"},{"n":"2002","v":"/year/2002"},{"n":"2001","v":"/year/2001"},{"n":"2000","v":"/year/2000"}]},{"key":"by","name":"排序","value":[{"n":"全部","v":""},{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}],
-    "/id/4":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"情感","v":"/class/情感"},{"n":"科幻","v":"/class/科幻"},{"n":"热血","v":"/class/热血"},{"n":"推理","v":"/class/推理"},{"n":"搞笑","v":"/class/搞笑"},{"n":"冒险","v":"/class/冒险"},{"n":"萝莉","v":"/class/萝莉"},{"n":"校园","v":"/class/校园"},{"n":"动作","v":"/class/动作"},{"n":"机战","v":"/class/机战"},{"n":"运动","v":"/class/运动"},{"n":"战争","v":"/class/战争"},{"n":"少年","v":"/class/少年"},{"n":"少女","v":"/class/少女"},{"n":"社会","v":"/class/社会"},{"n":"原创","v":"/class/原创"},{"n":"亲子","v":"/class/亲子"},{"n":"益智","v":"/class/益智"},{"n":"励志","v":"/class/励志"},{"n":"其他","v":"/class/其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"中国大陆","v":"/area/中国大陆"},{"n":"美国","v":"/area/美国"},{"n":"日本","v":"/area/日本"},{"n":"其他","v":"/area/其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2025","v":"/year/2025"},{"n":"2024","v":"/year/2024"},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"2009","v":"/year/2009"},{"n":"2008","v":"/year/2008"},{"n":"2007","v":"/year/2007"},{"n":"2006","v":"/year/2006"},{"n":"2005","v":"/year/2005"},{"n":"2004","v":"/year/2004"},{"n":"2003","v":"/year/2003"},{"n":"2002","v":"/year/2002"},{"n":"2001","v":"/year/2001"},{"n":"2000","v":"/year/2000"}]},{"key":"by","name":"排序","value":[{"n":"全部","v":""},{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}],
-    "/id/6":[{"key":"by","name":"排序","value":[{"n":"全部","v":""},{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}]
+    class_name: '全部&高分影视&最新电影&电影&电视剧&动画&国产剧&日剧&韩剧&美剧&海外剧&俄罗斯电影&加拿大电影&华语电影&印度电影&日本电影&欧美电影&韩国电影',
+    class_url: 'movie_bt&gaofenyingshi&zuixindianying&/movie_bt_series/dyy&/movie_bt_series/dianshiju&/movie_bt_series/dohua&/movie_bt_series/guochanju&/movie_bt_series/rj&/movie_bt_series/hj&/movie_bt_series/mj&/movie_bt_series/hwj&/movie_bt_series/eluosidianying&/movie_bt_series/jianadadianying&/movie_bt_series/huayudianying&/movie_bt_series/yindudianying&/movie_bt_series/ribendianying&/movie_bt_series/meiguodianying&/movie_bt_series/hanguodianying',
+    play_parse: true,
+
+    // lazy代码:源于海阔香雅情大佬 / 小程序：香情影视 https://pastebin.com/L4tHdvFn
+    lazy: `js:
+        pdfh = jsp.pdfh;
+        var html = request(input);
+        var ohtml = pdfh(html, '.videoplay&&Html');
+        var url = pdfh(ohtml, "body&&iframe&&src");
+        if (url) {
+            var _obj={};
+            eval(pdfh(request(url),'body&&script&&Html')+'\\n_obj.player=player;_obj.rand=rand');
+            function js_decrypt(str, tokenkey, tokeniv) {
+                eval(getCryptoJS());
+                var key = CryptoJS.enc.Utf8.parse(tokenkey);
+                var iv = CryptoJS.enc.Utf8.parse(tokeniv);
+                return CryptoJS.AES.decrypt(str, key, {iv: iv,padding: CryptoJS.pad.Pkcs7}).toString(CryptoJS.enc.Utf8);
+            };
+            let config = JSON.parse(js_decrypt(_obj.player,'VFBTzdujpR9FWBhe', _obj.rand));
+            input = {
+                 jx: 0,
+                 url: config.url,
+                 parse: 0
+            };
+        }else if (/decrypted/.test(ohtml)) {
+            var phtml = pdfh(ohtml, "body&&script:not([src])&&Html");
+            eval(getCryptoJS());
+            var script = phtml.match(/var.*?\\)\\);/g)[0];
+            var data = [];
+            eval(script.replace(/md5/g, 'CryptoJS').replace('eval', 'data = '));
+            input = {
+                jx: 0,
+                url: data.match(/url:.*?['"](.*?)['"]/)[1],
+                parse: 0
+            }
+
+
+        } 
+    `,
+    推荐: '.bt_img;ul&&li;*;*;*;*',
+    double: true,
+    一级: '.bt_img&&ul&&li;h3.dytit&&Text;img.lazy&&data-original;.jidi&&Text;a&&href',
+    二级: {
+        "title": "h1&&Text;.moviedteail_list li&&a&&Text",
+        "img": "div.dyimg img&&src",
+        "desc": ".moviedteail_list li:eq(3) a&&Text;.moviedteail_list li:eq(2) a&&Text;.moviedteail_list li:eq(1) a&&Text;.moviedteail_list li:eq(7)&&Text;.moviedteail_list li:eq(5)&&Text",
+        "content": ".yp_context&&Text",
+        "tabs": ".mi_paly_box span",
+        "lists": ".paly_list_btn:eq(#id) a"
+    },
+    搜索: `js:
+    let cookie = getItem(RULE_CK,'');
+    // let cookie = '';
+    log('储存的cookie:'+cookie);
+    let hhtml=request(input,{withHeaders:true,headers:{Cookie:cookie}});
+    let json = JSON.parse(hhtml);
+    let html = json.body;
+    let setCk = Object.keys(json).find(it=>it.toLowerCase()==='set-cookie');
+    cookie = setCk ? json[setCk] : cookie;
+    // 3个set-Cookie
+    if (Array.isArray(cookie)) {
+        cookie = cookie.join(';');
     }
+    cookie = cookie.split(';')[0];
+    log('set-cookie:'+cookie);
+    let code='';
+    if(/erphp-search-captcha/.test(html)){
+        code = jsp.pdfh(html,'.erphp-search-captcha--button&&Text');
+        if(code.includes('=')){
+            let a = code.replace('=','').replace(/ /g,'');
+            code = eval(a);
+            log('回答验证码:'+a+' 答案:'+code);
+        }
+        let key = jsp.pdfh(html,'.erphp-search-captcha&&input&&name');
+        let body = key+'='+code;
+        post(input,{body:body,headers:{Cookie:cookie}});
+        setItem(RULE_CK,cookie);
+        html = getHtml(input);
+    }
+    // log(html);
+    VODS = [];
+    let lis=pdfa(html,'.search_list&&ul&&li');
+    log(lis.length);
+    lis.forEach(function(it){
+        VODS.push({
+            vod_id: pd(it,'a&&href',input),
+			vod_name: pdfh(it,'h3.dytit&&Text'),
+			vod_pic: pd(it,'img.lazy&&data-original',input),
+			vod_remarks: pdfh(html,'.jidi&&Text')
+        });
+    
+    });
+    
+    `,
+
 }
