@@ -1,6 +1,7 @@
 var rule = {
-    title: '农民影视',
+    title: '旺旺影视',
     host: 'https://vip.wwgz.cn:5200/',
+    //https://www.wwgz.cn/
     /*
     hostJs:`print(HOST);let html=request(HOST,{headers:{"User-Agent":MOBILE_UA}});
     let src = jsp.pdfh(html,"body&&a:eq(1)&&href")||jsp.pdfh(html,"body&&a:eq(1)&&Text");
