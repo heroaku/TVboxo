@@ -563,6 +563,13 @@
 		"api": "./JS/drpy2.min.js",
         "ext": "./JS/旺旺影视.js"
     },	
+			{
+        "key": "烧火影视",
+        "name": "烧火影视",
+		"type": 3,
+		"api": "./JS/drpy2.min.js",
+        "ext": "./JS/烧火影视.js"
+    },
 	{
     "key": "秀儿影视",
     "name": "秀儿影视JS",
