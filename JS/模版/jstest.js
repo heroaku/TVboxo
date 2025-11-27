@@ -3,7 +3,7 @@ var rule = {
     img_host: '',
 
     author: '小可乐/2509/第二版',
-    title: '可可影视',
+    title: '毒舌影视',
     类型: '影视',
     host: 'https://www.dushe9.app',
     hostJs: '',
