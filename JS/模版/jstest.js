@@ -1,136 +1,377 @@
+globalThis.Token = "8b0b16aae7e8403cb3d19969b82c3902";
+globalThis.Users="80e861cbff1343bfa0bedcea78895b91";
+
 var rule = {
-    //定义获取图片地址域名变量
-    img_host: '',
+    title: 'Emby[优]',
+    host: 'https://emby.bangumi.ca',
+    url: `/emby/Users/80e861cbff1343bfa0bedcea78895b91/Items?SortBy=DateLastContentAdded%2CSortName&SortOrder=Descending&IncludeItemTypes=Series&Recursive=true&Fields=BasicSyncInfo%2CCanDelete%2CContainer%2CPrimaryImageAspectRatio%2CPrefix&StartIndex=((fypage-1)*50)&ParentId=fyclass&EnableImageTypes=Primary%2CBackdrop%2CThumb&ImageTypeLimit=1&Limit=50&X-Emby-Token=8b0b16aae7e8403cb3d19969b82c3902`,
+    homeUrl: `/emby/Users/80e861cbff1343bfa0bedcea78895b91/Views?X-Emby-Client=Emby+Web&X-Emby-Device-Name=Android+WebView+Android&X-Emby-Device-Id=ea27caf7-9a51-4209-b1a5-374bf30c2ffd&X-Emby-Client-Version=4.9.0.31&X-Emby-Token=8b0b16aae7e8403cb3d19969b82c3902&X-Emby-Language=zh-cn`,
 
-    author: '小可乐/2509/第二版',
-    title: 'NCAT影视',
-    类型: '影视',
-    host: 'https://www.ncat21.com',
-    hostJs: '',
-    headers: {'User-Agent': 'MOBILE_UA'},
-    编码: 'utf-8',
+    searchUrl: '/emby/Users/80e861cbff1343bfa0bedcea78895b91/Items?SortBy=SortName&SortOrder=Ascending&Fields=BasicSyncInfo%2CCanDelete%2CContainer%2CPrimaryImageAspectRatio%2CProductionYear%2CStatus%2CEndDate&StartIndex=0&EnableImageTypes=Primary%2CBackdrop%2CThumb&ImageTypeLimit=1&Recursive=true&SearchTerm=**&GroupProgramsBySeries=true&Limit=50&X-Emby-Token=8b0b16aae7e8403cb3d19969b82c3902',
+    searchable: 2,
+    quickSearch: 0,
     timeout: 5000,
-
-    homeUrl: '/',
-    url: '/show/fyclass-fyfilter-fypage.html',
-    filter_url: '{{fl.class}}-{{fl.area}}-{{fl.lang}}-{{fl.year}}-{{fl.by}}',
-    searchUrl: '/search?k=**&page=fypage&t=',
-    detailUrl: '',
-
-    limit: 9,
-    double: false,
-    class_name: '电影&剧集&综艺&动漫&短剧',
-    class_url: '1&2&4&3&6',
-
-    预处理: $js.toString(() => {
-        const sha1ToUint8ArrayLatin1 = str => {
-            if (typeof str !== 'string') {
-                return null;
-            }
-            try {
-                let latin1Str = CryptoJS.SHA1(str).toString(CryptoJS.enc.Latin1);
-                let u8Array = Uint8Array.from(latin1Str, char => char.charCodeAt(0));
-                return u8Array;
-            } catch (e) {
-                return null;
-            }
-        }
-        let hashPre = request(HOST)?.match(/a0_0x2a54\s*=\s*\['([^']+)'/)?.[1]?.trim() ?? '';
-        if (hashPre != '' && hashPre != getItem('hashpre')) {
-            setItem('tgcookie', '');
-            setItem('hashpre', '');
-            let hashIdx = parseInt('0x' + hashPre[0], 16);
-            if (Number.isInteger(hashIdx) && hashIdx >= 0 && hashIdx <= 18) {
-                let cookieFound = false;
-                let maxLoop = 100000;
-                for (let i = 0; i < maxLoop && !cookieFound; i++) {
-                    let hashInput = `${hashPre}${i}`;
-                    let sha1Arr = sha1ToUint8ArrayLatin1(hashInput);
-                    if (sha1Arr && sha1Arr[hashIdx] === 0xb0 && sha1Arr[hashIdx + 1] === 0x0b) {
-                        let defendCookie = `cdndefend_js_cookie=${hashInput}`;
-                        setItem('hashpre', hashPre);
-                        setItem('tgcookie', defendCookie);
-                        cookieFound = true;
-                    }
+    class_parse: $js.toString(() => {
+        let html = request(rule.homeUrl);
+        var json=JSON.parse(html).Items;
+         var tabs = [];
+            for (var i in json) {
+                var it = json[i]
+                
+                if (it.CollectionType=="tvshows"||it.CollectionType=="movies") {
+                    tabs.push({
+                       type_name: it.Name,
+                        type_id: it.Id,
+                        
+                    })
                 }
-            }
-        }
-        if (getItem('tgcookie')) {
-            rule_fetch_params.headers['cookie'] = getItem('tgcookie');
-        }
-        let khtml = fetch(HOST, {
-            headers: rule_fetch_params.headers
-        });
-        let tValue = khtml.match(/<input[^>]*name="t"[^>]*value="([^"]*)"/i);
-        if (tValue && tValue[1]) {
-            rule.searchUrl = rule.searchUrl + encodeURIComponent(tValue[1]);
-        }
-        let scripts = pdfa(khtml, 'script');
-        let img_script = scripts.find((it) => pdfh(it, 'script&&src').includes('rdul.js'));
-        if (img_script) {
-            let img_url = img_script.match(/src="(.*?)"/)[1];
-            let img_html = fetch(img_url);
-            rule.img_host = img_html.match(/'(.*?)'/)[1];
-            rule.图片替换 = HOST + '=>' + rule.img_host;
-        }
+            };
+        
+        input = tabs
+        
     }),
-
-    推荐: '*',
-    一级: '.module-item;.v-item-title:eq(1)&&Text;img:eq(-1)&&data-original;span:eq(-1)&&Text;a&&href',
-    搜索: $js.toString(() => {
-        let t = pdfh(fetch(input), 'input:eq(0)&&value');
-        input = input.split('?')[0];
-        let surl = `${input}?k=${KEY}&page=${MY_PAGE}&t=${t}`;
-        let khtml = fetch(surl);
-        VODS = [];
-        let klists = pdfa(khtml, '.search-result-item');
-        klists.forEach((it) => {
-            VODS.push({
-                vod_name: pdfh(it, 'img&&alt'),
-                vod_pic: pd(it, 'img&&data-original', rule.img_host),
-                vod_remarks: pdfh(it, '.search-result-item-header&&Text'),
-                vod_id: pdfh(it, 'a&&href')
-            });
-        });
-    }),
-    二级: {
-        title: '.detail-title&&strong:eq(1)&&Text;.detail-tags&&Text',
-        img: '.detail-pic&&img&&data-original',
-        desc: '.detail-info-row-main:eq(-2)&&Text;.detail-tags-item:eq(0)&&Text;.detail-tags-item:eq(1)&&Text;.detail-info-row-main:eq(1)&&Text;.detail-info-row-main:eq(0)&&Text',
-        content: '.detail-desc&&Text',
-        tabs: '.source-item',
-        tab_text: 'span:eq(-1)&&Text',
-        lists: '.episode-list:eq(#id)&&a',
-        list_text: 'body&&Text',
-        list_url: 'a&&href',
-    },
-
-    tab_remove: ['4K(高峰不卡)'],
     play_parse: true,
     lazy: $js.toString(() => {
-        let kurl = input;
-        let khtml = request(kurl);
-        if (/dujia/.test(khtml)) {
-            kurl = khtml.split("PPPP = '")[1].split("';")[0];
-            const key = CryptoJS.enc.Utf8.parse('Isu7fOAvI6!&IKpAbVdhf&^F');
-            const dataObj = {
-                ciphertext: CryptoJS.enc.Base64.parse(kurl)
-            };
-            const decrypted = CryptoJS.AES.decrypt(dataObj, key, {
-                mode: CryptoJS.mode.ECB,
-                padding: CryptoJS.pad.Pkcs7
-            });
-            kurl = decrypted.toString(CryptoJS.enc.Utf8);
-        } else {
-            kurl = khtml.split('src: "')[1].split('",')[0];
-        }
-        input = {
-            jx: 0,
-            parse: 0,
-            url: kurl,
-            header: rule.headers
+        var bo = {
+            "DeviceProfile": {
+                "MaxStaticBitrate": 140000000,
+                "MaxStreamingBitrate": 140000000,
+                "MusicStreamingTranscodingBitrate": 192000,
+                "DirectPlayProfiles": [{
+                    "Container": "mp4,m4v",
+                    "Type": "Video",
+                    "VideoCodec": "h264,h265,hevc,av1,vp8,vp9",
+                    "AudioCodec": "ac3,eac3,mp3,aac,opus,flac,vorbis"
+                }, {
+                    "Container": "mkv",
+                    "Type": "Video",
+                    "VideoCodec": "h264,h265,hevc,av1,vp8,vp9",
+                    "AudioCodec": "ac3,eac3,mp3,aac,opus,flac,vorbis"
+                }, {
+                    "Container": "flv",
+                    "Type": "Video",
+                    "VideoCodec": "h264",
+                    "AudioCodec": "aac,mp3"
+                }, {
+                    "Container": "mov",
+                    "Type": "Video",
+                    "VideoCodec": "h264",
+                    "AudioCodec": "ac3,eac3,mp3,aac,opus,flac,vorbis"
+                }, {
+                    "Container": "opus",
+                    "Type": "Audio"
+                }, {
+                    "Container": "mp3",
+                    "Type": "Audio",
+                    "AudioCodec": "mp3"
+                }, {
+                    "Container": "mp2,mp3",
+                    "Type": "Audio",
+                    "AudioCodec": "mp2"
+                }, {
+                    "Container": "aac",
+                    "Type": "Audio",
+                    "AudioCodec": "aac"
+                }, {
+                    "Container": "m4a",
+                    "AudioCodec": "aac",
+                    "Type": "Audio"
+                }, {
+                    "Container": "mp4",
+                    "AudioCodec": "aac",
+                    "Type": "Audio"
+                }, {
+                    "Container": "flac",
+                    "Type": "Audio"
+                }, {
+                    "Container": "webma,webm",
+                    "Type": "Audio"
+                }, {
+                    "Container": "wav",
+                    "Type": "Audio",
+                    "AudioCodec": "PCM_S16LE,PCM_S24LE"
+                }, {
+                    "Container": "ogg",
+                    "Type": "Audio"
+                }, {
+                    "Container": "webm",
+                    "Type": "Video",
+                    "AudioCodec": "vorbis,opus",
+                    "VideoCodec": "av1,VP8,VP9"
+                }],
+                "TranscodingProfiles": [{
+                    "Container": "aac",
+                    "Type": "Audio",
+                    "AudioCodec": "aac",
+                    "Context": "Streaming",
+                    "Protocol": "hls",
+                    "MaxAudioChannels": "2",
+                    "MinSegments": "1",
+                    "BreakOnNonKeyFrames": true
+                }, {
+                    "Container": "aac",
+                    "Type": "Audio",
+                    "AudioCodec": "aac",
+                    "Context": "Streaming",
+                    "Protocol": "http",
+                    "MaxAudioChannels": "2"
+                }, {
+                    "Container": "mp3",
+                    "Type": "Audio",
+                    "AudioCodec": "mp3",
+                    "Context": "Streaming",
+                    "Protocol": "http",
+                    "MaxAudioChannels": "2"
+                }, {
+                    "Container": "opus",
+                    "Type": "Audio",
+                    "AudioCodec": "opus",
+                    "Context": "Streaming",
+                    "Protocol": "http",
+                    "MaxAudioChannels": "2"
+                }, {
+                    "Container": "wav",
+                    "Type": "Audio",
+                    "AudioCodec": "wav",
+                    "Context": "Streaming",
+                    "Protocol": "http",
+                    "MaxAudioChannels": "2"
+                }, {
+                    "Container": "opus",
+                    "Type": "Audio",
+                    "AudioCodec": "opus",
+                    "Context": "Static",
+                    "Protocol": "http",
+                    "MaxAudioChannels": "2"
+                }, {
+                    "Container": "mp3",
+                    "Type": "Audio",
+                    "AudioCodec": "mp3",
+                    "Context": "Static",
+                    "Protocol": "http",
+                    "MaxAudioChannels": "2"
+                }, {
+                    "Container": "aac",
+                    "Type": "Audio",
+                    "AudioCodec": "aac",
+                    "Context": "Static",
+                    "Protocol": "http",
+                    "MaxAudioChannels": "2"
+                }, {
+                    "Container": "wav",
+                    "Type": "Audio",
+                    "AudioCodec": "wav",
+                    "Context": "Static",
+                    "Protocol": "http",
+                    "MaxAudioChannels": "2"
+                }, {
+                    "Container": "mkv",
+                    "Type": "Video",
+                    "AudioCodec": "ac3,eac3,mp3,aac,opus,flac,vorbis",
+                    "VideoCodec": "h264,h265,hevc,av1,vp8,vp9",
+                    "Context": "Static",
+                    "MaxAudioChannels": "2",
+                    "CopyTimestamps": true
+                }, {
+                    "Container": "m4s,ts",
+                    "Type": "Video",
+                    "AudioCodec": "ac3,mp3,aac",
+                    "VideoCodec": "h264,h265,hevc",
+                    "Context": "Streaming",
+                    "Protocol": "hls",
+                    "MaxAudioChannels": "2",
+                    "MinSegments": "1",
+                    "BreakOnNonKeyFrames": true,
+                    "ManifestSubtitles": "vtt"
+                }, {
+                    "Container": "webm",
+                    "Type": "Video",
+                    "AudioCodec": "vorbis",
+                    "VideoCodec": "vpx",
+                    "Context": "Streaming",
+                    "Protocol": "http",
+                    "MaxAudioChannels": "2"
+                }, {
+                    "Container": "mp4",
+                    "Type": "Video",
+                    "AudioCodec": "ac3,eac3,mp3,aac,opus,flac,vorbis",
+                    "VideoCodec": "h264",
+                    "Context": "Static",
+                    "Protocol": "http"
+                }],
+                "ContainerProfiles": [],
+                "CodecProfiles": [{
+                    "Type": "VideoAudio",
+                    "Codec": "aac",
+                    "Conditions": [{
+                        "Condition": "Equals",
+                        "Property": "IsSecondaryAudio",
+                        "Value": "false",
+                        "IsRequired": "false"
+                    }]
+                }, {
+                    "Type": "VideoAudio",
+                    "Conditions": [{
+                        "Condition": "Equals",
+                        "Property": "IsSecondaryAudio",
+                        "Value": "false",
+                        "IsRequired": "false"
+                    }]
+                }, {
+                    "Type": "Video",
+                    "Codec": "h264",
+                    "Conditions": [{
+                        "Condition": "EqualsAny",
+                        "Property": "VideoProfile",
+                        "Value": "high|main|baseline|constrained baseline|high 10",
+                        "IsRequired": false
+                    }, {
+                        "Condition": "LessThanEqual",
+                        "Property": "VideoLevel",
+                        "Value": "62",
+                        "IsRequired": false
+                    }]
+                }, {
+                    "Type": "Video",
+                    "Codec": "hevc",
+                    "Conditions": []
+                }],
+                "SubtitleProfiles": [{
+                    "Format": "vtt",
+                    "Method": "Hls"
+                }, {
+                    "Format": "eia_608",
+                    "Method": "VideoSideData",
+                    "Protocol": "hls"
+                }, {
+                    "Format": "eia_708",
+                    "Method": "VideoSideData",
+                    "Protocol": "hls"
+                }, {
+                    "Format": "vtt",
+                    "Method": "External"
+                }, {
+                    "Format": "ass",
+                    "Method": "External"
+                }, {
+                    "Format": "ssa",
+                    "Method": "External"
+                }],
+                "ResponseProfiles": [{
+                    "Type": "Video",
+                    "Container": "m4v",
+                    "MimeType": "video/mp4"
+                }]
+            }
         };
-    }),
 
-    filter: 'H4sIAAAAAAAAA+2Z308bRxDH3/1XVH7mwQba4rz1oZUqVXlpHypFUeRWbhWVulJoqyKEZLANxhBskGPi2AVSMJgE/4Agx5yx/c/c3p3/i66ZndlzUk1OCYmU6l4Qn/nur9ud3ZldLwSC4eCtT+4EFoK/xOaDt4I/zkbn5oITwXj015hE+6wrdtcl/xmd/UMa7iwE49Is0rVhsjYySwguToD1duz3n2bv/6XMt7/87qtvvv6eVLF2bCXTSlRAWrEiLagBkJatmb0KagCo2Zkz3aYC1KylvJUoKk0BacmstfwENQBqM9u0e8+wTQDSjrfEZRc1AGpz+dQubmGbAPQN1VVdTwFpK9vD0glqANRm5rFprGGbAFRvc0XkzrEeAGm5Q+eA5hqAtEZbGHXUAFAzr/adRktpCmgs9SOzv49jAdDahpPZJe0aaM726vbaKs4ZgGtt7UJXr+0ISEsN7OdV1ABQc5Y2RMVQmoLFu4sT5MbRB7Go9mJRaYkNw6MXi8PjYWkF56BTF+WeMmGJ4VHJ6jTHSiiTnv+WddkfbwNMNCv9TWnEWQGg2dypWpVTnE0A6nvvRNdTQLOyfqY1BdTmi0daU0Cj7b/UmgLSHraEcYQagG6z5W6z5a5ndi6HVE8BffvWrkh38NsBqL+XF051gP0BaG/Zt9YHcjHIYZCp10HK7u1YRVocYhpzKicriAxuOM1UolmQaO20sQSx69QRrYJI40bRTCtRHdg56eklXAxi6qX/Avo1DTqH3Cb65nTb7OIppmDM02ej8Z+1pzvNulNLePX0ck+Wx7YB6BvPD7WmwOVnWlPg8l2tKXD5rtYUuPzTVQ/A8xzMx6IPXLv98sLs9jzOwWRo8lNlu/7XZZ/W9mm3fUrbp9z2SW2fdNvD2h5220PaHiJ7OHQ9/APSwqF78k+ECoReLRAaFQjpApHxAuFIJHRP/tEFZl4tMDMqMKMLWOULawc3yEj7PDI+3z/M69m2NreFkXtttu3ulchnsAvddCVhFXHfTLrNdhJXX0+q00yJDB7F06MxBO5OBGS995SxKPKSsXCZB5fNcNkFm0FwEZ3JkLhoz2VBXMYyClf0fQq8ZEhcxsJlOqMwR/0p8JKVyJNQr5ECL9khl5ENkz3RWcaxANxwVkLm4A1nJVzu8Lb5CJdXcPkIm3O8MXviMg8uY/GjqR9N/Wg6Hk2nbyya2sYz0XuEXg5AWmXPNAz7OIEyMQ2v0dK1FZCWOhO5A11bs6fXBe6mzMRq7jZslzvigC4AADTa7LJdbuBQAbzclLm44wzyMrJjmwCofRuLzv0WV5oCT68ZzM3cyu/ap5SLAJBWemJeUd4A4N++/djixxY/tozHlqkPdVPL1qzEknX1fOw1UZs8RQnuLZJ7n2ZObfZmxt2wuFsU8y7KndrsjZW5JXJRQrqC85RCOoCOkFmrhPcYBV5uunY353odBKB6+09Fmc4eANS+iN+XbgUS/O8ldprGuajnMVYA0Cn497b1GGdagb4/rss5xJEAeLmT/ued+4ZiJxe53hxX3y1qvtvt03+59l+u/XzIz4f+7/nQZ2+RD2mze/WHiRXnH/JIANoBhYpoYPxRQAMr5WW0wh0AQPVOBk47i/UAqL/Vh3ZhD/sD8JJVsb+YM3GSzVaYrIr9xZzL1NJt0UjqnTqCj3anflCPH7l2YPFflpCCHEkiAAA='
+        var html = post(input, {
+
+            body: bo
+        });
+
+
+
+        var playlist = JSON.parse(html).MediaSources;
+        var urls = [];
+        var names = [];
+        for (var it of playlist) {
+            names.push(it.Name)
+            urls.push(rule.host + it.DirectStreamUrl)
+        }
+
+
+
+        input = {
+            parse: 0,
+            jx: 0,
+            url: urls[0]
+        }
+
+
+
+    }),
+    一级: `js:  
+    var d=[];
+    var html = fetch(input);
+    
+    
+            var list = JSON.parse(html).Items;
+            for (var it of list) {
+                var url =rule.host+ "/emby/Users/"+Users+"/Items/" + it.Id + "?X-Emby-Token="+Token ;
+                
+                if(it.Type=="Series"||it.Type=="Movie"){
+                d.push({
+                    title: it.Name,
+                    desc: it.UserData.UnplayedItemCount?it.UserData.UnplayedItemCount.toString():"",
+                    img: rule.host+"/emby/Items/" + it.Id + "/Images/Primary?maxHeight=300&maxWidth=200&tag=" + it.ImageTags.Primary + "&quality=90",
+                    url: url
+                })
+                }
+            }
+          setResult(d)
+    
+    `,
+    二级: `js:
+    VOD = {
+            type_name: "",
+            vod_actor: "",
+            vod_director: "",
+            vod_area: "",
+            vod_content: "",
+            vod_name: "",
+            vod_remarks: "",
+            vod_year: "",
+            
+        }
+var host = rule.host;
+var  info = JSON.parse(fetch(input));
+VOD.type_name = info.Genres.join(" ");
+VOD.vod_name = info.Name;
+VOD.vod_remarks = "评分：" + info.PlayAccess;
+VOD.vod_content = info.Overview;
+ 
+var id=info.Id;
+if(info.Type=="Series"){
+var shows=host+"/emby/Shows/" + id + "/Seasons?UserId="+Users+"&Fields=BasicSyncInfo%2CCanDelete%2CContainer%2CPrimaryImageAspectRatio&EnableTotalRecordCount=false&X-Emby-Token="+Token;
+        
+        var Season = JSON.parse(fetch(shows));
+
+        
+        let result=[];
+        let from=[]
+        try {
+           for(var it of Season.Items){
+          from.push(it.Name);
+            let playlist = [];          
+            let res = fetch(host+"/emby/Shows/" + id + "/Episodes?SeasonId=" + it.Id + "&ImageTypeLimit=1&UserId="+Users+"&Fields=Overview%2CPrimaryImageAspectRatio&Limit=1000&X-Emby-Token="+Token);
+            let data = JSON.parse(res).Items;
+            for (let item of data) {
+              
+                let title =item.Name;
+                let url =host+ "/emby/Items/"+item.Id+"/PlaybackInfo?UserId="+Users+"&StartTimeTicks=0&IsPlayback=false&AutoOpenLiveStream=false&MaxStreamingBitrate=7000000&X-Emby-Client=Emby+Web&X-Emby-Device-Name=Android+WebView+Android&X-Emby-Device-Id=09d93358-fdd6-4d0b-9e13-d988795e8742&X-Emby-Client-Version=4.8.0.62&X-Emby-Token="+Token+"&X-Emby-Language=zh-cn&reqformat=json";
+                playlist.push(title + '$' + url);
+            }
+            let vod_play_url = playlist.join("#")
+            result.push(vod_play_url)
+            }
+            
+            VOD.vod_play_url = result.join("$$$");
+            VOD.vod_play_from=from.join("$$$")
+        } catch (e) {
+            log("解析片名海报等基础信息发生错误:" + e.message)
+        }
+    }else{
+           var arr = []
+           
+          for(var it of info.MediaSources){
+              arr.push(it.Name+"$"+host + "/emby/Items/" + id + "/PlaybackInfo?UserId=" + Users + "&StartTimeTicks=0&IsPlayback=true&AutoOpenLiveStream=true&AudioStreamIndex=5&SubtitleStreamIndex=2&MediaSourceId=" + it.Id + "&MaxStreamingBitrate=7000000&X-Emby-Client=Emby+Web&X-Emby-Device-Name=Android+WebView+Android&X-Emby-Device-Id=09d93358-fdd6-4d0b-9e13-d988795e8742&X-Emby-Client-Version=4.8.0.62&X-Emby-Token=" + Token + "&reqformat=json")
+          }
+        VOD.vod_play_url = arr.join("$$$");
+            VOD.vod_play_from= "在线播放"
+          
+    }
+    
+    `,
+    搜索: '*',
 }
