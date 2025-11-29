@@ -1,16 +1,12 @@
 
 var rule={
-	title:'老王电影',
-
-	模板:'mxone5',
+  title:'老王电影',
   host: "https://laowang.co",
   url: "/vs/fyclassfyfilter.html",
   searchUrl: "/s**/page/fypage.html",
   filterable: 1,
-  
   filter_url: "-{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}",
-
-	filter:{
+  filter:{
 	        "5":[
         {"key":"class","name":"剧情","value":[
 {"n":"全部剧情","v":""},
@@ -523,5 +519,15 @@ var rule={
 
     class_parse: '.nav-menu-items&&li;a&&Text;a&&href;.*/(.*?).html',
 	lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
-	搜索: '.module-items .module-search-item;.video-serial&&title;img&&data-src;.video-serial&&Text;.video-serial&&href;.video-serial&&Text',
+推荐: '.module-list;.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href',
+double: true, // 推荐内容是否双层定位
+一级: '.module-items&&.module-item;a&&title;img&&data-src;.module-item-text&&Text;a&&href', 
+二级: {
+    "title": "h1&&Text;.video-info-item:eq(1)&&Text",
+    "img": ".module-item-pic&&img&&data-src",
+    "desc": ".video-info-items:eq(0)&&Text;.video-info-items:eq(1)&&Text;.video-info-items:eq(2)&&Text;.video-info-items:eq(3)&&Text",
+    "content": "Text",
+    "tabs": ".module-tab-item",
+    "lists": ".module-list:eq(#id)&&.scroll-content&&a"
+}, 搜索: '.module-items&&.module-search-item;a&&title;img&&data-src;.video-info&&a&&Text;a&&href',
 }
