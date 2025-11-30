@@ -36,6 +36,13 @@
             "api": "csp_Douban",
             "searchable": 0
         },
+	        {
+            "key": "聚搜",
+            "name": "🐢聚搜┃影视",
+            "type": 3,
+            "api": "./Py/AppToV5.py",
+            "ext": "http://101.35.85.16:5555"
+        },
 	 {"key": "金牌","name": "金牌┃APP","type": 3,"searchable": 1,"changeable": 1,"api": "csp_AppQi","ext": {"site": "https://dtqj1.gg1080.com:443/dtjp.txt","dataKey": "kecbio48dsq131ed","dataIv": "kecbio48dsq131ed"}, "jar": "./tvkj.jar"},
 			{
             "key": "飞飞影视",
