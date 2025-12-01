@@ -1,6 +1,6 @@
 var rule = {
     title: '暖光影视',
-    host: 'https://www.tvme.xyz',
+    host: 'https://www.bl210.xyz',
   //https://www.tvme.xyz/frim/index2-2.html
   //https://www.tvme.xyz/search.php?searchword=ai&submit=
     url: '/frim/indexfyclass-fypage.html',
