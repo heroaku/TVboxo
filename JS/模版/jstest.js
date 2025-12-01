@@ -1,9 +1,20 @@
+/*
+@header({
+  searchable: 2,
+  filterable: 0,
+  quickSearch: 0,
+  title: '暖光影视',
+  '类型': '影视',
+  lang: 'ds'
+})
+*/
+
 var rule = {
     title: '暖光影视',
-    host: 'https://www.bl210.xyz',
+    host: 'https://www.bl210.xyz/',
   //https://www.tvme.xyz/frim/index2-2.html
-  //https://www.tvme.xyz/search.php?searchword=ai&submit=
-    url: '/frim/indexfyclass-fypage.html',
+  //https://www.tvme.xyz/search.php?searchword=ai&submit=    
+    url: '/frim/fyclass-fypage.html',
     searchUrl: '/search.php?page=fypage&searchword=**&searchtype=',
     searchable: 2,
     quickSearch: 0,
