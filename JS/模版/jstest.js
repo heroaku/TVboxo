@@ -1,11 +1,268 @@
 /*
 @header({
-  searchable: 2,
+  searchable: 1,
   filterable: 1,
   quickSearch: 0,
-  title: '皮皮虾影视',
+  title: '视觉',
   lang: 'ds'
 })
 */
 
-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
+var rule = {
+    "类型": "影视",
+    title: "视觉",
+    host: "https://www.shijue.pro/token.txt",
+    url: "/api/ex/v3/security/drama/list",
+    homeUrl: "/api/v3/drama/getCategory?orderBy=type_id",
+    detailUrl: "/api/v3/drama/getDetail?id=fyid",
+    searchUrl: "/api/ex/v3/security/drama/list",
+    headers: {
+        "User-Agent": "okhttp/3.12.1",
+        "Content-Type": "application/json;"
+    },
+    searchable: 1,
+    quickSearch: 0,
+    filterable: 1,
+    play_parse: true,
+    playHeader: {
+        "User-Agent": "okhttp/3.12.1"
+    },
+    key: ["TFLYWVJ5EG5YB1PLZLVVMGVLBGRIDCSW", "nj6E5K4yYYT5W4ScJ3J3rJ2zrzcJkpTk"],
+    hostJs: async function () {
+        let {HOST} = this;
+        try {
+            let html = await request(HOST);
+            return JSON.parse(html).domain
+        } catch (e) {
+            return "http://118.25.18.217:6632"
+        }
+    },
+    "预处理": async function () {
+    },
+    class_parse: async function () {
+        let {input, pdfa, pdfh, pd} = this;
+        let html = await request(input);
+        let data = JSON.parse(html);
+        const dy = {
+            class: "类型",
+            area: "地区",
+            lang: "语言",
+            year: "年份",
+            letter: "字母",
+            by: "排序",
+            sort: "排序"
+        };
+        const filters = {};
+        const classes = [];
+        const json_data = data["data"];
+        for (let item of json_data) {
+            let has_non_empty_field = false;
+            const jsontype_extend = JSON.parse(item["converUrl"]);
+            classes.push({
+                type_name: item["name"],
+                type_id: item["id"]
+            });
+            for (let key in dy) {
+                if (key in jsontype_extend && jsontype_extend[key].trim() !== "") {
+                    has_non_empty_field = true;
+                    break
+                }
+            }
+            if (has_non_empty_field) {
+                filters[String(item["id"])] = [];
+                for (let dkey in jsontype_extend) {
+                    if (dkey in dy && jsontype_extend[dkey].trim() !== "") {
+                        const values = jsontype_extend[dkey].split(",");
+                        const value_array = values.map(value => {
+                                value = value.trim();
+                                if (value !== "") {
+                                    return {
+                                        n: value,
+                                        v: value
+                                    }
+                                }
+                            }
+                        ).filter(item => item !== undefined);
+                        filters[String(item["id"])].push({
+                            key: dkey,
+                            name: dy[dkey],
+                            value: value_array
+                        })
+                    }
+                }
+            }
+        }
+        return {
+            class: classes,
+            filters: filters
+        }
+    },
+    lazy: async function (flag, id, flags) {
+        let {input, getProxyUrl} = this;
+        let url = id;
+        if (url.includes("vodPlayFrom")) {
+            try {
+                const path = aes(aes(id, this.key[1], "encrypt"), this.key[0], "encrypt", true);
+                const response = await request(`${rule.host}/api/ex/v3/security/videoUsableUrl?query=${path}`);
+                const responseData = JSON.parse(response);
+                const data = responseData.data;
+                log("data:", data);
+                url = aes(aes(data, this.key[0], "decrypt"), this.key[1], "decrypt", true).playUrl
+            } catch (e) {
+                console.error(e)
+            }
+        }
+        if (url.includes(".jpg") || url.includes(".jpeg") || url.includes(".png")) {
+            url = `${getProxyUrl()}&url=${base64Encode(unescape(encodeURIComponent(url)))}&type=m3u8`
+        }
+        return {
+            parse: 0,
+            url: url,
+            header: rule.playHeader
+        }
+    },
+    "推荐": async function () {
+        let {input, pdfa, pdfh, pd} = this;
+        let VODS = [];
+        let html = await request(`${rule.host}/api/ex/v3/security/tag/list`);
+        let json = JSON.parse(html);
+        let data = json.data;
+        let data1 = aes(aes(data, this.key[0]), this.key[1], "decrypt", true);
+        data1[0].carousels.forEach(item => {
+                let id = item["link"].split("id=")[1];
+                VODS.push({
+                    vod_id: id,
+                    vod_name: item.title,
+                    vod_pic: item.cover,
+                    vod_remarks: item.sort
+                })
+            }
+        );
+        return VODS
+    },
+    "一级": async function (tid, pg, filter, extend) {
+        let {input} = this;
+        const params = [];
+        if (extend.area) {
+            params.push(`vodArea=${extend.area}`)
+        }
+        if (extend.classs) {
+            params.push(`vodClass=${extend.classs}`)
+        }
+        params.push("pagesize=20");
+        params.push(`typeId1=${tid}`);
+        params.push(`page=${pg}`);
+        if (extend.year) {
+            params.push(`vodYear=${extend.year}`)
+        }
+        const body = params.join("&");
+        const path = aes(aes(body, this.key[1], "encrypt"), this.key[0], "encrypt", true);
+        let html = await request(`${input}?query=${path}`, {
+            headers: this.headers
+        });
+        const responseData = JSON.parse(html);
+        let data = aes(aes(responseData.data, this.key[0], "decrypt"), this.key[1], "decrypt", true);
+        const VODS = data.list.map(item => ({
+            vod_id: item.id,
+            vod_pic: item.coverImage?.path || "",
+            vod_name: item.name,
+            vod_year: item.year,
+            vod_remarks: item.remark
+        }));
+        return VODS
+    },
+    "二级": async function (ids) {
+        let {input, pdfa, pdfh, pd} = this;
+        let html = await post(input);
+        const responseData = JSON.parse(html);
+        const data = responseData.data;
+        const vod = {
+            vod_name: data.name || "",
+            vod_area: data.area || "",
+            type_name: data.clazz || "",
+            vod_actor: data.actor || "",
+            vod_director: data.director || "",
+            vod_content: (data.brief || "").trim()
+        };
+        const play = [];
+        const names = [];
+        const plays = {};
+        data.videos.forEach(itt => {
+                if (!names.includes(itt.sourceCn)) {
+                    plays[itt.source] = [];
+                    names.push(itt.sourceCn)
+                }
+                let url = `vodPlayFrom=${itt.source}&playUrl=${itt.path}`;
+                if (/\.(mp4|m3u8|flv)$/.test(itt.path)) {
+                    url = itt.path
+                }
+                plays[itt.source].push(`${itt.titleOld}$${url}`)
+            }
+        );
+        for (const key in plays) {
+            play.push(plays[key].join("#"))
+        }
+        vod.vod_play_from = names.join("$$$");
+        vod.vod_play_url = play.join("$$$");
+        return vod
+    },
+    "搜索": async function (wd, quick, pg) {
+        let {input, pdfa, pdfh, pd} = this;
+        const body = `pagesize=20&page=${pg}&searchKeys=${wd}`;
+        const path = aes(aes(body, this.key[1], "encrypt"), this.key[0], "encrypt", true);
+        const response = await request(`${input}?query=${path}`);
+        const responseData = JSON.parse(response);
+        let data = aes(aes(responseData.data, this.key[0], "decrypt"), this.key[1], "decrypt", true);
+        const list = data.list.map(item => ({
+            vod_id: item.id,
+            vod_pic: item.coverImage?.path || "",
+            vod_name: item.name,
+            vod_year: item.year,
+            vod_remarks: item.remark
+        }));
+        return list
+    },
+    proxy_rule: async function (params) {
+        let {input, MY_URL} = this;
+        const url = decodeURIComponent(base64Decode(input));
+        const durl = url.substring(0, url.lastIndexOf("/"));
+        const response = await request(url);
+        const lines = response.trim().split("\n");
+        for (let i = 0; i < lines.length; i++) {
+            if (!lines[i].includes("#EXT") && !lines[i].includes("http")) {
+                lines[i] = durl + (lines[i].startsWith("/") ? "" : "/") + lines[i]
+            }
+        }
+        const updatedData = lines.join("\n");
+        return [200, "application/vnd.apple.mpegurl", updatedData]
+    }
+};
+
+function aes(word, key, mode = "decrypt", parseJson = false) {
+    const utf8Key = CryptoJS.enc.Utf8.parse(key);
+    let result;
+    if (mode === "decrypt") {
+        const decodedWord = CryptoJS.enc.Base64.parse(word);
+        const decrypted = CryptoJS.AES.decrypt({
+            ciphertext: decodedWord
+        }, utf8Key, {
+            mode: CryptoJS.mode.ECB,
+            padding: CryptoJS.pad.Pkcs7
+        });
+        result = decrypted.toString(CryptoJS.enc.Utf8);
+        if (parseJson) {
+            result = JSON.parse(result)
+        }
+    } else if (mode === "encrypt") {
+        const utf8Word = CryptoJS.enc.Utf8.parse(word);
+        const encrypted = CryptoJS.AES.encrypt(utf8Word, utf8Key, {
+            mode: CryptoJS.mode.ECB,
+            padding: CryptoJS.pad.Pkcs7
+        });
+        result = CryptoJS.enc.Base64.stringify(encrypted.ciphertext);
+        if (parseJson) {
+            result = encodeURIComponent(result)
+        }
+    }
+    return result
+}
