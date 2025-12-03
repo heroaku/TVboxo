@@ -52,6 +52,198 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/飞飞影视.js"
         },	
+	
+	//添加GM
+    {
+      "key": "gaze",
+      "name": "注视影视 | 自营",
+      "type": 3,
+      "searchable": 1,
+      "changeable": 1,
+      "quickSearch": 0,
+      "style": {
+        "type": "rect",
+        "ratio": 0.66
+      },
+      "jar": "./Jar/GM.jar;md5;7dd67a73e49dbf1cd32f56e329fce7b3",
+      "api": "csp_GM",
+      "ext": {
+        "userScript": "./JS/userScripts/gaze.user.js",
+        "debug": false,
+        "webViewSettings": {
+          "blockNetworkImage": true,
+          "blockList": [
+            "https://*.bytecdntp.com/cdn/expire-1-M/font-awesome/*",
+            "https://*.clarity.ms/*",
+            "https://gaze.run/visitorslog.php*",
+            "*.css*"
+          ]
+        },
+        "playUrlMatch": [
+          "https://dl-b.cloud.189.cn/corp/downloadFile.action?*",
+          "https://gaze.run/gaze_filey/pb/*.m3u8",
+          "https://*/obj/tos*"
+        ],
+        "spider": {
+          "homeContent": {
+            "loadUrl": "https://gaze.run/filter"
+          },
+          "categoryContent": {
+            "loadUrl": "https://gaze.run/filter"
+          },
+          "detailContent": {
+            "loadUrl": "https://gaze.run/play/${id}"
+          },
+          "playerContent": {
+            "loadUrl": "https://gaze.run/play/${mcid}#${path}"
+          },
+          "searchContent": {
+            "loadUrl": "https://gaze.run/filter"
+          }
+        }
+      }
+    },
+
+        {
+      "key": "yfsp",
+      "name": "爱壹帆 | 自营🚧",
+      "type": 3,
+      "searchable": 1,
+      "changeable": 1,
+      "quickSearch": 0,
+      "style": {
+        "type": "rect",
+        "ratio": 0.75
+      },
+      "jar": "./Jar/GM.jar;md5;7dd67a73e49dbf1cd32f56e329fce7b3",
+      "api": "csp_GM",
+      "ext": {
+        "userScript": "./JS/userScripts/ysfp.user.js",
+        "debug": false,
+        "webViewSettings": {
+          "blockNetworkImage": true,
+          "blockList": [
+            "*.png*",
+            "*.mp3*",
+            "*.css*",
+            "https://*.googletagmanager.com/*",
+            "https://*.google-analytics.com/*"
+          ]
+        },
+        "spider": {
+          "homeContent": {
+            "loadUrl": "https://m.yfsp.tv/"
+          },
+          "categoryContent": {
+            "loadUrl": "https://m.yfsp.tv/list/${tid}?type=${index-0:-0}${index-1:-,0}${index-2:-,0}${index-3:-,0}${index-4:-,0}${index-5:-}"
+          },
+          "detailContent": {
+            "loadUrl": "https://m.yfsp.tv/play/${id}"
+          },
+          "playerContent": {
+            "loadUrl": "https://m.yfsp.tv/play/${mediaKey}?id=${episodeKey}"
+          },
+          "searchContent": {
+            "loadUrl": "https://m.yfsp.tv/search"
+          }
+        }
+      }
+    },
+
+    {
+      "key": "huochetaidu",
+      "name": "火车太堵 | 聚合",
+      "type": 3,
+      "searchable": 1,
+      "changeable": 1,
+      "quickSearch": 0,
+      "style": {
+        "type": "rect",
+        "ratio": 0.71
+      },
+      "jar": "./Jar/GM.jar;md5;7dd67a73e49dbf1cd32f56e329fce7b3",
+      "api": "csp_GM",
+      "ext": {
+        "userScript": "./JS/userScripts/huochetaidu.user.js",
+        "debug": false,
+        "webViewSettings": {
+          "blockNetworkImage": true,
+          "blockList": [
+            "https://hm.baidu.com/*"
+          ]
+        },
+        "playUrlMatch": [
+          "*://*/*.m3u8*"
+        ],
+        "spider": {
+          "homeContent": {
+            "loadUrl": "https://www.tdgo.shop/"
+          },
+          "categoryContent": {
+            "loadUrl": "https://www.tdgo.shop/vodshow/${tid}-${index0:-}-${index1:-}-${index2:-}-${index3:-}-${index4:-}-${index5:-}-${index6:-}-${pg:-1}-${index8:-}-${index9:-}-${index10:-}.html"
+          },
+          "detailContent": {
+            "loadUrl": "https://www.tdgo.shop${id}"
+          },
+          "playerContent": {
+            "loadUrl": "https://www.tdgo.shop${playUrl}"
+          },
+          "searchContent": {
+            "loadUrl": "https://www.tdgo.shop/vodsearch/${key}----------${pg:-1}---.html"
+          }
+        }
+      }
+    },
+        {
+      "key": "mqtv",
+      "name": "麻雀视频 | 自营",
+      "type": 3,
+      "searchable": 1,
+      "changeable": 1,
+      "quickSearch": 0,
+      "style": {
+        "type": "rect",
+        "ratio": 0.71
+      },
+      "jar": "./Jar/GM.jar;md5;7dd67a73e49dbf1cd32f56e329fce7b3",
+      "api": "csp_GM",
+      "ext": {
+        "userScript": "./JS/userScripts/mqtv.user.js",
+        "debug": false,
+        "webViewSettings": {
+          "blockNetworkImage": true,
+          "blockList": [
+            "https://hm.baidu.com/*",
+            "https://*.n3f2.cn/*"
+          ]
+        },
+        "playUrlMatch": [
+          "https://*/obj/tos-*",
+          "*://*/*.mp4*",
+          "*://*/*.m3u8*"
+        ],
+        "spider": {
+          "homeContent": {
+            "loadUrl": "https://www.mqtv.cc/"
+          },
+          "categoryContent": {
+            "loadUrl": "https://www.mqtv.cc/type/${tid}"
+          },
+          "detailContent": {
+            "loadUrl": "https://www.mqtv.cc${id}"
+          },
+          "playerContent": {
+            "loadUrl": "https://www.mqtv.cc${url}#${anchor}"
+          },
+          "searchContent": {
+            "loadUrl": "https://www.mqtv.cc/search/${key}"
+          }
+        }
+      }
+    },
+
+	//GM结束
+	
     {
 	  "key": "DYTT电影天堂",
       "name": "DYTT电影天堂",
