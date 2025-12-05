@@ -923,6 +923,17 @@
             "playerType": 2
         },
 	#FM
+	        {
+            "key": "优影视",
+            "name": "优视PY┃影视",
+            "type": 3,
+            "api": "./Py/优视频.py",
+            "searchable": 1,
+            "changeable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+        },
         {
             "key": "猎手影视",
             "name": "猎手PY┃影视",
