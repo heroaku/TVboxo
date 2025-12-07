@@ -1,25 +1,119 @@
-import hashlib
-import re
-import sys
-import time
-import requests
+# -*- coding: utf-8 -*-
+# 本资源来源于互联网公开渠道，仅可用于个人学习爬虫技术。
+# 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
+
+import sys,urllib3
 sys.path.append('..')
 from base.spider import Spider
-
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 class Spider(Spider):
+    headers, host = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+        'Accept': 'application/json, text/plain, */*',
+        'accept-language': 'zh-CN,zh;q=0.9',
+        'cache-control': 'no-cache',
+        'pragma': 'no-cache',
+        'priority': 'u=1, i',
+        'sec-ch-ua': '"Not)A;Brand";v="8", "Chromium";v="138", "Google Chrome";v="138"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin'
+    }, 'https://film.symx.club'
+
+    def init(self, extend=''):
+        try:
+            host = extend.strip().rstrip('/')
+            if host.startswith('http'):
+                self.host = host
+                return None
+            return None
+        except Exception as e:
+            print(f'初始化异常：{e}')
+            return None
+
+    def homeContent(self, filter):
+        response = self.fetch(f'{self.host}/api/category/top', headers=self.headers, verify=False).json()
+        classes = []
+        for i in  response['data']:
+            if isinstance(i,dict):
+                classes.append({'type_id': i['id'], 'type_name': i['name']})
+        return {'class': classes}
+
+    def homeVideoContent(self):
+        response = self.fetch(f'{self.host}/api/film/category',headers=self.headers, verify=False).json()
+        videos = []
+        for i in response['data']:
+            for j in i.get('filmList',[]):
+                videos.append({
+                    'vod_id': j.get('id'),
+                    'vod_name': j.get('name'),
+                    'vod_pic': j.get('cover'),
+                    'vod_remarks': j.get('doubanScore')
+                    })
+        return {'list': videos}
+
+    def categoryContent(self, tid, pg, filter, extend):
+        response = self.fetch(f'{self.host}/api/film/category/list?area=&categoryId={tid}&language=&pageNum={pg}&pageSize=15&sort=updateTime&year=', headers=self.headers, verify=False).json()
+        videos = []
+        for i in response['data']['list']:
+            videos.append({
+                'vod_id': i.get('id'),
+                'vod_name': i.get('name'),
+                'vod_pic': i.get('cover'),
+                'vod_remarks': i.get('updateStatus')
+            })
+        return {'list': videos, 'page': pg}
+
+    def searchContent(self, key, quick, pg='1'):
+        response = self.fetch(f'{self.host}/api/film/search?keyword={key}&pageNum={pg}&pageSize=10', headers=self.headers, verify=False).json()
+        videos = []
+        for i in response['data']['list']:
+            videos.append({
+                'vod_id': i.get('id'),
+                'vod_name': i.get('name'),
+                'vod_pic': i.get('cover'),
+                'vod_remarks': i.get('updateStatus'),
+                'vod_year': i.get('year'),
+                'vod_area': i.get('area'),
+                'vod_director': i.get('director')
+        })
+        return {'list': videos, 'page': pg}
+
+    def detailContent(self, ids):
+        response = self.fetch(f'{self.host}/api/film/detail?id={ids[0]}',headers=self.headers, verify=False).json()
+        data = response['data']
+        video, show, play_urls, = {}, [], []
+        for i in data['playLineList']:
+            show.append(i['playerName'])
+            play_url = []
+            for j in i['lines']:
+                play_url.append(f"{j['name']}${j['id']}")
+            play_urls.append('#'.join(play_url))
+        video.update({
+            'vod_id': data.get('id'),
+            'vod_name': data.get('name'),
+            'vod_pic': data.get('cover'),
+            'vod_year': data.get('year'),
+            'vod_area': data.get('other'),
+            'vod_actor': data.get('actor'),
+            'vod_director': data.get('director'),
+            'vod_content': data.get('blurb'),
+            'vod_score': data.get('doubanScore'),
+            'vod_play_from': '$$$'.join(show),
+            'vod_play_url': '$$$'.join(play_urls)
+        })
+        return {'list': [video]}
+
+    def playerContent(self, flag, id, vipflags):
+        response = self.fetch(f'{self.host}/api/line/play/parse?lineId={id}', headers=self.headers).json()
+        return { 'jx': '0', 'parse': '0', 'url': response['data'], 'header': {'User-Agent': self.headers['User-Agent']}}
+
+
     def getName(self):
-        return "JieYingShi"
-
-    def init(self, extend):
-        self.home_url = 'https://www.hkybqufgh.com'
-        self.error_url = 'https://json.doube.eu.org/error/4gtv/index.m3u8'
-        self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-        }
-
-    def getDependence(self):
-        return []
+        pass
 
     def isVideoFormat(self, url):
         pass
@@ -27,150 +121,8 @@ class Spider(Spider):
     def manualVideoCheck(self):
         pass
 
-    def homeContent(self, filter):
-
-        return {'class': [
-            {
-                'type_id': '1',
-                'type_name': '电影'
-            },
-            {
-                'type_id': '2',
-                'type_name': '电视剧'
-            },
-            {
-                'type_id': '4',
-                'type_name': '动漫'
-            },
-            {
-                'type_id': '3',
-                'type_name': '综艺'
-            }
-        ]}
-
-    def homeVideoContent(self):
-        a = self.get_data(self.home_url)
-        return {'list': a, 'parse': 0, 'jx': 0}
-
-    def categoryContent(self, cid, page, filter, ext):
-        url = self.home_url + f'/vod/show/id/{cid}/page/{page}'
-        data = self.get_data(url)
-        return {'list': data, 'parse': 0, 'jx': 0}
-
-
-    def detailContent(self, did):
-        ids = did[0]
-        data = self.get_detail_data(ids)
-        return {"list": data, 'parse': 0, 'jx': 0}
-
-    def searchContent(self, key, quick, page='1'):
-        if int(page) > 1:
-            return {'list': [], 'parse': 0, 'jx': 0}
-        url = self.home_url + f'/vod/search/{key}'
-        data = self.get_data(url)
-        return {'list': data, 'parse': 0, 'jx': 0}
-
-    def playerContent(self, flag, pid, vipFlags):
-        url = self.get_play_data(pid)
-        return {"url": url, "header": self.headers, "parse": 1, "jx": 0}
-
-    def localProxy(self, params):
+    def destroy(self):
         pass
 
-    def destroy(self):
-        return '正在Destroy'
-
-
-    def get_data(self, url):
-        data = []
-        try:
-            res = requests.get(url, headers=self.headers)
-            if res.status_code != 200:
-                return data
-            vod_id_s = re.findall(r'\\"vodId\\":(.*?),', res.text)
-            vod_name_s = re.findall(r'\\"vodName\\":\\"(.*?)\\"', res.text)
-            vod_pic_s = re.findall(r'\\"vodPic\\":\\"(.*?)\\"', res.text)
-            vod_remarks_s = re.findall(r'\\"vodRemarks\\":\\"(.*?)\\"', res.text)
-
-            for i in range(len(vod_id_s)):
-                data.append(
-                    {
-                        'vod_id': vod_id_s[i],
-                        'vod_name': vod_name_s[i],
-                        'vod_pic': vod_pic_s[i],
-                        'vod_remarks': vod_remarks_s[i],
-                    }
-                )
-        except requests.RequestException as e:
-            print(e)
-        return data
-
-    def get_detail_data(self, ids):
-        url = self.home_url + f'/api/mw-movie/anonymous/video/detail?id={ids}'
-        t = str(int(time.time() * 1000))
-        headers = self.get_headers(t, f'id={ids}&key=cb808529bae6b6be45ecfab29a4889bc&t={t}')
-        try:
-            res = requests.get(url, headers=headers)
-            if res.status_code != 200:
-                return []
-            i = res.json()['data']
-            urls = []
-            for ii in res.json()['data']['episodeList']:
-                name = ii['name']
-                url = ii['nid']
-                urls.append(f'{name}${ids}-{url}')
-            data = {
-                'type_name': i['vodClass'],
-                'vod_id': i['vodId'],
-                'vod_name': i['vodName'],
-                'vod_remarks': i['vodRemarks'],
-                'vod_year': i['vodYear'],
-                'vod_area': i['vodArea'],
-                'vod_actor': i['vodActor'],
-                'vod_director': i['vodDirector'],
-                'vod_content': i['vodContent'],
-                'vod_play_from': '免费分享',
-                'vod_play_url': '#'.join(urls),
-
-            }
-            return [data]
-
-        except requests.RequestException as e:
-            print(e)
-        return []
-
-    def get_play_data(self, play):
-        info = play.split('-')
-        _id = info[0]
-        _pid = info[1]
-        url = self.home_url + f'/api/mw-movie/anonymous/v2/video/episode/url?id={_id}&nid={_pid}'
-        t = str(int(time.time() * 1000))
-        headers = self.get_headers(t, f'id={_id}&nid={_pid}&key=cb808529bae6b6be45ecfab29a4889bc&t={t}')
-        try:
-            res = requests.get(url, headers=headers)
-            if res.status_code != 200:
-                return self.error_url
-            return res.json()['data']['list'][0]['url']
-        except requests.RequestException as e:
-            print(e)
-        return self.error_url
-
-    @staticmethod
-    def get_headers(t, e):
-        sign = hashlib.sha1(hashlib.md5(e.encode()).hexdigest().encode()).hexdigest()
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-            'Accept': 'application/json, text/plain, */*',
-            'sign': sign,
-            'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
-            't': t,
-            'referer': 'https://www.hkybqufgh.com/',
-        }
-        return headers
-
-if __name__ == '__main__':
-    pass
-
-
-
-
+    def localProxy(self, param):
+        pass
