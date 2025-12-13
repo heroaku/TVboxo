@@ -36,6 +36,39 @@
             "api": "csp_Douban",
             "searchable": 0
         },
+			{
+			"key": "艾旦影视",
+			"name": "艾旦影视",
+			"type": 1,
+			"ext": {
+				"proxy": "proxy"
+			},
+			"api": "https://www.lovedan.net/api.php/provide/vod/",
+			"quickSearch": 1,
+			"searchable": 1,
+			"changeable": 1,
+			"categories": [
+				"国产动漫",
+				"日韩动漫",
+				"连续剧",				
+				"国产剧"
+			]
+		},
+				{
+			"key": "四个圈影视",
+			"name": "四圈影视",
+			"type": 1,
+			"api": "https://pg.fenwe078.cf/api.php/provide/vod/",
+			"quickSearch": 1,
+			"searchable": 1,
+			"changeable": 1,
+			"categories": [
+				"国产动漫",
+				"日韩动漫",
+				"连续剧",
+				"国产剧"
+			]
+		},
 	        {
             "key": "聚搜",
             "name": "🐢聚搜┃影视",
