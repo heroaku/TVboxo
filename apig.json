@@ -773,6 +773,14 @@
 	"ext": "./JS/暖光影视.js"
 	},	
 	{
+    "key": "八天影视",
+    "name": "八天影视",
+    "type": 3,
+	"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+	"api": "./JS/drpy2.min.js",
+    "ext": "./JS/八天影视.js"
+	},	
+	{
     "key": "秀儿影视",
     "name": "秀儿影视JS",
     "type": 3,
