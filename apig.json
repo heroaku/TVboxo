@@ -1114,7 +1114,15 @@
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/看片狂人.js"
-        },	
+        },
+			{
+		    "key": "全网影视",
+		    "name": "全网影视",
+		    "type": 3,
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"api": "./JS/drpy2.min.js",
+		    "ext": "./JS/全网影视.js"
+			},		
 		{
             "key": "黑夜影视",
             "name": "黑夜影视",
