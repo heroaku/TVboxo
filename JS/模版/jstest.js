@@ -1,10 +1,10 @@
 var rule={
-    title: '937影院',
+    title: '全网影视',
     host: 'https://hong.hgyx.vip',
     url: '/index.php/vod/show/id/fyclass/page/fypage.html',
-    searchUrl: '/vodsearch/**----------fypage---.html',
+    searchUrl: '/index.php/vod/search/page/fypage/wd/**.html',
   //https://hong.hgyx.vip/index.php/vod/show/id/fyclass/page/fypage.html
-    //https://www.55yy7.com/vodsearch/**----------fypage---.html
+    //https://hong.hgyx.vip/index.php/vod/search/page/fypage/wd/**.html
     searchable: 2,
     quickSearch: 0,
     filterable: 0,
