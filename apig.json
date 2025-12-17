@@ -791,7 +791,18 @@
       "quickSearch": 1,
       "filterable": 1,
       "ext": "./XBPQ/秀儿影视X.json"
-    },		
+    },	
+	    {
+      "key": "威视影院",
+      "name": "威视｜影视",
+      "type": 3,
+	  //"jar": "./tvkj.jar",
+      "api": "csp_XBPQ",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "ext": "./XBPQ/威视影院.json"
+    },	
 	{
     "key": "泥视频VIP",
     "name": "泥视频VIP",
