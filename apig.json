@@ -30,7 +30,7 @@
             "ext": "http://101.35.85.16:5555"
         },
 //{"key": "唐人街影院CF","name": "唐人街影院CF","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/唐人街影院CF.js"},
-{"key": "乐王电影","name": "乐王电影","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/乐王电影.js"},	
+//{"key": "乐王电影","name": "乐王电影","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/乐王电影.js"},	
 			{
             "key": "大米影视",
             "name": "大米影视",
@@ -1076,13 +1076,6 @@
 			"api": "./JS/drpy2.min.js",
             "ext": "./JS/永乐视频.js"
         },
-			{
-            "key": "老网影视",
-            "name": "老网影视",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/老网影视.js"
-        },	
 			{
             "key": "55影视",
             "name": "55影视",
