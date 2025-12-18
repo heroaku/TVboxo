@@ -497,6 +497,16 @@
         "version": "107"
       }
     },
+	 {
+	      "key": "还行",
+	      "name": "无意🔹影视",
+	      "type": 3,
+	      "jar": "./tvkj.jar",	
+	      "api": "csp_AppYs",
+	      "searchable": 1,
+	      "quickSearch": 1,
+	      "ext": "http://m51.gotto.top/api.php/v1.vod"
+	    },
 	{
       "key": "热播影视",
       "name": "热播｜APP",
@@ -1058,13 +1068,7 @@
 			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
 			"ext": "./JS/FROK影视.js"
 			},	
-		{
-            "key": "多瑙影视",
-            "name": "多瑙影视",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/多瑙影视.js"
-        },	
+		//{"key": "多瑙影视","name": "多瑙影视","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/多瑙影视.js"},
 		{
             "key": "永乐视频",
             "name": "永乐视频",
