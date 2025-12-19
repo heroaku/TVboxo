@@ -1,118 +1,27 @@
-# -*- coding: utf-8 -*-
-# 本资源来源于互联网公开渠道，仅可用于个人学习爬虫技术。
-# 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
-
-import sys,urllib3
-sys.path.append('..')
+# coding=utf-8
+# !/usr/bin/python
+import sys
+import requests
+from bs4 import BeautifulSoup
+import re
 from base.spider import Spider
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+from urllib.parse import unquote
+
+sys.path.append('..')
+xurl = "https://www.youzisp.tv"
+headerx = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.87 Safari/537.36'
+}
+
 
 class Spider(Spider):
-    headers, host = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
-        'Accept': 'application/json, text/plain, */*',
-        'accept-language': 'zh-CN,zh;q=0.9',
-        'cache-control': 'no-cache',
-        'pragma': 'no-cache',
-        'priority': 'u=1, i',
-        'sec-ch-ua': '"Not)A;Brand";v="8", "Chromium";v="138", "Google Chrome";v="138"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin'
-    }, 'https://film.symx.club'
-
-    def init(self, extend=''):
-        try:
-            host = extend.strip().rstrip('/')
-            if host.startswith('http'):
-                self.host = host
-                return None
-            return None
-        except Exception as e:
-            print(f'初始化异常：{e}')
-            return None
-
-    def homeContent(self, filter):
-        response = self.fetch(f'{self.host}/api/category/top', headers=self.headers, verify=False).json()
-        classes = []
-        for i in  response['data']:
-            if isinstance(i,dict):
-                classes.append({'type_id': i['id'], 'type_name': i['name']})
-        return {'class': classes}
-
-    def homeVideoContent(self):
-        response = self.fetch(f'{self.host}/api/film/category',headers=self.headers, verify=False).json()
-        videos = []
-        for i in response['data']:
-            for j in i.get('filmList',[]):
-                videos.append({
-                    'vod_id': j.get('id'),
-                    'vod_name': j.get('name'),
-                    'vod_pic': j.get('cover'),
-                    'vod_remarks': j.get('doubanScore')
-                    })
-        return {'list': videos}
-
-    def categoryContent(self, tid, pg, filter, extend):
-        response = self.fetch(f'{self.host}/api/film/category/list?area=&categoryId={tid}&language=&pageNum={pg}&pageSize=15&sort=updateTime&year=', headers=self.headers, verify=False).json()
-        videos = []
-        for i in response['data']['list']:
-            videos.append({
-                'vod_id': i.get('id'),
-                'vod_name': i.get('name'),
-                'vod_pic': i.get('cover'),
-                'vod_remarks': i.get('updateStatus')
-            })
-        return {'list': videos, 'page': pg}
-
-    def searchContent(self, key, quick, pg='1'):
-        response = self.fetch(f'{self.host}/api/film/search?keyword={key}&pageNum={pg}&pageSize=10', headers=self.headers, verify=False).json()
-        videos = []
-        for i in response['data']['list']:
-            videos.append({
-                'vod_id': i.get('id'),
-                'vod_name': i.get('name'),
-                'vod_pic': i.get('cover'),
-                'vod_remarks': i.get('updateStatus'),
-                'vod_year': i.get('year'),
-                'vod_area': i.get('area'),
-                'vod_director': i.get('director')
-        })
-        return {'list': videos, 'page': pg}
-
-    def detailContent(self, ids):
-        response = self.fetch(f'{self.host}/api/film/detail?id={ids[0]}',headers=self.headers, verify=False).json()
-        data = response['data']
-        video, show, play_urls, = {}, [], []
-        for i in data['playLineList']:
-            show.append(i['playerName'])
-            play_url = []
-            for j in i['lines']:
-                play_url.append(f"{j['name']}${j['id']}")
-            play_urls.append('#'.join(play_url))
-        video.update({
-            'vod_id': data.get('id'),
-            'vod_name': data.get('name'),
-            'vod_pic': data.get('cover'),
-            'vod_year': data.get('year'),
-            'vod_area': data.get('other'),
-            'vod_actor': data.get('actor'),
-            'vod_director': data.get('director'),
-            'vod_content': data.get('blurb'),
-            'vod_score': data.get('doubanScore'),
-            'vod_play_from': '$$$'.join(show),
-            'vod_play_url': '$$$'.join(play_urls)
-        })
-        return {'list': [video]}
-
-    def playerContent(self, flag, id, vipflags):
-        response = self.fetch(f'{self.host}/api/line/play/parse?lineId={id}', headers=self.headers).json()
-        return { 'jx': '0', 'parse': '0', 'url': response['data'], 'header': {'User-Agent': self.headers['User-Agent']}}
-
+    global xurl
+    global headerx
 
     def getName(self):
+        return "首页"
+
+    def init(self, extend):
         pass
 
     def isVideoFormat(self, url):
@@ -120,9 +29,249 @@ class Spider(Spider):
 
     def manualVideoCheck(self):
         pass
+    def fl(self,key):
+        videos = []
+        doc = BeautifulSoup(key, "html.parser")
+        soup = doc.find_all('li', class_="hl-list-item hl-col-xs-4 hl-col-sm-3 hl-col-md-20w hl-col-lg-2")
 
-    def destroy(self):
-        pass
+        for vod in soup:
+            name = vod.select_one("a")['title']
+            id = xurl + vod.select_one("a")["href"]
+            pic = vod.select_one("a")['data-original']
+            remark = vod.find('span', class_="hl-lc-1 remarks").text
+            video = {
+                "vod_id": id,
+                "vod_name": name,
+                "vod_pic": pic,
+                "vod_remarks": remark
+            }
+            videos.append(video)
+        return videos
+    def homeContent(self, filter):
+        result = {}
+        result = {
+            "class": [{"type_id": "dianying", "type_name": "电影"}, {"type_id": "dianshiju", "type_name": "电视剧"},
+                      {"type_id": "zongyi", "type_name": "综艺"}, {"type_id": "dongman", "type_name": "动漫"},
+                      {"type_id": "jilupian", "type_name": "纪录片"}], "list": [], "filters": {"dianying": [
+                {"key": "类型", "name": "类型",
+                 "value": [{"n": "全部", "v": ""}, {"n": "动作", "v": "dongzuo"}, {"n": "冒险", "v": "maoxian"},
+                           {"n": "喜剧", "v": "xiju"}, {"n": "奇幻", "v": "qihuan"}, {"n": "科幻", "v": "kehuan"},
+                           {"n": "悬疑", "v": "xuanyi"}, {"n": "惊悚", "v": "jingsong"},
+                           {"n": "战争", "v": "zhanzheng"},
+                           {"n": "爱情", "v": "aiqing"}, {"n": "歌舞", "v": "gewu"}, {"n": "犯罪", "v": "fanzui"},
+                           {"n": "灾难", "v": "zainan"}, {"n": "同性", "v": "tongxing"}, {"n": "剧情", "v": "juqing"},
+                           {"n": "网络", "v": "wangluo"}]}], "dianshiju": [{"key": "类型", "name": "类型",
+                                                                            "value": [{"n": "全部", "v": ""},
+                                                                                      {"n": "国产", "v": "guochan"},
+                                                                                      {"n": "港台", "v": "gangtai"},
+                                                                                      {"n": "欧美", "v": "oumei"},
+                                                                                      {"n": "日韩", "v": "rihan"},
+                                                                                      {"n": "东南亚",
+                                                                                       "v": "dongnanya"}]}],
+                "zongyi": [
+                    {"key": "类型",
+                     "name": "类型",
+                     "value": [
+                         {"n": "全部",
+                          "v": ""},
+                         {"n": "国产",
+                          "v": "guochan"},
+                         {"n": "欧美",
+                          "v": "oumei"},
+                         {"n": "日韩",
+                          "v": "rihan"},
+                         {
+                             "n": "东南亚",
+                             "v": "dongnanya"}]}],
+                "dongman": [
+                    {"key": "类型",
+                     "name": "类型",
+                     "value": [
+                         {"n": "全部",
+                          "v": ""},
+                         {"n": "大陆",
+                          "v": "dalu"},
+                         {"n": "日韩",
+                          "v": "rihan"},
+                         {"n": "欧美",
+                          "v": "oumei"},
+                         {
+                             "n": "东南亚",
+                             "v": "dongnanya"},
+                         {
+                             "n": "动漫剧场",
+                             "v": "dongmanjuchang"}]}],
+                "jilupian": [
+                    {"key": "类型",
+                     "name": "类型",
+                     "value": [
+                         {"n": "全部",
+                          "v": ""}]}]}}
+        return result
 
-    def localProxy(self, param):
-        pass
+    def homeVideoContent(self):
+        try:
+            detail = requests.get(url=xurl + '/vodtype/dianshiju.html', headers=headerx)
+            detail.encoding = "utf-8"
+            res = detail.text
+            videos = self.fl(res)
+
+            result = {'list': videos}
+            return result
+        except:
+            pass
+
+    def categoryContent(self, cid, pg, filter, ext):
+        result = {}
+        print(ext)
+        area = ""
+        if pg:
+            page = int(pg)
+        else:
+            page = 1
+        page = int(pg)
+        videos = []
+        lxType1 = ""
+        if cid == 'dianying':
+            if '类型' in ext.keys():
+                lxType = ext['类型']
+            else:
+                lxType = cid
+        if cid == 'dianshiju':
+            if '类型' in ext.keys():
+                lxType = ext['类型']
+            else:
+                lxType = cid
+        if cid == 'zongyi':
+            if '类型' in ext.keys():
+                lxType = ext['类型']
+            else:
+                lxType = cid
+        if cid == 'dongman':
+            if '类型' in ext.keys():
+                lxType = ext['类型']
+            else:
+                lxType = cid
+        if cid == 'jilupian':
+            if '类型' in ext.keys():
+                lxType = ext['类型']
+            else:
+                lxType = cid
+
+        videos = []
+        url = xurl + "/vodshow/" + lxType + "--------" + str(page) + "---.html"
+
+        try:
+            detail = requests.get(url=url, headers=headerx)
+            detail.encoding = "utf-8"
+            res = detail.text
+            videos =self.fl(res)
+        except:
+            pass
+        result = {'list': videos}
+        result['page'] = pg
+        result['pagecount'] = 9999
+        result['limit'] = 90
+        result['total'] = 999999
+        return result
+
+    def detailContent(self, ids):
+        did = ids[0]
+        result = {}
+        videos = []
+        playurl = ''
+        res = requests.get(url=did, headers=headerx)
+        res = res.text
+        match = re.search(r'content-text"><em>(.*?)</em>', res)
+        if match:
+            vod_content = match.group(1)
+        match = re.search(r'年份：</em>(.*?)</li>', res)
+        if match:
+            vod_year = match.group(1)
+        match = re.search(r'地区：</em>(.*?)</li>', res)
+        if match:
+            vod_area = match.group(1)
+        soup = BeautifulSoup(res, 'html.parser')
+        ul = soup.find('div', class_="hl-list-wrap")
+        vods = ul.find_all('li')
+        for vod in vods:
+            purl = xurl + vod.select_one('a')['href']
+            plform = vod.select_one('a').text
+            playurl += plform + '$' + purl + '#'
+
+        playurl = playurl[:-1]
+
+        videos.append({
+            "vod_id": did,
+            "vod_name": '',
+            "vod_pic": "",
+            "type_name": '',
+            "vod_year": vod_year,
+            "vod_area": vod_area,
+            "vod_remarks": "",
+            "vod_actor": '',
+            "vod_director": '',
+            "vod_content": vod_content,
+            "vod_play_from": '1080P',
+            "vod_play_url": playurl
+        })
+
+        result['list'] = videos
+
+        return result
+
+    def playerContent(self, flag, id, vipFlags):
+        result = {}
+        res = requests.get(id, headers=headerx)
+        res.encoding = "utf-8"
+        match = re.search(r'\},"url":"(.*?)"', res.text)
+        if match:
+            purl = match.group(1).replace('\\', '')
+        result["parse"] = 0
+        result["playUrl"] = ''
+        result["url"] = purl
+        result["header"] = headerx
+        return result
+
+    def searchContentPage(self, key, quick, page):
+        result = {}
+        videos = []
+        if not page:
+            page = 1
+        detail = requests.get(xurl + '/vodsearch/' + key + '----------' + str(page) + '---.html', headers=headerx)
+        detail.encoding = "utf-8"
+        res = detail.text
+        doc = BeautifulSoup(res, "html.parser")
+        soup = doc.find_all('li', class_="hl-list-item hl-col-xs-12")
+
+        for vod in soup:
+            name = vod.select_one("a")['title']
+            id = xurl + vod.select_one("a")["href"]
+            pic = vod.select_one("a")['data-original']
+            remark = vod.find('span', class_="hl-lc-1 remarks").text
+            video = {
+                "vod_id": id,
+                "vod_name": name,
+                "vod_pic": pic,
+                "vod_remarks": remark
+            }
+            videos.append(video)
+
+        result['list'] = videos
+        result['page'] = page
+        result['pagecount'] = 9999
+        result['limit'] = 90
+        result['total'] = 999999
+        return result
+
+    def searchContent(self, key, quick):
+        return self.searchContentPage(key, quick, '1')
+
+    def localProxy(self, params):
+        if params['type'] == "m3u8":
+            return self.proxyM3u8(params)
+        elif params['type'] == "media":
+            return self.proxyMedia(params)
+        elif params['type'] == "ts":
+            return self.proxyTs(params)
+        return None
