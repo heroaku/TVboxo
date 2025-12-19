@@ -1039,13 +1039,7 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/剧迷影视.js"
         },
-				{
-            "key": "柏彩影视",
-            "name": "柏彩影视",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/柏彩影视.js"
-        },	
+		//{"key": "柏彩影视","name": "柏彩影视","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/柏彩影视.js"},	
         {
             "key": "欧乐影院",
             "name": "欧乐影院",
@@ -1089,6 +1083,14 @@
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/小宝影院.js"
+        },
+		{
+            "key": "游子视频",
+            "name": "游子视频",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/游子视频.js"
         },
 			{
             "key": "万象影视",
@@ -1332,14 +1334,6 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/悟空影视.js"
         },	
-				{
-            "key": "游子视频",
-            "name": "游子视频",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
-            "ext": "./JS/游子视频.js"
-        },
 			{
             "key": "热剧影视",
             "name": "热剧影视",
@@ -2226,14 +2220,7 @@
             "ext": "./JS/西瓜在线.js"
         },
 
-	{
-            "key": "网飞猫",
-            "name": "网飞猫",
-            "type": 3,
-            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/网飞猫.js"
-        },
+	//{"key": "网飞猫","name": "网飞猫","type": 3,"jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7","api": "./JS/drpy2.min.js","ext": "./JS/网飞猫.js"},
 	{
             "key": "瓜子影视1",
             "name": "瓜子影视",
