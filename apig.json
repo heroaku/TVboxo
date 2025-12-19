@@ -1035,6 +1035,7 @@
 		//{"key": "柏彩影视","name": "柏彩影视","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/柏彩影视.js"},	
 		//{"key": "多瑙影视","name": "多瑙影视","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/多瑙影视.js"},
 		//{"key": "万象影视","name": "万象影视","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/万象影视.js"},
+		//{"key": "天龙影院","name": "天龙影院","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/天龙影院.js"},
         {
             "key": "欧乐影院",
             "name": "欧乐影院",
@@ -1057,13 +1058,6 @@
 			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
 			"ext": "./JS/FROK影视.js"
 			},
-				{
-            "key": "天龙影院",
-            "name": "天龙影院",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/天龙影院.js"
-        },	
 		{
             "key": "永乐视频",
             "name": "永乐视频",
