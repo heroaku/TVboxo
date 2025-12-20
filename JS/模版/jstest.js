@@ -3,33 +3,28 @@
   searchable: 2,
   filterable: 1,
   quickSearch: 0,
-  title: '老地方影视',
+  title: '爱迪影视',
   '类型': '影视',
   lang: 'ds'
 })
 */
 
 var rule={
-    title:'老地影视',
-    host:'https://www.laodifang.tv',
+    title:'爱迪影视',
+    host:'https://adys.tv',
     //host:'https://adys123.com',  //网址发布站
-    // url:'https://www.laodifang.tv/vodshow/2-----------.html',
-    url:'/vodshow/fyclassfyfilter.html',
+    // url:'/show/fyclass--------fypage---.html',
+    url:'/show/fyfilter.html',
     filterable:1,//是否启用分类筛选,
-	filter_url:'-{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
-    filter: {
-        "1":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"同性","v":"同性"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"犯罪","v":"犯罪"},{"n":"奇幻","v":"奇幻"},{"n":"冒险","v":"冒险"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"古装","v":"古装"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"法国","v":"法国"},{"n":"英国","v":"英国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"德国","v":"德国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"},{"n":"意大利","v":"意大利"},{"n":"西班牙","v":"西班牙"},{"n":"加拿大","v":"加拿大"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2026","v":"2026"},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"},{"n":"2003","v":"2003"},{"n":"2002","v":"2002"},{"n":"2001","v":"2001"},{"n":"2000","v":"2000"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
-        "2":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"喜剧"},{"n":"同性","v":"同性"},{"n":"爱情","v":"爱情"},{"n":"恐怖","v":"恐怖"},{"n":"动作","v":"动作"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战争","v":"战争"},{"n":"犯罪","v":"犯罪"},{"n":"奇幻","v":"奇幻"},{"n":"冒险","v":"冒险"},{"n":"悬疑","v":"悬疑"},{"n":"惊悚","v":"惊悚"},{"n":"古装","v":"古装"},{"n":"偶像","v":"偶像"},{"n":"言情","v":"言情"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"法国","v":"法国"},{"n":"英国","v":"英国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"德国","v":"德国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"},{"n":"意大利","v":"意大利"},{"n":"西班牙","v":"西班牙"},{"n":"加拿大","v":"加拿大"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2026","v":"2026"},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"},{"n":"2003","v":"2003"},{"n":"2002","v":"2002"},{"n":"2001","v":"2001"},{"n":"2000","v":"2000"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
-        "3":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"选秀","v":"选秀"},{"n":"脱口秀","v":"脱口秀"},{"n":"情感","v":"情感"},{"n":"访谈","v":"访谈"},{"n":"播报","v":"播报"},{"n":"旅游","v":"旅游"},{"n":"音乐","v":"音乐"},{"n":"美食","v":"美食"},{"n":"纪实","v":"纪实"},{"n":"曲艺","v":"曲艺"},{"n":"生活","v":"生活"},{"n":"游戏互动","v":"游戏互动"},{"n":"财经","v":"财经"},{"n":"求职","v":"求职"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"法国","v":"法国"},{"n":"英国","v":"英国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"德国","v":"德国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"},{"n":"意大利","v":"意大利"},{"n":"西班牙","v":"西班牙"},{"n":"加拿大","v":"加拿大"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2026","v":"2026"},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"},{"n":"2003","v":"2003"},{"n":"2002","v":"2002"},{"n":"2001","v":"2001"},{"n":"2000","v":"2000"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}],
-        "4":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"热血","v":"热血"},{"n":"搞笑","v":"搞笑"},{"n":"冒险","v":"冒险"},{"n":"科幻","v":"科幻"},{"n":"剧情","v":"剧情"},{"n":"战斗","v":"战斗"},{"n":"动画","v":"动画"},{"n":"玄幻","v":"玄幻"},{"n":"恋爱","v":"恋爱"},{"n":"校园","v":"校园"},{"n":"奇幻","v":"奇幻"},{"n":"喜剧","v":"喜剧"},{"n":"动作","v":"动作"},{"n":"惊悚","v":"惊悚"},{"n":"悬疑","v":"悬疑"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"法国","v":"法国"},{"n":"英国","v":"英国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"德国","v":"德国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"},{"n":"意大利","v":"意大利"},{"n":"西班牙","v":"西班牙"},{"n":"加拿大","v":"加拿大"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2026","v":"2026"},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"},{"n":"2003","v":"2003"},{"n":"2002","v":"2002"},{"n":"2001","v":"2001"},{"n":"2000","v":"2000"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}]
-      //  "5":[{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"内地","v":"内地"},{"n":"香港","v":"香港"},{"n":"台湾","v":"台湾"},{"n":"美国","v":"美国"},{"n":"法国","v":"法国"},{"n":"英国","v":"英国"},{"n":"日本","v":"日本"},{"n":"韩国","v":"韩国"},{"n":"德国","v":"德国"},{"n":"泰国","v":"泰国"},{"n":"印度","v":"印度"},{"n":"意大利","v":"意大利"},{"n":"西班牙","v":"西班牙"},{"n":"加拿大","v":"加拿大"},{"n":"其他","v":"其他"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2026","v":"2026"},{"n":"2025","v":"2025"},{"n":"2024","v":"2024"},{"n":"2023","v":"2023"},{"n":"2022","v":"2022"},{"n":"2021","v":"2021"},{"n":"2020","v":"2020"},{"n":"2019","v":"2019"},{"n":"2018","v":"2018"},{"n":"2017","v":"2017"},{"n":"2016","v":"2016"},{"n":"2015","v":"2015"},{"n":"2014","v":"2014"},{"n":"2013","v":"2013"},{"n":"2012","v":"2012"},{"n":"2011","v":"2011"},{"n":"2010","v":"2010"},{"n":"2009","v":"2009"},{"n":"2008","v":"2008"},{"n":"2007","v":"2007"},{"n":"2006","v":"2006"},{"n":"2005","v":"2005"},{"n":"2004","v":"2004"},{"n":"2003","v":"2003"},{"n":"2002","v":"2002"},{"n":"2001","v":"2001"},{"n":"2000","v":"2000"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"time"},{"n":"人气","v":"hits"},{"n":"评分","v":"score"}]}]
-    },
+    filter_url:'{{fl.cateId}}-{{fl.area}}-{{fl.by}}-{{fl.class}}-{{fl.lang}}-{{fl.letter}}---fypage---{{fl.year}}',
+    filter:'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',
     filter_def:{
-        1:{by:'time'},
-        2:{by:'time'},
-        3:{by:'time'},
-        4:{by:'time'}
-      //  5:{by:'time'}
+        dianying:{cateId:'dianying'},
+        lianxuju:{cateId:'lianxuju'},
+        zongyi:{cateId:'zongyi'},
+        hanguodianying:{cateId:'hanguodianying'},
+        dongman:{cateId:'dongman'}
+        //jilu:{cateId:'jilu'}
     },
     // searchUrl:'/vsearch/-------------.html?wd=**&submit=',
     searchUrl:'/vsearch/**----------fypage---.html',
@@ -41,15 +36,14 @@ var rule={
 	cate_exclude: '纪录',
     tab_remove:['VIP线路'], // VIP线路 需登录会员
     play_parse:true,
-    //lazy: $js.toString(() => {var url = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]).url;url.indexOf('http') == -1 ? input = request('https://laodifang.tv/player/?url=' + url, {}).match(/url":.*?['"](.*?)['"]/)[1] :input = url    }),
-        lazy: $js.toString(() => {
+    lazy: $js.toString(() => {
         var url = JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]).url;
-        url.indexOf('http') == -1 ? input = request('https://www.laodifang.tv/player/?url=' + url, {}).match(/url":.*?['"](.*?)['"]/)[1] :input = url
+        url.indexOf('http') == -1 ? input = request('https://adys.tv/player/?url=' + url, {}).match(/url":.*?['"](.*?)['"]/)[1] :input = url
 
     }),
-	推荐:'*',
+    推荐:'*',
     // 一级:'.vodlist.vodlist_wi li;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
-    一级:'.vodlist.vodlist_wi li;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
+    一级:'.vodlist.vodlist_wi li;a&&title;.lazyload&&data-background-image;.xszxj&&Text;a&&href',
     二级:{
         "title":"h1&&Text;li.data--span:eq(0)&&Text",
         // "img":".lazyload&&data-original",
