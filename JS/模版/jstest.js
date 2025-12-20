@@ -19,7 +19,8 @@ var rule={
         1: {cateId: '1'},
         2: {cateId: '2'},
         3: {cateId: '3'},
-        4: {cateId: '4'}
+		4: {cateId: '4'},
+        20: {cateId: '20'}
     },
     headers: {
     'User-Agent': 'MOBILE_UA',
