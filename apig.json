@@ -1103,11 +1103,12 @@
             "ext": "./JS/老地方影视.js"
         },
 		{
-            "key": "努努影视",
-            "name": "努努影视",
+            "key": "爱迪影视",
+            "name": "爱迪影视",
             "type": 3,
 			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/努努影视.js"
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/爱迪影视.js"
         },
 		{
             "key": "看片狂人",
