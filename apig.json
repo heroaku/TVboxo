@@ -1095,12 +1095,13 @@
             "ext": "./JS/可视影院.js"
         },
 		{
-            "key": "金牌影院",
-            "name": "金牌影院",
+            "key": "老地方影视",
+            "name": "老地方影视",
             "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/金牌影院.js"
-        },	
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/老地方影视.js"
+        },
 		{
             "key": "努努影视",
             "name": "努努影视",
