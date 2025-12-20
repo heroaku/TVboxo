@@ -1199,6 +1199,14 @@
             "ext": "./JS/蛋蛋影院.js"
         },
 			{
+            "key": "蛋蛋赞",
+            "name": "蛋蛋赞",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/蛋蛋赞.js"
+        },
+			{
 			"key": "小镇影视",
 			"name": "小镇影视",
 			"type": 3,
