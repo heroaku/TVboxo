@@ -3,14 +3,14 @@
   searchable: 2,
   filterable: 1,
   quickSearch: 0,
-  title: '爱迪影视',
+  title: '老地方影视',
   '类型': '影视',
   lang: 'ds'
 })
 */
 
 var rule={
-    title:'爱迪影视',
+    title:'老地影视',
     host:'https://www.laodifang.tv',
     //host:'https://adys123.com',  //网址发布站
     // url:'https://www.laodifang.tv/vodshow/2-----------.html',
