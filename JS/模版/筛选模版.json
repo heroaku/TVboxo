@@ -1,4 +1,7 @@
-    url: '/vodshow/fyfilter.html',
+	filter_url: '{{fl.area}}{{fl.by}}{{fl.class}}/id/{{fl.cateId}}{{fl.lang}}{{fl.letter}}/page/fypage{{fl.year}}',
+
+
+	url: '/vodshow/fyfilter.html',
     filterable: 1,//是否启用分类筛选,
     filter_url: '{{fl.cateId}}{{fl.area}}{{fl.by}}{{fl.class}}{{fl.lang}}/page/fypage{{fl.year}}',
     filter: {
