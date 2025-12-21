@@ -1,304 +1,338 @@
 # -*- coding: utf-8 -*-
-# @Author  : 老王叔叔 for 泥視頻.CC with Multi-Source Support
-# @Time    : 2025/04/06
-
-import sys
-import requests
-from lxml import etree
+# by @嗷呜
+import binascii
 import json
+import os
 import re
-from urllib.parse import urlencode
+import sys
+import time
+import uuid
+from urllib.parse import urlparse
+from concurrent.futures import ThreadPoolExecutor
 sys.path.append('..')
 from base.spider import Spider
+from base64 import b64encode, b64decode
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import AES, PKCS1_v1_5
+from Crypto.Util.Padding import unpad, pad
+from Crypto.Hash import MD5
+
 
 class Spider(Spider):
-    def __init__(self):
-        self.home_url = 'https://www.nivod.cc'
-        self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-            "Referer": "https://www.nivod.cc/",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-            "Accept-Language": "zh-CN,zh;q=0.9",
-            "Connection": "keep-alive",
-        }
-        self.placeholder_pic = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/placeholder.jpg'
 
     def init(self, extend=""):
+        self.host = self.gethost()
         pass
 
     def getName(self):
-        return "泥視頻.CC"
-
-    def getDependence(self):
-        return []
+        pass
 
     def isVideoFormat(self, url):
-        return url.endswith('.m3u8') or url.endswith('.mp4')
+        pass
 
     def manualVideoCheck(self):
-        return False
-
-    def homeContent(self, filter):
-        categories = "电影$movie#电视剧$tv#综艺$show#动漫$anime"
-        class_list = [{'type_id': v.split('$')[1], 'type_name': v.split('$')[0]} for v in categories.split('#')]
-        filters = {
-            'movie': [
-                {'key': 'class', 'name': '剧情', 'value': [{'n': v.split('$')[0], 'v': v.split('$')[1]} for v in "冒险$mao-xian#剧情$ju-qing#动作$dong-zuo#同性$tong-xing#喜剧$xi-ju#奇幻$qi-huan#恐怖$kong-bu#悬疑$xuan-yi#惊悚$jing-song#战争$zhan-zheng#歌舞$ge-wu#灾难$zai-nan#爱情$ai-qing#犯罪$fan-zui#科幻$ke-huan".split('#')]},
-                {'key': 'area', 'name': '地区', 'value': [{'n': v.split('$')[0], 'v': v.split('$')[1]} for v in "大陆$cn#香港$hk#台湾$tw#欧美$west#泰国$th#新马$sg-my#其他$other".split('#')]},
-                {'key': 'year', 'name': '年份', 'value': [{'n': v, 'v': v} for v in ["2025", "2024", "2023", "2022", "2021", "2020", "2019-2010", "2009-2000", "90年代", "80年代", "更早"]]}
-            ],
-            'tv': [
-                {'key': 'class', 'name': '剧情', 'value': [{'n': v.split('$')[0], 'v': v.split('$')[1]} for v in "剧情$ju-qing#动作$dong-zuo#历史$li-shi#历险$mao-xian#古装$gu-zhuang#同性$tong-xing#喜剧$xi-ju#奇幻$qi-huan#家庭$jia-ting#悬疑$xuan-yi#惊悚$jing-song#战争$zhan-zheng#武侠$wu-xia#爱情$ai-qing#科幻$ke-huan#罪案$zui-an".split('#')]},
-                {'key': 'area', 'name': '地区', 'value': [{'n': v.split('$')[0], 'v': v.split('$')[1]} for v in "大陆$cn#香港$hk#台湾$tw#日本$jp#韩国$kr#欧美$west#泰国$th#新马$sg-my".split('#')]},
-                {'key': 'year', 'name': '年份', 'value': [{'n': v, 'v': v} for v in ["2025", "2024", "2023", "2022", "2021", "2020", "2019-2015", "2014-2010", "2009-2000", "90年代", "80年代", "更早"]]}
-            ],
-            'show': [
-                {'key': 'class', 'name': '剧情', 'value': [{'n': v.split('$')[0], 'v': v.split('$')[1]} for v in "搞笑$gao-xiao#音乐$yin-yue#真人秀$zhen-ren-xiu#脱口秀$tuo-kou-xiu".split('#')]},
-                {'key': 'area', 'name': '地区', 'value': [{'n': v.split('$')[0], 'v': v.split('$')[1]} for v in "大陆$cn#韩国$kr#欧美$west#其它$other".split('#')]},
-                {'key': 'year', 'name': '年份', 'value': [{'n': v, 'v': v} for v in ["2025", "2024", "2023", "2022", "2021", "2020", "2019-2015", "2014-2010", "2009-2000", "90年代", "80年代", "更早"]]}
-            ],
-            'anime': [
-                {'key': 'class', 'name': '剧情', 'value': [{'n': v.split('$')[0], 'v': v.split('$')[1]} for v in "冒险$mao-xian#动画电影$movie#推理$tui-li#校园$xiao-yuan#治愈$zhi-yu#泡面$pao-mian#热血$re-xue#科幻$ke-huan#魔幻$mo-huan".split('#')]},
-                {'key': 'area', 'name': '地区', 'value': [{'n': v.split('$')[0], 'v': v.split('$')[1]} for v in "大陆$cn#日本$jp#欧美$west".split('#')]},
-                {'key': 'year', 'name': '年份', 'value': [{'n': v, 'v': v} for v in ["2025", "2024", "2023", "2022", "2021", "2020", "2019-2015", "2014-2010", "2009-2000", "90年代", "80年代", "更早"]]}
-            ]
-        }
-        return {'class': class_list, 'filters': filters if filter else {}}
-
-    def homeVideoContent(self):
-        result = {'list': []}
-        try:
-            res = requests.get(self.home_url, headers=self.headers)
-            res.encoding = 'utf-8'
-            root = etree.HTML(res.text)
-            data_list = root.xpath('//div[contains(@class, "qy-mod-link-wrap")]/a')
-            for i in data_list:
-                name_nodes = i.xpath('.//picture[@class="video-item-preview-img"]/img/@alt')
-                vod_name = name_nodes[0].strip() if name_nodes else None
-                if not vod_name:
-                    vod_name = i.xpath('./@title')
-                    vod_name = vod_name[0].strip() if vod_name else "未知"
-                vod_id = i.get('href', '')
-                pic_nodes = i.xpath('.//picture[@class="video-item-preview-img"]/img/@src')
-                vod_pic = pic_nodes[0] if pic_nodes else self.placeholder_pic
-                if vod_pic.startswith('/'):
-                    vod_pic = self.home_url + vod_pic
-                remark_nodes = i.xpath('.//span[contains(@class, "qy-mod-label")]/text()')
-                vod_remarks = remark_nodes[0].strip() if remark_nodes else ''
-                result['list'].append({
-                    'vod_id': vod_id,
-                    'vod_name': vod_name,
-                    'vod_pic': vod_pic,
-                    'vod_remarks': vod_remarks
-                })
-            result['list'] = result['list'][:10]
-        except Exception as e:
-            print(f"Error in homeVideoContent: {e}")
-        return result
-
-    def categoryContent(self, tid, pg, filter, ext):
-        result = {'list': []}
-        _year = ext.get('year', '')
-        _class = ext.get('class', '')
-        _area = ext.get('area', '')
-        params = {
-            'channel': tid,
-            'region': _area,
-            'class': _class,
-            'year': _year,
-            'page': pg
-        }
-        url = f"{self.home_url}/filter.html?{urlencode(params)}"
-        
-        # 如果頁碼超過 5，直接返回空結果
-        if int(pg) > 5:
-            result['page'] = int(pg)
-            result['pagecount'] = 5
-            result['limit'] = 0
-            result['total'] = 240
-            return result
-        
-        try:
-            res = requests.get(url, headers=self.headers)
-            res.encoding = 'utf-8'
-            print(f"categoryContent URL: {url}")
-            print(f"categoryContent Response Status: {res.status_code}")
-            print(f"categoryContent HTML length: {len(res.text)}")
-            
-            root = etree.HTML(res.text)
-            data_list = root.xpath('//li[contains(@class, "qy-mod-li")]')
-            
-            for i in data_list:
-                vod_id = i.xpath('.//a/@href')[0] if i.xpath('.//a/@href') else ''
-                name_nodes = i.xpath('.//a/@title')
-                vod_name = name_nodes[0].strip() if name_nodes else "未知"
-                pic_nodes = i.xpath('.//div[@class="qy-mod-cover"]/@style')
-                vod_pic = None
-                if pic_nodes:
-                    style = pic_nodes[0]
-                    match = re.search(r'url\((.*?)\)', style)
-                    vod_pic = match.group(1).strip() if match else None
-                if not vod_pic:
-                    vod_pic = self.placeholder_pic
-                if vod_pic.startswith('/'):
-                    vod_pic = self.home_url + vod_pic
-                remark_nodes = i.xpath('.//span[@class="qy-mod-label"]/text()')
-                vod_remarks = remark_nodes[0].strip() if remark_nodes else ''
-                
-                result['list'].append({
-                    'vod_id': vod_id,
-                    'vod_name': vod_name,
-                    'vod_pic': vod_pic,
-                    'vod_remarks': vod_remarks
-                })
-            
-            # 假設每頁最多 48 個項目，網站分頁上限為 5 頁
-            current_items = len(data_list)
-            total_pages = 5  # 網站分頁上限為 5
-            if current_items < 48:  # 如果當前頁項目少於 48，假設是最後一頁
-                total_pages = int(pg)
-            total_items = (int(pg) - 1) * 48 + current_items if total_pages == int(pg) else total_pages * 48
-            
-            result['page'] = int(pg)
-            result['pagecount'] = total_pages
-            result['limit'] = current_items
-            result['total'] = total_items
-        except Exception as e:
-            print(f"Error in categoryContent: {e}")
-        
-        return result
-
-    def detailContent(self, array):
-        result = {'list': []}
-        ids = array[0]
-        detail_url = f"{self.home_url}{ids}"
-        try:
-            res = requests.get(detail_url, headers=self.headers)
-            res.encoding = 'utf-8'
-            root = etree.HTML(res.text)
-            vod_name = root.xpath('//div[@class="right-title"]/text()')[0].strip() if root.xpath('//div[@class="right-title"]') else "未知"
-            vod_year = root.xpath('//div[@id="postYear"]/text()')[0].strip() if root.xpath('//div[@id="postYear"]') else ""
-            vod_area = root.xpath('//div[@id="region"]/text()')[0].strip() if root.xpath('//div[@id="region"]') else ""
-            vod_content = root.xpath('//div[@id="show-desc"]/text()')[0].strip() if root.xpath('//div[@id="show-desc"]') else ""
-            vod_remarks = root.xpath('//div[@id="updateTxt"]/text()')[0].strip() if root.xpath('//div[@id="updateTxt"]') else ""
-            vod_actor = root.xpath('//div[@id="actors"]/text()')[0].strip() if root.xpath('//div[@id="actors"]') else ""
-            vod_director = root.xpath('//div[@id="director"]/text()')[0].strip() if root.xpath('//div[@id="director"]') else ""
-            vod_pic = root.xpath('//img[@class="left-img"]/@src')[0] if root.xpath('//img[@class="left-img"]') else self.placeholder_pic
-            if vod_pic.startswith('/'):
-                vod_pic = self.home_url + vod_pic
-            
-            episodes = root.xpath('//div[@id="list-jj"]/a')
-            if not episodes:
-                vod = {
-                    'vod_id': ids,
-                    'vod_name': vod_name,
-                    'vod_pic': vod_pic,
-                    'type_name': '',
-                    'vod_year': vod_year,
-                    'vod_area': vod_area,
-                    'vod_remarks': vod_remarks,
-                    'vod_actor': vod_actor,
-                    'vod_director': vod_director,
-                    'vod_content': vod_content,
-                    'vod_play_from': '泥視頻',
-                    'vod_play_url': '第1集$https://www.nivod.cc/vodplay/202552243/ep1'
-                }
-            else:
-                play_from = set()
-                play_urls = {}
-                for ep in episodes[::-1]:
-                    ep_name = ep.xpath('.//div[@class="item"]/text()')[0].strip() if ep.xpath('.//div[@class="item"]') else "未知"
-                    ep_url = self.home_url + ep.get('href', '')
-                    vod_id = ids.split('/')[2]
-                    ep_id = ep_url.split('/')[-1]
-                    xhr_url = f"{self.home_url}/xhr_playinfo/{vod_id}-{ep_id}"
-                    res = requests.get(xhr_url, headers=self.headers)
-                    res.encoding = 'utf-8'
-                    data = res.json()
-                    if 'pdatas' in data and data['pdatas']:
-                        for source in data['pdatas']:
-                            source_name = source['from']
-                            play_from.add(source_name)
-                            if source_name not in play_urls:
-                                play_urls[source_name] = []
-                            play_urls[source_name].append(f"{ep_name}${source['playurl']}")
-                
-                vod_play_from = '$$$'.join(play_from)
-                vod_play_url = '$$$'.join(['#'.join(play_urls[source]) for source in play_from])
-                
-                vod = {
-                    'vod_id': ids,
-                    'vod_name': vod_name,
-                    'vod_pic': vod_pic,
-                    'type_name': '',
-                    'vod_year': vod_year,
-                    'vod_area': vod_area,
-                    'vod_remarks': vod_remarks,
-                    'vod_actor': vod_actor,
-                    'vod_director': vod_director,
-                    'vod_content': vod_content,
-                    'vod_play_from': vod_play_from,
-                    'vod_play_url': vod_play_url
-                }
-            result['list'].append(vod)
-        except Exception as e:
-            print(f"Error in detailContent: {e}")
-            result['list'].append({
-                'vod_id': ids,
-                'vod_name': '未知',
-                'vod_pic': self.placeholder_pic,
-                'vod_play_from': '泥視頻',
-                'vod_play_url': ''
-            })
-        return result
-
-    def searchContent(self, key, quick, pg='1'):
-        result = {'list': []}
-        try:
-            search_url = f"{self.home_url}/search_x.html?keyword={key}&page={pg}"
-            res = requests.get(search_url, headers=self.headers)
-            res.encoding = 'utf-8'
-            root = etree.HTML(res.text)
-            data_list = root.xpath('//a[contains(@class, "qy-mod-link")]')
-            for item in data_list:
-                name_nodes = item.xpath('.//picture[@class="video-item-preview-img"]/img/@alt')
-                vod_name = name_nodes[0].strip() if name_nodes else None
-                if not vod_name:
-                    vod_name = item.xpath('./@title')
-                    vod_name = vod_name[0].strip() if vod_name else "未知"
-                vod_id = item.get('href', '')
-                pic_nodes = item.xpath('.//picture[@class="video-item-preview-img"]/img/@src')
-                vod_pic = pic_nodes[0] if pic_nodes else self.placeholder_pic
-                if vod_pic.startswith('/'):
-                    vod_pic = self.home_url + vod_pic
-                vod_remarks = ''
-                result['list'].append({
-                    'vod_id': vod_id,
-                    'vod_name': vod_name,
-                    'vod_pic': vod_pic,
-                    'vod_remarks': vod_remarks
-                })
-        except Exception as e:
-            print(f"Error in searchContent: {e}")
-        return result
-
-    def playerContent(self, flag, id, vipFlags):
-        result = {}
-        try:
-            play_url = id.split('$')[1] if '$' in id else id
-            result = {
-                'url': play_url,
-                'header': json.dumps(self.headers),
-                'parse': 0,
-                'playUrl': ''
-            }
-        except Exception as e:
-            print(f"Error in playerContent: {e}")
-            result = {'url': '', 'parse': 0}
-        return result
-
-    def localProxy(self, param):
-        return [200, "video/MP2T", {}, b""]
+        pass
 
     def destroy(self):
         pass
+
+    headers = {
+        'AppID': '534',
+        'app_id': '534',
+        'version': '1.0.3',
+        'package': 'com.hjmore.wallpaper',
+        'user_id': '3507f394e83d2424',
+        'user-id': '3507f394e83d2424',
+        'app_name': 'lanlan',
+        'app-name': 'lanlan',
+        'Content-Type': 'application/json; charset=utf-8;',
+        'User-Agent': 'okhttp/4.9.0'
+    }
+
+    def homeContent(self, filter):
+        hdata=self.getdata('/api.php/provide/index',self.getbody({'tid':'0'}))
+        vlist=hdata['data'].get('tj',[])
+        result = {}
+        classes = []
+        filters = {}
+        for i in hdata['data']['sub_data']:
+            id=str(i['type_id'])
+            classes.append({'type_id': id, 'type_name': i['type_name']})
+            if len(i['data']):
+                vlist.extend(i['data'])
+        with ThreadPoolExecutor(max_workers=len(classes)) as executor:
+            results = executor.map(self.getf, classes)
+            for id, ft in results:
+                if len(ft):filters[id] = ft
+        result['class'] = classes
+        result['filters'] = filters
+        result['list'] = vlist
+        return result
+
+    def homeVideoContent(self):
+        pass
+
+    def categoryContent(self, tid, pg, filter, extend):
+        body={
+        "tid": tid,
+        "type": extend.get('type'),
+        "lang": extend.get('lang'),
+        "area": extend.get('area'),
+        "year": extend.get('year'),
+        "pg": pg
+        }
+        body = {k: v for k, v in body.items() if v is not None and v != ""}
+        data=self.getdata('/api.php/provide/nav',self.getbody(body))
+        result = {}
+        result['list'] = data['data']['data']
+        result['page'] = pg
+        result['pagecount'] = 9999
+        result['limit'] = 90
+        result['total'] = 999999
+        return result
+        pass
+
+    def detailContent(self, ids):
+        data=self.getdata('/api.php/provide/vod',self.getbody({'ids':ids[0]}))
+        vod=data['data']
+        plist=[]
+        names=[]
+        for i in vod['vod_play_url']:
+            ulist=[]
+            names.append(i['name'].split(' ')[0])
+            jdata={'parse':''}
+            if i.get('parse') and isinstance(i['parse'], list) and len(i['parse']):
+                jdata['parse']=self.e64(json.dumps(i['parse']))
+            for j in i['data']:
+                jdata['url']=j['url']
+                ulist.append(f'{j["name"]}${self.e64(json.dumps(jdata))}')
+            plist.append('#'.join(ulist))
+        vod['vod_play_from']='$$$'.join(names)
+        vod['vod_play_url']='$$$'.join(plist)
+        vod.pop('cover_list', None)
+        return {'list':[vod]}
+
+    def searchContent(self, key, quick, pg="1"):
+        body={"wd":key,"tid":"0","pg":pg}
+        data=self.getdata('/api.php/provide/search',self.getbody(body))
+        vlist=[]
+        for i in data['data']:
+            i.pop('vod_play_from', None)
+            vlist.append(i)
+        return {'list':vlist,'page':pg}
+
+    def playerContent(self, flag, id, vipFlags):
+        data=json.loads(self.d64(id))
+        parse=data.get('parse')
+        url,p,head = data.get('url'),1,''
+        if parse:
+            parse=json.loads(self.d64(parse))
+        if not re.search(r'\.m3u8|.mp4|\.flv', url) and parse:
+            for p in parse:
+                try:
+                    data=self.fetch(f'{p}{url}',self.headers).json()
+                    url=data.get('data',{}).get('url') or data.get('url')
+                    head=data.get('data',{}).get('header') or data.get('header')
+                    p=0
+                    break
+                except:
+                    p,url=1,data.get('url')
+                    head = {'User-Agent': 'okhttp/4.9.0'}
+        return  {'parse': p, 'url': url, 'header': head}
+
+    def localProxy(self, param):
+        pass
+
+    def getf(self, map):
+        ft,id =[], map['type_id']
+        try:
+            fdata = self.getdata('/api.php/provide/nav', self.getbody({'tid': id, 'pg': '1'}))
+            dy = ['area', 'year', 'lang', 'type']
+            fd = fdata['data']['type_extend']
+            has_non_empty_field = False
+            for key in dy:
+                if key in fd and fd[key].strip() != "":
+                    has_non_empty_field = True
+                    break
+            if has_non_empty_field:
+                for dkey in fd:
+                    if dkey in dy and fd[dkey].strip() != "":
+                        values = fd[dkey].split(",")
+                        value_array = [{"n": value.strip(), "v": value.strip()} for value in values if
+                                    value.strip() != ""]
+                        ft.append({"key": dkey, "name": dkey, "value": value_array})
+            return (id, ft)
+        except:
+            return (id, ft)
+
+    def getskey(self):
+        random_bytes = os.urandom(16)
+        return binascii.hexlify(random_bytes).decode()
+
+    def getohost(self):
+        url='https://bianyuan001.oss-cn-beijing.aliyuncs.com/huidu1.0.0.json'
+        response = self.fetch(url, headers=self.headers).json()
+        return response['servers'][0]
+
+    def gethost(self):
+        body={
+            "gr_rp_size": "1080*2272",
+            "gr_app_list": "%E5%B1%8F%E5%B9%95%E5%BD%95%E5%88%B6%EF%BC%88com.miui.screenrecorder%29%0A%E5%A4%B8%E5%85%8B%EF%BC%88com.quark.browser%29%0A%E8%BE%B9%E7%BC%98%E8%A7%86%E9%A2%91%EF%BC%88com.hjmore.wallpaper%29%0A%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%EF%BC%88tv.danmaku.bili%29%0A%E7%81%AB%E6%98%9F%E6%90%9C%E9%A2%98%EF%BC%88com.fenbi.android.souti%29%0A%E6%94%AF%E4%BB%98%E5%AE%9D%EF%BC%88com.eg.android.AlipayGphone%29%0AWPS%20Office%EF%BC%88cn.wps.moffice_eng%29",
+            "gr_lal": "0.0%2C0.0",
+            "gr_system_type": "android",
+            "gr_device_imei": "3507f394e83d2424",
+            "gr_app_version": "1.0.3",
+            "gr_device_model": "Xiaomi%20M2012K10C%20%28Android%20%E7%89%88%E6%9C%AC%3A%2011%2C%20SDK%E7%89%88%E6%9C%AC%3A%2030%29",
+            "gr_city": "%E8%B4%B5%E5%B7%9E%2C%E6%9C%AA%E7%9F%A5%2C%E6%9C%AA%E7%9F%A5",
+            "requestId": self.uuid(),
+            "timeStamp": str(int(time.time() * 1000)),
+            "version": "1.0.3",
+            "package": "com.hjmore.wallpaper",
+            "userLoginToken": "",
+            "app_id": "534",
+            "appName": 2131951658,
+            "device_id": "3507f394e83d2424",
+            "device-id": "3507f394e83d2424",
+            "oaid": "",
+            "imei": "",
+            "referer_shop": "边缘影视",
+            "referer-shop": "边缘影视",
+            "access_fine_location": 0,
+            "access-fine-location": 0
+        }
+        ohost = self.getohost()
+        data=self.getdata(f'/api.php/settings/grayscale_list',body,ohost)
+        parsed_url = urlparse(data['data']['grayscale']['server_url'][0])
+        domain = parsed_url.scheme + "://" + parsed_url.netloc
+        return domain
+
+    def drsa(self, encrypted_data):
+        private_key_pem = """-----BEGIN RSA PRIVATE KEY-----
+    MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDA5NWiAwRjH50/
+    IJY1N0zLopa4jpuWE7kWMn1Qunu6SjBgTvNRmRUoPDHn54haLfbfXIa2X+/sIaMB
+    /O3HhrpVsz55E5W2vpZ5fBYWh+M65bQERKTW+l72H7GR9x0yj3QPByzzfsj/QkyP
+    81prpwR9i8yMe7yG9TFKqUQCPE+/GrhNU1Qf6nFmV+vMnlP9DantkwAt4fPOMZn3
+    j4da65/1YQV+F5bYzaLenNVKbHf8U8fVYLZWIy4yk2Vpe4R2Z+JX/eHWsChE9hOu
+    iFm02eTW5NJLZlWUxYrSE23VXi8oXSEdON3UEOrwSdAUh4SXxLZ9U7KpNVdTwWyR
+    AS4GyzJ/AgMBAAECggEBAKzmcXefLLeNBu4mz30z7Go7es5DRcLoOudiqmFKRs1c
+    4q/xFLj3drdx/WnZZ6ctvDPKRBYFOJF4NRz7Ekfew/c9i6oLnA8KFuceCs53T37j
+    ltCclwT7t1L2ZbxovIsteuJdlDVOV+w2CVqez1Xfh27heKAT6ZEvBtfdkVBPr0uj
+    oVwa2+XlJmYZw5dHeB7ySVeAQ+69zDuADB8OWxPWsv6Del+Fhf0kTHAw4WgqcYsd
+    JUunCjgLdJUlDgXzH/M/Nj8NYVEuq6QpmhaktJ4fwn/F7u3lQllVCFKj5lr0Xb92
+    y7lvQlGqMKX1oxf+P5c5/vie1kDx1Rj4S++flIcVlUECgYEA4BuxCZ1c8oOF98bs
+    KTAONnnZniQ1BRt7rA+O9+++lDjxJhxkuthwjB9YzrnZtxHJtvIIie9Jv8MVfzHa
+    p2woDtiEh3YYwmIlgNUFvTcGe++tTiEiLDcGc/xNhpvfbLaw9QB7/HQ+LT1QCMxJ
+    ufdBrR98l0khIGjYqxDW3W5pV70CgYEA3Ff/9+GM2XI/EUSTYrpnwp5R5OsXz1DL
+    3CFFgp1EPCNk/c3YNWnrUtTkfmKAlRqWIHfphvH/jS6jpGrfRxDggPwGMtBc134b
+    brIM5i4KNj/EcE+w5g03HaKBf1ZihHDQ53c6wTn6IFOHJNSPRLqMNqRymfbclNyO
+    lBMHQmB8yOsCgYBCdZPTwRnuRTi2WQRx1nFwkEQL1Lrwb80GInsIZc2DkTtaTPNG
+    QadmtmkUrSK2Wo0SNsZ3eUHKn2TBmpw4KCfc9zKeJVSEWKy8fu+7xBSlLlebotHK
+    gOrl/H1VHOZuC+OAVItwO1yw98zDPynh/0Q3ve2pw6MSRGV0nYLKmdKdlQKBgQCJ
+    Ty1rw1qKhu9WS22tMIxIc3CFPxtvTeI8I1+1rVtAPq5Im2YIoyDKVXCucaO/RvoW
+    8aLNPTELQe0oIJFTL+k3d9ZFBCNXBncB3GK9biNe+w3nD0IlmkamaQZZ2/M4pTUJ
+    iPtMPlzomCS3ht5g7f9CbegcmgGLooYXMGRtsMMSUQKBgQCoj+3UciH2i+HyUla5
+    1FxivjH3MqSTE4Q7OdzrELb6DoLYzjgWAbpG8HIuodD4uG5xz1oR5H7vkblf1itB
+    hwOwDEiabyX76e/I3Q0ovwBV+9PMjM4UVU0kHoiu3Z2s90ckwNh58w3QH5fn9E0b
+    fqMnB6uWze+xrXWijaOzVZhIZg==
+    -----END RSA PRIVATE KEY-----"""
+        private_key = RSA.import_key(private_key_pem)
+        cipher = PKCS1_v1_5.new(private_key)
+        decrypted_data = cipher.decrypt(b64decode(encrypted_data), None)
+        return decrypted_data.decode('utf-8')
+
+    def ersa(self, data):
+        public_key = """-----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA+0QMb3WDXjNBRovRhTLH
+    g3d+CliZAva2tepWNNN0Pj6DgE3ZTnPR34iL/cjo9Jbd3dqAJs/YkKnFurGkDxz5
+    TthIqvmz244wiFcHt+FGWoJsj5ZVvrH3pPwH85ggmI1DjxSJEUhB12Z9X6FGli8D
+    drR9xeLe5y8vFekux8xCQ7pwH1mNQu4Wy32WVM8aLjmRjNzEWOvEMAWCRuwymEdS
+    zlWoH53qk1dqd6DAmOJhWU2hH6Yt2ZY9LTaDGiHrS+g0DuwajAQzhbM8eonGYMph
+    nP4q0UTHWEfaGR3HoILmeM32M+qF/UCGfgfR6tCMiXPoHwnD2zoxbZ2p+QlYuTZL
+    vQIDAQAB
+    -----END PUBLIC KEY-----"""
+        key = RSA.importKey(public_key)
+        cipher = PKCS1_v1_5.new(key)
+        encrypted = cipher.encrypt(data.encode())
+        return b64encode(encrypted).decode()
+
+    def eaes(self, data, key):
+        key = key.encode('utf-8')
+        cipher = AES.new(key, AES.MODE_ECB)
+        padded = pad(data.encode('utf-8'), AES.block_size)
+        encrypted = cipher.encrypt(padded)
+        word = b64encode(encrypted).decode('utf-8')
+        return word
+
+    def daes(self, encrypted_data, key):
+        key = key.encode('utf-8')
+        cipher = AES.new(key, AES.MODE_ECB)
+        encrypted = b64decode(encrypted_data)
+        decrypted = cipher.decrypt(encrypted)
+        unpadded = unpad(decrypted, AES.block_size)
+        return unpadded.decode('utf-8')
+
+    def getbody(self,params=None):
+        body = {
+            "requestId": self.uuid(),
+            "timeStamp": str(int(time.time()*1000)),
+            "version": "1.0.3",
+            "package": "com.hjmore.wallpaper",
+            "userLoginToken": "",
+            "app_id": "534",
+            "appName": 2131951658,
+            "device_id": "3507f394e83d2424",
+            "device-id": "3507f394e83d2424",
+            "oaid": "",
+            "imei": "",
+            "referer_shop": "边缘影视",
+            "referer-shop": "边缘影视",
+            "access_fine_location": 0,
+            "access-fine-location": 0
+        }
+        if params:
+            body.update(params)
+        return body
+
+    def getdata(self, path, body,host=None):
+        jdata=json.dumps(body)
+        msign = self.md5(jdata)
+        skey = self.getskey()
+        jsign={'key': skey,'sign': msign}
+        Sign=self.ersa(json.dumps(jsign))
+        header=self.headers.copy()
+        header['Sign']=Sign
+        dbody=self.eaes(jdata, skey)
+        response = self.post(f'{host or self.host}{path}', headers=header, data=dbody)
+        rdata=response.text
+        if response.headers.get('Sign'):
+            dkey=self.drsa(response.headers['Sign'])
+            rdata=self.daes(rdata, dkey)
+        return json.loads(rdata)
+        
+    def e64(self, text):
+        try:
+            text_bytes = text.encode('utf-8')
+            encoded_bytes = b64encode(text_bytes)
+            return encoded_bytes.decode('utf-8')
+        except Exception as e:
+            print(f"Base64编码错误: {str(e)}")
+            return ""
+
+    def d64(self,encoded_text):
+        try:
+            encoded_bytes = encoded_text.encode('utf-8')
+            decoded_bytes = b64decode(encoded_bytes)
+            return decoded_bytes.decode('utf-8')
+        except Exception as e:
+            print(f"Base64解码错误: {str(e)}")
+            return ""
+        
+    def md5(self,text):
+        h = MD5.new()
+        h.update(text.encode('utf-8'))
+        return h.hexdigest()
+    
+    def uuid(self):
+        return str(uuid.uuid4())
+
+
