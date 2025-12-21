@@ -11,9 +11,16 @@ var rule={
     //cate_exclude:'演员',
     class_name:'电视剧&电影&动漫&综艺&短剧&纪录片',
     class_url:'2&1&4&3&21&23',  
-    推荐:'body&&.hl-list-wrap;ul&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    double:true, // 推荐内容是否双层定位
-    一级:'.hl-vod-list&&li;a&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-    二级:{"title":".hl-dc-title&&Text;.hl-col-xs-12&&em&&.hl-text-muted:eq(-2)&&Text","img":".hl-lazy&&data-original","desc":";;.hl-col-xs-12:eq(5)&&Text;.hl-col-xs-12:eq(3)&&Text;.hl-col-xs-12:eq(4)&&Text","content":".hl-content-text&&Text","tabs":".hl-plays-from a","lists":".hl-plays-list:eq(#id) li"},
-    搜索:'.hl-list-wrap&&ul&&li;.hl-item-thumb&&title;.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
-}
+    推荐:'ul.hl-vod-list;li;a&&title;.hl-item-thumb.hl-lazy&&data-original;.hl-pic-text&&Text;a&&href',
+    double: true,
+     一级: '.hl-vod-list li;a&&title;a&&data-original;.hl-lc-1&&Text;a&&href',
+     二级:{
+            'title':'.h1&&Text;.data:eq(0)&&Text',
+            'img':'.hl-item-thumb&&data-original',
+            'desc':'.hl-infos-content&&.hl-text-conch&&Text',
+            'content':'.hl-content-text&&Text',
+            'tabs':'.hl-tabs&&a',
+            'lists':'.hl-plays-list:eq(#id)&&li'
+         },
+     搜索: '.hl-list-item;a&&title;a&&data-original;.remarks&&Text;a&&href'
+    }
