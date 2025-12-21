@@ -39,7 +39,7 @@ class Spider(Spider):
         return False
 
     def homeContent(self, filter):
-        categories = "電影$movie#電視劇$tv#綜藝$show#動漫$anime"
+        categories = "电影$movie#电视剧$tv#综艺$show#动漫$anime"
         class_list = [{'type_id': v.split('$')[1], 'type_name': v.split('$')[0]} for v in categories.split('#')]
         filters = {
             'movie': [
