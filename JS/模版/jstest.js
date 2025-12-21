@@ -1,6 +1,8 @@
 var rule = {
 	title: '大米星球[V2]', // csp_AppYsV2
-	host:'https://www.dmxq.vip',
+	host:'https://www.dmh7p6s3a5.shop',
+	//https://www.dmxq.vip
+	//https://www.dmh7p6s3a5.shop/vodshow/21-----------.html
     hostJs:'print(HOST);let html=request(HOST,{headers:{"User-Agent":PC_UA}});let src=jsp.pdfh(html,"ul&&li:eq(1)&&a&&href");print(src);HOST=src+"/api.php/app/"',
 	url: 'video?tid=fyclassfyfilter&limit=20&pg=fypage',
 	filter_url:'&class={{fl.class}}&area={{fl.area}}&lang={{fl.lang}}&letter={{fl.letter}}&year={{fl.year}}&by={{fl.by}}',
