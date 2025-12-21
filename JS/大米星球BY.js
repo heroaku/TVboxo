@@ -1,6 +1,8 @@
 var rule={
     title: '大米星球BY',
     host: 'https://www.dmq8a2x9s1.shop',
+    //https://www.dmxq.vip
+	//https://www.dmh7p6s3a5.shop/vodshow/21-----------.html
     url: '/vodshow/fyclass--------fypage---.html',
     searchUrl: '/vodsearch/**----------fypage---.html',
     //https://www.dmq8a2x9s1.shop/vodshow/fyclass--------fypage---.html  https://www.dmq8a2x9s1.shop/vodsearch/**----------fypage---.html
