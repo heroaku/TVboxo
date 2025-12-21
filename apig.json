@@ -1010,6 +1010,21 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/金牌影院JP.js"
         },
+			{
+            "key": "大米星球DM",
+            "name": "大米星球DM",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/大米星球DM.js"
+        },	
+			{
+		    "key": "大米星球BY",
+		    "name": "大米星球BY",
+		    "type": 3,
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"api": "./JS/drpy2.min.js",
+		    "ext": "./JS/大米星球BY.js"
+			},	
 	        {
             "key": "荐片",
             "name": "荐片┃影视",
@@ -1025,6 +1040,14 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/荐片影视.js"
         },
+			{
+			"key": "枫林影视",
+			"name": "枫林影视",
+			"type": 3,
+			"api": "./JS/drpy2.min.js",
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"ext": "./JS/枫林影视.js"
+			},	
 		{
             "key": "剧迷影视",
             "name": "剧迷影视",
@@ -1032,6 +1055,13 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/剧迷影视.js"
         },
+				{
+            "key": "555影视",
+            "name": "555影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+            "ext": "./JS/555影视.js"
+        },	
 		//{"key": "柏彩影视","name": "柏彩影视","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/柏彩影视.js"},	
 		//{"key": "多瑙影视","name": "多瑙影视","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/多瑙影视.js"},
 		//{"key": "万象影视","name": "万象影视","type": 3,"api": "./JS/drpy2.min.js","ext": "./JS/万象影视.js"},
@@ -1125,20 +1155,6 @@
 			"api": "./JS/drpy2.min.js",
 		    "ext": "./JS/全网影视.js"
 			},		
-		{
-            "key": "黑夜影视",
-            "name": "黑夜影视",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/黑夜影视.js"
-        },	
-		{
-            "key": "映像星球",
-            "name": "映像星球",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/映像星球.js"
-        },	
 			{
             "key": "淘剧影视",
             "name": "淘剧影视",
@@ -1168,21 +1184,6 @@
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/哈哈影视.js"
         },	
-			{
-            "key": "大米星球DM",
-            "name": "大米星球DM",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/大米星球DM.js"
-        },	
-			{
-		    "key": "大米星球BY",
-		    "name": "大米星球BY",
-		    "type": 3,
-			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
-			"api": "./JS/drpy2.min.js",
-		    "ext": "./JS/大米星球BY.js"
-			},	
 			{
 		    "key": "夕云影视",
 		    "name": "夕云影视",
@@ -1222,25 +1223,11 @@
             "ext": "./JS/蘑菇影视.js"
         },	
 			{
-            "key": "SQZ影视",
-            "name": "SQZ影视",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/SQZ影视.js"
-        },	
-			{
             "key": "看片狂",
             "name": "片狂┃影视",
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/看片狂.js"
-        },	
-				{
-            "key": "SKR影院",
-            "name": "SKR影院",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/SKR影院.js"
         },	
 			{
             "key": "234影院",
@@ -1279,22 +1266,6 @@
             "ext": "./JS/飞飞影视.js"
         },
 				{
-            "key": "皮皮狮影视",
-            "name": "皮皮狮影视",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
-            "ext": "./JS/皮皮狮影视.js"
-        },	
-			{
-			"key": "枫林影视",
-			"name": "枫林影视",
-			"type": 3,
-			"api": "./JS/drpy2.min.js",
-			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
-			"ext": "./JS/枫林影视.js"
-			},	
-				{
             "key": "茉小影视",
             "name": "茉小影视",
             "type": 3,
@@ -1302,13 +1273,6 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/茉小影视.js"
         },		
-			{
-            "key": "555影视",
-            "name": "555影视",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/555影视.js"
-        },	
 			{
             "key": "泥视频",
             "name": "泥视频",
@@ -1374,14 +1338,6 @@
 		      "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
 		      "ext": "./XBPQ/白票影视X.json"
 		    },
-			{
-			"key": "糖豆影视",
-			"name": "糖豆影视",
-			"type": 3,
-			"api": "./JS/drpy2.min.js",
-			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
-			"ext": "./JS/糖豆影视.js"
-			},	
 				{
 			"key": "好看影视",
 			"name": "好看影视",
@@ -1400,13 +1356,6 @@
 	  "filterable": 1,
 	  "ext": "./XBPQ/袋鼠影视.json"
 	},
-			{
-            "key": "旗星影视",
-            "name": "旗星影视",
-            "type": 3,
-			"api": "./JS/drpy2.min.js",
-            "ext": "./JS/旗星影视.js"
-        },
 			{
             "key": "EU影视",
             "name": "EU影视",
@@ -1594,9 +1543,6 @@
                 "分类url": "https://www.ylys.tv/vodshow/{cateId}-{area}-{by}-{class}-{lang}-{letter}---{catePg}---{year}.html"
             }
         },
-		{"key": "雪糕影视","name": "雪糕影视🎦XB","type": 3,"api": "csp_XBPQ","ext": 
-		{
-		"分类url": "https://www.xgitv.com/vshow/{cateId}-{area}-{by}-{class}-----{catePg}---{year}.html;;rc","分类": "电影$1#剧集$2#综艺$3#动漫$4"}},
     {
       "key": "星芽短剧",
       "name": "星芽｜短剧",
@@ -2171,63 +2117,8 @@
       "filterable": 1,
       "ext": "http://v.cute6.cn/api.php/v1.vod"
     },
-
-
-
-        {
-            "key": "专享影视",
-            "name": "专享影视",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/专享影视.js"
-        },
-	{
-            "key": "春华影院",
-            "name": "春华影院",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/春华影院.js"
-        },
-
-	{
-            "key": "泥视频Ⅱ",
-            "name": "泥视频Ⅱ",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/泥视频Ⅱ.js"
-        },
-	{
-            "key": "火车太堵",
-            "name": "火车太堵",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/火车太堵.js"
-        },
-	{
-            "key": "CN影视",
-            "name": "CN影视",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/CN影视.js"
-        },
-	{
-            "key": "西瓜在线",
-            "name": "西瓜在线",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/西瓜在线.js"
-        },
-
 	//{"key": "网飞猫","name": "网飞猫","type": 3,"jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7","api": "./JS/drpy2.min.js","ext": "./JS/网飞猫.js"},
-	{
-            "key": "瓜子影视1",
-            "name": "瓜子影视",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/瓜子影视.js"
-        },
-	{ "key": "金牌影视", "name": "金牌 | 影视", "type": 3, "api": "./JS/drpy2.min.js", "ext": "./JS/金牌影视.js" }, 
-	{ "key": "dr_低端", "name": "低端 | 影视", "type": 3, "api": "./JS/drpy2.min.js", "searchable": 1, "playerType": 2, "quickSearch": 1, "filterable": 1, "ext": "./JS/ddys.js" }, 
+	{ "key": "金牌影视1", "name": "金牌JS | 影视", "type": 3, "api": "./JS/drpy2.min.js", "ext": "./JS/金牌影视.js" }, 
   	{
             "key": "统一影视",
             "name": "统一影视",
@@ -2235,37 +2126,6 @@
             "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
             "api": "./JS/drpy2.min.js",
             "ext": "./JS/统一影视.js"
-        },
-	{
-            "key": "宝片视频",
-            "name": "宝片视频",
-            "type": 3,
-            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/宝片视频.js"
-        },
-	{
-            "key": "皮皮影视",
-            "name": "皮皮影视",
-            "type": 3,
-            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/皮皮影视.js"
-        },
-	{
-            "key": "YGG影视",
-            "name": "YGG影视",
-            "type": 3,
-            "jar": "./spider.jar;md5;7e2f6ef2a5dce8b152dadefa6c7d4ba7",		
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/YGG影视.js"
-        },
-	{
-            "key": "流光影视",
-            "name": "流光影视",
-            "type": 3,
-            "api": "./JS/drpy2.min.js",
-            "ext": "./JS/流光影视.js"
         },
 	{
       "key": "xpyg",
@@ -2276,35 +2136,8 @@
       "changeable": 1,
       "ext": "./XBPQ/预告新片.json"
     },
-        {
-      "key": "十六万MV听歌📣",
-      "name": "MV曲库",
-      "type": 3,
-      "api": "http://zb.hys.cool/app/lib/16万hys.js",
-      "ext": "http://zb.hys.cool/app/lib/16万mv.js"
-    },
+
 //添加结束
-	{
-            "key": "酷影视",
-            "name": "酷影视｜APP",
-            "type": 3,
-            "api": "csp_AppYsV2",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "https://www.tvkuys.xyz/api.php/app/"
-        },
-        {
-            "key": "新感觉",
-            "name": "新感觉｜APP",
-            "type": 3,
-            "api": "csp_AppYsV2",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "ext": "http://43.248.100.147:9892/api.php/app/"
-        },
-	{ "key": "泥视频i", "name": "泥视频 I | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/%E6%B3%A5%E8%A7%86%E9%A2%91.json" },
 	{ "key": "GimyTV", "name": "剧迷 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/gimyTV.json" },
 	{ "key": "cnflix", "name": "CNFLIX | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "timeout": 60, "ext": "./XBPQ/cnflix.json" },
 	{ "key": "哈哈影视", "name": "哈哈 | 影视", "type": 3, "api": "csp_XBPQ", "searchable": 1, "quickSearch": 1, "filterable": 1, "ext": "./XBPQ/哈哈影视.json" },
