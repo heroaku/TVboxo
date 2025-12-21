@@ -1,7 +1,6 @@
-	var rule={
-    title: '大米星球',
-    host: 'https://www.dmyy1.com',
-    //url: '/vodshow/fyclass--------fypage---.html',
+var rule={
+    title: '555影视',
+    host: 'https://www.55yy7.com',
     searchUrl: '/search/**----------fypage---.html',
   //https://www.dmyy1.com/vodshow/21--------2---.html
     //https://yxxq1.cc/search/**----------fypage---.html
