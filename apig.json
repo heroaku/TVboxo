@@ -248,7 +248,9 @@
 {"key":"py_旗星_APP","name":" 🧿旗星(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://ys.qist.top","api":"/api.php/getappapi","datakey":"2SWSPFxugBLPPOKo","dataiv":"2SWSPFxugBLPPOKo"}},
 {"key":"py_猪猪_APP","name":" 🧿猪猪(APP)","type":3,"api":"./Py/app/AppV2.py","searchable":1,"quickSearch":1,"filterable":1,"playerType":2,"ext":{"api":"http://dmmax.juxiafan.com/icciu_api.php/v1.vod","datasignkey":"6QQNUsP3PkD2ajJCPCY8","apisignkey":"lvdoutv-1.0.0"}},
 //APP 结束
-	
+{"key": "恋鱼影视","name": "🌹恋鱼┃APP","type": 3,"changeable": 0,"jar": ".Jar/vox.jar","api": "csp_Appfox","ext": {"host": "https://173220859-1333208043.cos.ap-shanghai.myqcloud.com/1.json","ver": 2}},
+{"key": "麒麟影院","name": "🐩麒麟┃APP","type": 3,"changeable": 0,"jar": ".Jar/vox.jar","api": "csp_Appfox","ext": {"host": "https://www.70yyw.cc","ver": 2}},	
+
 {"key":"csp_Gz360","name":"🍉瓜子","type":3,"api":"csp_Gz360","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"天天","name":"⛅天天","type":3,"api":"csp_TTian","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg0939791h1l3888jig44gi291li"},
 {"key":"金牌SP","name":"🥇金牌SP","type":3,"api":"csp_Jpys","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i7942463j9j9jh8579590k3hjii5gi4i73l2k5l"},
