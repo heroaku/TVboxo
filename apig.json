@@ -790,14 +790,14 @@
             "playerType": 2
         },
 		    {
-		      "key": "py_萝卜app",
-		      "name": "萝卜PY｜影视",
+		      "key": "py_可可",
+		      "name": "可可PY｜影视",
 		      "type": 3,
 		      "changeable": 1,
 		      "searchable": 1,
 		      "quickSearch": 1,
 		      "filterable": 1,
-		      "api": "./Py/LBYS.py"
+		      "api": "./Py/可可.py"
 		    },
 			    {
 		      "key": "py_金牌app",
