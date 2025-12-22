@@ -239,27 +239,27 @@
 	//GM结束
 	
 {"key":"csp_Gz360","name":"🍉瓜子","type":3,"api":"csp_Gz360","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_LiteApple","name":"🍎苹果","type":3,"api":"csp_LiteApple","searchable":1,"quickSearch":1,"filterable":1},
+//{"key":"csp_LiteApple","name":"🍎苹果","type":3,"api":"csp_LiteApple","searchable":1,"quickSearch":1,"filterable":1},
 //{"key":"巧技二","name":"💢聚搜┃仅搜索","type":3,"api":"csp_qiao2","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i79425739i7jghj118797l4hj840gi18633331l4708g2h7145403549g44l8ii56i187681hkjj3hhgh1ih3l32j250lk1k786lj20j468hk3hli4l46gig4i3g7g2722328j0136h01i7g5183k22k7gg3i72hk81gl8k9839kl7i0707"},
 {"key":"天天","name":"⛅天天","type":3,"api":"csp_TTian","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg0939791h1l3888jig44gi291li"},
-{"key":"追剧","name":"✈追剧","type":3,"api":"csp_TTian","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg0939791h1l2681i6g94li291li"},
+//{"key":"追剧","name":"✈追剧","type":3,"api":"csp_TTian","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg0939791h1l2681i6g94li291li"},
 {"key":"金牌SP","name":"🥇金牌SP","type":3,"api":"csp_Jpys","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i7942463j9j9jh8579590k3hjii5gi4i73l2k5l"},
- {"key": "金牌APP","name": "金牌┃APP","type": 3,"searchable": 1,"changeable": 1,"api": "csp_AppQi","ext": {"site": "https://dtqj1.gg1080.com:443/dtjp.txt","dataKey": "kecbio48dsq131ed","dataIv": "kecbio48dsq131ed"}, "jar": "./tvkj.jar"},
+// {"key": "金牌APP","name": "金牌┃APP","type": 3,"searchable": 1,"changeable": 1,"api": "csp_AppQi","ext": {"site": "https://dtqj1.gg1080.com:443/dtjp.txt","dataKey": "kecbio48dsq131ed","dataIv": "kecbio48dsq131ed"}, "jar": "./tvkj.jar"},
 {"key":"巧技三","name":"⚡QD4K","type":3,"api":"csp_Qiji","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg0939791i5820839jhg498h93ljh9i353ihi73l2k5l5j48g4l21j035j01850ig6i904998l6j09g1j0g1l712hlg37g670ll5k39jl62jj329kl3ilj19"},
-{"key":"yizhan","name":"🚗驿站","type":3,"api":"csp_Qiji","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i7942552h8ljjlj0jjki7g4lg99099jjh6l6l514k08hjl807161j139753h090539gig3604gi80lgl30jk3hk637h53gh9ljkij2lig30k277g50354k2k3jkl1g17i2820ii582l0483g61k6i79k7kk7274h1i5g6jjj833h2390k42396hik71kigl18k613"},
-{"key":"趣看","name":"🎐趣看","type":3,"api":"csp_Qiji","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i7942552h8ljjlj0jjki7g4lg99099jjh6l6l514k08hjl807161j139753h090539gig3604gi80lgl30jk3hk637h53gh9ljkij2lig30k277g50354k2k3jkl1g17i2820ii582l0483g61k6i79k7kk7274h1i5g6jjj833h2390k42396hik71kigl18k613"},
+//{"key":"yizhan","name":"🚗驿站","type":3,"api":"csp_Qiji","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i7942552h8ljjlj0jjki7g4lg99099jjh6l6l514k08hjl807161j139753h090539gig3604gi80lgl30jk3hk637h53gh9ljkij2lig30k277g50354k2k3jkl1g17i2820ii582l0483g61k6i79k7kk7274h1i5g6jjj833h2390k42396hik71kigl18k613"},
+//{"key":"趣看","name":"🎐趣看","type":3,"api":"csp_Qiji","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i7942552h8ljjlj0jjki7g4lg99099jjh6l6l514k08hjl807161j139753h090539gig3604gi80lgl30jk3hk637h53gh9ljkij2lig30k277g50354k2k3jkl1g17i2820ii582l0483g61k6i79k7kk7274h1i5g6jjj833h2390k42396hik71kigl18k613"},
 {"key":"狂风","name":"🌪狂风","type":3,"api":"csp_Xdai","playerType":2,"searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i79425533i486k8459ljik4g1jg41k6gi0h2850784gj2lk207j5k2ji745gl8478h6h3321l84j2j7lh2li1g0562546ligk98gi74"},
 {"key":"永夜","name":"🌙永夜","type":3,"api":"csp_Xdai","playerType":2,"searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg0939790i413gjh9kk011jijiggll990k9li73l224k770ik0j10l502j2j9l798lhj778hh33g018h94k5j400kij3567j7gji97kkk4118421g03lll"},
-{"key":"时常","name":"🏛时常","type":3,"api":"csp_Qiji","playerType":1,"searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i7942552h8ljjlj0jjki7g4lg99099jjh6l6l514k08hjl807161j139753h090539gig3604gi80lgl30jk3hk637h53gh9ljkij2lig30k277g50354k2k3jkl1g17i2820ii582l0483g61k6i79k7kk7274h1i5g6jjj833h2390k42396hik71kigl18k613"},
+//{"key":"时常","name":"🏛时常","type":3,"api":"csp_Qiji","playerType":1,"searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i7942552h8ljjlj0jjki7g4lg99099jjh6l6l514k08hjl807161j139753h090539gig3604gi80lgl30jk3hk637h53gh9ljkij2lig30k277g50354k2k3jkl1g17i2820ii582l0483g61k6i79k7kk7274h1i5g6jjj833h2390k42396hik71kigl18k613"},
 //{"key":"Hudie","name":"🦋蝴蝶","type":3,"api":"csp_Xdai","playerType":2,"searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg0939791h1l239kj0g853i291lik7jk45j8i66j6l46590lkli918523h02826lh29i74948i3116h18kkgii17kki579606ik1h6kjlh2k8l36ll62h11k10g8"},
 {"key":"主角","name":"🍃主角","type":3,"api":"csp_Muou","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i794247258k9jh6598585l3g6ij13il8g20g9qiaoji8j9i9k1g3k90h7i507i213k5j602"},
 {"key":"云云","name":"☁云云","type":3,"api":"csp_Qiji","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg402i79425h2384j4g949j899hll9990i9kjl6l740h1342hjlg1848401g8610h9995i998j351gl38kklkj1hkhll757010k7hji6h377ih37k060g35161jhl3i5h0l2702g7299452l4297k5697g5390lk6935k2i9g48l8j2kh27l1g014k7j9475g8"},
-{"key":"csp_Wwys","name":"👩‍🌾农民","type":3,"api":"csp_Wwys","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://vip.wwgz.cn:5200/"},
-{"key":"csp_SaoHuo","name":"🔥骚火","type":3,"api":"csp_SaoHuo","playerType":2,"searchable":1,"quickSearch":1,"filterable":1,"ext":"https://shdy5.us"},
+//{"key":"csp_Wwys","name":"👩‍🌾农民","type":3,"api":"csp_Wwys","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://vip.wwgz.cn:5200/"},
+//{"key":"csp_SaoHuo","name":"🔥骚火","type":3,"api":"csp_SaoHuo","playerType":2,"searchable":1,"quickSearch":1,"filterable":1,"ext":"https://shdy5.us"},
 {"key":"csp_FourK","name":"🌋绝对","type":3,"api":"csp_FourK","playerType":"2","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://www.4kvm.me/"},
 {"key":"csp_Qiyou","name":"🦌奇优","type":3,"api":"csp_Qiyou","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Tvyb","name":"☁️TVB云播","type":3,"api":"csp_Tvyb","playerType":2,"searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Lkdy","name":"🏔️来看","type":3,"api":"csp_Lkdy","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://lkvod.com"},
+//{"key":"csp_Tvyb","name":"☁️TVB云播","type":3,"api":"csp_Tvyb","playerType":2,"searchable":1,"quickSearch":1,"filterable":1},
+//{"key":"csp_Lkdy","name":"🏔️来看","type":3,"api":"csp_Lkdy","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://lkvod.com"},
 	{"key": "可可影视","name": "可可影视","type": 3,"searchable": 2,"quickSearch": 0,"filterable": 1,"api": "./JS/drpy2.min.js","ext": "./JS/可可影视.js"},
 	//{"key": "dr_可可影视[优]","name": "可可影视","type": 3,"api": "https://github.com/heroaku/Dr/raw/refs/heads/master/libs/drpy2.min.js","searchable": 2,"quickSearch": 0,"filterable": 1,"ext": "./JS/可可影视.js"},
 			{
@@ -270,39 +270,7 @@
 		"ext": "./JS/03影视.js"
 		},
 #7080    
-	   {
-      "key": "咖啡",
-      "name": "咖啡丨APP",
-      "type": 3,
-      "quickSearch": 1,
-      "jar": "./tvkj.jar",
-	  "api": "csp_AppQi",
-      "ext": {
-        "url": "",
-        "site": "https://daen-1256234123.cos.ap-shanghai.myqcloud.com/MuQi/mqxh.txt",
-        "dataKey": "37kj83zs1q16jk6t",
-        "dataIv": "37kj83zs1q16jk6t",
-        "deviceId": "",
-        "version": "101",
-        "ua": ""
-      }
-    },
-	 {
-      "key": "蓝鹰",
-      "name": "蓝鹰｜APP",
-      "type": 3,
-      "quickSearch": 1,
-      "jar": "./tvkj.jar",		 
-      "api": "csp_AppQi",
-      "ext": {
-        "url": "",
-        "site": "https://lanyinghz.oss-cn-hangzhou.aliyuncs.com/lanyingxmy.txt",
-        "dataKey": "ca94b06ca359d80e",
-        "dataIv": "ca94b06ca359d80e",
-        "deviceId": "",
-        "version": "120"
-      }
-    },
+
 	{
       "key": "仓鼠",
       "name": "仓鼠｜APP",
@@ -319,40 +287,7 @@
         "version": "120"
       }
     },
-	 {
-      "key": "热剧",
-      "name": "热剧丨APP",
-      "type": 3,
-      "quickSearch": 1,
-      "jar": "./tvkj.jar",		 
-      "api": "csp_AppQi",
-      "ext": {
-        "url": "https://www.rebovod.com",
-        "site": "",
-        "dataKey": "8191A7F47B37882F",
-        "dataIv": "8191A7F47B37882F",
-        "deviceId": "",
-        "version": "",
-        "ua": ""
-      }
-    },
-	  {
-      "key": "影视",
-      "name": "影视丨APP",
-      "type": 3,
-      "quickSearch": 1,
-      "jar": "./tvkj.jar",		  
-      "api": "csp_AppQi",
-      "ext": {
-        "url": "",
-        "site": "https://aysappto.oss-cn-chengdu.aliyuncs.com/qj2.txt",
-        "dataKey": "sada21321sdq231d",
-        "dataIv": "sada21321sdq231d",
-        "deviceId": "",
-        "version": "",
-        "ua": ""
-      }
-    },
+
     //{"key": "影视","name": "映射｜APP","type": 3,"quickSearch": 1,"api": "csp_AppQi","ext": {"url": "","site": "https://aysappto.oss-cn-chengdu.aliyuncs.com/qj2.txt","dataKey": "sada21321sdq231d","dataIv": "sada21321sdq231d","deviceId": "","version": "","ua": ""}},
     //{"key": "影视","name": "☀映射🔹4k源","type": 3,"quickSearch": 1,"api": "csp_AppQi","ext": {  "url": "",  "site": "https://aysappto.oss-cn-chengdu.aliyuncs.com/qj2.txt",  "dataKey": "sada21321sdq231d",  "dataIv": "sada21321sdq231d",  "deviceId": "",  "version": "",  "ua": ""}    },
 	    {
@@ -401,40 +336,6 @@
         "site": "",
         "dataKey": "ab4e9a421675f14b",
         "dataIv": "ab4e9a421675f14b",
-        "deviceId": "",
-        "version": "",
-        "ua": ""
-      }
-    },
-	{
-      "key": "星星",
-      "name": "星星丨APP",
-      "type": 3,
-      "quickSearch": 1,
-      "jar": "./tvkj.jar",		
-      "api": "csp_AppGet",
-      "ext": {
-        "url": "http://starani.qcanime.xyz",
-        "site": "",
-        "dataKey": "123456789StarAni",
-        "dataIv": "123456789StarAni",
-        "deviceId": "",
-        "version": "",
-        "ua": "okhttp/3.10.0 BDYS/109.0.0.8"
-      }
-    },
-	 {
-      "key": "驿站",
-      "name": "驿站丨APP",
-      "type": 3,
-      "quickSearch": 1,
-      "jar": "./tvkj.jar",		 
-	  "api": "csp_AppGet",
-      "ext": {
-        "url": "",
-        "site": "https://dyyztvappapigoodgx.68.gy:12689/ciwk28vu38io8/apiurl.txt",
-        "dataKey": "dyyztvapiappyyds",
-        "dataIv": "dyyztvapiappyyds",
         "deviceId": "",
         "version": "",
         "ua": ""
@@ -490,21 +391,6 @@
         "version": "120"
       }
     },
-	{
-      "key": "萝卜",
-      "name": "萝卜｜APP",
-      "type": 3,
-      "quickSearch": 1,
-      "jar": "./tvkj.jar",		
-      "api": "csp_AppGet",
-      "ext": {
-        "url": "https://apiapplbys.lbys.app:5678",
-        "dataKey": "apiapplbyskey168",
-        "dataIv": "apiapplbyskey168",
-        "deviceId": "",
-        "version": "107"
-      }
-    },
 	 {
 	      "key": "还行",
 	      "name": "无意🔹影视",
@@ -529,25 +415,6 @@
       }
     },
     {
-      "key": "金牌APP2",
-      "name": "煲宅｜APP",
-      "quickSearch": 0,
-      "type": 3,
-      "jar": "https://gitee.com/tianwikeji/jar/raw/master/xm.jar",
-      "api": "csp_AppMuou",
-      "ext": "ewogICJTaXRlVXJsIjogImh0dHBzOi8vbXVvdS53bGJicS54eXoiLAogICJFeHQiOiAiaXA5K1dadnQ5ODNzUzAwOGtyTktobno4Q2Fzb2d3QjlLYkp2U0FmNGJRZEg5aUlGVHE4Y0tGM3Y4RFBicnphUiIsCiAgIkluZm8iOiAiaHR0cHM6Ly9tdW91aHQuZ2d0dmIuY2MiCn0="
-    },
-
-    {
-      "key": "公众号",
-      "name": "移动┃影视",
-      "type": 3,
-      "jar": "https://gitee.com/tianwikeji/jar/raw/master/YD.jar",
-      "api": "csp_YDjisu",
-      "searchable": 1,
-      "changeable": 1
-    },
-    {
       "key": "苹果影视",
       "name": "☀苹果🔹弹幕",
       "type": 3,
@@ -555,19 +422,6 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1
-    },
-    {
-      "key": "浪酷影视",
-      "name": "浪酷｜APP",
-      "type": 3,
-      "jar": "./tvkj.jar",		
-      "api": "csp_AppRJ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
-      "ext": {
-        "url": "http://v.lkuys.cn"
-      }
     },
     {
       "key": "闪影",
@@ -579,49 +433,6 @@
       "quickSearch": 1,
       "filterable": 1,
       "ext": "http://38.47.213.61:41271/mogai_api.php/v1.vod"
-    },
-    {
-      "key": "爱看",
-      "name": "爱看｜APP",
-      "type": 3,
-      "quickSearch": 1,
-      "jar": "./tvkj.jar",		
-	  "api": "csp_AppGet",
-      "ext": {
-        "url": "https://www.appdm.akandm.com",
-        "dataKey": "uI1TkPJC8B46AyN3",
-        "dataIv": "uI1TkPJC8B46AyN3"
-      }
-    },
-    {
-      "key": "鲸鱼",
-      "name": "鲸鱼｜APP",
-      "type": 3,
-      "quickSearch": 1,
-      "jar": "./tvkj.jar",		
-      "api": "csp_AppQi",
-      "ext": {
-        "url": "",
-        "site": "https://jingyu4k-1312635929.cos.ap-nanjing.myqcloud.com/1.json",
-        "dataKey": "AAdgrdghjfgswerA",
-        "dataIv": "AAdgrdghjfgswerA",
-        "deviceId": "",
-        "version": ""
-      }
-    },
-    {
-      "key": "开心",
-      "name": "开心｜APP",
-      "type": 3,
-      "quickSearch": 1,
-      "jar": "./tvkj.jar",		
-      "api": "csp_AppQi",
-      "ext": {
-        "site": "https://guwozj-1319364746.cos.ap-guangzhou.myqcloud.com/gw.txt",
-        "dataKey": "ca94b06ca3c7d80e",
-        "dataIv": "ca94b06ca3c7d80e",
-        "ua": "okhttp/3.10.0"
-      }
     },
     {
       "key": "数字",
