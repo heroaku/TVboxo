@@ -36,6 +36,17 @@
             "api": "csp_Douban",
             "searchable": 0
         },
+
+	{"key":"py_爱盈_APP","name":" 🧿爱盈(QIJI)","type":3,"api":"./Py/app/qijiapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://aysappto.oss-cn-chengdu.aliyuncs.com/qj3.txt","api":"/api.php/qijiappapi","datakey":"sda1231sasddad21","dataiv":"sda1231sasddad21"}},
+{"key":"py_顾我_APP","name":" 🧿顾我(QIJI)","type":3,"api":"./Py/app/qijiapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://guwozj-1319364746.cos.ap-guangzhou.myqcloud.com/guwo.txt","api":"/api.php/qijiappapi","datakey":"ca94b06ca3c7d80e","dataiv":"ca94b06ca3c7d80e"}},
+{"key":"py_小猪_APP","name":" 🧿小猪(QIJI)","type":3,"api":"./Py/app/qijiapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://tiantangyoulu.oss-cn-beijing.aliyuncs.com/tengxunyun.txt","api":"/api.php/qijiappapi","datakey":"seb5tq9mykp2w9ry","dataiv":"seb5tq9mykp2w9ry"}},
+{"key":"py_魔方_APP","name":" 🧿魔方(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://www.mfsp4k.top","api":"/api.php/getappapi","datakey":"1234567887654321","dataiv":"1234567887654321"}},
+{"key":"py_火锅_APP","name":" 🧿火锅(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://ios.hgyx.vip","api":"/api.php/getappapi","datakey":"062dec75d039980e","dataiv":"062dec75d039980e"}},
+{"key":"py_八天_APP","name":" 🧿八天(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://dy.8ttv.cn","api":"/api.php/getappapi","datakey":"1111111111111111","dataiv":"1111111111111111"}},
+{"key":"py_紫金_APP","name":" 🧿紫金(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://www.zjcvod.com","api":"/api.php/getappapi","datakey":"ab4e9a421675f14b","dataiv":"ab4e9a421675f14b"}},
+{"key":"py_灵虎_APP","name":" 🧿灵虎(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://bind.315999.xyz/89.txt","api":"/api.php/getappapi","datakey":"#getapp@TMD@2025","dataiv":"#getapp@TMD@2025"}},
+{"key":"py_旗星_APP","name":" 🧿旗星(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://ys.qist.top","api":"/api.php/getappapi","datakey":"2SWSPFxugBLPPOKo","dataiv":"2SWSPFxugBLPPOKo"}},
+{"key":"py_猪猪_APP","name":" 🧿猪猪(APP)","type":3,"api":"./Py/app/AppV2.py","searchable":1,"quickSearch":1,"filterable":1,"playerType":2,"ext":{"api":"http://dmmax.juxiafan.com/icciu_api.php/v1.vod","datasignkey":"6QQNUsP3PkD2ajJCPCY8","apisignkey":"lvdoutv-1.0.0"}},
 			{
 			"key": "艾旦影视",
 			"name": "艾旦影视",
