@@ -832,6 +832,26 @@
             "filterable": 1,
             "playerType": 2
         },
+			{
+	  "key": " fxzds ",
+	  "name": "袋鼠影视X",
+	  "type": 3,
+	  "api": "csp_XBPQ",
+	  "searchable": 1,
+	  "quickSearch": 1,
+	  "filterable": 1,
+	  "ext": "./XBPQ/袋鼠影视.json"
+	},
+		{
+	  "key": " TRJYS ",
+	  "name": "唐人街影视X",
+	  "type": 3,
+	  "api": "csp_XBPQ",
+	  "searchable": 1,
+	  "quickSearch": 1,
+	  "filterable": 1,
+	  "ext": "./XBPQ/唐人街影视.json"
+	},
 					{
             "key": "金牌影院JS",
             "name": "金牌影院JS",
@@ -1162,16 +1182,6 @@
 			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
 			"ext": "./JS/好看影视.js"
 			},	
-		{
-	  "key": " fxzds ",
-	  "name": "袋鼠影视",
-	  "type": 3,
-	  "api": "csp_XBPQ",
-	  "searchable": 1,
-	  "quickSearch": 1,
-	  "filterable": 1,
-	  "ext": "./XBPQ/袋鼠影视.json"
-	},
 			{
             "key": "EU影视",
             "name": "EU影视",
