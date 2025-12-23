@@ -769,6 +769,17 @@
             "filterable": 1,
             "playerType": 2
         },
+		        {
+            "key": "小红影视py",
+            "name": "小红PY┃影视",
+            "type": 3,
+            "api": "./Py/小红影视.py",
+            "searchable": 1,
+            "changeable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+        },
         {
             "key": "猎手影视",
             "name": "猎手PY┃影视",
