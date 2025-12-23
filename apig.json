@@ -249,6 +249,9 @@
 {"key":"py_猪猪_APP","name":" 🧿猪猪(APP)","type":3,"api":"./Py/app/AppV2.py","searchable":1,"quickSearch":1,"filterable":1,"playerType":2,"ext":{"api":"http://dmmax.juxiafan.com/icciu_api.php/v1.vod","datasignkey":"6QQNUsP3PkD2ajJCPCY8","apisignkey":"lvdoutv-1.0.0"}},
 {"key":"py_天峰影视","name":" ⛰天峰(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://zxy-ys.810211.dpdns.org","api":"/api.php/getappapi","datakey":"1234567890123456","dataiv":"1234567890123456"}},
 {"key":"py_麻花","name":" 🌀麻花(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://49.235.114.19:150","api":"/api.php/getappapi","datakey":"q7gj4f9br3fls6nh","dataiv":"q7gj4f9br3fls6nh"}},
+{"key":"py_木瓜_APP","name":"木瓜(FOX)","type":3,"api":"./Py/app/appfox.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://www.yezitv.top"}},
+{"key":"py_恋鱼_APP","name":"恋鱼(FOX)","type":3,"api":"./Py/app/appfox.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://173220859-1333208043.cos.ap-shanghai.myqcloud.com/1.json","ver":"2"}},
+{"key":"py_麒麟_APP","name":"麒麟(FOX)","type":3,"api":"./Py/app/appfox.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://www.70yyw.cc","ver":"2"}},
 	
 	//APP 结束
 	
