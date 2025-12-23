@@ -16,7 +16,7 @@ var rule={
 
    推荐:'div.lists-content;li;h2&&Text;.thumb&&src;.note&&Text;a&&href',  
  
-   一级:'.lists-content:eq(1)&&ul&&li;img&&alt;.thumb&&src;.note&&Text;a&&href',
+   一级:'.box_con&&ul&&li;a&&title;img&&src;.note&&Text;a&&href',
 
     double:true, // 推荐内容是否双层定位
    二级:{"title":"h1&&Text;.product-excerpt:eq(2)&&Text","img":".thumb&&src","desc":";;.product-excerpt:eq(3)&&Text;.product-excerpt:eq(1)&&Text;.product-excerpt:eq(0)&&Text","content":".product-excerpt:eq(5)&&Text","tabs":".playlists dl dt","lists":".play-div-oa:eq(#id) li"},
