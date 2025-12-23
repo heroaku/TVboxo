@@ -3,7 +3,7 @@ var rule={
     host: 'https://dy555.org/',
     searchUrl: '/search/**----------fypage---.html',
   // host: 'https://www.55yy7.com',
-    //https://5561696.vip/
+    //https://5561696.vip/; https://www.555dy.me/;https://www.555dy.tv/
     searchable: 2,
     quickSearch: 0,
     filterable: 1,
