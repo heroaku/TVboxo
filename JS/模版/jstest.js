@@ -1,8 +1,8 @@
 var rule={
     title: '555影视',
-    host: 'https://www.55yy7.com',
+    host: 'https://dy555.org/',
     searchUrl: '/search/**----------fypage---.html',
-  //https://www.dmyy1.com/vodshow/21--------2---.html
+  // host: 'https://www.55yy7.com',
     //https://yxxq1.cc/search/**----------fypage---.html
     searchable: 2,
     quickSearch: 0,
