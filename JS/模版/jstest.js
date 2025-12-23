@@ -19,6 +19,12 @@ var rule={
    一级:'.box_con&&ul&&li;a&&title;img&&src;.note&&Text;a&&href',
 
     double:true, // 推荐内容是否双层定位
-   二级:{"title":"h1&&Text;.product-excerpt:eq(2)&&Text","img":".thumb&&src","desc":";;.product-excerpt:eq(3)&&Text;.product-excerpt:eq(1)&&Text;.product-excerpt:eq(0)&&Text","content":".product-excerpt:eq(5)&&Text","tabs":".playlists dl dt","lists":".play-div-oa:eq(#id) li"},
-   搜索:'ul.img-list.clearfix&&li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
+      二级:{
+           'title': '.h1&&Text',
+           'desc': '.stui-content__detail p:eq(3)&&Text;.stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(2)&&Text;.stui-content__detail p:eq(1)&&Text;',
+           'content': '.stui-content__detail p:eq(4)&&Text;',
+           'tabs':'h3',
+           'lists':'.stui-pannel_bd:eq(#id)&&.stui-content__playlist li'
+         },
+    搜索:'ul.img-list.clearfix&&li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
 }
