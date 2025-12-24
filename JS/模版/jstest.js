@@ -1,48 +1,58 @@
-var rule= {
-    title:'悟空影视',
-    host:'https://www.wkvod.cc',
-    // https://www.wkvod.cc/vodsearch**/page/fypage.html
-    //https://www.wkvod.cc/vodshow/id/fyclass/page/fypage.html
-    //url:'/vodshow/id/fyclass/page/fypage.html',
-    searchable: 2,//是否启用全局搜索,
-    quickSearch: 0,//是否启用快速搜索,
-
-
-
-	url: '/vodshow/fyfilter.html',
-    filterable: 1,//是否启用分类筛选,
-	filter_url: '{{fl.area}}{{fl.by}}{{fl.class}}/id/{{fl.cateId}}{{fl.lang}}{{fl.letter}}/page/fypage{{fl.year}}',
-    filter: {
-	"dianying":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"dianying"},{"n":"动作片","v":"dongzuopian"},{"n":"喜剧片","v":"xijupian"},{"n":"爱情片","v":"aiqingpian"},{"n":"科幻片","v":"kehuanpian"},{"n":"恐怖片","v":"kongbupian"},{"n":"剧情片","v":"juqingpian"},{"n":"战争片","v":"zhanzhengpian"},{"n":"动画片","v":"donghuapian"}]},{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"喜剧","v":"/class/喜剧"},{"n":"爱情","v":"/class/爱情"},{"n":"恐怖","v":"/class/恐怖"},{"n":"动作","v":"/class/动作"},{"n":"纪录","v":"/class/纪录"},{"n":"科幻","v":"/class/科幻"},{"n":"剧情","v":"/class/剧情"},{"n":"战争","v":"/class/战争"},{"n":"犯罪","v":"/class/犯罪"},{"n":"动画","v":"/class/动画"},{"n":"奇幻","v":"/class/奇幻"},{"n":"武侠","v":"/class/武侠"},{"n":"冒险","v":"/class/冒险"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"/area/大陆"},{"n":"香港","v":"/area/香港"},{"n":"台湾","v":"/area/台湾"},{"n":"美国","v":"/area/美国"},{"n":"韩国","v":"/area/韩国"},{"n":"日本","v":"/area/日本"},{"n":"泰国","v":"/area/泰国"},{"n":"新加坡","v":"/area/新加坡"},{"n":"马来西亚","v":"/area/马来西亚"},{"n":"印度","v":"/area/印度"},{"n":"英国","v":"/area/英国"},{"n":"法国","v":"/area/法国"},{"n":"其它","v":"/area/其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2026","v":"/year/2026"},{"n":"2025","v":"/year/2025"},{"n":"2024","v":"/year/2024"},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"/lang/国语"},{"n":"英语","v":"/lang/英语"},{"n":"粤语","v":"/lang/粤语"},{"n":"闽南语","v":"/lang/闽南语"},{"n":"韩语","v":"/lang/韩语"},{"n":"日语","v":"/lang/日语"},{"n":"法语","v":"/lang/法语"},{"n":"德语","v":"/lang/德语"},{"n":"其它","v":"/lang/其它"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}],
-	"juji":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"juji"},{"n":"国产剧","v":"guochanju"},{"n":"港台剧","v":"gangtaiju"},{"n":"日韩剧","v":"rihanju"},{"n":"欧美剧","v":"oumeiju"},{"n":"泰国剧","v":"taiguoju"}]},{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"古装","v":"/class/古装"},{"n":"战争","v":"/class/战争"},{"n":"青春","v":"/class/青春"},{"n":"同性","v":"/class/同性"},{"n":"偶像","v":"/class/偶像"},{"n":"恐怖","v":"/class/恐怖"},{"n":"喜剧","v":"/class/喜剧"},{"n":"家庭","v":"/class/家庭"},{"n":"犯罪","v":"/class/犯罪"},{"n":"动作","v":"/class/动作"},{"n":"奇幻","v":"/class/奇幻"},{"n":"剧情","v":"/class/剧情"},{"n":"历史","v":"/class/历史"},{"n":"经典","v":"/class/经典"},{"n":"情景","v":"/class/情景"},{"n":"商战","v":"/class/商战"},{"n":"网剧","v":"/class/网剧"},{"n":"其他","v":"/class/其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"/area/大陆"},{"n":"香港","v":"/area/香港"},{"n":"台湾","v":"/area/台湾"},{"n":"美国","v":"/area/美国"},{"n":"韩国","v":"/area/韩国"},{"n":"日本","v":"/area/日本"},{"n":"泰国","v":"/area/泰国"},{"n":"新加坡","v":"/area/新加坡"},{"n":"马来西亚","v":"/area/马来西亚"},{"n":"印度","v":"/area/印度"},{"n":"英国","v":"/area/英国"},{"n":"法国","v":"/area/法国"},{"n":"其它","v":"/area/其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2026","v":"/year/2026"},{"n":"2025","v":"/year/2025"},{"n":"2024","v":"/year/2024"},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"其它","v":"/year/其它"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"/lang/国语"},{"n":"英语","v":"/lang/英语"},{"n":"粤语","v":"/lang/粤语"},{"n":"闽南语","v":"/lang/闽南语"},{"n":"韩语","v":"/lang/韩语"},{"n":"日语","v":"/lang/日语"},{"n":"法语","v":"/lang/法语"},{"n":"德语","v":"/lang/德语"},{"n":"其它","v":"/lang/其它"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}],
-	"zongyi":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"选秀","v":"/class/选秀"},{"n":"情感","v":"/class/情感"},{"n":"访谈","v":"/class/访谈"},{"n":"播报","v":"/class/播报"},{"n":"旅游","v":"/class/旅游"},{"n":"音乐","v":"/class/音乐"},{"n":"美食","v":"/class/美食"},{"n":"纪实","v":"/class/纪实"},{"n":"曲艺","v":"/class/曲艺"},{"n":"生活","v":"/class/生活"},{"n":"游戏","v":"/class/游戏"},{"n":"求职","v":"/class/求职"},{"n":"其它","v":"/class/其它"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"/area/大陆"},{"n":"香港","v":"/area/香港"},{"n":"台湾","v":"/area/台湾"},{"n":"美国","v":"/area/美国"},{"n":"韩国","v":"/area/韩国"},{"n":"日本","v":"/area/日本"},{"n":"泰国","v":"/area/泰国"},{"n":"新加坡","v":"/area/新加坡"},{"n":"马来西亚","v":"/area/马来西亚"},{"n":"印度","v":"/area/印度"},{"n":"英国","v":"/area/英国"},{"n":"法国","v":"/area/法国"},{"n":"其它","v":"/area/其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2026","v":"/year/2026"},{"n":"2025","v":"/year/2025"},{"n":"2024","v":"/year/2024"},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"其它","v":"/year/其它"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"/lang/国语"},{"n":"英语","v":"/lang/英语"},{"n":"粤语","v":"/lang/粤语"},{"n":"闽南语","v":"/lang/闽南语"},{"n":"韩语","v":"/lang/韩语"},{"n":"日语","v":"/lang/日语"},{"n":"法语","v":"/lang/法语"},{"n":"德语","v":"/lang/德语"},{"n":"其它","v":"/lang/其它"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}],
-	"dongman":[{"key":"class","name":"剧情","value":[{"n":"全部","v":""},{"n":"情感","v":"/class/情感"},{"n":"科幻","v":"/class/科幻"},{"n":"热血","v":"/class/热血"},{"n":"推理","v":"/class/推理"},{"n":"搞笑","v":"/class/搞笑"},{"n":"冒险","v":"/class/冒险"},{"n":"萝莉","v":"/class/萝莉"},{"n":"校园","v":"/class/校园"},{"n":"动作","v":"/class/动作"},{"n":"机战","v":"/class/机战"},{"n":"运动","v":"/class/运动"},{"n":"战争","v":"/class/战争"},{"n":"少年","v":"/class/少年"},{"n":"少女","v":"/class/少女"},{"n":"社会","v":"/class/社会"},{"n":"原创","v":"/class/原创"},{"n":"亲子","v":"/class/亲子"},{"n":"益智","v":"/class/益智"},{"n":"励志","v":"/class/励志"},{"n":"其他","v":"/class/其他"}]},{"key":"area","name":"地区","value":[{"n":"全部","v":""},{"n":"大陆","v":"/area/大陆"},{"n":"香港","v":"/area/香港"},{"n":"台湾","v":"/area/台湾"},{"n":"美国","v":"/area/美国"},{"n":"韩国","v":"/area/韩国"},{"n":"日本","v":"/area/日本"},{"n":"泰国","v":"/area/泰国"},{"n":"新加坡","v":"/area/新加坡"},{"n":"马来西亚","v":"/area/马来西亚"},{"n":"印度","v":"/area/印度"},{"n":"英国","v":"/area/英国"},{"n":"法国","v":"/area/法国"},{"n":"其它","v":"/area/其它"}]},{"key":"year","name":"年份","value":[{"n":"全部","v":""},{"n":"2026","v":"/year/2026"},{"n":"2025","v":"/year/2025"},{"n":"2024","v":"/year/2024"},{"n":"2023","v":"/year/2023"},{"n":"2022","v":"/year/2022"},{"n":"2021","v":"/year/2021"},{"n":"2020","v":"/year/2020"},{"n":"2019","v":"/year/2019"},{"n":"2018","v":"/year/2018"},{"n":"2017","v":"/year/2017"},{"n":"2016","v":"/year/2016"},{"n":"2015","v":"/year/2015"},{"n":"2014","v":"/year/2014"},{"n":"2013","v":"/year/2013"},{"n":"2012","v":"/year/2012"},{"n":"2011","v":"/year/2011"},{"n":"2010","v":"/year/2010"},{"n":"其它","v":"/year/其它"}]},{"key":"lang","name":"语言","value":[{"n":"全部","v":""},{"n":"国语","v":"/lang/国语"},{"n":"英语","v":"/lang/英语"},{"n":"粤语","v":"/lang/粤语"},{"n":"闽南语","v":"/lang/闽南语"},{"n":"韩语","v":"/lang/韩语"},{"n":"日语","v":"/lang/日语"},{"n":"法语","v":"/lang/法语"},{"n":"德语","v":"/lang/德语"},{"n":"其它","v":"/lang/其它"}]},{"key":"by","name":"排序","value":[{"n":"时间","v":"/by/time"},{"n":"人气","v":"/by/hits"},{"n":"评分","v":"/by/score"}]}]
-	    },
-    filter_def: {
-        dianying: {cateId: 'dianying'},
-        juji: {cateId: 'juji'},
-        zongyi: {cateId: 'zongyi'},
-        dongman: {cateId: 'dongman'},
-        duanju: {cateId: 'duanju'}
-    },
-    class_parse: '.stui-header__menu&&li:gt(0):lt(7);a&&Text;a&&href;.*/(.*?).html',
-    //class_name:'电影&电视剧&综艺&动漫&日韩剧&国产剧&欧美剧&港台剧',
-    //class_url:'dianying&dianshiju&3&4&16&13&15&14',
-    play_parse: true,
-    lazy:'js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=="1"){url=unescape(url)}else if(html.encrypt=="2"){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}',
-    limit: 6,
-    searchUrl:'/vodsearch**/page/fypage.html',
-    detailUrl:'/detail/fyid.html', //非必填,二级详情拼接链接
-    推荐: '.stui-pannel:eq(2);.stui-vodlist&&li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    double: true, // 推荐内容是否双层定位
-    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    二级: {
-        "title": "h1&&Text;.data&&Text",
-        "img": "img&&data-original",
-        "desc": ';;;.video-info-actor:eq(1)&&Text;.video-info-actor:eq(0)&&Text',
-        "content": ".stui-pannel:eq(2)&&p&&Text",
-        "tabs": ".stui-pannel:gt(0) h3",
-        "lists": ".stui-pannel_bd:eq(#id)&&.stui-content__playlist li"
-    },
-    搜索:'.stui-vodlist__media li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+var rule = {
+    author: '/25-10/10/',
+    title: '努努',
+    类型: '影院',
+    host: 'https://nnyy.la/',
+    hostJs: ``,
+headers: {'User-Agent': MOBILE_UA},
+    url: 'https://nnyy.la/fyclass/?page=fypage',
+    filter_url: '',
+    homeUrl: '',
+    detailUrl: 'https://nnyy.la/dianshiju/fyid-vkvkqmtyvkzp.html',  
+    searchUrl: 'https://nnyy.la/search?page=fypage&wd=**',
+  搜索: 'a:has(.note);img&&alt;img&&data-src;.note&&Text;a&&href',
+    编码: 'utf-8',
+    timeout: 5000,
+    searchable: 1,
+    quickSearch: 1,
+    filterable: 1,
+    limit: 9,
+    double: false,
+    class_name: '电影&电视剧&综艺&动漫&纪录片',
+    class_url: 'dianying&dianshiju&zongyi&dongman&jilupian',
+    推荐: '*',    
+    一级: 'a:has(.note);img&&alt;img&&data-src;.note&&Text;a&&href',
+二级: $js.toString(() => {
+rule.playPrefix = input;
+let khtml = fetch(input);
+let ktabs = pdfa(khtml, '#slider&&dt').map((it) => { return '' + pdfh(it, 'body&&Text') });
+let kurls = pdfa(khtml, 'ul.sort-list').map((item) => { 
+    let kurl = pdfa(item, 'a').map((it) => { return pdfh(it, 'body&&Text') + '$' + pdfh(it, 'a&&onclick') });
+    return kurl.join('#')
+});
+VOD = {
+    vod_id: input,
+    vod_name: pdfh(khtml, 'h1:eq(1)&&Text'),
+    type_name: pdfh(khtml, '.product-excerpt:contains(类型)&&Text').replace('类型：', ' '),
+    vod_remarks: pdfh(khtml, '.product-excerpt:contains(又名)&&Text').replace('又名：', ' '),
+    vod_year: pdfh(khtml, 'p:contains(年份)&&Text').replace('年份：', ' '),
+    vod_area: pdfh(khtml, 'p:contains(制片国家/地区)&&Text').replace('制片国家/地区：', ' '),
+    vod_director: pdfh(khtml, '.product-excerpt:contains(导演)&&Text').replace('导演：', ' '),
+    vod_actor: pdfh(khtml, '.product-excerpt:contains(主演)&&Text').replace('主演：', ' '),
+    vod_content: '作者提醒：广告勿信、祝您观影愉快!现为你介绍剧情:💕' + pdfh(khtml, '.product-excerpt:contains(剧情简介)&&Text').replace('剧情简介：', ' '),
+    vod_play_from: ktabs.join('$$$'),
+    vod_play_url: kurls.join('$$$')
+};
+}),
+play_parse: true,
+lazy: $js.toString(() => {
+let [sid, nid] = input.match(/\d+/g).map(Number);
+let purl = `${rule.playPrefix}?sid=${sid+1}&nid=${nid+1}`;
+let kurl = fetch(purl).split('key = "')[1].split('"')[0];
+if (/\.(m3u8|mp4)/.test(kurl)) {
+    input = { parse: 0, url: kurl, header: rule.headers }
+} else {
+    input = { parse: 1, url: purl }
+}
+}),
 }
