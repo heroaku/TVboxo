@@ -1,1 +1,28 @@
-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
+var rule={
+    title: '映像星球',
+    host: 'https://yxxq3.cc/',
+    url: '/top/fyclass--------fypage---.html',
+    searchUrl: '/search/**----------fypage---.html',
+  //https://qkys2.cc/top/2-----------.html;host: 'https://yxxq1.cc',
+    //https://www.55yy7.com/vodsearch/**----------fypage---.html
+    searchable: 2,
+    quickSearch: 0,
+    filterable: 0,
+    headers: {
+    'User-Agent': 'MOBILE_UA',
+    },
+    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
+    play_parse: false,
+    lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
+    limit: 6,
+    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    double: true,
+    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    二级: {
+    "title": "h1&&Text;.module-info-tag&&Text",
+    "img": ".lazyload&&data-original",
+    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
+    "content": ".module-info-introduction&&Text",
+    "tabs": ".hisSwiper&&span",
+    "lists": ".his-tab-list:eq(#id) a"},
+    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
