@@ -1303,6 +1303,14 @@
       "ext": "https://m.hkybqufgh.com,https://m.9zhoukj.com,https://m.sizhengxt.com,https://m.jiabaide.cn"
       //"ext": "https://m.hkybqufgh.com,https://m.sizhengxt.com,https://m.9zhoukj.com,https://m.sizhengxt.com,https://m.jiabaide.cn"
     },
+				{
+            "key": "去看吧",
+            "name": "去看吧",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/去看吧.js"
+        },		
 	{
       "key": "奇优影视",
       "name": "奇优｜影视",
