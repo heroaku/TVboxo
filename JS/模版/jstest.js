@@ -1,7 +1,7 @@
 var rule={
 		title: '枫林影视',
 		host: 'https://www.didahd.pro',
-		url: '/filter/fyfilter--------fypage---.html',
+		url: '/show/fyfilter.html',
 		searchUrl: '/search/**----------fypage---.html',
         //https://www.didahd.pro/show/2--------2---.html
 		//https://8maple.st/search/**----------fypage---.html
