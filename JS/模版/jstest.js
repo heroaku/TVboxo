@@ -1,5 +1,5 @@
 var rule={
-		title: '枫林影视',
+		title: '嘀嗒影视',
 		host: 'https://www.didahd.pro',
 		url: '/show/fyfilter.html',
 		searchUrl: '/search/**----------fypage---.html',
