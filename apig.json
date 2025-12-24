@@ -1140,6 +1140,14 @@
 			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
             "ext": "./JS/努努影视.js"
         },	
+					{
+            "key": "嘀嗒影视",
+            "name": "嘀嗒影视",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/嘀嗒影视.js"
+        },	
 				{
             "key": "悟空影视",
             "name": "悟空影视",
