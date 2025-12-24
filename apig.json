@@ -868,6 +868,14 @@
 			"api": "./JS/drpy2.min.js",
 		    "ext": "./JS/大米星球BY.js"
 			},	
+					{
+            "key": "映像星球",
+            "name": "映像星球",
+            "type": 3,
+			"api": "./JS/drpy2.min.js",
+			 "click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+            "ext": "./JS/映像星球.js"
+        },
 	        {
             "key": "荐片",
             "name": "荐片┃影视",
