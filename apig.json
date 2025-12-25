@@ -143,7 +143,17 @@
         }
       }
     },
-
+	        {
+            "key": "泥视频py",
+            "name": "泥视频PY┃影视",
+            "type": 3,
+            "api": "./Py/泥视频.py",
+            "searchable": 1,
+            "changeable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "playerType": 2
+        },
     {
       "key": "huochetaidu",
       "name": "火车太堵 | 聚合",
