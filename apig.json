@@ -1006,6 +1006,14 @@
 			"api": "./JS/drpy2.min.js",
 		    "ext": "./JS/全网影视.js"
 			},		
+				{
+			"key": "栀子影视",
+			"name": "栀子影视",
+			"type": 3,
+			"api": "./JS/drpy2.min.js",
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"ext": "./JS/栀子影视.js"
+			},
 			{
             "key": "淘剧影视",
             "name": "淘剧影视",
