@@ -1319,6 +1319,14 @@
       "ext": "https://m.hkybqufgh.com,https://m.9zhoukj.com,https://m.sizhengxt.com,https://m.jiabaide.cn"
       //"ext": "https://m.hkybqufgh.com,https://m.sizhengxt.com,https://m.9zhoukj.com,https://m.sizhengxt.com,https://m.jiabaide.cn"
     },
+			{
+			"key": "好好看影视",
+			"name": "好好看影视",
+			"type": 3,
+			"api": "./JS/drpy2.min.js",
+			"click": "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();",
+			"ext": "./JS/好好看影视.js"
+			},	
 				{
             "key": "去看吧",
             "name": "去看吧",
