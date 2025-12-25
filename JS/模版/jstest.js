@@ -11,7 +11,7 @@ var rule = {
     searchable: 2, //是否启用全局搜索,
     quickSearch: 0, //是否启用快速搜索,
     filterable: 0, //是否启用分类筛选,
-    class_parse: '.nav&&ul&&li;a&&Text;a&&href;.*/(.*?).html',
+    class_parse: '.nav&&ul&&li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
    // class_name: '电影&电视剧&综艺&动漫&国产剧&港台剧&日韩剧&泰国剧&欧美剧&海外剧',
    // class_url: '1&2&4&3&14&15&16&30&20&13',
 play_parse: true,
