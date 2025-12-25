@@ -23,8 +23,8 @@ var rule = {
                 "img": "*",
                 "desc": ";;;.director:eq(1)&&Text;.director:eq(0)&&a&&Text",
                 "content": ".wrapper_more_text&&Text",
-                "tabs": ".player_name",
-                "lists": ".listitem a"
+                "tabs": ".swiper-wrapper li",
+                "lists": ".tab-content&&.lists-box:eq(#id) a"
             },
 
             搜索: 'ul a;.title&&Text;img&&src;.bottom&&Text;a&&href',
