@@ -1,5 +1,5 @@
 var rule = {
-    title: 'EU影视',
+    title: '哩哩影视',
     host: 'https://www.9tvs.com',
      //https://www.9tvs.com/index.php/vod/show/id/fyclass/page/fypage.html
     //https://euvod.tv/vodshow/fyclass--------fypage---.html
