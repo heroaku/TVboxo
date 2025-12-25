@@ -12,7 +12,7 @@ var rule = {
     searchable: 2, //是否启用全局搜索,
     quickSearch: 0, //是否启用快速搜索,
     filterable: 1, //是否启用分类筛选,
-	url: '//index.php/vod/show/fyfilter.html',
+	url: '/index.php/vod/show/fyfilter.html',
     filterable: 1,//是否启用分类筛选,
     filter_url: '{{fl.area}}{{fl.by}}{{fl.class}}/id/{{fl.cateId}}{{fl.lang}}{{fl.letter}}/page/fypage{{fl.year}}',
     filter: {
