@@ -5,7 +5,7 @@ var rule = {
     author: '小可乐/2509/第二版',
     title: '可可影视',
     类型: '影视',
-    host: 'https://www.kkys01.com',
+    host: 'https://www.hhkan1.com',
     hostJs: '',
     headers: {'User-Agent': 'MOBILE_UA'},
     编码: 'utf-8',
