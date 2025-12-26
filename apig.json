@@ -264,7 +264,7 @@
 {"key":"py_麒麟_APP","name":"麒麟(FOX)","type":3,"api":"./Py/app/appfox.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://www.70yyw.cc","ver":"2"}},
 	
 	//APP 结束
-	
+{"key": "apple","name": "Apple┃影视","type": 3,"api": "./JS/apple.js","style": {"type": "rect","ratio": 1.33},"changeable": 1},	
 {"key": "恋鱼影视","name": "🌹恋鱼┃APP","type": 3,"changeable": 0, "jar": "https://github.com/heroaku/TB/raw/refs/heads/main/VOX/jar/vox.jar","api": "csp_Appfox","ext": {"host": "https://173220859-1333208043.cos.ap-shanghai.myqcloud.com/1.json","ver": 2}},
 {"key": "麒麟影院","name": "🐩麒麟┃APP","type": 3,"changeable": 0, "jar": "https://github.com/heroaku/TB/raw/refs/heads/main/VOX/jar/vox.jar","api": "csp_Appfox","ext": {"host": "https://www.70yyw.cc","ver": 2}},	
 {"key": "Max","name": "❤️下饭┃Max","type": 3,"changeable": 0,"searchable": 1,"quickSearch": 1, "jar": "https://github.com/heroaku/TB/raw/refs/heads/main/VOX/jar/vox.jar","api": "csp_AppYsV2","ext": {"api": "http://yjyi.juyongjiu.com:80/icciu_api.php/v1.vod","datasignkey": "6QQNUsP3PkD2ajJCPCY8","apisignkey": "lvdoutv-1.0.0"}},
