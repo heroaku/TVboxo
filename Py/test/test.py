@@ -1,29 +1,24 @@
-# -*- coding: utf-8 -*-
-# by @你猜
-import json
-import sys
-import requests
-import re
-# Ensure bs4 is available or handled in your environment
-try:
-    from bs4 import BeautifulSoup
-except ImportError:
-    sys.exit("BeautifulSoup4 is required. Please install it via 'pip install beautifulsoup4'")
+"""
+@header({
+  searchable: 1,
+  filterable: 1,
+  quickSearch: 1,
+  title: '小苹果',
+  lang: 'hipy'
+})
+"""
 
+# -*- coding: utf-8 -*-
+# by @嗷呜
+import sys
 sys.path.append('..')
 from base.spider import Spider
+import re
 
 class Spider(Spider):
-    def init(self, extend=""):
-        self.host = "https://www.iyf.lv"
-        self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Linux; Android 11; SAMSUNG SM-G973U) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/14.2 Chrome/87.0.4280.141 Mobile Safari/537.36',
-            'Referer': self.host + '/',
-            'Origin': self.host
-        }
 
-    def getName(self):
-        return "爱壹帆"
+    def init(self, extend=""):
+        pass
 
     def isVideoFormat(self, url):
         pass
@@ -34,297 +29,174 @@ class Spider(Spider):
     def destroy(self):
         pass
 
+    host = 'http://asp.xpgtv.com'
+
+    headers = {
+        "User-Agent": "okhttp/3.12.11"
+    }
+
     def homeContent(self, filter):
-        # Mapping from JS: class_name='电影&剧集&综艺&动漫&更新&热榜', class_url='1&2&3&4&new&hot'
-        classes = [
-            {"type_name": "电影", "type_id": "1"},
-            {"type_name": "剧集", "type_id": "2"},
-            {"type_name": "综艺", "type_id": "3"},
-            {"type_name": "动漫", "type_id": "4"},
-            {"type_name": "更新", "type_id": "new"},
-            {"type_name": "热榜", "type_id": "hot"}
-        ]
-        # JS says filterable: 0, so we return empty filters
-        return {'class': classes, 'filters': {}}
+        data = self.fetch(f"{self.host}/api.php/v2.vod/androidtypes", headers=self.headers).json()
+        dy = {
+            "classes": "类型",
+            "areas": "地区",
+            "years": "年份",
+            "sortby": "排序",
+        }
+        filters = {}
+        classes = []
+        for item in data['data']:
+            # 简化字段检查逻辑
+            has_non_empty_field = any(key in item and len(item[key]) > 1 for key in dy)
+            item['soryby'] = ['updatetime', 'hits', 'score']
+            demos = ['时间', '人气', '评分']
+            classes.append({"type_name": item["type_name"], "type_id": str(item["type_id"])})
+            
+            if has_non_empty_field:
+                filters[str(item["type_id"])] = []
+                for dkey in item:
+                    if dkey in dy and len(item[dkey]) > 1:
+                        values = item[dkey]
+                        value_array = [
+                            {"n": demos[idx] if dkey == "sortby" else value.strip(), "v": value.strip()}
+                            for idx, value in enumerate(values) if value.strip()
+                        ]
+                        filters[str(item["type_id"])].append(
+                            {"key": dkey, "name": dy[dkey], "value": value_array}
+                        )
+        
+        return {
+            "class": classes,
+            "filters": filters
+        }
 
     def homeVideoContent(self):
-        # JS Recommendation rule: .tab-list.active;a.module-poster-item.module-item
-        try:
-            html = self.fetch(self.host, headers=self.headers).text
-            soup = BeautifulSoup(html, 'html.parser')
-            
-            # Locate the active tab list or default recommendation section
-            items = soup.select('.tab-list.active a.module-poster-item.module-item')
-            if not items:
-                items = soup.select('a.module-poster-item.module-item')[:10] # Fallback
-            
-            vods = []
-            for item in items:
-                vod = self._parse_vod_item(item)
-                if vod:
-                    vods.append(vod)
-            return {'list': vods}
-        except Exception as e:
-            return {'list': []}
+        rsp = self.fetch(f"{self.host}/api.php/v2.main/androidhome", headers=self.headers).json()
+        videos = []
+        for i in rsp['data']['list']:
+            videos.extend(self.getlist(i['list']))
+        return {'list': videos}
 
     def categoryContent(self, tid, pg, filter, extend):
-        # JS Logic: 
-        # if new -> /label/new/
-        # if hot -> /label/hot/
-        # else -> /t/tid/
-        # paging -> url + 'page/' + pg + '/'
+        params = {
+            "page": pg,
+            "type": tid,
+            "area": extend.get('areaes', ''),
+            "year": extend.get('yeares', ''),
+            "sortby": extend.get('sortby', ''),
+            "class": extend.get('classes', '')
+        }
+        # 简化参数过滤
+        params = {k: v for k, v in params.items() if v}
+        rsp = self.fetch(f'{self.host}/api.php/v2.vod/androidfilter10086', headers=self.headers, params=params).json()
         
-        url = ""
-        if tid == 'new':
-            url = f"{self.host}/label/new/"
-        elif tid == 'hot':
-            url = f"{self.host}/label/hot/"
-        else:
-            url = f"{self.host}/t/{tid}/"
-            
-        if int(pg) > 1:
-            url += f"page/{pg}/"
-
-        try:
-            html = self.fetch(url, headers=self.headers).text
-            soup = BeautifulSoup(html, 'html.parser')
-            items = soup.select('a.module-poster-item.module-item')
-            
-            vods = []
-            for item in items:
-                vod = self._parse_vod_item(item)
-                if vod:
-                    vods.append(vod)
-            
-            return {
-                'list': vods,
-                'page': pg,
-                'pagecount': 9999,
-                'limit': 20,
-                'total': 99999
-            }
-        except Exception as e:
-            return {'list': []}
+        return {
+            'list': self.getlist(rsp['data']),
+            'page': pg,
+            'pagecount': 9999,
+            'limit': 90,
+            'total': 999999
+        }
 
     def detailContent(self, ids):
-        # JS Rule 二级 (Detail)
-        # title: h1
-        # img: .lazyload -> data-original
-        # content: .module-info-introduction
-        # tabs: .module-tab-item
-        # lists: .module-play-list
+        rsp = self.fetch(f'{self.host}/api.php/v3.vod/androiddetail2?vod_id={ids[0]}', headers=self.headers).json()
+        v = rsp.get('data', {}) or {}
+        urls = v.get('urls') or []
+        play_items = []
         
-        try:
-            url = ids[0]
-            if not url.startswith('http'):
-                url = self.host + url
-                
-            html = self.fetch(url, headers=self.headers).text
-            soup = BeautifulSoup(html, 'html.parser')
+        # 预编译正则表达式提高性能
+        patterns = [
+            (r'^\d+$', None),  # 纯数字
+            (r'^\d+-\d+$', None),  # 数字范围
+            (r'^第\d+[集期话节]$', None),  # 第X集/期/话/节
+            (r'^第\d+季$', None),  # 第X季
+            (r'^[集期话]?\d+$', None),  # 集X/期X/话X
+            (r'^E[P]?\d+$', re.IGNORECASE),  # EP1/E01
+            (r'^\d+[PpKk]$', None),  # 分辨率
+            (r'^[Hh][Dd]$', None),  # HD
+            (r'^[Ff][Hh][Dd]$', None),  # FHD
+            (r'^[Uu][Hh][Dd]$', None)  # UHD
+        ]
+        
+        allowed_chinese_keywords = {
+            '蓝光', '超清', '高清', '标清', '枪版', '全清',
+            '全集', '全', '完整版', '正片', '预告', '花絮'
+        }
+        
+        for i in urls:
+            key = (i.get('key') or i.get('name') or "").strip()
+            url = (i.get('url') or "").strip()
             
-            vod = {}
-            vod['vod_id'] = ids[0]
-            
-            # 标题
-            title_elem = soup.select_one('h1')
-            vod['vod_name'] = title_elem.get_text(strip=True) if title_elem else "未知"
-            
-            # 图片 - 修复图片获取逻辑
-            img_elem = soup.select_one('.module-info-poster img.lazyload')
-            if not img_elem:
-                img_elem = soup.select_one('.module-item-pic img.lazyload')
-            if not img_elem:
-                img_elem = soup.select_one('.lazyload')
-            
-            if img_elem:
-                # 优先获取data-original，如果没有则获取src
-                vod['vod_pic'] = img_elem.get('data-original') or img_elem.get('src') or ""
-                # 确保图片URL完整
-                if vod['vod_pic'] and not vod['vod_pic'].startswith('http'):
-                    vod['vod_pic'] = self.host + vod['vod_pic']
-            else:
-                vod['vod_pic'] = ""
-            
-            # 描述内容
-            desc_elem = soup.select_one('.module-info-introduction-content')
-            vod['vod_content'] = desc_elem.get_text(strip=True) if desc_elem else ""
-            
-            # 提取详细信息
-            info_items = {}
-            info_elems = soup.select('.module-info-item')
-            for elem in info_elems:
-                title_elem = elem.select_one('.module-info-item-title')
-                content_elem = elem.select_one('.module-info-item-content')
-                if title_elem and content_elem:
-                    title = title_elem.get_text(strip=True).replace('：', '').replace(':', '')
-                    info_items[title] = content_elem.get_text(strip=True)
-            
-            # 构建详细信息字符串
-            vod['vod_actor'] = info_items.get('主演', '')
-            vod['vod_director'] = info_items.get('导演', '')
-            vod['vod_area'] = info_items.get('地区', '')
-            vod['vod_year'] = info_items.get('年份', '') or info_items.get('上映', '')
-            vod['vod_remarks'] = info_items.get('更新', '') or info_items.get('集数', '')
-            
-            # Play Lists
-            tabs = [t.get_text(strip=True) for t in soup.select('.module-tab-item')]
-            play_lists = soup.select('.module-play-list')
-            
-            vod_play_from = []
-            vod_play_url = []
-            
-            for i, play_list in enumerate(play_lists):
-                # If tabs count matches lists, use tab name, else default
-                from_name = tabs[i] if i < len(tabs) else f"线路{i+1}"
-                vod_play_from.append(from_name)
-                
-                links = []
-                for a in play_list.select('a'):
-                    name = a.get_text(strip=True)
-                    href = a.get('href')
-                    if href:
-                        if not href.startswith('http'):
-                            href = self.host + href
-                        links.append(f"{name}${href}")
-                
-                if links:
-                    vod_play_url.append("#".join(links))
-            
-            if vod_play_from and vod_play_url:
-                vod['vod_play_from'] = "$$$".join(vod_play_from)
-                vod['vod_play_url'] = "$$$".join(vod_play_url)
-            
-            return {'list': [vod]}
-        except Exception as e:
-            return {'list': []}
+            if key and url:
+                if key in allowed_chinese_keywords:
+                    play_items.append(f"{key}${url}")
+                else:
+                    # 使用预编译的正则表达式检查
+                    matched = False
+                    for pattern, flags in patterns:
+                        if flags:
+                            if re.match(pattern, key, flags):
+                                matched = True
+                                break
+                        else:
+                            if re.match(pattern, key):
+                                matched = True
+                                break
+                    
+                    if matched:
+                        play_items.append(f"{key}${url}")
 
-    def searchContent(self, key, quick, pg="1"):
-        # JS SearchUrl: /s/**-------------/
-        url = f"{self.host}/s/{key}-------------.html"
-        if int(pg) > 1:
-            url += f"page/{pg}/"
+        play_url = "#".join(play_items)
+        
+        vod = {
+            'vod_id': v.get('id'),
+            'vod_name': v.get('name'),
+            'vod_pic': v.get('pic'),
+            'vod_year': v.get('year'),
+            'vod_area': v.get('area'),
+            'vod_lang': v.get('lang'),
+            'type_name': v.get('className'),
+            'vod_actor': v.get('actor'),
+            'vod_director': v.get('director'),
+            'vod_content': v.get('content'),
+            'vod_play_from': '小苹果',
+            'vod_play_url': play_url
+        }
 
-        try:
-            html = self.fetch(url, headers=self.headers).text
-            soup = BeautifulSoup(html, 'html.parser')
-            
-            # 多种搜索结果选择器
-            items = soup.select('.module-search-item, .module-poster-item, .module-item')
-            if not items:
-                items = soup.select('a[href*="/iyftv/"]')
-            
-            vods = []
-            for item in items:
-                vod = self._parse_vod_item(item, is_search=True)
-                if vod and vod.get('vod_id'):
-                    vods.append(vod)
-            
-            return {'list': vods, 'page': pg}
-        except Exception as e:
-            return {'list': []}
+        return {'list': [vod]}
+
+    def searchContent(self, key, quick, pg='1'):
+        rsp = self.fetch(f'{self.host}/api.php/v2.vod/androidsearch10086?page={pg}&wd={key}', headers=self.headers).json()
+        return {'list': self.getlist(rsp['data']), 'page': pg}
 
     def playerContent(self, flag, id, vipFlags):
-        # JS Lazy Rule:
-        # 1. Match .m3u8
-        # 2. Match .mp4
-        
-        url = id
-        if not url.startswith('http'):
-            url = self.host + url
-            
-        try:
-            html = self.fetch(url, headers=self.headers).text
-            
-            # 首先尝试从播放器配置中提取
-            player_match = re.search(r'var player_aaaa=({[^;]+});', html)
-            if player_match:
-                try:
-                    player_data = json.loads(player_match.group(1))
-                    if player_data.get('url'):
-                        return {'parse': 0, 'url': player_data['url'], 'header': self.headers}
-                except:
-                    pass
-            
-            # 正则匹配视频地址
-            m3u8_match = re.search(r'(https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*)', html)
-            if m3u8_match:
-                return {'parse': 0, 'url': m3u8_match.group(1), 'header': self.headers}
-            
-            mp4_match = re.search(r'(https?://[^\s"\'<>]+\.(mp4|m4a)[^\s"\'<>]*)', html)
-            if mp4_match:
-                return {'parse': 0, 'url': mp4_match.group(1), 'header': self.headers}
-                
-            # Fallback: Return original url to let the player sniff it
-            return {'parse': 1, 'url': url, 'header': self.headers}
-            
-        except Exception as e:
-            return {'parse': 1, 'url': url, 'header': self.headers}
-
-    def _parse_vod_item(self, item, is_search=False):
-        # Helper to extract vod data from a list item (<a> or div)
-        try:
-            link = item if item.name == 'a' else item.select_one('a')
-            if not link:
-                return {}
-                
-            url = link.get('href')
-            if not url:
-                return {}
-            
-            # 处理图片 - 修复图片获取逻辑
-            pic = ""
-            # 多种图片选择器
-            img_selectors = [
-                '.lazyload',
-                '.module-item-pic img',
-                '.module-item-cover img',
-                'img'
-            ]
-            
-            for selector in img_selectors:
-                img_elem = item.select_one(selector)
-                if img_elem:
-                    # 优先获取data-original，如果没有则获取src
-                    pic = img_elem.get('data-original') or img_elem.get('src') or ""
-                    if pic:
-                        break
-            
-            # 确保图片URL完整
-            if pic and not pic.startswith('http'):
-                pic = self.host + pic
-            
-            # 标题
-            title = ""
-            if is_search:
-                title_selectors = ['.module-card-item-title', '.module-poster-item-title', '.module-item-title']
-                for selector in title_selectors:
-                    title_elem = item.select_one(selector)
-                    if title_elem:
-                        title = title_elem.get_text(strip=True)
-                        break
-            else:
-                title = link.get('title') or ""
-                if not title:
-                    title_elem = item.select_one('.module-poster-item-title')
-                    title = title_elem.get_text(strip=True) if title_elem else ""
-            
-            # 备注/更新信息
-            remarks = ""
-            remarks_selectors = ['.module-item-note', '.module-card-item-note', '.pic-text']
-            for selector in remarks_selectors:
-                remarks_elem = item.select_one(selector)
-                if remarks_elem:
-                    remarks = remarks_elem.get_text(strip=True)
-                    break
-
-            return {
-                'vod_id': url,
-                'vod_name': title,
-                'vod_pic': pic,
-                'vod_remarks': remarks
-            }
-        except Exception as e:
-            return {}
+        header = {
+            'user_id': 'XPGBOX',
+            'token2': 'SnAXiSW8vScXE0Z9aDOnK5xffbO75w1+uPom3WjnYfVEA1oWtUdi2Ihy1N8=',
+            'version': 'XPGBOX com.phoenix.tv1.5.7',
+            'hash': 'd78a',
+            'screenx': '2345',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
+            'token': 'ElEDlwCVgXcFHFhddiq2JKteHofExRBUrfNlmHrWetU3VVkxnzJAodl52N9EUFS+Dig2A/fBa/V9RuoOZRBjYvI+GW8kx3+xMlRecaZuECdb/3AdGkYpkjW3wCnpMQxf8vVeCz5zQLDr8l8bUChJiLLJLGsI+yiNskiJTZz9HiGBZhZuWh1mV1QgYah5CLTbSz8=',
+            'timestamp': '1743060300',
+            'screeny': '1065',
+        }
+        if 'http' not in id:
+            id = f"http://c.xpgtv.net/m3u8/{id}.m3u8"
+        return {"parse": 0, "url": id, "header": header}
 
     def localProxy(self, param):
         pass
+
+    def getlist(self, data):
+        videos = []
+        for vod in data:
+            # 简化备注生成逻辑
+            remarks = f"更新至{vod.get('updateInfo')}" if vod.get('updateInfo') else vod.get('score', '')
+            videos.append({
+                "vod_id": vod['id'],
+                "vod_name": vod['name'],
+                "vod_pic": vod['pic'],
+                "vod_remarks": remarks
+            })
+        return videos
