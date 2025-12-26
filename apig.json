@@ -245,7 +245,7 @@
         }
       }
     },
-
+{"key": "小苹果py","name": "🍎┃小苹果┃PY","type": 3,"api": "./Py/小苹果.py","searchable": 1,"quickSearch": 0,"filterable": 0,"changeable": 0},
 	//GM结束
 {"key":"py_爱盈_APP","name":" 💖爱盈(QIJI)","type":3,"api":"./Py/app/qijiapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://aysappto.oss-cn-chengdu.aliyuncs.com/qj3.txt","api":"/api.php/qijiappapi","datakey":"sda1231sasddad21","dataiv":"sda1231sasddad21"}},
 {"key":"py_顾我_APP","name":" 🛡️顾我(QIJI)","type":3,"api":"./Py/app/qijiapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://guwozj-1319364746.cos.ap-guangzhou.myqcloud.com/guwo.txt","api":"/api.php/qijiappapi","datakey":"ca94b06ca3c7d80e","dataiv":"ca94b06ca3c7d80e"}},
