@@ -22,8 +22,8 @@ var rule = {
     },
     编码: 'utf-8',
     timeout: 5000,
-    url: '/type/indexfyclass-fypage.html',
-    filter_url: '',
+    url: '/type/indexfyfilter-fypage.html',
+    filter_url: '{{fl.cateId}}',
     searchUrl: '/search.php?searchword=**',
     searchable: 1,
     quickSearch: 1,
@@ -31,7 +31,20 @@ var rule = {
 
     class_name: '电影&电视剧&综艺&动漫',
     class_url: '1&2&3&4',
-    filter_def: {},
+      filter: {
+        "1":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"1"},{"n":"动作片","v":"5"},{"n":"喜剧片","v":"10"},{"n":"爱情片","v":"6"},{"n":"科幻片","v":"7"},{"n":"恐怖片","v":"8"},{"n":"剧情片","v":"12"},{"n":"动画片","v":"25"}]}]}],
+        "2":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"2"},{"n":"大陆剧","v":"13"},{"n":"香港剧","v":"14"},{"n":"台湾剧","v":"46"},{"n":"韩国剧","v":"26"},{"n":"日本剧","v":"16"},{"n":"欧美剧","v":"27"},{"n":"泰国剧","v":"47"},{"n":"海外剧","v":"28"}]}]}],
+        "3":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"3"},{"n":"大陆综艺","v":"29"},{"n":"港台综艺","v":"30"},{"n":"日韩综艺","v":"31"},{"n":"欧美综艺","v":"32"}]}]}],
+        "4":[{"key":"cateId","name":"类型","value":[{"n":"全部","v":"4"},{"n":"大陆动漫","v":"33"},{"n":"港台动漫","v":"36"},{"n":"日韩动漫","v":"34"},{"n":"欧美动漫","v":"35"},{"n":"其他动漫","v":"37"},{"n":"少儿动画","v":"64"}]}]}]
+        },
+    filter_def:{
+        1:{cateId:'1'},
+        2:{cateId:'2'},
+        3:{cateId:'3'},
+        4:{cateId:'4'}
+    },
+
+
     预处理: $js.toString(() => {
         // 使用withHeaders: true来获取响应头
         const res = request(HOST, {
