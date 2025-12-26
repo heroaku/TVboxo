@@ -1,136 +1,152 @@
-var rule = {
-    //定义获取图片地址域名变量
-    img_host: '',
+/*
+@header({
+  searchable: 1,
+  filterable: 1,
+  quickSearch: 1,
+  title: '03影视',
+  author: '小可乐/250915/第一版',
+  '类型': '影视',
+  lang: 'dr2'
+})
+*/
 
-    author: '小可乐/2509/第二版',
-    title: '可可影视',
+var rule = {
+    author: '小可乐/250915/第一版',
+    title: '03影视',
     类型: '影视',
-    host: 'https://www.hhkan1.com',
-    hostJs: '',
-    headers: {'User-Agent': 'MOBILE_UA'},
+    host: 'https://www.03yy.live',
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/128.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'zh-CN,zh;q=0.9'
+    },
     编码: 'utf-8',
     timeout: 5000,
+    url: '/type/indexfyclass-fypage.html',
+    filter_url: '',
+    searchUrl: '/search.php?searchword=**',
+    searchable: 1,
+    quickSearch: 1,
+    filterable: 1,
 
-    homeUrl: '/',
-    url: '/show/fyclass-fyfilter-fypage.html',
-    filter_url: '{{fl.class}}-{{fl.area}}-{{fl.lang}}-{{fl.year}}-{{fl.by}}',
-    searchUrl: '/search?k=**&page=fypage&t=',
-    detailUrl: '',
-
-    limit: 9,
-    double: false,
-    class_name: '电影&剧集&综艺&动漫&短剧',
-    class_url: '1&2&4&3&6',
-
+    class_name: '电影&电视剧&综艺&动漫',
+    class_url: '1&2&3&4',
+    filter_def: {},
     预处理: $js.toString(() => {
-        const sha1ToUint8ArrayLatin1 = str => {
-            if (typeof str !== 'string') {
-                return null;
-            }
-            try {
-                let latin1Str = CryptoJS.SHA1(str).toString(CryptoJS.enc.Latin1);
-                let u8Array = Uint8Array.from(latin1Str, char => char.charCodeAt(0));
-                return u8Array;
-            } catch (e) {
-                return null;
-            }
-        }
-        let hashPre = request(HOST)?.match(/a0_0x2a54\s*=\s*\['([^']+)'/)?.[1]?.trim() ?? '';
-        if (hashPre != '' && hashPre != getItem('hashpre')) {
-            setItem('tgcookie', '');
-            setItem('hashpre', '');
-            let hashIdx = parseInt('0x' + hashPre[0], 16);
-            if (Number.isInteger(hashIdx) && hashIdx >= 0 && hashIdx <= 18) {
-                let cookieFound = false;
-                let maxLoop = 100000;
-                for (let i = 0; i < maxLoop && !cookieFound; i++) {
-                    let hashInput = `${hashPre}${i}`;
-                    let sha1Arr = sha1ToUint8ArrayLatin1(hashInput);
-                    if (sha1Arr && sha1Arr[hashIdx] === 0xb0 && sha1Arr[hashIdx + 1] === 0x0b) {
-                        let defendCookie = `cdndefend_js_cookie=${hashInput}`;
-                        setItem('hashpre', hashPre);
-                        setItem('tgcookie', defendCookie);
-                        cookieFound = true;
-                    }
-                }
-            }
-        }
-        if (getItem('tgcookie')) {
-            rule_fetch_params.headers['cookie'] = getItem('tgcookie');
-        }
-        let khtml = fetch(HOST, {
-            headers: rule_fetch_params.headers
+        // 使用withHeaders: true来获取响应头
+        const res = request(HOST, {
+            headers: rule.headers,
+            withHeaders: true,
+            redirect: false,
+            method: 'GET'
         });
-        let tValue = khtml.match(/<input[^>]*name="t"[^>]*value="([^"]*)"/i);
-        if (tValue && tValue[1]) {
-            rule.searchUrl = rule.searchUrl + encodeURIComponent(tValue[1]);
-        }
-        let scripts = pdfa(khtml, 'script');
-        let img_script = scripts.find((it) => pdfh(it, 'script&&src').includes('rdul.js'));
-        if (img_script) {
-            let img_url = img_script.match(/src="(.*?)"/)[1];
-            let img_html = fetch(img_url);
-            rule.img_host = img_html.match(/'(.*?)'/)[1];
-            rule.图片替换 = HOST + '=>' + rule.img_host;
-        }
-    }),
+        const resJson = typeof res === 'string' ? JSON.parse(res) : res;
 
-    推荐: '*',
-    一级: '.module-item;.v-item-title:eq(1)&&Text;img:eq(-1)&&data-original;span:eq(-1)&&Text;a&&href',
-    搜索: $js.toString(() => {
-        let t = pdfh(fetch(input), 'input:eq(0)&&value');
-        input = input.split('?')[0];
-        let surl = `${input}?k=${KEY}&page=${MY_PAGE}&t=${t}`;
-        let khtml = fetch(surl);
-        VODS = [];
-        let klists = pdfa(khtml, '.search-result-item');
-        klists.forEach((it) => {
-            VODS.push({
-                vod_name: pdfh(it, 'img&&alt'),
-                vod_pic: pd(it, 'img&&data-original', rule.img_host),
-                vod_remarks: pdfh(it, '.search-result-item-header&&Text'),
-                vod_id: pdfh(it, 'a&&href')
-            });
-        });
-    }),
-    二级: {
-        title: '.detail-title&&strong:eq(1)&&Text;.detail-tags&&Text',
-        img: '.detail-pic&&img&&data-original',
-        desc: '.detail-info-row-main:eq(-2)&&Text;.detail-tags-item:eq(0)&&Text;.detail-tags-item:eq(1)&&Text;.detail-info-row-main:eq(1)&&Text;.detail-info-row-main:eq(0)&&Text',
-        content: '.detail-desc&&Text',
-        tabs: '.source-item',
-        tab_text: 'span:eq(-1)&&Text',
-        lists: '.episode-list:eq(#id)&&a',
-        list_text: 'body&&Text',
-        list_url: 'a&&href',
-    },
+        // 提取set-cookie头
+        const setCookie = resJson['set-cookie'] || '';
 
-    tab_remove: ['4K(高峰不卡)'],
+        // 处理cookie格式
+        let cookies = '';
+        if (Array.isArray(setCookie)) {
+            cookies = setCookie.map(c => c.split(';')[0].trim()).join('; ');
+        } else if (setCookie) {
+            cookies = setCookie.split(';')[0].trim();
+        }
+
+        // 更新rule.headers中的cookie
+        if (cookies) {
+            rule.headers["cookie"] = rule.headers["cookie"] ?
+                rule.headers["cookie"] + '; ' + cookies : cookies;
+            rule_fetch_params.headers = Object.assign({}, rule.headers);
+        }
+
+        console.log(`提取的Cookie: ${cookies || '无'}`);
+        console.log(`最终Cookie: ${rule.headers["cookie"] || '无'}`);
+    }),
     play_parse: true,
     lazy: $js.toString(() => {
-        let kurl = input;
-        let khtml = request(kurl);
-        if (/dujia/.test(khtml)) {
-            kurl = khtml.split("PPPP = '")[1].split("';")[0];
-            const key = CryptoJS.enc.Utf8.parse('Isu7fOAvI6!&IKpAbVdhf&^F');
-            const dataObj = {
-                ciphertext: CryptoJS.enc.Base64.parse(kurl)
-            };
-            const decrypted = CryptoJS.AES.decrypt(dataObj, key, {
-                mode: CryptoJS.mode.ECB,
-                padding: CryptoJS.pad.Pkcs7
-            });
-            kurl = decrypted.toString(CryptoJS.enc.Utf8);
-        } else {
-            kurl = khtml.split('src: "')[1].split('",')[0];
-        }
-        input = {
-            jx: 0,
-            parse: 0,
-            url: kurl,
-            header: rule.headers
-        };
-    }),
+        let html = request(input, {
+            headers: rule.headers,
+            withHeaders: true,
+            redirect: false,
+            method: 'GET'
+        });
 
-    filter: 'H4sIAAAAAAAAA+2Z308bRxDH3/1XVH7mwQba4rz1oZUqVXlpHypFUeRWbhWVulJoqyKEZLANxhBskGPi2AVSMJgE/4Agx5yx/c/c3p3/i66ZndlzUk1OCYmU6l4Qn/nur9ud3ZldLwSC4eCtT+4EFoK/xOaDt4I/zkbn5oITwXj015hE+6wrdtcl/xmd/UMa7iwE49Is0rVhsjYySwguToD1duz3n2bv/6XMt7/87qtvvv6eVLF2bCXTSlRAWrEiLagBkJatmb0KagCo2Zkz3aYC1KylvJUoKk0BacmstfwENQBqM9u0e8+wTQDSjrfEZRc1AGpz+dQubmGbAPQN1VVdTwFpK9vD0glqANRm5rFprGGbAFRvc0XkzrEeAGm5Q+eA5hqAtEZbGHXUAFAzr/adRktpCmgs9SOzv49jAdDahpPZJe0aaM726vbaKs4ZgGtt7UJXr+0ISEsN7OdV1ABQc5Y2RMVQmoLFu4sT5MbRB7Go9mJRaYkNw6MXi8PjYWkF56BTF+WeMmGJ4VHJ6jTHSiiTnv+WddkfbwNMNCv9TWnEWQGg2dypWpVTnE0A6nvvRNdTQLOyfqY1BdTmi0daU0Cj7b/UmgLSHraEcYQagG6z5W6z5a5ndi6HVE8BffvWrkh38NsBqL+XF051gP0BaG/Zt9YHcjHIYZCp10HK7u1YRVocYhpzKicriAxuOM1UolmQaO20sQSx69QRrYJI40bRTCtRHdg56eklXAxi6qX/Avo1DTqH3Cb65nTb7OIppmDM02ej8Z+1pzvNulNLePX0ck+Wx7YB6BvPD7WmwOVnWlPg8l2tKXD5rtYUuPzTVQ/A8xzMx6IPXLv98sLs9jzOwWRo8lNlu/7XZZ/W9mm3fUrbp9z2SW2fdNvD2h5220PaHiJ7OHQ9/APSwqF78k+ECoReLRAaFQjpApHxAuFIJHRP/tEFZl4tMDMqMKMLWOULawc3yEj7PDI+3z/M69m2NreFkXtttu3ulchnsAvddCVhFXHfTLrNdhJXX0+q00yJDB7F06MxBO5OBGS995SxKPKSsXCZB5fNcNkFm0FwEZ3JkLhoz2VBXMYyClf0fQq8ZEhcxsJlOqMwR/0p8JKVyJNQr5ECL9khl5ENkz3RWcaxANxwVkLm4A1nJVzu8Lb5CJdXcPkIm3O8MXviMg8uY/GjqR9N/Wg6Hk2nbyya2sYz0XuEXg5AWmXPNAz7OIEyMQ2v0dK1FZCWOhO5A11bs6fXBe6mzMRq7jZslzvigC4AADTa7LJdbuBQAbzclLm44wzyMrJjmwCofRuLzv0WV5oCT68ZzM3cyu/ap5SLAJBWemJeUd4A4N++/djixxY/tozHlqkPdVPL1qzEknX1fOw1UZs8RQnuLZJ7n2ZObfZmxt2wuFsU8y7KndrsjZW5JXJRQrqC85RCOoCOkFmrhPcYBV5uunY353odBKB6+09Fmc4eANS+iN+XbgUS/O8ldprGuajnMVYA0Cn497b1GGdagb4/rss5xJEAeLmT/ued+4ZiJxe53hxX3y1qvtvt03+59l+u/XzIz4f+7/nQZ2+RD2mze/WHiRXnH/JIANoBhYpoYPxRQAMr5WW0wh0AQPVOBk47i/UAqL/Vh3ZhD/sD8JJVsb+YM3GSzVaYrIr9xZzL1NJt0UjqnTqCj3anflCPH7l2YPFflpCCHEkiAAA='
+        // 处理转义引号：将 \" 替换为 "
+        html = html.replace(/\\"/g, '"');
+
+        // 匹配参数
+        const nowMatch = html.match(/var\s+now\s*=\s*base64decode\s*\(\s*["']([^"']+)["']\s*\)/);
+        const prePageMatch = html.match(/var\s+prePage\s*=\s*["']([^"']+)["']/);
+        const nextPageMatch = html.match(/var\s+nextPage\s*=\s*["']([^"']+)["']/);
+        var now = nowMatch[1];
+        now = base64Decode(now);
+        console.log("now:" + now);
+        
+        if (/\.(m3u8|mp4|mkv|jpg)/.test(now)) {
+            input = {parse: 0, url: now}
+        } else {
+            const prePage = prePageMatch[1];
+            const nextPage = nextPageMatch[1];
+            console.log("prePage:" + prePage);
+            console.log("nextPage:" + nextPage);
+            
+            let jx = `${HOST}/api/dplayer.php?url=${now}&ref=${encodeURIComponent(prePage)}&next=${encodeURIComponent(nextPage)}`;
+            
+            console.log("请求URL:" + jx);
+            
+            let videohtml = request(jx, {
+                headers: rule.headers,
+                withHeaders: true,
+                redirect: false,
+                method: 'GET'
+            });
+            console.log("videohtml:" + videohtml);
+            
+            const mediaInfoRegex = /mediaInfo\s*=\s*(\[.*?\]);/gis;
+            const mediaInfoMatch = mediaInfoRegex.exec(videohtml);
+            let videoUrl = "";
+            
+            if (mediaInfoMatch && mediaInfoMatch[1]) {
+                const mediaInfoContent = mediaInfoMatch[1];
+                const qualityLevels = ["1080", "720", "540", "360"];
+                const urls = [];
+                for (const quality of qualityLevels) {
+                    const urlRegex = new RegExp(
+                        `definition.*?${quality}.*?url.*?:.*?"(https.*?)"`, 
+                        'is'
+                    );
+                    const urlMatch = mediaInfoContent.match(urlRegex);
+                    if (urlMatch && urlMatch[1]) {
+                        videoUrl = urlMatch[1];
+                        videoUrl = videoUrl.replace(/\\\\\//g, '/').replace(/\\+/g, '');
+                        console.log(`找到${quality}清晰度的URL:`, videoUrl);
+                        urls.push(quality, videoUrl);
+                    }
+                }
+                input = { parse: 0, url: urls };
+                if (!videoUrl) {
+                    console.log("未找到任何已知清晰度的URL");
+                }
+            } else {
+                console.error("未匹配到mediaInfo");
+            }
+        }
+    }),
+    limit: 9,
+    double: true,
+    推荐: '.Pic-list&&.pic-content;a&&title;img&&src;span&&Text;a&&href',
+    一级: '.type-box&&.pic-height-a;a&&title;img&&src;span&&Text;a&&href',
+    二级: {
+        title: 'h2&&Text;.m-content&&ul&&li:eq(4)',
+        img: 'img&&src',
+        desc: '.color-red&&Text;.m-content&&ul&&span:eq(2)&&Text;.m-content&&ul&&span:eq(0)&&Text;.m-content&&ul&&li:eq(1)&&Text;.m-content&&ul&&li:eq(0)&&Text',
+        content: '.m-intro&&Text',
+        tabs: '#playlist&&li',
+        tab_text: 'body&&Text',
+        lists: '.play_list:eq(#id)&&li',
+        list_text: 'body&&Text',
+        list_url: 'a&&href'
+    },
+    搜索: '*',
 }
