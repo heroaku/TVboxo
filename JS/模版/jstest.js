@@ -17,6 +17,7 @@ var rule = {
     推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
     double: true, // 推荐内容是否双层定位
     一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    /*
     二级: {
         "title": ".stui-content__detail .title&&Text;.stui-content__detail p:eq(-2)&&Text",
         "img": ".stui-content__thumb .lazyload&&data-original",
@@ -26,6 +27,15 @@ var rule = {
         //"tabs": ".stui-pannel:gt(0) h3",
         "lists": ".stui-pannel:eq(#id)&&.stui-content__playlist li"
     },
+    */
+    二级:  {
+    "title": ".stui-content__detail .title&&Text",
+    "img": ".stui-content__thumb .lazyload&&data-original",
+    "desc": ".stui-content__detail p.data:eq(0)&&Text;.stui-content__detail p.data:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text",
+    "content": "#desc .stui-content__desc&&Text",
+    "tabs": ".stui-pannel__head .title",
+    "lists": ".stui-pannel:has(.stui-content__playlist):eq(#id) .stui-content__playlist li"
+},
     搜索: 'ul.stui-vodlist&&li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
 
 }
