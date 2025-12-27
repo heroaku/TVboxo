@@ -33,8 +33,8 @@ var rule = {
     "img": ".stui-content__thumb .lazyload&&data-original",
     "desc": ".stui-content__detail p.data:eq(0)&&Text;.stui-content__detail p.data:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text",
     "content": "#desc .stui-content__desc&&Text",
-    "tabs": ".stui-pannel:gt(0) .stui-pannel__head h4.title",
-    "lists": ".stui-pannel:gt(0):eq(#id) .stui-content__playlist li"
+    "tabs": ".stui-pannel__head .title",
+    "lists": ".stui-pannel:eq(#id)&&.stui-content__playlist li"
 },
     搜索: 'ul.stui-vodlist&&li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
 
