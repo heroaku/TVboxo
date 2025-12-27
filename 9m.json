@@ -29,6 +29,7 @@
             "filterable": 1,
             "playerType": 2
         },
+	{"key":"py_肥猫_APP","name":" 🧿肥猫(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://103.236.61.192:8006","api":"/api.php/getappapi","datakey":"123456789abcdefg","dataiv":"123456789abcdefg"}},
         {
             "key": "豆瓣",
             "name": "豆瓣｜首页",
