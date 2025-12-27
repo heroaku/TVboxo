@@ -22,7 +22,7 @@ var rule = {
         "img": ".stui-content__thumb .lazyload&&data-original",
         "desc": ".stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text",
         "content": "#desc&&Text",
-        "tabs": ".stui-pannel-box h3",
+        "tabs": ".stui-pannel__head h3",
         "lists": ".stui-content__playlist:eq(#id) li"
     },
     搜索: 'ul.stui-vodlist&&li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
