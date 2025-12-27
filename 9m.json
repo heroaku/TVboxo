@@ -29,8 +29,16 @@
             "filterable": 1,
             "playerType": 2
         },
-	{"key":"py_肥猫_APP","name":" 🧿肥猫(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://103.236.61.192:8006","api":"/api.php/getappapi","datakey":"123456789abcdefg","dataiv":"123456789abcdefg"}},
-    {"key":"py_行动_APP","name":" 🧿行动(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://zjm-1302383509.cos.ap-guangzhou.myqcloud.com/zjm.txt","api":"/api.php/getappapi","datakey":"zjmznbl2026zcxgb","dataiv":"zjmznbl2026zcxgb"}},
+	{"key":"py_肥猫_APP","name":" 🌺肥猫(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://103.236.61.192:8006","api":"/api.php/getappapi","datakey":"123456789abcdefg","dataiv":"123456789abcdefg"}},
+    {"key":"py_行动_APP","name":" 🌺行动(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://zjm-1302383509.cos.ap-guangzhou.myqcloud.com/zjm.txt","api":"/api.php/getappapi","datakey":"zjmznbl2026zcxgb","dataiv":"zjmznbl2026zcxgb"}},
+	{"key":"py_再来_APP","name":" 🌺再来(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://www.jumengwu.com","api":"/api.php/getappapi","datakey":"1f0a873caf2550a5","dataiv":"1f0a873caf2550a5"}},
+    {"key":"py_黑猫_APP","name":" 🌺黑猫(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://app1-0-0.87333.cc","api":"/api.php/getappapi","datakey":"VwsHxkCViDXEExWa","dataiv":"VwsHxkCViDXEExWa"}},
+    {"key":"py_兔子_APP","name":" 🌺兔子(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://dyyztvappapigoodgx.68.gy:12689/ciwk28vu38io8/apiurl.txt","api":"/api.php/getappapi","datakey":"dyyztvapiappyyds","dataiv":"dyyztvapiappyyds"}},
+    {"key":"py_永永_APP","name":" 🌺永永(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://bind.315999.xyz/89.txt","api":"/api.php/getappapi","datakey":"#getapp@TMD@2025|120","dataiv":"#getapp@TMD@2025|120"}},
+	
+	
+	
+	
 	{
             "key": "豆瓣",
             "name": "豆瓣｜首页",
