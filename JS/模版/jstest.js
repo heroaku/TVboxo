@@ -33,7 +33,8 @@ var rule = {
     "img": ".stui-content__thumb .lazyload&&data-original",
     "desc": ".stui-content__detail p.data:eq(0)&&Text;.stui-content__detail p.data:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text",
     "content": "#desc .stui-content__desc&&Text",
-     "tabs": ".stui-pannel h4.title",
+     //"tabs": ".stui-pannel h4.title",
+         "tabs": "js:['南亞線路', '優質線路', '光速線路', '索尼線路', '速播線路', '大洋線路']",
      "lists": ".stui-pannel:eq(#id) .stui-content__playlist li"
    // "tabs": ".stui-pannel__head .title",
    // "lists": ".stui-pannel:eq(#id)&&.stui-content__playlist li"
