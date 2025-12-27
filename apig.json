@@ -262,6 +262,10 @@
 {"key":"py_木瓜_APP","name":"木瓜(FOX)","type":3,"api":"./Py/app/appfox.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://www.yezitv.top"}},
 {"key":"py_恋鱼_APP","name":"恋鱼(FOX)","type":3,"api":"./Py/app/appfox.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://173220859-1333208043.cos.ap-shanghai.myqcloud.com/1.json","ver":"2"}},
 {"key":"py_麒麟_APP","name":"麒麟(FOX)","type":3,"api":"./Py/app/appfox.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://www.70yyw.cc","ver":"2"}},
+	{"key":"py_肥猫_APP","name":" 🌺肥猫(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://103.236.61.192:8006","api":"/api.php/getappapi","datakey":"123456789abcdefg","dataiv":"123456789abcdefg"}},
+    {"key":"py_行动_APP","name":" 🌺行动(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://zjm-1302383509.cos.ap-guangzhou.myqcloud.com/zjm.txt","api":"/api.php/getappapi","datakey":"zjmznbl2026zcxgb","dataiv":"zjmznbl2026zcxgb"}},
+	{"key":"py_再来_APP","name":" 🌺再来(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"https://www.jumengwu.com","api":"/api.php/getappapi","datakey":"1f0a873caf2550a5","dataiv":"1f0a873caf2550a5"}},
+    {"key":"py_黑猫_APP","name":" 🌺黑猫(GET)","type":3,"api":"./Py/app/getapp.py","searchable":1,"quickSearch":1,"filterable":1,"ext":{"host":"http://app1-0-0.87333.cc","api":"/api.php/getappapi","datakey":"VwsHxkCViDXEExWa","dataiv":"VwsHxkCViDXEExWa"}},
 	
 	//APP 结束
 {"key": "apple","name": "Apple┃影视","type": 3,"api": "./JS/apple.js","style": {"type": "rect","ratio": 1.33},"changeable": 1},	
