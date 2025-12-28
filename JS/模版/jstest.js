@@ -39,7 +39,7 @@ var rule = {
    // "lists": ".stui-pannel:eq(#id)&&.stui-content__playlist li"
 },
     */
-    二级: "js:var html = request(input);var $ = cheerio.load(html);var result = {};result.title = $('.stui-content__detail .title').text().trim();result.img = $('.stui-content__thumb .lazyload').attr('data-original');result.desc = $('#desc .stui-content__desc').text().trim();var tabs = [];var lists = {};$('.stui-pannel').each((i, panel) => {var $panel = $(panel);var title = $panel.find('.stui-pannel__head h4.title').text().trim();if (title && $panel.find('.stui-content__playlist').length > 0) {tabs.push(title);lists[title] = $panel.find('.stui-content__playlist li a').map((j, a) => ({name: $(a).text().trim(),url: $(a).attr('href')})).get();}});result.tabs = tabs;result.lists = lists;JSON.stringify(result);",
-  搜索: '.stui-vodlist__item li; a&&title; .lazyload&&data-original; .pic-text&&Text; a&&href',
+    二级: "js:var html = request(input);var $ = cheerio.load(html);var result = {};result.title = $('.stui-content__detail .title').text().trim();result.img = $('.stui-content__thumb .lazyload').attr('data-original');var descs = [];$('.stui-content__detail p.data').each(function(i, el){descs.push($(el).text().trim());});result.desc = descs.join('\\\\n');result.content = $('#desc .stui-content__desc').text().trim();var playlists = {};$('.stui-pannel').each(function(i, panel){var $panel = $(panel);var title = $panel.find('.stui-pannel__head h4.title').text().trim();var list = [];$panel.find('.stui-content__playlist li a').each(function(j, a){list.push($(a).text().trim() + '$' + $(a).attr('href'));});if(list.length > 0 && title !== '' && title !== '劇情介紹' && title !== '猜你喜歡'){playlists[title] = list;}});result.playlists = playlists;JSON.stringify(result);",
+      搜索: '.stui-vodlist__item li; a&&title; .lazyload&&data-original; .pic-text&&Text; a&&href',
 }
 
