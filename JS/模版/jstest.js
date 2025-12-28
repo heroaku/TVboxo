@@ -29,74 +29,69 @@ var rule = {
     class_parse: '.nav-tabs&&a;a&&Text;a&&href;(\\d+)',
     cate_exclude: '',
     play_parse: true,
+    
     lazy: $js.toString(() => {
         try {
             let html = request(input);
             
-            // 检查是否是多播放源页面（二级二层）
+            // 1. 尝试从JSON-LD中提取m3u8地址（最可靠）
+            let jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+            if (jsonLdMatch) {
+                try {
+                    let jsonData = JSON.parse(jsonLdMatch[1]);
+                    if (jsonData.contentUrl && jsonData.contentUrl.includes('.m3u8')) {
+                        console.log('从JSON-LD提取到播放地址:', jsonData.contentUrl);
+                        return {parse: 0, url: jsonData.contentUrl, js: ''};
+                    }
+                } catch(e) {
+                    console.log('JSON-LD解析失败:', e);
+                }
+            }
+            
+            // 2. 查找包含m3u8的script标签
+            let scripts = html.match(/<script[^>]*>[\s\S]*?<\/script>/gi) || [];
+            for (let script of scripts) {
+                // 查找明显的m3u8链接
+                let m3u8Match = script.match(/["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/);
+                if (m3u8Match) {
+                    console.log('从script提取到播放地址:', m3u8Match[1]);
+                    return {parse: 0, url: m3u8Match[1], js: ''};
+                }
+                
+                // 查找base64编码的可能包含m3u8的数据
+                if (script.includes('eval(function')) {
+                    // 尝试解码一些常见模式
+                    let base64Match = script.match(/['"]([A-Za-z0-9+/=]+)['"]/);
+                    if (base64Match) {
+                        try {
+                            let decoded = atob(base64Match[1]);
+                            if (decoded.includes('.m3u8')) {
+                                let m3u8Url = decoded.match(/(https?:\/\/[^\s'"]+\.m3u8[^\s'"]*)/);
+                                if (m3u8Url) {
+                                    console.log('从base64解码得到播放地址:', m3u8Url[0]);
+                                    return {parse: 0, url: m3u8Url[0], js: ''};
+                                }
+                            }
+                        } catch(e) {}
+                    }
+                }
+            }
+            
+            // 3. 如果是二级二层页面但没有找到播放地址，可能需要选择播放源
             if (input.match(/\/\d+\/\d+$/)) {
-                // 1. 尝试从schema.org数据提取
-                let schemaMatch = html.match(/"contentUrl":"([^"]+)"/);
-                if (schemaMatch && schemaMatch[1]) {
-                    let url = schemaMatch[1];
-                    if (url.includes('.m3u8')) {
-                        return {parse: 0, url: url, js: ''};
-                    }
-                }
-                
-                // 2. 从script标签中查找
-                let scripts = pdfa(html, 'script&&Html');
-                for (let script of scripts) {
-                    // 查找m3u8链接
-                    let m3u8Matches = script.match(/["']([^"']+\.m3u8[^"']*)["']/gi);
-                    if (m3u8Matches) {
-                        for (let match of m3u8Matches) {
-                            let url = match.replace(/["']/g, '');
-                            if (url && !url.includes('sharethis')) {
-                                if (!url.startsWith('http')) {
-                                    url = url.startsWith('//') ? 'https:' + url : urljoin('https://pttptt.cc', url);
-                                }
-                                return {parse: 0, url: url, js: ''};
-                            }
-                        }
-                    }
-                    
-                    // 查找mp4链接
-                    let mp4Matches = script.match(/["']([^"']+\.mp4[^"']*)["']/gi);
-                    if (mp4Matches) {
-                        for (let match of mp4Matches) {
-                            let url = match.replace(/["']/g, '');
-                            if (url) {
-                                if (!url.startsWith('http')) {
-                                    url = url.startsWith('//') ? 'https:' + url : urljoin('https://pttptt.cc', url);
-                                }
-                                return {parse: 0, url: url, js: ''};
-                            }
-                        }
-                    }
-                }
-                
-                // 3. 尝试从video标签提取
-                let videoSrc = pdfh(html, 'video&&src') || pdfh(html, 'video source&&src');
-                if (videoSrc) {
-                    if (!videoSrc.startsWith('http')) {
-                        videoSrc = urljoin('https://pttptt.cc', videoSrc);
-                    }
-                    return {parse: 0, url: videoSrc, js: ''};
-                }
-                
-                // 4. 检查是否有多个播放源
-                let sources = pdfa(html, '.nav-tabs a.nav-link');
-                if (sources.length > 0) {
+                let sourceLinks = html.match(/<a class="nav-link[^>]*href="([^"]+)"[^>]*>/g) || [];
+                if (sourceLinks.length > 0) {
+                    console.log('发现多个播放源，需要选择');
                     return {parse: 0, url: '', js: '// 请选择播放源'};
                 }
             }
             
-            // 5. 如果是二级一层页面，返回空让用户选择剧集
+            // 4. 如果是二级一层页面，让用户选择剧集
             if (input.includes('/v/')) {
                 return {parse: 0, url: '', js: '// 请选择具体剧集'};
             }
             
+            console.log('未找到播放地址，使用原始URL');
             return {parse: 0, url: input, js: ''};
             
         } catch(error) {
@@ -104,8 +99,10 @@ var rule = {
             return {parse: 0, url: input, js: ''};
         }
     }),
+    
     double: false,
     推荐: '*',
+    
     一级: '#videos&&.card:not(:has(.badge-success:contains(广告)));a:eq(-1)&&Text;img&&src;.badge-success&&Text;a[href*="/v/"]&&href',
     
     二级: $js.toString(() => {
@@ -113,142 +110,138 @@ var rule = {
             let html = request(input);
             let VOD = {};
             
-            // 判断是二级一层还是二级二层
-            let isSecondLayer = input.includes('/v/');
+            // 判断页面类型
+            let isDetailPage = input.includes('/v/');
             
-            if (isSecondLayer) {
-                // 二级一层：显示剧集介绍和列表
+            if (isDetailPage) {
+                // 二级一层：影视详情页
                 
                 // 标题
-                VOD.vod_name = pdfh(html, 'h3.py-1&&Text') || pdfh(html, '.breadcrumb-item:last-child&&Text');
+                VOD.vod_name = pdfh(html, 'h3.py-1&&Text') || 
+                               pdfh(html, '.breadcrumb-item:last-child&&Text') ||
+                               pdfh(html, 'title&&Text');
                 
                 // 封面
-                VOD.vod_pic = pd(html, '.row.mb-3 img&&src', input);
-                if (VOD.vod_pic && !VOD.vod_pic.startsWith('http')) {
-                    VOD.vod_pic = urljoin('https://pttptt.cc', VOD.vod_pic);
-                }
+                let pic = pdfh(html, '.row.mb-3 img&&src') || 
+                         pdfh(html, '.card-img-top&&src') ||
+                         pdfh(html, 'meta[property="og:image"]&&content');
+                VOD.vod_pic = pic ? (pic.startsWith('http') ? pic : urljoin('https://pttptt.cc', pic)) : '';
                 
-                // 基本信息
-                let tableRows = pdfa(html, '.table-about&&tbody&&tr');
-                tableRows.forEach(row => {
-                    let th = pdfh(row, 'th&&Text').trim();
-                    let td = pdfh(row, 'td&&Text').trim();
+                // 基本信息表格
+                let infoRows = pdfa(html, '.table-about tbody tr');
+                infoRows.forEach(row => {
+                    let label = pdfh(row, 'th&&Text').trim();
+                    let value = pdfh(row, 'td&&Text').trim();
                     
-                    if (th.includes('狀態') || th.includes('状态')) {
-                        VOD.vod_remarks = td;
-                    } else if (th.includes('類別') || th.includes('类别')) {
-                        VOD.type_name = td;
-                    } else if (th.includes('導演') || th.includes('导演')) {
-                        VOD.vod_director = td;
-                    } else if (th.includes('國家') || th.includes('国家')) {
-                        VOD.vod_area = td;
-                    } else if (th.includes('語言') || th.includes('语言')) {
-                        VOD.vod_lang = td;
-                    } else if (th.includes('年代') || th.includes('年份')) {
-                        VOD.vod_year = td;
-                    }
+                    if (label.includes('狀態') || label.includes('状态')) VOD.vod_remarks = value;
+                    else if (label.includes('類別') || label.includes('类别')) VOD.type_name = value;
+                    else if (label.includes('導演') || label.includes('导演')) VOD.vod_director = value;
+                    else if (label.includes('國家') || label.includes('国家')) VOD.vod_area = value;
+                    else if (label.includes('語言') || label.includes('语言')) VOD.vod_lang = value;
+                    else if (label.includes('年代') || label.includes('年份')) VOD.vod_year = value;
                 });
                 
                 // 剧情介绍
-                let content = pdfh(html, 'h3:contains(劇情介紹)+p&&Text') || 
-                              pdfh(html, 'h3:contains(剧情介绍)+p&&Text');
-                VOD.vod_content = content;
+                VOD.vod_content = pdfh(html, 'h3:contains(劇情介紹)+p&&Text') || 
+                                 pdfh(html, 'h3:contains(剧情介绍)+p&&Text') ||
+                                 pdfh(html, 'meta[name="description"]&&content');
                 
                 // 演员
-                let actors = pdfa(html, 'h3:contains(領銜主演)+*+a');
-                if (actors.length === 0) {
-                    actors = pdfa(html, 'h3:contains(领衔主演)+*+a');
-                }
+                let actors = [];
+                let actorLinks = pdfa(html, 'h3:contains(領銜主演)+*+a, h3:contains(领衔主演)+*+a');
+                actorLinks.forEach(link => {
+                    actors.push(pdfh(link, '&&Text'));
+                });
                 if (actors.length > 0) {
-                    VOD.vod_actor = actors.map(a => pdfh(a, '&&Text')).join(',');
+                    VOD.vod_actor = actors.join(',');
                 }
                 
-                // 提取剧集列表（二级二层链接）
-                let episodes = pdfa(html, '.seqs a, .seq.border');
-                let playList = [];
+                // 提取剧集列表 - 关键修复！
+                let episodes = [];
                 
-                episodes.forEach(ep => {
-                    let name = pdfh(ep, '&&Text');
-                    let url = pd(ep, '&&href', input);
+                // 方法1：使用 .seqs 下的链接
+                let seqLinks = pdfa(html, '.seqs a, .seq.border, a.seq');
+                seqLinks.forEach(link => {
+                    let name = pdfh(link, '&&Text');
+                    let href = pd(link, '&&href', input);
                     
-                    // 确保是二级二层地址（/571317/1 格式）
-                    if (url && !url.includes('/v/') && !url.includes('javascript')) {
-                        if (!url.startsWith('http')) {
-                            url = urljoin('https://pttptt.cc', url);
+                    if (name && href && !href.includes('/v/')) {
+                        // 确保是完整的URL
+                        if (!href.startsWith('http')) {
+                            href = urljoin('https://pttptt.cc', href);
                         }
-                        playList.push(name + '$' + url);
+                        episodes.push(name + '$' + href);
                     }
                 });
                 
-                // 如果没有找到.seqs链接，尝试其他选择器
-                if (playList.length === 0) {
-                    let altEpisodes = pdfa(html, 'a[href*="/"][href*="/"][href$="/1"]');
-                    altEpisodes.forEach(ep => {
-                        let url = pd(ep, '&&href', input);
-                        if (url && !url.includes('/v/')) {
-                            let match = url.match(/\/(\d+)\/\d+$/);
-                            if (match) {
-                                let epNum = url.split('/').pop();
-                                if (!url.startsWith('http')) {
-                                    url = urljoin('https://pttptt.cc', url);
-                                }
-                                playList.push('第' + epNum + '集$' + url);
+                // 方法2：如果没找到，尝试其他模式
+                if (episodes.length === 0) {
+                    let allLinks = pdfa(html, 'a');
+                    allLinks.forEach(link => {
+                        let href = pd(link, '&&href', input);
+                        if (href && href.match(/\/\d+\/\d+$/)) {
+                            let name = pdfh(link, '&&Text') || '播放';
+                            if (!href.startsWith('http')) {
+                                href = urljoin('https://pttptt.cc', href);
                             }
+                            episodes.push(name + '$' + href);
                         }
                     });
                 }
                 
-                // 设置播放源
-                if (playList.length > 0) {
-                    VOD.vod_play_from = '剧集列表';
-                    VOD.vod_play_url = playList.join('#');
+                // 设置播放列表
+                if (episodes.length > 0) {
+                    VOD.vod_play_from = '剧集';
+                    VOD.vod_play_url = episodes.join('#');
                 } else {
-                    // 如果没有剧集列表，可能是电影，直接使用当前页面
-                    VOD.vod_play_from = '直接播放';
+                    // 可能是电影，直接播放
+                    VOD.vod_play_from = '播放';
                     VOD.vod_play_url = '播放$' + input;
                 }
                 
             } else {
-                // 二级二层：具体剧集播放页面
+                // 二级二层：播放页
                 
-                // 从页面中提取剧集信息
-                let titleMatch = input.match(/\/(\d+)\/(\d+)$/);
-                if (titleMatch) {
-                    let vid = titleMatch[1];
-                    let epNum = titleMatch[2];
+                // 提取剧集信息
+                let match = input.match(/\/(\d+)\/(\d+)/);
+                if (match) {
+                    let seriesId = match[1];
+                    let episodeNum = match[2];
                     
-                    // 尝试获取完整标题
-                    let breadcrumbItems = pdfa(html, '.breadcrumb-item');
-                    if (breadcrumbItems.length > 0) {
-                        let mainTitle = pdfh(breadcrumbItems[breadcrumbItems.length-2], '&&Text');
-                        if (mainTitle) {
-                            VOD.vod_name = mainTitle + ' 第' + epNum + '集';
-                        } else {
-                            VOD.vod_name = '第' + epNum + '集';
-                        }
+                    // 尝试从面包屑导航获取标题
+                    let breadcrumbs = pdfa(html, '.breadcrumb-item');
+                    if (breadcrumbs.length >= 2) {
+                        let seriesTitle = pdfh(breadcrumbs[breadcrumbs.length - 2], '&&Text');
+                        VOD.vod_name = seriesTitle + ' 第' + episodeNum + '集';
                     } else {
-                        VOD.vod_name = '第' + epNum + '集';
+                        VOD.vod_name = '第' + episodeNum + '集';
                     }
+                } else {
+                    VOD.vod_name = '播放';
                 }
                 
                 // 检查是否有多个播放源
-                let sources = pdfa(html, '.nav-tabs a.nav-link');
-                if (sources.length > 0) {
-                    // 有多个播放源，提取播放源列表
-                    let sourceList = [];
-                    sources.forEach(source => {
-                        let sourceName = pdfh(source, '&&Text');
-                        let sourceUrl = pd(source, '&&href', input);
-                        if (sourceName && sourceUrl) {
-                            sourceList.push(sourceName + '$' + sourceUrl);
+                let sourceTabs = pdfa(html, '.nav-tabs .nav-link');
+                let sources = [];
+                
+                if (sourceTabs.length > 0) {
+                    // 有多个播放源
+                    sourceTabs.forEach(tab => {
+                        let sourceName = pdfh(tab, '&&Text');
+                        let sourceHref = pd(tab, '&&href', input);
+                        if (sourceName && sourceHref) {
+                            if (!sourceHref.startsWith('http')) {
+                                sourceHref = urljoin('https://pttptt.cc', sourceHref);
+                            }
+                            sources.push(sourceName + '$' + sourceHref);
                         }
                     });
                     
-                    if (sourceList.length > 0) {
-                        VOD.vod_play_from = sourceList.map(s => s.split('$')[0]).join('#');
-                        VOD.vod_play_url = sourceList.join('#');
+                    if (sources.length > 0) {
+                        VOD.vod_play_from = sources.map(s => s.split('$')[0]).join('#');
+                        VOD.vod_play_url = sources.join('#');
                     } else {
-                        VOD.vod_play_from = '默认';
+                        VOD.vod_play_from = '播放';
                         VOD.vod_play_url = '播放$' + input;
                     }
                 } else {
@@ -258,20 +251,16 @@ var rule = {
                 }
                 
                 // 尝试获取封面
-                let pic = pd(html, '.lazyimage&&src', input) || pd(html, 'img.card-img-top&&src', input);
-                if (pic) {
-                    if (!pic.startsWith('http')) {
-                        pic = urljoin('https://pttptt.cc', pic);
-                    }
-                    VOD.vod_pic = pic;
+                let coverImg = pdfh(html, 'meta[property="og:image"]&&content') ||
+                              pdfh(html, '.lazyimage&&src');
+                if (coverImg && !coverImg.startsWith('http')) {
+                    coverImg = urljoin('https://pttptt.cc', coverImg);
                 }
+                VOD.vod_pic = coverImg || '';
                 
-                // 尝试获取剧情简介
-                let desc = pdfh(html, 'meta[name="description"]&&content') || 
-                          pdfh(html, 'meta[property="og:description"]&&content');
-                if (desc) {
-                    VOD.vod_content = desc;
-                }
+                // 获取描述
+                VOD.vod_content = pdfh(html, 'meta[property="og:description"]&&content') ||
+                                 pdfh(html, 'meta[name="description"]&&content');
             }
             
             return VOD;
@@ -279,7 +268,7 @@ var rule = {
         } catch(error) {
             console.log('二级解析错误:', error);
             return {
-                vod_name: '加载中',
+                vod_name: '播放页面',
                 vod_play_from: '默认',
                 vod_play_url: '播放$' + input
             };
@@ -289,23 +278,36 @@ var rule = {
     搜索: $js.toString(() => {
         try {
             let html = request(input);
-            let d = [];
-            let list = pdfa(html, '#videos .card');
+            let results = [];
+            let items = pdfa(html, '#videos .card');
             
-            list.forEach(item => {
+            items.forEach(item => {
                 try {
-                    d.push({
-                        vod_id: pd(item, 'a&&href', input),
-                        vod_name: pdfh(item, 'a:eq(-1)&&Text'),
-                        vod_pic: pd(item, 'img&&src', input),
-                        vod_remarks: pdfh(item, '.badge-success&&Text')
-                    });
+                    let vod_id = pd(item, 'a[href*="/v/"]&&href', input);
+                    let vod_name = pdfh(item, 'a:eq(-1)&&Text');
+                    let vod_pic = pd(item, 'img&&src', input);
+                    let vod_remarks = pdfh(item, '.badge-success&&Text');
+                    
+                    if (vod_id && vod_name) {
+                        // 补全图片URL
+                        if (vod_pic && !vod_pic.startsWith('http')) {
+                            vod_pic = urljoin('https://pttptt.cc', vod_pic);
+                        }
+                        
+                        results.push({
+                            vod_id: vod_id,
+                            vod_name: vod_name,
+                            vod_pic: vod_pic,
+                            vod_remarks: vod_remarks || ''
+                        });
+                    }
                 } catch(e) {
-                    console.log('搜索项解析错误:', e);
+                    console.log('搜索项处理错误:', e);
                 }
             });
             
-            return d;
+            return results;
+            
         } catch(error) {
             console.log('搜索解析错误:', error);
             return [];
