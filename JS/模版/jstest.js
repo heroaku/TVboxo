@@ -44,8 +44,8 @@ var rule = {
         "img": ".stui-content__thumb .lazyload&&data-original",
         "desc": ".stui-content__detail p.data:eq(0)&&Text;.stui-content__detail p.data:eq(1)&&Text;.stui-content__detail p.data:eq(2)&&Text;.stui-content__detail p.data:eq(3)&&Text;.stui-content__detail p.data:eq(4)&&Text",
         "content": "#desc .stui-content__desc&&Text",
-        "tabs": ".stui-pannel:has(.stui-content__playlist) .stui-pannel__head h4.title&&Text",
-        "lists": ".stui-pannel:has(.stui-content__playlist):eq(#id) .stui-content__playlist li a&&href"
+        "tabs": ".stui-pannel .stui-pannel__head h4.title&&Text",
+        "lists": ".stui-pannel:eq(#id) .stui-content__playlist li"
     },
     搜索: 'ul.stui-vodlist&&li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
 
