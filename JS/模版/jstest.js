@@ -33,8 +33,9 @@ var rule = {
     
     lazy: $js.toString(() => {
         try {
-            // 直接从JSON-LD中提取contentUrl
             let html = request(input);
+            
+            // 1. 直接从JSON-LD中提取contentUrl
             let match = html.match(/"contentUrl":"([^"]+)"/);
             if (match && match[1]) {
                 let playUrl = match[1].replace(/\\/g, '');
@@ -42,9 +43,15 @@ var rule = {
                 return {parse: 0, url: playUrl, js: ''};
             }
             
-            // 如果没找到，尝试其他方式
+            // 2. 如果没有JSON-LD，检查是否是剧集选择页面
+            if (input.includes('/v/')) {
+                return {parse: 0, url: '', js: '// 请选择具体剧集'};
+            }
+            
+            // 3. 如果是剧集播放页面但没有找到地址
             if (input.match(/\/\d+\/\d+\/\d+$/)) {
-                return {parse: 0, url: '', js: '// 需要进一步解析播放地址'};
+                console.log('剧集播放页面，但未找到播放地址:', input);
+                return {parse: 0, url: input, js: 'setTimeout(() => location.reload(), 1000)'};
             }
             
             return {parse: 0, url: input, js: ''};
@@ -58,26 +65,38 @@ var rule = {
     double: false,
     推荐: '*',
     
-    一级: '#videos&&.card:not(:has(.badge-success:contains(广告)));a:eq(-1)&&Text;img&&src;.badge-success&&Text;a[href*="/v/"]&&href',
+    // 一级解析：提取影视列表
+    一级: '.embed-responsive:has(a[href*="/v/"]);a:eq(-1)&&Text;img&&src;.badge-success&&Text;a[href*="/v/"]&&href',
     
     二级: $js.toString(() => {
         try {
-            let html = request(input);
             let VOD = {};
+            let html = request(input);
             
-            // 提取影视基本信息
+            // 提取影片ID
+            let vodId = '';
+            if (input.includes('/v/')) {
+                vodId = input.split('/v/')[1];
+            } else if (input.includes('/')) {
+                let parts = input.split('/');
+                vodId = parts[parts.length - 1];
+            }
+            
+            // 提取标题
             VOD.vod_name = pdfh(html, 'h3.py-1&&Text') || 
-                           pdfh(html, '.breadcrumb-item:last-child&&Text');
+                          pdfh(html, '.breadcrumb-item:last-child&&Text') ||
+                          pdfh(html, 'title&&Text');
             
-            // 封面
+            // 提取封面
             let pic = pdfh(html, '.row.mb-3 img&&src') || 
-                     pdfh(html, '.card-img-top&&src');
+                     pdfh(html, '.card-img-top&&src') ||
+                     pdfh(html, 'img.img-fluid&&src');
             if (pic && !pic.startsWith('http')) {
-                pic = urljoin('https://ptt.red', pic);
+                pic = 'https://ptt.red' + pic;
             }
             VOD.vod_pic = pic;
             
-            // 基本信息表格
+            // 提取基本信息
             let infoRows = pdfa(html, '.table-about tbody tr');
             infoRows.forEach(row => {
                 let label = pdfh(row, 'th&&Text').trim();
@@ -91,106 +110,128 @@ var rule = {
                 else if (label.includes('年代') || label.includes('年份')) VOD.vod_year = value;
             });
             
-            // 剧情介绍
+            // 提取剧情介绍
             VOD.vod_content = pdfh(html, 'h3:contains(劇情介紹)+p&&Text') || 
-                             pdfh(html, 'h3:contains(剧情介绍)+p&&Text');
+                             pdfh(html, 'h3:contains(剧情介绍)+p&&Text') ||
+                             '';
             
-            // 演员
+            // 提取演员
             let actors = [];
-            let actorLinks = pdfa(html, 'h3:contains(領銜主演)+*+a, h3:contains(领衔主演)+*+a');
-            actorLinks.forEach(link => {
-                actors.push(pdfh(link, '&&Text'));
+            let actorElements = pdfa(html, 'h3:contains(領銜主演)+*+a, h3:contains(领衔主演)+*+a');
+            actorElements.forEach(actor => {
+                actors.push(pdfh(actor, '&&Text'));
             });
             if (actors.length > 0) {
                 VOD.vod_actor = actors.join(',');
             }
             
-            // 关键部分：提取播放源和剧集
-            let flags = {}; // 播放源映射 {播放源ID: 播放源名称}
-            let playUrls = []; // 每个播放源的剧集列表
+            // ====== 关键部分：播放源和剧集解析 ======
             
-            // 1. 提取所有播放源（琪雲、蓉雲、埔雲等）
-            let sourceElements = pdfa(html, '.nav-tabs a.nav-link, ul#w1 li a');
-            sourceElements.forEach(source => {
-                let sourceUrl = pd(source, '&&href', input);
-                let sourceName = pdfh(source, '&&Text');
-                
-                if (sourceUrl && sourceName) {
-                    // 解析播放源ID：/571317/1/94 中的 94
-                    let parts = sourceUrl.split('/');
+            // 1. 提取播放源（琪雲、蓉雲、埔雲等）
+            let sources = {};
+            
+            // 方式1：从导航标签提取
+            let navSources = pdfa(html, '.nav-tabs .nav-link');
+            navSources.forEach(source => {
+                let href = pd(source, '&&href', input);
+                let name = pdfh(source, '&&Text');
+                if (href && name) {
+                    let parts = href.split('/');
                     if (parts.length >= 4) {
                         let sourceId = parts[3];
-                        flags[sourceId] = sourceName;
+                        sources[sourceId] = name;
                     }
                 }
             });
             
-            // 如果没有播放源，使用默认播放源
-            if (Object.keys(flags).length === 0) {
-                flags['94'] = '默认'; // 默认使用琪雲
+            // 方式2：从ul#w1提取（备选方案）
+            if (Object.keys(sources).length === 0) {
+                let ulSources = pdfa(html, 'ul#w1 li a');
+                ulSources.forEach(source => {
+                    let href = pd(source, '&&href', input);
+                    let name = pdfh(source, '&&Text') || pdfh(source, '&&title');
+                    if (href && name) {
+                        let parts = href.split('/');
+                        if (parts.length >= 4) {
+                            let sourceId = parts[3];
+                            sources[sourceId] = name;
+                        }
+                    }
+                });
+            }
+            
+            // 如果没有找到播放源，设置默认
+            if (Object.keys(sources).length === 0) {
+                sources = {
+                    '94': '琪雲',
+                    '49': '蓉雲',
+                    '57': '埔雲'
+                };
             }
             
             // 2. 提取剧集列表
-            let episodeElements = pdfa(html, '.seqs a, a.seq.border');
             let episodes = [];
-            episodeElements.forEach(ep => {
-                let epUrl = pd(ep, '&&href', input);
-                let epName = pdfh(ep, '&&Text');
-                
-                if (epUrl && epName) {
-                    // 解析剧集号：/571317/1 中的 1
-                    let parts = epUrl.split('/');
+            
+            // 方式1：从.seqs提取
+            let seqElements = pdfa(html, '.seqs a, a.seq.border, a.seq');
+            seqElements.forEach(seq => {
+                let href = pd(seq, '&&href', input);
+                let name = pdfh(seq, '&&Text');
+                if (href && name) {
+                    let parts = href.split('/');
                     if (parts.length >= 3) {
                         let epNum = parts[2];
-                        episodes.push({name: epName, num: epNum});
+                        episodes.push({num: epNum, name: name});
                     }
                 }
             });
             
-            // 如果没有剧集，可能是电影
+            // 方式2：如果没有剧集，可能是电影
             if (episodes.length === 0) {
-                episodes.push({name: '播放', num: '1'});
+                episodes.push({num: '1', name: '播放'});
             }
             
-            // 3. 为每个播放源构建剧集播放列表
-            let vodPlayFrom = [];
-            let vodPlayUrl = [];
+            // 3. 构建播放列表
+            let playFrom = [];
+            let playUrl = [];
             
-            for (let sourceId in flags) {
-                let sourceName = flags[sourceId];
-                let epList = [];
+            for (let sourceId in sources) {
+                let sourceName = sources[sourceId];
+                let episodeList = [];
                 
                 episodes.forEach(ep => {
-                    // 构建播放URL格式：/影视ID/剧集号/播放源ID
-                    let playUrl = '';
-                    if (input.includes('/v/')) {
-                        // 从 /v/571317 提取 571317
-                        let vodId = input.split('/').pop();
-                        playUrl = vodId + '/' + ep.num + '/' + sourceId;
-                    } else {
-                        // 已经是在播放页面
-                        let vodId = input.split('/')[1];
-                        playUrl = vodId + '/' + ep.num + '/' + sourceId;
-                    }
-                    
-                    epList.push(ep.name + '$' + playUrl);
+                    // 构建播放URL：vodId/epNum/sourceId
+                    let playItem = ep.name + '$' + vodId + '/' + ep.num + '/' + sourceId;
+                    episodeList.push(playItem);
                 });
                 
-                vodPlayFrom.push(sourceName);
-                vodPlayUrl.push(epList.join('#'));
+                playFrom.push(sourceName);
+                playUrl.push(episodeList.join('#'));
             }
             
-            VOD.vod_play_from = vodPlayFrom.join('$$$');
-            VOD.vod_play_url = vodPlayUrl.join('$$$');
+            VOD.vod_play_from = playFrom.join('$$$');
+            VOD.vod_play_url = playUrl.join('$$$');
+            
+            console.log('解析结果:', {
+                vodId: vodId,
+                sources: sources,
+                episodes: episodes,
+                playFrom: VOD.vod_play_from,
+                playUrl: VOD.vod_play_url
+            });
             
             return VOD;
             
         } catch(error) {
             console.log('二级解析错误:', error);
+            console.log('错误详情:', error.message);
+            console.log('输入URL:', input);
+            
+            // 返回最小化的播放信息
             return {
                 vod_name: '播放页面',
                 vod_play_from: '默认$$$',
-                vod_play_url: '播放$' + input + '$$$'
+                vod_play_url: '播放$' + (input.includes('/v/') ? input.split('/v/')[1] + '/1/94' : input) + '$$$'
             };
         }
     }),
@@ -199,26 +240,31 @@ var rule = {
         try {
             let html = request(input);
             let results = [];
-            let items = pdfa(html, '#videos .card');
+            
+            // 提取搜索结果
+            let items = pdfa(html, '.card .embed-responsive:has(a[href*="/v/"])');
             
             items.forEach(item => {
                 try {
-                    let vod_id = pd(item, 'a[href*="/v/"]&&href', input);
-                    let vod_name = pdfh(item, 'a:eq(-1)&&Text') || 
-                                  pdfh(item, 'img&&alt');
+                    let link = pdfa(item, 'a[href*="/v/"]')[0];
+                    if (!link) return;
+                    
+                    let vod_id = pd(link, '&&href', input);
+                    let vod_name = pdfh(item, 'img&&alt') || pdfh(link, '&&Text');
                     let vod_pic = pd(item, 'img&&src', input);
                     let vod_remarks = pdfh(item, '.badge-success&&Text');
                     
+                    // 处理vod_id
+                    if (vod_id && vod_id.includes('/v/')) {
+                        vod_id = vod_id.split('/v/')[1];
+                    }
+                    
+                    // 处理图片URL
+                    if (vod_pic && !vod_pic.startsWith('http')) {
+                        vod_pic = 'https://ptt.red' + vod_pic;
+                    }
+                    
                     if (vod_id && vod_name) {
-                        // 补全URL
-                        if (vod_id.startsWith('/v/')) {
-                            vod_id = vod_id.substring(3); // 去掉 /v/
-                        }
-                        
-                        if (vod_pic && !vod_pic.startsWith('http')) {
-                            vod_pic = urljoin('https://ptt.red', vod_pic);
-                        }
-                        
                         results.push({
                             vod_id: vod_id,
                             vod_name: vod_name,
@@ -227,7 +273,7 @@ var rule = {
                         });
                     }
                 } catch(e) {
-                    console.log('搜索项处理错误:', e);
+                    console.log('单个搜索结果处理错误:', e);
                 }
             });
             
