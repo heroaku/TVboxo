@@ -39,7 +39,41 @@ var rule = {
    // "lists": ".stui-pannel:eq(#id)&&.stui-content__playlist li"
 },
     */
-    二级: "js:var html = request(input);var $ = cheerio.load(html);var result = {};result.title = $('.stui-content__detail .title').text().trim();result.img = $('.stui-content__thumb .lazyload').attr('data-original');var descs = [];$('.stui-content__detail p.data').each(function(i, el){descs.push($(el).text().trim());});result.desc = descs.join('\\\\n');result.content = $('#desc .stui-content__desc').text().trim();var playlists = {};$('.stui-pannel').each(function(i, panel){var $panel = $(panel);var title = $panel.find('.stui-pannel__head h4.title').text().trim();var list = [];$panel.find('.stui-content__playlist li a').each(function(j, a){list.push($(a).text().trim() + '$' + $(a).attr('href'));});if(list.length > 0 && title !== '' && title !== '劇情介紹' && title !== '猜你喜歡'){playlists[title] = list;}});result.playlists = playlists;JSON.stringify(result);",
-      搜索: '.stui-vodlist__item li; a&&title; .lazyload&&data-original; .pic-text&&Text; a&&href',
+二级: `js:
+  pdfh = jsp.pdfh; pdfa = jsp.pdfa; pd = jsp.pd;
+  let html = input;
+  let title = pdfh(html, '.stui-content__detail .title&&Text');
+  let img = pdfh(html, '.stui-content__thumb .lazyload&&data-original');
+  let content = pdfh(html, '#desc .stui-content__desc&&Text');
+  let desc1 = pdfh(html, '.stui-content__detail p:eq(0)&&Text');
+  let desc2 = pdfh(html, '.stui-content__detail p:eq(1)&&Text');
+  let desc3 = pdfh(html, '.stui-content__detail p:eq(2)&&Text');
+  let desc4 = pdfh(html, '.stui-content__detail p:eq(3)&&Text');
+  let desc5 = pdfh(html, '.stui-content__detail p:eq(4)&&Text');
+  let desc = [desc1, desc2, desc3, desc4, desc5].filter(s => s).join(' / ');
+
+  let tabs = [];
+  let urls = [];
+  pdfa(html, '.stui-pannel').forEach(pan => {
+    let list = pdfa(pan, '.stui-content__playlist li');
+    if (list.length > 0) {
+      let tab = pdfh(pan, 'h4.title&&Text');
+      if (tab) {
+        tabs.push(tab);
+        urls.push(list.map(li => pdfh(li, 'a&&Text') + '$' + pd(li, 'a&&href')).join('#'));
+      }
+    }
+  });
+
+  VOD = {
+    vod_name: title,
+    vod_pic: img,
+    vod_content: content,
+    vod_actor: desc,
+    vod_play_from: tabs.join('$$$'),
+    vod_play_url: urls.join('$$$')
+  };
+`,
+    搜索: '.stui-vodlist__item li; a&&title; .lazyload&&data-original; .pic-text&&Text; a&&href',
 }
 
