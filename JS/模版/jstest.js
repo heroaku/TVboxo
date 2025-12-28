@@ -39,38 +39,14 @@ var rule = {
    // "lists": ".stui-pannel:eq(#id)&&.stui-content__playlist li"
 },
     */
-    二级: {
-  title: ".stui-content__detail .title&&Text",
-  img: ".stui-content__thumb .lazyload&&data-original",
-  desc: ".stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text",
-  content: "#desc .stui-content__desc&&Text",
-  tabs: (html) => {
-    let panels = pdfa(html, '.stui-pannel');
-    let tabs = [];
-    panels.forEach(pan => {
-      // 判断是否有播放列表
-      let hasList = pdfa(pan, '.stui-content__playlist li').length > 0;
-      if (hasList) {
-        let title = pdfh(pan, 'h4.title&&Text');
-        if (title && title.trim() !== '') {
-          tabs.push(title);
-        }
-      }
-    });
-    return tabs;
-  },
-  lists: (html, tabs) => {
-    let panels = pdfa(html, '.stui-pannel');
-    let lists = [];
-    panels.forEach(pan => {
-      let episodes = pdfa(pan, '.stui-content__playlist li');
-      if (episodes.length > 0) {
-        lists.push(episodes);
-      }
-    });
-    return lists;
-  }
-},
+    "二级": {
+        "title": ".stui-content__detail .title&&Text",
+        "img": ".stui-content__thumb .lazyload&&data-original",
+        "desc": ".stui-content__detail p.data:eq(0)&&Text;.stui-content__detail p.data:eq(1)&&Text;.stui-content__detail p.data:eq(2)&&Text;.stui-content__detail p.data:eq(3)&&Text;.stui-content__detail p.data:eq(4)&&Text",
+        "content": "#desc .stui-content__desc&&Text",
+        "tabs": ".stui-pannel:has(.stui-content__playlist) .stui-pannel__head h4.title&&Text",
+        "lists": ".stui-pannel:has(.stui-content__playlist):eq(#id) .stui-content__playlist li a&&href"
+    },
     搜索: 'ul.stui-vodlist&&li;a&&title;.lazyload&&data-original;.text-muted&&Text;a&&href;.text-muted:eq(-1)&&Text',
 
 }
