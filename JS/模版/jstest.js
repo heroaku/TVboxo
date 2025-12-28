@@ -16,7 +16,7 @@ var rule = {
     
     推荐: '.stui-vodlist__bd .stui-vodlist__item;.stui-vodlist__title&&Text;.stui-vodlist__thumb&&data-original;.stui-vodlist__title a&&href;.pic-text&&Text',
     
-    一级: '.stui-vodlist__bd .stui-vodlist__item;.stui-vodlist__title&&Text;.stui-vodlist__thumb&&data-original;.stui-vodlist__title a&&href;.pic-text&&Text',
+      一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
     
     "二级": {
         "title": ".stui-content__detail .title&&Text",
