@@ -1,68 +1,97 @@
+/*
+@header({
+  searchable: 2,
+  filterable: 1,
+  quickSearch: 0,
+  title: 'PTT追剧大师',
+  '类型': '影视',
+  lang: 'ds'
+})
+*/
+
 var rule = {
-    title: '小鸭影音',
-    host: 'https://777tv.ai',
-    url: '/vod/show/id/fyclass/page/fypage.html',
-    searchUrl: '/vod/search/page/fypage/wd/**.html',
+    类型: '影视',//影视|听书|漫画|小说
+    title: 'PTT追剧大师',
+    host: 'https://ptt.red',
+    homeUrl: '/zh-cn',
+    url: '/zh-cn/p/fyclass?page=fypage',
+    searchUrl: '/zh-cn/q/**?page=fypage',
     searchable: 2,
-    quickSearch: 1,
-    filterable: 0,
+    quickSearch: 0,
+    filterable: 1,
+    filter: '',
+    filter_url: '',
+    filter_def: {},
     headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        'User-Agent': 'MOBILE_UA',
     },
     timeout: 5000,
-    class_name: '全部&电视剧&电影&动漫&综艺&短剧',
-    class_url: '0&2&1&30&29&short_series',
-    limit: 20,
-    
-    推荐: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    class_parse: '.nav-tabs&&a;a&&Text;a&&href;(\\d+)',
+    cate_exclude: '',
+    play_parse: true,
+    lazy: $js.toString(() => {
+        let html = request(input);
+        let sdata = pdfh(html, '.container-fluid&&script&&Html');
+        // log(sdata);
+        let json = JSON.parse(sdata);
+        if (json.contentUrl) {
+            input = {parse: 0, url: json.contentUrl, js: ''};
+        }
+    }),
+    double: false,
+    推荐: '*',
+    //α大佬方案去除推荐页广告
+    一级: '#videos&&.card:not(:has(.badge-success:contains(广告)));a:eq(-1)&&Text;img&&src;.badge-success&&Text;a:eq(-1)&&href',
     二级: $js.toString(() => {
         let html = request(input);
-        let $ = cheerio.load(html);
-        
-        let title = $('.stui-content__detail .title').text().trim();
-        let img = $('.stui-content__thumb .lazyload').attr('data-original') || $('.stui-content__thumb .lazyload').attr('src') || '';
-        
-        let descArray = [];
-        $('.stui-content__detail p.data').each(function() {
-            descArray.push($(this).text().trim());
-        });
-        let desc = descArray.join(' / ');
-        
-        let content = $('#desc .stui-content__desc').text().trim();
-        
-        let playFrom = [];
-        let playUrl = [];
-        
-        $('.stui-pannel').each(function() {
-            let panelTitle = $(this).find('.stui-pannel__head h4.title').text().trim();
-            let playlist = $(this).find('.stui-content__playlist li a');
-            
-            if (playlist.length > 0 && panelTitle && panelTitle !== '劇情介紹' && panelTitle !== '猜你喜歡') {
-                playFrom.push(panelTitle);
-                
-                let episodes = [];
-                playlist.each(function() {
-                    let epTitle = $(this).text().trim();
-                    let epUrl = $(this).attr('href');
-                    if (epUrl && !epUrl.startsWith('http')) {
-                        epUrl = 'https:' + epUrl;
+        let data = html.split('node:')[1].split('},')[0] + '}';
+        data = data.trim();
+        //   log(data);
+        let json = JSON.parse(data);
+        //   log(json);
+        VOD = {};
+
+        VOD.vod_name = json.title;
+        VOD.type_name = json.type;
+        VOD.vod_id = input;
+        VOD.vod_pic = urljoin(input, json.thumbnail);
+        VOD.vod_year = json.year;
+        VOD.vod_area = json._area;
+        VOD.vod_remarks = json.note;
+        VOD.vod_content = json.description;
+        VOD.vod_director = json.director;
+        VOD.vod_actor = json.actors;
+        let v_tabs = pdfa(html, '.nav-tabs&&li');
+        let v_tab_urls = v_tabs.map(it => pd(it, 'a&&href', input));
+        v_tabs = v_tabs.map(it => pdfh(it, 'a&&title'));
+        // log(v_tab_urls);
+        VOD.vod_play_from = v_tabs.join('$$$');
+        let lists = [];
+        let list1 = pdfa(html, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
+        // log(list1);
+        lists.push(list1);
+        if (v_tab_urls.length > 1) {
+            let reqUrls = v_tab_urls.slice(1).map(it => {
+                return {
+                    url: it,
+                    options: {
+                        timeout: 5000,
+                        headers: rule.headers
                     }
-                    episodes.push(epTitle + '$' + epUrl);
-                });
-                
-                playUrl.push(episodes.join('#'));
-            }
-        });
-        
-        VOD = {
-            vod_name: title,
-            vod_pic: img,
-            vod_content: content,
-            vod_remarks: desc,
-            vod_play_from: playFrom.join('$$$'),
-            vod_play_url: playUrl.join('$$$')
-        };
+                }
+            });
+            let htmls = batchFetch(reqUrls);
+            htmls.forEach((ht) => {
+                if (ht) {
+                    let list0 = pdfa(ht, '.mb-2.fullwidth&&a').map(it => pdfh(it, 'a&&Text') + '$' + pd(it, 'a&&href', input));
+                    lists.push(list0);
+                } else {
+                    lists.push([]);
+                }
+            });
+        }
+        let playUrls = lists.map(it => it.join('#'));
+        VOD.vod_play_url = playUrls.join('$$$');
     }),
-    搜索: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
+    搜索: '*',
 }
