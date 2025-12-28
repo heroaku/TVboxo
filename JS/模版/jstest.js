@@ -1,79 +1,109 @@
 var rule = {
-    title: '好看动漫',
+    title: '小鸭影音',
     host: 'https://777tv.ai',
     url: '/vod/show/id/fyclass/page/fypage.html',
-  //https://777tv.ai/vod/show/id/fyclass/page/fypage.html
-    searchUrl: 'https://www.youjiula.com/search.php?page=fypage&searchword=**&searchtype=',
-    searchable: 2, //是否启用全局搜索,
-    quickSearch: 0, //是否启用快速搜索,
-    filterable: 0, //是否启用分类筛选,
+    searchUrl: '/vod/search/page/fypage/wd/**.html',
+    searchable: 2,
+    quickSearch: 1,
+    filterable: 0,
     headers: {
-        'User-Agent': 'UC_UA', // "Cookie": ""
-    }, // class_parse:'.stui-header__menu li:gt(0):lt(7);a&&Text;a&&href;/(\\d+).html',
-    class_parse: '.stui-header__menu li:gt(0):lt(7);a&&Text;a&&href;.*/(.*?).html',
-    play_parse: true,
-    lazy: '',
-    limit: 6,
-    推荐: 'ul.stui-vodlist.clearfix;li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href',
-    double: true, // 推荐内容是否双层定位
-    一级: '.stui-vodlist li;a&&title;a&&data-original;.pic-text&&Text;a&&href',
-    /*
-    二级: {
-        "title": ".stui-content__detail .title&&Text;.stui-content__detail p:eq(-2)&&Text",
-        "img": ".stui-content__thumb .lazyload&&data-original",
-        "desc": ".stui-content__detail p:eq(0)&&Text;.stui-content__detail p:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text",
-        "content": "#desc&&Text",
-        "tabs": ".stui-pannel__head h3",
-        //"tabs": ".stui-pannel:gt(0) h3",
-        "lists": ".stui-pannel:eq(#id)&&.stui-content__playlist li"
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
     },
-
-    二级:  {
-    "title": ".stui-content__detail .title&&Text",
-    "img": ".stui-content__thumb .lazyload&&data-original",
-    "desc": ".stui-content__detail p.data:eq(0)&&Text;.stui-content__detail p.data:eq(1)&&Text;.stui-content__detail p:eq(2)&&Text",
-    "content": "#desc .stui-content__desc&&Text",
-     "tabs": ".stui-pannel h4.title",
-     "lists": ".stui-pannel:eq(#id) .stui-content__playlist li"
-   // "tabs": ".stui-pannel__head .title",
-   // "lists": ".stui-pannel:eq(#id)&&.stui-content__playlist li"
-},
-    */
-二级: `js:
-  pdfh = jsp.pdfh; pdfa = jsp.pdfa; pd = jsp.pd;
-  let html = input;
-  let title = pdfh(html, '.stui-content__detail .title&&Text');
-  let img = pdfh(html, '.stui-content__thumb .lazyload&&data-original');
-  let content = pdfh(html, '#desc .stui-content__desc&&Text');
-  let desc1 = pdfh(html, '.stui-content__detail p:eq(0)&&Text');
-  let desc2 = pdfh(html, '.stui-content__detail p:eq(1)&&Text');
-  let desc3 = pdfh(html, '.stui-content__detail p:eq(2)&&Text');
-  let desc4 = pdfh(html, '.stui-content__detail p:eq(3)&&Text');
-  let desc5 = pdfh(html, '.stui-content__detail p:eq(4)&&Text');
-  let desc = [desc1, desc2, desc3, desc4, desc5].filter(s => s).join(' / ');
-
-  let tabs = [];
-  let urls = [];
-  pdfa(html, '.stui-pannel').forEach(pan => {
-    let list = pdfa(pan, '.stui-content__playlist li');
-    if (list.length > 0) {
-      let tab = pdfh(pan, 'h4.title&&Text');
-      if (tab) {
-        tabs.push(tab);
-        urls.push(list.map(li => pdfh(li, 'a&&Text') + '$' + pd(li, 'a&&href')).join('#'));
-      }
-    }
-  });
-
-  VOD = {
-    vod_name: title,
-    vod_pic: img,
-    vod_content: content,
-    vod_actor: desc,
-    vod_play_from: tabs.join('$$$'),
-    vod_play_url: urls.join('$$$')
-  };
-`,
-    搜索: '.stui-vodlist__item li; a&&title; .lazyload&&data-original; .pic-text&&Text; a&&href',
+    timeout: 5000,
+    class_name: '全部&电视剧&电影&动漫&综艺&短剧',
+    class_url: '0&2&1&30&29&short_series',
+    limit: 20,
+    
+    推荐: '.stui-vodlist__bd .stui-vodlist__item;.stui-vodlist__title&&Text;.stui-vodlist__thumb&&data-original;.stui-vodlist__title a&&href;.pic-text&&Text',
+    
+    一级: '.stui-vodlist__bd .stui-vodlist__item;.stui-vodlist__title&&Text;.stui-vodlist__thumb&&data-original;.stui-vodlist__title a&&href;.pic-text&&Text',
+    
+    二级: $js.toString(() => {
+        VOD = {};
+        let html = request(input);
+        
+        // 解析基础信息
+        let $ = cheerio.load(html);
+        
+        // 标题
+        let title = $('.stui-content__detail .title').text().trim();
+        
+        // 图片
+        let img = $('.stui-content__thumb .lazyload').attr('data-original');
+        
+        // 描述信息
+        let descs = [];
+        $('.stui-content__detail p.data').each(function(i, el) {
+            descs.push($(this).text().trim());
+        });
+        
+        // 剧情介绍
+        let content = $('#desc .stui-content__desc').text().trim();
+        
+        // 播放线路和列表
+        let play_from = [];
+        let play_url = [];
+        
+        // 遍历所有面板，提取播放线路
+        $('.stui-pannel').each(function(i, panel) {
+            let $panel = $(panel);
+            let title = $panel.find('.stui-pannel__head h4.title').text().trim();
+            let playlist = $panel.find('.stui-content__playlist li a');
+            
+            // 判断是否是播放线路面板（包含播放列表且不是剧情介绍和猜你喜欢）
+            if (playlist.length > 0 && title && title !== '劇情介紹' && title !== '猜你喜歡') {
+                play_from.push(title);
+                
+                let episodes = [];
+                playlist.each(function(j, a) {
+                    let episodeTitle = $(a).text().trim();
+                    let episodeUrl = $(a).attr('href');
+                    // 确保URL是完整的
+                    if (episodeUrl && !episodeUrl.startsWith('http')) {
+                        episodeUrl = 'https:' + episodeUrl;
+                    }
+                    episodes.push(episodeTitle + '$' + episodeUrl);
+                });
+                
+                play_url.push(episodes.join('#'));
+            }
+        });
+        
+        // 构建VOD对象
+        VOD = {
+            vod_name: title,
+            vod_pic: img,
+            vod_content: content,
+            vod_remarks: descs.join(' / '),
+            vod_play_from: play_from.join('$$$'),
+            vod_play_url: play_url.join('$$$')
+        };
+        
+        // 调试信息（可选）
+        log('标题: ' + title);
+        log('线路数: ' + play_from.length);
+    }),
+    
+    搜索: $js.toString(() => {
+        let d = [];
+        let html = request(input);
+        let $ = cheerio.load(html);
+        
+        $('.stui-vodlist__item').each(function(i, item) {
+            let $item = $(this);
+            let title = $item.find('.stui-vodlist__title a').text().trim();
+            let img = $item.find('.stui-vodlist__thumb').attr('data-original');
+            let href = $item.find('.stui-vodlist__title a').attr('href');
+            let remarks = $item.find('.pic-text').text().trim();
+            
+            d.push({
+                title: title,
+                img: img,
+                url: href,
+                desc: remarks
+            });
+        });
+        
+        setResult(d);
+    }),
 }
-
