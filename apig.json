@@ -273,6 +273,7 @@
 {"key": "麒麟影院","name": "🐩麒麟┃APP","type": 3,"changeable": 0, "jar": "https://github.com/heroaku/TB/raw/refs/heads/main/VOX/jar/vox.jar","api": "csp_Appfox","ext": {"host": "https://www.70yyw.cc","ver": 2}},	
 {"key": "Max","name": "❤️下饭┃Max","type": 3,"changeable": 0,"searchable": 1,"quickSearch": 1, "jar": "https://github.com/heroaku/TB/raw/refs/heads/main/VOX/jar/vox.jar","api": "csp_AppYsV2","ext": {"api": "http://yjyi.juyongjiu.com:80/icciu_api.php/v1.vod","datasignkey": "6QQNUsP3PkD2ajJCPCY8","apisignkey": "lvdoutv-1.0.0"}},
 {"key": "剧永久","name": "🎽剧集┃永久","type": 3,"changeable": 0, "jar": "https://github.com/heroaku/TB/raw/refs/heads/main/VOX/jar/vox.jar","api": "csp_AppYsV2","ext": {"api": "http://yjer.jumianfei.com/icciu_api.php/v1.vod","apisignkey": "lvdoutv-1.0.0"}},
+{"key": "金牌","name": "☀金牌🔹4k源","type": 3,"searchable": 1,"changeable": 1,"api": "csp_AppQi","ext": {"site": "https://dtqj1.gg1080.com:443/dtjp.txt","dataKey": "kecbio48dsq131ed","dataIv": "kecbio48dsq131ed"}},
 	
 {"key":"csp_Gz360","name":"🍉瓜子","type":3,"api":"csp_Gz360","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"天天","name":"⛅天天","type":3,"api":"csp_TTian","searchable":1,"quickSearch":1,"filterable":1,"ext":"7lj763gg0939791h1l3888jig44gi291li"},
