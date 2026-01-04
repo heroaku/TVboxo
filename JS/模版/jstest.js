@@ -23,7 +23,7 @@ var rule={
             },
           //class_parse: '.myui-header__menu li:gt(0):lt(8);a&&Text;a&&href;/(\\d+).html',
           //cate_exclude: '明星|永久|更新', 
-          class_name:'电影&电视剧&短剧&体育',
+          class_name:'电影&电视剧&综艺&动漫&短剧&体育',
           class_url:'1&2&3&4&46&36',
             play_parse: true,
             lazy: '',
