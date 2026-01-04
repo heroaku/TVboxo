@@ -14,11 +14,19 @@ var rule={
             host: 'https://mianfeidianying.club',
             //https://mianfeidianying.club/frim/index2-2.html
             //https://mianfeidianying.club/search.php?searchword=**
-            url: '/frim/indexfyclass-fypage.html',
+            url: '/frim/indexfyfilter-fypage.html',
             searchUrl: '/search.php?searchword=**',
             searchable: 2,//是否启用全局搜索,
             quickSearch: 0,//是否启用快速搜索,
-            filterable: 0,//是否启用分类筛选,
+           	filterable:1,//是否启用分类筛选,
+	          filter_url:'{{fl.cateId}}',
+	          filter: {"1":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"1"},{"n":"动作片","v":"6"},{"n":"喜剧片","v":"7"},{"n":"爱情片","v":"8"},{"n":"科幻片","v":"9"},{"n":"恐怖片","v":"10"},{"n":"剧情片","v":"11"},{"n":"战争片","v":"12"}]}],"2":[{"key":"cateId","name":"分类","value":[{"n":"全部","v":"2"},{"n":"国产剧","v":"13"},{"n":"港台剧","v":"14"},{"n":"日韩剧","v":"15"},{"n":"欧美剧","v":"16"}]}]},
+	          filter_def:{
+		            1:{cateId:'1'},
+		            2:{cateId:'2'},
+		            3:{cateId:'3'},
+		            4:{cateId:'4'}
+	              },
             headers: {//网站的请求头,完整支持所有的,常带ua和cookies
                 'User-Agent': 'MOBILE_UA', // "Cookie": "searchneed=ok"
             },
