@@ -37,7 +37,7 @@ var rule={
                 "img": ".myui-content__thumb .lazyload&&data-original",
                 "desc": ".myui-content__detail p:eq(0)&&Text;.myui-content__detail p:eq(1)&&Text;.myui-content__detail p:eq(2)&&Text",
                 "content": ".content&&Text",
-                "tabs": ".nav-tabs li",
+                "tabs": ".myui-panel__head:eq(0)&&.nav-tabs li",
                 "lists": ".myui-content__list:eq(#id) li a"
             },
             搜索: '#searchList li;a&&title;.lazyload&&data-original;.pic-text&&Text;a&&href;.detail&&p:eq(1) p&&Text',
