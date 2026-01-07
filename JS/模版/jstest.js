@@ -23,8 +23,8 @@ var rule = {
     img: '.lazyload&&data-original',
     desc: '.text_muted hidden_xs:eq(0)&&Text;.text_muted hidden_xs:eq(1)&&Text;.text_muted hidden_xs:eq(2)&&Text;.text_muted hidden_xs:eq(3)&&Text',
     content: '.left.text_muted&&Text',
-    tabs: '#NumTab&&a',
-    lists: '.play_list_box:eq(#id)&&.playlist_notfull&&a',
+    tabs: '.title_nav li',
+    lists: '.content_playlist:eq(#id) li',
   },
   搜索: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
 }
