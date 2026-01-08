@@ -23,7 +23,7 @@ var rule = {
     img: '.lazyload&&data-original',
     desc: '.text_muted hidden_xs:eq(0)&&Text;.text_muted hidden_xs:eq(1)&&Text;.text_muted hidden_xs:eq(2)&&Text;.text_muted hidden_xs:eq(3)&&Text',
     content: '.left.text_muted&&Text',
-    tabs: '.title_nav li:eq(#id) a',
+    tabs: '.title_nav a',
     lists: '.content_playlist:eq(#id) li a',
   },
   搜索: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
