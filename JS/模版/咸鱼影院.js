@@ -1,5 +1,5 @@
 var rule = {
-  title: 'SKR影院',
+  title: '咸鱼影院',
   host: 'https://xymv.com',
 	//https://xymv.com/vodshow/dianshiju-----------.html
   url: '/vodshow/fyclass--------fypage---.html',
@@ -12,8 +12,8 @@ var rule = {
   //class_parse: '.top_nav.clearfix li;a&&Text;a&&href;/.*-(.*?).html',
   //class_name:'电影&电视剧&综艺&动漫&国产剧&港台剧&日本剧&海外剧&纪录片',
   //class_url:'1&2&3&4&82&32&83&88',
-  class_name: '电影&电视剧&综艺&动漫&短剧&解说&体育',
-  class_url: 'dianying&dianshiju&zongyi&dongman&duanju&dianyingjieshuo&tiyu',
+  class_name: '电影&电视剧&综艺&动漫&短剧&体育',
+  class_url: 'dianying&dianshiju&zongyi&dongman&duanju&tiyu',
   play_parse: true,
   lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
   limit: 6,
