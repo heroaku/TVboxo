@@ -29,7 +29,7 @@ var rule = {
     let img = $('.play_vlist_thumb.vnow').attr('data-original') || '';
     let content = $('.play_text').text().trim();
 
-    // desc：年份/地区/类型 + 导演 + 主演 + 更新提示
+    // desc
     let descParts = [];
     let yearInfo = $('.play_text').text().trim();
     if (yearInfo) {
@@ -41,38 +41,39 @@ var rule = {
     $('.panel.play_content p').each((i, el) => {
         let text = $(el).text().trim();
         if (text.includes('导演：') || text.includes('主演：')) {
-            descParts.push(text.replace(/^导演：|主演：/, '').trim());
+            descParts.push(text.replace(/^(导演|主演)：/, '').trim());
         }
     });
     let updateTip = $('.panel:contains("每天")').text().trim();
     if (updateTip) descParts.push(updateTip);
     let desc = descParts.filter(x => x).join(' ⬥ ');
 
-    // 提取所有线路 tab（含 href）
+    // 提取所有线路 tab（名称 + URL）
     let tabs = [];
     let tabUrls = [];
     $('#bofy .title_nav li a').each((i, el) => {
-        let name = $(el).text().replace(/高清线路\s*/, '').trim();
-        let href = $(el).attr('href');
-        if (name && href) {
-            // 当前线路可能是 javascript:;，需从 input 推断
-            if (href === 'javascript:;' || href === '#') {
-                href = input; // 当前页
-            } else if (!href.startsWith('http')) {
-                href = 'https://xymv.com' + href;
-            }
-            tabs.push(name);
-            tabUrls.push(href);
+        let $el = $(el);
+        let name = $el.text().replace(/高清线路\s*/, '').trim();
+        let href = $el.attr('href');
+
+        if (!name) return;
+        if (href === 'javascript:;' || href === '#' || !href) {
+            // 当前线路：用 input 作为 URL
+            href = input;
+        } else if (!href.startsWith('http')) {
+            href = 'https://xymv.com' + href;
         }
+
+        tabs.push(name);
+        tabUrls.push(href);
     });
 
     if (tabs.length === 0) {
-        // 降级：使用当前页
         tabs = ['默认线路'];
         tabUrls = [input];
     }
 
-    // 为每个线路单独请求，提取其播放列表
+    // 为每个线路单独请求，提取其 playlist
     let playFrom = [];
     let playUrl = [];
 
@@ -84,9 +85,11 @@ var rule = {
             let tabHtml = request(url);
             let $tab = cheerio.load(tabHtml);
             let episodes = [];
-            $tab('.content_playlist li a').each((j, el) => {
-                let epTitle = $tab(el).text().trim();
-                let epLink = $tab(el).attr('href');
+
+            // 提取该页面的 .content_playlist
+            $tab('.content_playlist li a').each((j, elem) => {
+                let epTitle = $(elem).text().trim();
+                let epLink = $(elem).attr('href');
                 if (epLink && !epLink.startsWith('http')) {
                     epLink = 'https://xymv.com' + epLink;
                 }
@@ -98,12 +101,12 @@ var rule = {
                 playUrl.push(episodes.join('#'));
             }
         } catch (e) {
-            // 请求失败，跳过该线路
-            console.log('线路加载失败:', tabName, e.message);
+            // 跳过失败线路
+            console.log(`[SKR] 线路加载失败: ${tabName}`, e.message);
         }
     }
 
-    // 如果全部失败，至少保留当前页
+    // 降级：若全失败，用当前页
     if (playFrom.length === 0) {
         let episodes = [];
         $('.content_playlist li a').each((i, el) => {
