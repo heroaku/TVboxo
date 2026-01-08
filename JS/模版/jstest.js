@@ -28,7 +28,7 @@ var rule = {
           '.play_text&&Text;' +
           '.panel.play_content:eq(0) p:contains("每天")&&Text',
     content: '.play_text&&Text',
-    tabs: '.title_nav li',
+   tabs: '.title_nav li a&&Text;replace(高清,)',
     lists: '.tabs .content:eq(#id) .content_playlist li a'
 },
   搜索: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
