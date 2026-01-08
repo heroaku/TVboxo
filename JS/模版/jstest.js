@@ -1,35 +1,34 @@
 var rule = {
-  title: 'SKR影院',
-  host: 'https://xymv.com',
-	//https://xymv.com/vodshow/dianshiju-----------.html
-  url: '/vodshow/fyclass--------fypage---.html',
-  //https://www.skr2.cc/vodshow/32--------2---/
-  //https://www.ketv.cc/search/**----------fypage---.html
-  searchUrl: '/search/**----------fypage---.html',
+  title: '策驰影院',
+  host: 'https://kuyingju.com',
+  //https://kuyingju.com/index.php/vod/show/class/%E5%89%A7%E6%83%85/id/2/page/2.html
+  //https://kuyingju.com/index.php/vod/detail/id/5797.html
+  class_name: '电影&电视剧&综艺&动漫',
+  class_url: '1&2&3&4',
+  searchUrl: '/sou/?wd=**',
   searchable: 2,
   quickSearch: 0,
+  headers: {
+    'User-Agent': 'MOBILE_UA',
+  },
+  url: '/index.php/vod/show/id/fyclass/page/fypage.html',
   filterable: 0,
-  //class_parse: '.top_nav.clearfix li;a&&Text;a&&href;/.*-(.*?).html',
-  //class_name:'电影&电视剧&综艺&动漫&国产剧&港台剧&日本剧&海外剧&纪录片',
-  //class_url:'1&2&3&4&82&32&83&88',
-  class_name: '电影&电视剧&综艺&动漫&短剧&解说&体育',
-  class_url: 'dianying&dianshiju&zongyi&dongman&duanju&dianyingjieshuo&tiyu',
+  filter_url: '',
+  filter: {},
+  filter_def: {},
+  detailUrl: '/index.php/vod/detail/id/fyid.html',
   play_parse: true,
-  lazy:"js:var html=JSON.parse(request(input).match(/r player_.*?=(.*?)</)[1]);var url=html.url;if(html.encrypt=='1'){url=unescape(url)}else if(html.encrypt=='2'){url=unescape(base64Decode(url))}if(/m3u8|mp4/.test(url)){input=url}else{input}",
+  lazy: "js:\n  let html = request(input);\n  let hconf = html.match(/r player_.*?=(.*?)</)[1];\n  let json = JSON5.parse(hconf);\n  let url = json.url;\n  if (json.encrypt == '1') {\n    url = unescape(url);\n  } else if (json.encrypt == '2') {\n    url = unescape(base64Decode(url));\n  }\n  if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {\n    input = {\n      parse: 0,\n      jx: 0,\n      url: url,\n    };\n  } else {\n    input = url && url.startsWith('http') && tellIsJx(url) ? {parse:0,jx:1,url:url}:input;\n  }",
   limit: 6,
-  推荐: '.cbox_list li;.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
-  double: true,
-  一级: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
-二级: {
-    title: 'h2.title a&&Text',
-    img: '.play_vlist_thumb.vnow&&data-original',
-    desc: '.panel.play_content:eq(0) p:eq(0)&&Text;' +
-          '.panel.play_content:eq(0) p:eq(1)&&Text;' +
-          '.play_text&&Text;' +
-          '.panel.play_content:eq(0) p:contains("每天")&&Text',
-    content: '.play_text&&Text',
-    tabs: '.title_nav li',
-    lists: '.tabs .content:eq(#id) .content_playlist li a'
-},
-  搜索: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
+  推荐: 'ul.swiper-wrapper li;a&&title;.lazyload&&data-original;.item-status&&Text;a&&href',
+  一级: '.vod-list ul li;a&&title;.lazyload&&data-original;.item-status&&Text;a&&href',
+  二级: {
+    title: 'h1&&Text;.row&&span&&Text',
+    img: '.lazyload&&data-original',
+    desc: '.row&&Text;.row&&span:eq(2)&&Text;.row&&span:eq(1)&&Text;.row&&span:eq(3)&&Text;.row&&span:eq(4)&&Text;',
+    content: '.text.text-row&&Text',
+    tabs: '.swiper-wrapper li',
+    lists: '.ewave-playlist-content:eq(#id) li',
+  },
+  搜索: '*',
 }
