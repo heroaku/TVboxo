@@ -21,12 +21,15 @@ var rule = {
   double: true,
   一级: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
   二级: {
-    title: '.hd_tit.fl&&Text',
-    img: '.lazyload&&data-original',
-    desc: '.text_muted hidden_xs:eq(0)&&Text;.text_muted hidden_xs:eq(1)&&Text;.text_muted hidden_xs:eq(2)&&Text;.text_muted hidden_xs:eq(3)&&Text',
-    content: '.left.text_muted&&Text',
-    tabs: '.title_nav&&li a',
-    lists: '.content_playlist:eq(#id) li a',
+    title: 'h2.title a&&Text',
+    img: '.play_vlist_thumb.vnow&&data-original',
+    desc: '.panel.play_content:eq(0) p:eq(0)&&Text;' +
+          '.panel.play_content:eq(0) p:eq(1)&&Text;' +
+          '.play_text&&Text;' +
+          '.panel.play_content:eq(0) p:contains("每天")&&Text',
+    content: '.play_text&&Text',
+    tabs: '.title_nav li a',
+    lists: '.content_playlist:eq(#id) li a'
   },
   搜索: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
 }
