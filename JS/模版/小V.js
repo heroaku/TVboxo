@@ -20,7 +20,7 @@ var rule = {
   推荐: '.cbox_list li;.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
   double: true,
   一级: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
-  二级: {
+二级: {
     title: 'h2.title a&&Text',
     img: '.play_vlist_thumb.vnow&&data-original',
     desc: '.panel.play_content:eq(0) p:eq(0)&&Text;' +
@@ -28,8 +28,8 @@ var rule = {
           '.play_text&&Text;' +
           '.panel.play_content:eq(0) p:contains("每天")&&Text',
     content: '.play_text&&Text',
-    tabs: '.title_nav li a',
-    lists: '.content_playlist:eq(#id) li a'
-  },
+    tabs: '.title_nav li',
+    lists: '.tabs .content:eq(#id) .content_playlist li a'
+},
   搜索: '.vodlist_item;a&&title;.lazyload&&data-original;.pic_text&&Text;a&&href',
 }
