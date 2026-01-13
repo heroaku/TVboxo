@@ -1,34 +1,28 @@
-var rule = {
-  title: '海纳TV',
-  host: 'https://www.hainatv.net/',
-  searchUrl: '/index.php/vod/search.html?wd=**&submit=',
-  url: '/index.php/vod/show/id/fyclass/page/fypage.html',
-  //https://www.hainatv.net/index.php/vod/show/id/2/page/2.html
-  headers: {
+var rule={
+    title: '师兄影视',
+    host: 'https://www.ddmf.net',
+    url: '/vodshow/fyclass--------fypage---.html',
+    //https://www.ddmf.net/vodshow/2-----------.html
+    //https://www.ddmf.net/vodsearch/ai----------2---.html
+    searchUrl: '/vodsearch/**----------fypage---.html',
+    searchable: 2,
+    quickSearch: 0,
+    filterable: 0,
+    headers: {
     'User-Agent': 'MOBILE_UA',
-  },
-  timeout: 5000,
-  //class_parse: 'body&&.hl-nav li:gt(0):lt(6);a&&Text;a&&href;.*/(.*?).html',
-  //cate_exclude: '明星|专题|最新|排行',
-  class_name:'电视剧&综艺&动漫&短剧',
-  class_url:'2&3&4&5',
-  limit: 40,
-  play_parse: true,
-  lazy: "js:\n  let html = request(input);\n  let hconf = html.match(/r player_.*?=(.*?)</)[1];\n  let json = JSON5.parse(hconf);\n  let url = json.url;\n  if (json.encrypt == '1') {\n    url = unescape(url);\n  } else if (json.encrypt == '2') {\n    url = unescape(base64Decode(url));\n  }\n  if (/\\.(m3u8|mp4|m4a|mp3)/.test(url)) {\n    input = {\n      parse: 0,\n      jx: 0,\n      url: url,\n    };\n  } else {\n    input = url && url.startsWith('http') && tellIsJx(url) ? {parse:0,jx:1,url:url}:input;\n  }",
-  double: true,
-  推荐: '.hl-vod-list;li;a&&title;a&&data-original;.remarks&&Text;a&&href',
-  一级: '.hl-vod-list&&.hl-list-item;a&&title;a&&data-original;.remarks&&Text;a&&href',
-  二级: {
-    title: '.hl-dc-title&&Text;.hl-dc-content&&li:eq(6)&&Text',
-    img: '.hl-lazy&&data-original',
-    desc: '.hl-dc-content&&li:eq(10)&&Text;.hl-dc-content&&li:eq(4)&&Text;.hl-dc-content&&li:eq(5)&&Text;.hl-dc-content&&li:eq(2)&&Text;.hl-dc-content&&li:eq(3)&&Text',
-    content: '.hl-content-text&&Text',
-    tabs: '.hl-tabs&&a',
-    tab_text: 'a--span&&Text',
-    lists: '.hl-plays-list:eq(#id)&&li',
-  },
-  搜索: '.hl-list-item;a&&title;a&&data-original;.remarks&&Text;a&&href',
-  searchable: 2,
-  quickSearch: 0,
-  filterable: 0,
-}
+    },
+    class_parse: '.navbar&&ul&&li;a&&Text;a&&href;/(\\d+).html',
+    play_parse: false,
+    lazy: '',
+    limit: 6,
+    推荐: '.module-items;a;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    double: true,
+    一级: 'a.module-poster-item.module-item;a&&title;img&&data-original;.module-item-note&&Text;a&&href',
+    二级: {
+    "title": "h1&&Text;.module-info-tag&&Text",
+    "img": ".lazyload&&data-original",
+    "desc": ".module-info-item:eq(1)&&Text;.module-info-item:eq(2)&&Text;.module-info-item:eq(3)&&Text",
+    "content": ".module-info-introduction&&Text",
+    "tabs": ".hisSwiper&&span",
+    "lists": ".his-tab-list:eq(#id) a"},
+    搜索: 'body .module-item;.module-card-item-title&&Text;.lazyload&&data-original;.module-item-note&&Text;a&&href;.module-info-item-content&&Text',}
