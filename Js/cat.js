@@ -1,3 +1,5 @@
+import { _ } from 'assets://js/lib/cat.js';
+
 /**
  * 布布影视 (bbys.app) 爬虫
  */
@@ -141,7 +143,6 @@ function detail(id) {
       'vod_content': desc ? desc[1].trim() : ''
     };
     
-    let playSources = [];
     let playList = html.match(/class="module-play-list"([\s\S]*?)<\/div>/g);
     if (playList) {
       let playUrls = [];
@@ -162,8 +163,6 @@ function detail(id) {
         playUrls.push(sourceTitle + '$' + episodes.join('#'));
       });
       
-      vod.vod_play_from = playSources.length > 0 ? playSources.join('$$$') : '默认';
-      vod.vod_play_url = playUrls.join('$$$');
       vod.vod_play_from = '线路1';
       vod.vod_play_url = playUrls.join('#');
     }
@@ -186,7 +185,6 @@ function play(flag, id, flags) {
       }
     });
     
-    let playerScript = html.match(/<script[^>]*>([\s\S]*?)<\/script>/);
     let videoUrl = '';
     
     let iframeMatch = html.match(/<iframe[^>]*src="([^"]+)"[^>]*>/);
