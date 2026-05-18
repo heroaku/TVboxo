@@ -1,5 +1,3 @@
-import { _ } from 'assets://js/lib/cat.js';
-
 /**
  * 布布影视 (bbys.app) 爬虫
  */
@@ -66,7 +64,7 @@ function category(tid, pg, filter, extend) {
   try {
     pg = pg || 1;
     let page = parseInt(pg);
-    let url = page === 1 ? `${site}/type/${tid}.html` : `${site}/type/${tid}/page/${page}.html`;
+    let url = page === 1 ? site + '/type/' + tid + '.html' : site + '/type/' + tid + '/page/' + page + '.html';
     
     let html = request(url, {
       headers: {
@@ -159,7 +157,7 @@ function detail(id) {
           });
         }
         
-        let sourceTitle = sourceName ? sourceName[1].trim() : `播放源${index + 1}`;
+        let sourceTitle = sourceName ? sourceName[1].trim() : '播放源' + (index + 1);
         playUrls.push(sourceTitle + '$' + episodes.join('#'));
       });
       
@@ -235,7 +233,7 @@ function play(flag, id, flags) {
 
 function search(wd, quick) {
   try {
-    let url = `${site}/index.php/ajax/suggest?mid=1&wd=${encodeURIComponent(wd)}&limit=500`;
+    let url = site + '/index.php/ajax/suggest?mid=1&wd=' + encodeURIComponent(wd) + '&limit=500';
     let data = request(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0',
@@ -249,7 +247,7 @@ function search(wd, quick) {
     if (json.list) {
       json.list.forEach(item => {
         videos.push({
-          'vod_id': `${site}/play/${item.id}.html`,
+          'vod_id': site + '/play/' + item.id + '.html',
           'vod_name': item.name,
           'vod_pic': item.pic || '',
           'vod_remarks': ''
@@ -258,7 +256,7 @@ function search(wd, quick) {
     }
     
     if (videos.length === 0) {
-      let searchUrl = `${site}/search/${encodeURIComponent(wd)}.html`;
+      let searchUrl = site + '/search/' + encodeURIComponent(wd) + '.html';
       let html = request(searchUrl, {
         headers: {
           'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
