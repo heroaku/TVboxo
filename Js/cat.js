@@ -1,8 +1,13 @@
 /**
  * 布布影视 (bbys.app) 爬虫
+ * @author cat
  */
 
+import { _, load, log, parse, request, qs, pdfh, pdfa, pmlog, HOME, SEARCH, DETAIL, PLAY, CATEGORY, CLASS } from 'assets://js/lib/cat.js';
+
 const site = 'https://bbys.app';
+const UA = 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36';
+
 const homeData = {
   "class": [
     {"type_id": "1", "type_name": "电影"},
@@ -26,7 +31,8 @@ function homeVod(params) {
   try {
     let html = request(site, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
+        'User-Agent': UA,
+        'Referer': site
       }
     });
     
@@ -55,7 +61,7 @@ function homeVod(params) {
       'list': videos
     });
   } catch (e) {
-    print('获取首页推荐失败: ' + e.message);
+    log('获取首页推荐失败: ' + e.message);
   }
   return JSON.stringify({'list': []});
 }
@@ -68,7 +74,8 @@ function category(tid, pg, filter, extend) {
     
     let html = request(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
+        'User-Agent': UA,
+        'Referer': site
       }
     });
     
@@ -107,7 +114,7 @@ function category(tid, pg, filter, extend) {
       'list': videos
     });
   } catch (e) {
-    print('获取分类失败: ' + e.message);
+    log('获取分类失败: ' + e.message);
   }
   return JSON.stringify({'page': 1, 'pagecount': 1, 'limit': 24, 'total': 0, 'list': []});
 }
@@ -116,7 +123,8 @@ function detail(id) {
   try {
     let html = request(id, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
+        'User-Agent': UA,
+        'Referer': site
       }
     });
     
@@ -169,7 +177,7 @@ function detail(id) {
       'list': [vod]
     });
   } catch (e) {
-    print('获取详情失败: ' + e.message);
+    log('获取详情失败: ' + e.message);
   }
   return JSON.stringify({'list': []});
 }
@@ -178,7 +186,7 @@ function play(flag, id, flags) {
   try {
     let html = request(id, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+        'User-Agent': UA,
         'Referer': site
       }
     });
@@ -190,7 +198,7 @@ function play(flag, id, flags) {
       let iframeUrl = iframeMatch[1];
       let iframeHtml = request(iframeUrl, {
         headers: {
-          'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+          'User-Agent': UA,
           'Referer': id
         }
       });
@@ -226,7 +234,7 @@ function play(flag, id, flags) {
       'url': videoUrl
     });
   } catch (e) {
-    print('获取播放地址失败: ' + e.message);
+    log('获取播放地址失败: ' + e.message);
   }
   return JSON.stringify({'parse': 0, 'playUrl': '', 'url': ''});
 }
@@ -236,7 +244,7 @@ function search(wd, quick) {
     let url = site + '/index.php/ajax/suggest?mid=1&wd=' + encodeURIComponent(wd) + '&limit=500';
     let data = request(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0',
+        'User-Agent': UA,
         'Referer': site
       }
     });
@@ -259,7 +267,8 @@ function search(wd, quick) {
       let searchUrl = site + '/search/' + encodeURIComponent(wd) + '.html';
       let html = request(searchUrl, {
         headers: {
-          'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
+          'User-Agent': UA,
+          'Referer': site
         }
       });
       
@@ -291,7 +300,7 @@ function search(wd, quick) {
       'list': videos
     });
   } catch (e) {
-    print('搜索失败: ' + e.message);
+    log('搜索失败: ' + e.message);
   }
   return JSON.stringify({'list': []});
 }
